@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "nexrad-level-3-data": "^0.6.1"
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-packager": "^17.1.2"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  }
+}
