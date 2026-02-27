@@ -1,0 +1,8930 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.566108,
+          35.172449
+        ]
+      },
+      "properties": {
+        "id": "635",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/635"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.9661646,
+          36.9590711000001
+        ]
+      },
+      "properties": {
+        "id": "636",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/636"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.987304,
+          34.6989990000001
+        ]
+      },
+      "properties": {
+        "id": "637",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/637"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.977804,
+          34.73267
+        ]
+      },
+      "properties": {
+        "id": "638",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/638"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.999802,
+          34.7148920000001
+        ]
+      },
+      "properties": {
+        "id": "639",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/639"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.009371,
+          34.7284320000001
+        ]
+      },
+      "properties": {
+        "id": "640",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/640"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.00238,
+          34.721594
+        ]
+      },
+      "properties": {
+        "id": "641",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/641"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.028091,
+          34.7321920000001
+        ]
+      },
+      "properties": {
+        "id": "642",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/642"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.65146,
+          35.1983700000001
+        ]
+      },
+      "properties": {
+        "id": "643",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/643"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.9422454,
+          36.88295286
+        ]
+      },
+      "properties": {
+        "id": "644",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/644"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.6357485,
+          36.9870037100001
+        ]
+      },
+      "properties": {
+        "id": "645",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/645"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.68196,
+          35.1010900000001
+        ]
+      },
+      "properties": {
+        "id": "646",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/646"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7625817,
+          34.6754605400001
+        ]
+      },
+      "properties": {
+        "id": "647",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/647"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8343278,
+          35.2423180700001
+        ]
+      },
+      "properties": {
+        "id": "648",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/648"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6015104,
+          35.2064301400001
+        ]
+      },
+      "properties": {
+        "id": "649",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/649"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4428279,
+          35.2188138700001
+        ]
+      },
+      "properties": {
+        "id": "650",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/650"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6325006,
+          35.1868230600001
+        ]
+      },
+      "properties": {
+        "id": "651",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/651"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.113995,
+          35.2590429100001
+        ]
+      },
+      "properties": {
+        "id": "652",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/652"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.3923888,
+          35.1970360600001
+        ]
+      },
+      "properties": {
+        "id": "653",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/653"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.138656,
+          35.6580500000001
+        ]
+      },
+      "properties": {
+        "id": "654",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/654"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7519879,
+          34.87752248
+        ]
+      },
+      "properties": {
+        "id": "655",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/655"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6618433,
+          35.1820481300001
+        ]
+      },
+      "properties": {
+        "id": "656",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/656"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6926245,
+          35.1264492
+        ]
+      },
+      "properties": {
+        "id": "657",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/657"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.64752,
+          35.20653
+        ]
+      },
+      "properties": {
+        "id": "658",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/658"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.4403868,
+          35.8213811700001
+        ]
+      },
+      "properties": {
+        "id": "659",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/659"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.697372,
+          32.9510740000001
+        ]
+      },
+      "properties": {
+        "id": "660",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/660"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.1181209,
+          34.2847849300001
+        ]
+      },
+      "properties": {
+        "id": "661",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/661"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.7625032,
+          33.3933164100001
+        ]
+      },
+      "properties": {
+        "id": "662",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/662"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.1585,
+          34.90166
+        ]
+      },
+      "properties": {
+        "id": "663",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/663"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.4809424,
+          35.1673748700001
+        ]
+      },
+      "properties": {
+        "id": "664",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/664"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.2564616,
+          34.91960314
+        ]
+      },
+      "properties": {
+        "id": "665",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/665"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.0600335,
+          35.34840947
+        ]
+      },
+      "properties": {
+        "id": "666",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/666"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.3187071,
+          35.2266091600001
+        ]
+      },
+      "properties": {
+        "id": "667",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/667"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.7464488,
+          35.04117561
+        ]
+      },
+      "properties": {
+        "id": "668",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/668"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.5312013,
+          35.7097825000001
+        ]
+      },
+      "properties": {
+        "id": "669",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/669"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.0511787,
+          35.6634313600001
+        ]
+      },
+      "properties": {
+        "id": "670",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/670"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.162501,
+          34.8890910000001
+        ]
+      },
+      "properties": {
+        "id": "671",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/671"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.719542,
+          34.9924600000001
+        ]
+      },
+      "properties": {
+        "id": "672",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/672"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.353344,
+          34.7278650000001
+        ]
+      },
+      "properties": {
+        "id": "673",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/673"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.1170706,
+          35.10843148
+        ]
+      },
+      "properties": {
+        "id": "674",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/674"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.743329,
+          35.16541907
+        ]
+      },
+      "properties": {
+        "id": "675",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/675"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.8463711,
+          35.3053602000001
+        ]
+      },
+      "properties": {
+        "id": "676",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/676"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.281578,
+          34.1383720000001
+        ]
+      },
+      "properties": {
+        "id": "677",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/677"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.035475,
+          35.2181120000001
+        ]
+      },
+      "properties": {
+        "id": "678",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/678"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.007836,
+          35.220424
+        ]
+      },
+      "properties": {
+        "id": "679",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/679"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.958953,
+          35.270814
+        ]
+      },
+      "properties": {
+        "id": "680",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/680"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.1350294,
+          35.22812795
+        ]
+      },
+      "properties": {
+        "id": "681",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/681"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.444769,
+          36.894893
+        ]
+      },
+      "properties": {
+        "id": "682",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/682"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.289037,
+          34.150602
+        ]
+      },
+      "properties": {
+        "id": "683",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/683"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.323053,
+          34.240691
+        ]
+      },
+      "properties": {
+        "id": "684",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/684"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.42291,
+          33.5341300000001
+        ]
+      },
+      "properties": {
+        "id": "685",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/685"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.678246,
+          33.580224
+        ]
+      },
+      "properties": {
+        "id": "686",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/686"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.840867,
+          33.204121
+        ]
+      },
+      "properties": {
+        "id": "687",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/687"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.708129,
+          33.5665690000001
+        ]
+      },
+      "properties": {
+        "id": "688",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/688"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.117578,
+          34.3573400000001
+        ]
+      },
+      "properties": {
+        "id": "692",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/692"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.123065,
+          34.3213450000001
+        ]
+      },
+      "properties": {
+        "id": "693",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/693"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.13384,
+          34.186539
+        ]
+      },
+      "properties": {
+        "id": "694",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/694"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.6224246,
+          34.4393928900001
+        ]
+      },
+      "properties": {
+        "id": "695",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/695"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.248419,
+          34.5437850000001
+        ]
+      },
+      "properties": {
+        "id": "696",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/696"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.438156,
+          34.5497050000001
+        ]
+      },
+      "properties": {
+        "id": "697",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/697"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.410947,
+          34.5518399000001
+        ]
+      },
+      "properties": {
+        "id": "698",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/698"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.424663,
+          34.5529980000001
+        ]
+      },
+      "properties": {
+        "id": "699",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/699"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.380344,
+          34.5578540000001
+        ]
+      },
+      "properties": {
+        "id": "700",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/700"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.399917,
+          34.5483620000001
+        ]
+      },
+      "properties": {
+        "id": "701",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/701"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.42895,
+          34.6329180000001
+        ]
+      },
+      "properties": {
+        "id": "702",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/702"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.449944,
+          34.550735
+        ]
+      },
+      "properties": {
+        "id": "703",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/703"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.6445224,
+          33.87188259
+        ]
+      },
+      "properties": {
+        "id": "704",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/704"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.217287,
+          33.666478
+        ]
+      },
+      "properties": {
+        "id": "705",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/705"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.199502,
+          33.667848
+        ]
+      },
+      "properties": {
+        "id": "706",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/706"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.217304,
+          33.6601620000001
+        ]
+      },
+      "properties": {
+        "id": "707",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/707"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.737541,
+          33.1211470000001
+        ]
+      },
+      "properties": {
+        "id": "708",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/708"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.688826,
+          33.061114
+        ]
+      },
+      "properties": {
+        "id": "709",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/709"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.79307,
+          33.1699360000001
+        ]
+      },
+      "properties": {
+        "id": "710",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/710"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.06054,
+          32.0760900000001
+        ]
+      },
+      "properties": {
+        "id": "711",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/711"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.7554634,
+          32.34106881
+        ]
+      },
+      "properties": {
+        "id": "712",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/712"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.3532416,
+          31.7116965800001
+        ]
+      },
+      "properties": {
+        "id": "713",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/713"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.707571,
+          32.802312
+        ]
+      },
+      "properties": {
+        "id": "714",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/714"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.732911,
+          32.8361360000001
+        ]
+      },
+      "properties": {
+        "id": "715",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/715"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.716071,
+          32.8344750000001
+        ]
+      },
+      "properties": {
+        "id": "716",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/716"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.707851,
+          32.8345330000001
+        ]
+      },
+      "properties": {
+        "id": "717",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/717"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.707683,
+          32.8342900000001
+        ]
+      },
+      "properties": {
+        "id": "718",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/718"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.780459,
+          34.862602
+        ]
+      },
+      "properties": {
+        "id": "719",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/719"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.804819,
+          34.8628390000001
+        ]
+      },
+      "properties": {
+        "id": "720",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/720"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.828938,
+          34.8503620000001
+        ]
+      },
+      "properties": {
+        "id": "721",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/721"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.790756,
+          34.8635600000001
+        ]
+      },
+      "properties": {
+        "id": "722",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/722"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.028722,
+          34.2542500000001
+        ]
+      },
+      "properties": {
+        "id": "723",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/723"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.044982,
+          34.24924
+        ]
+      },
+      "properties": {
+        "id": "724",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/724"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.550257,
+          32.7344790000001
+        ]
+      },
+      "properties": {
+        "id": "725",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/725"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.514617,
+          32.7247150000001
+        ]
+      },
+      "properties": {
+        "id": "726",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/726"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.487083,
+          32.7076960000001
+        ]
+      },
+      "properties": {
+        "id": "727",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/727"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.458859,
+          32.6910530000001
+        ]
+      },
+      "properties": {
+        "id": "728",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/728"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.808952,
+          33.074506
+        ]
+      },
+      "properties": {
+        "id": "729",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/729"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.68683,
+          32.870121
+        ]
+      },
+      "properties": {
+        "id": "730",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/730"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.4300868,
+          32.6741167000001
+        ]
+      },
+      "properties": {
+        "id": "731",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/731"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.400681,
+          32.6528870000001
+        ]
+      },
+      "properties": {
+        "id": "732",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/732"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.827631,
+          33.1012925800001
+        ]
+      },
+      "properties": {
+        "id": "733",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/733"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7477407,
+          32.8277771100001
+        ]
+      },
+      "properties": {
+        "id": "734",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/734"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.964467,
+          31.430209
+        ]
+      },
+      "properties": {
+        "id": "735",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/735"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.51681,
+          32.7260460000001
+        ]
+      },
+      "properties": {
+        "id": "736",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/736"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.964915,
+          33.8339570000001
+        ]
+      },
+      "properties": {
+        "id": "737",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/737"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.057316,
+          35.6636140000001
+        ]
+      },
+      "properties": {
+        "id": "738",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/738"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.409599,
+          32.6715090000001
+        ]
+      },
+      "properties": {
+        "id": "740",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/740"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.61384,
+          32.72274
+        ]
+      },
+      "properties": {
+        "id": "741",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/741"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.6671775,
+          33.4366448600001
+        ]
+      },
+      "properties": {
+        "id": "742",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/742"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.62476,
+          33.3703100000001
+        ]
+      },
+      "properties": {
+        "id": "743",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/743"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4611569,
+          33.4616584
+        ]
+      },
+      "properties": {
+        "id": "744",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/744"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4444879,
+          33.46176861
+        ]
+      },
+      "properties": {
+        "id": "745",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/745"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4288209,
+          33.46229644
+        ]
+      },
+      "properties": {
+        "id": "746",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/746"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4090749,
+          33.46125111
+        ]
+      },
+      "properties": {
+        "id": "747",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/747"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.3929253,
+          33.46167045
+        ]
+      },
+      "properties": {
+        "id": "748",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/748"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.3748641,
+          33.45976432
+        ]
+      },
+      "properties": {
+        "id": "749",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/749"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.3589876,
+          33.4582525700001
+        ]
+      },
+      "properties": {
+        "id": "750",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/750"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.3419092,
+          33.4575301100001
+        ]
+      },
+      "properties": {
+        "id": "751",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.3166476,
+          33.4574199200001
+        ]
+      },
+      "properties": {
+        "id": "752",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/752"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.3070924,
+          33.4589781
+        ]
+      },
+      "properties": {
+        "id": "753",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/753"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2906696,
+          33.4616174500001
+        ]
+      },
+      "properties": {
+        "id": "754",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/754"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2805928,
+          33.4617758700001
+        ]
+      },
+      "properties": {
+        "id": "755",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/755"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2720593,
+          33.46131532
+        ]
+      },
+      "properties": {
+        "id": "756",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/756"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.266984,
+          33.4621619600001
+        ]
+      },
+      "properties": {
+        "id": "757",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/757"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2550052,
+          33.46179906
+        ]
+      },
+      "properties": {
+        "id": "758",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/758"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.23769,
+          33.46276219
+        ]
+      },
+      "properties": {
+        "id": "759",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/759"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.229339,
+          33.4624590400001
+        ]
+      },
+      "properties": {
+        "id": "760",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/760"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2109473,
+          33.4623024100001
+        ]
+      },
+      "properties": {
+        "id": "761",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/761"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1952825,
+          33.4622460300001
+        ]
+      },
+      "properties": {
+        "id": "762",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/762"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1838826,
+          33.46333256
+        ]
+      },
+      "properties": {
+        "id": "763",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/763"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.16941,
+          33.4634673400001
+        ]
+      },
+      "properties": {
+        "id": "764",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/764"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1516238,
+          33.4623832400001
+        ]
+      },
+      "properties": {
+        "id": "765",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/765"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.143287,
+          33.4615351800001
+        ]
+      },
+      "properties": {
+        "id": "766",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/766"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1397535,
+          33.4625436700001
+        ]
+      },
+      "properties": {
+        "id": "767",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/767"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1302736,
+          33.46296174
+        ]
+      },
+      "properties": {
+        "id": "768",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/768"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.125992,
+          33.46172396
+        ]
+      },
+      "properties": {
+        "id": "769",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/769"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1141991,
+          33.4618590900001
+        ]
+      },
+      "properties": {
+        "id": "770",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/770"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0986801,
+          33.4617239500001
+        ]
+      },
+      "properties": {
+        "id": "771",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/771"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.08467,
+          33.4607511200001
+        ]
+      },
+      "properties": {
+        "id": "772",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/772"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0841603,
+          33.4613433700001
+        ]
+      },
+      "properties": {
+        "id": "773",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/773"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0810381,
+          33.4615286100001
+        ]
+      },
+      "properties": {
+        "id": "774",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/774"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.079974,
+          33.4615200000001
+        ]
+      },
+      "properties": {
+        "id": "775",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/775"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0776726,
+          33.46149387
+        ]
+      },
+      "properties": {
+        "id": "776",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/776"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0777557,
+          33.4617936700001
+        ]
+      },
+      "properties": {
+        "id": "777",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/777"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.075333,
+          33.46149689
+        ]
+      },
+      "properties": {
+        "id": "778",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/778"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.075361,
+          33.4617737
+        ]
+      },
+      "properties": {
+        "id": "779",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/779"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0728835,
+          33.4615692100001
+        ]
+      },
+      "properties": {
+        "id": "780",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/780"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0729391,
+          33.4618921200001
+        ]
+      },
+      "properties": {
+        "id": "781",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/781"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0705449,
+          33.46207967
+        ]
+      },
+      "properties": {
+        "id": "782",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/782"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0706279,
+          33.4623564
+        ]
+      },
+      "properties": {
+        "id": "783",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/783"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.065675,
+          33.46194683
+        ]
+      },
+      "properties": {
+        "id": "784",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/784"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.050725,
+          33.46256407
+        ]
+      },
+      "properties": {
+        "id": "785",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/785"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0451663,
+          33.4616373700001
+        ]
+      },
+      "properties": {
+        "id": "786",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/786"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0436057,
+          33.46242053
+        ]
+      },
+      "properties": {
+        "id": "787",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/787"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0376619,
+          33.46160286
+        ]
+      },
+      "properties": {
+        "id": "788",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/788"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0368441,
+          33.4563164200001
+        ]
+      },
+      "properties": {
+        "id": "789",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/789"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0370241,
+          33.4515121100001
+        ]
+      },
+      "properties": {
+        "id": "790",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/790"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.020103,
+          33.42060007
+        ]
+      },
+      "properties": {
+        "id": "791",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/791"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0111848,
+          33.4119202300001
+        ]
+      },
+      "properties": {
+        "id": "792",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/792"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9727046,
+          33.3196629400001
+        ]
+      },
+      "properties": {
+        "id": "803",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/803"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9725639,
+          33.3147020800001
+        ]
+      },
+      "properties": {
+        "id": "804",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/804"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.971914,
+          33.3048233800001
+        ]
+      },
+      "properties": {
+        "id": "805",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/805"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9721816,
+          33.2963014000001
+        ]
+      },
+      "properties": {
+        "id": "806",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/806"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9670686,
+          33.2790542500001
+        ]
+      },
+      "properties": {
+        "id": "807",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/807"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9588847,
+          33.2686455300001
+        ]
+      },
+      "properties": {
+        "id": "808",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/808"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9557959,
+          33.26598933
+        ]
+      },
+      "properties": {
+        "id": "809",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/809"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.090229,
+          32.3588340000001
+        ]
+      },
+      "properties": {
+        "id": "810",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/810"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.066903,
+          32.3374390000001
+        ]
+      },
+      "properties": {
+        "id": "811",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/811"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.057704,
+          32.330228
+        ]
+      },
+      "properties": {
+        "id": "812",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/812"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.049864,
+          32.322374
+        ]
+      },
+      "properties": {
+        "id": "813",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/813"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.040728,
+          32.3088930000001
+        ]
+      },
+      "properties": {
+        "id": "814",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/814"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.030304,
+          32.293818
+        ]
+      },
+      "properties": {
+        "id": "815",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/815"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.028502,
+          32.2939000000001
+        ]
+      },
+      "properties": {
+        "id": "816",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/816"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.028816,
+          32.294044
+        ]
+      },
+      "properties": {
+        "id": "817",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/817"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.018398,
+          32.2816330000001
+        ]
+      },
+      "properties": {
+        "id": "818",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/818"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.01212,
+          32.2722460000001
+        ]
+      },
+      "properties": {
+        "id": "819",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/819"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.00888,
+          32.2700290000001
+        ]
+      },
+      "properties": {
+        "id": "820",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/820"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.003578,
+          32.260293
+        ]
+      },
+      "properties": {
+        "id": "821",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/821"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.991828,
+          32.2502890000001
+        ]
+      },
+      "properties": {
+        "id": "822",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/822"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.983998,
+          32.234604
+        ]
+      },
+      "properties": {
+        "id": "823",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/823"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.979382,
+          32.2210430000001
+        ]
+      },
+      "properties": {
+        "id": "824",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/824"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.978831,
+          32.206758
+        ]
+      },
+      "properties": {
+        "id": "825",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/825"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.975056,
+          32.1917490000001
+        ]
+      },
+      "properties": {
+        "id": "826",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/826"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.968218,
+          32.187148
+        ]
+      },
+      "properties": {
+        "id": "827",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/827"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.961598,
+          32.185326
+        ]
+      },
+      "properties": {
+        "id": "828",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/828"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.956435,
+          32.1836860000001
+        ]
+      },
+      "properties": {
+        "id": "829",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/829"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.944348,
+          32.177309
+        ]
+      },
+      "properties": {
+        "id": "830",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/830"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.92643,
+          32.167105
+        ]
+      },
+      "properties": {
+        "id": "831",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/831"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.917563,
+          32.162063
+        ]
+      },
+      "properties": {
+        "id": "832",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/832"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.909181,
+          32.157386
+        ]
+      },
+      "properties": {
+        "id": "833",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/833"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.896183,
+          32.148944
+        ]
+      },
+      "properties": {
+        "id": "834",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/834"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.887497,
+          32.1343670000001
+        ]
+      },
+      "properties": {
+        "id": "835",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/835"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0369208,
+          33.42667264
+        ]
+      },
+      "properties": {
+        "id": "836",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/836"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0568583,
+          33.4281001100001
+        ]
+      },
+      "properties": {
+        "id": "837",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0734226,
+          33.42831899
+        ]
+      },
+      "properties": {
+        "id": "838",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/838"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0906853,
+          33.4294777900001
+        ]
+      },
+      "properties": {
+        "id": "839",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/839"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.10745,
+          33.43079598
+        ]
+      },
+      "properties": {
+        "id": "840",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/840"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1078778,
+          33.44161962
+        ]
+      },
+      "properties": {
+        "id": "841",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/841"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1077914,
+          33.4545166500001
+        ]
+      },
+      "properties": {
+        "id": "842",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/842"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.108846,
+          33.4624718000001
+        ]
+      },
+      "properties": {
+        "id": "843",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/843"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.110301,
+          33.4668679700001
+        ]
+      },
+      "properties": {
+        "id": "844",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/844"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1135666,
+          33.4750813200001
+        ]
+      },
+      "properties": {
+        "id": "845",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/845"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1127625,
+          33.4873885900001
+        ]
+      },
+      "properties": {
+        "id": "846",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/846"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1125067,
+          33.50244904
+        ]
+      },
+      "properties": {
+        "id": "847",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/847"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1120226,
+          33.5164544900001
+        ]
+      },
+      "properties": {
+        "id": "848",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/848"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.112007,
+          33.5307831900001
+        ]
+      },
+      "properties": {
+        "id": "849",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/849"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1127604,
+          33.5388082700001
+        ]
+      },
+      "properties": {
+        "id": "850",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/850"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.112071,
+          33.5460110400001
+        ]
+      },
+      "properties": {
+        "id": "851",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/851"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1126901,
+          33.55723628
+        ]
+      },
+      "properties": {
+        "id": "852",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/852"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1171608,
+          33.5652771200001
+        ]
+      },
+      "properties": {
+        "id": "853",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/853"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1173163,
+          33.57735869
+        ]
+      },
+      "properties": {
+        "id": "854",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/854"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1165713,
+          33.5823430200001
+        ]
+      },
+      "properties": {
+        "id": "855",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/855"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1164388,
+          33.5967993
+        ]
+      },
+      "properties": {
+        "id": "856",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/856"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1163971,
+          33.6105850800001
+        ]
+      },
+      "properties": {
+        "id": "857",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/857"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1161614,
+          33.62555911
+        ]
+      },
+      "properties": {
+        "id": "858",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/858"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1153854,
+          33.6395656400001
+        ]
+      },
+      "properties": {
+        "id": "859",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/859"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1140984,
+          33.65494556
+        ]
+      },
+      "properties": {
+        "id": "860",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/860"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1134757,
+          33.6622627
+        ]
+      },
+      "properties": {
+        "id": "861",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/861"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1132175,
+          33.6763596800001
+        ]
+      },
+      "properties": {
+        "id": "862",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/862"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1120449,
+          33.6841641
+        ]
+      },
+      "properties": {
+        "id": "863",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/863"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1155942,
+          33.6997978100001
+        ]
+      },
+      "properties": {
+        "id": "864",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/864"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1180696,
+          33.71297931
+        ]
+      },
+      "properties": {
+        "id": "865",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/865"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1193822,
+          33.72595547
+        ]
+      },
+      "properties": {
+        "id": "866",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/866"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1225126,
+          33.7392073400001
+        ]
+      },
+      "properties": {
+        "id": "867",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/867"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1270625,
+          33.7543724600001
+        ]
+      },
+      "properties": {
+        "id": "868",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/868"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1288095,
+          33.76874192
+        ]
+      },
+      "properties": {
+        "id": "869",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/869"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1313672,
+          33.7832991500001
+        ]
+      },
+      "properties": {
+        "id": "870",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/870"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1346488,
+          33.7980544500001
+        ]
+      },
+      "properties": {
+        "id": "871",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/871"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1406997,
+          33.8202124700001
+        ]
+      },
+      "properties": {
+        "id": "872",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/872"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1450692,
+          33.83087849
+        ]
+      },
+      "properties": {
+        "id": "873",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/873"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1432283,
+          33.8418846800001
+        ]
+      },
+      "properties": {
+        "id": "874",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/874"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.14695,
+          33.8705959500001
+        ]
+      },
+      "properties": {
+        "id": "875",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/875"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.987486,
+          32.12373
+        ]
+      },
+      "properties": {
+        "id": "876",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/876"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.986512,
+          32.1338910000001
+        ]
+      },
+      "properties": {
+        "id": "877",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/877"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.986922,
+          32.1484570000001
+        ]
+      },
+      "properties": {
+        "id": "878",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/878"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.986303,
+          32.1556330000001
+        ]
+      },
+      "properties": {
+        "id": "879",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/879"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.985808,
+          32.1634280000001
+        ]
+      },
+      "properties": {
+        "id": "880",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/880"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.986055,
+          32.1779050000001
+        ]
+      },
+      "properties": {
+        "id": "881",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/881"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.98354,
+          32.188044
+        ]
+      },
+      "properties": {
+        "id": "882",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/882"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0383139,
+          33.4723883500001
+        ]
+      },
+      "properties": {
+        "id": "883",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/883"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0424411,
+          33.48868757
+        ]
+      },
+      "properties": {
+        "id": "884",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/884"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0433727,
+          33.50163115
+        ]
+      },
+      "properties": {
+        "id": "885",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/885"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0446234,
+          33.51229213
+        ]
+      },
+      "properties": {
+        "id": "886",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/886"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0443743,
+          33.5217381900001
+        ]
+      },
+      "properties": {
+        "id": "887",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/887"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0434255,
+          33.53137589
+        ]
+      },
+      "properties": {
+        "id": "888",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/888"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.041539,
+          33.5412345400001
+        ]
+      },
+      "properties": {
+        "id": "889",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/889"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0375042,
+          33.5536663400001
+        ]
+      },
+      "properties": {
+        "id": "890",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/890"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0367257,
+          33.56346288
+        ]
+      },
+      "properties": {
+        "id": "891",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/891"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0244206,
+          33.5716815100001
+        ]
+      },
+      "properties": {
+        "id": "892",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/892"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0121364,
+          33.5769443300001
+        ]
+      },
+      "properties": {
+        "id": "893",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/893"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0090909,
+          33.5907436300001
+        ]
+      },
+      "properties": {
+        "id": "894",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/894"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0092046,
+          33.60489883
+        ]
+      },
+      "properties": {
+        "id": "895",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/895"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0096983,
+          33.61951006
+        ]
+      },
+      "properties": {
+        "id": "896",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/896"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0038569,
+          33.633004
+        ]
+      },
+      "properties": {
+        "id": "897",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/897"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0026488,
+          33.6400808000001
+        ]
+      },
+      "properties": {
+        "id": "898",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/898"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.000508,
+          33.6473087900001
+        ]
+      },
+      "properties": {
+        "id": "899",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/899"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9996033,
+          33.6557884100001
+        ]
+      },
+      "properties": {
+        "id": "900",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/900"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9994097,
+          33.66875473
+        ]
+      },
+      "properties": {
+        "id": "901",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/901"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9617661,
+          33.3879557000001
+        ]
+      },
+      "properties": {
+        "id": "902",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/902"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9325978,
+          33.3860694800001
+        ]
+      },
+      "properties": {
+        "id": "903",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/903"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9231358,
+          33.3860703300001
+        ]
+      },
+      "properties": {
+        "id": "904",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/904"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9174065,
+          33.3860705000001
+        ]
+      },
+      "properties": {
+        "id": "905",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/905"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9104619,
+          33.38599752
+        ]
+      },
+      "properties": {
+        "id": "906",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/906"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9005661,
+          33.38512274
+        ]
+      },
+      "properties": {
+        "id": "907",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/907"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8797325,
+          33.38511829
+        ]
+      },
+      "properties": {
+        "id": "908",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/908"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8632392,
+          33.38525794
+        ]
+      },
+      "properties": {
+        "id": "909",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/909"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8481348,
+          33.38539617
+        ]
+      },
+      "properties": {
+        "id": "910",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/910"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8421441,
+          33.3865578800001
+        ]
+      },
+      "properties": {
+        "id": "911",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/911"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8315547,
+          33.38545873
+        ]
+      },
+      "properties": {
+        "id": "912",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/912"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8148863,
+          33.38675699
+        ]
+      },
+      "properties": {
+        "id": "913",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/913"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.796224,
+          33.38572076
+        ]
+      },
+      "properties": {
+        "id": "914",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/914"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7900592,
+          33.3867341500001
+        ]
+      },
+      "properties": {
+        "id": "915",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/915"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.780076,
+          33.38590028
+        ]
+      },
+      "properties": {
+        "id": "916",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/916"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7627429,
+          33.38678372
+        ]
+      },
+      "properties": {
+        "id": "917",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/917"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7535081,
+          33.3860291300001
+        ]
+      },
+      "properties": {
+        "id": "918",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/918"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7361452,
+          33.3867969300001
+        ]
+      },
+      "properties": {
+        "id": "919",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/919"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.719022,
+          33.38606165
+        ]
+      },
+      "properties": {
+        "id": "920",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/920"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7002542,
+          33.38695876
+        ]
+      },
+      "properties": {
+        "id": "921",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/921"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6844547,
+          33.38699741
+        ]
+      },
+      "properties": {
+        "id": "922",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/922"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6671747,
+          33.3870933200001
+        ]
+      },
+      "properties": {
+        "id": "923",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/923"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6481143,
+          33.3857800000001
+        ]
+      },
+      "properties": {
+        "id": "924",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/924"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.648327,
+          33.387999
+        ]
+      },
+      "properties": {
+        "id": "925",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/925"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.632488,
+          33.3871613200001
+        ]
+      },
+      "properties": {
+        "id": "926",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/926"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6149256,
+          33.3869313700001
+        ]
+      },
+      "properties": {
+        "id": "927",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/927"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.5460229,
+          33.3876693
+        ]
+      },
+      "properties": {
+        "id": "928",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/928"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.5112538,
+          33.3880804
+        ]
+      },
+      "properties": {
+        "id": "929",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/929"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.4948221,
+          33.3830953
+        ]
+      },
+      "properties": {
+        "id": "930",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/930"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.4580682,
+          33.3515189
+        ]
+      },
+      "properties": {
+        "id": "931",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/931"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.4406434,
+          33.3359596
+        ]
+      },
+      "properties": {
+        "id": "932",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/932"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2691901,
+          33.4645896800001
+        ]
+      },
+      "properties": {
+        "id": "933",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/933"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2636383,
+          33.47988272
+        ]
+      },
+      "properties": {
+        "id": "934",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/934"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2645615,
+          33.4943247200001
+        ]
+      },
+      "properties": {
+        "id": "935",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/935"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2695016,
+          33.50804464
+        ]
+      },
+      "properties": {
+        "id": "936",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/936"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2693251,
+          33.5223364600001
+        ]
+      },
+      "properties": {
+        "id": "937",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/937"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2694204,
+          33.5353307400001
+        ]
+      },
+      "properties": {
+        "id": "938",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/938"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2700168,
+          33.5368140100001
+        ]
+      },
+      "properties": {
+        "id": "939",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/939"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2673668,
+          33.5511159100001
+        ]
+      },
+      "properties": {
+        "id": "940",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/940"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2569751,
+          33.5665714900001
+        ]
+      },
+      "properties": {
+        "id": "941",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/941"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2597731,
+          33.5811322000001
+        ]
+      },
+      "properties": {
+        "id": "942",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/942"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2589591,
+          33.5976052600001
+        ]
+      },
+      "properties": {
+        "id": "943",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/943"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2435189,
+          33.6102700100001
+        ]
+      },
+      "properties": {
+        "id": "944",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/944"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2395518,
+          33.62224581
+        ]
+      },
+      "properties": {
+        "id": "945",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/945"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2381236,
+          33.63772771
+        ]
+      },
+      "properties": {
+        "id": "946",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/946"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2329603,
+          33.6524344600001
+        ]
+      },
+      "properties": {
+        "id": "947",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/947"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2293894,
+          33.6654215300001
+        ]
+      },
+      "properties": {
+        "id": "948",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/948"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.220045,
+          33.6673990200001
+        ]
+      },
+      "properties": {
+        "id": "949",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/949"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2033476,
+          33.6684133100001
+        ]
+      },
+      "properties": {
+        "id": "950",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/950"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1864992,
+          33.66864372
+        ]
+      },
+      "properties": {
+        "id": "951",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/951"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1697802,
+          33.6686072300001
+        ]
+      },
+      "properties": {
+        "id": "952",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/952"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1542659,
+          33.6692319700001
+        ]
+      },
+      "properties": {
+        "id": "953",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/953"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1350524,
+          33.66950719
+        ]
+      },
+      "properties": {
+        "id": "954",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/954"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1136935,
+          33.6693704900001
+        ]
+      },
+      "properties": {
+        "id": "955",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/955"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1066974,
+          33.6690976
+        ]
+      },
+      "properties": {
+        "id": "956",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/956"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1002301,
+          33.6690468400001
+        ]
+      },
+      "properties": {
+        "id": "957",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/957"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.086628,
+          33.6686970000001
+        ]
+      },
+      "properties": {
+        "id": "958",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/958"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0830737,
+          33.6690530400001
+        ]
+      },
+      "properties": {
+        "id": "959",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/959"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0651188,
+          33.6691664800001
+        ]
+      },
+      "properties": {
+        "id": "960",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/960"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.052529,
+          33.6693090000001
+        ]
+      },
+      "properties": {
+        "id": "961",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/961"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.050554,
+          33.668816
+        ]
+      },
+      "properties": {
+        "id": "962",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/962"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0451446,
+          33.66876954
+        ]
+      },
+      "properties": {
+        "id": "963",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/963"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0315431,
+          33.6724044800001
+        ]
+      },
+      "properties": {
+        "id": "964",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/964"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.025875,
+          33.6730390000001
+        ]
+      },
+      "properties": {
+        "id": "965",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/965"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0036955,
+          33.6720315800001
+        ]
+      },
+      "properties": {
+        "id": "966",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/966"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9766065,
+          33.6731863100001
+        ]
+      },
+      "properties": {
+        "id": "967",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/967"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.961694,
+          33.6683610000001
+        ]
+      },
+      "properties": {
+        "id": "968",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/968"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.960611,
+          33.668389
+        ]
+      },
+      "properties": {
+        "id": "969",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/969"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.958444,
+          33.6674170000001
+        ]
+      },
+      "properties": {
+        "id": "970",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/970"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9432299,
+          33.6614845300001
+        ]
+      },
+      "properties": {
+        "id": "971",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/971"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.935333,
+          33.66
+        ]
+      },
+      "properties": {
+        "id": "972",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/972"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.926007,
+          33.6585504400001
+        ]
+      },
+      "properties": {
+        "id": "973",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/973"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.917517,
+          33.656322
+        ]
+      },
+      "properties": {
+        "id": "974",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/974"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9086363,
+          33.6545110700001
+        ]
+      },
+      "properties": {
+        "id": "975",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/975"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8973182,
+          33.65136384
+        ]
+      },
+      "properties": {
+        "id": "976",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/976"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8926088,
+          33.6466117000001
+        ]
+      },
+      "properties": {
+        "id": "977",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/977"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8907659,
+          33.62916926
+        ]
+      },
+      "properties": {
+        "id": "978",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/978"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8909267,
+          33.6177504400001
+        ]
+      },
+      "properties": {
+        "id": "979",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/979"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8910972,
+          33.59604597
+        ]
+      },
+      "properties": {
+        "id": "980",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/980"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.891843,
+          33.5854580000001
+        ]
+      },
+      "properties": {
+        "id": "981",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/981"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8908103,
+          33.5818284800001
+        ]
+      },
+      "properties": {
+        "id": "982",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/982"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8886322,
+          33.5752385700001
+        ]
+      },
+      "properties": {
+        "id": "983",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/983"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8913376,
+          33.5684950900001
+        ]
+      },
+      "properties": {
+        "id": "984",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/984"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8885343,
+          33.56385233
+        ]
+      },
+      "properties": {
+        "id": "985",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/985"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8806486,
+          33.5600869
+        ]
+      },
+      "properties": {
+        "id": "986",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/986"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8790249,
+          33.5531839400001
+        ]
+      },
+      "properties": {
+        "id": "987",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/987"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8817038,
+          33.53811755
+        ]
+      },
+      "properties": {
+        "id": "988",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/988"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8849046,
+          33.5316300700001
+        ]
+      },
+      "properties": {
+        "id": "989",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/989"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8877342,
+          33.5235667100001
+        ]
+      },
+      "properties": {
+        "id": "990",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/990"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.888218,
+          33.512344
+        ]
+      },
+      "properties": {
+        "id": "991",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/991"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8882157,
+          33.50979153
+        ]
+      },
+      "properties": {
+        "id": "992",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/992"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8877047,
+          33.49437526
+        ]
+      },
+      "properties": {
+        "id": "993",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/993"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8875087,
+          33.48723654
+        ]
+      },
+      "properties": {
+        "id": "994",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/994"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8906575,
+          33.4801305400001
+        ]
+      },
+      "properties": {
+        "id": "995",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/995"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.887721,
+          33.466398
+        ]
+      },
+      "properties": {
+        "id": "996",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/996"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.888877,
+          33.465587
+        ]
+      },
+      "properties": {
+        "id": "997",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/997"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8902322,
+          33.45094054
+        ]
+      },
+      "properties": {
+        "id": "998",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/998"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8906124,
+          33.4333235300001
+        ]
+      },
+      "properties": {
+        "id": "999",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/999"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8909593,
+          33.42084885
+        ]
+      },
+      "properties": {
+        "id": "1000",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1000"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8908459,
+          33.40876568
+        ]
+      },
+      "properties": {
+        "id": "1001",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1001"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.890662,
+          33.3978083000001
+        ]
+      },
+      "properties": {
+        "id": "1002",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1002"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8920716,
+          33.38430693
+        ]
+      },
+      "properties": {
+        "id": "1003",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1003"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8936173,
+          33.37808962
+        ]
+      },
+      "properties": {
+        "id": "1004",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1004"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8942432,
+          33.3649143800001
+        ]
+      },
+      "properties": {
+        "id": "1005",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1005"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8942596,
+          33.3497152
+        ]
+      },
+      "properties": {
+        "id": "1006",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1006"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.893455,
+          33.3479620000001
+        ]
+      },
+      "properties": {
+        "id": "1007",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1007"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8932822,
+          33.33518625
+        ]
+      },
+      "properties": {
+        "id": "1008",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1008"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.894144,
+          33.323947
+        ]
+      },
+      "properties": {
+        "id": "1009",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1009"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8936815,
+          33.3201082900001
+        ]
+      },
+      "properties": {
+        "id": "1010",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8940276,
+          33.30538711
+        ]
+      },
+      "properties": {
+        "id": "1011",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1011"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9778171,
+          33.4183074200001
+        ]
+      },
+      "properties": {
+        "id": "1012",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1012"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9779729,
+          33.4312389
+        ]
+      },
+      "properties": {
+        "id": "1013",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1013"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.978564,
+          33.436358
+        ]
+      },
+      "properties": {
+        "id": "1014",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1014"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9814499,
+          33.44508404
+        ]
+      },
+      "properties": {
+        "id": "1015",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1015"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0212572,
+          33.46236772
+        ]
+      },
+      "properties": {
+        "id": "1016",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1016"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0053552,
+          33.4592821900001
+        ]
+      },
+      "properties": {
+        "id": "1017",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1017"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9894014,
+          33.4589242500001
+        ]
+      },
+      "properties": {
+        "id": "1018",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1018"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9833899,
+          33.4584410300001
+        ]
+      },
+      "properties": {
+        "id": "1019",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1019"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9692029,
+          33.45266967
+        ]
+      },
+      "properties": {
+        "id": "1020",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1020"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9678788,
+          33.4403743400001
+        ]
+      },
+      "properties": {
+        "id": "1021",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1021"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9602117,
+          33.4379986800001
+        ]
+      },
+      "properties": {
+        "id": "1022",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1022"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9409186,
+          33.4352391100001
+        ]
+      },
+      "properties": {
+        "id": "1023",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9250153,
+          33.43633671
+        ]
+      },
+      "properties": {
+        "id": "1024",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1024"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9123719,
+          33.43628175
+        ]
+      },
+      "properties": {
+        "id": "1025",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1025"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9000291,
+          33.4361538800001
+        ]
+      },
+      "properties": {
+        "id": "1026",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1026"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.868838,
+          33.4372970000001
+        ]
+      },
+      "properties": {
+        "id": "1027",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1027"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.857114,
+          33.445774
+        ]
+      },
+      "properties": {
+        "id": "1028",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1028"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.847715,
+          33.4522710000001
+        ]
+      },
+      "properties": {
+        "id": "1029",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1029"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.838814,
+          33.45491
+        ]
+      },
+      "properties": {
+        "id": "1030",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1030"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.830735,
+          33.457976
+        ]
+      },
+      "properties": {
+        "id": "1031",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1031"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.822624,
+          33.465985
+        ]
+      },
+      "properties": {
+        "id": "1032",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1032"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.805184,
+          33.465536
+        ]
+      },
+      "properties": {
+        "id": "1033",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1033"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.786879,
+          33.465063
+        ]
+      },
+      "properties": {
+        "id": "1034",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1034"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7757064,
+          33.4776059600001
+        ]
+      },
+      "properties": {
+        "id": "1035",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1035"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7538907,
+          33.4830161900001
+        ]
+      },
+      "properties": {
+        "id": "1036",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1036"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7468208,
+          33.4800477000001
+        ]
+      },
+      "properties": {
+        "id": "1037",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1037"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7354056,
+          33.4802659000001
+        ]
+      },
+      "properties": {
+        "id": "1038",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1038"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7188995,
+          33.48178433
+        ]
+      },
+      "properties": {
+        "id": "1039",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1039"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7101368,
+          33.47846574
+        ]
+      },
+      "properties": {
+        "id": "1040",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1040"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7010335,
+          33.4750351600001
+        ]
+      },
+      "properties": {
+        "id": "1041",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1041"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6845402,
+          33.4736616700001
+        ]
+      },
+      "properties": {
+        "id": "1042",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1042"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6791242,
+          33.4660450000001
+        ]
+      },
+      "properties": {
+        "id": "1043",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1043"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6700107,
+          33.45118782
+        ]
+      },
+      "properties": {
+        "id": "1044",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1044"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6669658,
+          33.4494331600001
+        ]
+      },
+      "properties": {
+        "id": "1045",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1045"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6519362,
+          33.4371275600001
+        ]
+      },
+      "properties": {
+        "id": "1046",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1046"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6376666,
+          33.4306047600001
+        ]
+      },
+      "properties": {
+        "id": "1047",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1047"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6365372,
+          33.4221209500001
+        ]
+      },
+      "properties": {
+        "id": "1048",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1048"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6364766,
+          33.41497961
+        ]
+      },
+      "properties": {
+        "id": "1049",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1049"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6408855,
+          33.40832063
+        ]
+      },
+      "properties": {
+        "id": "1050",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1050"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6420108,
+          33.39727608
+        ]
+      },
+      "properties": {
+        "id": "1051",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1051"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6494444,
+          33.37952778
+        ]
+      },
+      "properties": {
+        "id": "1052",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1052"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.64361111,
+          33.3650027800001
+        ]
+      },
+      "properties": {
+        "id": "1053",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1053"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.64333333,
+          33.35050556
+        ]
+      },
+      "properties": {
+        "id": "1054",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1054"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6475,
+          33.3340833300001
+        ]
+      },
+      "properties": {
+        "id": "1055",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1055"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.65333333,
+          33.3305638900001
+        ]
+      },
+      "properties": {
+        "id": "1056",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1056"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.66944444,
+          33.32866389
+        ]
+      },
+      "properties": {
+        "id": "1057",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1057"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.6875,
+          33.3279222200001
+        ]
+      },
+      "properties": {
+        "id": "1058",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1058"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.70472222,
+          33.32856667
+        ]
+      },
+      "properties": {
+        "id": "1059",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1059"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7216667,
+          33.3283388900001
+        ]
+      },
+      "properties": {
+        "id": "1060",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1060"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7389681,
+          33.3210721
+        ]
+      },
+      "properties": {
+        "id": "1061",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1061"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7387774,
+          33.30657087
+        ]
+      },
+      "properties": {
+        "id": "1062",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1062"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7417049,
+          33.2966699300001
+        ]
+      },
+      "properties": {
+        "id": "1063",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1063"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7557278,
+          33.2876550300001
+        ]
+      },
+      "properties": {
+        "id": "1064",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1064"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7730437,
+          33.28345159
+        ]
+      },
+      "properties": {
+        "id": "1065",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1065"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7893326,
+          33.2825054300001
+        ]
+      },
+      "properties": {
+        "id": "1066",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1066"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8065567,
+          33.2823082
+        ]
+      },
+      "properties": {
+        "id": "1067",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1067"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8239135,
+          33.2821252000001
+        ]
+      },
+      "properties": {
+        "id": "1068",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1068"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.841951,
+          33.28768946
+        ]
+      },
+      "properties": {
+        "id": "1069",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1069"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.859213,
+          33.2877005600001
+        ]
+      },
+      "properties": {
+        "id": "1070",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1070"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8765282,
+          33.28684507
+        ]
+      },
+      "properties": {
+        "id": "1071",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1071"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8861016,
+          33.2908649600001
+        ]
+      },
+      "properties": {
+        "id": "1072",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1072"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8942616,
+          33.2917303900001
+        ]
+      },
+      "properties": {
+        "id": "1073",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1073"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9025003,
+          33.29229925
+        ]
+      },
+      "properties": {
+        "id": "1074",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1074"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9114661,
+          33.29227681
+        ]
+      },
+      "properties": {
+        "id": "1075",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1075"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9281422,
+          33.2910982600001
+        ]
+      },
+      "properties": {
+        "id": "1076",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1076"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9454067,
+          33.29263561
+        ]
+      },
+      "properties": {
+        "id": "1077",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1077"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9639093,
+          33.2953720200001
+        ]
+      },
+      "properties": {
+        "id": "1078",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1078"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9749232,
+          33.29706729
+        ]
+      },
+      "properties": {
+        "id": "1079",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1079"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9888951,
+          33.2914106100001
+        ]
+      },
+      "properties": {
+        "id": "1080",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1080"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9981134,
+          33.29231062
+        ]
+      },
+      "properties": {
+        "id": "1081",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1081"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.014788,
+          33.2961500000001
+        ]
+      },
+      "properties": {
+        "id": "1082",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1082"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0325403,
+          33.2924435
+        ]
+      },
+      "properties": {
+        "id": "1083",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1083"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0476928,
+          33.2909375900001
+        ]
+      },
+      "properties": {
+        "id": "1084",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1084"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0643072,
+          33.2921245200001
+        ]
+      },
+      "properties": {
+        "id": "1085",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1085"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0810535,
+          33.29107916
+        ]
+      },
+      "properties": {
+        "id": "1086",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1086"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0978035,
+          33.2920133000001
+        ]
+      },
+      "properties": {
+        "id": "1087",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1087"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1174555,
+          33.29092961
+        ]
+      },
+      "properties": {
+        "id": "1088",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1088"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1322322,
+          33.2917725300001
+        ]
+      },
+      "properties": {
+        "id": "1089",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1089"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1440224,
+          33.3027629900001
+        ]
+      },
+      "properties": {
+        "id": "1090",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1090"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1581008,
+          33.31548014
+        ]
+      },
+      "properties": {
+        "id": "1091",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1091"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1688142,
+          33.3264493400001
+        ]
+      },
+      "properties": {
+        "id": "1092",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1092"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1757244,
+          33.3337666100001
+        ]
+      },
+      "properties": {
+        "id": "1093",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1093"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1901505,
+          33.34809848
+        ]
+      },
+      "properties": {
+        "id": "1094",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1094"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1927123,
+          33.35718388
+        ]
+      },
+      "properties": {
+        "id": "1095",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1095"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1913851,
+          33.36389954
+        ]
+      },
+      "properties": {
+        "id": "1096",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1096"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1893758,
+          33.3770796800001
+        ]
+      },
+      "properties": {
+        "id": "1097",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1097"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1925595,
+          33.3917150300001
+        ]
+      },
+      "properties": {
+        "id": "1098",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1098"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1916012,
+          33.40530512
+        ]
+      },
+      "properties": {
+        "id": "1099",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1099"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1890256,
+          33.42478498
+        ]
+      },
+      "properties": {
+        "id": "1100",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1100"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1868849,
+          33.4366744700001
+        ]
+      },
+      "properties": {
+        "id": "1101",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1101"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.18619,
+          33.45088494
+        ]
+      },
+      "properties": {
+        "id": "1102",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1102"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.1849522,
+          33.4618302100001
+        ]
+      },
+      "properties": {
+        "id": "1103",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1103"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4258333,
+          33.46594444
+        ]
+      },
+      "properties": {
+        "id": "1104",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1104"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.42277778,
+          33.4815638900001
+        ]
+      },
+      "properties": {
+        "id": "1105",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1105"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.42027778,
+          33.49263333
+        ]
+      },
+      "properties": {
+        "id": "1106",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1106"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.41777778,
+          33.50744444
+        ]
+      },
+      "properties": {
+        "id": "1107",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1107"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.41944444,
+          33.5220111100001
+        ]
+      },
+      "properties": {
+        "id": "1108",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1108"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.41777778,
+          33.53663056
+        ]
+      },
+      "properties": {
+        "id": "1109",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1109"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.41861111,
+          33.5512194400001
+        ]
+      },
+      "properties": {
+        "id": "1110",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1110"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4185963,
+          33.5600486000001
+        ]
+      },
+      "properties": {
+        "id": "1111",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1111"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4174507,
+          33.5655208000001
+        ]
+      },
+      "properties": {
+        "id": "1112",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1112"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4176237,
+          33.5809815000001
+        ]
+      },
+      "properties": {
+        "id": "1113",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1113"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4185484,
+          33.5948408
+        ]
+      },
+      "properties": {
+        "id": "1114",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1114"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4184099,
+          33.6094459
+        ]
+      },
+      "properties": {
+        "id": "1115",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1115"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4185953,
+          33.6243959
+        ]
+      },
+      "properties": {
+        "id": "1116",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1116"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4183904,
+          33.6383515000001
+        ]
+      },
+      "properties": {
+        "id": "1117",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1117"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.417746,
+          33.6567693000001
+        ]
+      },
+      "properties": {
+        "id": "1118",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1118"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.411468,
+          33.6719801
+        ]
+      },
+      "properties": {
+        "id": "1119",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1119"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.4037452,
+          33.6798398
+        ]
+      },
+      "properties": {
+        "id": "1120",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1120"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.3836259,
+          33.69406028
+        ]
+      },
+      "properties": {
+        "id": "1121",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1121"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.3346707,
+          33.6986669500001
+        ]
+      },
+      "properties": {
+        "id": "1122",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1122"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.3111066,
+          33.7143211000001
+        ]
+      },
+      "properties": {
+        "id": "1123",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1123"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.309093,
+          33.7300010000001
+        ]
+      },
+      "properties": {
+        "id": "1124",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1124"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.298961,
+          33.7439670000001
+        ]
+      },
+      "properties": {
+        "id": "1125",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1125"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2495828,
+          33.76953487
+        ]
+      },
+      "properties": {
+        "id": "1126",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1126"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.2292844,
+          33.77926947
+        ]
+      },
+      "properties": {
+        "id": "1127",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1127"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.168806,
+          33.768855
+        ]
+      },
+      "properties": {
+        "id": "1128",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1128"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.151078,
+          33.76986298
+        ]
+      },
+      "properties": {
+        "id": "1129",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1129"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0172672,
+          33.1235416700001
+        ]
+      },
+      "properties": {
+        "id": "1130",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1130"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.0014559,
+          33.1801408700001
+        ]
+      },
+      "properties": {
+        "id": "1131",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1131"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9891368,
+          33.21937316
+        ]
+      },
+      "properties": {
+        "id": "1132",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1132"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.603,
+          32.7660000000001
+        ]
+      },
+      "properties": {
+        "id": "1133",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1133"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.698,
+          33.621
+        ]
+      },
+      "properties": {
+        "id": "1134",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1134"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.273531,
+          33.654799
+        ]
+      },
+      "properties": {
+        "id": "1135",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1135"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.25082,
+          34.4207020000001
+        ]
+      },
+      "properties": {
+        "id": "1136",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1136"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.952201,
+          33.385
+        ]
+      },
+      "properties": {
+        "id": "1137",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1137"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.27,
+          34.2527389200001
+        ]
+      },
+      "properties": {
+        "id": "1138",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1138"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.698,
+          33.620298
+        ]
+      },
+      "properties": {
+        "id": "1139",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1139"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.275,
+          31.5695910000001
+        ]
+      },
+      "properties": {
+        "id": "1140",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1140"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.315,
+          31.5738910000001
+        ]
+      },
+      "properties": {
+        "id": "1141",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1141"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.257,
+          31.5544990000001
+        ]
+      },
+      "properties": {
+        "id": "1142",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1142"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.257,
+          31.5329540000001
+        ]
+      },
+      "properties": {
+        "id": "1143",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1143"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.257,
+          31.5106670000001
+        ]
+      },
+      "properties": {
+        "id": "1144",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1144"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.257,
+          31.467475
+        ]
+      },
+      "properties": {
+        "id": "1145",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1145"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.229,
+          36.1191630000001
+        ]
+      },
+      "properties": {
+        "id": "1146",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1146"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.651,
+          33.3293160000001
+        ]
+      },
+      "properties": {
+        "id": "1147",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1147"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.635,
+          33.31726
+        ]
+      },
+      "properties": {
+        "id": "1148",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1148"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.623,
+          33.3049600000001
+        ]
+      },
+      "properties": {
+        "id": "1149",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1149"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.601,
+          33.2993690000001
+        ]
+      },
+      "properties": {
+        "id": "1150",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1150"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.583,
+          33.299205
+        ]
+      },
+      "properties": {
+        "id": "1151",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1151"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.564,
+          33.2993750000001
+        ]
+      },
+      "properties": {
+        "id": "1152",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1152"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.455,
+          34.738097
+        ]
+      },
+      "properties": {
+        "id": "1153",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1153"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.454,
+          34.7529460000001
+        ]
+      },
+      "properties": {
+        "id": "1154",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1154"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.453,
+          34.774651899
+        ]
+      },
+      "properties": {
+        "id": "1155",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1155"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.205,
+          32.4540694400001
+        ]
+      },
+      "properties": {
+        "id": "1156",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1156"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.965,
+          31.347748
+        ]
+      },
+      "properties": {
+        "id": "1157",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1157"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.96,
+          31.3547380000001
+        ]
+      },
+      "properties": {
+        "id": "1158",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1158"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.955,
+          31.3615530000001
+        ]
+      },
+      "properties": {
+        "id": "1159",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1159"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.948,
+          31.3636490000001
+        ]
+      },
+      "properties": {
+        "id": "1160",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1160"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.949,
+          31.3640950000001
+        ]
+      },
+      "properties": {
+        "id": "1161",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1161"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.945,
+          31.364853
+        ]
+      },
+      "properties": {
+        "id": "1162",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1162"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.943,
+          31.365687
+        ]
+      },
+      "properties": {
+        "id": "1163",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1163"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.94,
+          31.3663950000001
+        ]
+      },
+      "properties": {
+        "id": "1164",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1164"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.934,
+          31.3669180000001
+        ]
+      },
+      "properties": {
+        "id": "1165",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1165"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.931,
+          31.367058
+        ]
+      },
+      "properties": {
+        "id": "1166",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1166"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.332,
+          34.219811
+        ]
+      },
+      "properties": {
+        "id": "1167",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1167"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.295,
+          34.2465290000001
+        ]
+      },
+      "properties": {
+        "id": "1168",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1168"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.147,
+          32.2503550000001
+        ]
+      },
+      "properties": {
+        "id": "1169",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1169"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.995,
+          33.4104060000001
+        ]
+      },
+      "properties": {
+        "id": "1170",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1170"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.519,
+          33.6014700000001
+        ]
+      },
+      "properties": {
+        "id": "1171",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1171"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.626,
+          33.4274500000001
+        ]
+      },
+      "properties": {
+        "id": "1172",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1172"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.611,
+          33.4273200000001
+        ]
+      },
+      "properties": {
+        "id": "1173",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1173"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.59,
+          33.434
+        ]
+      },
+      "properties": {
+        "id": "1174",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1174"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.575,
+          33.4389600000001
+        ]
+      },
+      "properties": {
+        "id": "1175",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1175"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.557,
+          33.44433
+        ]
+      },
+      "properties": {
+        "id": "1176",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1176"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.536,
+          33.4517500000001
+        ]
+      },
+      "properties": {
+        "id": "1177",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1177"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.533,
+          33.45185
+        ]
+      },
+      "properties": {
+        "id": "1178",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1178"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.505,
+          33.4620400000001
+        ]
+      },
+      "properties": {
+        "id": "1179",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1179"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.598,
+          34.866002
+        ]
+      },
+      "properties": {
+        "id": "1180",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1180"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.598,
+          34.909813
+        ]
+      },
+      "properties": {
+        "id": "1181",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1181"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.483,
+          35.7151900000001
+        ]
+      },
+      "properties": {
+        "id": "1182",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1182"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.068717,
+          35.191
+        ]
+      },
+      "properties": {
+        "id": "1183",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1183"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.2658,
+          34.453
+        ]
+      },
+      "properties": {
+        "id": "1184",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1184"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.597833,
+          35.018
+        ]
+      },
+      "properties": {
+        "id": "1185",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1185"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.598189,
+          34.982
+        ]
+      },
+      "properties": {
+        "id": "1186",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1186"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.038,
+          33.444843
+        ]
+      },
+      "properties": {
+        "id": "1187",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1187"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.975,
+          34.294608
+        ]
+      },
+      "properties": {
+        "id": "1188",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1188"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.247,
+          36.7075840000001
+        ]
+      },
+      "properties": {
+        "id": "1189",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1189"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.0356559,
+          34.2529930000001
+        ]
+      },
+      "properties": {
+        "id": "1190",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1190"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.412,
+          33.686612
+        ]
+      },
+      "properties": {
+        "id": "1191",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1191"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.402,
+          33.678995
+        ]
+      },
+      "properties": {
+        "id": "1192",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1192"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.406,
+          33.6817100000001
+        ]
+      },
+      "properties": {
+        "id": "1193",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1193"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.39,
+          33.6695260000001
+        ]
+      },
+      "properties": {
+        "id": "1194",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1194"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.97802,
+          33.4119600000001
+        ]
+      },
+      "properties": {
+        "id": "1195",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1195"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.9798295,
+          33.2499929000001
+        ]
+      },
+      "properties": {
+        "id": "1196",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1196"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.983346,
+          33.4115320000001
+        ]
+      },
+      "properties": {
+        "id": "1197",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1197"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.037647,
+          33.43559
+        ]
+      },
+      "properties": {
+        "id": "1198",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1198"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.168485,
+          33.524161
+        ]
+      },
+      "properties": {
+        "id": "1199",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1199"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.774066,
+          32.061991
+        ]
+      },
+      "properties": {
+        "id": "1200",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1200"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.955433,
+          31.3615530000001
+        ]
+      },
+      "properties": {
+        "id": "1201",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1201"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.9482938,
+          31.3636490000001
+        ]
+      },
+      "properties": {
+        "id": "1202",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.215704,
+          36.714998
+        ]
+      },
+      "properties": {
+        "id": "1203",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1203"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.29749,
+          34.4545010000001
+        ]
+      },
+      "properties": {
+        "id": "1204",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1204"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.35538,
+          34.5462400000001
+        ]
+      },
+      "properties": {
+        "id": "1205",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1205"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.349699,
+          34.50284
+        ]
+      },
+      "properties": {
+        "id": "1206",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1206"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.349836,
+          34.4829350000001
+        ]
+      },
+      "properties": {
+        "id": "1207",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1207"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.339399,
+          34.468214
+        ]
+      },
+      "properties": {
+        "id": "1208",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1208"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.363726,
+          34.570661
+        ]
+      },
+      "properties": {
+        "id": "1209",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1209"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.843366,
+          32.2659160000001
+        ]
+      },
+      "properties": {
+        "id": "1210",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1210"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.529532,
+          33.778334
+        ]
+      },
+      "properties": {
+        "id": "1236",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1236"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.492670501,
+          34.579783465
+        ]
+      },
+      "properties": {
+        "id": "1237",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1237"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.370688619,
+          35.190623934
+        ]
+      },
+      "properties": {
+        "id": "1238",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1238"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.714447078,
+          35.258592186
+        ]
+      },
+      "properties": {
+        "id": "1239",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1239"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.337903459,
+          35.2198441030001
+        ]
+      },
+      "properties": {
+        "id": "1240",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1240"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.256184554,
+          35.222547632
+        ]
+      },
+      "properties": {
+        "id": "1241",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1241"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.7390106,
+          35.1952806960001
+        ]
+      },
+      "properties": {
+        "id": "1242",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1242"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.298989029,
+          34.5522699690001
+        ]
+      },
+      "properties": {
+        "id": "1243",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1243"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.65552355,
+          35.012324273
+        ]
+      },
+      "properties": {
+        "id": "1244",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1244"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.099027961,
+          35.117726577
+        ]
+      },
+      "properties": {
+        "id": "1245",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1245"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.433329581,
+          34.969216121
+        ]
+      },
+      "properties": {
+        "id": "1246",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1246"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.055229877,
+          35.3541135290001
+        ]
+      },
+      "properties": {
+        "id": "1247",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1247"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.205553469,
+          35.679234378
+        ]
+      },
+      "properties": {
+        "id": "1248",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1248"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.775671066,
+          35.0636931600001
+        ]
+      },
+      "properties": {
+        "id": "1249",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1249"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.113856153,
+          34.7191805630001
+        ]
+      },
+      "properties": {
+        "id": "1250",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1250"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.476140428,
+          34.464866885
+        ]
+      },
+      "properties": {
+        "id": "1251",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1251"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.48446655,
+          32.317439543
+        ]
+      },
+      "properties": {
+        "id": "1252",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1252"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.228124696,
+          32.263367273
+        ]
+      },
+      "properties": {
+        "id": "1253",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1253"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.024,
+          33.4246000000001
+        ]
+      },
+      "properties": {
+        "id": "1254",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1254"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.015,
+          33.41382
+        ]
+      },
+      "properties": {
+        "id": "1255",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1255"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.97636,
+          33.4110000000001
+        ]
+      },
+      "properties": {
+        "id": "1256",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1256"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.974,
+          33.40842
+        ]
+      },
+      "properties": {
+        "id": "1257",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1257"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.968,
+          33.4051200000001
+        ]
+      },
+      "properties": {
+        "id": "1258",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1258"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.967,
+          33.4003200000001
+        ]
+      },
+      "properties": {
+        "id": "1259",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1259"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.968,
+          33.39205
+        ]
+      },
+      "properties": {
+        "id": "1260",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1260"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.967,
+          33.39012
+        ]
+      },
+      "properties": {
+        "id": "1261",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.968,
+          33.38422
+        ]
+      },
+      "properties": {
+        "id": "1262",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1262"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.967,
+          33.37852
+        ]
+      },
+      "properties": {
+        "id": "1263",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1263"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.968,
+          33.3642100000001
+        ]
+      },
+      "properties": {
+        "id": "1264",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1264"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.973,
+          33.3488100000001
+        ]
+      },
+      "properties": {
+        "id": "1265",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1265"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.968,
+          33.3700700000001
+        ]
+      },
+      "properties": {
+        "id": "1266",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1266"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.972,
+          33.33464
+        ]
+      },
+      "properties": {
+        "id": "1267",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1267"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.973,
+          33.3148100000001
+        ]
+      },
+      "properties": {
+        "id": "1268",
+        "title": "",
+        "jpg_url": "https://www.az511.gov/map/Cctv/1268"
+      }
+    }
+  ]
+}

@@ -1,0 +1,7011 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 1,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 1,
+        "status": null,
+        "district": null,
+        "county": null,
+        "highway": null,
+        "milemarker": null,
+        "description": "I-65 just South of I-265 Exit 6 Indiana",
+        "direction": null,
+        "snapshot": "http://pws.trafficwise.org/pullover/172_65_56_11.jpg",
+        "latitude": 38.345217,
+        "longitude": -85.753507,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75351189257354,
+          38.345224309938956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 2,
+        "status": null,
+        "district": 5,
+        "county": "Jefferson",
+        "highway": null,
+        "milemarker": null,
+        "description": "I-65 at Spaghetti Junction",
+        "direction": null,
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1365.jpg",
+        "latitude": 38.25932994,
+        "longitude": -85.741192,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74119688266195,
+          38.259337234203365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 3,
+        "status": null,
+        "district": null,
+        "county": null,
+        "highway": null,
+        "milemarker": null,
+        "description": "I-65 at SR 60 Exit 7 Indiana",
+        "direction": null,
+        "snapshot": "http://www.trimarc.org/images/snapshots/IND_CCTV005.jpg",
+        "latitude": 38.370025,
+        "longitude": -85.754724,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75472889449166,
+          38.370032314646465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 4,
+        "status": null,
+        "district": 5,
+        "county": "Jefferson",
+        "highway": null,
+        "milemarker": null,
+        "description": "I-64 adj. Adams St.",
+        "direction": null,
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0058.jpg",
+        "latitude": 38.26104241,
+        "longitude": -85.73032357,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7303284486581,
+          38.261049704878985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 5,
+        "status": null,
+        "district": null,
+        "county": null,
+        "highway": null,
+        "milemarker": null,
+        "description": "I-65 over Market St. Exit 0 Indiana",
+        "direction": null,
+        "snapshot": "http://pws.trafficwise.org/pullover/172_65_1_10.jpg",
+        "latitude": 38.2694,
+        "longitude": -85.7456,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74560488433355,
+          38.26940729576575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 6,
+        "status": null,
+        "district": null,
+        "county": null,
+        "highway": null,
+        "milemarker": null,
+        "description": "I-65 at Eastern Ave. Ind. Exit 2 Indiana",
+        "direction": null,
+        "snapshot": "http://www.trimarc.org/images/snapshots/IND_CCTV008.jpg",
+        "latitude": 38.29485,
+        "longitude": -85.755883,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.755887888768,
+          38.294857299760366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 7,
+        "status": null,
+        "district": null,
+        "county": null,
+        "highway": null,
+        "milemarker": null,
+        "description": "I-64 at Ind. 150",
+        "direction": null,
+        "snapshot": "http://pws.trafficwise.org/pullover/172_64_204_10.jpg",
+        "latitude": 38.3027,
+        "longitude": -85.8771,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.87710492480431,
+          38.30270729565444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 8,
+        "status": null,
+        "district": null,
+        "county": null,
+        "highway": null,
+        "milemarker": null,
+        "description": "Sherman Minton Br (Indiana side)",
+        "direction": null,
+        "snapshot": "http://pws.trafficwise.org/pullover/172_64_237_11.jpg",
+        "latitude": 38.2821,
+        "longitude": -85.82605,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.82605490902301,
+          38.28210729411612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 9,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 9,
+        "status": null,
+        "district": null,
+        "county": null,
+        "highway": null,
+        "milemarker": null,
+        "description": "I-64 at New Albany, Ind.",
+        "direction": null,
+        "snapshot": "http://pws.trafficwise.org/pullover/172_64_234_10.jpg",
+        "latitude": 38.2857,
+        "longitude": -85.8291,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.82910491040363,
+          38.28570729513503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 10,
+        "status": null,
+        "district": null,
+        "county": null,
+        "highway": null,
+        "milemarker": null,
+        "description": "I-64 at I-265 in Ind.",
+        "direction": null,
+        "snapshot": "http://www.trimarc.org/images/snapshots/CCTV027.jpg",
+        "latitude": 38.301483,
+        "longitude": -85.849133,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.84913791677248,
+          38.30149029719634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 11,
+        "status": null,
+        "district": null,
+        "county": null,
+        "highway": null,
+        "milemarker": null,
+        "description": "I-65 at Sellersburg, Ind.(Exit 9 - SR 311)",
+        "direction": null,
+        "snapshot": "http://pws.trafficwise.org/pullover/172_65_90_10.jpg",
+        "latitude": 38.3935,
+        "longitude": -85.7619,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7619048987988,
+          38.39350731825845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 12,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 12,
+        "status": null,
+        "district": 5,
+        "county": "Jefferson",
+        "highway": null,
+        "milemarker": null,
+        "description": "Downtown Louisville at 9th & Market",
+        "direction": null,
+        "snapshot": "http://www.trimarc.org/images/snapshots/CCTV064.jpg",
+        "latitude": 38.25602,
+        "longitude": -85.76504,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.76504488936656,
+          38.256027291838315
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 13,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 13,
+        "status": null,
+        "district": 5,
+        "county": "Jefferson",
+        "highway": null,
+        "milemarker": null,
+        "description": "Downtown Louisville at Brook & Jefferson",
+        "direction": null,
+        "snapshot": "http://www.trimarc.org/images/snapshots/CCTV067.jpg",
+        "latitude": 38.25326,
+        "longitude": -85.75056,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75056488401175,
+          38.253267292412005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 14,
+      "properties": {
+        "state": null,
+        "id": null,
+        "name": null,
+        "source": "KYTC",
+        "OBJECTID": 14,
+        "status": null,
+        "district": 5,
+        "county": "Jefferson",
+        "highway": null,
+        "milemarker": null,
+        "description": "I-65 near M. Ali Exit",
+        "direction": null,
+        "snapshot": "http://www.trimarc.org/images/snapshots/CCTV070.jpg",
+        "latitude": 38.2493,
+        "longitude": -85.74786,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74786488371784,
+          38.249307291748615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 15,
+      "properties": {
+        "state": "Kentucky",
+        "id": 41,
+        "name": "CCTV05029",
+        "source": "KYTC",
+        "OBJECTID": 15,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 12.1,
+        "description": "I-64 at I-264",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0121.jpg",
+        "latitude": 38.238614,
+        "longitude": -85.626111,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.62611584749541,
+          38.2386212956231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 16,
+      "properties": {
+        "state": "Kentucky",
+        "id": 75,
+        "name": "CCTV05063",
+        "source": "KYTC",
+        "OBJECTID": 16,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 4,
+        "description": "I-64 at Frazier Museum",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0041.jpg",
+        "latitude": 38.258167,
+        "longitude": -85.764833,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7648378892444,
+          38.258174292421934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 17,
+      "properties": {
+        "state": "Kentucky",
+        "id": 42,
+        "name": "CCTV05030",
+        "source": "KYTC",
+        "OBJECTID": 17,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 13.8,
+        "description": "I-64 at Oxmoor Farm Rd.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0138.jpg",
+        "latitude": 38.229639,
+        "longitude": -85.597533,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.59753783762959,
+          38.22964629512071
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 18,
+      "properties": {
+        "state": "Kentucky",
+        "id": 45,
+        "name": "CCTV05033",
+        "source": "KYTC",
+        "OBJECTID": 18,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 126.7,
+        "description": "I-65 at Outer Loop",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1267.jpg",
+        "latitude": 38.136886,
+        "longitude": -85.705892,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.70589686281293,
+          38.13689327237158
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 19,
+      "properties": {
+        "state": "Kentucky",
+        "id": 47,
+        "name": "CCTV05035",
+        "source": "KYTC",
+        "OBJECTID": 19,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 7.5,
+        "description": "I-264 at Dixie Hwy.",
+        "direction": "East-West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0075.jpg",
+        "latitude": 38.185242,
+        "longitude": -85.812508,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.81251289726546,
+          38.18524927622855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 20,
+      "properties": {
+        "state": "Kentucky",
+        "id": 50,
+        "name": "CCTV05038",
+        "source": "KYTC",
+        "OBJECTID": 20,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 5.1,
+        "description": "I-264 at I-71",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0051.jpg",
+        "latitude": 38.288479,
+        "longitude": -85.646294,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.64629885713481,
+          38.28848630416182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 21,
+      "properties": {
+        "state": "Kentucky",
+        "id": 51,
+        "name": "CCTV05039",
+        "source": "KYTC",
+        "OBJECTID": 21,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-71",
+        "milemarker": 4.8,
+        "description": "I-71 at I-264",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0048.jpg",
+        "latitude": 38.291639,
+        "longitude": -85.650625,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.6506298583075,
+          38.2916463040231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 22,
+      "properties": {
+        "state": "Kentucky",
+        "id": 52,
+        "name": "CCTV05040",
+        "source": "KYTC",
+        "OBJECTID": 22,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-71",
+        "milemarker": 5.5,
+        "description": "I-71 N. of I-264",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0055.jpg",
+        "latitude": 38.292244,
+        "longitude": -85.639967,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.63997185537559,
+          38.29225130465665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 23,
+      "properties": {
+        "state": "Kentucky",
+        "id": 54,
+        "name": "CCTV05042",
+        "source": "KYTC",
+        "OBJECTID": 23,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 10.2,
+        "description": "I-64 at Cannons Ln.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0104.jpg",
+        "latitude": 38.236033,
+        "longitude": -85.658056,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.6580608566075,
+          38.236040293096146
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 24,
+      "properties": {
+        "state": "Kentucky",
+        "id": 55,
+        "name": "CCTV05043",
+        "source": "KYTC",
+        "OBJECTID": 24,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 11.2,
+        "description": "I-64 at Breckenridge Ln.",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0114.jpg",
+        "latitude": 38.23575,
+        "longitude": -85.641708,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.64171285113235,
+          38.23575729367182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 25,
+      "properties": {
+        "state": "Kentucky",
+        "id": 58,
+        "name": "CCTV05046",
+        "source": "KYTC",
+        "OBJECTID": 25,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-265",
+        "milemarker": 25.5,
+        "description": "I-265 at I-64",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_265_0256.jpg",
+        "latitude": 38.224239,
+        "longitude": -85.505781,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.5057858109651,
+          38.22424629791145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 26,
+      "properties": {
+        "state": "Kentucky",
+        "id": 64,
+        "name": "CCTV05052",
+        "source": "KYTC",
+        "OBJECTID": 26,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-71",
+        "milemarker": 0.4,
+        "description": "I-71 at Frankfort Ave.",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0001.jpg",
+        "latitude": 38.262228,
+        "longitude": -85.723783,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7237878778052,
+          38.26223529554347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 27,
+      "properties": {
+        "state": "Kentucky",
+        "id": 65,
+        "name": "CCTV05053",
+        "source": "KYTC",
+        "OBJECTID": 27,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 6.4,
+        "description": "I-264 W. of Dixie Hwy., E. of Crums Ln.",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0065.jpg",
+        "latitude": 38.188042,
+        "longitude": -85.829481,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.82948590293006,
+          38.18804927615132
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 28,
+      "properties": {
+        "state": "Kentucky",
+        "id": 66,
+        "name": "CCTV05054",
+        "source": "KYTC",
+        "OBJECTID": 28,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 5.9,
+        "description": "I-264 at Crums Ln.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0060.jpg",
+        "latitude": 38.195394,
+        "longitude": -85.828858,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.82886290259005,
+          38.19540127716144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 29,
+      "properties": {
+        "state": "Kentucky",
+        "id": 69,
+        "name": "CCTV05057",
+        "source": "KYTC",
+        "OBJECTID": 29,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 2.6,
+        "description": "I-264 at Virginia Ave./Dumensil St.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0027.jpg",
+        "latitude": 38.240939,
+        "longitude": -85.8151,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.8151049022065,
+          38.240946286847546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 30,
+      "properties": {
+        "state": "Kentucky",
+        "id": 71,
+        "name": "CCTV05059",
+        "source": "KYTC",
+        "OBJECTID": 30,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 0.6,
+        "description": "I-264 at Bank St.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0007.jpg",
+        "latitude": 38.267431,
+        "longitude": -85.807478,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.80748290225365,
+          38.2674382920803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 31,
+      "properties": {
+        "state": "Kentucky",
+        "id": 72,
+        "name": "CCTV05060",
+        "source": "KYTC",
+        "OBJECTID": 31,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 1.1,
+        "description": "I-64 at I-264",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0012.jpg",
+        "latitude": 38.276903,
+        "longitude": -85.806503,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.80650790298276,
+          38.27691029442387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 32,
+      "properties": {
+        "state": "Kentucky",
+        "id": 76,
+        "name": "CCTV05064",
+        "source": "KYTC",
+        "OBJECTID": 32,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": " ",
+        "milemarker": 0,
+        "description": "Intersection of 9th St & Market St",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_9th_&_Market.jpg",
+        "latitude": 38.256016,
+        "longitude": -85.765167,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.76517188952045,
+          38.256023292497595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 33,
+      "properties": {
+        "state": "Kentucky",
+        "id": 68,
+        "name": "CCTV05056",
+        "source": "KYTC",
+        "OBJECTID": 33,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 4,
+        "description": "I-264 at Bells Ln.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0041.jpg",
+        "latitude": 38.220994,
+        "longitude": -85.822056,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.82206090281429,
+          38.221001282669214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 34,
+      "properties": {
+        "state": "Kentucky",
+        "id": 44,
+        "name": "CCTV05032",
+        "source": "KYTC",
+        "OBJECTID": 34,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 125.2,
+        "description": "I-65 at I-265",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1252.jpg",
+        "latitude": 38.114503,
+        "longitude": -85.700872,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.70087685936107,
+          38.114510268427885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 35,
+      "properties": {
+        "state": "Kentucky",
+        "id": 59,
+        "name": "CCTV05047",
+        "source": "KYTC",
+        "OBJECTID": 35,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 19.4,
+        "description": "I-64 at English Station Rd.",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0195.jpg",
+        "latitude": 38.222058,
+        "longitude": -85.493911,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.49391580673307,
+          38.22206529808301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 36,
+      "properties": {
+        "state": "Kentucky",
+        "id": 48,
+        "name": "CCTV05036",
+        "source": "KYTC",
+        "OBJECTID": 36,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 9.3,
+        "description": "I-264 at Taylor Blvd.",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0093.jpg",
+        "latitude": 38.189347,
+        "longitude": -85.780981,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7809858889857,
+          38.18935427827594
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 37,
+      "properties": {
+        "state": "Kentucky",
+        "id": 77,
+        "name": "CCTV05065",
+        "source": "KYTC",
+        "OBJECTID": 37,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "",
+        "milemarker": 0,
+        "description": "2nd and Main",
+        "direction": "Southwest",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_2nd_&_Main.jpg",
+        "latitude": 38.25618,
+        "longitude": -85.75339,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75339488596198,
+          38.25618729301921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 38,
+      "properties": {
+        "state": "Kentucky",
+        "id": 56,
+        "name": "CCTV05044",
+        "source": "KYTC",
+        "OBJECTID": 38,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 16.9,
+        "description": "I-64 at Blankenbaker Ln.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0171.jpg",
+        "latitude": 38.224303,
+        "longitude": -85.539453,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.53945782119094,
+          38.224310296853375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 39,
+      "properties": {
+        "state": "Kentucky",
+        "id": 37,
+        "name": "CCTV05024",
+        "source": "KYTC",
+        "OBJECTID": 39,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-71",
+        "milemarker": 3.7,
+        "description": "I-71 at Blankenbaker Ln.",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0037.jpg",
+        "latitude": 38.2918,
+        "longitude": -85.67002,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.6700248642278,
+          38.29180730304861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 40,
+      "properties": {
+        "state": "Kentucky",
+        "id": 61,
+        "name": "CCTV05049",
+        "source": "KYTC",
+        "OBJECTID": 40,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 23.6,
+        "description": "I-64 at Clark Station",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0238.jpg",
+        "latitude": 38.218206,
+        "longitude": -85.416036,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.41604078363817,
+          38.21821330128078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 41,
+      "properties": {
+        "state": "Kentucky",
+        "id": 62,
+        "name": "CCTV05050",
+        "source": "KYTC",
+        "OBJECTID": 41,
+        "status": "Online",
+        "district": 5,
+        "county": "Shelby",
+        "highway": "I-64",
+        "milemarker": 24,
+        "description": "I-64 at Jeff./Shelby Co. Line",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0242.jpg",
+        "latitude": 38.217033,
+        "longitude": -85.40785,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.40785478204153,
+          38.21704030083708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 42,
+      "properties": {
+        "state": "Kentucky",
+        "id": 418,
+        "name": "CCTV01002",
+        "source": "KYTC",
+        "OBJECTID": 42,
+        "status": "Online",
+        "district": 1,
+        "county": "McCracken",
+        "highway": "I-24",
+        "milemarker": 6.4,
+        "description": "I-24 MP 6.4",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_01_24_0064.jpg",
+        "latitude": 37.058328,
+        "longitude": -88.654947,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.6549526301364,
+          37.05833492677558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 43,
+      "properties": {
+        "state": "Kentucky",
+        "id": 417,
+        "name": "CCTV01001",
+        "source": "KYTC",
+        "OBJECTID": 43,
+        "status": "Online",
+        "district": 1,
+        "county": "McCracken",
+        "highway": "I-24",
+        "milemarker": 9.6,
+        "description": "I-24 MP 9.6",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_01_24_0096.jpg",
+        "latitude": 37.026195,
+        "longitude": -88.612239,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.61224461616413,
+          37.026201922661585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 44,
+      "properties": {
+        "state": "Kentucky",
+        "id": 422,
+        "name": "CCTV09002",
+        "source": "KYTC",
+        "OBJECTID": 44,
+        "status": "Online",
+        "district": 9,
+        "county": "Mason",
+        "highway": "",
+        "milemarker": 18,
+        "description": "US 68 MP 18 @ Ohio River Brdg Maysville",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_09_US68_0180.jpg",
+        "latitude": 38.683252,
+        "longitude": -83.786774,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.78677833812522,
+          38.68325946506943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 45,
+      "properties": {
+        "state": "Kentucky",
+        "id": 147,
+        "name": "CCTV05028",
+        "source": "KYTC",
+        "OBJECTID": 45,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 3,
+        "description": "I-64 EB at 22nd Street 3.1",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0030.jpg",
+        "latitude": 38.266553,
+        "longitude": -85.77965,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.77965489373604,
+          38.26656029313745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 46,
+      "properties": {
+        "state": "Kentucky",
+        "id": 150,
+        "name": "CCTV05071",
+        "source": "KYTC",
+        "OBJECTID": 46,
+        "status": "Online",
+        "district": 5,
+        "county": "Oldham",
+        "highway": "I-71",
+        "milemarker": 11.8,
+        "description": "I-71 North of I-265 @ 11.8 MM",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0116.jpg",
+        "latitude": 38.330691,
+        "longitude": -85.540881,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.54088582891964,
+          38.33069831654141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 47,
+      "properties": {
+        "state": "Kentucky",
+        "id": 152,
+        "name": "CCTV05073",
+        "source": "KYTC",
+        "OBJECTID": 47,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": " ",
+        "milemarker": 19.5,
+        "description": "I-264 at Shelbyville Rd",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0199.jpg",
+        "latitude": 38.251788,
+        "longitude": -85.618429,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.61843384580183,
+          38.251795297897175
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 48,
+      "properties": {
+        "state": "Kentucky",
+        "id": 153,
+        "name": "CCTV05074",
+        "source": "KYTC",
+        "OBJECTID": 48,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": " ",
+        "milemarker": 16.5,
+        "description": "I-264 at Taylorsville Rd",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0170.jpg",
+        "latitude": 38.221628,
+        "longitude": -85.650111,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.65011585285377,
+          38.22163529131401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 49,
+      "properties": {
+        "state": "Kentucky",
+        "id": 425,
+        "name": "CCTV12002",
+        "source": "KYTC",
+        "OBJECTID": 49,
+        "status": "Online",
+        "district": 12,
+        "county": "Letcher",
+        "highway": "",
+        "milemarker": 1.1,
+        "description": "US 23 MP 1.1 @ US 119",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_12_US23_0011.jpg",
+        "latitude": 37.15974,
+        "longitude": -82.64903,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.64903389409744,
+          37.15974721346505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 50,
+      "properties": {
+        "state": "Kentucky",
+        "id": 46,
+        "name": "CCTV05034",
+        "source": "KYTC",
+        "OBJECTID": 50,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 129.7,
+        "description": "I-65 at Grade Ln.",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1297.jpg",
+        "latitude": 38.178044,
+        "longitude": -85.719869,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.71987386951338,
+          38.1780512793123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 51,
+      "properties": {
+        "state": "Kentucky",
+        "id": 423,
+        "name": "CCTV10001",
+        "source": "KYTC",
+        "OBJECTID": 51,
+        "status": "Online",
+        "district": 10,
+        "county": "Wolfe",
+        "highway": "",
+        "milemarker": 36.4,
+        "description": "Mountain Pkwy near Slade",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_10_MtnP_0364.jpg",
+        "latitude": 37.78989,
+        "longitude": -83.64847,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.6484742330769,
+          37.789897296841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 52,
+      "properties": {
+        "state": "Kentucky",
+        "id": 387,
+        "name": "CCTV04012",
+        "source": "KYTC",
+        "OBJECTID": 52,
+        "status": "Online",
+        "district": 4,
+        "county": "Larue",
+        "highway": "I-65",
+        "milemarker": 77.5,
+        "description": "I-65 MP 77.5",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_0775.jpg",
+        "latitude": 37.48138,
+        "longitude": -85.88072,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.8807248654616,
+          37.481387137339624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 53,
+      "properties": {
+        "state": "Kentucky",
+        "id": 421,
+        "name": "CCTV09001",
+        "source": "KYTC",
+        "OBJECTID": 53,
+        "status": "Online",
+        "district": 9,
+        "county": "Rowan",
+        "highway": "I-64",
+        "milemarker": 133,
+        "description": "I-64 MP 133 @ KY 801",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_09_64_1330.jpg",
+        "latitude": 38.183649,
+        "longitude": -83.556034,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.55603823335782,
+          38.18365637835952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 54,
+      "properties": {
+        "state": "Kentucky",
+        "id": 420,
+        "name": "CCTV04011",
+        "source": "KYTC",
+        "OBJECTID": 54,
+        "status": "Online",
+        "district": 4,
+        "county": "Nelson",
+        "highway": "",
+        "milemarker": 18.5,
+        "description": "Bluegrass Pkwy MP 18.5",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_BP_0185.jpg",
+        "latitude": 37.77728,
+        "longitude": -85.52121,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.52121478283424,
+          37.777287211204225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 55,
+      "properties": {
+        "state": "Kentucky",
+        "id": 419,
+        "name": "CCTV01003",
+        "source": "KYTC",
+        "OBJECTID": 55,
+        "status": "Online",
+        "district": 1,
+        "county": "McCracken",
+        "highway": "I-24",
+        "milemarker": 6.9,
+        "description": "I-24 MP 6.9",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_01_24_0069.jpg",
+        "latitude": 37.052232,
+        "longitude": -88.650398,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.6504036286688,
+          37.052238925717916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 56,
+      "properties": {
+        "state": "Kentucky",
+        "id": 185,
+        "name": "CCTV05079",
+        "source": "KYTC",
+        "OBJECTID": 56,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-265",
+        "milemarker": 28.7,
+        "description": "I-265 at Old Henry Rd.",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_265_0287.jpg",
+        "latitude": 38.26974,
+        "longitude": -85.500562,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.5005668128929,
+          38.2697473073049
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 57,
+      "properties": {
+        "state": "Kentucky",
+        "id": 459,
+        "name": "CCTV07020",
+        "source": "KYTC",
+        "OBJECTID": 57,
+        "status": "Online",
+        "district": 7,
+        "county": "Woodford",
+        "highway": "I-64",
+        "milemarker": 63.3,
+        "description": "I-64 EB in Woodford Co @ MP 63.3",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_64_0633.jpg",
+        "latitude": 38.161461,
+        "longitude": -84.713765,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.71376957410081,
+          38.16146832271289
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 58,
+      "properties": {
+        "state": "Kentucky",
+        "id": 23,
+        "name": "CCTV05010",
+        "source": "KYTC",
+        "OBJECTID": 58,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 130.7,
+        "description": "I-65 at I-264",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1307.jpg",
+        "latitude": 38.189794,
+        "longitude": -85.72845,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.72845487344733,
+          38.189801281430505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 59,
+      "properties": {
+        "state": "Kentucky",
+        "id": 15,
+        "name": "CCTV05002",
+        "source": "KYTC",
+        "OBJECTID": 59,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 133.7,
+        "description": "I-65 adj. Arthur Street",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1337.jpg",
+        "latitude": 38.224383,
+        "longitude": -85.750858,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7508628824604,
+          38.224390286696654
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 60,
+      "properties": {
+        "state": "Kentucky",
+        "id": 14,
+        "name": "CCTV05001",
+        "source": "KYTC",
+        "OBJECTID": 60,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 132.7,
+        "description": "I-65 next to Crittenden Dr.",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1327.jpg",
+        "latitude": 38.207833,
+        "longitude": -85.751936,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75194088106318,
+          38.207840283421156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 61,
+      "properties": {
+        "state": "Kentucky",
+        "id": 25,
+        "name": "CCTV05012",
+        "source": "KYTC",
+        "OBJECTID": 61,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 14.5,
+        "description": "I-264 at Newburg Rd.",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0145.jpg",
+        "latitude": 38.201636,
+        "longitude": -85.688789,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.68879386315575,
+          38.20164328520872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 62,
+      "properties": {
+        "state": "Kentucky",
+        "id": 428,
+        "name": "CCTV06137",
+        "source": "KYTC",
+        "OBJECTID": 62,
+        "status": "Online",
+        "district": 6,
+        "county": "Campbell",
+        "highway": "I-471",
+        "milemarker": 0.6,
+        "description": "I-471 NB just N of I-275",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_471_0006.jpg",
+        "latitude": 39.051527,
+        "longitude": -84.466639,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.46664356721988,
+          39.05153450434913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 63,
+      "properties": {
+        "state": "Kentucky",
+        "id": 430,
+        "name": "CCTV12003",
+        "source": "KYTC",
+        "OBJECTID": 63,
+        "status": "Online",
+        "district": 12,
+        "county": "Pike",
+        "highway": "",
+        "milemarker": 26.3,
+        "description": "US 23 MP 26.3 @ US 119",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_12_US23_0263.jpg",
+        "latitude": 37.504047,
+        "longitude": -82.531973,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.5319768817237,
+          37.50405428762776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 64,
+      "properties": {
+        "state": "Kentucky",
+        "id": 426,
+        "name": "CCTV06135",
+        "source": "KYTC",
+        "OBJECTID": 64,
+        "status": "Online",
+        "district": 6,
+        "county": "Campbell",
+        "highway": "I-471",
+        "milemarker": 4.5,
+        "description": "I-471 SB just S of Ky Rt 8",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_471_0045.jpg",
+        "latitude": 39.097694,
+        "longitude": -84.488275,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.48827957735209,
+          39.0977015124967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 65,
+      "properties": {
+        "state": "Kentucky",
+        "id": 22,
+        "name": "CCTV05009",
+        "source": "KYTC",
+        "OBJECTID": 65,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 131.7,
+        "description": "I-65 adj. to Fairgrounds",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1317.jpg",
+        "latitude": 38.202653,
+        "longitude": -85.736881,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.73688587635293,
+          38.2026602828311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 66,
+      "properties": {
+        "state": "Kentucky",
+        "id": 20,
+        "name": "CCTV05007",
+        "source": "KYTC",
+        "OBJECTID": 66,
+        "status": "Offline",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-71",
+        "milemarker": 11.2,
+        "description": "I-71 South at MP 11",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0112.jpg",
+        "latitude": 38.32726,
+        "longitude": -85.547304,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.54730883089074,
+          38.32726731572988
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 67,
+      "properties": {
+        "state": "Kentucky",
+        "id": 427,
+        "name": "CCTV06136",
+        "source": "KYTC",
+        "OBJECTID": 67,
+        "status": "Online",
+        "district": 6,
+        "county": "Campbell",
+        "highway": "I-471",
+        "milemarker": 2.3,
+        "description": "I-471 SB at Highland Ave Overpass",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_471_0023.jpg",
+        "latitude": 39.073563,
+        "longitude": -84.465439,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.46544356896031,
+          39.0735705089754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 68,
+      "properties": {
+        "state": "Kentucky",
+        "id": 269,
+        "name": "CCTV04001",
+        "source": "KYTC",
+        "OBJECTID": 68,
+        "status": "Online",
+        "district": 5,
+        "county": "Bullitt",
+        "highway": "I-65",
+        "milemarker": 107.9,
+        "description": "I-65 MP 107.9",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_1079.jpg",
+        "latitude": 37.87192,
+        "longitude": -85.70411,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.70411484300921,
+          37.87192722129258
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 69,
+      "properties": {
+        "state": "Kentucky",
+        "id": 18,
+        "name": "CCTV05005",
+        "source": "KYTC",
+        "OBJECTID": 69,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 135.3,
+        "description": "I-65 near Broadway",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1353.jpg",
+        "latitude": 38.246238,
+        "longitude": -85.752446,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75245088507705,
+          38.246245291276345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 70,
+      "properties": {
+        "state": "Kentucky",
+        "id": 258,
+        "name": "CCTV03006",
+        "source": "KYTC",
+        "OBJECTID": 70,
+        "status": "Online",
+        "district": 3,
+        "county": "Warren",
+        "highway": "I-65",
+        "milemarker": 25.7,
+        "description": "I-65 SB @ MP 25.7",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_65_0257.jpg",
+        "latitude": 36.97742,
+        "longitude": -86.3917,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.39170497855241,
+          36.97742701580791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 71,
+      "properties": {
+        "state": "Kentucky",
+        "id": 82,
+        "name": "CCTV05070",
+        "source": "KYTC",
+        "OBJECTID": 71,
+        "status": "Offline",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 0,
+        "description": "I-65 at UofL Medical Tower",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1359.jpg",
+        "latitude": 38.249331,
+        "longitude": -85.748483,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74848788406064,
+          38.249338291596274
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 72,
+      "properties": {
+        "state": "Kentucky",
+        "id": 441,
+        "name": "CCTV05076",
+        "source": "KYTC",
+        "OBJECTID": 72,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 17.9,
+        "description": "I-264 @ Breckenridge Ln",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0179.jpg",
+        "latitude": 38.228666,
+        "longitude": -85.636525,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.63652984972627,
+          38.22867329312659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 73,
+      "properties": {
+        "state": "Kentucky",
+        "id": 429,
+        "name": "CCTV08001",
+        "source": "KYTC",
+        "OBJECTID": 73,
+        "status": "Online",
+        "district": 8,
+        "county": "Rockcastle",
+        "highway": "I-75",
+        "milemarker": 62.1,
+        "description": "I-75 MP 62.1 @ US 25",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_08_75_0621.jpg",
+        "latitude": 37.37771,
+        "longitude": -84.330893,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.33089740618108,
+          37.3777171852488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 74,
+      "properties": {
+        "state": "Kentucky",
+        "id": 28,
+        "name": "CCTV05015",
+        "source": "KYTC",
+        "OBJECTID": 74,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 133,
+        "description": "I-65 at Eastern Pkwy",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1330.jpg",
+        "latitude": 38.212088,
+        "longitude": -85.753083,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75308788202217,
+          38.21209528405679
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 75,
+      "properties": {
+        "state": "Kentucky",
+        "id": 35,
+        "name": "CCTV05022",
+        "source": "KYTC",
+        "OBJECTID": 75,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-71",
+        "milemarker": 1.8,
+        "description": "I-71 at Zorn Ave.",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0018.jpg",
+        "latitude": 38.274619,
+        "longitude": -85.697725,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.69772987095259,
+          38.27462629895292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 76,
+      "properties": {
+        "state": "Kentucky",
+        "id": 259,
+        "name": "CCTV03007",
+        "source": "KYTC",
+        "OBJECTID": 76,
+        "status": "Online",
+        "district": 3,
+        "county": "Warren",
+        "highway": "",
+        "milemarker": 0.2,
+        "description": "KY 446 WB @ MP 0.2 - at US 31W",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_KY446_0002.jpg",
+        "latitude": 37.00855,
+        "longitude": -86.37676,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.37676497656823,
+          37.00855702239572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 77,
+      "properties": {
+        "state": "Kentucky",
+        "id": 29,
+        "name": "CCTV05016",
+        "source": "KYTC",
+        "OBJECTID": 77,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 0.8,
+        "description": "I-64 near I-264 (West Louisville)",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0008.jpg",
+        "latitude": 38.274958,
+        "longitude": -85.812678,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.81268290428731,
+          38.27496529360241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 78,
+      "properties": {
+        "state": "Kentucky",
+        "id": 31,
+        "name": "CCTV05018",
+        "source": "KYTC",
+        "OBJECTID": 78,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 5,
+        "description": "I-64 near Slugger Field",
+        "direction": "East-West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0050.jpg",
+        "latitude": 38.258674,
+        "longitude": -85.744449,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74445388338025,
+          38.25868129369129
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 79,
+      "properties": {
+        "state": "Kentucky",
+        "id": 32,
+        "name": "CCTV05019",
+        "source": "KYTC",
+        "OBJECTID": 79,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 6.8,
+        "description": "I-64 at Mellwood Ave.",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0068.jpg",
+        "latitude": 38.256158,
+        "longitude": -85.721175,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.72117987587079,
+          38.256165293863596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 80,
+      "properties": {
+        "state": "Kentucky",
+        "id": 34,
+        "name": "CCTV05021",
+        "source": "KYTC",
+        "OBJECTID": 80,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 2.2,
+        "description": "I-64 West of 22nd St.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0022.jpg",
+        "latitude": 38.274263,
+        "longitude": -85.787427,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.78743189658528,
+          38.27427029448799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 81,
+      "properties": {
+        "state": "Kentucky",
+        "id": 219,
+        "name": "CCTV03003",
+        "source": "KYTC",
+        "OBJECTID": 81,
+        "status": "Online",
+        "district": 3,
+        "county": "Warren",
+        "highway": "I-65",
+        "milemarker": 32.7,
+        "description": "I-65 SB @ MP 32.7",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_65_0327.jpg",
+        "latitude": 37.01453,
+        "longitude": -86.2857,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.28570494998789,
+          37.01453702726931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 82,
+      "properties": {
+        "state": "Kentucky",
+        "id": 449,
+        "name": "CCTV07010",
+        "source": "KYTC",
+        "OBJECTID": 82,
+        "status": "Online",
+        "district": 7,
+        "county": "Fayette",
+        "highway": "I-75",
+        "milemarker": 114,
+        "description": "I-75 NB @ Russell Cave",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1140.jpg",
+        "latitude": 38.089307,
+        "longitude": -84.466643,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.46664749541172,
+          38.08931431936348
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 83,
+      "properties": {
+        "state": "Kentucky",
+        "id": 455,
+        "name": "CCTV07016",
+        "source": "KYTC",
+        "OBJECTID": 83,
+        "status": "Online",
+        "district": 7,
+        "county": "Fayette",
+        "highway": "I-75",
+        "milemarker": 103.9,
+        "description": "I-75 SB @ Athens Boonesboro",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1039.jpg",
+        "latitude": 37.962826,
+        "longitude": -84.389634,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.38963846366035,
+          37.96283329809107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 84,
+      "properties": {
+        "state": "Kentucky",
+        "id": 460,
+        "name": "CCTV07021",
+        "source": "KYTC",
+        "OBJECTID": 84,
+        "status": "Online",
+        "district": 7,
+        "county": "Madison",
+        "highway": "I-75",
+        "milemarker": 93.3,
+        "description": "I-75 @ Madison County SB",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_0933.jpg",
+        "latitude": 37.82502,
+        "longitude": -84.324346,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.32435043460167,
+          37.8250272737433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 85,
+      "properties": {
+        "state": "Kentucky",
+        "id": 461,
+        "name": "CCTV07022",
+        "source": "KYTC",
+        "OBJECTID": 85,
+        "status": "Online",
+        "district": 7,
+        "county": "Madison",
+        "highway": "I-75",
+        "milemarker": 92.8,
+        "description": "I-75 @ Madison County NB",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_0928.jpg",
+        "latitude": 37.815085,
+        "longitude": -84.32302,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.32302443379152,
+          37.81509227247131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 86,
+      "properties": {
+        "state": "Kentucky",
+        "id": 467,
+        "name": "CCTV08002",
+        "source": "KYTC",
+        "OBJECTID": 86,
+        "status": "Online",
+        "district": 8,
+        "county": "Rockcastle",
+        "highway": "I-75",
+        "milemarker": 59,
+        "description": "I-75 SB @ MP 59.0",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_08_75_0590.jpg",
+        "latitude": 37.34237,
+        "longitude": -84.30883,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.3088343967712,
+          37.34237718003923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 87,
+      "properties": {
+        "state": "Kentucky",
+        "id": 424,
+        "name": "CCTV12001",
+        "source": "KYTC",
+        "OBJECTID": 87,
+        "status": "Online",
+        "district": 12,
+        "county": "Letcher",
+        "highway": "",
+        "milemarker": 12.3,
+        "description": "US 119 MP 12.3 @ Pine Mountain (Whitesburg)",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_12_US119_0123.jpg",
+        "latitude": 37.07569,
+        "longitude": -82.81018,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.81018393690276,
+          37.07569718965556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 88,
+      "properties": {
+        "state": "Kentucky",
+        "id": 468,
+        "name": "CCTV05301",
+        "source": "KYTC",
+        "OBJECTID": 88,
+        "status": "Online",
+        "district": 5,
+        "county": "Franklin",
+        "highway": "",
+        "milemarker": 5,
+        "description": "US 127 at JCPenney",
+        "direction": "",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_US127_0050.jpg",
+        "latitude": 38.166064,
+        "longitude": -84.89768,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.89768462852444,
+          38.166071314553925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 89,
+      "properties": {
+        "state": "Kentucky",
+        "id": 469,
+        "name": "CCTV05302",
+        "source": "KYTC",
+        "OBJECTID": 89,
+        "status": "Online",
+        "district": 5,
+        "county": "Franklin",
+        "highway": "",
+        "milemarker": 10.7,
+        "description": "US 60 at US 460",
+        "direction": "",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_US60_0107.jpg",
+        "latitude": 38.206019,
+        "longitude": -84.836624,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.83662861278073,
+          38.20602632551027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 90,
+      "properties": {
+        "state": "Kentucky",
+        "id": 470,
+        "name": "CCTV05303",
+        "source": "KYTC",
+        "OBJECTID": 90,
+        "status": "Online",
+        "district": 5,
+        "county": "Franklin",
+        "highway": "",
+        "milemarker": 6.1,
+        "description": "US 127 at US 60",
+        "direction": "",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_US127_0061.jpg",
+        "latitude": 38.18076,
+        "longitude": -84.89439,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.89439462856558,
+          38.18076731774465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 91,
+      "properties": {
+        "state": "Kentucky",
+        "id": 471,
+        "name": "CCTV05304",
+        "source": "KYTC",
+        "OBJECTID": 91,
+        "status": "Online",
+        "district": 5,
+        "county": "Franklin",
+        "highway": "",
+        "milemarker": 13.2,
+        "description": "US 60 at Chenault Rd",
+        "direction": "",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_US60_0132.jpg",
+        "latitude": 38.17666,
+        "longitude": -84.81258,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.81258460434881,
+          38.17666732063188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 92,
+      "properties": {
+        "state": "Kentucky",
+        "id": 80,
+        "name": "CCTV05068",
+        "source": "KYTC",
+        "OBJECTID": 92,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": " ",
+        "milemarker": 0,
+        "description": "Brook and Broadway",
+        "direction": "Northeast",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_Brook_&_Broadway.jpg",
+        "latitude": 38.24583,
+        "longitude": -85.75146,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75146488373304,
+          38.245837291289746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 93,
+      "properties": {
+        "state": "Kentucky",
+        "id": 445,
+        "name": "CCTV07006",
+        "source": "KYTC",
+        "OBJECTID": 93,
+        "status": "Online",
+        "district": 7,
+        "county": "Madison",
+        "highway": "I-75",
+        "milemarker": 97.5,
+        "description": "Clays Ferry Bridge - I-75 SB @ MP 97.5",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_0975.jpg",
+        "latitude": 37.882156,
+        "longitude": -84.337381,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.33738544339931,
+          37.882163285086314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 94,
+      "properties": {
+        "state": "Kentucky",
+        "id": 207,
+        "name": "CCTV04002",
+        "source": "KYTC",
+        "OBJECTID": 94,
+        "status": "Online",
+        "district": 4,
+        "county": "Hardin",
+        "highway": "I-65",
+        "milemarker": 93.3,
+        "description": "I-65 @ Bluegrass Pkwy",
+        "direction": "",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_0933.jpg",
+        "latitude": 37.70229,
+        "longitude": -85.83312,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.83312486746667,
+          37.70229718254998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 95,
+      "properties": {
+        "state": "Kentucky",
+        "id": 49,
+        "name": "CCTV05037",
+        "source": "KYTC",
+        "OBJECTID": 95,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 13.3,
+        "description": "I-264 at Poplar Level Rd.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0133.jpg",
+        "latitude": 38.195539,
+        "longitude": -85.708436,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7084408679886,
+          38.195546282781
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 96,
+      "properties": {
+        "state": "Kentucky",
+        "id": 53,
+        "name": "CCTV05041",
+        "source": "KYTC",
+        "OBJECTID": 96,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 8.7,
+        "description": "I-64 E. of Cochran Hill Tunnel",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0088.jpg",
+        "latitude": 38.242286,
+        "longitude": -85.684672,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.68467686395708,
+          38.24229329367042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 97,
+      "properties": {
+        "state": "Kentucky",
+        "id": 57,
+        "name": "CCTV05045",
+        "source": "KYTC",
+        "OBJECTID": 97,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 18.6,
+        "description": "I-64 at I-265",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0189.jpg",
+        "latitude": 38.223081,
+        "longitude": -85.507728,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.50773281097861,
+          38.22308829827416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 98,
+      "properties": {
+        "state": "Kentucky",
+        "id": 154,
+        "name": "CCTV05075",
+        "source": "KYTC",
+        "OBJECTID": 98,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": " ",
+        "milemarker": 15.6,
+        "description": "I-264 at Bardstown Rd.",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0156.jpg",
+        "latitude": 38.210332,
+        "longitude": -85.671682,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.6716868579648,
+          38.210339287609905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 99,
+      "properties": {
+        "state": "Kentucky",
+        "id": 186,
+        "name": "CCTV05085",
+        "source": "KYTC",
+        "OBJECTID": 99,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "KY 841",
+        "milemarker": 6,
+        "description": "KY 841 at New Cut Rd.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_841_0060.jpg",
+        "latitude": 38.120618,
+        "longitude": -85.779346,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.77935088306974,
+          38.120625265324975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 100,
+      "properties": {
+        "state": "Kentucky",
+        "id": 328,
+        "name": "CCTV05077",
+        "source": "KYTC",
+        "OBJECTID": 100,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-265",
+        "milemarker": 32.4,
+        "description": "I-265 at Westport Rd.",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_265_0325.jpg",
+        "latitude": 38.297018,
+        "longitude": -85.547249,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.54725382889933,
+          38.29702531022192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 101,
+      "properties": {
+        "state": "Kentucky",
+        "id": 329,
+        "name": "CCTV05078",
+        "source": "KYTC",
+        "OBJECTID": 101,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-265",
+        "milemarker": 30.4,
+        "description": "I-265 at LaGrange Rd.",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_265_0305.jpg",
+        "latitude": 38.28645,
+        "longitude": -85.515304,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.51530881859682,
+          38.28645730992087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 102,
+      "properties": {
+        "state": "Kentucky",
+        "id": 330,
+        "name": "CCTV05080",
+        "source": "KYTC",
+        "OBJECTID": 102,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-265",
+        "milemarker": 26.8,
+        "description": "I-265 at Shelbyville Rd.",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_265_0268.jpg",
+        "latitude": 38.241681,
+        "longitude": -85.503818,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.50382281110478,
+          38.241688301988276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 103,
+      "properties": {
+        "state": "Kentucky",
+        "id": 40,
+        "name": "CCTV05027",
+        "source": "KYTC",
+        "OBJECTID": 103,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 13.2,
+        "description": "I-64 W of Oxmoor Farm Overpass",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0131.jpg",
+        "latitude": 38.233218,
+        "longitude": -85.608779,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.60878384203856,
+          38.23322529464768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 104,
+      "properties": {
+        "state": "Kentucky",
+        "id": 63,
+        "name": "CCTV05051",
+        "source": "KYTC",
+        "OBJECTID": 104,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-71",
+        "milemarker": 9.2,
+        "description": "I-71 at I-265",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0089.jpg",
+        "latitude": 38.313175,
+        "longitude": -85.584431,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.58443584077885,
+          38.313182311550094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 105,
+      "properties": {
+        "state": "Kentucky",
+        "id": 67,
+        "name": "CCTV05055",
+        "source": "KYTC",
+        "OBJECTID": 105,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 5.1,
+        "description": "I-264 at Cane Run Rd.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0052.jpg",
+        "latitude": 38.206231,
+        "longitude": -85.827581,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.827585902934,
+          38.20623827979365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 106,
+      "properties": {
+        "state": "Kentucky",
+        "id": 73,
+        "name": "CCTV05061",
+        "source": "KYTC",
+        "OBJECTID": 106,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 20.8,
+        "description": "I-264 at Westport Rd.",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0208.jpg",
+        "latitude": 38.26465,
+        "longitude": -85.6234,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.6234048478895,
+          38.264657300424886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 107,
+      "properties": {
+        "state": "Kentucky",
+        "id": 332,
+        "name": "CCTV05082",
+        "source": "KYTC",
+        "OBJECTID": 107,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-265",
+        "milemarker": 17.5,
+        "description": "I-265 at Bardstown Rd",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_265_0173.jpg",
+        "latitude": 38.141809,
+        "longitude": -85.584026,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.58403082762611,
+          38.141816278929745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 108,
+      "properties": {
+        "state": "Kentucky",
+        "id": 331,
+        "name": "CCTV05081",
+        "source": "KYTC",
+        "OBJECTID": 108,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-265",
+        "milemarker": 23.1,
+        "description": "I-265 at Taylorsville Rd",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_265_0231.jpg",
+        "latitude": 38.189286,
+        "longitude": -85.509157,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.50916180921924,
+          38.189293290846074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 109,
+      "properties": {
+        "state": "Kentucky",
+        "id": 333,
+        "name": "CCTV05083",
+        "source": "KYTC",
+        "OBJECTID": 109,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-265",
+        "milemarker": 13.5,
+        "description": "I-265 at Smyrna Pkwy",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_265_0135.jpg",
+        "latitude": 38.11777,
+        "longitude": -85.64376,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.64376484350481,
+          38.11777727085858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 110,
+      "properties": {
+        "state": "Kentucky",
+        "id": 334,
+        "name": "CCTV05084",
+        "source": "KYTC",
+        "OBJECTID": 110,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-265",
+        "milemarker": 11.7,
+        "description": "I-265 at Preston Hwy",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_265_0117.jpg",
+        "latitude": 38.109725,
+        "longitude": -85.675979,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.67598385210931,
+          38.109732268228775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 111,
+      "properties": {
+        "state": "Kentucky",
+        "id": 228,
+        "name": "CCTV04005",
+        "source": "KYTC",
+        "OBJECTID": 111,
+        "status": "Online",
+        "district": 4,
+        "county": "Hardin",
+        "highway": "I-65",
+        "milemarker": 91.1,
+        "description": "I-65 @ Wester KY Pkwy",
+        "direction": "",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_0911.jpg",
+        "latitude": 37.67383,
+        "longitude": -85.84911,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.84911487048458,
+          37.6738371763187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 112,
+      "properties": {
+        "state": "Kentucky",
+        "id": 60,
+        "name": "CCTV05048",
+        "source": "KYTC",
+        "OBJECTID": 112,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 21.2,
+        "description": "I-64 at Echo Trail",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0214.jpg",
+        "latitude": 38.221514,
+        "longitude": -85.460008,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.46001279754039,
+          38.221521299913356
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 113,
+      "properties": {
+        "state": "Kentucky",
+        "id": 446,
+        "name": "CCTV07007",
+        "source": "KYTC",
+        "OBJECTID": 113,
+        "status": "Online",
+        "district": 7,
+        "county": "Scott",
+        "highway": "I-75",
+        "milemarker": 119.9,
+        "description": "I-75 at Ironworks",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1199.jpg",
+        "latitude": 38.215997,
+        "longitude": -84.534216,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.53422052473447,
+          38.216004341220504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 114,
+      "properties": {
+        "state": "Kentucky",
+        "id": 447,
+        "name": "CCTV07008",
+        "source": "KYTC",
+        "OBJECTID": 114,
+        "status": "Online",
+        "district": 7,
+        "county": "Fayette",
+        "highway": "I-75",
+        "milemarker": 117.7,
+        "description": "I-75 SB at I-64 Northern Split",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1177.jpg",
+        "latitude": 38.115594,
+        "longitude": -84.525968,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.52597251459439,
+          38.115601321530384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 115,
+      "properties": {
+        "state": "Kentucky",
+        "id": 444,
+        "name": "CCTV07001",
+        "source": "KYTC",
+        "OBJECTID": 115,
+        "status": "Online",
+        "district": 7,
+        "county": "Fayette",
+        "highway": "I-75",
+        "milemarker": 97.9,
+        "description": "Clays Ferry Bridge - I-75 NB @ MP 97.9",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_0979.jpg",
+        "latitude": 37.885952,
+        "longitude": -84.341893,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.34189744495616,
+          37.885959285035504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 116,
+      "properties": {
+        "state": "Kentucky",
+        "id": 448,
+        "name": "CCTV07009",
+        "source": "KYTC",
+        "OBJECTID": 116,
+        "status": "Online",
+        "district": 7,
+        "county": "Fayette",
+        "highway": "I-75",
+        "milemarker": 115.2,
+        "description": "I-75 NB @ Newtown Pike",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1152.jpg",
+        "latitude": 38.099763,
+        "longitude": -84.484981,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.48498550238887,
+          38.099770321093466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 117,
+      "properties": {
+        "state": "Kentucky",
+        "id": 70,
+        "name": "CCTV05058",
+        "source": "KYTC",
+        "OBJECTID": 117,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 1.5,
+        "description": "I-264 at River Park Dr.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0016.jpg",
+        "latitude": 38.253936,
+        "longitude": -85.805725,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.80572990096623,
+          38.25394329032829
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 118,
+      "properties": {
+        "state": "Kentucky",
+        "id": 21,
+        "name": "CCTV05008",
+        "source": "KYTC",
+        "OBJECTID": 118,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-71",
+        "milemarker": 7.4,
+        "description": "I-71 N. at Barbour Ln Overpass",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0074.jpg",
+        "latitude": 38.301333,
+        "longitude": -85.608349,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.60835384671114,
+          38.30134030803059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 119,
+      "properties": {
+        "state": "Kentucky",
+        "id": 24,
+        "name": "CCTV05011",
+        "source": "KYTC",
+        "OBJECTID": 119,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-264",
+        "milemarker": 11.6,
+        "description": "I-264 at Freedom Way",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0116.jpg",
+        "latitude": 38.190428,
+        "longitude": -85.738092,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.73809687656058,
+          38.19043528109318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 120,
+      "properties": {
+        "state": "Kentucky",
+        "id": 337,
+        "name": "CCTV05099",
+        "source": "KYTC",
+        "OBJECTID": 120,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "",
+        "milemarker": 0,
+        "description": "KY22 East at I-265",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_ADMS112_KY22-EB.jpg",
+        "latitude": 38.30701,
+        "longitude": -85.575605,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.5756098374074,
+          38.307017310940275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 121,
+      "properties": {
+        "state": "Kentucky",
+        "id": 81,
+        "name": "CCTV05069",
+        "source": "KYTC",
+        "OBJECTID": 121,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": " ",
+        "milemarker": 0,
+        "description": "2nd and Broadway",
+        "direction": "Southeast",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_2nd_&_Broadway.jpg",
+        "latitude": 38.24576,
+        "longitude": -85.75481,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75481488568768,
+          38.24576729067896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 122,
+      "properties": {
+        "state": "Kentucky",
+        "id": 151,
+        "name": "CCTV05072",
+        "source": "KYTC",
+        "OBJECTID": 122,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": " ",
+        "milemarker": 21.5,
+        "description": "I-264 at Brownsboro Rd",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_264_0221.jpg",
+        "latitude": 38.279806,
+        "longitude": -85.635885,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.63588985268663,
+          38.279813303115475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 123,
+      "properties": {
+        "state": "Kentucky",
+        "id": 43,
+        "name": "CCTV05031",
+        "source": "KYTC",
+        "OBJECTID": 123,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 15,
+        "description": "I-64 at Hurstbourne Ln.",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0150.jpg",
+        "latitude": 38.223081,
+        "longitude": -85.577975,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.57797983210111,
+          38.223088294979824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 124,
+      "properties": {
+        "state": "Kentucky",
+        "id": 338,
+        "name": "CCTV05110",
+        "source": "KYTC",
+        "OBJECTID": 124,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "KY 841",
+        "milemarker": 34.9,
+        "description": "KY841 at I-71",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_841_0349.jpg",
+        "latitude": 38.315675,
+        "longitude": -85.584868,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.5848728409828,
+          38.31568231245736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 125,
+      "properties": {
+        "state": "Kentucky",
+        "id": 339,
+        "name": "CCTV05111",
+        "source": "KYTC",
+        "OBJECTID": 125,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "KY 841",
+        "milemarker": 35.6,
+        "description": "KY841 near I-71",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_841_0356.jpg",
+        "latitude": 38.317716,
+        "longitude": -85.597479,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.5974838449855,
+          38.31772331155889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 126,
+      "properties": {
+        "state": "Kentucky",
+        "id": 340,
+        "name": "CCTV05112",
+        "source": "KYTC",
+        "OBJECTID": 126,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "KY 841",
+        "milemarker": 36.1,
+        "description": "KY841 near US42 exit",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_841_0361.jpg",
+        "latitude": 38.319108,
+        "longitude": -85.606409,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.60641384763959,
+          38.31911531134217
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 127,
+      "properties": {
+        "state": "Kentucky",
+        "id": 341,
+        "name": "CCTV05113",
+        "source": "KYTC",
+        "OBJECTID": 127,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "KY 841",
+        "milemarker": 36.6,
+        "description": "KY841 at US42 entrance ramp",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_841_0366.jpg",
+        "latitude": 38.321369,
+        "longitude": -85.615962,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.61596685053891,
+          38.321376311645245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 128,
+      "properties": {
+        "state": "Kentucky",
+        "id": 342,
+        "name": "CCTV05114",
+        "source": "KYTC",
+        "OBJECTID": 128,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "KY 841",
+        "milemarker": 36.9,
+        "description": "KY841 at tunnel entrance",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_841_0369.jpg",
+        "latitude": 38.323321,
+        "longitude": -85.618942,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.61894685074176,
+          38.32332831209947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 129,
+      "properties": {
+        "state": "Kentucky",
+        "id": 343,
+        "name": "CCTV05115",
+        "source": "KYTC",
+        "OBJECTID": 129,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "KY 841",
+        "milemarker": 37.3,
+        "description": "KY841 at tunnel entrance",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_841_0373.jpg",
+        "latitude": 38.327656,
+        "longitude": -85.626076,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.62608085372149,
+          38.32766331214904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 130,
+      "properties": {
+        "state": "Kentucky",
+        "id": 344,
+        "name": "CCTV05116",
+        "source": "KYTC",
+        "OBJECTID": 130,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "KY 841",
+        "milemarker": 37.5,
+        "description": "KY841 near Harrods Creek",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_841_0375.jpg",
+        "latitude": 38.32977,
+        "longitude": -85.628654,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.62865885496473,
+          38.32977731242033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 131,
+      "properties": {
+        "state": "Kentucky",
+        "id": 345,
+        "name": "CCTV05117",
+        "source": "KYTC",
+        "OBJECTID": 131,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "KY 841",
+        "milemarker": 38,
+        "description": "KY841 at MP 38",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_841_0380.jpg",
+        "latitude": 38.335008,
+        "longitude": -85.634538,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.63454285659456,
+          38.335015313383266
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 132,
+      "properties": {
+        "state": "Kentucky",
+        "id": 346,
+        "name": "CCTV05118",
+        "source": "KYTC",
+        "OBJECTID": 132,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "KY 841",
+        "milemarker": 38.4,
+        "description": "KY841 south of Lewis and Clark Bridge",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_841_0384.jpg",
+        "latitude": 38.339468,
+        "longitude": -85.639506,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.63951085859841,
+          38.3394753136076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 133,
+      "properties": {
+        "state": "Kentucky",
+        "id": 350,
+        "name": "CCTV05123",
+        "source": "KYTC",
+        "OBJECTID": 133,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 5.5,
+        "description": "I-64 at the 5.5 MM",
+        "direction": "East-West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0055.jpg",
+        "latitude": 38.261047,
+        "longitude": -85.735298,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.73530288010654,
+          38.26105429487902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 134,
+      "properties": {
+        "state": "Kentucky",
+        "id": 351,
+        "name": "CCTV05124",
+        "source": "KYTC",
+        "OBJECTID": 134,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 5.8,
+        "description": "I-64 at the 5.8 MM",
+        "direction": "East-West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0058.jpg",
+        "latitude": 38.261042,
+        "longitude": -85.730324,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.73032887955675,
+          38.26104929501613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 135,
+      "properties": {
+        "state": "Kentucky",
+        "id": 352,
+        "name": "CCTV05125",
+        "source": "KYTC",
+        "OBJECTID": 135,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 6.1,
+        "description": "I-64 WB at the 6.1 MM",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0061.jpg",
+        "latitude": 38.26136,
+        "longitude": -85.725886,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.72589087763764,
+          38.261367295163744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 136,
+      "properties": {
+        "state": "Kentucky",
+        "id": 353,
+        "name": "CCTV05126",
+        "source": "KYTC",
+        "OBJECTID": 136,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 6.3,
+        "description": "I-64 at 6.3 MM",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0063.jpg",
+        "latitude": 38.260707,
+        "longitude": -85.72608,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7260848783796,
+          38.26071429533755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 137,
+      "properties": {
+        "state": "Kentucky",
+        "id": 365,
+        "name": "CCTV06030",
+        "source": "KYTC",
+        "OBJECTID": 137,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-71/75",
+        "milemarker": 184.7,
+        "description": "I-71/I-75 at I-275",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1847.jpg",
+        "latitude": 39.034924,
+        "longitude": -84.600641,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.60064560557416,
+          39.034931495152094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 138,
+      "properties": {
+        "state": "Kentucky",
+        "id": 362,
+        "name": "CCTV06027",
+        "source": "KYTC",
+        "OBJECTID": 138,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-71/75",
+        "milemarker": 187.7,
+        "description": "I-71/I-75 at Dixie Hwy",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1877.jpg",
+        "latitude": 39.049779,
+        "longitude": -84.549766,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.5497705922252,
+          39.049786500572395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 139,
+      "properties": {
+        "state": "Kentucky",
+        "id": 363,
+        "name": "CCTV06028",
+        "source": "KYTC",
+        "OBJECTID": 139,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-71/75",
+        "milemarker": 186.8,
+        "description": "I-71/I-75 at N of Buttermilk Pike",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1868.jpg",
+        "latitude": 39.05143,
+        "longitude": -84.566327,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.56633159630562,
+          39.05143749987219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 140,
+      "properties": {
+        "state": "Kentucky",
+        "id": 359,
+        "name": "CCTV06024",
+        "source": "KYTC",
+        "OBJECTID": 140,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-71/75",
+        "milemarker": 190.8,
+        "description": "I-71/I-75 at 12th St",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1908.jpg",
+        "latitude": 39.08087,
+        "longitude": -84.52272,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.52272458580617,
+          39.08087750726111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 141,
+      "properties": {
+        "state": "Kentucky",
+        "id": 347,
+        "name": "CCTV05120",
+        "source": "KYTC",
+        "OBJECTID": 141,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 5.3,
+        "description": "I-64 at the 5.3 MM",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0053.jpg",
+        "latitude": 38.260815,
+        "longitude": -85.740429,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74043388160507,
+          38.26082229420526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 142,
+      "properties": {
+        "state": "Kentucky",
+        "id": 354,
+        "name": "CCTV05128",
+        "source": "KYTC",
+        "OBJECTID": 142,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 136.1,
+        "description": "I-65 near I-64 and I-71",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1361.jpg",
+        "latitude": 38.254501,
+        "longitude": -85.742095,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7420998820454,
+          38.25450829269459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 143,
+      "properties": {
+        "state": "Kentucky",
+        "id": 355,
+        "name": "CCTV05129",
+        "source": "KYTC",
+        "OBJECTID": 143,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 136.5,
+        "description": "I-65 south at the Kennedy Bridge",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1365.jpg",
+        "latitude": 38.25933,
+        "longitude": -85.741192,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74119688265485,
+          38.259337293666476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 144,
+      "properties": {
+        "state": "Kentucky",
+        "id": 358,
+        "name": "CCTV06023",
+        "source": "KYTC",
+        "OBJECTID": 144,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-71/75",
+        "milemarker": 191.1,
+        "description": "I-71/I-75 N on Brent Spence Bridge",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1911.jpg",
+        "latitude": 39.086807,
+        "longitude": -84.522802,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.52280658606351,
+          39.0868145082546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 145,
+      "properties": {
+        "state": "Kentucky",
+        "id": 360,
+        "name": "CCTV06025",
+        "source": "KYTC",
+        "OBJECTID": 145,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-71/75",
+        "milemarker": 189.6,
+        "description": "I-71/I-75 at Cut in the Hill",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1896.jpg",
+        "latitude": 39.064305,
+        "longitude": -84.521547,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.52155158413339,
+          39.06431250425486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 146,
+      "properties": {
+        "state": "Kentucky",
+        "id": 33,
+        "name": "CCTV05020",
+        "source": "KYTC",
+        "OBJECTID": 146,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 7.9,
+        "description": "I-64 at Grinstead Dr.",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0079.jpg",
+        "latitude": 38.24755,
+        "longitude": -85.700581,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.70058586901715,
+          38.2475572936294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 147,
+      "properties": {
+        "state": "Kentucky",
+        "id": 30,
+        "name": "CCTV05017",
+        "source": "KYTC",
+        "OBJECTID": 147,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 4,
+        "description": "I-64 at 9th St.",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0040.jpg",
+        "latitude": 38.258642,
+        "longitude": -85.765308,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.76531288878924,
+          38.258649292301726
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 148,
+      "properties": {
+        "state": "Kentucky",
+        "id": 78,
+        "name": "CCTV05066",
+        "source": "KYTC",
+        "OBJECTID": 148,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": " ",
+        "milemarker": 0,
+        "description": "2nd and Market",
+        "direction": "Northeast",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_2nd_&_Market.jpg",
+        "latitude": 38.25493,
+        "longitude": -85.75333,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75333488502059,
+          38.254937292574034
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 149,
+      "properties": {
+        "state": "Kentucky",
+        "id": 357,
+        "name": "CCTV05131",
+        "source": "KYTC",
+        "OBJECTID": 149,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 137,
+        "description": "I-65 on the Kennedy Bridge at MP 137",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1370.jpg",
+        "latitude": 38.267017,
+        "longitude": -85.744935,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74493988346174,
+          38.26702429520905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 150,
+      "properties": {
+        "state": "Kentucky",
+        "id": 356,
+        "name": "CCTV05130",
+        "source": "KYTC",
+        "OBJECTID": 150,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 136.8,
+        "description": "I-65 on the Kennedy Bridge at MP 136.8",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1368.jpg",
+        "latitude": 38.262257,
+        "longitude": -85.742209,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74221388225317,
+          38.262264294722016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 151,
+      "properties": {
+        "state": "Kentucky",
+        "id": 367,
+        "name": "CCTV06032",
+        "source": "KYTC",
+        "OBJECTID": 151,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-71/75",
+        "milemarker": 182.3,
+        "description": "I-71/I-75 at Turfway Rd",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1823.jpg",
+        "latitude": 39.011906,
+        "longitude": -84.633224,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.63322861297183,
+          39.011913489419676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 152,
+      "properties": {
+        "state": "Kentucky",
+        "id": 364,
+        "name": "CCTV06029",
+        "source": "KYTC",
+        "OBJECTID": 152,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-71/75",
+        "milemarker": 186.3,
+        "description": "I-71/I-75 at Buttermilk Pike",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1863.jpg",
+        "latitude": 39.04637,
+        "longitude": -84.57494,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.57494459927267,
+          39.046377498766404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 153,
+      "properties": {
+        "state": "Kentucky",
+        "id": 366,
+        "name": "CCTV06031",
+        "source": "KYTC",
+        "OBJECTID": 153,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-71/75",
+        "milemarker": 183.8,
+        "description": "I-71/I-75 at Donaldson Hwy",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1838.jpg",
+        "latitude": 39.025822,
+        "longitude": -84.613453,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.61345760835155,
+          39.02582949265656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 154,
+      "properties": {
+        "state": "Kentucky",
+        "id": 335,
+        "name": "CCTV05086",
+        "source": "KYTC",
+        "OBJECTID": 154,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-71",
+        "milemarker": 8.2,
+        "description": "I-71 at MM 8.5 just south of I-265",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0082.jpg",
+        "latitude": 38.307349,
+        "longitude": -85.597315,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.59731984362536,
+          38.30735631001552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 155,
+      "properties": {
+        "state": "Kentucky",
+        "id": 368,
+        "name": "CCTV06033",
+        "source": "KYTC",
+        "OBJECTID": 155,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-71/75",
+        "milemarker": 181.2,
+        "description": "I-71/I-75 at Burlington Pike",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1812.jpg",
+        "latitude": 39.001342,
+        "longitude": -84.64842,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.64842461685654,
+          39.001349486996325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 156,
+      "properties": {
+        "state": "Kentucky",
+        "id": 369,
+        "name": "CCTV06034",
+        "source": "KYTC",
+        "OBJECTID": 156,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-71/75",
+        "milemarker": 180.1,
+        "description": "I-71/I-75 at US-42",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1801.jpg",
+        "latitude": 38.984552,
+        "longitude": -84.642151,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.64215561427216,
+          38.984559483678986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 157,
+      "properties": {
+        "state": "Kentucky",
+        "id": 374,
+        "name": "CCTV06055",
+        "source": "KYTC",
+        "OBJECTID": 157,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-275",
+        "milemarker": 7,
+        "description": "I-275 at KY 237",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0070.jpg",
+        "latitude": 39.081008,
+        "longitude": -84.708573,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.70857764130767,
+          39.08101549909238
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 158,
+      "properties": {
+        "state": "Kentucky",
+        "id": 336,
+        "name": "CCTV05098",
+        "source": "KYTC",
+        "OBJECTID": 158,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "",
+        "milemarker": 0,
+        "description": "KY22 West at I-265",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_ADMS111_KY22-WB.jpg",
+        "latitude": 38.31277,
+        "longitude": -85.567799,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.56780383526433,
+          38.312777311958165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 159,
+      "properties": {
+        "state": "Kentucky",
+        "id": 348,
+        "name": "CCTV05121",
+        "source": "KYTC",
+        "OBJECTID": 159,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 5.4,
+        "description": "I-64 near I-65",
+        "direction": "East-West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0054-1.jpg",
+        "latitude": 38.259705,
+        "longitude": -85.739411,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.73941588185345,
+          38.25971229389486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 160,
+      "properties": {
+        "state": "Kentucky",
+        "id": 349,
+        "name": "CCTV05122",
+        "source": "KYTC",
+        "OBJECTID": 160,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-64",
+        "milemarker": 5.4,
+        "description": "I-64 near I-65",
+        "direction": "East-West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_64_0054-2.jpg",
+        "latitude": 38.259696,
+        "longitude": -85.739358,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.73936288220649,
+          38.259703294006236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 161,
+      "properties": {
+        "state": "Kentucky",
+        "id": 370,
+        "name": "CCTV06051",
+        "source": "KYTC",
+        "OBJECTID": 161,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-275",
+        "milemarker": 2,
+        "description": "I-275 at Mineola Pike",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0020.jpg",
+        "latitude": 39.055124,
+        "longitude": -84.626084,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.62608861470564,
+          39.05513149752134
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 162,
+      "properties": {
+        "state": "Kentucky",
+        "id": 373,
+        "name": "CCTV06054",
+        "source": "KYTC",
+        "OBJECTID": 162,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-275",
+        "milemarker": 6,
+        "description": "I-275 East of KY 237",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0060.jpg",
+        "latitude": 39.078321,
+        "longitude": -84.69048,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.69048463523946,
+          39.07832849945429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 163,
+      "properties": {
+        "state": "Kentucky",
+        "id": 376,
+        "name": "CCTV06057",
+        "source": "KYTC",
+        "OBJECTID": 163,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-275",
+        "milemarker": 11.6,
+        "description": "I-275 at KY 8/Petersburg Exit",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0116.jpg",
+        "latitude": 39.087752,
+        "longitude": -84.793139,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.79314366614018,
+          39.08775949629714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 164,
+      "properties": {
+        "state": "Kentucky",
+        "id": 372,
+        "name": "CCTV06053",
+        "source": "KYTC",
+        "OBJECTID": 164,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-275",
+        "milemarker": 4.8,
+        "description": "I-275 at Petersburg Rd Overpass",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0048.jpg",
+        "latitude": 39.073604,
+        "longitude": -84.670966,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.67097062982117,
+          39.07361149935558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 165,
+      "properties": {
+        "state": "Kentucky",
+        "id": 377,
+        "name": "CCTV06058",
+        "source": "KYTC",
+        "OBJECTID": 165,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-275",
+        "milemarker": 12.8,
+        "description": "I-275 East of KY/IN Border",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0128.jpg",
+        "latitude": 39.093536,
+        "longitude": -84.81325,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.81325467353625,
+          39.09354349628839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 166,
+      "properties": {
+        "state": "Kentucky",
+        "id": 378,
+        "name": "CCTV06059",
+        "source": "KYTC",
+        "OBJECTID": 166,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-71/75",
+        "milemarker": 178.1,
+        "description": "I-71/I-75 at Mt. Zion Rd",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1781.jpg",
+        "latitude": 38.957018,
+        "longitude": -84.634987,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.63499160981054,
+          38.95702547866961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 167,
+      "properties": {
+        "state": "Kentucky",
+        "id": 380,
+        "name": "CCTV06061",
+        "source": "KYTC",
+        "OBJECTID": 167,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-71/75",
+        "milemarker": 172.5,
+        "description": "I-71/I-75 KY Split",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1725.jpg",
+        "latitude": 38.87687,
+        "longitude": -84.62551,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.62551460141104,
+          38.876877464335955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 168,
+      "properties": {
+        "state": "Kentucky",
+        "id": 385,
+        "name": "CCTV06131",
+        "source": "KYTC",
+        "OBJECTID": 168,
+        "status": "Online",
+        "district": 6,
+        "county": "Campbell",
+        "highway": "I-275",
+        "milemarker": 74.8,
+        "description": "I-275 at I-471",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0748.jpg",
+        "latitude": 39.04603,
+        "longitude": -84.458049,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.45805356382131,
+          39.046037503784206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 169,
+      "properties": {
+        "state": "Kentucky",
+        "id": 17,
+        "name": "CCTV05004",
+        "source": "KYTC",
+        "OBJECTID": 169,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 135.6,
+        "description": "I-65 over E. M. Ali Blvd.",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1356.jpg",
+        "latitude": 38.250117,
+        "longitude": -85.751914,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.75191888483033,
+          38.250124292116645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 170,
+      "properties": {
+        "state": "Kentucky",
+        "id": 381,
+        "name": "CCTV06102",
+        "source": "KYTC",
+        "OBJECTID": 170,
+        "status": "Online",
+        "district": 6,
+        "county": "Campbell",
+        "highway": "I-471",
+        "milemarker": 1.4,
+        "description": "I-471 South of US-27",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_471_0014.jpg",
+        "latitude": 39.062522,
+        "longitude": -84.468169,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.46817356807414,
+          39.06252950677369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 171,
+      "properties": {
+        "state": "Kentucky",
+        "id": 382,
+        "name": "CCTV06103",
+        "source": "KYTC",
+        "OBJECTID": 171,
+        "status": "Online",
+        "district": 6,
+        "county": "Campbell",
+        "highway": "I-471",
+        "milemarker": 2.7,
+        "description": "I-471 at Grand Ave",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_471_0027.jpg",
+        "latitude": 39.081178,
+        "longitude": -84.471483,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.47148757037272,
+          39.081185510430885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 172,
+      "properties": {
+        "state": "Kentucky",
+        "id": 386,
+        "name": "CCTV06132",
+        "source": "KYTC",
+        "OBJECTID": 172,
+        "status": "Online",
+        "district": 6,
+        "county": "Campbell",
+        "highway": "I-275",
+        "milemarker": 74.1,
+        "description": "I-275 at US-27 Overpass",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0741.jpg",
+        "latitude": 39.049601,
+        "longitude": -84.446461,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.44646556113301,
+          39.049608504987155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 173,
+      "properties": {
+        "state": "Kentucky",
+        "id": 379,
+        "name": "CCTV06060",
+        "source": "KYTC",
+        "OBJECTID": 173,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-71/75",
+        "milemarker": 175.8,
+        "description": "I-71/I-75 north of Richwood Rd",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1758.jpg",
+        "latitude": 38.9251,
+        "longitude": -84.629714,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.62971860539413,
+          38.92510747289731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 174,
+      "properties": {
+        "state": "Kentucky",
+        "id": 371,
+        "name": "CCTV06052",
+        "source": "KYTC",
+        "OBJECTID": 174,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-275",
+        "milemarker": 3.7,
+        "description": "I-275 East of KY 212/Airport",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0037.jpg",
+        "latitude": 39.06969,
+        "longitude": -84.64961,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.64961462279713,
+          39.06969749994973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 175,
+      "properties": {
+        "state": "Kentucky",
+        "id": 361,
+        "name": "CCTV06026",
+        "source": "KYTC",
+        "OBJECTID": 175,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-71/75",
+        "milemarker": 188.6,
+        "description": "I-71/I-75 at Kyles Ln",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_75_1886.jpg",
+        "latitude": 39.059474,
+        "longitude": -84.539028,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.53903258972159,
+          39.05948150251615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 176,
+      "properties": {
+        "state": "Kentucky",
+        "id": 388,
+        "name": "CCTV04013",
+        "source": "KYTC",
+        "OBJECTID": 176,
+        "status": "Online",
+        "district": 4,
+        "county": "Hardin",
+        "highway": "I-65",
+        "milemarker": 96.2,
+        "description": "I-65 MP 96.2",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_0962.jpg",
+        "latitude": 37.73531,
+        "longitude": -85.80641,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.80641486204657,
+          37.735317189675676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 177,
+      "properties": {
+        "state": "Kentucky",
+        "id": 390,
+        "name": "CCTV11001",
+        "source": "KYTC",
+        "OBJECTID": 177,
+        "status": "Online",
+        "district": 11,
+        "county": "Laurel",
+        "highway": "I-75",
+        "milemarker": 35.6,
+        "description": "I-75 SB @ 35.6 - Laurel Co.",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_11_75_0356.jpg",
+        "latitude": 37.073145,
+        "longitude": -84.099435,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.09943931699011,
+          37.073152134718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 178,
+      "properties": {
+        "state": "Kentucky",
+        "id": 391,
+        "name": "CCTV11002",
+        "source": "KYTC",
+        "OBJECTID": 178,
+        "status": "Online",
+        "district": 11,
+        "county": "Whitley",
+        "highway": "I-75",
+        "milemarker": 23.4,
+        "description": "I-75 NB @ 23.4 - Whitley Co",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_11_75_0234.jpg",
+        "latitude": 36.900847,
+        "longitude": -84.135172,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.13517631636613,
+          36.900854098867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 179,
+      "properties": {
+        "state": "Kentucky",
+        "id": 384,
+        "name": "CCTV06130",
+        "source": "KYTC",
+        "OBJECTID": 179,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-275",
+        "milemarker": 78.8,
+        "description": "I-275 at Taylor Mill",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0788.jpg",
+        "latitude": 39.02147,
+        "longitude": -84.511388,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.5113925786594,
+          39.021477496485
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 180,
+      "properties": {
+        "state": "Kentucky",
+        "id": 383,
+        "name": "CCTV06129",
+        "source": "KYTC",
+        "OBJECTID": 180,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-275",
+        "milemarker": 82.3,
+        "description": "I-275 at Dixie Hwy",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0823.jpg",
+        "latitude": 39.026161,
+        "longitude": -84.572846,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.57285059640151,
+          39.026168494548074
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 181,
+      "properties": {
+        "state": "Kentucky",
+        "id": 407,
+        "name": "CCTV06133",
+        "source": "KYTC",
+        "OBJECTID": 181,
+        "status": "Online",
+        "district": 6,
+        "county": "Campbell",
+        "highway": "I-275",
+        "milemarker": 76.2,
+        "description": "I-275 East of Johns Hill Road",
+        "direction": "East-West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0762.jpg",
+        "latitude": 39.033299,
+        "longitude": -84.470374,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.47037856743246,
+          39.03330650100212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 182,
+      "properties": {
+        "state": "Kentucky",
+        "id": 408,
+        "name": "CCTV06134",
+        "source": "KYTC",
+        "OBJECTID": 182,
+        "status": "Online",
+        "district": 6,
+        "county": "Kenton",
+        "highway": "I-275",
+        "milemarker": 81.2,
+        "description": "I-275 East of Turkeyfoot Road Mile 81.2",
+        "direction": "East-West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_275_0812.jpg",
+        "latitude": 39.02674,
+        "longitude": -84.552739,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.55274359104669,
+          39.02674749551793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 183,
+      "properties": {
+        "state": "Kentucky",
+        "id": 16,
+        "name": "CCTV05003",
+        "source": "KYTC",
+        "OBJECTID": 183,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 134.4,
+        "description": "I-65 at St. Catherine",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1344.jpg",
+        "latitude": 38.233086,
+        "longitude": -85.750586,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7505908829495,
+          38.23309328887964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 184,
+      "properties": {
+        "state": "Kentucky",
+        "id": 413,
+        "name": "CCTV06001",
+        "source": "KYTC",
+        "OBJECTID": 184,
+        "status": "Online",
+        "district": 6,
+        "county": "Gallatin",
+        "highway": "I-71",
+        "milemarker": 66.9,
+        "description": "I-71 SB at the 66.9 MM",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_71_0669.jpg",
+        "latitude": 38.778835,
+        "longitude": -84.766628,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.76663263542639,
+          38.7788424389259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 185,
+      "properties": {
+        "state": "Kentucky",
+        "id": 416,
+        "name": "CCTV06002",
+        "source": "KYTC",
+        "OBJECTID": 185,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-71",
+        "milemarker": 73.9,
+        "description": "I-71 SB at the 73.9 MM",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_71_0739.jpg",
+        "latitude": 38.851326,
+        "longitude": -84.665229,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.66523361101805,
+          38.851333457596134
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 186,
+      "properties": {
+        "state": "Kentucky",
+        "id": 27,
+        "name": "CCTV05014",
+        "source": "KYTC",
+        "OBJECTID": 186,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 131.3,
+        "description": "I-65 over Phillips Ln",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1313.jpg",
+        "latitude": 38.195874,
+        "longitude": -85.733829,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.733833874945,
+          38.195881281876204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 187,
+      "properties": {
+        "state": "Kentucky",
+        "id": 411,
+        "name": "CCTV06062",
+        "source": "KYTC",
+        "OBJECTID": 187,
+        "status": "Online",
+        "district": 6,
+        "county": "Boone",
+        "highway": "I-71/75",
+        "milemarker": 77,
+        "description": "I-71/I-75",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_06_71_0770.jpg",
+        "latitude": 38.876548,
+        "longitude": -84.625566,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.62557060048816,
+          38.876555463724486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 188,
+      "properties": {
+        "state": "Kentucky",
+        "id": 406,
+        "name": "CCTV05158",
+        "source": "KYTC",
+        "OBJECTID": 188,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 136.9,
+        "description": "I-65 on the Lincoln Bridge at MP 136.9",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1369.jpg",
+        "latitude": 38.266064,
+        "longitude": -85.743809,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.7438138832032,
+          38.266071295100176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 189,
+      "properties": {
+        "state": "Kentucky",
+        "id": 389,
+        "name": "CCTV04014",
+        "source": "KYTC",
+        "OBJECTID": 189,
+        "status": "Online",
+        "district": 4,
+        "county": "Hardin",
+        "highway": "I-65",
+        "milemarker": 102.8,
+        "description": "I-65 MP 102.8",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_1028.jpg",
+        "latitude": 37.80725,
+        "longitude": -85.74418,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74418485011626,
+          37.807257206705785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 190,
+      "properties": {
+        "state": "Kentucky",
+        "id": 415,
+        "name": "CCTV01004",
+        "source": "KYTC",
+        "OBJECTID": 190,
+        "status": "Online",
+        "district": 1,
+        "county": "McCracken",
+        "highway": "I-24",
+        "milemarker": 4.4,
+        "description": "I-24 MP 4.4 @ US 60",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_01_24_0044.jpg",
+        "latitude": 37.07819,
+        "longitude": -88.680325,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.68033063898275,
+          37.07819692918768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 191,
+      "properties": {
+        "state": "Kentucky",
+        "id": 414,
+        "name": "CCTV01005",
+        "source": "KYTC",
+        "OBJECTID": 191,
+        "status": "Online",
+        "district": 1,
+        "county": "McCracken",
+        "highway": "I-24",
+        "milemarker": 2.8,
+        "description": "I-24 MP 2.8 @ KY 305",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_01_24_0028.jpg",
+        "latitude": 37.09917,
+        "longitude": -88.689012,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.68901764323549,
+          37.099176932855016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 192,
+      "properties": {
+        "state": "Kentucky",
+        "id": 412,
+        "name": "CCTV01006",
+        "source": "KYTC",
+        "OBJECTID": 192,
+        "status": "Online",
+        "district": 1,
+        "county": "Marshall",
+        "highway": "I-24",
+        "milemarker": 24.8,
+        "description": "I-24 MP 24.8",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_01_24_0248.jpg",
+        "latitude": 36.99056,
+        "longitude": -88.350134,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.35013953899298,
+          36.99056692827475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 193,
+      "properties": {
+        "state": "Kentucky",
+        "id": 450,
+        "name": "CCTV07011",
+        "source": "KYTC",
+        "OBJECTID": 193,
+        "status": "Online",
+        "district": 7,
+        "county": "Fayette",
+        "highway": "I-75",
+        "milemarker": 113.4,
+        "description": "I-75 NB @ Paris Pike",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1134.jpg",
+        "latitude": 38.081948,
+        "longitude": -84.459895,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.45989949291008,
+          38.08195531817454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 194,
+      "properties": {
+        "state": "Kentucky",
+        "id": 405,
+        "name": "CCTV05134",
+        "source": "KYTC",
+        "OBJECTID": 194,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 136.7,
+        "description": "I-65 on the Lincoln Bridge at MP 136.7",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1367.jpg",
+        "latitude": 38.26242,
+        "longitude": -85.741213,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.74121788258348,
+          38.26242729419506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 195,
+      "properties": {
+        "state": "Kentucky",
+        "id": 245,
+        "name": "CCTV03013",
+        "source": "KYTC",
+        "OBJECTID": 195,
+        "status": "Online",
+        "district": 3,
+        "county": "Simpson",
+        "highway": "I-65",
+        "milemarker": 0.5,
+        "description": "I-65 MP 0.5 Simpson Co",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_65_0005.jpg",
+        "latitude": 36.645986,
+        "longitude": -86.568705,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.56871000595143,
+          36.64599294211434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 196,
+      "properties": {
+        "state": "Kentucky",
+        "id": 26,
+        "name": "CCTV05013",
+        "source": "KYTC",
+        "OBJECTID": 196,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-65",
+        "milemarker": 128.3,
+        "description": "I-65 at Fern Valley Rd.",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_65_1283.jpg",
+        "latitude": 38.157736,
+        "longitude": -85.719975,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.71997986874244,
+          38.157743275437674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 197,
+      "properties": {
+        "state": "Kentucky",
+        "id": 36,
+        "name": "CCTV05023",
+        "source": "KYTC",
+        "OBJECTID": 197,
+        "status": "Online",
+        "district": 5,
+        "county": "Jefferson",
+        "highway": "I-71",
+        "milemarker": 3,
+        "description": "I-71 at Indian Hills Ave.",
+        "direction": "North-South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_05_71_0030.jpg",
+        "latitude": 38.286186,
+        "longitude": -85.679264,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.67926886653112,
+          38.286193301945154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 198,
+      "properties": {
+        "state": "Kentucky",
+        "id": 452,
+        "name": "CCTV07013",
+        "source": "KYTC",
+        "OBJECTID": 198,
+        "status": "Online",
+        "district": 7,
+        "county": "Fayette",
+        "highway": "I-75",
+        "milemarker": 110.9,
+        "description": "I-75 SB @ Southern Split",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1109.jpg",
+        "latitude": 38.054268,
+        "longitude": -84.430616,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.43062048302131,
+          38.05427531421618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 199,
+      "properties": {
+        "state": "Kentucky",
+        "id": 255,
+        "name": "CCTV03001",
+        "source": "KYTC",
+        "OBJECTID": 199,
+        "status": "Online",
+        "district": 3,
+        "county": "Warren",
+        "highway": "I-65",
+        "milemarker": 17.8,
+        "description": "I-65 NB @ MP 17.8",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_65_0178.jpg",
+        "latitude": 36.8725,
+        "longitude": -86.44817,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.44817498739845,
+          36.87250699232168
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 200,
+      "properties": {
+        "state": "Kentucky",
+        "id": 453,
+        "name": "CCTV07014",
+        "source": "KYTC",
+        "OBJECTID": 200,
+        "status": "Online",
+        "district": 7,
+        "county": "Fayette",
+        "highway": "I-75",
+        "milemarker": 109.6,
+        "description": "I-75 NB @ Winchester Rd",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1096.jpg",
+        "latitude": 38.039483,
+        "longitude": -84.419791,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.41979547836951,
+          38.03949031172976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 201,
+      "properties": {
+        "state": "Kentucky",
+        "id": 451,
+        "name": "CCTV07012",
+        "source": "KYTC",
+        "OBJECTID": 201,
+        "status": "Online",
+        "district": 7,
+        "county": "Fayette",
+        "highway": "I-75",
+        "milemarker": 112,
+        "description": "I-75 SB @ Bryan Station",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1120.jpg",
+        "latitude": 38.066883,
+        "longitude": -84.445859,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.44586348773876,
+          38.066890315882794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 202,
+      "properties": {
+        "state": "Kentucky",
+        "id": 256,
+        "name": "CCTV03004",
+        "source": "KYTC",
+        "OBJECTID": 202,
+        "status": "Online",
+        "district": 3,
+        "county": "Warren",
+        "highway": "I-65",
+        "milemarker": 36.5,
+        "description": "I-65 NB @ MP 36.5",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_65_0365.jpg",
+        "latitude": 37.03932,
+        "longitude": -86.22566,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.22566493501402,
+          37.03932703483428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 203,
+      "properties": {
+        "state": "Kentucky",
+        "id": 276,
+        "name": "CCTV04015",
+        "source": "KYTC",
+        "OBJECTID": 203,
+        "status": "Online",
+        "district": 4,
+        "county": "Hart",
+        "highway": "I-65",
+        "milemarker": 54.8,
+        "description": "I-65 SB @ MP 54.8",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_0548.jpg",
+        "latitude": 37.16846,
+        "longitude": -85.96209,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.96209486781883,
+          37.16846707266488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 204,
+      "properties": {
+        "state": "Kentucky",
+        "id": 250,
+        "name": "CCTV02007",
+        "source": "KYTC",
+        "OBJECTID": 204,
+        "status": "Online",
+        "district": 2,
+        "county": "Christian",
+        "highway": "",
+        "milemarker": 0.3,
+        "description": "US 41 SB @ MP 0.3 - Gate 4 Ft Campbell",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_02_US41_0003.jpg",
+        "latitude": 36.644468,
+        "longitude": -87.437173,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.43717825525589,
+          36.64447490335401
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 205,
+      "properties": {
+        "state": "Kentucky",
+        "id": 249,
+        "name": "CCTV04004",
+        "source": "KYTC",
+        "OBJECTID": 205,
+        "status": "Online",
+        "district": 4,
+        "county": "Hardin",
+        "highway": "I-65",
+        "milemarker": 92.4,
+        "description": "I-65 MP 92.4",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_0924.jpg",
+        "latitude": 37.69196,
+        "longitude": -85.8413,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.84130486980553,
+          37.691967179909106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 206,
+      "properties": {
+        "state": "Kentucky",
+        "id": 246,
+        "name": "CCTV04010",
+        "source": "KYTC",
+        "OBJECTID": 206,
+        "status": "Online",
+        "district": 4,
+        "county": "Hardin",
+        "highway": "",
+        "milemarker": 129,
+        "description": "WK Pkwy MP 129.0",
+        "direction": "East",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_WKP_1290.jpg",
+        "latitude": 37.61869,
+        "longitude": -85.955216,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.95522089708817,
+          37.61869716067907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 207,
+      "properties": {
+        "state": "Kentucky",
+        "id": 248,
+        "name": "CCTV04003",
+        "source": "KYTC",
+        "OBJECTID": 207,
+        "status": "Online",
+        "district": 4,
+        "county": "Hardin",
+        "highway": "I-65",
+        "milemarker": 92.6,
+        "description": "I-65 MP 92.6",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_0926.jpg",
+        "latitude": 37.692111,
+        "longitude": -85.840112,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.84011686979457,
+          37.69211817962642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 208,
+      "properties": {
+        "state": "Kentucky",
+        "id": 454,
+        "name": "CCTV07015",
+        "source": "KYTC",
+        "OBJECTID": 208,
+        "status": "Online",
+        "district": 7,
+        "county": "Fayette",
+        "highway": "I-75",
+        "milemarker": 108.3,
+        "description": "I-75 NB @ Man O War",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1083.jpg",
+        "latitude": 38.022068,
+        "longitude": -84.411121,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.41112547488201,
+          38.022075308609345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 209,
+      "properties": {
+        "state": "Kentucky",
+        "id": 456,
+        "name": "CCTV07017",
+        "source": "KYTC",
+        "OBJECTID": 209,
+        "status": "Online",
+        "district": 7,
+        "county": "Scott",
+        "highway": "I-75",
+        "milemarker": 130.5,
+        "description": "I-75 @ Scott County SB",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1305.jpg",
+        "latitude": 38.295204,
+        "longitude": -84.558993,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.55899753765908,
+          38.29521135547383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 210,
+      "properties": {
+        "state": "Kentucky",
+        "id": 260,
+        "name": "CCTV03008",
+        "source": "KYTC",
+        "OBJECTID": 210,
+        "status": "Online",
+        "district": 3,
+        "county": "Barren",
+        "highway": "",
+        "milemarker": 3.4,
+        "description": "Louie B Nunn Pkwy WB @ MP 3.4",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_LBNP_0034.jpg",
+        "latitude": 37.03713,
+        "longitude": -86.05878,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.0587848861867,
+          37.037137041861264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 211,
+      "properties": {
+        "state": "Kentucky",
+        "id": 265,
+        "name": "CCTV03011",
+        "source": "KYTC",
+        "OBJECTID": 211,
+        "status": "Online",
+        "district": 3,
+        "county": "Warren",
+        "highway": "I-65",
+        "milemarker": 22.3,
+        "description": "I-65 NB @ MP 22.3 - at US 231",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_65_0223.jpg",
+        "latitude": 36.93326,
+        "longitude": -86.41758,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.4175849825422,
+          36.93326700574614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 212,
+      "properties": {
+        "state": "Kentucky",
+        "id": 257,
+        "name": "CCTV03005",
+        "source": "KYTC",
+        "OBJECTID": 212,
+        "status": "Online",
+        "district": 3,
+        "county": "Warren",
+        "highway": "",
+        "milemarker": 6.8,
+        "description": "Natcher Pkwy SB @ MP 6.8",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_NatP_0068.jpg",
+        "latitude": 36.953878,
+        "longitude": -86.496758,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.49676300662681,
+          36.9538850066001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 213,
+      "properties": {
+        "state": "Kentucky",
+        "id": 457,
+        "name": "CCTV07018",
+        "source": "KYTC",
+        "OBJECTID": 213,
+        "status": "Online",
+        "district": 7,
+        "county": "Scott",
+        "highway": "I-75",
+        "milemarker": 127.2,
+        "description": "I-75 @ Scott County NB",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_75_1272.jpg",
+        "latitude": 38.248,
+        "longitude": -84.546851,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.54685553071789,
+          38.24800734672251
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 214,
+      "properties": {
+        "state": "Kentucky",
+        "id": 236,
+        "name": "CCTV02001",
+        "source": "KYTC",
+        "OBJECTID": 214,
+        "status": "Online",
+        "district": 2,
+        "county": "Christian",
+        "highway": "I-24",
+        "milemarker": 92.6,
+        "description": "I-24 WB @ MP 92.6",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_02_24_0926.jpg",
+        "latitude": 36.648675,
+        "longitude": -87.350857,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.35086222987829,
+          36.648681908360246
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 215,
+      "properties": {
+        "state": "Kentucky",
+        "id": 227,
+        "name": "CCTV04007",
+        "source": "KYTC",
+        "OBJECTID": 215,
+        "status": "Online",
+        "district": 4,
+        "county": "Hardin",
+        "highway": "I-65",
+        "milemarker": 82.7,
+        "description": "I-65 MP 82.7",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_0827.jpg",
+        "latitude": 37.55403,
+        "longitude": -85.87815,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.87815487008858,
+          37.554037151829505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 216,
+      "properties": {
+        "state": "Kentucky",
+        "id": 226,
+        "name": "CCTV04006",
+        "source": "KYTC",
+        "OBJECTID": 216,
+        "status": "Online",
+        "district": 4,
+        "county": "Hardin",
+        "highway": "I-65",
+        "milemarker": 89.2,
+        "description": "I-65 MP 89.2",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_0892.jpg",
+        "latitude": 37.64781,
+        "longitude": -85.85793,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.857934871233,
+          37.64781717023366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 217,
+      "properties": {
+        "state": "Kentucky",
+        "id": 217,
+        "name": "CCTV02003",
+        "source": "KYTC",
+        "OBJECTID": 217,
+        "status": "Online",
+        "district": 2,
+        "county": "Christian",
+        "highway": "",
+        "milemarker": 2.5,
+        "description": "US 41 @ MP 2.5 - Gate 7 Ft Campbell",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_02_US41_0025.jpg",
+        "latitude": 36.676534,
+        "longitude": -87.446923,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.44692825950142,
+          36.67654090868599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 218,
+      "properties": {
+        "state": "Kentucky",
+        "id": 239,
+        "name": "CCTV02008",
+        "source": "KYTC",
+        "OBJECTID": 218,
+        "status": "Online",
+        "district": 2,
+        "county": "Christian",
+        "highway": "",
+        "milemarker": 0.1,
+        "description": "KY 911 WB @ MP 0.1",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_02_KY911_0001.jpg",
+        "latitude": 36.665415,
+        "longitude": -87.440701,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.44070625708763,
+          36.66542190690689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 219,
+      "properties": {
+        "state": "Kentucky",
+        "id": 229,
+        "name": "CCTV03009",
+        "source": "KYTC",
+        "OBJECTID": 219,
+        "status": "Online",
+        "district": 3,
+        "county": "Warren",
+        "highway": "",
+        "milemarker": 7,
+        "description": "US 31W NB @ MP 7.0",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_US31W_0070.jpg",
+        "latitude": 36.91903,
+        "longitude": -86.50375,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.50375500615888,
+          36.91903699942406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 220,
+      "properties": {
+        "state": "Kentucky",
+        "id": 221,
+        "name": "CCTV03010",
+        "source": "KYTC",
+        "OBJECTID": 220,
+        "status": "Online",
+        "district": 3,
+        "county": "Warren",
+        "highway": "",
+        "milemarker": 5.3,
+        "description": "US 231 NB @ MP 5.3 - at Natcher Pkwy",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_US231_0053.jpg",
+        "latitude": 36.894242,
+        "longitude": -86.377939,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.37794396852375,
+          36.89424899941553
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 221,
+      "properties": {
+        "state": "Kentucky",
+        "id": 218,
+        "name": "CCTV03002",
+        "source": "KYTC",
+        "OBJECTID": 221,
+        "status": "Online",
+        "district": 3,
+        "county": "Barren",
+        "highway": "I-65",
+        "milemarker": 50.5,
+        "description": "I-65 SB @ MP 50.5",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_03_65_0505.jpg",
+        "latitude": 37.12137,
+        "longitude": -86.00705,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.00705487682579,
+          37.12137706123255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 222,
+      "properties": {
+        "state": "Kentucky",
+        "id": 458,
+        "name": "CCTV07019",
+        "source": "KYTC",
+        "OBJECTID": 222,
+        "status": "Online",
+        "district": 7,
+        "county": "Clark",
+        "highway": "I-64",
+        "milemarker": 97.1,
+        "description": "I-64 @ Clark County",
+        "direction": "West",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_07_64_0971.jpg",
+        "latitude": 38.016586,
+        "longitude": -84.159137,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.15914139980752,
+          38.01659331883331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 223,
+      "properties": {
+        "state": "Kentucky",
+        "id": 216,
+        "name": "CCTV02002",
+        "source": "KYTC",
+        "OBJECTID": 223,
+        "status": "Online",
+        "district": 2,
+        "county": "Christian",
+        "highway": "",
+        "milemarker": 2.8,
+        "description": "US 41 SB @ MP 2.8 - Gate 7 Ft Campgell",
+        "direction": "South",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_02_US41_0028.jpg",
+        "latitude": 36.678014,
+        "longitude": -87.447352,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.44735725972531,
+          36.67802090943645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 224,
+      "properties": {
+        "state": "Kentucky",
+        "id": 240,
+        "name": "CCTV02009",
+        "source": "KYTC",
+        "OBJECTID": 224,
+        "status": "Online",
+        "district": 2,
+        "county": "Christian",
+        "highway": "",
+        "milemarker": 0,
+        "description": "US 41 NB @ MP 4.5 - I-24 Overpass",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_02_US41_0045.jpg",
+        "latitude": 36.704193,
+        "longitude": -87.455099,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.45510426445858,
+          36.70419991363054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 225,
+      "properties": {
+        "state": "Kentucky",
+        "id": 241,
+        "name": "CCTV02010",
+        "source": "KYTC",
+        "OBJECTID": 225,
+        "status": "Online",
+        "district": 2,
+        "county": "Christian",
+        "highway": "",
+        "milemarker": 13.5,
+        "description": "US 41 NB @ MP 13.5 - Pennyrile Overpass",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_02_US41_0135.jpg",
+        "latitude": 36.831821,
+        "longitude": -87.472866,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.47287127760082,
+          36.831827937867374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 226,
+      "properties": {
+        "state": "Kentucky",
+        "id": 220,
+        "name": "CCTV04008",
+        "source": "KYTC",
+        "OBJECTID": 226,
+        "status": "Online",
+        "district": 4,
+        "county": "Hart",
+        "highway": "I-65",
+        "milemarker": 73.8,
+        "description": "I-65 MP 73.8",
+        "direction": "North",
+        "snapshot": "http://www.trimarc.org/images/milestone/CCTV_04_65_0738.jpg",
+        "latitude": 37.42621,
+        "longitude": -85.88253,
+        "updateTS": 1621047617000,
+        "EXTRACT_DT": null,
+        "UpdateIndicator": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.8825348621939,
+          37.4262171265475
+        ]
+      }
+    }
+  ]
+}

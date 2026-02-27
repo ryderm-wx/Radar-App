@@ -1,0 +1,3409 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.441408,
+          41.749932
+        ]
+      },
+      "properties": {
+        "id": "RI-0000",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Exit 33 (Route 10)",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/eUp6WUZ2Q0NiTnNh/K2VvaWJo/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_33.6_S_CAM - Rt 10.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.424282,
+          41.781736
+        ]
+      },
+      "properties": {
+        "id": "RI-0001",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Elmwood Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/SDlmZ3dZaUkyakVl/VkJrR2Zw/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_34.0_S_CAM - Elmwood Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.410055,
+          41.794334
+        ]
+      },
+      "properties": {
+        "id": "RI-0002",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Detroit Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/SmhURWlnU0pveTM2/Mm5Dak1W/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_34.4_S_CAM - Detriot Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.40338,
+          41.800454
+        ]
+      },
+      "properties": {
+        "id": "RI-0003",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Thurbers Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/ZDdEQkhqNDFkTk1u/eHFMUk4y/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_35.2_N_CAM - Thurbers Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.405157,
+          41.807847
+        ]
+      },
+      "properties": {
+        "id": "RI-0004",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Public Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/L3E4Z0NpRWZkWEhZ/SDQ5dVdX/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_35.8_N_CAM - Public St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.409785,
+          41.794298
+        ]
+      },
+      "properties": {
+        "id": "RI-0005",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Broad Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/c2FPYjV5NENIcC9C/Q29XaGtz/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_36.8_S_CAM - Broad St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.420318,
+          41.821977
+        ]
+      },
+      "properties": {
+        "id": "RI-0006",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Broadway (Providence)",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/K1BOYVhLYlZQVzEz/U2taVnRF/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_37.0_S_CAM - Broadway (Prov).jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.418906,
+          41.825959
+        ]
+      },
+      "properties": {
+        "id": "RI-0007",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "6/10 Interchange",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/cnFkMExDMWdpbUdv/UC9mOXlD/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_37.4_S_CAM - 6_10 Interchange.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.418344,
+          41.82786
+        ]
+      },
+      "properties": {
+        "id": "RI-0008",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Kinsley Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/UVZwZFN0R2U1bGNn/OWhQMi9K/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_37.6_N_CAM - Kinsley Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.415958,
+          41.834723
+        ]
+      },
+      "properties": {
+        "id": "RI-0009",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Orms Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/cHVVQ21DWGJ2Qnpy/bDhTTVlD/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_38.0_S_CAM - Orms St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.411107,
+          41.845934
+        ]
+      },
+      "properties": {
+        "id": "RI-0010",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Branch Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/K1g4UTlTQzF5ZGdV/TEhZNCs0/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_38.8_N_CAM - Branch Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.406791,
+          41.855323
+        ]
+      },
+      "properties": {
+        "id": "RI-0011",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Near Exit 39",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/ZTdLZmtEVnB1aVEz/M3lZck51/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_39.4_N_CAM - Exit 39B & 39C.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.406468,
+          41.85553
+        ]
+      },
+      "properties": {
+        "id": "RI-0012",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Smithfield Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/bTRwbVZrNUlKOUx3/b3pHWWlE/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_40.0_N_CAM - Smithfield Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.398378,
+          41.871678
+        ]
+      },
+      "properties": {
+        "id": "RI-0013",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Lonsdale Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/M2I4Mm5OdGxvQ3g4/SGZjcUxN/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_40.6_N_CAM - Lonsdale Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.390585,
+          41.873026
+        ]
+      },
+      "properties": {
+        "id": "RI-0014",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Garden Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/bUpoYVNwZlBIaTAw/dzVjWm9O/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_41.0_S_CAM - Garden St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.38008,
+          41.875202
+        ]
+      },
+      "properties": {
+        "id": "RI-0015",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Vernon Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/TzB2dzNuaGgybVFs/MndKekth/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_41.8_N_CAM - Vernon St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.37742,
+          41.882542
+        ]
+      },
+      "properties": {
+        "id": "RI-0016",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Broadway (Pawtucket)",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/SW4yU0tJN2hmVUNZ/THh0V2h6/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_42.4_N_CAM - Broadway (Pawt).jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.378982,
+          41.890212
+        ]
+      },
+      "properties": {
+        "id": "RI-0017",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "East Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/eGhaTjRuL3l3bGg5/M1FCVDRq/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_43.0_S_CAM - East St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.376513,
+          41.893969
+        ]
+      },
+      "properties": {
+        "id": "RI-0018",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-195 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "MA State Line",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/S25rZ2lObHFOL1Zo/R21qVzhK/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/195-8 I-195 W @ Mass State Line.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.358452,
+          41.812232
+        ]
+      },
+      "properties": {
+        "id": "RI-0019",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-195 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Exit 2B (Route 114)",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/Rm8zcEM0NFRwMk1J/MFVNUlhk/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/195-7 I-195 E @ Rt 114.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.385301,
+          41.819108
+        ]
+      },
+      "properties": {
+        "id": "RI-0020",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-195 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Washington Bridge",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/VkxzemhLak1HL2tO/Z01ENHl0/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/195-5 I-195 W @ Washington Bridge.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3897,
+          41.819428
+        ]
+      },
+      "properties": {
+        "id": "RI-0021",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-195 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Exit 1D (Gano Street)",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/K2dGTStHZjhqZkhD/aTNZenFh/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/195-3 I-195 W @ Gano DMS and Camera.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.400579,
+          41.816069
+        ]
+      },
+      "properties": {
+        "id": "RI-0022",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-195 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Near Exit 1",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/UEVONS9LdlVTcXVs/ZkNVS3Rq/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/195-2 I-195 E @ India St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.404302,
+          41.814222
+        ]
+      },
+      "properties": {
+        "id": "RI-0023",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-195 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "I-95 Split",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/T05XOENNUVZBQ0cr/STJqWUVl/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/195-1 I-195 W Split @ I-95.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.413111,
+          41.814934
+        ]
+      },
+      "properties": {
+        "id": "RI-0024",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-195 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Point Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/Qis0Y1U4bUJxeEtX/TEROUGFP/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/195-0 I-195 E @ Point St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.410235,
+          41.827013
+        ]
+      },
+      "properties": {
+        "id": "RI-0025",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Downtown - Metropolitan ProvidenceTraffic Cameras - Metropolitan ProvidenceIMG",
+        "direction": "",
+        "location": "Memorial at Steeple St.",
+        "region": "Metropolitan Providence",
+        "stream": null,
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Memorial Blvd @ Steeple St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.415292,
+          41.825706
+        ]
+      },
+      "properties": {
+        "id": "RI-0026",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Downtown - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Memorial at Francis St.",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/LzhLdUlsTHQ5aG9k/YVZybnlS/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Memorial Blvd @ Francis St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.426586,
+          41.82912
+        ]
+      },
+      "properties": {
+        "id": "RI-0027",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Downtown - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Promenade at Dean St.",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/TGF3cncxekFxazFM/Ymg2T1Ev/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Promenade St @ Dean St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.410932,
+          41.83137
+        ]
+      },
+      "properties": {
+        "id": "RI-0028",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Downtown - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "North Main at Branch Ave.",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/NE9UaDdEc2pLR2VC/Wm1IdXRI/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/North Main St @ Branch Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.49669,
+          41.817141
+        ]
+      },
+      "properties": {
+        "id": "RI-0029",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 6 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Atwood Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/RERYRTlUL2VHdW11/VjZ0cEN4/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/6-6 Rt 6 W @ Atwood Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.460504,
+          41.822827
+        ]
+      },
+      "properties": {
+        "id": "RI-0030",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 6 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Glenbridge Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/ZXFXUkJFZ2NSV3BO/QkVwdlFt/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/6-5 Rt 6 W @ Glenbridge Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.448991,
+          41.817685
+        ]
+      },
+      "properties": {
+        "id": "RI-0031",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 6 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Merino Park Footbridge",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/QStJM3lUL3hrRmsw/RDhlL0py/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/6-4 Rt 6 W DMS and Camera.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.425992,
+          41.825928
+        ]
+      },
+      "properties": {
+        "id": "RI-0032",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 6 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Dean Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/Y2ZmK1ErdG1zUXZF/TWJFdzNI/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/6-1 Rt 6 E   10 N @ Dean St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.419604,
+          41.781637
+        ]
+      },
+      "properties": {
+        "id": "RI-0033",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 10 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Elmwood Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/R3FpanNleVVGTS90/RG9OQ1M3/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/10-1 Rt 10 N @ Elmwood Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.43372,
+          41.786586
+        ]
+      },
+      "properties": {
+        "id": "RI-0034",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 10 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Reservoir Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/c2JzN2VTUEFwMjBh/YmM5UWMx/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/10-2 Rt 10 S @ Reservoir Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.439885,
+          41.800586
+        ]
+      },
+      "properties": {
+        "id": "RI-0035",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 10 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Kenwood Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/d01Za3draDF4NnJt/Z0plK1o2/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/10-4 Rt 10 N @ Kenwood St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.440642,
+          41.808675
+        ]
+      },
+      "properties": {
+        "id": "RI-0036",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 10 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Union Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/RWNoZFBOSVVEdzB3/WDZyOEx1/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/10-5 Rt 10 S @ Union Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.430716,
+          41.86828
+        ]
+      },
+      "properties": {
+        "id": "RI-0037",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 146 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "After Route 15",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/bHQzelM2aHlNZlRm/L2N5SHg2/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/146-3 Rt 146 S @ DMS.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.456247,
+          41.92162
+        ]
+      },
+      "properties": {
+        "id": "RI-0038",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 146 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Sherman Ave",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/SkRQeFhmUk9sTDJG/dkovKzdK/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/146-3b Rt 146 N @ Sherman Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.426502,
+          41.852977
+        ]
+      },
+      "properties": {
+        "id": "RI-0039",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 146 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Branch Avenue",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/LzhZSERKYXgySVVU/SGY3d1RH/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/146-2 Rt 146 S @ Branch Ave.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.431696,
+          41.873525
+        ]
+      },
+      "properties": {
+        "id": "RI-0040",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 146 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Charles Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/eHZKc2lEaThhNEtJ/bWU4RlpI/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/146-3a Rt 146 N @ Charles St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.418037,
+          41.840743
+        ]
+      },
+      "properties": {
+        "id": "RI-0041",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 146 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "Admiral Street",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/SVlYZ2c0cFdia1I4/RHk5YVZs/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/146-1a Rt 146 N @ Admiral St.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.439234,
+          41.888974
+        ]
+      },
+      "properties": {
+        "id": "RI-0042",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 146 - Metropolitan ProvidenceTraffic Cameras - Metropolitan Providence",
+        "direction": "",
+        "location": "State Police",
+        "region": "Metropolitan Providence",
+        "stream": "https://cdn3.wowza.com/1/anByd1AxSVVzSVUw/aDZQZXdS/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/146-3a-1 Rt 146 N @ State Police.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.332228,
+          41.789216
+        ]
+      },
+      "properties": {
+        "id": "RI-0043",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 114 - East BayTraffic Cameras - East Bay",
+        "direction": "",
+        "location": "Mink Street",
+        "region": "East Bay",
+        "stream": "https://cdn3.wowza.com/1/R3BCVnN5dmxyVEUy/UVlwSjNw/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 114 @ Mink St DMS and Camera.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.27043,
+          41.73153
+        ]
+      },
+      "properties": {
+        "id": "RI-0044",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 136 - East BayTraffic Cameras - East Bay",
+        "direction": "",
+        "location": "Kickemuit Road",
+        "region": "East Bay",
+        "stream": "https://cdn3.wowza.com/1/UjI2WFRKYnNKS2pY/SVk3Vi9q/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 136 Market St @ Kickemuit Rd.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.204318,
+          41.640975
+        ]
+      },
+      "properties": {
+        "id": "RI-0045",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 24 - Newport CountyTraffic Cameras - Newport County",
+        "direction": "",
+        "location": "Exit 4 (Main Road)",
+        "region": "Newport County",
+        "stream": "https://cdn3.wowza.com/1/bWtWUmhOV2o3M096/RzZmMnNP/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 24 S @ Main Rd.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.211174,
+          41.63811
+        ]
+      },
+      "properties": {
+        "id": "RI-0046",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 24 - Newport CountyTraffic Cameras - Newport County",
+        "direction": "",
+        "location": "Sakonnet River Bridge (Tiverton)",
+        "region": "Newport County",
+        "stream": "https://cdn3.wowza.com/1/Zm04bzRXNzNNSFJs/MTM2d1dL/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Sakonnet River Bridge (Tiverton).jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.216513,
+          41.637975
+        ]
+      },
+      "properties": {
+        "id": "RI-0047",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 24 - Newport CountyTraffic Cameras - Newport County",
+        "direction": "",
+        "location": "Sakonnet River Bridge (Portsmouth)",
+        "region": "Newport County",
+        "stream": "https://cdn3.wowza.com/1/aDlYN3N5ZGhDa2tS/VWlobHdn/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Sakonnet River Bridge (Portsmouth).jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.300606,
+          41.517019
+        ]
+      },
+      "properties": {
+        "id": "RI-0048",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 114 - Newport CountyTraffic Cameras - Newport County",
+        "direction": "",
+        "location": "Evergreen Avenue",
+        "region": "Newport County",
+        "stream": "https://cdn3.wowza.com/1/WEJkTXJ6dXcxMlFY/Y21hcUhP/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 114 @ Evergreen-Middletown.jpg?t=1695575349449",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.298181,
+          41.523904
+        ]
+      },
+      "properties": {
+        "id": "RI-0049",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 114 - Newport CountyTraffic Cameras - Newport County",
+        "direction": "",
+        "location": "Route 214",
+        "region": "Newport County",
+        "stream": "https://cdn3.wowza.com/1/WVNXaFFXTEZZV2Z4/clFLSkpK/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 114 Middletown.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28315,
+          41.5218
+        ]
+      },
+      "properties": {
+        "id": "RI-0050",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 138 - Newport CountyTraffic Cameras - Newport County",
+        "direction": "",
+        "location": "Route 138A (Aquidneck Avenue)",
+        "region": "Newport County",
+        "stream": "https://cdn3.wowza.com/1/VGkxaVVzaDlkS1ZJ/U0RqUTlw/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 138 @ Rt 138A.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.29327,
+          41.51893
+        ]
+      },
+      "properties": {
+        "id": "RI-0051",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 138 - Newport CountyTraffic Cameras - Newport County",
+        "direction": "",
+        "location": "Route 214 (Valley Road)",
+        "region": "Newport County",
+        "stream": "https://cdn3.wowza.com/1/bzR1QklMSHNLcGZt/OU5kZmJ2/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 138 @ Rt 214.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.509727,
+          41.815023
+        ]
+      },
+      "properties": {
+        "id": "RI-0052",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-295 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "Exit 9 Northbound (Route 6)",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/d3gxR2FDUFJzdG5u/WlBpTEx2/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/295_08.2_N_CAM Exit 9 - Rt 6.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.515604,
+          41.825323
+        ]
+      },
+      "properties": {
+        "id": "RI-0053",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-295 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "Exit 9 Southbound (Route 6)",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/UE9GSU9RemFOeGl0/Yyt6TU52/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/295_09.2_S_CAM Exit 9C - Rt 6.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.514755,
+          41.869102
+        ]
+      },
+      "properties": {
+        "id": "RI-0054",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-295 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "Exit 12A Northbound (Route 44)",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/cVQ4aENlSDNTeHlN/aHBJWTdY/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/295_12.0_S_CAM Exit 12A - Rt 44.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.505367,
+          41.925031
+        ]
+      },
+      "properties": {
+        "id": "RI-0055",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-295 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "Route 116",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/VDlZUDRiZmkvNXha/N203UUtv/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/295_16.2_S_CAM Rt 116.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.476317,
+          41.943151
+        ]
+      },
+      "properties": {
+        "id": "RI-0056",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-295 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "Exit 18A (Route 146)",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/S2dmQVNJK3VHNkZR/WWh0WVVE/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/295_18.4_SM_CAM Exit 18A - Rt 146.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.436815,
+          41.944951
+        ]
+      },
+      "properties": {
+        "id": "RI-0057",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-295 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "Exit 20 (Route 122)",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/R2dPU0NWODZIeEt4/WFB6YmRl/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/295_20.0_N_CAM Exit 20 - Rt 122.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.530867,
+          41.870206
+        ]
+      },
+      "properties": {
+        "id": "RI-0058",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 44 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "Route 5",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/SDFZT0FRNzVYTGxj/MEVlN2NH/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 44 @ Rt 5.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.510477,
+          41.970456
+        ]
+      },
+      "properties": {
+        "id": "RI-0059",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 146 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "At Route 146A (Southbound)",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/NkVUSVQvclZiWi8z/bGtmQVV2/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/146-6 Rt 146 S @ Rt 146A Split.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.505356,
+          41.9688
+        ]
+      },
+      "properties": {
+        "id": "RI-0060",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 146 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "At Route 146A (Northbound)",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/bjRydnpoL1lqOGVX/R0Q4RzdC/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/146-7 Rt 146 N @ Rt 146A Split.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.541588,
+          41.98073
+        ]
+      },
+      "properties": {
+        "id": "RI-0061",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 146 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "Woonsocket Hill Road",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/MGFKc0RmWk9BNjd6/Qk1NRERD/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/146-8 Rt 146 N @ Woonsocket Hill Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.560571,
+          42.002089
+        ]
+      },
+      "properties": {
+        "id": "RI-0062",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 146 - Northern R.I. & Blackstone ValleyTraffic Cameras - Northern R.I. & Blackstone Valley",
+        "direction": "",
+        "location": "Great Road",
+        "region": "Northern R.I. & Blackstone Valley",
+        "stream": "https://cdn3.wowza.com/1/SitkWEFhN0cyem9Z/WWxNSWto/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/146-9 Rt 146 N @ Great Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.796616,
+          41.442519
+        ]
+      },
+      "properties": {
+        "id": "RI-0063",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "CT State Line",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/S3dReUxpaXpzeWRJ/UVVrdnJm/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_00.2_N_CAM - CT_RI State Line.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.786454,
+          41.448489
+        ]
+      },
+      "properties": {
+        "id": "RI-0064",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Exit 1 (Route 3)",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/NllzdTRXWGtSeThN/OEVHNm5j/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_00.6_S_CAM - Exit 1.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.733027,
+          41.485763
+        ]
+      },
+      "properties": {
+        "id": "RI-0065",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Exit 4 (Alton Road)",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/T3RjNkN3dUxTR2g1/V1JRNHpE/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_04.4_S_CAM - Exit 4.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.692058,
+          41.512555
+        ]
+      },
+      "properties": {
+        "id": "RI-0066",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Exit 7 (Route 138)",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/V0hvSU5xNjMxYTRi/ckV4d1BD/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_07.2_N_CAM - Exit 7.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.679003,
+          41.537373
+        ]
+      },
+      "properties": {
+        "id": "RI-0067",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Exit 9 (Route 3)",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/am5RWG9zQWFDY2Fu/NjhUck9E/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_09.2_N_CAM - Exit 9.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.683734,
+          41.526669
+        ]
+      },
+      "properties": {
+        "id": "RI-0068",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Tefft Hill (Between Exits 9 & 14A)",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/cTZGTllvVDY1T2l4/VHNJbWg3/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_10.8_S_CAM - Tefft Hill.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.657343,
+          41.603148
+        ]
+      },
+      "properties": {
+        "id": "RI-0069",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Exit 14B (Route 102)",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/cktlVzkzd1VFNUJF/czdVdm15/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_14.0_S_CAM - Exit 14.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.633353,
+          41.631703
+        ]
+      },
+      "properties": {
+        "id": "RI-0070",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Between Exits 14B & 18",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/OXVvMTZoT0o2ZGxa/bGlGQzN6/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_15.4_S_CAM - Exit 14B DMS.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.625149,
+          41.639867
+        ]
+      },
+      "properties": {
+        "id": "RI-0071",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Weaver Hill Road",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/VXA0bWoyczZGbE9Q/aU1KYytT/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_17.0_M_CAM - Weaver Hill Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.606106,
+          41.650895
+        ]
+      },
+      "properties": {
+        "id": "RI-0072",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Exit 18 (Route 3)",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/T0JERU8zbGNveUpR/clM4RHYy/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_18.2_N_CAM - Nooseneck Hill Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.8075,
+          41.357362
+        ]
+      },
+      "properties": {
+        "id": "RI-0073",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Route 78",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/dEp5d1pVTXpzN0xk/cnA3TkNj/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/1-10 Rt 1 N @ Rt 78 Westerly.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.530676,
+          41.41278
+        ]
+      },
+      "properties": {
+        "id": "RI-0074",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Camp Fuller Road",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/Y3Q1ZXh0a1hjVElX/UitFSFJT/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/1-09 Rt 1 S @ Camp Fuller Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.519329,
+          41.427451
+        ]
+      },
+      "properties": {
+        "id": "RI-0075",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Wakefield",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/WWNJSFBacEZNRXVL/VlNLV21o/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/1-08 Rt 1 S @ Wakefield.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.472722,
+          41.449152
+        ]
+      },
+      "properties": {
+        "id": "RI-0076",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Government Center",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/R2VDeUZXWkFERmsv/bjEzTzhv/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/1-07 Rt 1 S @ Government Center.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.463597,
+          41.466126
+        ]
+      },
+      "properties": {
+        "id": "RI-0077",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Saugatucket Road",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/RnFsdzNtbnpzTm9G/NytHcWp2/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/1-06 Rt 1 N @ Saugatucket Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.456245,
+          41.495012
+        ]
+      },
+      "properties": {
+        "id": "RI-0078",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Route 138 (S. Kingstown)",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/K0luSFhoUjJsQVp0/aEVlMUcr/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/1-05 Rt 1 N @ Rt 138 South Kingstown.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.457389,
+          41.497476
+        ]
+      },
+      "properties": {
+        "id": "RI-0079",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Route 138 (N. Kingstown)",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/WUtCaHJHdUJGdGlO/QUJFWldV/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/1-04 Rt 1 N @ Rt 138 North Kingstown.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.454903,
+          41.604642
+        ]
+      },
+      "properties": {
+        "id": "RI-0080",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Route 403 (Quonset)",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/R0V4RkhuaStDbnhS/ZWtJQTRm/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/1-03 Rt 1 N @ Rt 403 Devils Foot Road.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.46747,
+          41.633216
+        ]
+      },
+      "properties": {
+        "id": "RI-0081",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Route 402",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/SW1GSGpxZWY3K2xG/dmhNUmVk/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/1-02 Rt 1 @ Rt 402 Frenchtown Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.455317,
+          41.653516
+        ]
+      },
+      "properties": {
+        "id": "RI-0082",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Fourth Avenue",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/WXdaWEUzeEV3Q1Bt/WGtiVE5W/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/1-01 Rt 1 S @ Fourth Ave East Greenwich.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.476889,
+          41.545315
+        ]
+      },
+      "properties": {
+        "id": "RI-0083",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "West Allenton Road",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/bHV2VnhwSnkxSHNE/cEF3VFNH/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/4_00.6_S_CAM - West Allenton Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.48942,
+          41.560805
+        ]
+      },
+      "properties": {
+        "id": "RI-0084",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Oak Hill Road",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/Q2g1eEdYRXF0amRI/V1Q5eVFX/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/4_02.0_S_CAM Exit 3A - Oak Hill Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.503324,
+          41.581188
+        ]
+      },
+      "properties": {
+        "id": "RI-0085",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Route 102",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/RGdZSk0xNy9Hdm9H/ZmJXeTU2/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/4_04.6_S_CAM Exit 5 - Rt 102 DMS.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.486852,
+          41.627872
+        ]
+      },
+      "properties": {
+        "id": "RI-0086",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Route 402",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/Q2dwNlBQZTRadXpw/V3luNmJ4/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/4_07.0_S_CAM Exit 7A - Frenchtown Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.487808,
+          41.646035
+        ]
+      },
+      "properties": {
+        "id": "RI-0087",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 1 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Middle Road",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/WjFmZTYzSmExYVZG/ZjZjYzdp/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/4_08.2_N_CAM Exit 7 - Middle Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.481244,
+          41.430883
+        ]
+      },
+      "properties": {
+        "id": "RI-0088",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 108 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "South Pier Road",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/Mkp3RlRmREV3U2dj/bk5rekll/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 108 @ S. Pier Rd (Dillon's Corner).jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.437992,
+          41.492056
+        ]
+      },
+      "properties": {
+        "id": "RI-0089",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 138 - South CountyTraffic Cameras - South County",
+        "direction": "",
+        "location": "Route 1A",
+        "region": "South County",
+        "stream": "https://cdn3.wowza.com/1/bEJIcTRSaEtxNlZI/bGxqQU9z/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 138 @ Rt 1A.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.575522,
+          41.652892
+        ]
+      },
+      "properties": {
+        "id": "RI-0090",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 19 (Hopkins Hill Road)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/YVMwR3FWY1lKRk5U/a2sycEk3/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_20.0_N_CAM - Hopkins Hill Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.547776,
+          41.659382
+        ]
+      },
+      "properties": {
+        "id": "RI-0091",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 21 (Coventry, W. Warwick)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/UHZ0bkpFRHZJWWNF/OGV3djVR/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_21.4_S_CAM - New London Tpke.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.499221,
+          41.666523
+        ]
+      },
+      "properties": {
+        "id": "RI-0092",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 24B (Route 2)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/MjFzOUtWUUdmZmJ6/NUtsSGd5/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_24.0_N_CAM - Quaker Ln.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.489738,
+          41.66631
+        ]
+      },
+      "properties": {
+        "id": "RI-0093",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 24B (Route 4)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/NHZDd0dJYW50SzU2/ZUFVYVpm/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_25.4_N_CAM - Rt 4 Cell Tower.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.47738,
+          41.685227
+        ]
+      },
+      "properties": {
+        "id": "RI-0094",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Cowesett Road",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/OGNPUmtZWGZmWnVk/WHYvRGIx/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_26.0_S_CAM - Cowesett Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.473142,
+          41.705179
+        ]
+      },
+      "properties": {
+        "id": "RI-0095",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 27 (near I-295)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/aS81bWRQT0hnVGtW/c0FNc0t4/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_27.4_N_CAM - Toll Gate Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.467054,
+          41.722266
+        ]
+      },
+      "properties": {
+        "id": "RI-0096",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Greenwich Avenue",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/MDc5Sm1XcWwyN24x/L3lMaktu/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_28.8_S_CAM - Greenwich Ave.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.44799,
+          41.7376
+        ]
+      },
+      "properties": {
+        "id": "RI-0097",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Service Avenue",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/a2t1NUlmQmZvNDlw/ZHpxS2FX/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_30.2_N_CAM - Service Ave.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.437189,
+          41.754196
+        ]
+      },
+      "properties": {
+        "id": "RI-0098",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 31C (Jefferson Boulevard)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/dG9CbFRyYS9aaWpj/MXpva3p6/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_31.4_N_CAM - Jefferson Blvd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.426441,
+          41.775587
+        ]
+      },
+      "properties": {
+        "id": "RI-0099",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Wellington Avenue",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/enZTcDZ0RE5aTnFK/TW05Y2kx/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_32.4_N_CAM - Wellington Ave.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.427846,
+          41.772673
+        ]
+      },
+      "properties": {
+        "id": "RI-0100",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-95 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Laurens Street",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/V1ZiOGdWZm11U2NS/bGhpMEdl/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/95_32.6_S_CAM - Laurens St.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.482932,
+          41.726055
+        ]
+      },
+      "properties": {
+        "id": "RI-0101",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-295 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 1B (Route 2)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/UUphek12VE91OVcv/elEwQjYy/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/295_01.2_M_CAM Exit 1B - Rt 2.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.506407,
+          41.788829
+        ]
+      },
+      "properties": {
+        "id": "RI-0102",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "I-295 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 6 (Route 14)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/YmpjK1JYN2laQS9h/SDFYOVZH/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/295_06.4_M_CAM Exit 6 - Rt 14.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.446789,
+          41.723754
+        ]
+      },
+      "properties": {
+        "id": "RI-0103",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Airport - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Airport Connector",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/QTZJZzNpblZYK2E5/VzM5aFl2/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Airport Connector.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.480458,
+          41.724743
+        ]
+      },
+      "properties": {
+        "id": "RI-0104",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 2 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Warwick Mall",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/Q1lHYkZGMHl3aTNX/czRTLzha/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 2 @ I-295.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.463527,
+          41.716935
+        ]
+      },
+      "properties": {
+        "id": "RI-0105",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 5 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Route 113",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/MVpSSHpQSFczSlNx/WFBWdlpp/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 5 @ Rt 113.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.466457,
+          41.72203
+        ]
+      },
+      "properties": {
+        "id": "RI-0106",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 5 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Metro Center Boulevard",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/RWhRMnVxRHM2SThv/WVArL0pG/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/Rt 5 @ I-95 Metro Center Blvd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.47537,
+          41.756596
+        ]
+      },
+      "properties": {
+        "id": "RI-0107",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 37 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 1 (I-295)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/Qno0cStJQm1qZlpo/K2YzbExU/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/37-1 Rt 37 W @ I-295.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.472536,
+          41.756477
+        ]
+      },
+      "properties": {
+        "id": "RI-0108",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 37 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Between Exits 1 & 2",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/YVJ4OU5RMzBscGhl/Q0JPN3Rs/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/37-1a Rt 37 between I-295 and Rt 2.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.464341,
+          41.753293
+        ]
+      },
+      "properties": {
+        "id": "RI-0109",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 37 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 2 (Route 2)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/TExJNFlINjdCbTZW/dEVDeFZj/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/37-2 Rt 37 E @ Rt 2.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.451831,
+          41.750013
+        ]
+      },
+      "properties": {
+        "id": "RI-0110",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 37 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Pontiac Avenue",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/NGFuMmlZd3IwSmdq/bGt0ZlQ3/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/37-3 Rt 37 E @ Pontiac Ave.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.433934,
+          41.744992
+        ]
+      },
+      "properties": {
+        "id": "RI-0111",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Route 37 - West BayTraffic Cameras - West Bay",
+        "direction": "",
+        "location": "Exit 5 (Route 1)",
+        "region": "West Bay",
+        "stream": "https://cdn3.wowza.com/1/S3Zzdm44U3JFOWp2/b1pvZ0lr/hls/live/playlist.m3u8",
+        "image": "https://www.dot.ri.gov/img/travel/camimages/37-5 Rt 37 W @ Post Rd.jpg?t=1695575349450",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.5453,
+          41.3743
+        ]
+      },
+      "properties": {
+        "id": "RI-0112",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Ocean Mist Surf Cam",
+        "direction": "",
+        "location": "Surf Cam at Ocean Mist in Matunuck, RI",
+        "region": "South County",
+        "stream": "https://oceanmist.ddns.net:4444/axis-cgi/mjpg/video.cgi?resolution=800x450&dummy=1737432015394",
+        "image": "https://oceanmist.ddns.net:4444/axis-cgi/mjpg/video.cgi?resolution=800x450&dummy=1737432015394",
+        "type": "image",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.256407,
+          41.487926
+        ]
+      },
+      "properties": {
+        "id": "RI-0113",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Second Beach, Pavilion Cam",
+        "direction": "",
+        "location": "Middletown - Second Beach, Pavilion Cam",
+        "region": "Newport County",
+        "stream": "https://embed.cdn-surfline.com/cams/63ee5eacb39041e5daf040a0/37ccccacd1c16a627b30c35a1fb87d6cecd273ae",
+        "image": "",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.25848152238183,
+          41.48900714090439
+        ]
+      },
+      "properties": {
+        "id": "RI-0114",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Second Beach, Parking Lot & Traffic Cam",
+        "direction": "",
+        "location": "Middletown - Second Beach, Parking Lot & Traffic Cam",
+        "region": "Newport County",
+        "stream": "https://embed.cdn-surfline.com/cams/63ee5ecd416b026e0879b36b/9cd04c00ac0bf446a8706c4a0bd5a3f062cfc27e",
+        "image": "",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.267062,
+          41.489022
+        ]
+      },
+      "properties": {
+        "id": "RI-0115",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Second Beach, Surfer's End",
+        "direction": "",
+        "location": "Middletown - Second Beach, Surfer's End Cam",
+        "region": "Newport County",
+        "stream": "https://embed.cdn-surfline.com/cams/63ee5e7c416b026e0879b1df/809a4f5086ff2eba01f3089e886c89b35b5c6515",
+        "image": "",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.379616,
+          41.796024
+        ]
+      },
+      "properties": {
+        "id": "RI-0116",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Kettle Point, East Providence, RI",
+        "direction": "",
+        "location": "Kettle Point, East Providence, RI",
+        "region": "East Providence",
+        "stream": "https://control.videolinq.com/public/e4McLghM",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2022/02/EP-Kettle-Point-Live-Cam-900x500_.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.554523,
+          41.168498
+        ]
+      },
+      "properties": {
+        "id": "RI-0117",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Spring House Hotel, Block Island",
+        "direction": "",
+        "location": "Spring House Hotel, Block Island, Rhode Island US",
+        "region": "East Providence",
+        "stream": "https://www.youtube.com/live/UdLRENrFq2E?si=8DyGAf0hn_RAsUYQ",
+        "image": "",
+        "type": "youtube",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.69567008636996,
+          41.34068525288812
+        ]
+      },
+      "properties": {
+        "id": "RI-0118",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Blue Shutters Beach",
+        "direction": "",
+        "location": "Blue Shutters Beach",
+        "region": "Charlestown",
+        "stream": "https://command.verkada.com/embed.html#%7B%22entityId%22%3A%20%229cf67cc8-a1e6-4520-93d3-d75a595812ae%22%2C%20%22embedLinkId%22%3A%20%22a7315b9c-8931-4911-95a2-612ad9a1281f%22%2C%20%22domains%22%3A%20%22charlestownri.gov%2Ccharlestownri.org%22%2C%20%22token%22%3A%20%22v2_667b6cc02733fc1439623e8054b25c0c%22%2C%20%22urlSD%22%3A%20%22https%3A//vstream.command.verkada.com/filter/transcode/v2_667b6cc02733fc1439623e8054b25c0c/9cf67cc8-a1e6-4520-93d3-d75a595812ae/low_res/livevideo.m3u8%22%2C%20%22urlHD%22%3A%20%22https%3A//vfilter.command.verkada.com/filter/transcode/v2_667b6cc02733fc1439623e8054b25c0c/9cf67cc8-a1e6-4520-93d3-d75a595812ae/high_res/livevideo.m3u8%22%7D",
+        "image": "",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.69537153196956,
+          41.342214456495306
+        ]
+      },
+      "properties": {
+        "id": "RI-0119",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Blue Shutters Beach (Parking)",
+        "direction": "",
+        "location": "Blue Shutters Beach",
+        "region": "Charlestown",
+        "stream": "https://command.verkada.com/embed.html#%7B%22entityId%22%3A%20%22dfe32160-84c6-4602-abe8-836d7c89e3f8%22%2C%20%22embedLinkId%22%3A%20%2242e242ea-f587-4216-9095-7b3e9e3dff52%22%2C%20%22domains%22%3A%20%22charlestownri.gov%22%2C%20%22token%22%3A%20%22v2_0abcf2d8f7eb029ab019cf727fd71a71%22%2C%20%22urlSD%22%3A%20%22https%3A//vstream.command.verkada.com/filter/transcode/v2_0abcf2d8f7eb029ab019cf727fd71a71/dfe32160-84c6-4602-abe8-836d7c89e3f8/low_res/livevideo.m3u8%22%2C%20%22urlHD%22%3A%20%22https%3A//vfilter.command.verkada.com/filter/transcode/v2_0abcf2d8f7eb029ab019cf727fd71a71/dfe32160-84c6-4602-abe8-836d7c89e3f8/high_res/livevideo.m3u8%22%7D",
+        "image": "",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.45561256402864,
+          41.43540311461043
+        ]
+      },
+      "properties": {
+        "id": "RI-0120",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Narragansett Town Beach",
+        "direction": "",
+        "location": "Narragansett Town Beach  - Narragansett, RI",
+        "region": "Narragansett",
+        "stream": "https://control.videolinq.com/public/eLmGC3P9",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2022/02/Narragansett-Beach-Live-Cam-900x500_.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.3217701249921,
+          41.49694245824549
+        ]
+      },
+      "properties": {
+        "id": "RI-0121",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Newport Bridge West Bay View",
+        "direction": "",
+        "location": "Newport Bridge West Bay View \u2013 Newport, RI",
+        "region": "Newport",
+        "stream": "https://control.videolinq.com/public/PaPW0elm?parent-referrer=https:%2F%2Fwww.wpri.com%2Flive-cams%2Fnewport-west-view%2F",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2022/02/Newport-West-View-Live-Cam-900x500_.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.32315817089992,
+          41.485891988621376
+        ]
+      },
+      "properties": {
+        "id": "RI-0122",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Newport Harbor",
+        "direction": "",
+        "location": "Newport Harbor \u2013 Newport, RI",
+        "region": "Newport",
+        "stream": "https://control.videolinq.com/public/9SOyrYue",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2022/02/Newport-Harbor-Live-Cam-900x500_.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.4161756754942,
+          41.65780678548794
+        ]
+      },
+      "properties": {
+        "id": "RI-0123",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "East View of Narragansett Bay",
+        "direction": "",
+        "location": "East View of Narragansett Bay from Rocky Hill Country Day School",
+        "region": "Narragansett",
+        "stream": "https://g1.ipcamlive.com/player/player.php?alias=rockyhill&skin=white&autoplay=1&mute=1",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2023/05/Live-Cam-thumbnail-eg-rockyhill.jpg?resize=876,486",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.91394777553853,
+          41.637127461991255
+        ]
+      },
+      "properties": {
+        "id": "RI-0124",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "New Bedford Harbor",
+        "direction": "",
+        "location": "New Bedford Harbor \u2013 New Bedford, MA",
+        "region": "New Bedford",
+        "stream": "https://control.videolinq.com/public/db2BJsv8?parent-referrer=https:%2F%2Fwww.wpri.com%2Flive-cams%2Fnew-bedford-harbor%2F",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2022/02/New-Bedford-Harbor-Live-Cam-900x500_.jpg?resize=876,486",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.43385751400926,
+          41.564158844285984
+        ]
+      },
+      "properties": {
+        "id": "RI-0125",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "East Bay - North Kingstown",
+        "direction": "",
+        "location": "East Bay View \u2013 North Kingstown, RI",
+        "region": "North Kingstown",
+        "stream": "https://control.videolinq.com/public/uA8dZ53U",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2022/02/North-Kingstown-Live-Cam-900x500_.jpg?resize=876,486",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.45035063558242,
+          41.889247437534074
+        ]
+      },
+      "properties": {
+        "id": "RI-0126",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Bally\u2019s Lincoln RI",
+        "direction": "",
+        "location": "Bally\u2019s Lincoln",
+        "region": "Lincoln, RI",
+        "stream": "https://g1.ipcamlive.com/player/player.php?alias=ballyscam&skin=white&autoplay=1",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2023/05/Live-Cam-thumbnail-lincoln.jpg?resize=876,486",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.40235135576418,
+          41.81575827581468
+        ]
+      },
+      "properties": {
+        "id": "RI-0127",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Fox Point Hurricane Barrier",
+        "direction": "",
+        "location": "Fox Point Hurricane Barrier, Providence",
+        "region": "Providence",
+        "stream": "https://control.videolinq.com/public/prdnomdb",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2022/02/Fox-Point-View-Live-Cam-900x500_.jpg?resize=876,486",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.41705457724133,
+          41.823629911006876
+        ]
+      },
+      "properties": {
+        "id": "RI-0128",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "The AMP Cam \u2013 Providence",
+        "direction": "",
+        "location": "The Amica Mutual Pavilion \u2013 Providence, RI",
+        "region": "Providence",
+        "stream": "https://g1.ipcamlive.com/player/player.php?alias=ampcam&skin=white&autoplay=1&mute=1",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2023/06/Live-Cam-thumbnail-AMP.jpg?resize=876,486",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.67701361352997,
+          41.84225931293219
+        ]
+      },
+      "properties": {
+        "id": "RI-0129",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Frederickson Farm Stove Shop",
+        "direction": "",
+        "location": "Frederickson Farm Stove Shop \u2013 North Scituate",
+        "region": "North Scituate",
+        "stream": "https://control.videolinq.com/public/AkPKWcgi",
+        "image": "https://www.wpri.com/wp-content/uploads/sites/23/2022/02/North-Scituate-Live-Cam-900x500_.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.39964887582278,
+          41.448838985213555
+        ]
+      },
+      "properties": {
+        "id": "RI-0130",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Beavertail State Park",
+        "direction": "",
+        "location": "Beavertail State Park in Jamestown",
+        "region": "Jamestown",
+        "stream": "https://api.wetmet.net/widgets/stream/frame.php?uid=12f11200c9e0f2bc9b04c3fbcb8ac5ec",
+        "image": "https://turnto10.com/resources/media2/16x9/full/400/center/80/a5d42c8f-09a1-4e23-8f22-7eeb25bbe8e3-large16x9_BEAVERTAIL.png",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.38791697861801,
+          41.815728643926036
+        ]
+      },
+      "properties": {
+        "id": "RI-0131",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Tockwotton on the Waterfront",
+        "direction": "",
+        "location": "Tockwotton on the Waterfront - East Providence",
+        "region": "East Providence",
+        "stream": "https://api.wetmet.net/widgets/stream/frame.php?uid=f40080f1a5878fd20136907d381d8a41",
+        "image": "https://turnto10.com/resources/media2/16x9/full/400/center/80/2798c5ca-bee7-4452-903a-ca9bdffe100e-large16x9_Tock.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.1544654778316,
+          41.70070785794119
+        ]
+      },
+      "properties": {
+        "id": "RI-0132",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Fall River: PrimaCARE",
+        "direction": "",
+        "location": "Fall River: PrimaCARE",
+        "region": "Fall River",
+        "stream": "https://api.wetmet.net/widgets/stream/frame.php?uid=dbe8cce19c6db8a04a19f56623637d8e",
+        "image": "https://turnto10.com/resources/media2/16x9/full/400/center/80/0934c8ae-d525-48ee-8766-029a756b5b75-large16x9_FallRiver.PNG",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.28493108961962,
+          41.489934848016496
+        ]
+      },
+      "properties": {
+        "id": "RI-0133",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Middletown: Flo's Clam Shack",
+        "direction": "",
+        "location": "Middletown: Flo's Clam Shack",
+        "region": "Middletown",
+        "stream": "https://api.wetmet.net/widgets/stream/frame.php?uid=51b126c99b214c8a4609ae4c72eb00f5",
+        "image": "https://turnto10.com/resources/media2/16x9/full/400/center/80/d1c35a22-6ce5-419b-b7a5-1dc78bd38126-large16x9_Flos.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.45521443591234,
+          41.43012596012102
+        ]
+      },
+      "properties": {
+        "id": "RI-0134",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Narragansett: The Coast Guard House",
+        "direction": "",
+        "location": "Narragansett: The Coast Guard House",
+        "region": "Narragansett",
+        "stream": "https://api.wetmet.net/widgets/stream/frame.php?uid=69d43f230775e66d0bfd181986c6ee41",
+        "image": "https://turnto10.com/resources/media2/16x9/full/400/center/80/a2e19962-8f01-4c1a-a820-aedd38c8bab7-large16x9_Coast.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.51262323737505,
+          41.37632313765681
+        ]
+      },
+      "properties": {
+        "id": "RI-0135",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "George's of Galilee",
+        "direction": "",
+        "location": "Point Judith: George's of Galilee",
+        "region": "Narragansett",
+        "stream": "https://api.wetmet.net/widgets/stream/frame.php?uid=ff685d7cf16e14f9b8e52a374be76900",
+        "image": "https://turnto10.com/resources/media2/16x9/full/400/center/80/452af86c-18bf-4ab5-b4ae-dbff16869faa-large16x9_Georges.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.41116093193361,
+          41.824363925784425
+        ]
+      },
+      "properties": {
+        "id": "RI-0136",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Providence: Towercam",
+        "direction": "",
+        "location": "Providence: Towercam",
+        "region": "Providence",
+        "stream": "https://api.wetmet.net/widgets/stream/frame.php?uid=5387b85eaf10e6d74dddbd41792d46c7",
+        "image": "https://turnto10.com/resources/media2/16x9/full/400/center/80/d22ddffc-0d8b-4aac-96b7-6823a8bd5d0c-large16x9_Tower.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.57229153193124,
+          41.88019812098015
+        ]
+      },
+      "properties": {
+        "id": "RI-0137",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "The Village at Waterman Lake",
+        "direction": "",
+        "location": "Smithfield: The Village at Waterman Lake",
+        "region": "Smithfield",
+        "stream": "https://api.wetmet.net/widgets/stream/frame.php?uid=e248c48a2f2213734daec2bb1574d532",
+        "image": "https://turnto10.com/resources/media2/16x9/full/400/center/80/a5ebb2f2-59cb-4d0b-8783-f89ee2eba803-large16x9_Greenville.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.398237,
+          41.68421217553432
+        ]
+      },
+      "properties": {
+        "id": "RI-0138",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Iggy's Doughboys and Chowderhouse",
+        "direction": "",
+        "location": "Warwick: Iggy's Doughboys and Chowderhouse",
+        "region": "Warwick",
+        "stream": "https://api.wetmet.net/widgets/stream/frame.php?uid=a381a64c9d8f149db58c05334fee6494",
+        "image": "https://turnto10.com/resources/media2/16x9/full/400/center/80/a4a5e843-e3dd-4ca8-9f1b-67f81e252fbb-large16x9_Iggys.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.92646062512935,
+          41.63756132589557
+        ]
+      },
+      "properties": {
+        "id": "RI-0139",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "New Bedford from The Regency Apartments",
+        "direction": "",
+        "location": "New Bedford: The Regency Apartments",
+        "region": "New Bedford",
+        "stream": "https://api.wetmet.net/widgets/stream/frame.php?uid=314ca87eec2b835ce807be67886014f4",
+        "image": "https://turnto10.com/resources/media2/16x9/full/400/center/80/01477b54-1549-46f6-b1ee-3b4456e1fc97-large16x9_NewBedford.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.45050266562944,
+          41.457192324782746
+        ]
+      },
+      "properties": {
+        "id": "RI-0140",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Osprey webcam - Narrow River",
+        "direction": "",
+        "location": "Narrow River Preservation Association",
+        "region": "Saunderstown",
+        "stream": "https://v.angelcam.com/iframe?v=16lbkvzpl4&autoplay=1",
+        "image": "https://www.iplivecams.com/images/narrow-river-preservation-association-saunderstown-rhode-island-united-states.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.42686138735668,
+          41.47316407201705
+        ]
+      },
+      "properties": {
+        "id": "RI-0141",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Bonnet Shores Beach Club",
+        "direction": "",
+        "location": "Bonnet Shores Beach Club",
+        "region": "Narragansett",
+        "stream": "https://v.angelcam.com/iframe?v=v8yp8n95l6&autoplay=1",
+        "image": "https://www.iplivecams.com/images/easton-s-beach-newport-rhode-island-united-states.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.41955827314241,
+          41.492101603339464
+        ]
+      },
+      "properties": {
+        "id": "RI-0142",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "URI - GSO Dock",
+        "direction": "",
+        "location": "University of Rhode Island",
+        "region": "Narragansett",
+        "stream": "https://g1.ipcamlive.com/player/player.php?alias=baycampus&skin=white&autoplay=true",
+        "image": "",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.55755013262899,
+          41.173420056999696
+        ]
+      },
+      "properties": {
+        "id": "RI-0143",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Block Island - Ferry Dock",
+        "direction": "",
+        "location": "Block Island - Ferry Dock",
+        "region": "Block Island",
+        "stream": "http://168.235.90.37/",
+        "image": "",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.45746015965973,
+          41.432192472806236
+        ]
+      },
+      "properties": {
+        "id": "RI-0144",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Warm Winds - Narragansett Beach Cam",
+        "direction": "",
+        "location": "Warm Winds - Narragansett Beach Cam",
+        "region": "Narragansett",
+        "stream": "https://5c864aa99ee04.streamlock.net/surfcam/live.stream/playlist.m3u8",
+        "image": "https://www.iplivecams.com/images/warm-winds-narragansett-beach-rhode-island-united-states.jpg",
+        "type": "video",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.45802351609,
+          41.43121783395878
+        ]
+      },
+      "properties": {
+        "id": "RI-0145",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Aqua Blue Hotel",
+        "direction": "",
+        "location": "Aqua Blue Hotel - Narragansett",
+        "region": "Narragansett",
+        "stream": "https://control.videolinq.com/public/eLmGC3P9",
+        "image": "https://www.iplivecams.com/images/aqua-blue-hotel-narragansett-rhode-island-united-states.jpg",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.31613524070343,
+          41.486449529796715
+        ]
+      },
+      "properties": {
+        "id": "RI-0146",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Newport Dock Cam",
+        "direction": "",
+        "location": "Sightsailing of Newport Dock Cam",
+        "region": "Newport",
+        "stream": "https://www.youtube.com/live/dlt6d2mSdpE?si=FYCHSzX28OWfGf_b",
+        "image": "",
+        "type": "youtube",
+        "source": "statecams.com / RIDOT"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.84506744707329,
+          41.32387132539834
+        ]
+      },
+      "properties": {
+        "id": "RI-0147",
+        "state": "RI",
+        "agency": "RIDOT",
+        "road": "Watch Hill Boatyard",
+        "direction": "",
+        "location": "Watch Hill Boatyard",
+        "region": "Watch Hill",
+        "stream": "https://v.angelcam.com/iframe?v=17ldgk3jle&autoplay=1",
+        "image": "",
+        "type": "iframe",
+        "source": "statecams.com / RIDOT"
+      }
+    }
+  ]
+}

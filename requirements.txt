@@ -2,3 +2,6 @@ flask
 flask-cors
 requests
 urllib3
+xarray
+cfgrib
+eccodes

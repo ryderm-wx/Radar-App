@@ -1,0 +1,2291 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.078892,
+          39.302863
+        ]
+      },
+      "properties": {
+        "id": "CAM117",
+        "title": "I-81",
+        "origin": "Camera-669fee457101b83b3088bf4c",
+        "region": "BER",
+        "label": "[BER]I-81 @ 0.5 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM117/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.9893,
+          39.464
+        ]
+      },
+      "properties": {
+        "id": "CAM029",
+        "title": "I-81",
+        "origin": "Camera-669feeea7101b83b3088bf4d",
+        "region": "BER",
+        "label": "[BER]I-81 @ 13 King Street West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM029/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.91237,
+          39.54489
+        ]
+      },
+      "properties": {
+        "id": "CAM026",
+        "title": "I-81",
+        "origin": "Camera-669fef907101b83b3088bf50",
+        "region": "BER",
+        "label": "[BER]I-81 @ 20 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM026/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.87397,
+          39.58044
+        ]
+      },
+      "properties": {
+        "id": "CAM059",
+        "title": "I-81",
+        "origin": "Camera-669ff0107101b83b3088bf52",
+        "region": "BER",
+        "label": "[BER]I-81 @ 23 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM059/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.8492,
+          39.5851
+        ]
+      },
+      "properties": {
+        "id": "CAM002",
+        "title": "I-81",
+        "origin": "Camera-669ff0617101b83b3088bf53",
+        "region": "BER",
+        "label": "[BER]I-81 @ 25 Rest Area West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM002/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.0481,
+          39.3624
+        ]
+      },
+      "properties": {
+        "id": "CAM031",
+        "title": "I-81",
+        "origin": "Camera-6750c3d87c085204fcc57ebc",
+        "region": "BER",
+        "label": "[BER]I-81 @ 5 Inwood West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM031/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.02632,
+          39.40431
+        ]
+      },
+      "properties": {
+        "id": "CAM051",
+        "title": "I-81",
+        "origin": "Camera-669ff0fd7101b83b3088bf59",
+        "region": "BER",
+        "label": "[BER]I-81 @ 8 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM051/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.006252,
+          39.420573
+        ]
+      },
+      "properties": {
+        "id": "CAM056",
+        "title": "I-81",
+        "origin": "Camera-669ff1227101b83b3088bf5b",
+        "region": "BER",
+        "label": "[BER]I-81 @ 9 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM056/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.835828,
+          38.136553
+        ]
+      },
+      "properties": {
+        "id": "CAM101",
+        "title": "US-119",
+        "origin": "Camera-669ff17a7101b83b3088bf60",
+        "region": "BOO",
+        "label": "[BOO]US-119 @ CR4 Lory Place West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM101/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.66544,
+          38.700392
+        ]
+      },
+      "properties": {
+        "id": "CAM102",
+        "title": "I-79",
+        "origin": "Camera-669ff1a27101b83b3088bf63",
+        "region": "BRA",
+        "label": "[BRA]I-79 @ 67 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM102/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.662914,
+          38.856115
+        ]
+      },
+      "properties": {
+        "id": "CAM044",
+        "title": "I-79",
+        "origin": "Camera-669ff9427101b83b3088bf9c",
+        "region": "BRA",
+        "label": "[BRA]I-79 @ 79 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM044/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.75696,
+          38.61807
+        ]
+      },
+      "properties": {
+        "id": "CAM080",
+        "title": "I-79",
+        "origin": "Camera-669ff9d17101b83b3088bf9f",
+        "region": "BRA",
+        "label": "[BRA]I-79 @ US-19 Exit 57 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM080/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.40494,
+          38.392375
+        ]
+      },
+      "properties": {
+        "id": "CAM011",
+        "title": "I-64",
+        "origin": "Camera-669ffa067101b83b3088bfa1",
+        "region": "CAB",
+        "label": "[CAB]I-64 @ 11 Hal Greer I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM011/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.349856,
+          38.414544
+        ]
+      },
+      "properties": {
+        "id": "CAM036",
+        "title": "I-64",
+        "origin": "Camera-669ffa747101b83b3088bfa5",
+        "region": "CAB",
+        "label": "[CAB]I-64 @ 15 29th St exit(RT 60) West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM036/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.348222,
+          38.413903
+        ]
+      },
+      "properties": {
+        "id": "CAM135",
+        "title": "I-64",
+        "origin": "Camera-669ffab17101b83b3088bfa7",
+        "region": "CAB",
+        "label": "[CAB]I-64 @ 15B West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM135/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.278413,
+          38.415595
+        ]
+      },
+      "properties": {
+        "id": "CAM091",
+        "title": "I-64",
+        "origin": "Camera-669ffd9b7101b83b3088bfbc",
+        "region": "CAB",
+        "label": "[CAB]I-64 @ 18.6 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM091/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.26015,
+          38.416798
+        ]
+      },
+      "properties": {
+        "id": "CAM045",
+        "title": "I-64",
+        "origin": "Camera-669ffded7101b83b3088bfc0",
+        "region": "CAB",
+        "label": "[CAB]I-64 @ 20 Barboursville I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM045/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.122833,
+          38.438777
+        ]
+      },
+      "properties": {
+        "id": "CAM012",
+        "title": "I-64",
+        "origin": "Camera-669ffffc7101b83b3088bfcc",
+        "region": "CAB",
+        "label": "[CAB]I-64 @ 28 Milton I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM012/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.478732,
+          38.401886
+        ]
+      },
+      "properties": {
+        "id": "CAM033",
+        "title": "I-64",
+        "origin": "Camera-66a000e67101b83b3088bfd3",
+        "region": "CAB",
+        "label": "[CAB]I-64 @ 6.6 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM033/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.270555,
+          37.965555
+        ]
+      },
+      "properties": {
+        "id": "CAM106",
+        "title": "I-77",
+        "origin": "Camera-66a0024c7101b83b3088bfdd",
+        "region": "FAY",
+        "label": "[FAY]I-77 @ 58.5 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM106/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.3558,
+          38.0275
+        ]
+      },
+      "properties": {
+        "id": "CAM019",
+        "title": "I-77",
+        "origin": "Camera-66a0027b7101b83b3088bfde",
+        "region": "FAY",
+        "label": "[FAY]I-77 @ 66 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM019/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.087666,
+          38.066666
+        ]
+      },
+      "properties": {
+        "id": "CAM046",
+        "title": "US-19",
+        "origin": "Camera-66a002a77101b83b3088bfe1",
+        "region": "FAY",
+        "label": "[FAY]US 19 @ New River Gorge Bridge West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM046/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.159183,
+          37.923121
+        ]
+      },
+      "properties": {
+        "id": "CAM039",
+        "title": "US-19",
+        "origin": "Camera-66a002dd7101b83b3088bfe2",
+        "region": "FAY",
+        "label": "[FAY]US-19 @ Glen Jean I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM039/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.21127,
+          39.21517
+        ]
+      },
+      "properties": {
+        "id": "CAM037",
+        "title": "WV-48",
+        "origin": "Camera-66a003107101b83b3088bfe3",
+        "region": "GRA",
+        "label": "[GRA]WV-48 @ Communications Dr West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM037/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.27177,
+          37.79268
+        ]
+      },
+      "properties": {
+        "id": "CAM083",
+        "title": "I-64",
+        "origin": "Camera-66a003487101b83b3088bfe5",
+        "region": "GRE",
+        "label": "[GRE]I-64 @ 179 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM083/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.427215,
+          37.817133
+        ]
+      },
+      "properties": {
+        "id": "CAM047",
+        "title": "US-219",
+        "origin": "Camera-66a003ba7101b83b3088bfe8",
+        "region": "GRE",
+        "label": "[GRE]US-219 @ Lewisburg West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM047/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.2853,
+          39.2751
+        ]
+      },
+      "properties": {
+        "id": "CAM028",
+        "title": "I-79",
+        "origin": "Camera-66a004747101b83b3088bfed",
+        "region": "HAR",
+        "label": "[HAR]I-79 @ MM 119 Clarksburg West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM028/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.3922,
+          39.2847
+        ]
+      },
+      "properties": {
+        "id": "CAM001",
+        "title": "US-50",
+        "origin": "Camera-66a004ba7101b83b3088bff0",
+        "region": "HAR",
+        "label": "[HAR]US-50 @ MM 75.5 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM001/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.66368,
+          38.734229
+        ]
+      },
+      "properties": {
+        "id": "CAM096",
+        "title": "I-77",
+        "origin": "Camera-66a004f77101b83b3088bff1",
+        "region": "JAC",
+        "label": "[JAC]I-77 @ 130 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM096/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.703727,
+          38.948497
+        ]
+      },
+      "properties": {
+        "id": "CAM084",
+        "title": "I-77",
+        "origin": "Camera-66a004b77101b83b3088bfef",
+        "region": "JAC",
+        "label": "[JAC]I-77 @ 148 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM084/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.839628,
+          39.29506
+        ]
+      },
+      "properties": {
+        "id": "CAM098",
+        "title": "US-340",
+        "origin": "Camera-66a003ed7101b83b3088bfe9",
+        "region": "JEF",
+        "label": "[JEF]US-340 @ John Adams Link Bridge West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM098/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.790967,
+          39.314265
+        ]
+      },
+      "properties": {
+        "id": "CAM099",
+        "title": "US-340",
+        "origin": "Camera-66a003607101b83b3088bfe6",
+        "region": "JEF",
+        "label": "[JEF]US-340 @ WV-230 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM099/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.843056,
+          39.309723
+        ]
+      },
+      "properties": {
+        "id": "CAM119",
+        "title": "WV-9",
+        "origin": "Camera-66a003157101b83b3088bfe4",
+        "region": "JEF",
+        "label": "[JEF]WV-9 @ 65.5 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM119/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.764616,
+          39.262684
+        ]
+      },
+      "properties": {
+        "id": "CAM105",
+        "title": "WV-9",
+        "origin": "Camera-66a002a57101b83b3088bfe0",
+        "region": "JEF",
+        "label": "[JEF]WV-9 @ Chestnut Hill West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM105/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.81766,
+          38.427372
+        ]
+      },
+      "properties": {
+        "id": "CAM120",
+        "title": "I-64",
+        "origin": "Camera-66a0027d7101b83b3088bfdf",
+        "region": "KAN",
+        "label": "[KAN]I-64 @ 46 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM120/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.795833,
+          38.413611
+        ]
+      },
+      "properties": {
+        "id": "CAM022",
+        "title": "I-64",
+        "origin": "Camera-66a001ff7101b83b3088bfdb",
+        "region": "KAN",
+        "label": "[KAN]I-64 @ 47 Crosslanes West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM022/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.767631,
+          38.386527
+        ]
+      },
+      "properties": {
+        "id": "CAM097",
+        "title": "I-64",
+        "origin": "Camera-66a001c57101b83b3088bfd9",
+        "region": "KAN",
+        "label": "[KAN]I-64 @ 50 Institute West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM097/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.7362,
+          38.3616
+        ]
+      },
+      "properties": {
+        "id": "CAM009",
+        "title": "I-64",
+        "origin": "Camera-66a001937101b83b3088bfd8",
+        "region": "KAN",
+        "label": "[KAN]I-64 @ 53 Dunbar West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM009/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.7067,
+          38.3593
+        ]
+      },
+      "properties": {
+        "id": "CAM122",
+        "title": "I-64",
+        "origin": "Camera-66a001697101b83b3088bfd7",
+        "region": "KAN",
+        "label": "[KAN]I-64 @ 55 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM122/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.688388,
+          38.364722
+        ]
+      },
+      "properties": {
+        "id": "CAM013",
+        "title": "I-64",
+        "origin": "Camera-66a001497101b83b3088bfd6",
+        "region": "KAN",
+        "label": "[KAN]I-64 @ 55.2 Montrose I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM013/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6512,
+          38.354972
+        ]
+      },
+      "properties": {
+        "id": "CAM014",
+        "title": "I-64",
+        "origin": "Camera-66a0010f7101b83b3088bfd4",
+        "region": "KAN",
+        "label": "[KAN]I-64 @ 58 Oakwood I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM014/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6353,
+          38.3591
+        ]
+      },
+      "properties": {
+        "id": "CAM038",
+        "title": "I-64",
+        "origin": "Camera-66a000e47101b83b3088bfd2",
+        "region": "KAN",
+        "label": "[KAN]I-64 @ 58.2 Lotto bld 1 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM038/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.633287,
+          38.359052
+        ]
+      },
+      "properties": {
+        "id": "CAM042",
+        "title": "I-64",
+        "origin": "Camera-66a000b37101b83b3088bfd1",
+        "region": "KAN",
+        "label": "[KAN]I-64 @ 58.3 Lotto bld 2 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM042/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6304,
+          38.360361
+        ]
+      },
+      "properties": {
+        "id": "CAM089",
+        "title": "I-64",
+        "origin": "Camera-66a000877101b83b3088bfd0",
+        "region": "KAN",
+        "label": "[KAN]I-64 @ 58.5 Bigley I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM089/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.670454,
+          38.3632
+        ]
+      },
+      "properties": {
+        "id": "CAM048",
+        "title": "I-64",
+        "origin": "Camera-66a0005f7101b83b3088bfcf",
+        "region": "KAN",
+        "label": "[KAN]I-64 MM 56.4 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM048/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.80556,
+          38.42139
+        ]
+      },
+      "properties": {
+        "id": "CAM136",
+        "title": "I-64",
+        "origin": "Camera-66a000397101b83b3088bfce",
+        "region": "KAN",
+        "label": "[KAN]I-64 WB @ MM 46.6 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM136/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.4468,
+          38.1526
+        ]
+      },
+      "properties": {
+        "id": "CAM049",
+        "title": "I-77",
+        "origin": "Camera-669fffe97101b83b3088bfcb",
+        "region": "KAN",
+        "label": "[KAN]I-77 @ 79 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM049/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6261,
+          38.3515
+        ]
+      },
+      "properties": {
+        "id": "CAM079",
+        "title": "I-77",
+        "origin": "Camera-669fffc27101b83b3088bfca",
+        "region": "KAN",
+        "label": "[KAN]I-77 @ 100 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM079/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.3883,
+          38.129167
+        ]
+      },
+      "properties": {
+        "id": "CAM111",
+        "title": "I-77",
+        "origin": "Camera-669fff907101b83b3088bfc9",
+        "region": "KAN",
+        "label": "[KAN]I-77 @ 74.0 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM111/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.525,
+          38.211111
+        ]
+      },
+      "properties": {
+        "id": "CAM016",
+        "title": "I-77",
+        "origin": "Camera-669fff617101b83b3088bfc8",
+        "region": "KAN",
+        "label": "[KAN]I-77 @ 86.5 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM016/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.5661,
+          38.302778
+        ]
+      },
+      "properties": {
+        "id": "CAM052",
+        "title": "I-77",
+        "origin": "Camera-669fff347101b83b3088bfc7",
+        "region": "KAN",
+        "label": "[KAN]I-77 @ 94 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM052/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.5658,
+          38.3086
+        ]
+      },
+      "properties": {
+        "id": "CAM112",
+        "title": "I-77",
+        "origin": "Camera-669fff0b7101b83b3088bfc6",
+        "region": "KAN",
+        "label": "[KAN]I-77 @ 95 McCorkle West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM112/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.5982,
+          38.3344
+        ]
+      },
+      "properties": {
+        "id": "CAM081",
+        "title": "I-77",
+        "origin": "Camera-669ffecd7101b83b3088bfc5",
+        "region": "KAN",
+        "label": "[KAN]I-77 @ 98 35th St West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM081/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6101,
+          38.3397
+        ]
+      },
+      "properties": {
+        "id": "CAM008",
+        "title": "I-77",
+        "origin": "Camera-669ffe9e7101b83b3088bfc3",
+        "region": "KAN",
+        "label": "[KAN]I-77 @ 99 Greenbrier Exit West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM008/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.556944,
+          38.317208
+        ]
+      },
+      "properties": {
+        "id": "CAM053",
+        "title": "I-77",
+        "origin": "Camera-669ffe767101b83b3088bfc2",
+        "region": "KAN",
+        "label": "[KAN]I-77/I-64 @ 95 US 60 IC West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM053/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.684953,
+          38.340208
+        ]
+      },
+      "properties": {
+        "id": "CAM113",
+        "title": "US-119",
+        "origin": "Camera-669ffc397101b83b3088bfb6",
+        "region": "KAN",
+        "label": "[KAN]US-119 @ Eureka Rd West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM113/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.7176,
+          38.3202
+        ]
+      },
+      "properties": {
+        "id": "CAM054",
+        "title": "US-119",
+        "origin": "Camera-669ffbce7101b83b3088bfb4",
+        "region": "KAN",
+        "label": "[KAN]US-119 @ Southridge West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM054/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.6503,
+          38.3493
+        ]
+      },
+      "properties": {
+        "id": "CAM121",
+        "title": "US-119",
+        "origin": "Camera-669ffba97101b83b3088bfb3",
+        "region": "KAN",
+        "label": "[KAN]US-119 to I-64 I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM121/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.833612,
+          38.389351
+        ]
+      },
+      "properties": {
+        "id": "CAM055",
+        "title": "US-60",
+        "origin": "Camera-669ffb5f7101b83b3088bfaf",
+        "region": "KAN",
+        "label": "[KAN]US-60 @ 3rd St West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM055/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.49757,
+          38.1967
+        ]
+      },
+      "properties": {
+        "id": "CAM090",
+        "title": "US-60",
+        "origin": "Camera-669ffb317101b83b3088bfac",
+        "region": "KAN",
+        "label": "[KAN]US-60 @ Chelyan West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM090/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.663586,
+          38.341488
+        ]
+      },
+      "properties": {
+        "id": "CAM063",
+        "title": "US-119",
+        "origin": "Camera-669ffbfa7101b83b3088bfb5",
+        "region": "KAN",
+        "label": "[KAN]US119 @ Oakwood Rd West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM063/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.7107,
+          38.3324
+        ]
+      },
+      "properties": {
+        "id": "CAM057",
+        "title": "US-119",
+        "origin": "Camera-669ffb827101b83b3088bfb1",
+        "region": "KAN",
+        "label": "[KAN]US119 @ Trace Fork West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM057/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.049696,
+          37.888808
+        ]
+      },
+      "properties": {
+        "id": "CAM100",
+        "title": "US-119",
+        "origin": "Camera-669ffa207101b83b3088bfa2",
+        "region": "LOG",
+        "label": "[LOG]US-119 @ Fry Dr West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM100/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.12519,
+          37.285033
+        ]
+      },
+      "properties": {
+        "id": "CAM130",
+        "title": "I-77",
+        "origin": "Camera-669ff14d7101b83b3088bf5d",
+        "region": "MER",
+        "label": "[MER]I-77 @ 1 East River Mountain Tunnel West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM130/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.0607,
+          37.4084
+        ]
+      },
+      "properties": {
+        "id": "CAM107",
+        "title": "I-77",
+        "origin": "Camera-669ff06f7101b83b3088bf54",
+        "region": "MER",
+        "label": "[MER]I-77 @ 14.0 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM107/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.063241,
+          37.311333
+        ]
+      },
+      "properties": {
+        "id": "CAM021",
+        "title": "I-77",
+        "origin": "Camera-669ff0e37101b83b3088bf57",
+        "region": "MER",
+        "label": "[MER]I-77 @ 4.5 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM021/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.0479,
+          37.3633
+        ]
+      },
+      "properties": {
+        "id": "CAM061",
+        "title": "I-77",
+        "origin": "Camera-669ff1117101b83b3088bf5a",
+        "region": "MER",
+        "label": "[MER]I-77 @ 9 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM061/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.06,
+          37.393889
+        ]
+      },
+      "properties": {
+        "id": "CAM108",
+        "title": "I-77",
+        "origin": "Camera-669ff1807101b83b3088bf61",
+        "region": "MER",
+        "label": "[MER]I-77 @12.5 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM108/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.1635,
+          37.2735
+        ]
+      },
+      "properties": {
+        "id": "CAM034",
+        "title": "US-460",
+        "origin": "Camera-669ff2307101b83b3088bf69",
+        "region": "MER",
+        "label": "[MER]US-460 @ 1 US 52 I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM034/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.12138,
+          37.34356
+        ]
+      },
+      "properties": {
+        "id": "CAM087",
+        "title": "US-460",
+        "origin": "Camera-669ff1df7101b83b3088bf65",
+        "region": "MER",
+        "label": "[MER]US-460 @ 11 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM087/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.04166,
+          37.36393
+        ]
+      },
+      "properties": {
+        "id": "CAM088",
+        "title": "US-460",
+        "origin": "Camera-669ff1ac7101b83b3088bf64",
+        "region": "MER",
+        "label": "[MER]US-460 @ 16 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM088/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.0563,
+          37.3619
+        ]
+      },
+      "properties": {
+        "id": "CAM124",
+        "title": "US-460",
+        "origin": "Camera-669ff2097101b83b3088bf67",
+        "region": "MER",
+        "label": "[MER]US-460 @ Ambrose West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM124/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.004432,
+          39.362122
+        ]
+      },
+      "properties": {
+        "id": "CAM043",
+        "title": "US-50",
+        "origin": "Camera-669ff2667101b83b3088bf6b",
+        "region": "MIN",
+        "label": "[MIN]US-50 @ US-220 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM043/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.94717,
+          39.423752
+        ]
+      },
+      "properties": {
+        "id": "CAM134",
+        "title": "WV-46",
+        "origin": "Camera-669ff2907101b83b3088bf6d",
+        "region": "MIN",
+        "label": "[MIN]WV-46 @ country mile road West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM134/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.963784,
+          39.652203
+        ]
+      },
+      "properties": {
+        "id": "CAM005",
+        "title": "Elmer Prince",
+        "origin": "Camera-669ff2bc7101b83b3088bf6e",
+        "region": "MON",
+        "label": "[MON] Van Voorhis Elmer Prince West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM005/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.955,
+          39.657888
+        ]
+      },
+      "properties": {
+        "id": "CAM064",
+        "title": "ChestnutRidge",
+        "origin": "Camera-669ff36d7101b83b3088bf75",
+        "region": "MON",
+        "label": "[MON]ChestnutRidge/Pineview West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM064/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.954,
+          39.585195
+        ]
+      },
+      "properties": {
+        "id": "CAM065",
+        "title": "I-68",
+        "origin": "Camera-669ff3997101b83b3088bf76",
+        "region": "MON",
+        "label": "[MON]I-68 @ 1 US-119 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM065/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.835969,
+          39.657824
+        ]
+      },
+      "properties": {
+        "id": "CAM024",
+        "title": "I-68",
+        "origin": "Camera-669ff3c47101b83b3088bf77",
+        "region": "MON",
+        "label": "[MON]I-68 @ 11.5 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM024/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.968964,
+          39.579646
+        ]
+      },
+      "properties": {
+        "id": "CAM092",
+        "title": "I-79",
+        "origin": "Camera-669ff3ee7101b83b3088bf79",
+        "region": "MON",
+        "label": "[MON]I-79 @ .3 I-68 I/C - A West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM092/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.97909,
+          39.582321
+        ]
+      },
+      "properties": {
+        "id": "CAM093",
+        "title": "I-79",
+        "origin": "Camera-669ff41a7101b83b3088bf7c",
+        "region": "MON",
+        "label": "[MON]I-79 @ .4 I-68 I/C - B West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM093/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.976389,
+          39.573268
+        ]
+      },
+      "properties": {
+        "id": "CAM094",
+        "title": "I-79",
+        "origin": "Camera-669ff4437101b83b3088bf7d",
+        "region": "MON",
+        "label": "[MON]I-79 @ .6 I-68 I/C - C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM094/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.002455,
+          39.639141
+        ]
+      },
+      "properties": {
+        "id": "CAM116",
+        "title": "I-79",
+        "origin": "Camera-669ff4a67101b83b3088bf7e",
+        "region": "MON",
+        "label": "[MON]I-79 @ 153 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM116/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.959,
+          39.629662
+        ]
+      },
+      "properties": {
+        "id": "CAM066",
+        "title": "University Dr.",
+        "origin": "Camera-669ff4d07101b83b3088bf7f",
+        "region": "MON",
+        "label": "[MON]University Dr/Westover Bridge West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM066/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.8455,
+          39.6879
+        ]
+      },
+      "properties": {
+        "id": "CAM025",
+        "title": "WV-43",
+        "origin": "Camera-669ff5127101b83b3088bf80",
+        "region": "MON",
+        "label": "[MON]WV-43 @ Goodwin Hill Road West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM025/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.9799,
+          39.6494
+        ]
+      },
+      "properties": {
+        "id": "CAM007",
+        "title": "WV-705",
+        "origin": "Camera-669ff5757101b83b3088bf82",
+        "region": "MON",
+        "label": "[MON]WV-705 @ Patteson Drive West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM007/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.937,
+          39.652902
+        ]
+      },
+      "properties": {
+        "id": "CAM067",
+        "title": "WV-705",
+        "origin": "Camera-669ff5a87101b83b3088bf83",
+        "region": "MON",
+        "label": "[MON]WV-705 @ Stewartstown West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM067/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.932,
+          39.642056
+        ]
+      },
+      "properties": {
+        "id": "CAM095",
+        "title": "WV-705",
+        "origin": "Camera-669ff5dc7101b83b3088bf84",
+        "region": "MON",
+        "label": "[MON]WV-705/Mileground US-119 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM095/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.9999,
+          39.6596
+        ]
+      },
+      "properties": {
+        "id": "CAM006",
+        "title": "WV-7",
+        "origin": "Camera-669ff5437101b83b3088bf81",
+        "region": "MON",
+        "label": "[MON]WV7 @ CRT 19/24 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM006/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.698,
+          40.052
+        ]
+      },
+      "properties": {
+        "id": "CAM123",
+        "title": "I-470",
+        "origin": "Camera-669ff6177101b83b3088bf85",
+        "region": "OHI",
+        "label": "[OHI]I-470 @ 1.8 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM123/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.6646,
+          40.0492
+        ]
+      },
+      "properties": {
+        "id": "CAM118",
+        "title": "I-470",
+        "origin": "Camera-669ff63d7101b83b3088bf86",
+        "region": "OHI",
+        "label": "[OHI]I-470 @ 4 I-70 Split West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM118/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.715,
+          40.073355
+        ]
+      },
+      "properties": {
+        "id": "CAM070",
+        "title": "I-70",
+        "origin": "Camera-669ff6747101b83b3088bf87",
+        "region": "OHI",
+        "label": "[OHI]I-70 @ 1 US-250 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM070/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.591856,
+          40.062976
+        ]
+      },
+      "properties": {
+        "id": "CAM069",
+        "title": "I-70",
+        "origin": "Camera-669ff6a27101b83b3088bf88",
+        "region": "OHI",
+        "label": "[OHI]I-70 @ 10 CabellasDr2 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM069/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.5675,
+          40.0674
+        ]
+      },
+      "properties": {
+        "id": "CAM035",
+        "title": "I-70",
+        "origin": "Camera-669ff6c87101b83b3088bf89",
+        "region": "OHI",
+        "label": "[OHI]I-70 @ 11 Dallas Pike West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM035/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.691871,
+          40.066749
+        ]
+      },
+      "properties": {
+        "id": "CAM114",
+        "title": "I-70",
+        "origin": "Camera-669ff6fb7101b83b3088bf8a",
+        "region": "OHI",
+        "label": "[OHI]I-70 @ 2 Washington Ave West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM114/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.627527,
+          40.04358
+        ]
+      },
+      "properties": {
+        "id": "CAM068",
+        "title": "I-70",
+        "origin": "Camera-669feff97101b83b3088bf51",
+        "region": "OHI",
+        "label": "[OHI]I-70 @ 7 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM068/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.619,
+          40.044
+        ]
+      },
+      "properties": {
+        "id": "CAM017",
+        "title": "I-70",
+        "origin": "Camera-669ff7547101b83b3088bf8c",
+        "region": "OHI",
+        "label": "[OHI]I-70 @ 7.5 2 Mile Hill West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM017/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.524788,
+          39.65795
+        ]
+      },
+      "properties": {
+        "id": "CAM020",
+        "title": "I-68",
+        "origin": "Camera-669ff7867101b83b3088bf8d",
+        "region": "PRE",
+        "label": "[PRE]I-68 @ 29.4 Hazelton West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM020/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.019,
+          38.440408
+        ]
+      },
+      "properties": {
+        "id": "CAM071",
+        "title": "I-64",
+        "origin": "Camera-669ff7ec7101b83b3088bf91",
+        "region": "PUT",
+        "label": "[PUT]I-64 @ 34 Hurricane Exit West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM071/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.936463,
+          38.456367
+        ]
+      },
+      "properties": {
+        "id": "CAM015",
+        "title": "I-64",
+        "origin": "Camera-669ff8117101b83b3088bf93",
+        "region": "PUT",
+        "label": "[PUT]I-64 @ 39 Teays Valley I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM015/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.883393,
+          38.455917
+        ]
+      },
+      "properties": {
+        "id": "CAM115",
+        "title": "I-64",
+        "origin": "Camera-669ff83f7101b83b3088bf95",
+        "region": "PUT",
+        "label": "[PUT]I-64 @ 43 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM115/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.848089,
+          38.448035
+        ]
+      },
+      "properties": {
+        "id": "CAM062",
+        "title": "I-64",
+        "origin": "Camera-669ff8937101b83b3088bf98",
+        "region": "PUT",
+        "label": "[PUT]I-64 @ 44 St. Albans West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM062/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.832802,
+          38.440585
+        ]
+      },
+      "properties": {
+        "id": "CAM027",
+        "title": "I-64",
+        "origin": "Camera-669ff8c97101b83b3088bf99",
+        "region": "PUT",
+        "label": "[PUT]I-64 @ 45 Nitro West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM027/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.01674,
+          38.57853
+        ]
+      },
+      "properties": {
+        "id": "CAM138",
+        "title": "US-35",
+        "origin": "Camera-669ffb7b7101b83b3088bfb0",
+        "region": "PUT",
+        "label": "[PUT]US-35 @ Shamrock Ln West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM138/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.923969,
+          38.479447
+        ]
+      },
+      "properties": {
+        "id": "CAM085",
+        "title": "US-35",
+        "origin": "Camera-669ffb567101b83b3088bfae",
+        "region": "PUT",
+        "label": "[PUT]US-35 @ WV-34 I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM085/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.1474,
+          37.762
+        ]
+      },
+      "properties": {
+        "id": "CAM082",
+        "title": "I-64",
+        "origin": "Camera-669ff8e77101b83b3088bf9a",
+        "region": "RAL",
+        "label": "[RAL]I-64 @ 124 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM082/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.1195,
+          37.5829
+        ]
+      },
+      "properties": {
+        "id": "CAM109",
+        "title": "I-77",
+        "origin": "Camera-669ff8307101b83b3088bf94",
+        "region": "RAL",
+        "label": "[RAL]I-77 @ 26.5 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM109/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.194,
+          37.729444
+        ]
+      },
+      "properties": {
+        "id": "CAM050",
+        "title": "I-77",
+        "origin": "Camera-669ff7d07101b83b3088bf90",
+        "region": "RAL",
+        "label": "[RAL]I-77 @ 39 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM050/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.217,
+          37.793889
+        ]
+      },
+      "properties": {
+        "id": "CAM075",
+        "title": "I-77",
+        "origin": "Camera-669ff79d7101b83b3088bf8e",
+        "region": "RAL",
+        "label": "[RAL]I-77 @ 44.0 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM075/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.214646,
+          37.836891
+        ]
+      },
+      "properties": {
+        "id": "CAM041",
+        "title": "I-77",
+        "origin": "Camera-669ff4127101b83b3088bf7b",
+        "region": "RAL",
+        "label": "[RAL]I-77 @ 48 North Beckley I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM041/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.18761,
+          37.865
+        ]
+      },
+      "properties": {
+        "id": "CAM032",
+        "title": "US-19",
+        "origin": "Camera-669ff3197101b83b3088bf72",
+        "region": "RAL",
+        "label": "[RAL]US-19 Bradley West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM032/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.188158,
+          37.858273
+        ]
+      },
+      "properties": {
+        "id": "CAM040",
+        "title": "US-19",
+        "origin": "Camera-669ff2eb7101b83b3088bf71",
+        "region": "RAL",
+        "label": "[RAL]US-19/Appalachian Heights Road West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM040/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.57435,
+          39.146928
+        ]
+      },
+      "properties": {
+        "id": "CAM018",
+        "title": "US-219",
+        "origin": "Camera-669ff2c67101b83b3088bf6f",
+        "region": "TUC",
+        "label": "[TUC]US-219 @ The Park and Ride West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM018/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.8564,
+          39.658384
+        ]
+      },
+      "properties": {
+        "id": "CAM010",
+        "title": "WV-7",
+        "origin": "Camera-669ff2857101b83b3088bf6c",
+        "region": "WEZ",
+        "label": "[WEZ]New Martinsville Bridge West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM010/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.531943,
+          39.257866
+        ]
+      },
+      "properties": {
+        "id": "CAM131",
+        "title": "US-50",
+        "origin": "Camera-669ff2187101b83b3088bf68",
+        "region": "WOO",
+        "label": "[WOO] US-50 @ RT 47 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM131/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.5295,
+          39.1897
+        ]
+      },
+      "properties": {
+        "id": "CAM077",
+        "title": "I-77",
+        "origin": "Camera-669ff1e07101b83b3088bf66",
+        "region": "WOO",
+        "label": "[WOO]I-77 @ 172 Mineral Wells I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM077/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.499246,
+          39.267825
+        ]
+      },
+      "properties": {
+        "id": "CAM078",
+        "title": "I-77",
+        "origin": "Camera-669ff1897101b83b3088bf62",
+        "region": "WOO",
+        "label": "[WOO]I-77 @ 176 US 50 I/C West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM078/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.434787,
+          39.399201
+        ]
+      },
+      "properties": {
+        "id": "CAM103",
+        "title": "I-77",
+        "origin": "Camera-669ff1597101b83b3088bf5f",
+        "region": "WOO",
+        "label": "[WOO]I-77 @ 186.7 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM103/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.391601,
+          39.245175
+        ]
+      },
+      "properties": {
+        "id": "CAM004",
+        "title": "US-50",
+        "origin": "Camera-669ff1307101b83b3088bf5c",
+        "region": "WOO",
+        "label": "[WOO]US-50 @ MM 16.5 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM004/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.556041,
+          39.258034
+        ]
+      },
+      "properties": {
+        "id": "CAM129",
+        "title": "US-50",
+        "origin": "Camera-669ff0eb7101b83b3088bf58",
+        "region": "WOO",
+        "label": "[WOO]US-50 @ MM 6.5(Division St.) West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM129/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.428425,
+          39.022477
+        ]
+      },
+      "properties": {
+        "id": "CAM058",
+        "title": "I-79",
+        "origin": "Camera-669ffa8a7101b83b3088bfa6",
+        "region": "LEW",
+        "label": "[LEW]I-79 @ 99 US-33 Weston West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM058/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.425292,
+          39.024386
+        ]
+      },
+      "properties": {
+        "id": "CAM072",
+        "title": "I-79",
+        "origin": "Camera-669ffa5d7101b83b3088bfa4",
+        "region": "LEW",
+        "label": "[LEW]I-79 @ 99.5 US-119 Weston West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM072/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.96051,
+          39.49638
+        ]
+      },
+      "properties": {
+        "id": "CAM030",
+        "title": "I-81",
+        "origin": "Camera-669fef507101b83b3088bf4e",
+        "region": "BER",
+        "label": "[BER]I-81 @ 16 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM030/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.5811,
+          38.3299
+        ]
+      },
+      "properties": {
+        "id": "CAM003",
+        "title": "I-77 ",
+        "origin": "Camera-66a000157101b83b3088bfcd",
+        "region": "KAN",
+        "label": "[KAN]I-77 MM 97.2 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM003/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.98896,
+          39.44195
+        ]
+      },
+      "properties": {
+        "id": "CAM060",
+        "title": "I-81",
+        "origin": "Camera-669fd35b7101b83b3088bf4b",
+        "region": "BER",
+        "label": "[BER]I-81 @ 12 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM060/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.167773,
+          39.443042
+        ]
+      },
+      "properties": {
+        "id": "CAM074",
+        "title": "I-79",
+        "origin": "Camera-673f9c057c085204fcc57eb9",
+        "region": "MAR",
+        "label": "[MAR]I-79 @ 133 Kingmont West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM074/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.144749,
+          39.456651
+        ]
+      },
+      "properties": {
+        "id": "CAM073",
+        "title": "I-79",
+        "origin": "Camera-669ff9a47101b83b3088bf9d",
+        "region": "MAR",
+        "label": "[MAR]I-79 @ 135 West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM073/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.7246,
+          40.0719
+        ]
+      },
+      "properties": {
+        "id": "CAM125",
+        "title": "I-70",
+        "origin": "Camera-669ff7277101b83b3088bf8b",
+        "region": "OHI",
+        "label": "[OHI]I-70 @ 5 Wheeling Tunnel West Virginia DOT",
+        "stream": "https://vtc1.roadsummary.com/rtplive/CAM125/playlist.m3u8"
+      }
+    }
+  ]
+}

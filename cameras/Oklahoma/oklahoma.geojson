@@ -1,0 +1,5577 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57406,
+          35.39637
+        ]
+      },
+      "properties": {
+        "name": "I-44 & I-240 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7b9cc88c79ed93c1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57406,
+          35.39637
+        ]
+      },
+      "properties": {
+        "name": "I-44 & I-240 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8a1804569f69c5f5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57711,
+          35.40667
+        ]
+      },
+      "properties": {
+        "name": "I-44 & S59th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/311f2421ce861337.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57711,
+          35.40667
+        ]
+      },
+      "properties": {
+        "name": "I-44 & S59th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4581a9590c43e0f8.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57711,
+          35.40667
+        ]
+      },
+      "properties": {
+        "name": "I-44 & S59th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a86bb5d95de1e3de.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.5812,
+          35.4155
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Airport Rd N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/437b9cce3e0310eb.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.5812,
+          35.4155
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Airport Rd S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2bb943112cafd96c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.56993,
+          35.43513
+        ]
+      },
+      "properties": {
+        "name": "I-44 & S29th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/07731a2bedae76e3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.56993,
+          35.43513
+        ]
+      },
+      "properties": {
+        "name": "I-44 & S29th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1f568ec54d3bdb6c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57485429,
+          35.45988315
+        ]
+      },
+      "properties": {
+        "name": "I-44 & I-40 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/03e100cf93a5323c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57485429,
+          35.45988315
+        ]
+      },
+      "properties": {
+        "name": "I-44 & I-40 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/11b6caf81a58cdf8.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57485429,
+          35.45988315
+        ]
+      },
+      "properties": {
+        "name": "I-44 & I-40 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7ebfb278d0989ad4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57485429,
+          35.45988315
+        ]
+      },
+      "properties": {
+        "name": "I-44 & I-40 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/630760047c3c3bf2.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57879,
+          35.47842
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N10th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a86262bc44db0cfc.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57879,
+          35.47842
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N10th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1425d3a256a6211e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57879,
+          35.47842
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N10th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8d1a1ffe51a8970b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57879,
+          35.47842
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N10th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4f57ba7291eccb94.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57904,
+          35.4932
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N23rd N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/988915fa52650932.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57904,
+          35.4932
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N23rd S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c44d741694d515b6.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57904,
+          35.4932
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N23rd E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/63c393909f75ea87.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57904,
+          35.4932
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N23rd W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a01a392628782d93.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57564991,
+          35.51097978
+        ]
+      },
+      "properties": {
+        "name": "I-44 & SH-66 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/157d03196be8f2e7.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57564991,
+          35.51097978
+        ]
+      },
+      "properties": {
+        "name": "I-44 & SH-66 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9e8926767ec94fd6.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57564991,
+          35.51097978
+        ]
+      },
+      "properties": {
+        "name": "I-44 & SH-66 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f5f74b502dc31626.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57564991,
+          35.51097978
+        ]
+      },
+      "properties": {
+        "name": "I-44 & SH-66 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9c2cf5265e640999.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57983148,
+          35.53269025
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & SH-3 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/164951f14db09f23.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57483854,
+          35.54459601
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & Grand S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/16a3e872b4c268f1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57483854,
+          35.54459601
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & Grand N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d3d92d3322bb75a3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57484,
+          35.56558
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & Britton N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1939ef4e2b37f6fa.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57484,
+          35.56558
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & Britton S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/558c1b981eaa0846.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57484,
+          35.56558
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & Britton E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/3119cce0d60f1df1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57991,
+          35.58018
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & Hefner S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c1b460d6e550fde9.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.58495,
+          35.5947
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & N122nd S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e0f2a53c601239c6.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.58495,
+          35.5947
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & N122nd N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6b2fe6d03e37a5c3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.58495,
+          35.5947
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & N122nd E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a026fe16c73ab9c9.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.58505,
+          35.60948
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & Memorial N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4e55fb13ac0e94b5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.58505,
+          35.60948
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & Memorial S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/77221a339ff482ed.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.58505,
+          35.60948
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & Memorial E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/94290748a798dcdd.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.58505,
+          35.60948
+        ]
+      },
+      "properties": {
+        "name": "SH-74 & Memorial W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/0457851fe634df09.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.60125,
+          35.45997
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Meridian N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/00737d8c11a519b1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.60125,
+          35.45997
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Meridian S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b889c60383bab65b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.60125,
+          35.45997
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Meridian E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2617549efad42224.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.60125,
+          35.45997
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Meridian W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/be8a2aff2a6f448d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.566121,
+          35.461165
+        ]
+      },
+      "properties": {
+        "name": "I-40 & May E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2247ab1ede39d05f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.566121,
+          35.461165
+        ]
+      },
+      "properties": {
+        "name": "I-40 & May W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/638c3ff6b243ef0b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.566121,
+          35.461165
+        ]
+      },
+      "properties": {
+        "name": "I-40 & May N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c04f948d341caa18.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.566121,
+          35.461165
+        ]
+      },
+      "properties": {
+        "name": "I-40 & May S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f3cce840361d2ce2.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.55554,
+          35.461126
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Agnew W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b2c28d87a605ce1e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.55554,
+          35.461126
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Agnew E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4885e1abc480975a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.55554,
+          35.461126
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Agnew S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4e8d3fd4c1deade0.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.55554,
+          35.461126
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Agnew N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4aa439ba2c6be196.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.546838,
+          35.461465
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Penn W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/472f32fad405b2ee.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.546838,
+          35.461465
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Penn E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6b80213300e28cbb.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.531872,
+          35.458261
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Western W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8411eab6bb166861.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.531872,
+          35.458261
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Western E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8950bc8f3fdc890e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49519134,
+          35.34903757
+        ]
+      },
+      "properties": {
+        "name": "I-35 & N12th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/0a5386e8d1963756.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49519134,
+          35.34903757
+        ]
+      },
+      "properties": {
+        "name": "I-35 & N12th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/97eaba7be0d83c18.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49519134,
+          35.34903757
+        ]
+      },
+      "properties": {
+        "name": "I-35 & N12th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4b04bc359e8866e2.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49503711,
+          35.36284253
+        ]
+      },
+      "properties": {
+        "name": "I-35 & N27th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5733c5a228d51b53.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49503711,
+          35.36284253
+        ]
+      },
+      "properties": {
+        "name": "I-35 & N27th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c6ad2d235f4d6076.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49503711,
+          35.36284253
+        ]
+      },
+      "properties": {
+        "name": "I-35 & N27th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8d1ef3a88a7f03e0.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49503711,
+          35.36284253
+        ]
+      },
+      "properties": {
+        "name": "I-35 & N27th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b27dd3f57a028fcb.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49522554,
+          35.37616664
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S89th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/84cf0fa2a06baf63.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49522554,
+          35.37616664
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S89th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/3139563d9ee9a9c3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49787,
+          35.39367
+        ]
+      },
+      "properties": {
+        "name": "I-35 & I-240 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7b0f74d88875b3bf.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49787,
+          35.39367
+        ]
+      },
+      "properties": {
+        "name": "I-35 & I-240 SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b748a7276b3fb566.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49404,
+          35.40679572
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S59th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1c49cb704224e8bb.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49404,
+          35.40679572
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S59th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/086823fa65a6aa9a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.485684,
+          35.427937
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S36th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9507c913e356a334.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.485684,
+          35.427937
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S36th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ed960c0401ddd70c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.485824,
+          35.435499
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S29th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a91673e87803f263.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.485824,
+          35.435499
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S29th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e012eac381be4062.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.490531,
+          35.462333
+        ]
+      },
+      "properties": {
+        "name": "I-40 & I-35 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/45a2238c4972da69.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.490531,
+          35.462333
+        ]
+      },
+      "properties": {
+        "name": "I-40 & I-35 SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/96a680df8c6507cd.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.490531,
+          35.462333
+        ]
+      },
+      "properties": {
+        "name": "I-40 & I-35 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/be4412aba8dd7cb9.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.514,
+          35.455475
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Shields N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/eb89f40f5c7541c9.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.514,
+          35.455475
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Shields S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2036d5b8510099e3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.514,
+          35.455475
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Shields E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/fe74eb48a645e423.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.514,
+          35.455475
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Shields W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e0714fef2ef7f50c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.461758,
+          35.463533
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Reno N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a60cbec68a5d7afa.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.461758,
+          35.463533
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Reno NW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ded294e19a20d3c3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.461758,
+          35.463533
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Reno SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/dd7516f1b3dbb1c2.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.40991,
+          35.43517
+        ]
+      },
+      "properties": {
+        "name": "I-40 & S29th NW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/da8997ea38b9ce10.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.40991,
+          35.43517
+        ]
+      },
+      "properties": {
+        "name": "I-40 & S29th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9a884afe5d803f4c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.40589,
+          35.43441
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Air Depot N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f3765d7a191487fa.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.40589,
+          35.43441
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Air Depot S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/11ee3541765aadb5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.40589,
+          35.43441
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Air Depot E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4b0c6fee0b44dd56.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.40589,
+          35.43441
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Air Depot W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6491c5a2555b08d5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.39814,
+          35.43455
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Eaker Gate E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b60db9818ab760ff.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.39814,
+          35.43455
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Eaker Gate N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c79909c920e0d0d1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.39814,
+          35.43455
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Eaker Gate W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/eebea389b666ef24.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.39814,
+          35.43455
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Eaker Gate S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/918bb065c2842c8b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.38692,
+          35.4352
+        ]
+      },
+      "properties": {
+        "name": "I-40 & A Ave E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f2926e735e980b43.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.38692,
+          35.4352
+        ]
+      },
+      "properties": {
+        "name": "I-40 & A Ave W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/dfc80d0c31188863.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.548119,
+          35.464925
+        ]
+      },
+      "properties": {
+        "name": "OKC Blvd & Penn E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/3eedb4a6b14e3e9d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.548119,
+          35.464925
+        ]
+      },
+      "properties": {
+        "name": "OKC Blvd & Penn W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/bc527b087c7851a8.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.548119,
+          35.464925
+        ]
+      },
+      "properties": {
+        "name": "OKC Blvd & Penn N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/02f4ae3ff170002e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.548119,
+          35.464925
+        ]
+      },
+      "properties": {
+        "name": "OKC Blvd & Penn S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/3c93b44e8fa985c6.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.53125,
+          35.46562
+        ]
+      },
+      "properties": {
+        "name": "OKC Blvd & Western W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/44033090efbf4331.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.53125,
+          35.46562
+        ]
+      },
+      "properties": {
+        "name": "OKC Blvd & Western E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6adf847c2969a81c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.523919,
+          35.462514
+        ]
+      },
+      "properties": {
+        "name": "OKC Blvd & Lee W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/48bffccf2c87acc8.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.523919,
+          35.462514
+        ]
+      },
+      "properties": {
+        "name": "OKC Blvd & Lee NE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/73533278a45877a0.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.473067,
+          35.464069
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Reno E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f44194e8acdf1a56.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.473067,
+          35.464069
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Reno SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5845a1d5267ab6d1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.473067,
+          35.464069
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Reno SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/22bbd28944b782a1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.04051,
+          36.08797
+        ]
+      },
+      "properties": {
+        "name": "I-44 & W I-244 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1f0a0971db377f7a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.04051,
+          36.08797
+        ]
+      },
+      "properties": {
+        "name": "I-44 & W I-244 SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2bc974fc934746ad.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.04051,
+          36.08797
+        ]
+      },
+      "properties": {
+        "name": "I-44 & W I-244 NE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5b0d0aaac6f07f3c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.04051,
+          36.08797
+        ]
+      },
+      "properties": {
+        "name": "I-44 & W I-244 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/79c1ca33b812b7e8.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.00868937,
+          36.12221084
+        ]
+      },
+      "properties": {
+        "name": "I-244 & SW Blvd N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c7e511c47508f5eb.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.00868937,
+          36.12221084
+        ]
+      },
+      "properties": {
+        "name": "I-244 & SW Blvd S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b8856a604d6fffb0.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85945,
+          36.16498
+        ]
+      },
+      "properties": {
+        "name": "I-244 & US-169 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/90c013ed62fbcaa4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85945,
+          36.16498
+        ]
+      },
+      "properties": {
+        "name": "I-244 & US-169 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8196d90e3ac47fa3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85945,
+          36.16498
+        ]
+      },
+      "properties": {
+        "name": "I-244 & US-169 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d3ea4c557e8da4c9.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85945,
+          36.16498
+        ]
+      },
+      "properties": {
+        "name": "I-244 & US-169 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9d18f2bbf91e3d95.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.826574,
+          36.161382
+        ]
+      },
+      "properties": {
+        "name": "I-44 & E I-244 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8a6bca13ab96731d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.826574,
+          36.161382
+        ]
+      },
+      "properties": {
+        "name": "I-44 & E I-244 SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/da69482869b66126.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.826574,
+          36.161382
+        ]
+      },
+      "properties": {
+        "name": "I-44 & E I-244 NW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/969d499e170555d3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.97886,
+          36.14241
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & US-64/75 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d5d6b5439773a1a8.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.97886,
+          36.14241
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & US-64/75 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8c7658736a5bd34f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.89715,
+          36.11393
+        ]
+      },
+      "properties": {
+        "name": "I-44 & SH-51 SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c2890cf22095aad4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.89715,
+          36.11393
+        ]
+      },
+      "properties": {
+        "name": "I-44 & SH-51 SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e016cb344d9e7348.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.89715,
+          36.11393
+        ]
+      },
+      "properties": {
+        "name": "I-44 & SH-51 NE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/88a461caa3bf6719.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.89715,
+          36.11393
+        ]
+      },
+      "properties": {
+        "name": "I-44 & SH-51 NW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e148932b5f58768f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.8592,
+          36.09775
+        ]
+      },
+      "properties": {
+        "name": "US-169 & SH-51 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ecc6c1c0ac52da2d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.8592,
+          36.09775
+        ]
+      },
+      "properties": {
+        "name": "US-169 & SH-51 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a3c2f61837e4d568.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.82837,
+          36.08578
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & S 129th E SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b2975140ebcc83e5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85827,
+          36.06105
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 71st N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/eff7acd3aaf3ca50.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85827,
+          36.06105
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 71st S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/29213746f694e6d4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.86049,
+          36.13892
+        ]
+      },
+      "properties": {
+        "name": "I-44 & US-169 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/881ac61baf586ea8.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.86049,
+          36.13892
+        ]
+      },
+      "properties": {
+        "name": "I-44 & US-169 NE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/250c398ff343e371.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.86049,
+          36.13892
+        ]
+      },
+      "properties": {
+        "name": "I-44 & US-169 SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a07a415f35e5df6e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.86049,
+          36.13892
+        ]
+      },
+      "properties": {
+        "name": "I-44 & US-169 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/657066513a2777b8.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.76191,
+          36.162145
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N 193rd E N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/3b6cb6a84956ebe0.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.76191,
+          36.162145
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N 193rd E S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/79b20fcc71e9f56c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.76191,
+          36.162145
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N 193rd E E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d6e7c49caea01bd6.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.76191,
+          36.162145
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N 193rd E W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e78763950efd453f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51050174,
+          35.48214091
+        ]
+      },
+      "properties": {
+        "name": "I-235 & N13th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4e9ea79ae4ecdf30.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51050174,
+          35.48214091
+        ]
+      },
+      "properties": {
+        "name": "I-235 & N13th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b10f0dc83c3e9ef7.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51050174,
+          35.48214091
+        ]
+      },
+      "properties": {
+        "name": "I-235 & N13th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b8e9f1c788096dbd.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51050174,
+          35.48214091
+        ]
+      },
+      "properties": {
+        "name": "I-235 & N13th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/cb7758706214bff5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51129835,
+          35.49209705
+        ]
+      },
+      "properties": {
+        "name": "I-235 & N23rd N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2f729847e5af4ac0.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51129835,
+          35.49209705
+        ]
+      },
+      "properties": {
+        "name": "I-235 & N23rd S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c4c82070ca72b806.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51498773,
+          35.50887623
+        ]
+      },
+      "properties": {
+        "name": "I-235 & N36th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1edf29666cca1239.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51498773,
+          35.50887623
+        ]
+      },
+      "properties": {
+        "name": "I-235 & N36th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5d51d143f767e106.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51498773,
+          35.50887623
+        ]
+      },
+      "properties": {
+        "name": "I-235 & N36th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7b1c115aae45f463.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51498773,
+          35.50887623
+        ]
+      },
+      "properties": {
+        "name": "I-235 & N36th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/fa52bbd3c41619ac.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48711422,
+          35.44961233
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S15th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f2237691607046b4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48711422,
+          35.44961233
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S15th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b6a37da1aa725c01.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48711422,
+          35.44961233
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S15th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/0113995ee5b03d5f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48711422,
+          35.44961233
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S15th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7bce8627b88fe0f1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49541565,
+          35.39924263
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S66th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/51536456fb0a8fcc.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49541565,
+          35.39924263
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S66th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5dc8114ef4a74620.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49541565,
+          35.39924263
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S66th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d88227feb5885023.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4886243,
+          35.42054823
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S44th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4d19b13ce1454541.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4886243,
+          35.42054823
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S44th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5a055a769f697113.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4886243,
+          35.42054823
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S44th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a712d2297cb9cf77.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4886243,
+          35.42054823
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S44th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/48d0d9f11dd12307.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49594271,
+          35.46259723
+        ]
+      },
+      "properties": {
+        "name": "I-40 & I-235 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c5bce5175de4e08b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49594271,
+          35.46259723
+        ]
+      },
+      "properties": {
+        "name": "I-40 & I-235 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/01f33ae6948e20f1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49594271,
+          35.46259723
+        ]
+      },
+      "properties": {
+        "name": "I-40 & I-235 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d7f3945ed3b5b66d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49594271,
+          35.46259723
+        ]
+      },
+      "properties": {
+        "name": "I-40 & I-235 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/aeb9bac9e7b51ef2.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.50356,
+          35.52921
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Lincoln W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/474615c600aaef78.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.50356,
+          35.52921
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Lincoln E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ea2d38212bb5d8ad.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.515992,
+          35.52905
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Broadway Ext W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a2732ef79af654cf.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.515992,
+          35.52905
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Broadway Ext E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/40598b13ca61d973.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85921049,
+          36.07579572
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 61st N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2c607527c794d1f0.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85921049,
+          36.07579572
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 61st E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/303b26737c278802.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85921049,
+          36.07579572
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 61st W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/965a07ca266296a4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85895528,
+          36.04686337
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 81st N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/0e21cc77d698fc7b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85895528,
+          36.04686337
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 81st S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/978fb8acbadcc1a3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85895528,
+          36.04686337
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 81st E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/abd365ac56077206.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85895528,
+          36.04686337
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 81st W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6bedfe30c67bc4ee.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85978378,
+          36.03231888
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 91st N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/20c1a336947bfc89.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85978378,
+          36.03231888
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 91st S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7b5978d62ebd59dc.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85978378,
+          36.03231888
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 91st E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/870b269d84c7d0a4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85978378,
+          36.03231888
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 91st W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d0f43251caee24e5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85656047,
+          36.17722817
+        ]
+      },
+      "properties": {
+        "name": "US-169 & Pine N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6ae04a5f637cae46.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85656047,
+          36.17722817
+        ]
+      },
+      "properties": {
+        "name": "US-169 & Pine S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/abb4a9fbfb64c518.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85656047,
+          36.17722817
+        ]
+      },
+      "properties": {
+        "name": "US-169 & Pine E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8882e3c168670486.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.92279226,
+          36.09528275
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Yale N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6f3543cbd4c24a65.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.92279226,
+          36.09528275
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Yale S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/408c3cbd3a67979c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.92279226,
+          36.09528275
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Yale NE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/14b9fefabbaf3dd0.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.92279226,
+          36.09528275
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Yale SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5e062ed07cf39abf.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.91293782,
+          36.1026692
+        ]
+      },
+      "properties": {
+        "name": "I-44 & 41st N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9336993773472be6.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.91293782,
+          36.1026692
+        ]
+      },
+      "properties": {
+        "name": "I-44 & 41st NE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a12f1f90f7725be7.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.91293782,
+          36.1026692
+        ]
+      },
+      "properties": {
+        "name": "I-44 & 41st SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/bca5aa61c6955b7a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.95861048,
+          36.14292851
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Lewis N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4e136ce449a78052.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.95861048,
+          36.14292851
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Lewis S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/80d139ade178b8ee.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.95861048,
+          36.14292851
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Lewis E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/48c85d76d00e9e11.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.95861048,
+          36.14292851
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Lewis W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f9b85b932ac8843e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.90493947,
+          36.11549118
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Sheridan N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/693a639cfd0cedb3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.90493947,
+          36.11549118
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Sheridan S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5dae0b866a9228e3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.90493947,
+          36.11549118
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Sheridan E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1f32da11bc11aea9.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.90493947,
+          36.11549118
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Sheridan W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/eeaa966a575f78da.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.847091,
+          36.148332
+        ]
+      },
+      "properties": {
+        "name": "I-44 & E 11th St NE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/48dbafd4de45dad5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.847091,
+          36.148332
+        ]
+      },
+      "properties": {
+        "name": "I-44 & E 11th St SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d318a1a4d078664d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.886352,
+          36.120442
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Memorial S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e459cd4c4fa0a4fe.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.886352,
+          36.120442
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Memorial NE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8e552aa9d85b7986.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.886352,
+          36.120442
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Memorial SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e8d4b16f6666a804.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.79671502,
+          36.16283835
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N 165th E E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b85a08d6caa86f29.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.79671502,
+          36.16283835
+        ]
+      },
+      "properties": {
+        "name": "I-44 & N 165th E W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5e6d15c0328fc5f5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.832829,
+          36.158389
+        ]
+      },
+      "properties": {
+        "name": "I-44 & S 129th E N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/632449daf970df96.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85071459,
+          36.16646877
+        ]
+      },
+      "properties": {
+        "name": "I-244 & Garnett N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c650b21d8506bb8b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85071459,
+          36.16646877
+        ]
+      },
+      "properties": {
+        "name": "I-244 & Garnett S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b7dc3fb7257bf8b4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85071459,
+          36.16646877
+        ]
+      },
+      "properties": {
+        "name": "I-244 & Garnett W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/16c944af02b32859.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.88692307,
+          36.16223811
+        ]
+      },
+      "properties": {
+        "name": "I-244 & Memorial N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/82e480c4fd23409c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.88692307,
+          36.16223811
+        ]
+      },
+      "properties": {
+        "name": "I-244 & Memorial S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f3f30af876970b7b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.88692307,
+          36.16223811
+        ]
+      },
+      "properties": {
+        "name": "I-244 & Memorial E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8fb54eac21cc2fc1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.88692307,
+          36.16223811
+        ]
+      },
+      "properties": {
+        "name": "I-244 & Memorial W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/3fbc6169519f5a89.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.83312064,
+          36.16575985
+        ]
+      },
+      "properties": {
+        "name": "I-244 & N 129th E N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/59faa93050c3dade.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.83312064,
+          36.16575985
+        ]
+      },
+      "properties": {
+        "name": "I-244 & N 129th E S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/73cc6518f76501db.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.83312064,
+          36.16575985
+        ]
+      },
+      "properties": {
+        "name": "I-244 & N 129th E E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b8bf59cce3d77340.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.83312064,
+          36.16575985
+        ]
+      },
+      "properties": {
+        "name": "I-244 & N 129th E W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/882844bab444970e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.00216933,
+          36.15944045
+        ]
+      },
+      "properties": {
+        "name": "I-244 & US-412 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/669cf8f41d6f950b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.00216933,
+          36.15944045
+        ]
+      },
+      "properties": {
+        "name": "I-244 & US-412 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/531e584fb2e0bceb.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.00216933,
+          36.15944045
+        ]
+      },
+      "properties": {
+        "name": "I-244 & US-412 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/0c35bfc35f917d0c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.980449,
+          36.160796
+        ]
+      },
+      "properties": {
+        "name": "I-244 & US-75 N S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/23a80fbaeae33fcd.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.980449,
+          36.160796
+        ]
+      },
+      "properties": {
+        "name": "I-244 & US-75 N E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/37a8b4bba5b1f33d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.980449,
+          36.160796
+        ]
+      },
+      "properties": {
+        "name": "I-244 & US-75 N W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/716601b4f4c0e511.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.99211529,
+          36.14456271
+        ]
+      },
+      "properties": {
+        "name": "US-75 & Denver N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1d1bd6aa3b525ce0.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.99211529,
+          36.14456271
+        ]
+      },
+      "properties": {
+        "name": "US-75 & Denver S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c145e05fbcc9a908.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.99211529,
+          36.14456271
+        ]
+      },
+      "properties": {
+        "name": "US-75 & Denver E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c843f7f011858168.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.99211529,
+          36.14456271
+        ]
+      },
+      "properties": {
+        "name": "US-75 & Denver W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b65b1c139174f65f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.73171705,
+          36.16255354
+        ]
+      },
+      "properties": {
+        "name": "US-412 & Creek N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2d669bc0e702d542.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.73171705,
+          36.16255354
+        ]
+      },
+      "properties": {
+        "name": "US-412 & Creek S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1bf2ba7b3de43dd4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.73171705,
+          36.16255354
+        ]
+      },
+      "properties": {
+        "name": "US-412 & Creek W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/837a5645fee067e1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.499822,
+          35.466328
+        ]
+      },
+      "properties": {
+        "name": "I-235 & Sheridan S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/63920db570be8f1d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.499822,
+          35.466328
+        ]
+      },
+      "properties": {
+        "name": "I-235 & Sheridan N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d68e7c4f5806a925.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.50718,
+          35.47305
+        ]
+      },
+      "properties": {
+        "name": "I-235 & 5th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f9299ee32bb63240.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.50718,
+          35.47305
+        ]
+      },
+      "properties": {
+        "name": "I-235 & 5th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/56412aba5013ab6a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.50718,
+          35.47305
+        ]
+      },
+      "properties": {
+        "name": "I-235 & 5th SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e6b45bae6562db67.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.35317387,
+          36.90651602
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Chikaskia River N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e3ae7523cdb55f80.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.00046321,
+          35.22669291
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Texas Line E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a2c6ece43340bc35.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.00046321,
+          35.22669291
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Texas Line W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4041d991cebee759.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.456842,
+          34.638166
+        ]
+      },
+      "properties": {
+        "name": "US-62 & 52nd N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c6f43f37a9f27b50.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.456842,
+          34.638166
+        ]
+      },
+      "properties": {
+        "name": "US-62 & 52nd W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/248eae69ff776fc0.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.456842,
+          34.638166
+        ]
+      },
+      "properties": {
+        "name": "US-62 & 52nd E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8dce3945301b92a7.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.421649,
+          34.637933
+        ]
+      },
+      "properties": {
+        "name": "US-62 & Sheridan E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/59657f3dbcd685be.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.421649,
+          34.637933
+        ]
+      },
+      "properties": {
+        "name": "US-62 & Sheridan W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1a623515390bca38.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.38234,
+          34.660625
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Sheridan (Key Gate) N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/3936b93c22df2c00.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.38234,
+          34.660625
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Sheridan (Key Gate) S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c8224393bc727af8.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.38234,
+          34.660625
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Sheridan (Key Gate) E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ca10d584adb01942.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.38234,
+          34.660625
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Sheridan (Key Gate) W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5c23237259380337.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85207809,
+          36.22023407
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 46th N N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/748aee66efec8a47.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85207809,
+          36.22023407
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 46th N S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2f3c1df1819f23ec.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85207809,
+          36.22023407
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 46th N E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/0602b0b93fe80ad1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85207809,
+          36.22023407
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 46th N W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f3db87e62e8a203b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85200701,
+          36.20578987
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 36th N N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e19987f7f853573f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85200701,
+          36.20578987
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 36th N S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9482a044297dda19.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85200701,
+          36.20578987
+        ]
+      },
+      "properties": {
+        "name": "US-169 & E 36th N W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c33f4993d7afd639.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.79721562,
+          36.07067354
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Elm S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/30ddea7a58cb0190.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.79721562,
+          36.07067354
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Elm E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ec20a0244c3eab13.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.501475,
+          35.461478
+        ]
+      },
+      "properties": {
+        "name": "I-40 & OKC Blvd W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f445727900e9319d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.501475,
+          35.461478
+        ]
+      },
+      "properties": {
+        "name": "I-40 & OKC Blvd E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c94d823a73f793ba.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.501475,
+          35.461478
+        ]
+      },
+      "properties": {
+        "name": "I-40 & OKC Blvd S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/fe6ffe25217074d9.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.389198,
+          34.643516
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Post (Gate 2) S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6f089903600d975c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.389198,
+          34.643516
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Post (Gate 2) NE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a24860bd40c50542.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.46968,
+          35.601159
+        ]
+      },
+      "properties": {
+        "name": "Kilpatrick Tpk & Eastern E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/855d7ecc2204763f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.46968,
+          35.601159
+        ]
+      },
+      "properties": {
+        "name": "Kilpatrick Tpk & Eastern W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e241e701f15452fc.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57730381,
+          35.37111421
+        ]
+      },
+      "properties": {
+        "name": "I-44 & S 96th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c1a87260f1947a09.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57730381,
+          35.37111421
+        ]
+      },
+      "properties": {
+        "name": "I-44 & S 96th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/edd9d4036090ad7d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.40374545,
+          35.60343357
+        ]
+      },
+      "properties": {
+        "name": "Turner Tpk & OKC E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/84c071bdabba9f98.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.40374545,
+          35.60343357
+        ]
+      },
+      "properties": {
+        "name": "Turner Tpk & OKC W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d9aed3e7f3d92e26.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.34556735,
+          36.98480598
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Kansas S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8c51418c998d44d2.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.34556735,
+          36.98480598
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Kansas N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f0d35d5047f50a81.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.2131,
+          35.3845
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Peebly W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/559eb8212de9086a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.2131,
+          35.3845
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Peebly E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/0a3d295f1958e736.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.47723945,
+          35.43725613
+        ]
+      },
+      "properties": {
+        "name": "Sequoyah POE SW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b3d7de3e333c3dfe.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.3466751,
+          36.98286482
+        ]
+      },
+      "properties": {
+        "name": "Kay POE N Entry",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/02ba329a6ff4252f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4239,
+          35.6525
+        ]
+      },
+      "properties": {
+        "name": "I-35 & 2nd St S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/74796a385bcf7d88.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4239,
+          35.6525
+        ]
+      },
+      "properties": {
+        "name": "I-35 & 2nd St W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ec542d56db494a6f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4239,
+          35.6525
+        ]
+      },
+      "properties": {
+        "name": "I-35 & 2nd St E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d3cc1773c6ef6a1e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.0481768,
+          36.0892
+        ]
+      },
+      "properties": {
+        "name": "Gilcrease & S49thW E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ed204f719a975261.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.0481768,
+          36.0892
+        ]
+      },
+      "properties": {
+        "name": "Gilcrease & S49thW W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5bf0f429e7605cd4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.05729,
+          36.152465
+        ]
+      },
+      "properties": {
+        "name": "Gilcrease & W 2nd S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a3bd89abc5ec3ccf.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.05729,
+          36.152465
+        ]
+      },
+      "properties": {
+        "name": "Gilcrease & W 2nd N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6b5b91d50af1ea36.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.08847,
+          36.02908
+        ]
+      },
+      "properties": {
+        "name": "Turner Tpk & Creek Tpk N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9d8343f3b903f09a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.08847,
+          36.02908
+        ]
+      },
+      "properties": {
+        "name": "Turner Tpk & Creek Tpk E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/55a8466049ac88fc.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.08847,
+          36.02908
+        ]
+      },
+      "properties": {
+        "name": "Turner Tpk & Creek Tpk W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/012c7b1157217afa.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.01004,
+          36.00889
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & US-75 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a84af1f7d6019fe1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.01004,
+          36.00889
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & US-75 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7edf074b73b90b7a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.01004,
+          36.00889
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & US-75 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b87effb6973e1e26.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.88693,
+          36.02506
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Memorial N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e05af8501161a002.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.88693,
+          36.02506
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Memorial SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/afb5777bb1c9af8f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.88693,
+          36.02506
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Memorial E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2b01b0055b58138e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.86871,
+          36.026125
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Mingo W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b2e8291a84ce7893.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.86871,
+          36.026125
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Mingo E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/323ff9e2e7646ffc.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.86871,
+          36.026125
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Mingo N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/f11ac49f52401617.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.73895,
+          36.04688
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Muskogee Tpk S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a325182a6cb28d34.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.73895,
+          36.04688
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Muskogee Tpk SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e1919d9e94b80a7f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.73895,
+          36.04688
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Muskogee Tpk NW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/39f3f32e0c7d6566.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.42766,
+          35.601362
+        ]
+      },
+      "properties": {
+        "name": "I-35 & JKT S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b0ec888566a357e5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.42766,
+          35.601362
+        ]
+      },
+      "properties": {
+        "name": "I-35 & JKT E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/aec626d236b7b903.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.711942,
+          35.463214
+        ]
+      },
+      "properties": {
+        "name": "I-40 & JKT S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/32bbcf306b6c8559.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.711942,
+          35.463214
+        ]
+      },
+      "properties": {
+        "name": "I-40 & JKT E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4bc8d47d6853f482.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.711942,
+          35.463214
+        ]
+      },
+      "properties": {
+        "name": "I-40 & JKT W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/eb2d318c20219c90.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.711942,
+          35.463214
+        ]
+      },
+      "properties": {
+        "name": "I-40 & JKT N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/72209911e2e7225b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.503086,
+          35.5998
+        ]
+      },
+      "properties": {
+        "name": "JKT & US-77 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e2c770879744248d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.503086,
+          35.5998
+        ]
+      },
+      "properties": {
+        "name": "JKT & US-77 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d2b28fcce5f5d02a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.503086,
+          35.5998
+        ]
+      },
+      "properties": {
+        "name": "JKT & US-77 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/efc7334bbc8caa79.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.503086,
+          35.5998
+        ]
+      },
+      "properties": {
+        "name": "JKT & US-77 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9bbdd1e96e8e32fe.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.65653,
+          35.41371
+        ]
+      },
+      "properties": {
+        "name": "JKT & SH-152 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/02c705eb7971ff53.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.65653,
+          35.41371
+        ]
+      },
+      "properties": {
+        "name": "JKT & SH-152 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/420695d7df86b160.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.83708,
+          34.83621
+        ]
+      },
+      "properties": {
+        "name": "US-69 & C Tree NE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/92bc36970e3b9726.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.424852,
+          35.630175
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S 25th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9e60c0cc77415c15.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.424852,
+          35.630175
+        ]
+      },
+      "properties": {
+        "name": "I-35 & S 25th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5f4fcad0b47ccde5.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.19289,
+          35.38382
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Kickapoo",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/00a2e3c6704282f2.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.19289,
+          35.38382
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Kickapoo",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a9d8f6ec9b5d7088.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.19289,
+          35.38382
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Kickapoo",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/33f296e98ee14caa.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48076,
+          35.19785
+        ]
+      },
+      "properties": {
+        "name": "I-35 & SH-9 E N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2644d36311ea13cc.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48076,
+          35.19785
+        ]
+      },
+      "properties": {
+        "name": "I-35 & SH-9 E E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/93febdf50a7ad29a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48076,
+          35.19785
+        ]
+      },
+      "properties": {
+        "name": "I-35 & SH-9 E S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/84520d11d1c186ec.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49215,
+          35.1803
+        ]
+      },
+      "properties": {
+        "name": "I-35 & SH-9 W N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/28b637211937bc3f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49215,
+          35.1803
+        ]
+      },
+      "properties": {
+        "name": "I-35 & SH-9 W S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5995e84035fc1805.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49215,
+          35.1803
+        ]
+      },
+      "properties": {
+        "name": "I-35 & SH-9 W W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9774aaa43a9cddc1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4854,
+          35.27893
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Franklin N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7b70c9687b5bd27f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4854,
+          35.27893
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Franklin S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/53eef9825c898ae7.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4859,
+          35.23327
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Robinson N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d92ce113526b9854.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4859,
+          35.23327
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Robinson S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/70b34476c800e69f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4859,
+          35.23327
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Robinson E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/fd985598547b18ab.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4859,
+          35.23327
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Robinson W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/452e4a7b83fdb769.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48492,
+          35.2626
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Tecumseh N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2808cab6e034753d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48492,
+          35.2626
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Tecumseh E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/256d09f65484a229.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48492,
+          35.2626
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Tecumseh S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9522ee3c9e467e9e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48492,
+          35.2626
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Tecumseh W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9ac3a7e02205d58b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.37154,
+          35.38885
+        ]
+      },
+      "properties": {
+        "name": "I-240 & Douglas N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d1888c8d30861f37.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.37154,
+          35.38885
+        ]
+      },
+      "properties": {
+        "name": "I-240 & Douglas E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7ad13a217076b88c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.37154,
+          35.38885
+        ]
+      },
+      "properties": {
+        "name": "I-240 & Douglas W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a0a916329f536c36.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.59929,
+          35.18241
+        ]
+      },
+      "properties": {
+        "name": "US-62 & SH-9 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/64f92c52fbd0ea03.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.59929,
+          35.18241
+        ]
+      },
+      "properties": {
+        "name": "US-62 & SH-9 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/615480d0af87c3fb.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.59929,
+          35.18241
+        ]
+      },
+      "properties": {
+        "name": "US-62 & SH-9 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e0a295fc0c196da6.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.59929,
+          35.18241
+        ]
+      },
+      "properties": {
+        "name": "US-62 & SH-9 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ca845c3fff406b08.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.69677,
+          35.51555
+        ]
+      },
+      "properties": {
+        "name": "JKT & SH-66 ",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/eadecc36acce6b63.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.69677,
+          35.51555
+        ]
+      },
+      "properties": {
+        "name": "JKT & SH-66 ",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5f63db807a01bdde.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.69677,
+          35.51555
+        ]
+      },
+      "properties": {
+        "name": "JKT & SH-66 ",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/68ca3672be7fd445.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.69677,
+          35.51555
+        ]
+      },
+      "properties": {
+        "name": "JKT & SH-66 ",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/c26260f3e7a5fd92.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.68862,
+          35.5802
+        ]
+      },
+      "properties": {
+        "name": "JKT & SH-3 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b908711a9cf0045b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.68862,
+          35.5802
+        ]
+      },
+      "properties": {
+        "name": "JKT & SH-3 S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/90a51cf49eb1fc6f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.68862,
+          35.5802
+        ]
+      },
+      "properties": {
+        "name": "JKT & SH-3 E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7049c58d7f47a38b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.68862,
+          35.5802
+        ]
+      },
+      "properties": {
+        "name": "JKT & SH-3 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9395762cd3ea1fdf.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.948522,
+          36.019133
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Riverside",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/463f1644f7aa895c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.948522,
+          36.019133
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Riverside",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/252c91a5c157e06c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.948522,
+          36.019133
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Riverside",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/52ba96c8016a959d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.948522,
+          36.019133
+        ]
+      },
+      "properties": {
+        "name": "Creek Tpk & Riverside",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/00d50a565b2dab0a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.974184,
+          36.017121
+        ]
+      },
+      "properties": {
+        "name": "Creek & Elm",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4cfaf8efa4289f1d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.974184,
+          36.017121
+        ]
+      },
+      "properties": {
+        "name": "Creek & Elm",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/2c10d281de59ffad.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.974184,
+          36.017121
+        ]
+      },
+      "properties": {
+        "name": "Creek & Elm",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/402f725cd782b939.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.921617,
+          36.025745
+        ]
+      },
+      "properties": {
+        "name": "Creek & Yale",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/cfb596d05671e5d2.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.921617,
+          36.025745
+        ]
+      },
+      "properties": {
+        "name": "Creek & Yale",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/19f931d8c25f39e8.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.921617,
+          36.025745
+        ]
+      },
+      "properties": {
+        "name": "Creek & Yale",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d3154607896a4c90.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.921617,
+          36.025745
+        ]
+      },
+      "properties": {
+        "name": "Creek & Yale",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/49287c40ab88340f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.549847,
+          35.609518
+        ]
+      },
+      "properties": {
+        "name": "JKT & Penn W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/69f60931d8e6cf48.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.549847,
+          35.609518
+        ]
+      },
+      "properties": {
+        "name": "JKT & Penn N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/70fb601f4952719b.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.549847,
+          35.609518
+        ]
+      },
+      "properties": {
+        "name": "JKT & Penn E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e1113ddf93560da3.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.549847,
+          35.609518
+        ]
+      },
+      "properties": {
+        "name": "JKT & Penn S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/431f9084a621d7d1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.068862,
+          36.064789
+        ]
+      },
+      "properties": {
+        "name": "Turner Tpk & W 69th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/3bff59abf648f748.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.068862,
+          36.064789
+        ]
+      },
+      "properties": {
+        "name": "Turner Tpk & W 69th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b2b8c4cf781f451c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.078791,
+          36.047711
+        ]
+      },
+      "properties": {
+        "name": "Turner Tpk & W 81st E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a5de763e00d06850.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.078791,
+          36.047711
+        ]
+      },
+      "properties": {
+        "name": "Turner Tpk & W 81st W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ed42d6e40963b4a1.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.618541,
+          35.459784
+        ]
+      },
+      "properties": {
+        "name": "I-40 & MacArthur W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/749060339d2b4f2c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.618541,
+          35.459784
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Macarthur S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/0480e9318e082f63.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.618541,
+          35.459784
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Macarthur E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6c0a6a5f4efdb524.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.618541,
+          35.459784
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Macarthur N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8039ad75f641df0e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.654622,
+          35.460058
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Council N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4e69c87ddc647d82.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.654622,
+          35.460058
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Council E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/4ff40dd1ce00b88d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.654622,
+          35.460058
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Council S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/7f8a718da4bc3862.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.654622,
+          35.460058
+        ]
+      },
+      "properties": {
+        "name": "I-40 & Council W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/ab061626b6350316.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.601482,
+          35.423206
+        ]
+      },
+      "properties": {
+        "name": "SH-152 & Meridian N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b2d7d1204d7a2a24.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.601482,
+          35.423206
+        ]
+      },
+      "properties": {
+        "name": "SH-152 & Meridian S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/a841c7ac195da841.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.601482,
+          35.423206
+        ]
+      },
+      "properties": {
+        "name": "SH-152 & Meridian E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/0148fbc284378e9f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.601482,
+          35.423206
+        ]
+      },
+      "properties": {
+        "name": "SH-152 & Meridian W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/158cbdf01a2dff3a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.632074,
+          35.420368
+        ]
+      },
+      "properties": {
+        "name": "SH-152 & SW 44th W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/6e1b295ad962910d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.632074,
+          35.420368
+        ]
+      },
+      "properties": {
+        "name": "SH-152 & SW 44th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8ea42e3309905151.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.632074,
+          35.420368
+        ]
+      },
+      "properties": {
+        "name": "SH-152 & SW 44th S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5a4d500712ca0d2d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.632074,
+          35.420368
+        ]
+      },
+      "properties": {
+        "name": "SH-152 & SW 44th E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/31e92a623ec08c9e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.464956,
+          35.492846
+        ]
+      },
+      "properties": {
+        "name": "I-35 & NE 23rd N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/89074bc1dd1c3b00.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.464956,
+          35.492846
+        ]
+      },
+      "properties": {
+        "name": "I-35 & NE 23rd E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/476629281579f78d.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.464956,
+          35.492846
+        ]
+      },
+      "properties": {
+        "name": "I-35 & NE 23rd S",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/54b7c68e53a99c4c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.464956,
+          35.492846
+        ]
+      },
+      "properties": {
+        "name": "I-35 & NE 23rd W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/29c5c94f36436e86.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.029618,
+          36.157778
+        ]
+      },
+      "properties": {
+        "name": "US-412 & N 33RD W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e103ce295942de2f.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.029618,
+          36.157778
+        ]
+      },
+      "properties": {
+        "name": "US-412 & N 33RD E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d0d3d9357f246bd4.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.980935,
+          36.15099
+        ]
+      },
+      "properties": {
+        "name": "US-75 & E 8th N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/13cb2e9c23a52266.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.938824,
+          36.125727
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Harvard NW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/46884f2b9e4e288c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.938824,
+          36.125727
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Harvard SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/1ff97aaed1a40955.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.919065,
+          36.118359
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & E 31st NW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e84ebb293bb51ceb.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.919065,
+          36.118359
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & E 31st SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/bedd47a344130622.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.876482,
+          36.104631
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & E 41st SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d46c49dc3c5ab470.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.876482,
+          36.104631
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & E 41st NW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/124f732bdb759d8e.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.76764,
+          36.060735
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Kenosha SE",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/5597efbb165593a9.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.76764,
+          36.060735
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Kenosha E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/8b4cbe9b68b2b869.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.76764,
+          36.060735
+        ]
+      },
+      "properties": {
+        "name": "SH-51 & Kenosha NW",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/dfa937815905385c.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.054842,
+          35.678364
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Wellston W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/b92d18afe15696bb.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.054842,
+          35.678364
+        ]
+      },
+      "properties": {
+        "name": "I-44 & Wellston E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/3244a7252619cb27.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.485505,
+          35.218775
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Main N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/d606bf6783dc7d55.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.485505,
+          35.218775
+        ]
+      },
+      "properties": {
+        "name": "I-35 & Main E",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/9da1d9e206eb757a.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49497,
+          35.18178
+        ]
+      },
+      "properties": {
+        "name": "I-35 & SH-9 W 2 N",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/e1219565c7b0f903.stream/playlist.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49497,
+          35.18178
+        ]
+      },
+      "properties": {
+        "name": "I-35 & SH-9 W 2 W",
+        "stream_url": "https://oktraffic.org/streams/delay-stream/08d443787cc8c6f7.stream/playlist.m3u8"
+      }
+    }
+  ]
+}

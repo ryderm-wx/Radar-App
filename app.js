@@ -12,9 +12,12 @@ let radarSiteLocation = null;
 
 let enableAlertFlashing = true;
 let flashMode = "hard";
-let flashSpeed = 500;
+let flashSpeed = 800;
 let selectedAlert = null;
 let alertFlashInterval = null;
+
+const PROBE_UPDATE_MIN_INTERVAL_MS = 150;
+let lastProbeUpdateTs = 0;
 
 let coordinatePromptMarker = null;
 let coordinatePromptCard = null;
@@ -114,7 +117,9 @@ function updateDockSummary() {
   const productEl = document.getElementById("currentProductName");
 
   if (siteEl) {
-    if (selectedRadarSite) {
+    if (dataMode === "hrrr") {
+      siteEl.textContent = "HRRR - CONUS";
+    } else if (selectedRadarSite) {
       siteEl.textContent = `${selectedRadarSite.id} - ${selectedRadarSite.name}`;
     } else {
       siteEl.textContent = "No site selected";
@@ -122,9 +127,14 @@ function updateDockSummary() {
   }
 
   if (productEl) {
-    if (selectedRadarProduct) {
-      const info = getRadarProductInfo(selectedRadarProduct);
-      productEl.textContent = `${selectedRadarProduct} - ${info.name}`;
+    const productCode =
+      dataMode === "hrrr"
+        ? `HRRR_${selectedHRRRVariable.toUpperCase()}`
+        : selectedRadarProduct;
+
+    if (productCode) {
+      const info = getRadarProductInfo(productCode);
+      productEl.textContent = `${productCode} - ${info.name}`;
     } else {
       productEl.textContent = "Select a product";
     }
@@ -556,6 +566,107 @@ const DBZ_COLOR_EXPRESSION = [
 
 const REFLECTIVITY_COLOR_EXPRESSION = DBZ_COLOR_EXPRESSION;
 
+const PRECIP_TYPE_COLOR_STOPS = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95];
+const PRECIP_TYPE_COLOR_TABLES = {
+  rain: [
+    "rgba(55,170,90,0.84)",
+    "rgba(30,188,120,0.85)",
+    "rgba(10,198,160,0.86)",
+    "rgba(20,210,210,0.87)",
+    "rgba(35,196,232,0.88)",
+    "rgba(65,170,245,0.89)",
+    "rgba(95,140,250,0.9)",
+    "rgba(125,110,255,0.9)",
+    "rgba(155,90,255,0.9)",
+    "rgba(190,80,245,0.9)",
+    "rgba(230,85,220,0.92)",
+  ],
+  frzr: [
+    "rgba(255,170,210,0.84)",
+    "rgba(255,150,210,0.85)",
+    "rgba(255,130,205,0.86)",
+    "rgba(255,110,198,0.87)",
+    "rgba(250,95,188,0.88)",
+    "rgba(245,82,178,0.89)",
+    "rgba(236,70,168,0.9)",
+    "rgba(226,60,160,0.9)",
+    "rgba(213,52,150,0.9)",
+    "rgba(198,45,140,0.9)",
+    "rgba(182,40,130,0.92)",
+  ],
+  sleet: [
+    "rgba(255,220,150,0.84)",
+    "rgba(255,205,130,0.85)",
+    "rgba(255,188,112,0.86)",
+    "rgba(255,172,95,0.87)",
+    "rgba(255,155,80,0.88)",
+    "rgba(250,138,66,0.89)",
+    "rgba(242,122,54,0.9)",
+    "rgba(233,108,44,0.9)",
+    "rgba(220,94,35,0.9)",
+    "rgba(205,80,28,0.9)",
+    "rgba(188,68,22,0.92)",
+  ],
+  snow: [
+    "rgba(210,236,255,0.84)",
+    "rgba(186,225,255,0.85)",
+    "rgba(160,212,255,0.86)",
+    "rgba(135,198,255,0.87)",
+    "rgba(110,182,255,0.88)",
+    "rgba(90,164,248,0.89)",
+    "rgba(70,146,240,0.9)",
+    "rgba(54,126,228,0.9)",
+    "rgba(42,108,210,0.9)",
+    "rgba(34,90,190,0.9)",
+    "rgba(28,74,170,0.92)",
+  ],
+};
+const PRECIP_TYPE_CATEGORY_OFFSETS = {
+  rain: 0,
+  frzr: 100,
+  sleet: 200,
+  snow: 300,
+};
+
+function buildPrecipTypeReflectivityExpression() {
+  const expression = ["interpolate", ["linear"], ["get", "dbz"]];
+  const categories = [
+    { key: "rain", name: "Rain" },
+    { key: "frzr", name: "Freezing Rain" },
+    { key: "sleet", name: "Sleet" },
+    { key: "snow", name: "Snow" },
+  ];
+
+  for (const category of categories) {
+    const offset = PRECIP_TYPE_CATEGORY_OFFSETS[category.key];
+    const colors = PRECIP_TYPE_COLOR_TABLES[category.key];
+    for (let i = 0; i < PRECIP_TYPE_COLOR_STOPS.length; i += 1) {
+      expression.push(offset + PRECIP_TYPE_COLOR_STOPS[i]);
+      expression.push(colors[i]);
+    }
+  }
+
+  return expression;
+}
+
+const PRECIP_TYPE_REFLECTIVITY_COLOR_EXPRESSION =
+  buildPrecipTypeReflectivityExpression();
+
+function isRadarReflectivityProductCode(productCode) {
+  return typeof productCode === "string" && /^N[0-3]B$/.test(productCode);
+}
+
+function isHRRRReflectivityProductCode(productCode) {
+  return typeof productCode === "string" && productCode === "HRRR_REFC";
+}
+
+function isReflectivityProductCode(productCode) {
+  return (
+    isRadarReflectivityProductCode(productCode) ||
+    isHRRRReflectivityProductCode(productCode)
+  );
+}
+
 const VELOCITY_COLOR_EXPRESSION = [
   "interpolate",
   ["linear"],
@@ -706,7 +817,115 @@ function palToColorExpression(palette) {
 /**
  * Helper function to get color expression and metadata for a given radar product
  */
+function getReflectivityColorExpressionForCurrentMode(productCode) {
+  if (precipTypeModeEnabled && isReflectivityProductCode(productCode)) {
+    return PRECIP_TYPE_REFLECTIVITY_COLOR_EXPRESSION;
+  }
+  return REFLECTIVITY_COLOR_EXPRESSION;
+}
+
 function getRadarProductInfo(product) {
+  if (typeof product === "string" && product.startsWith("HRRR_")) {
+    const key = product.replace("HRRR_", "").toUpperCase();
+    const unitsOverride =
+      currentHRRRUnitsByVariable[key.toLowerCase()] ||
+      currentHRRRMeta?.units ||
+      null;
+    const hrrrMap = {
+      TMP2M: {
+        name: "HRRR 2m Temperature",
+        unit: unitsOverride || "°C",
+        isVelocity: false,
+        colorExpression: [
+          "interpolate",
+          ["linear"],
+          ["get", "dbz"],
+          -30,
+          "rgba(80,0,120,0.85)",
+          -20,
+          "rgba(40,0,180,0.85)",
+          -10,
+          "rgba(0,80,220,0.85)",
+          0,
+          "rgba(0,170,255,0.85)",
+          10,
+          "rgba(30,210,130,0.85)",
+          20,
+          "rgba(230,220,60,0.85)",
+          30,
+          "rgba(250,140,40,0.85)",
+          40,
+          "rgba(220,30,30,0.9)",
+        ],
+      },
+      RH2M: {
+        name: "HRRR 2m Relative Humidity",
+        unit: unitsOverride || "%",
+        isVelocity: false,
+        colorExpression: [
+          "interpolate",
+          ["linear"],
+          ["get", "dbz"],
+          0,
+          "rgba(120,40,20,0.75)",
+          20,
+          "rgba(180,90,30,0.78)",
+          40,
+          "rgba(220,170,70,0.82)",
+          60,
+          "rgba(130,210,120,0.84)",
+          80,
+          "rgba(40,170,210,0.86)",
+          100,
+          "rgba(20,90,190,0.9)",
+        ],
+      },
+      REFC: {
+        name: precipTypeModeEnabled
+          ? `${getActiveModelLabel()} Composite Reflectivity (Precip Type)`
+          : `${getActiveModelLabel()} Composite Reflectivity`,
+        unit: precipTypeModeEnabled ? "ptype + dBZ" : unitsOverride || "dBZ",
+        isVelocity: false,
+        colorExpression: getReflectivityColorExpressionForCurrentMode(product),
+      },
+      UGRD10M: {
+        name: "HRRR 10m U Wind",
+        unit: unitsOverride || "m/s",
+        isVelocity: true,
+        colorExpression: VELOCITY_COLOR_EXPRESSION,
+      },
+      VGRD10M: {
+        name: "HRRR 10m V Wind",
+        unit: unitsOverride || "m/s",
+        isVelocity: true,
+        colorExpression: VELOCITY_COLOR_EXPRESSION,
+      },
+    };
+
+    return hrrrMap[key] || hrrrMap.TMP2M;
+  }
+
+  // Explicit MRMS product mapping: treat MRMS as composite reflectivity
+  if (typeof product === "string" && String(product).toLowerCase() === "mrms") {
+    return {
+      name: precipTypeModeEnabled
+        ? `MRMS Composite Reflectivity (Precip Type)`
+        : `MRMS Composite Reflectivity`,
+      unit: precipTypeModeEnabled ? "ptype + dBZ" : "dBZ",
+      isVelocity: false,
+      colorExpression: getReflectivityColorExpressionForCurrentMode(product),
+    };
+  }
+
+  if (precipTypeModeEnabled && isReflectivityProductCode(product)) {
+    return {
+      name: `${product} (Precip Type)`,
+      colorExpression: getReflectivityColorExpressionForCurrentMode(product),
+      unit: "ptype + dBZ",
+      isVelocity: false,
+    };
+  }
+
   if (customPalettes[product]) {
     const palette = customPalettes[product];
     const hasNegativeValues = palette.colors.some((c) => c.value < 0);
@@ -735,9 +954,11 @@ function getRadarProductInfo(product) {
 
   const productMap = {
     B: {
-      name: `Base Reflectivity${tiltLabel}`,
-      colorExpression: REFLECTIVITY_COLOR_EXPRESSION,
-      unit: "dBZ",
+      name: precipTypeModeEnabled
+        ? `Base Reflectivity${tiltLabel} (Precip Type)`
+        : `Base Reflectivity${tiltLabel}`,
+      colorExpression: getReflectivityColorExpressionForCurrentMode(product),
+      unit: precipTypeModeEnabled ? "ptype + dBZ" : "dBZ",
       isVelocity: false,
     },
     G: {
@@ -767,7 +988,7 @@ function getRadarProductInfo(product) {
         ["get", "dbz"],
         0,
         "#000000",
-        0.1,
+        0.01,
         "#4B0082",
         0.3,
         "#0000FF",
@@ -895,6 +1116,38 @@ const sweepSourceId = "radar-sweep";
 const sweepLayerId = "radar-sweep-layer";
 let selectedRadarSite = null;
 let selectedRadarProduct = "N0B";
+let selectedRadarDataSource = "level3";
+let dataMode = "radar";
+let selectedModel = "hrrr";
+let selectedHRRRVariable = "tmp2m";
+let selectedHRRRForecastHour = 0;
+let selectedHRRRRunDate = null;
+let selectedHRRRRunHour = null;
+let precipTypeModeEnabled = false;
+const HRRR_RUNS_LOOKBACK_HOURS = "48";
+const HRRR_RUNS_MAX = "12";
+const HRRR_RUNS_CACHE_TTL_MS = 30_000;
+const HRRR_PTYPE_CACHE_TTL_MS = 45_000;
+const PTYPE_LOOKUP_COORD_SCALE = 8;
+const PTYPE_LOOKUP_COARSE_SCALE = 4;
+const MODEL_LABELS = {
+  hrrr: "HRRR",
+  "rrfs-a": "RRFS-a",
+  nam3k: "NAM 3km Nest",
+};
+let hrrrRunsCacheKey = null;
+let hrrrRunsCachePayload = null;
+let hrrrRunsCacheTime = 0;
+const hrrrPTypeLookupCache = new Map();
+let currentRenderProductCode = "N0B";
+let currentHRRRMeta = null;
+let currentHRRRUnitsByVariable = {};
+let radarSmoothingPreference = false;
+let modelLoopMode = "all";
+let modelLoopStartHour = 0;
+let modelLoopEndHour = 48;
+let modelLoopLoading = false;
+const modelFrameCache = new Map();
 let mapInstance = null;
 let customRadarLayerInstance = null;
 let radarSitesCache = [];
@@ -905,19 +1158,72 @@ let useStormMotion = false;
 
 let currentSweepAngle = 0;
 let animationFrameId = null;
-const SWEEP_SPEED_DPS = 0.3;
+const SWEEP_SPEED_DPS = 0.15;
 const SWEEP_LINE_WIDTH = 3;
 const SWEEP_RADIUS_KM = 500;
 const SWEEP_TRAIL_LENGTH = 35;
 const SWEEP_TRAIL_SEGMENTS = 150;
 const SWEEP_COLOR = "#ffffff";
 
+// Sweep mode settings
+let sweepMode = "full"; // "full", "simple", or "disabled"
+let sweepPulsePhase = 0;
+let currentLevel2SweepData = null; // For real sweep mode with L2 data
+
+// TODO: Level 2 Real-Time Sweep Feature
+// To implement a true Level 2 chunk-based real sweep:
+// 1. Backend: Return azimuth angles array with radar data
+// 2. Frontend: Store azimuth metadata when loading Level 2 data
+// 3. Animation: Sync sweep angle with actual beam positions from azimuths array
+// 4. Optional: Implement streaming to update sweep as new chunks arrive
+// Current implementation displays full 360° coverage from processed Level 2 data
+
 // High dBZ flashing animation
-let flashCycleTime = 0;
+let flashCycleTime = 600;
 let isFlashOn = true;
 const FLASH_INTERVAL = 500; // milliseconds
+const HIGH_DBZ_FLASH_PERIOD_MS = 1400; // slower pulse period for high dBZ flash
 const HIGH_DBZ_FLASH_THRESHOLD = 50; // dBZ threshold for flash effect
 let currentRadarData = null; // Store current radar data for flash processing
+
+// Persistent settings key
+const USER_SETTINGS_KEY = "radar_ui_settings_v1";
+
+function loadUserSettings() {
+  try {
+    const raw = localStorage.getItem(USER_SETTINGS_KEY);
+    if (!raw) return;
+    const s = JSON.parse(raw);
+    if (typeof s.enableAlertFlashing === "boolean")
+      enableAlertFlashing = s.enableAlertFlashing;
+    if (typeof s.flashMode === "string") flashMode = s.flashMode;
+    if (typeof s.flashSpeed === "number") flashSpeed = s.flashSpeed;
+    if (typeof s.highDbzThreshold === "number") {
+      // allow threshold to be saved
+      window.HIGH_DBZ_FLASH_THRESHOLD = s.highDbzThreshold;
+    }
+    if (typeof s.sweepMode === "string") sweepMode = s.sweepMode;
+    if (typeof s.sweepSpeed === "number") SWEEP_SPEED_DPS = s.sweepSpeed;
+  } catch (e) {
+    console.warn("Failed to load user settings:", e);
+  }
+}
+
+function saveUserSettings() {
+  try {
+    const payload = {
+      enableAlertFlashing: !!enableAlertFlashing,
+      flashMode: String(flashMode || "smooth"),
+      flashSpeed: Number(flashSpeed) || 800,
+      highDbzThreshold: Number(HIGH_DBZ_FLASH_THRESHOLD) || 50,
+      sweepMode: String(sweepMode || "full"),
+      sweepSpeed: Number(SWEEP_SPEED_DPS) || 0.15,
+    };
+    localStorage.setItem(USER_SETTINGS_KEY, JSON.stringify(payload));
+  } catch (e) {
+    console.warn("Failed to save user settings:", e);
+  }
+}
 
 // TVS Detection
 let tvsDetectionEnabled = false;
@@ -930,10 +1236,20 @@ let stormTrackPoint = null;
 let stormTrackLine = [];
 let stormTrackSpeed = 35; // mph
 let stormTrackMarkers = [];
+let stormTrackMode = "manual"; // "manual" or "calculated"
+let stormTrackFirstMarker = null;
+let stormTrackSecondMarker = null;
+let stormTrackTimeElapsed = 0; // minutes between markers
+
+// Traffic Cameras Feature
+let camerasEnabled = false;
+let camerasData = null;
+let cameraPopup = null;
 
 let activeAlerts = new Map();
 let alertDetailsElement = null;
 let currentAlertInfoBox = null;
+let alertInfoBoxPosition = null;
 
 let inspectorEnabled = false;
 let inspectorMouseHandler = null;
@@ -1198,6 +1514,7 @@ function initAlertFeed() {
     setTimeout(() => {
       eventSource.close();
       initAlertFeed();
+      updateArcSyncToggleState();
     }, 5000);
   };
 }
@@ -1375,7 +1692,107 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+function normalizeAlertValue(value) {
+  if (Array.isArray(value)) {
+    return value.length > 0 ? String(value[0]) : "";
+  }
+  if (value == null) return "";
+  return String(value);
+}
+
+function applyRealAlertPresetRules(alert) {
+  if (!alert || typeof alert !== "object") return alert;
+
+  const parameters = alert;
+  parameters.threats =
+    parameters.threats && typeof parameters.threats === "object"
+      ? parameters.threats
+      : {};
+
+  let eventName =
+    normalizeAlertValue(parameters.eventName) ||
+    normalizeAlertValue(parameters.event) ||
+    normalizeAlertValue(parameters.headline);
+
+  if (!eventName) return parameters;
+
+  if (eventName.includes("Tornado Warning")) {
+    if (eventName === "Radar Confirmed Tornado Warning") {
+      parameters.source = "RADAR CONFIRMED TORNADO";
+      eventName = "Tornado Warning";
+    } else if (eventName === "Spotter Confirmed Tornado Warning") {
+      parameters.threats.tornadoDetection = "OBSERVED";
+      parameters.source = "WEATHER SPOTTERS CONFIRMED TORNADO";
+      eventName = "Tornado Warning";
+    } else if (eventName === "Emergency Mgmt Confirmed Tornado Warning") {
+      parameters.threats.tornadoDetection = "OBSERVED";
+      parameters.source = "EMERGENCY MANAGEMENT CONFIRMED TORNADO";
+      eventName = "Tornado Warning";
+    } else if (eventName === "Law Enforcement Confirmed Tornado Warning") {
+      parameters.threats.tornadoDetection = "OBSERVED";
+      parameters.source = "LAW ENFORCEMENT CONFIRMED TORNADO";
+      eventName = "Tornado Warning";
+    } else if (eventName === "Public Confirmed Tornado Warning") {
+      parameters.threats.tornadoDetection = "OBSERVED";
+      parameters.source = "PUBLIC CONFIRMED TORNADO";
+      eventName = "Tornado Warning";
+    } else if (eventName === "Observed Tornado Warning") {
+      parameters.threats.tornadoDetection = "OBSERVED";
+      parameters.source = "CONFIRMED TORNADO";
+      eventName = "Tornado Warning";
+    } else if (eventName === "PDS Tornado Warning") {
+      parameters.threats.tornadoDamageThreat = "CONSIDERABLE";
+      parameters.source = "RADAR INDICATED ROTATION";
+      eventName = "Tornado Warning";
+    } else if (eventName === "Tornado Emergency") {
+      parameters.threats.tornadoDamageThreat = "CATASTROPHIC";
+      parameters.source = "RADAR INDICATED ROTATION";
+      eventName = "Tornado Warning";
+    } else if (eventName === "Tornado Warning") {
+      if (!parameters.source) {
+        parameters.source = "RADAR INDICATED ROTATION";
+      }
+    }
+  } else if (eventName.includes("Severe Thunderstorm Warning")) {
+    if (eventName === "Destructive Severe Thunderstorm Warning") {
+      parameters.threats.thunderstormDamageThreat = "DESTRUCTIVE";
+      eventName = "Severe Thunderstorm Warning";
+    } else if (eventName === "Considerable Severe Thunderstorm Warning") {
+      parameters.threats.thunderstormDamageThreat = "CONSIDERABLE";
+      eventName = "Severe Thunderstorm Warning";
+    }
+  } else if (eventName === "Flash Flood Emergency") {
+    parameters.threats.flashFloodDamageThreat = "CATASTROPHIC";
+    eventName = "Flash Flood Warning";
+  } else if (eventName === "Considerable Flash Flood Warning") {
+    parameters.threats.flashFloodDamageThreat = "CONSIDERABLE";
+    eventName = "Flash Flood Warning";
+  }
+
+  // Normalize string/array fields after preset mapping
+  if (parameters.source) {
+    parameters.source = normalizeAlertValue(parameters.source);
+  }
+  if (parameters.threats) {
+    Object.keys(parameters.threats).forEach((key) => {
+      parameters.threats[key] = normalizeAlertValue(parameters.threats[key]);
+    });
+  }
+
+  parameters.eventName = eventName;
+  if (!parameters.event || normalizeAlertValue(parameters.event) === "") {
+    parameters.event = eventName;
+  }
+  if (!parameters.headline || normalizeAlertValue(parameters.headline) === "") {
+    parameters.headline = eventName;
+  }
+
+  return parameters;
+}
+
 function addAlertToMap(alert) {
+  alert = applyRealAlertPresetRules(alert);
+
   // Detect special weather statements from SSE or product
   try {
     if (alert.eventName && /severe weather statement/i.test(alert.eventName)) {
@@ -1490,6 +1907,8 @@ function removeAlertFromMap(alertId) {
   const alert = activeAlerts.get(alertId);
   if (!alert) return;
 
+  detachAlertMapEventHandlers(mapInstance, alert);
+
   activeAlerts.delete(alertId);
 
   if (selectedAlert && selectedAlert.id === alertId && alertDetailsElement) {
@@ -1525,6 +1944,30 @@ function removeAlertFromMap(alertId) {
   }
 
   updateAlertsButton();
+}
+
+function detachAlertMapEventHandlers(map, alert) {
+  if (!map || !alert || !alert._mapHandlers) return;
+
+  const id = alert.mapLayerId || `alert-${alert.id}`;
+  const innerLayerId = `${id}-outline-inner`;
+  const outerLayerId = `${id}-outline-outer`;
+  const handlers = alert._mapHandlers;
+
+  if (handlers.onLineClick) {
+    map.off("click", innerLayerId, handlers.onLineClick);
+    map.off("click", outerLayerId, handlers.onLineClick);
+  }
+  if (handlers.onMouseEnter) {
+    map.off("mouseenter", innerLayerId, handlers.onMouseEnter);
+    map.off("mouseenter", outerLayerId, handlers.onMouseEnter);
+  }
+  if (handlers.onMouseLeave) {
+    map.off("mouseleave", innerLayerId, handlers.onMouseLeave);
+    map.off("mouseleave", outerLayerId, handlers.onMouseLeave);
+  }
+
+  alert._mapHandlers = null;
 }
 
 function startAlertFlashing() {
@@ -2130,23 +2573,31 @@ function addAlertPolygon(map, alert) {
 
   ensureAlertOutlinesAboveRadar([alert.id], map);
 
+  detachAlertMapEventHandlers(map, alert);
+
+  const onLineClick = (e) => handleAlertLineClick(e, alert);
+  const onMouseEnter = () => {
+    map.getCanvas().style.cursor = "pointer";
+  };
+  const onMouseLeave = () => {
+    map.getCanvas().style.cursor = "";
+  };
+
+  alert._mapHandlers = {
+    onLineClick,
+    onMouseEnter,
+    onMouseLeave,
+  };
+
   // Add click handler for alert lines only (no fill clicks)
-  map.on("click", `${id}-outline-inner`, (e) => handleAlertLineClick(e, alert));
-  map.on("click", `${id}-outline-outer`, (e) => handleAlertLineClick(e, alert));
+  map.on("click", `${id}-outline-inner`, onLineClick);
+  map.on("click", `${id}-outline-outer`, onLineClick);
 
   // Cursor change when hovering alert outlines
-  map.on("mouseenter", `${id}-outline-inner`, () => {
-    map.getCanvas().style.cursor = "pointer";
-  });
-  map.on("mouseenter", `${id}-outline-outer`, () => {
-    map.getCanvas().style.cursor = "pointer";
-  });
-  map.on("mouseleave", `${id}-outline-inner`, () => {
-    map.getCanvas().style.cursor = "";
-  });
-  map.on("mouseleave", `${id}-outline-outer`, () => {
-    map.getCanvas().style.cursor = "";
-  });
+  map.on("mouseenter", `${id}-outline-inner`, onMouseEnter);
+  map.on("mouseenter", `${id}-outline-outer`, onMouseEnter);
+  map.on("mouseleave", `${id}-outline-inner`, onMouseLeave);
+  map.on("mouseleave", `${id}-outline-outer`, onMouseLeave);
 }
 
 function handleAlertClick(e, alert) {
@@ -2163,6 +2614,7 @@ function handleAlertClick(e, alert) {
 function handleAlertLineClick(e, alert) {
   e.originalEvent.stopPropagation();
   const map = e.target;
+  const containerRect = map.getContainer().getBoundingClientRect();
 
   // Remove existing info box if any
   if (currentAlertInfoBox) {
@@ -2179,48 +2631,60 @@ function handleAlertLineClick(e, alert) {
   // Create draggable info box
   const infoBox = document.createElement("div");
   infoBox.className = "alert-info-box";
-  infoBox.style.cssText = `
-    position: absolute;
-    left: ${e.point.x + 20}px;
-    top: ${e.point.y - 100}px;
-    background: linear-gradient(135deg, rgba(25, 25, 40, 0.95), rgba(15, 15, 25, 0.98));
-    backdrop-filter: blur(16px);
-    border: 2px solid rgba(255,255,255,0.5);
-    border-radius: 12px;
-    padding: 0;
-    color: white;
-    font-size: 13px;
-    min-width: 280px;
-    max-width: 340px;
-    cursor: move;
-    z-index: 10000;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.1) inset;
-    pointer-events: auto;
-    animation: alertBoxEntrance 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    overflow: hidden;
-  `;
+  const defaultLeft = containerRect.left + e.point.x + 20;
+  const defaultTop = containerRect.top + e.point.y - 100;
+  const initialLeft = alertInfoBoxPosition?.left ?? defaultLeft;
+  const initialTop = alertInfoBoxPosition?.top ?? defaultTop;
 
   // Create arrow element that stays anchored to click point
   const arrow = document.createElement("div");
   arrow.className = "alert-info-arrow";
   arrow.style.cssText = `
     position: absolute;
-    width: 16px;
-    height: 16px;
-    background: rgba(255, 255, 255, 0.9);
-    border-left: 2px solid rgba(0,0,0,0.3);
-    border-bottom: 2px solid rgba(0,0,0,0.3);
-    transform: translate(-50%, -50%) rotate(45deg);
-    z-index: 10050;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.7));
+    border-radius: 999px;
+    transform-origin: 0 50%;
+    transform: translate(0, -50%) rotate(0deg);
+    z-index: 9990;
     pointer-events: none;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.7);
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.25), 0 4px 18px rgba(0,0,0,0.55);
   `;
   document.body.appendChild(arrow);
+
+  const getLineEndPoint = (ax, ay, bx, by, rect) => {
+    const dx = bx - ax;
+    const dy = by - ay;
+    if (dx === 0 && dy === 0) return null;
+
+    const candidates = [];
+    const tLeft = dx !== 0 ? (rect.left - ax) / dx : null;
+    const tRight = dx !== 0 ? (rect.right - ax) / dx : null;
+    const tTop = dy !== 0 ? (rect.top - ay) / dy : null;
+    const tBottom = dy !== 0 ? (rect.bottom - ay) / dy : null;
+
+    if (tLeft !== null) candidates.push(tLeft);
+    if (tRight !== null) candidates.push(tRight);
+    if (tTop !== null) candidates.push(tTop);
+    if (tBottom !== null) candidates.push(tBottom);
+
+    let best = null;
+    candidates.forEach((t) => {
+      if (t <= 0) return;
+      const x = ax + dx * t;
+      const y = ay + dy * t;
+      if (x + 0.5 < rect.left || x - 0.5 > rect.right) return;
+      if (y + 0.5 < rect.top || y - 0.5 > rect.bottom) return;
+      if (!best || t < best.t) best = { x, y, t };
+    });
+
+    return best ? { x: best.x, y: best.y } : null;
+  };
 
   // Function to update arrow position
   const updateArrowPosition = () => {
     if (!map || !anchorLngLat) return;
-    const containerRect = map.getContainer().getBoundingClientRect();
     const anchorPoint = map.project(anchorLngLat);
     const anchorX = containerRect.left + anchorPoint.x;
     const anchorY = containerRect.top + anchorPoint.y;
@@ -2230,10 +2694,31 @@ function handleAlertLineClick(e, alert) {
     const dx = boxCenterX - anchorX;
     const dy = boxCenterY - anchorY;
     const angle = (Math.atan2(dy, dx) * 180) / Math.PI;
+    const lineEnd = getLineEndPoint(
+      anchorX,
+      anchorY,
+      boxCenterX,
+      boxCenterY,
+      boxRect,
+    );
+    const endX = lineEnd ? lineEnd.x : boxCenterX;
+    const endY = lineEnd ? lineEnd.y : boxCenterY;
 
+    const distance = Math.hypot(endX - anchorX, endY - anchorY);
+    const lineLength = Math.max(24, distance);
+    arrow.style.width = `${lineLength}px`;
     arrow.style.left = `${anchorX}px`;
     arrow.style.top = `${anchorY}px`;
-    arrow.style.transform = `translate(-50%, -50%) rotate(${angle + 45}deg)`;
+    arrow.style.transform = `translate(0, -50%) rotate(${angle}deg)`;
+  };
+
+  let arrowUpdateRaf = null;
+  const requestArrowPositionUpdate = () => {
+    if (arrowUpdateRaf) return;
+    arrowUpdateRaf = requestAnimationFrame(() => {
+      arrowUpdateRaf = null;
+      updateArrowPosition();
+    });
   };
 
   // Calculate time remaining
@@ -2248,41 +2733,74 @@ function handleAlertLineClick(e, alert) {
 
   // Get threat data from threats object or synthesize
   const threats = alert.threats || synthesizeThreats(alert);
+  const accentColor = getAlertColor(alert);
+  const accentRgb =
+    typeof accentColor === "string" && accentColor.startsWith("#")
+      ? hexToRgb(accentColor)
+      : "255, 255, 255";
+  const resolvedAlertName = getAlertName(alert) || "Weather Alert";
+  const baseAlertName = alert.eventName || alert.event || "Weather Alert";
+  const alertSubtype =
+    resolvedAlertName !== baseAlertName ? resolvedAlertName : null;
+
+  arrow.style.background = `linear-gradient(90deg, rgba(${accentRgb}, 0.08), rgba(${accentRgb}, 0.42), rgba(${accentRgb}, 0.78))`;
+  arrow.style.boxShadow = `0 0 14px rgba(${accentRgb}, 0.28), 0 4px 18px rgba(0,0,0,0.55)`;
+
+  infoBox.style.cssText = `
+    position: absolute;
+    left: ${initialLeft}px;
+    top: ${initialTop}px;
+    background: linear-gradient(160deg, rgba(17, 21, 31, 0.97), rgba(13, 17, 26, 0.97));
+    border: 1px solid rgba(${accentRgb}, 0.42);
+    border-radius: 12px;
+    padding: 0;
+    color: white;
+    font-size: 13px;
+    min-width: 300px;
+    max-width: 360px;
+    cursor: move;
+    z-index: 10000;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.52), 0 0 0 1px rgba(${accentRgb}, 0.16) inset;
+    pointer-events: auto;
+    overflow: hidden;
+  `;
+
+  const formatMaxThreat = (value, detail) => {
+    if (!value) return "";
+    if (!detail) return value;
+    if (value.includes("(")) return value;
+    return `${value} (${detail})`;
+  };
 
   // Build info content
   let infoHTML = `
-    <!-- Header with gradient background -->
-    <div style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(185, 28, 28, 0.2)); 
-                padding: 16px; border-bottom: 1px solid rgba(255,255,255,0.2); position: relative;">
+    <div style="height: 4px; background: linear-gradient(90deg, rgba(${accentRgb}, 0.95), rgba(${accentRgb}, 0.35));"></div>
+    <div style="padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.12); position: relative;
+                background: linear-gradient(180deg, rgba(${accentRgb}, 0.14), rgba(${accentRgb}, 0.03));">
       <button class="alert-info-close"
-        style="position: absolute; top: 12px; right: 12px; width: 28px; height: 28px; 
-        border-radius: 50%; border: none; background: rgba(220, 38, 38, 0.9); color: white; 
-        cursor: pointer; font-size: 16px; line-height: 1; padding: 0; font-weight: bold;
-        transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.4);"
-        onmouseover="this.style.background='rgba(185, 28, 28, 1)'; this.style.transform='scale(1.1)'"
-        onmouseout="this.style.background='rgba(220, 38, 38, 0.9)'; this.style.transform='scale(1)'">×</button>
+        style="position: absolute; top: 10px; right: 10px; width: 24px; height: 24px;
+        border-radius: 6px; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.07);
+        color: white; cursor: pointer; font-size: 15px; line-height: 1; padding: 0; font-weight: 600;">×</button>
       
-      <div style="font-weight: 700; font-size: 16px; margin-bottom: 6px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); 
-                  letter-spacing: 0.3px;">${alert.eventName || alert.event || "Weather Alert"}</div>
-      <div style="font-size: 11px; opacity: 0.95; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
-        ${alert.office ? `<span style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px; font-weight: 500;">📡 ${alert.office}</span>` : ""}
-        <span style="animation: countdown-pulse 2s ease-in-out infinite; font-weight: 600; 
-                     background: rgba(255, 200, 0, 0.15); padding: 2px 8px; border-radius: 4px; 
-                     border: 1px solid rgba(255, 200, 0, 0.3);">
+      <div style="font-weight: 700; font-size: 15px; margin-bottom: 8px; padding-right: 28px; letter-spacing: 0.2px;">${baseAlertName}</div>
+      <div style="font-size: 11px; opacity: 0.9; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+        ${alertSubtype ? `<span style="background: rgba(${accentRgb}, 0.2); color: rgba(255,255,255,0.96); border: 1px solid rgba(${accentRgb}, 0.55); padding: 2px 7px; border-radius: 999px; font-weight: 600;">${alertSubtype}</span>` : ""}
+        ${alert.eventCode ? `<span style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); padding: 2px 7px; border-radius: 999px;">${alert.eventCode}</span>` : ""}
+        ${alert.office ? `<span style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); padding: 2px 7px; border-radius: 999px;">📡 ${alert.office}</span>` : ""}
+        <span class="alert-info-countdown" style="font-weight: 600; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); padding: 2px 7px; border-radius: 999px;">
           ⏰ ${minutesRemaining}m ${secondsRemaining}s
         </span>
       </div>
     </div>
     
-    <!-- Content area -->
-    <div style="padding: 14px; font-size: 12.5px; line-height: 1.7;">
+    <div style="padding: 12px 14px; font-size: 12.5px; line-height: 1.55;">
   `;
 
   // Display counties if available
   if (alert.counties && alert.counties.length > 0) {
     infoHTML += `
       <div style="margin-bottom: 12px; padding: 10px; background: rgba(255,255,255,0.05); 
-                  border-radius: 6px; border-left: 3px solid rgba(96, 165, 250, 0.6);">
+                  border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);">
         <div style="font-weight: 600; font-size: 10px; text-transform: uppercase; 
                     letter-spacing: 0.5px; opacity: 0.7; margin-bottom: 4px;">Affected Counties</div>
         <div style="font-weight: 500;">${alert.counties.join(", ")}</div>
@@ -2326,15 +2844,7 @@ function handleAlertLineClick(e, alert) {
     threatsHTML += `
       <div style="margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
         <span style="opacity: 0.85;">💨 Max Wind</span>
-        <span style="font-weight: 600; color: #60a5fa;">${threats.maxWindGust}</span>
-      </div>`;
-    threatCount++;
-  }
-  if (threats.windThreat) {
-    threatsHTML += `
-      <div style="margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-        <span style="opacity: 0.85;">🌬️ Wind Threat</span>
-        <span style="font-weight: 600; color: #60a5fa;">${threats.windThreat}</span>
+        <span style="font-weight: 600; color: #60a5fa;">${formatMaxThreat(threats.maxWindGust, threats.windThreat)}</span>
       </div>`;
     threatCount++;
   }
@@ -2344,15 +2854,7 @@ function handleAlertLineClick(e, alert) {
     threatsHTML += `
       <div style="margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
         <span style="opacity: 0.85;">🧊 Max Hail</span>
-        <span style="font-weight: 600; color: #a78bfa;">${threats.maxHailSize}</span>
-      </div>`;
-    threatCount++;
-  }
-  if (threats.hailThreat) {
-    threatsHTML += `
-      <div style="margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
-        <span style="opacity: 0.85;">❄️ Hail Threat</span>
-        <span style="font-weight: 600; color: #a78bfa;">${threats.hailThreat}</span>
+        <span style="font-weight: 600; color: #a78bfa;">${formatMaxThreat(threats.maxHailSize, threats.hailThreat)}</span>
       </div>`;
     threatCount++;
   }
@@ -2361,7 +2863,7 @@ function handleAlertLineClick(e, alert) {
   if (threatCount > 0) {
     infoHTML += `
       <div style="margin-bottom: 12px; padding: 10px; background: rgba(255,255,255,0.05); 
-                  border-radius: 6px; border-left: 3px solid rgba(239, 68, 68, 0.6);">
+                  border-radius: 8px; border: 1px solid rgba(${accentRgb}, 0.3);">
         <div style="font-weight: 600; font-size: 10px; text-transform: uppercase; 
                     letter-spacing: 0.5px; opacity: 0.7; margin-bottom: 8px;">Threat Details</div>
         ${threatsHTML}
@@ -2372,18 +2874,17 @@ function handleAlertLineClick(e, alert) {
   if (closestRadars.length > 0) {
     infoHTML += `
       <div style="padding: 10px; background: rgba(255,255,255,0.05); border-radius: 6px; 
-                  border-left: 3px solid rgba(34, 197, 94, 0.6);">
+                  border: 1px solid rgba(255,255,255,0.12);">
         <div style="font-weight: 600; font-size: 10px; text-transform: uppercase; 
                     letter-spacing: 0.5px; opacity: 0.7; margin-bottom: 8px;">📡 Nearby Radars</div>`;
     closestRadars.forEach((radar) => {
       infoHTML += `
         <a href="javascript:void(0)" onclick="selectRadarSite('${radar.id}')" 
            style="display: flex; justify-content: space-between; align-items: center; 
-                  color: #60a5fa; text-decoration: none; font-weight: 500; padding: 6px 8px; 
-                  border-radius: 4px; margin-bottom: 4px; transition: all 0.2s;
-                  background: rgba(96, 165, 250, 0.1);"
-           onmouseover="this.style.background='rgba(96, 165, 250, 0.2)'; this.style.transform='translateX(4px)'"
-           onmouseout="this.style.background='rgba(96, 165, 250, 0.1)'; this.style.transform='translateX(0)'">
+                  color: #93c5fd; text-decoration: none; font-weight: 500; padding: 7px 8px; 
+                  border-radius: 6px; margin-bottom: 5px;
+                  background: rgba(147, 197, 253, 0.12); border: 1px solid rgba(147, 197, 253, 0.2);"
+            >
           <span>${radar.id}</span>
           <span style="opacity: 0.8; font-size: 11px;">${radar.distance.toFixed(0)}mi</span>
         </a>
@@ -2397,13 +2898,20 @@ function handleAlertLineClick(e, alert) {
   infoBox.innerHTML = infoHTML;
 
   const cleanupInfoBox = () => {
+    clearInterval(updateCountdown);
+    if (arrowUpdateRaf) {
+      cancelAnimationFrame(arrowUpdateRaf);
+      arrowUpdateRaf = null;
+    }
     if (infoBox.parentNode) infoBox.remove();
     if (arrow.parentNode) arrow.remove();
     if (map) {
-      map.off("move", updateArrowPosition);
-      map.off("zoom", updateArrowPosition);
-      map.off("resize", updateArrowPosition);
+      map.off("move", requestArrowPositionUpdate);
+      map.off("zoom", requestArrowPositionUpdate);
+      map.off("resize", requestArrowPositionUpdate);
     }
+    document.removeEventListener("mousemove", handleDocumentMouseMove);
+    document.removeEventListener("mouseup", handleDocumentMouseUp);
   };
 
   const closeButton = infoBox.querySelector(".alert-info-close");
@@ -2423,52 +2931,44 @@ function handleAlertLineClick(e, alert) {
     infoBox.style.cursor = "grabbing";
   });
 
-  document.addEventListener("mousemove", (e) => {
+  const handleDocumentMouseMove = (e) => {
     if (isDragging) {
       infoBox.style.left = e.clientX - dragStartX + "px";
       infoBox.style.top = e.clientY - dragStartY + "px";
-      updateArrowPosition();
+      alertInfoBoxPosition = {
+        left: infoBox.offsetLeft,
+        top: infoBox.offsetTop,
+      };
+      requestArrowPositionUpdate();
     }
-  });
+  };
 
-  document.addEventListener("mouseup", () => {
+  const handleDocumentMouseUp = () => {
     if (isDragging) {
       isDragging = false;
       infoBox.style.cursor = "move";
+      alertInfoBoxPosition = {
+        left: infoBox.offsetLeft,
+        top: infoBox.offsetTop,
+      };
     }
-  });
+  };
+
+  document.addEventListener("mousemove", handleDocumentMouseMove);
+  document.addEventListener("mouseup", handleDocumentMouseUp);
 
   document.body.appendChild(infoBox);
   currentAlertInfoBox = infoBox;
+  alertInfoBoxPosition = {
+    left: infoBox.offsetLeft,
+    top: infoBox.offsetTop,
+  };
 
   // Initial arrow position
-  setTimeout(updateArrowPosition, 10);
-  map.on("move", updateArrowPosition);
-  map.on("zoom", updateArrowPosition);
-  map.on("resize", updateArrowPosition);
-
-  // Add animations
-  if (!document.getElementById("alert-box-animations")) {
-    const style = document.createElement("style");
-    style.id = "alert-box-animations";
-    style.textContent = `
-      @keyframes countdown-pulse {
-        0%, 100% { opacity: 0.8; }
-        50% { opacity: 1; }
-      }
-      @keyframes alertBoxEntrance {
-        0% { 
-          opacity: 0; 
-          transform: scale(0.8) translateY(20px); 
-        }
-        100% { 
-          opacity: 1; 
-          transform: scale(1) translateY(0); 
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  }
+  setTimeout(requestArrowPositionUpdate, 10);
+  map.on("move", requestArrowPositionUpdate);
+  map.on("zoom", requestArrowPositionUpdate);
+  map.on("resize", requestArrowPositionUpdate);
 
   // Update countdown every second
   const updateCountdown = setInterval(() => {
@@ -2481,28 +2981,11 @@ function handleAlertLineClick(e, alert) {
     }
     const mins = Math.floor(msRemaining / 60000);
     const secs = Math.floor((msRemaining % 60000) / 1000);
-    const countdownSpan = infoBox.querySelector(
-      'span[style*="countdown-pulse"]',
-    );
+    const countdownSpan = infoBox.querySelector(".alert-info-countdown");
     if (countdownSpan) {
       countdownSpan.textContent = `⏰ ${mins}m ${secs}s`;
     }
   }, 1000);
-
-  // Clean up interval when box is removed
-  const observer = new MutationObserver(() => {
-    if (!document.body.contains(infoBox)) {
-      clearInterval(updateCountdown);
-      if (arrow.parentNode) arrow.remove();
-      if (map) {
-        map.off("move", updateArrowPosition);
-        map.off("zoom", updateArrowPosition);
-        map.off("resize", updateArrowPosition);
-      }
-      observer.disconnect();
-    }
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
 }
 
 // Get closest radars to an alert
@@ -2854,29 +3337,72 @@ function showStormTrackDialog() {
     padding: 20px;
     color: white;
     z-index: 10001;
-    min-width: 300px;
+    min-width: 350px;
   `;
 
   dialog.innerHTML = `
     <h3 style="margin: 0 0 16px 0; font-size: 16px;">Storm Track Projection</h3>
-    <div style="margin-bottom: 12px;">
-      <label style="display: block; margin-bottom: 4px; font-size: 13px;">Speed (mph):</label>
-      <input type="number" id="stormTrackSpeed" value="${stormTrackSpeed}" min="5" max="100" 
-        style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.3); 
-        background: rgba(255,255,255,0.1); color: white;">
+    
+    <div style="margin-bottom: 16px;">
+      <label style="display: block; margin-bottom: 8px; font-size: 13px; font-weight: 600;">Speed Mode:</label>
+      <div style="display: flex; gap: 8px;">
+        <button id="speedModeManual" class="speed-mode-btn active" data-mode="manual" 
+          style="flex: 1; padding: 8px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.3);
+          background: rgba(79, 184, 255, 0.3); color: white; cursor: pointer; font-size: 12px;">
+          Manual Speed
+        </button>
+        <button id="speedModeCalculated" class="speed-mode-btn" data-mode="calculated"
+          style="flex: 1; padding: 8px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.3);
+          background: rgba(255,255,255,0.1); color: white; cursor: pointer; font-size: 12px;">
+          Calculate from Markers
+        </button>
+      </div>
     </div>
+
+    <div id="manualSpeedInputs" style="display: block;">
+      <div style="margin-bottom: 12px;">
+        <label style="display: block; margin-bottom: 4px; font-size: 13px;">Speed (mph):</label>
+        <input type="number" id="stormTrackSpeed" value="${stormTrackSpeed}" min="5" max="100" 
+          style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.3); 
+          background: rgba(255,255,255,0.1); color: white;">
+      </div>
+    </div>
+
+    <div id="calculatedSpeedInputs" style="display: none;">
+      <div style="margin-bottom: 12px; padding: 12px; background: rgba(79, 184, 255, 0.1); border-radius: 6px;">
+        <div style="font-size: 12px; margin-bottom: 8px;">
+          Click on two points (past and current storm location) and enter the time elapsed between them.
+        </div>
+        <label style="display: block; margin-bottom: 4px; font-size: 13px;">Time Elapsed (minutes):</label>
+        <input type="number" id="stormTrackTimeElapsed" value="30" min="1" max="360" 
+          style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.3); 
+          background: rgba(255,255,255,0.1); color: white;">
+        <div id="calculatedSpeedDisplay" style="margin-top: 8px; font-size: 12px; color: #4fb8ff;"></div>
+      </div>
+    </div>
+
     <div style="margin-bottom: 12px;">
       <label style="display: block; margin-bottom: 4px; font-size: 13px;">Projection Time (hours):</label>
-      <input type="number" id="stormTrackTime" value="2" min="0.5" max="12" step="0.5"
+      <input type="number" id="stormTrackTime" value="3" min="0.5" max="24" step="0.5"
         style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.3); 
         background: rgba(255,255,255,0.1); color: white;">
     </div>
+
+    <div style="margin-bottom: 12px;">
+      <label style="display: block; margin-bottom: 4px; font-size: 13px;">Cone Width Factor:</label>
+      <input type="range" id="stormTrackConeWidth" value="0.15" min="0.05" max="0.5" step="0.05"
+        style="width: 100%;">
+      <div style="font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 4px;">
+        Wider cone = more uncertainty
+      </div>
+    </div>
+
     <div style="display: flex; gap: 8px; margin-top: 16px;">
-      <button id="stormTrackApply" style="flex: 1; padding: 8px; border-radius: 6px; 
-        background: #4a9eff; color: white; border: none; cursor: pointer; font-size: 13px;">
-        Apply
+      <button id="stormTrackApply" style="flex: 2; padding: 10px; border-radius: 6px; 
+        background: #4a9eff; color: white; border: none; cursor: pointer; font-size: 13px; font-weight: 600;">
+        Generate Projection
       </button>
-      <button id="stormTrackCancel" style="flex: 1; padding: 8px; border-radius: 6px; 
+      <button id="stormTrackCancel" style="flex: 1; padding: 10px; border-radius: 6px; 
         background: rgba(255,255,255,0.2); color: white; border: none; cursor: pointer; font-size: 13px;">
         Cancel
       </button>
@@ -2885,78 +3411,269 @@ function showStormTrackDialog() {
 
   document.body.appendChild(dialog);
 
+  // Mode switching
+  const modeButtons = dialog.querySelectorAll(".speed-mode-btn");
+  modeButtons.forEach((btn) => {
+    btn.onclick = () => {
+      const mode = btn.dataset.mode;
+      stormTrackMode = mode;
+
+      modeButtons.forEach((b) => {
+        b.style.background = "rgba(255,255,255,0.1)";
+        b.classList.remove("active");
+      });
+      btn.style.background = "rgba(79, 184, 255, 0.3)";
+      btn.classList.add("active");
+
+      document.getElementById("manualSpeedInputs").style.display =
+        mode === "manual" ? "block" : "none";
+      document.getElementById("calculatedSpeedInputs").style.display =
+        mode === "calculated" ? "block" : "none";
+
+      if (mode === "calculated") {
+        enableMarkerSelection(dialog);
+      }
+    };
+  });
+
   document.getElementById("stormTrackApply").onclick = () => {
-    stormTrackSpeed = parseFloat(
-      document.getElementById("stormTrackSpeed").value,
-    );
+    let speed = stormTrackSpeed;
+
+    if (
+      stormTrackMode === "calculated" &&
+      stormTrackFirstMarker &&
+      stormTrackSecondMarker
+    ) {
+      const timeMinutes = parseFloat(
+        document.getElementById("stormTrackTimeElapsed").value,
+      );
+      const distance = calculateDistance(
+        stormTrackFirstMarker[1],
+        stormTrackFirstMarker[0],
+        stormTrackSecondMarker[1],
+        stormTrackSecondMarker[0],
+      );
+      speed = (distance / timeMinutes) * 60; // Convert to mph
+      stormTrackSpeed = speed;
+    } else if (stormTrackMode === "manual") {
+      speed = parseFloat(document.getElementById("stormTrackSpeed").value);
+      stormTrackSpeed = speed;
+    }
+
     const projectionHours = parseFloat(
       document.getElementById("stormTrackTime").value,
     );
-    projectStormPath(projectionHours);
+    const coneWidth = parseFloat(
+      document.getElementById("stormTrackConeWidth").value,
+    );
+
+    projectStormPath(projectionHours, coneWidth);
     dialog.remove();
   };
 
   document.getElementById("stormTrackCancel").onclick = () => {
     stormTrackPoint = null;
     stormTrackLine = [];
+    stormTrackFirstMarker = null;
+    stormTrackSecondMarker = null;
     stormTrackEnabled = false;
     mapInstance.getCanvas().style.cursor = "";
+
+    // Remove marker visuals
+    stormTrackMarkers.forEach((m) => m.remove());
+    stormTrackMarkers = [];
+
     dialog.remove();
   };
 }
 
-function projectStormPath(hours) {
+function enableMarkerSelection(dialog) {
+  const display = document.getElementById("calculatedSpeedDisplay");
+  display.textContent = "Click first marker (past location)...";
+
+  mapInstance.getCanvas().style.cursor = "crosshair";
+
+  const clickHandler = (e) => {
+    if (!stormTrackFirstMarker) {
+      stormTrackFirstMarker = [e.lngLat.lng, e.lngLat.lat];
+
+      // Add marker visual
+      const marker = new maplibregl.Marker({ color: "#ff9800" })
+        .setLngLat(stormTrackFirstMarker)
+        .addTo(mapInstance);
+      stormTrackMarkers.push(marker);
+
+      display.textContent = "Click second marker (current location)...";
+    } else if (!stormTrackSecondMarker) {
+      stormTrackSecondMarker = [e.lngLat.lng, e.lngLat.lat];
+
+      // Add marker visual
+      const marker = new maplibregl.Marker({ color: "#f44336" })
+        .setLngLat(stormTrackSecondMarker)
+        .addTo(mapInstance);
+      stormTrackMarkers.push(marker);
+
+      // Update line
+      stormTrackLine = [stormTrackFirstMarker, stormTrackSecondMarker];
+
+      // Calculate and display speed
+      const timeMinutes = parseFloat(
+        document.getElementById("stormTrackTimeElapsed").value,
+      );
+      const distance = calculateDistance(
+        stormTrackFirstMarker[1],
+        stormTrackFirstMarker[0],
+        stormTrackSecondMarker[1],
+        stormTrackSecondMarker[0],
+      );
+      const calculatedSpeed = ((distance / timeMinutes) * 60).toFixed(1);
+
+      display.innerHTML = `✓ Calculated Speed: <strong>${calculatedSpeed} mph</strong>`;
+      mapInstance.getCanvas().style.cursor = "";
+      mapInstance.off("click", clickHandler);
+    }
+  };
+
+  mapInstance.on("click", clickHandler);
+}
+
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  const R = 3959; // Earth radius in miles
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLon = ((lon2 - lon1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+function projectStormPath(hours, coneWidthFactor = 0.15) {
   if (!stormTrackLine || stormTrackLine.length < 2) return;
 
   const [start, end] = stormTrackLine;
   const bearing = calculateBearing(start[1], start[0], end[1], end[0]);
   const distanceMiles = stormTrackSpeed * hours;
 
-  // Project path with expanding cone
-  const pathPoints = [];
-  const steps = 20;
+  // Create expanding cone polygon
+  const centerPoints = [];
+  const leftPoints = [];
+  const rightPoints = [];
+  const steps = 30;
+
   for (let i = 0; i <= steps; i++) {
     const fraction = i / steps;
     const dist = distanceMiles * fraction;
-    const point = destinationPoint(start[1], start[0], bearing, dist);
-    pathPoints.push(point);
+    const widthAtPoint = dist * coneWidthFactor; // Width grows with distance
+
+    const centerPoint = destinationPoint(start[1], start[0], bearing, dist);
+    centerPoints.push(centerPoint);
+
+    // Calculate perpendicular points for cone edges
+    const leftBearing = (bearing - 90 + 360) % 360;
+    const rightBearing = (bearing + 90) % 360;
+
+    const leftPoint = destinationPoint(
+      centerPoint.lat,
+      centerPoint.lon,
+      leftBearing,
+      widthAtPoint,
+    );
+    const rightPoint = destinationPoint(
+      centerPoint.lat,
+      centerPoint.lon,
+      rightBearing,
+      widthAtPoint,
+    );
+
+    leftPoints.push(leftPoint);
+    rightPoints.push(rightPoint);
   }
 
-  // Draw path on map
-  if (!mapInstance.getSource("storm-track-path")) {
-    mapInstance.addSource("storm-track-path", {
+  // Create polygon coordinates (left edge, then right edge reversed)
+  const polygonCoords = [
+    ...leftPoints.map((p) => [p.lon, p.lat]),
+    ...rightPoints.reverse().map((p) => [p.lon, p.lat]),
+    [leftPoints[0].lon, leftPoints[0].lat], // Close polygon
+  ];
+
+  // Draw cone on map
+  if (!mapInstance.getSource("storm-track-cone")) {
+    mapInstance.addSource("storm-track-cone", {
       type: "geojson",
       data: {
         type: "Feature",
         geometry: {
-          type: "LineString",
-          coordinates: pathPoints.map((p) => [p.lon, p.lat]),
+          type: "Polygon",
+          coordinates: [polygonCoords],
         },
       },
     });
 
     mapInstance.addLayer({
-      id: "storm-track-path",
+      id: "storm-track-cone-fill",
+      type: "fill",
+      source: "storm-track-cone",
+      paint: {
+        "fill-color": "#ff4444",
+        "fill-opacity": 0.2,
+      },
+    });
+
+    mapInstance.addLayer({
+      id: "storm-track-cone-outline",
       type: "line",
-      source: "storm-track-path",
+      source: "storm-track-cone",
       paint: {
         "line-color": "#ff4444",
-        "line-width": 3,
-        "line-dasharray": [2, 1],
+        "line-width": 2,
+        "line-dasharray": [3, 2],
+      },
+    });
+
+    // Add center line
+    mapInstance.addSource("storm-track-centerline", {
+      type: "geojson",
+      data: {
+        type: "Feature",
+        geometry: {
+          type: "LineString",
+          coordinates: centerPoints.map((p) => [p.lon, p.lat]),
+        },
+      },
+    });
+
+    mapInstance.addLayer({
+      id: "storm-track-centerline",
+      type: "line",
+      source: "storm-track-centerline",
+      paint: {
+        "line-color": "#ff6666",
+        "line-width": 2,
       },
     });
   } else {
-    mapInstance.getSource("storm-track-path").setData({
+    mapInstance.getSource("storm-track-cone").setData({
+      type: "Feature",
+      geometry: {
+        type: "Polygon",
+        coordinates: [polygonCoords],
+      },
+    });
+    mapInstance.getSource("storm-track-centerline").setData({
       type: "Feature",
       geometry: {
         type: "LineString",
-        coordinates: pathPoints.map((p) => [p.lon, p.lat]),
+        coordinates: centerPoints.map((p) => [p.lon, p.lat]),
       },
     });
   }
 
-  // Find cities along path and show ETAs
-  findCitiesAlongPath(pathPoints, hours);
+  // Query cities from MapTiler and calculate ETAs
+  findCitiesAlongPath(polygonCoords, centerPoints, hours);
 }
 
 function calculateBearing(lat1, lon1, lat2, lon2) {
@@ -2997,12 +3714,103 @@ function destinationPoint(lat, lon, bearing, distanceMiles) {
   };
 }
 
-function findCitiesAlongPath(pathPoints, hours) {
-  // Simplified: Show path corridor and note that cities would need external data
-  // In a real implementation, you'd query a cities database
+function findCitiesAlongPath(polygonCoords, centerPoints, hours) {
+  // Query rendered features from MapTiler to find cities
+  const cityLayers = [
+    "place-city-label",
+    "place-town-label",
+    "place-village-label",
+    "place-label",
+  ];
 
-  const corridorDialog = document.createElement("div");
-  corridorDialog.style.cssText = `
+  // Create bounding box from polygon
+  const lngs = polygonCoords.map((c) => c[0]);
+  const lats = polygonCoords.map((c) => c[1]);
+  const bbox = [
+    [Math.min(...lngs), Math.min(...lats)],
+    [Math.max(...lngs), Math.max(...lats)],
+  ];
+
+  // Query features
+  let features = [];
+  try {
+    features = mapInstance.queryRenderedFeatures(undefined, {
+      layers: cityLayers,
+    });
+  } catch (e) {
+    console.log("Could not query city features:", e);
+  }
+
+  // Filter features within polygon and calculate ETAs
+  const citiesWithETA = [];
+  const startPoint = centerPoints[0];
+
+  features.forEach((feature) => {
+    if (!feature.properties || !feature.properties.name) return;
+
+    const coords = feature.geometry.coordinates;
+    if (!coords || coords.length < 2) return;
+
+    // Check if point is in polygon
+    if (!isPointInPolygon([coords[0], coords[1]], polygonCoords)) return;
+
+    // Calculate distance from storm origin
+    const cityLat = coords[1];
+    const cityLon = coords[0];
+    const distance = calculateDistance(
+      startPoint.lat,
+      startPoint.lon,
+      cityLat,
+      cityLon,
+    );
+    const eta = distance / stormTrackSpeed; // hours
+
+    citiesWithETA.push({
+      name: feature.properties.name,
+      distance: distance,
+      eta: eta,
+      lat: cityLat,
+      lon: cityLon,
+    });
+  });
+
+  // Sort by ETA
+  citiesWithETA.sort((a, b) => a.eta - b.eta);
+
+  // Display results
+  displayCityETAs(citiesWithETA, hours);
+
+  // Mark cities on map
+  markCitiesOnMap(citiesWithETA);
+}
+
+function isPointInPolygon(point, polygon) {
+  const x = point[0];
+  const y = point[1];
+  let inside = false;
+
+  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+    const xi = polygon[i][0],
+      yi = polygon[i][1];
+    const xj = polygon[j][0],
+      yj = polygon[j][1];
+
+    const intersect =
+      yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
+    if (intersect) inside = !inside;
+  }
+
+  return inside;
+}
+
+function displayCityETAs(cities, maxHours) {
+  // Remove existing dialog
+  const existing = document.getElementById("city-eta-dialog");
+  if (existing) existing.remove();
+
+  const dialog = document.createElement("div");
+  dialog.id = "city-eta-dialog";
+  dialog.style.cssText = `
     position: absolute;
     top: 100px;
     right: 20px;
@@ -3012,29 +3820,598 @@ function findCitiesAlongPath(pathPoints, hours) {
     border-radius: 12px;
     padding: 16px;
     color: white;
-    max-width: 300px;
+    max-width: 350px;
+    max-height: 500px;
+    overflow-y: auto;
     z-index: 10000;
   `;
 
-  let etaHTML = `
-    <h3 style="margin: 0 0 12px 0; font-size: 14px;">Storm Track Projection</h3>
+  let html = `
+    <h3 style="margin: 0 0 12px 0; font-size: 14px;">Storm Impact Forecast</h3>
     <div style="font-size: 12px; line-height: 1.6;">
-      <div><strong>Speed:</strong> ${stormTrackSpeed} mph</div>
-      <div><strong>Duration:</strong> ${hours} hours</div>
-      <div><strong>Distance:</strong> ${(stormTrackSpeed * hours).toFixed(1)} mi</div>
-      <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.2);">
-        <em>Cities along path would appear here with a cities database.</em>
+      <div><strong>Speed:</strong> ${stormTrackSpeed.toFixed(1)} mph</div>
+      <div><strong>Projection:</strong> ${maxHours} hours</div>
+      <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.2);">
+  `;
+
+  if (cities.length === 0) {
+    html += `<em>No cities found in projected path</em>`;
+  } else {
+    html += `<div style="margin-bottom: 8px;"><strong>Cities in Path (${cities.length}):</strong></div>`;
+    cities.slice(0, 20).forEach((city) => {
+      const hours = Math.floor(city.eta);
+      const minutes = Math.round((city.eta - hours) * 60);
+      const timeStr = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+
+      html += `
+        <div style="padding: 6px; margin: 4px 0; background: rgba(255,255,255,0.1); border-radius: 4px;">
+          <div style="font-weight: bold;">${city.name}</div>
+          <div style="font-size: 11px; opacity: 0.8;">
+            ETA: ${timeStr} (${city.distance.toFixed(1)} mi)
+          </div>
+        </div>
+      `;
+    });
+
+    if (cities.length > 20) {
+      html += `<div style="font-size: 11px; opacity: 0.7; margin-top: 8px;">...and ${cities.length - 20} more</div>`;
+    }
+  }
+
+  html += `
       </div>
-      <button onclick="this.parentElement.parentElement.remove()" 
-        style="margin-top: 12px; width: 100%; padding: 6px; background: rgba(255,255,255,0.2); 
-        border: none; border-radius: 4px; color: white; cursor: pointer;">
+      <button onclick="document.getElementById('city-eta-dialog').remove()" 
+        style="margin-top: 12px; width: 100%; padding: 8px; background: rgba(255,70,70,0.8); 
+        border: none; border-radius: 6px; color: white; cursor: pointer; font-weight: bold;">
         Close
       </button>
     </div>
   `;
 
-  corridorDialog.innerHTML = etaHTML;
-  document.body.appendChild(corridorDialog);
+  dialog.innerHTML = html;
+  document.body.appendChild(dialog);
+}
+
+function markCitiesOnMap(cities) {
+  // Remove existing city markers
+  if (mapInstance.getLayer("storm-city-markers")) {
+    mapInstance.removeLayer("storm-city-markers");
+  }
+  if (mapInstance.getLayer("storm-city-labels")) {
+    mapInstance.removeLayer("storm-city-labels");
+  }
+  if (mapInstance.getSource("storm-cities")) {
+    mapInstance.removeSource("storm-cities");
+  }
+
+  if (cities.length === 0) return;
+
+  const features = cities.map((city) => ({
+    type: "Feature",
+    geometry: {
+      type: "Point",
+      coordinates: [city.lon, city.lat],
+    },
+    properties: {
+      name: city.name,
+      eta: city.eta.toFixed(2),
+      distance: city.distance.toFixed(1),
+    },
+  }));
+
+  mapInstance.addSource("storm-cities", {
+    type: "geojson",
+    data: {
+      type: "FeatureCollection",
+      features: features,
+    },
+  });
+
+  mapInstance.addLayer({
+    id: "storm-city-markers",
+    type: "circle",
+    source: "storm-cities",
+    paint: {
+      "circle-radius": 6,
+      "circle-color": "#ffff00",
+      "circle-stroke-color": "#ffffff",
+      "circle-stroke-width": 2,
+    },
+  });
+
+  mapInstance.addLayer({
+    id: "storm-city-labels",
+    type: "symbol",
+    source: "storm-cities",
+    layout: {
+      "text-field": ["get", "name"],
+      "text-offset": [0, 1.5],
+      "text-anchor": "top",
+      "text-size": 12,
+    },
+    paint: {
+      "text-color": "#ffffff",
+      "text-halo-color": "#000000",
+      "text-halo-width": 2,
+    },
+  });
+}
+
+// ========================================
+// Traffic Cameras Feature
+// ========================================
+
+async function loadCameras() {
+  try {
+    const response = await fetch("/api/cameras");
+    if (!response.ok) {
+      throw new Error(`Failed to fetch cameras: ${response.statusText}`);
+    }
+    const data = await response.json();
+    camerasData = data;
+    console.log(`📷 Loaded ${data.features.length} cameras`);
+    return data;
+  } catch (error) {
+    console.error("Error loading cameras:", error);
+    return { type: "FeatureCollection", features: [] };
+  }
+}
+
+function initCameraLayer() {
+  if (!mapInstance || !camerasData) return;
+
+  // Add camera source if it doesn't exist
+  if (!mapInstance.getSource("cameras")) {
+    mapInstance.addSource("cameras", {
+      type: "geojson",
+      data: camerasData,
+    });
+
+    // Add camera marker layer with color-coded based on media type
+    mapInstance.addLayer({
+      id: "camera-markers",
+      type: "circle",
+      source: "cameras",
+      paint: {
+        "circle-radius": 6,
+        "circle-color": [
+          "case",
+          // Green if has video_url
+          ["all", ["has", "video_url"], ["!=", ["get", "video_url"], ""]],
+          "#4ade80", // green for video
+          // Blue if has image_url
+          ["all", ["has", "image_url"], ["!=", ["get", "image_url"], ""]],
+          "#4fb8ff", // blue for image
+          "#6b7280", // grey if no media
+        ],
+        "circle-stroke-width": 2,
+        "circle-stroke-color": "#ffffff",
+        "circle-opacity": 0.9,
+      },
+    });
+
+    // Add camera icon layer (optional enhancement)
+    mapInstance.addLayer({
+      id: "camera-icons",
+      type: "symbol",
+      source: "cameras",
+      layout: {
+        "icon-image": "camera-15",
+        "icon-size": 1.2,
+        "icon-allow-overlap": true,
+      },
+    });
+
+    // Add click handler for cameras
+    mapInstance.on("click", "camera-markers", handleCameraClick);
+    mapInstance.on("mouseenter", "camera-markers", () => {
+      mapInstance.getCanvas().style.cursor = "pointer";
+    });
+    mapInstance.on("mouseleave", "camera-markers", () => {
+      mapInstance.getCanvas().style.cursor = "";
+    });
+
+    // Set initial visibility
+    mapInstance.setLayoutProperty(
+      "camera-markers",
+      "visibility",
+      camerasEnabled ? "visible" : "none",
+    );
+    mapInstance.setLayoutProperty(
+      "camera-icons",
+      "visibility",
+      camerasEnabled ? "visible" : "none",
+    );
+  }
+}
+
+// Helper function to detect if a URL is a video based on file extension
+function isVideoUrl(url) {
+  if (!url) return false;
+
+  // Remove query parameters
+  const urlWithoutQuery = url.split("?")[0].split("#")[0];
+
+  // Get the file extension
+  const extension = urlWithoutQuery
+    .substring(urlWithoutQuery.lastIndexOf("."))
+    .toLowerCase();
+
+  // Check if it matches a known video extension
+  const videoExtensions = [
+    ".mp4",
+    ".webm",
+    ".ogg",
+    ".m3u8",
+    ".flv",
+    ".mov",
+    ".avi",
+  ];
+  return videoExtensions.includes(extension);
+}
+
+function handleCameraClick(e) {
+  if (!e.features || e.features.length === 0) return;
+
+  const feature = e.features[0];
+  const coordinates = feature.geometry.coordinates.slice();
+  const imageUrl = feature.properties.image_url;
+  const videoUrl = feature.properties.video_url;
+  const state = feature.properties.state || "Unknown";
+  const name = feature.properties.name || "Traffic Camera";
+
+  // Ensure the popup appears over the correct location
+  while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  }
+
+  // Close existing popup
+  if (cameraPopup) {
+    cameraPopup.remove();
+  }
+
+  // Determine available media
+  const hasImage = Boolean(imageUrl);
+  const hasVideo = Boolean(videoUrl);
+  const hasBoth = hasImage && hasVideo;
+
+  // Default to video if both available, otherwise first available
+  let activeMediaUrl = videoUrl || imageUrl;
+  let activeMediaType = videoUrl ? "video" : "image";
+
+  // Detect if URL is a video format
+  const isVideo = activeMediaType === "video" || isVideoUrl(activeMediaUrl);
+
+  // Create popup content with dark mode styling
+  const popupContent = document.createElement("div");
+  popupContent.style.cssText = `
+    min-width: 280px;
+    max-width: 380px;
+    background: rgba(13, 16, 24, 0.98);
+    border-radius: 12px;
+    padding: 16px;
+    color: #f7f9ff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  `;
+
+  // Media type toggle buttons (if both formats available)
+  const mediaToggle = hasBoth
+    ? `
+    <div style="display: flex; gap: 6px; margin-bottom: 12px; padding: 4px; background: rgba(0, 0, 0, 0.3); border-radius: 8px;">
+      <button 
+        id="camera-toggle-video"
+        onclick="switchCameraMedia('video', '${videoUrl}', '${imageUrl}')"
+        style="flex: 1; padding: 6px 10px; background: rgba(79, 184, 255, 0.25); border: 1px solid rgba(79, 184, 255, 0.4); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 11px; font-weight: 600; transition: all 0.2s;"
+      >
+        🎥 Video
+      </button>
+      <button 
+        id="camera-toggle-image"
+        onclick="switchCameraMedia('image', '${videoUrl}', '${imageUrl}')"
+        style="flex: 1; padding: 6px 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; color: rgba(255, 255, 255, 0.5); cursor: pointer; font-size: 11px; font-weight: 600; transition: all 0.2s;"
+      >
+        🖼️ Image
+      </button>
+    </div>
+  `
+    : "";
+
+  const buildMediaContent = (url, type) => {
+    if (!url) {
+      return '<div style="padding: 30px; text-align: center; color: rgba(255,255,255,0.5); font-size: 13px; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px dashed rgba(255,255,255,0.2);">📷<br/>No media available</div>';
+    }
+
+    const isVid = type === "video" || isVideoUrl(url);
+
+    if (isVid) {
+      const videoId = `camera-video-${Date.now()}`;
+      const loaderId = `video-loading-${Date.now()}`;
+      return `
+        <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
+          <video 
+            id="${videoId}"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;"
+            autoplay
+            loop
+            muted
+            playsinline
+            onloadeddata="this.style.opacity='1'; const loader = document.getElementById('${loaderId}'); if(loader) loader.style.display='none';"
+            onerror="this.parentElement.innerHTML='<div style=\\'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.6); text-align: center; padding: 20px;\\'>⚠️<br/>Video unavailable<br/><span style=\\'font-size: 11px;\\'>Stream may be offline</span></div>';"
+          >
+            <source src="${url}" type="${url.includes(".m3u8") ? "application/x-mpegURL" : url.includes(".webm") ? "video/webm" : url.includes(".ogg") ? "video/ogg" : "video/mp4"}">
+            Your browser does not support video playback.
+          </video>
+          <div id="${loaderId}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.7); font-size: 12px;">
+            <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(79, 184, 255, 0.3); border-top-color: #4fb8ff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 8px;"></div>
+            <div>Loading video...</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 8px;">
+          <button onclick="const vid = document.getElementById('${videoId}'); if(vid) { vid.paused ? vid.play() : vid.pause(); }" 
+            style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; transition: all 0.2s;"
+            onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+            onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+            ⏯️ Play/Pause
+          </button>
+          <a href="${url}" target="_blank" 
+            style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; text-decoration: none; text-align: center; transition: all 0.2s; display: block;"
+            onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+            onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+            🔗 Open Stream
+          </a>
+        </div>
+      `;
+    } else {
+      const imgId = `camera-img-${Date.now()}`;
+      const loaderId = `img-loading-${Date.now()}`;
+      return `
+        <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+          <img 
+            id="${imgId}"
+            src="${url}" 
+            alt="Camera view" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.3s;"
+            onload="this.style.opacity='1'; const loader = document.getElementById('${loaderId}'); if(loader) loader.style.display='none';"
+            onerror="this.parentElement.innerHTML='<div style=\\'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.6); text-align: center; padding: 20px;\\'>⚠️<br/>Image unavailable<br/><span style=\\'font-size: 11px;\\'>Camera may be offline</span></div>';"
+          />
+          <div id="${loaderId}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.7); font-size: 12px; text-align: center;">
+            <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(79, 184, 255, 0.3); border-top-color: #4fb8ff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 8px;"></div>
+            <div>Loading image...</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px; margin-top: 8px;">
+          <button onclick="const img = document.getElementById('${imgId}'); if(img) { img.src = img.src.split('?')[0] + '?t=' + Date.now(); }" 
+            style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; transition: all 0.2s;"
+            onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+            onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+            🔄 Refresh
+          </button>
+          <a href="${url}" target="_blank" 
+            style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; text-decoration: none; text-align: center; transition: all 0.2s; display: block;"
+            onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+            onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+            🖼️ Full Size
+          </a>
+        </div>
+      `;
+    }
+  };
+
+  const mediaContent = buildMediaContent(activeMediaUrl, activeMediaType);
+
+  popupContent.innerHTML = `
+    <div style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+      <h3 style="margin: 0 0 6px 0; font-size: 15px; font-weight: 600; color: #f7f9ff; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 18px;">📹</span>
+        ${name}
+      </h3>
+      <div style="font-size: 12px; color: rgba(180, 189, 210, 0.8);">
+        <span style="display: inline-block; padding: 2px 8px; background: rgba(79, 184, 255, 0.15); border-radius: 4px; font-weight: 500;">
+          ${state}
+        </span>
+        <span style="margin-left: 8px; opacity: 0.6;">
+          ${coordinates[1].toFixed(4)}°, ${coordinates[0].toFixed(4)}°
+        </span>
+      </div>
+    </div>
+    ${mediaToggle}
+    <div id="camera-media-container">
+      ${mediaContent}
+    </div>
+  `;
+
+  // Create and show popup with custom styling
+  cameraPopup = new maplibregl.Popup({
+    closeButton: true,
+    closeOnClick: false,
+    maxWidth: "420px",
+    className: "camera-popup-dark",
+  })
+    .setLngLat(coordinates)
+    .setDOMContent(popupContent)
+    .addTo(mapInstance);
+
+  // Store media URLs for toggle function
+  if (hasBoth) {
+    popupContent._cameraVideoUrl = videoUrl;
+    popupContent._cameraImageUrl = imageUrl;
+  }
+
+  // Handle HLS video streams if available
+  if (isVideo && activeMediaUrl.includes(".m3u8")) {
+    const videoElement = popupContent.querySelector("video");
+    if (videoElement && window.Hls && Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(activeMediaUrl);
+      hls.attachMedia(videoElement);
+    } else if (
+      videoElement &&
+      videoElement.canPlayType("application/vnd.apple.mpegurl")
+    ) {
+      // Native HLS support (Safari)
+      videoElement.src = activeMediaUrl;
+    }
+  }
+}
+
+// Helper function to switch between image and video in camera popup
+function switchCameraMedia(type, videoUrl, imageUrl) {
+  const container = document.getElementById("camera-media-container");
+  if (!container) return;
+
+  const url = type === "video" ? videoUrl : imageUrl;
+
+  // Update toggle button styles
+  const videoBtn = document.getElementById("camera-toggle-video");
+  const imageBtn = document.getElementById("camera-toggle-image");
+
+  if (type === "video") {
+    if (videoBtn) {
+      videoBtn.style.background = "rgba(79, 184, 255, 0.25)";
+      videoBtn.style.borderColor = "rgba(79, 184, 255, 0.4)";
+      videoBtn.style.color = "#4fb8ff";
+    }
+    if (imageBtn) {
+      imageBtn.style.background = "rgba(255, 255, 255, 0.05)";
+      imageBtn.style.borderColor = "rgba(255, 255, 255, 0.1)";
+      imageBtn.style.color = "rgba(255, 255, 255, 0.5)";
+    }
+  } else {
+    if (imageBtn) {
+      imageBtn.style.background = "rgba(79, 184, 255, 0.25)";
+      imageBtn.style.borderColor = "rgba(79, 184, 255, 0.4)";
+      imageBtn.style.color = "#4fb8ff";
+    }
+    if (videoBtn) {
+      videoBtn.style.background = "rgba(255, 255, 255, 0.05)";
+      videoBtn.style.borderColor = "rgba(255, 255, 255, 0.1)";
+      videoBtn.style.color = "rgba(255, 255, 255, 0.5)";
+    }
+  }
+
+  // Build new media content
+  const isVid = type === "video" || isVideoUrl(url);
+
+  if (isVid) {
+    const videoId = `camera-video-${Date.now()}`;
+    const loaderId = `video-loading-${Date.now()}`;
+    container.innerHTML = `
+      <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
+        <video 
+          id="${videoId}"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;"
+          autoplay
+          loop
+          muted
+          playsinline
+          onloadeddata="this.style.opacity='1'; const loader = document.getElementById('${loaderId}'); if(loader) loader.style.display='none';"
+          onerror="this.parentElement.innerHTML='<div style=\\'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.6); text-align: center; padding: 20px;\\'>⚠️<br/>Video unavailable<br/><span style=\\'font-size: 11px;\\'>Stream may be offline</span></div>';"
+        >
+          <source src="${url}" type="${url.includes(".m3u8") ? "application/x-mpegURL" : url.includes(".webm") ? "video/webm" : "video/mp4"}">
+        </video>
+        <div id="${loaderId}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.7); font-size: 12px; text-align: center;">
+          <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(79, 184, 255, 0.3); border-top-color: #4fb8ff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 8px;"></div>
+          <div>Loading video...</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button onclick="const vid = document.getElementById('${videoId}'); if(vid) { vid.paused ? vid.play() : vid.pause(); }" 
+          style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px;"
+          onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+          onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+          ⏯️ Play/Pause
+        </button>
+        <a href="${url}" target="_blank" 
+          style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; text-decoration: none; text-align: center; display: block;"
+          onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+          onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+          🔗 Open Stream
+        </a>
+      </div>
+    `;
+
+    // Handle HLS
+    if (url.includes(".m3u8")) {
+      const videoElement = document.getElementById(videoId);
+      if (videoElement && window.Hls && Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(videoElement);
+      } else if (
+        videoElement &&
+        videoElement.canPlayType("application/vnd.apple.mpegurl")
+      ) {
+        videoElement.src = url;
+      }
+    }
+  } else {
+    const imgId = `camera-img-${Date.now()}`;
+    const loaderId = `img-loading-${Date.now()}`;
+    container.innerHTML = `
+      <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <img 
+          id="${imgId}"
+          src="${url}" 
+          alt="Camera view" 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.3s;"
+          onload="this.style.opacity='1'; const loader = document.getElementById('${loaderId}'); if(loader) loader.style.display='none';"
+          onerror="this.parentElement.innerHTML='<div style=\\'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.6); text-align: center; padding: 20px;\\'>⚠️<br/>Image unavailable<br/><span style=\\'font-size: 11px;\\'>Camera may be offline</span></div>';"
+        />
+        <div id="${loaderId}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.7); font-size: 12px; text-align: center;">
+          <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(79, 184, 255, 0.3); border-top-color: #4fb8ff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 8px;"></div>
+          <div>Loading image...</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button onclick="const img = document.getElementById('${imgId}'); if(img) { img.src = img.src.split('?')[0] + '?t=' + Date.now(); }" 
+          style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px;"
+          onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+          onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+          🔄 Refresh
+        </button>
+        <a href="${url}" target="_blank" 
+          style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; text-decoration: none; text-align: center; display: block;"
+          onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+          onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+          🖼️ Full Size
+        </a>
+      </div>
+    `;
+  }
+}
+
+function toggleCameras(enabled) {
+  camerasEnabled = enabled;
+
+  if (!mapInstance) return;
+
+  if (enabled && !camerasData) {
+    // Load cameras data if not already loaded
+    loadCameras().then((data) => {
+      camerasData = data;
+      initCameraLayer();
+    });
+  } else if (mapInstance.getLayer("camera-markers")) {
+    // Toggle visibility
+    mapInstance.setLayoutProperty(
+      "camera-markers",
+      "visibility",
+      enabled ? "visible" : "none",
+    );
+    if (mapInstance.getLayer("camera-icons")) {
+      mapInstance.setLayoutProperty(
+        "camera-icons",
+        "visibility",
+        enabled ? "visible" : "none",
+      );
+    }
+
+    // Close popup if disabling
+    if (!enabled && cameraPopup) {
+      cameraPopup.remove();
+      cameraPopup = null;
+    }
+  }
 }
 
 function handleMapClick(e) {
@@ -4013,13 +5390,24 @@ styleSheet.textContent = styles;
 document.head.appendChild(styleSheet);
 
 function getAlertName(alert) {
+  const normalizedAlert = applyRealAlertPresetRules(
+    alert && typeof alert === "object" ? { ...alert } : alert,
+  );
+
   // Get the full text content for enhanced detection
-  const alertText = alert.description || alert.text || alert.headline || "";
+  const alertText =
+    normalizedAlert.description ||
+    normalizedAlert.text ||
+    normalizedAlert.headline ||
+    "";
 
   // Determine base event name
-  let eventName = alert.event || alert.eventName || alert.headline;
+  let eventName =
+    normalizedAlert.event ||
+    normalizedAlert.eventName ||
+    normalizedAlert.headline;
 
-  if (!eventName && alert.eventCode) {
+  if (!eventName && normalizedAlert.eventCode) {
     const codeNames = {
       "TO.W": "Tornado Warning",
       "SV.W": "Severe Thunderstorm Warning",
@@ -4028,11 +5416,75 @@ function getAlertName(alert) {
       "WS.W": "Winter Storm Warning",
       "BZ.W": "Blizzard Warning",
     };
-    eventName = codeNames[alert.eventCode] || alert.eventCode;
+    eventName =
+      codeNames[normalizedAlert.eventCode] || normalizedAlert.eventCode;
   }
 
   if (!eventName) {
     return "Weather Alert";
+  }
+
+  const threatObj = normalizedAlert.threats || {};
+  const tornadoDetection = normalizeAlertValue(
+    threatObj.tornadoDetection,
+  ).toUpperCase();
+  const tornadoDamageThreat = normalizeAlertValue(
+    threatObj.tornadoDamageThreat,
+  ).toUpperCase();
+  const thunderstormDamageThreat = normalizeAlertValue(
+    threatObj.thunderstormDamageThreat,
+  ).toUpperCase();
+  const flashFloodDamageThreat = normalizeAlertValue(
+    threatObj.flashFloodDamageThreat,
+  ).toUpperCase();
+  const sourceText = normalizeAlertValue(normalizedAlert.source).toUpperCase();
+
+  if (eventName.includes("Tornado Warning")) {
+    if (tornadoDamageThreat === "CATASTROPHIC") {
+      return "Tornado Emergency";
+    }
+    if (tornadoDamageThreat === "CONSIDERABLE") {
+      return "PDS Tornado Warning";
+    }
+    if (sourceText.includes("RADAR CONFIRMED TORNADO")) {
+      return "Radar Confirmed Tornado Warning";
+    }
+    if (sourceText.includes("SPOTTER")) {
+      return "Spotter Confirmed Tornado Warning";
+    }
+    if (sourceText.includes("EMERGENCY MANAGEMENT")) {
+      return "Emergency Mgmt Confirmed Tornado Warning";
+    }
+    if (sourceText.includes("LAW ENFORCEMENT")) {
+      return "Law Enforcement Confirmed Tornado Warning";
+    }
+    if (sourceText.includes("PUBLIC CONFIRMED")) {
+      return "Public Confirmed Tornado Warning";
+    }
+    if (
+      tornadoDetection === "OBSERVED" ||
+      sourceText.includes("CONFIRMED TORNADO")
+    ) {
+      return "Observed Tornado Warning";
+    }
+  }
+
+  if (eventName.includes("Severe Thunderstorm Warning")) {
+    if (thunderstormDamageThreat === "DESTRUCTIVE") {
+      return "Destructive Severe Thunderstorm Warning";
+    }
+    if (thunderstormDamageThreat === "CONSIDERABLE") {
+      return "Considerable Severe Thunderstorm Warning";
+    }
+  }
+
+  if (eventName.includes("Flash Flood Warning")) {
+    if (flashFloodDamageThreat === "CATASTROPHIC") {
+      return "Flash Flood Emergency";
+    }
+    if (flashFloodDamageThreat === "CONSIDERABLE") {
+      return "Considerable Flash Flood Warning";
+    }
   }
 
   // Enhanced detection for Tornado Warnings
@@ -4091,8 +5543,10 @@ function getAlertColor(alert) {
     "Observed Tornado Warning": "#FF00FF",
     "Radar Confirmed Tornado Warning": "#FF00FF",
     "Spotter Confirmed Tornado Warning": "#FF00FF",
+    "Emergency Mgmt Confirmed Tornado Warning": "#FF00FF",
+    "Law Enforcement Confirmed Tornado Warning": "#FF00FF",
     "Public Confirmed Tornado Warning": "#FF00FF",
-    "PDS Tornado Warning": "#FF0066",
+    "PDS Tornado Warning": "#FF00FF",
     "Tornado Emergency": "#850085",
     "Tornado Watch": "#8B0000",
 
@@ -4103,6 +5557,7 @@ function getAlertColor(alert) {
 
     "Flash Flood Warning": "#228B22",
     "Flash Flood Emergency": "#8B0000",
+    "Considerable Flash Flood Warning": "#32CD32",
     "Flood Warning": "#3CB371",
     "Flood Watch": "#66CDAA",
     "Flood Advisory": "#9ACD32",
@@ -4828,8 +6283,8 @@ async function fetchHistoricalWarnings(timestamp) {
 
     console.log(`🌩️ Fetching warnings ACTIVE at ${dateStr} ${timeStr}...`);
 
-    const torUrl = `http://localhost:5100/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=TOR`;
-    const svrUrl = `http://localhost:5100/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=SVR`;
+    const torUrl = `https://radar-api-production-076b.up.railway.app/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=TOR`;
+    const svrUrl = `https://radar-api-production-076b.up.railway.app/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=SVR`;
 
     console.log(`   Fetching TOR: ${torUrl}`);
     console.log(`   Fetching SVR: ${svrUrl}`);
@@ -5009,7 +6464,7 @@ function clearHistoricalAlerts() {
  */
 async function fetchArchiveTimestamps(siteId, product, date) {
   try {
-    const apiUrl = `http://localhost:5100/api/archive/timestamps/${siteId}?product=${product}&date=${date}`;
+    const apiUrl = `https://radar-api-production-076b.up.railway.app/api/archive/timestamps/${siteId}?product=${product}&date=${date}`;
     console.log(`Fetching archive timestamps via backend: ${apiUrl}`);
 
     const response = await fetch(apiUrl);
@@ -5056,7 +6511,7 @@ async function loadArchiveRadarData(siteId, product, key, timestamp) {
   try {
     console.log(`Loading archive radar: ${key}`);
 
-    const apiUrl = `http://localhost:5100/api/radar-webgl/${siteId}?product=${product}&key=${key}&format=binary`;
+    const apiUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${product}&key=${key}&format=binary`;
     const response = await fetch(apiUrl);
 
     if (!response.ok) {
@@ -5166,6 +6621,246 @@ window.onload = async () => {
   addRadarSitesToMap(mapInstance, radarSites);
 
   createColorScaleLegend();
+  applyDataModeUI();
+
+  const dataModeSelect = document.getElementById("dataModeSelect");
+  if (dataModeSelect) {
+    dataModeSelect.value = dataMode;
+    dataModeSelect.addEventListener("change", async (e) => {
+      await switchDataMode(e.target.value);
+    });
+  }
+
+  const modelSourceSelect = document.getElementById("modelSourceSelect");
+  if (modelSourceSelect) {
+    modelSourceSelect.value = selectedModel;
+    modelSourceSelect.addEventListener("change", async (e) => {
+      const nextModel = String(e.target.value || "hrrr").toLowerCase();
+      if (!["hrrr", "rrfs-a", "nam3k"].includes(nextModel)) {
+        e.target.value = selectedModel;
+        return;
+      }
+
+      selectedModel = nextModel;
+      hrrrRunsCacheKey = null;
+      hrrrRunsCachePayload = null;
+      hrrrRunsCacheTime = 0;
+      hrrrPTypeLookupCache.clear();
+      modelFrameCache.clear();
+      selectedHRRRRunDate = null;
+      selectedHRRRRunHour = null;
+      applyModelControlConstraints();
+
+      await refreshHRRRRunSelector();
+      if (dataMode === "hrrr") {
+        await fetchAndDisplayHRRRData(mapInstance);
+      }
+      saveUserSettings();
+    });
+  }
+
+  const precipTypeToggle = document.getElementById("precipTypeToggle");
+  if (precipTypeToggle) {
+    precipTypeToggle.checked = precipTypeModeEnabled;
+    precipTypeToggle.addEventListener("change", async (e) => {
+      precipTypeModeEnabled = Boolean(e.target.checked);
+      hrrrPTypeLookupCache.clear();
+
+      const activeProductCode =
+        dataMode === "hrrr"
+          ? `HRRR_${selectedHRRRVariable.toUpperCase()}`
+          : selectedRadarProduct;
+
+      if (customRadarLayerInstance?.updateColorRamp) {
+        customRadarLayerInstance.updateColorRamp(activeProductCode);
+      }
+      createColorScaleLegend(activeProductCode);
+
+      if (dataMode === "hrrr") {
+        await fetchAndDisplayHRRRData(mapInstance);
+      } else if (selectedRadarSite) {
+        await fetchAndDisplayRadarData(
+          mapInstance,
+          selectedRadarSite,
+          selectedRadarProduct,
+        );
+      }
+    });
+  }
+
+  const hrrrVariableSelect = document.getElementById("hrrrVariableSelect");
+  if (hrrrVariableSelect) {
+    applyModelControlConstraints();
+    hrrrVariableSelect.addEventListener("change", async (e) => {
+      selectedHRRRVariable = e.target.value || "tmp2m";
+      applyModelControlConstraints();
+      hrrrRunsCacheKey = null;
+      hrrrRunsCachePayload = null;
+      hrrrRunsCacheTime = 0;
+      hrrrPTypeLookupCache.clear();
+      modelFrameCache.clear();
+      await refreshHRRRRunSelector();
+      if (dataMode === "hrrr") {
+        await fetchAndDisplayHRRRData(mapInstance);
+      }
+    });
+  }
+
+  const hrrrForecastHourInput = document.getElementById("hrrrForecastHour");
+  if (hrrrForecastHourInput) {
+    hrrrForecastHourInput.addEventListener("change", async (e) => {
+      if (dataMode === "mrms") {
+        selectedHRRRForecastHour = 0;
+        e.target.value = "0";
+        updateHRRRTimeCard(currentHRRRMeta);
+        return;
+      }
+      const parsed = parseInt(e.target.value, 10);
+      selectedHRRRForecastHour = Number.isFinite(parsed)
+        ? Math.max(0, Math.min(48, parsed))
+        : 0;
+      hrrrPTypeLookupCache.clear();
+      e.target.value = selectedHRRRForecastHour;
+      updateHRRRTimeCard(currentHRRRMeta);
+      if (dataMode === "hrrr") {
+        await fetchAndDisplayHRRRData(mapInstance);
+      }
+    });
+  }
+
+  const hrrrForecastSlider = document.getElementById("hrrrForecastSlider");
+  if (hrrrForecastSlider) {
+    hrrrForecastSlider.value = String(selectedHRRRForecastHour);
+    hrrrForecastSlider.addEventListener("input", (e) => {
+      if (dataMode === "mrms") {
+        selectedHRRRForecastHour = 0;
+        e.target.value = "0";
+        updateHRRRTimeCard(currentHRRRMeta);
+        return;
+      }
+      const parsed = parseInt(e.target.value, 10);
+      selectedHRRRForecastHour = Number.isFinite(parsed)
+        ? Math.max(0, Math.min(48, parsed))
+        : 0;
+      hrrrPTypeLookupCache.clear();
+      updateHRRRTimeCard(currentHRRRMeta);
+    });
+
+    hrrrForecastSlider.addEventListener("change", async () => {
+      if (dataMode === "hrrr") {
+        await fetchAndDisplayHRRRData(mapInstance);
+      }
+    });
+  }
+
+  const hrrrRunSelect = document.getElementById("hrrrRunSelect");
+  if (hrrrRunSelect) {
+    hrrrRunSelect.addEventListener("change", async (e) => {
+      const value = e.target.value || "latest";
+      if (value === "latest") {
+        selectedHRRRRunDate = null;
+        selectedHRRRRunHour = null;
+      } else {
+        const [datePart, hourPart] = String(value).split("|");
+        const parsedHour = parseInt(hourPart, 10);
+        if (datePart && Number.isFinite(parsedHour)) {
+          selectedHRRRRunDate = datePart;
+          selectedHRRRRunHour = parsedHour;
+        } else {
+          selectedHRRRRunDate = null;
+          selectedHRRRRunHour = null;
+          e.target.value = "latest";
+        }
+      }
+
+      hrrrPTypeLookupCache.clear();
+      modelFrameCache.clear();
+
+      if (dataMode === "hrrr") {
+        await fetchAndDisplayHRRRData(mapInstance);
+      }
+    });
+  }
+
+  applyModelControlConstraints();
+  updateHRRRTimeCard(currentHRRRMeta);
+  await refreshHRRRRunSelector();
+
+  const hrrrLoopModeSelect = document.getElementById("hrrrLoopMode");
+  const hrrrLoopRangeControls = document.getElementById(
+    "hrrrLoopRangeControls",
+  );
+  if (hrrrLoopModeSelect) {
+    hrrrLoopModeSelect.value = modelLoopMode;
+    hrrrLoopModeSelect.addEventListener("change", (e) => {
+      modelLoopMode = e.target.value === "range" ? "range" : "all";
+      if (hrrrLoopRangeControls) {
+        hrrrLoopRangeControls.style.display =
+          modelLoopMode === "range" ? "grid" : "none";
+      }
+    });
+  }
+  if (hrrrLoopRangeControls) {
+    hrrrLoopRangeControls.style.display =
+      modelLoopMode === "range" ? "grid" : "none";
+  }
+
+  const hrrrLoopStartInput = document.getElementById("hrrrLoopStartHour");
+  const hrrrLoopEndInput = document.getElementById("hrrrLoopEndHour");
+  if (hrrrLoopStartInput) {
+    hrrrLoopStartInput.value = String(modelLoopStartHour);
+    hrrrLoopStartInput.addEventListener("change", (e) => {
+      const parsed = parseInt(e.target.value, 10);
+      modelLoopStartHour = Number.isFinite(parsed)
+        ? Math.max(0, Math.min(48, parsed))
+        : 0;
+      e.target.value = String(modelLoopStartHour);
+    });
+  }
+  if (hrrrLoopEndInput) {
+    hrrrLoopEndInput.value = String(modelLoopEndHour);
+    hrrrLoopEndInput.addEventListener("change", (e) => {
+      const parsed = parseInt(e.target.value, 10);
+      modelLoopEndHour = Number.isFinite(parsed)
+        ? Math.max(0, Math.min(48, parsed))
+        : 48;
+      e.target.value = String(modelLoopEndHour);
+    });
+  }
+
+  const hrrrLoadLoopBtn = document.getElementById("hrrrLoadLoopBtn");
+  if (hrrrLoadLoopBtn) {
+    hrrrLoadLoopBtn.addEventListener("click", async () => {
+      if (dataMode !== "hrrr") {
+        alert("Switch to Model (HRRR) mode first.");
+        return;
+      }
+      await loadAndPlayModelLoop(mapInstance);
+    });
+  }
+
+  const hrrrToggleLoopBtn = document.getElementById("hrrrToggleLoopBtn");
+  if (hrrrToggleLoopBtn) {
+    hrrrToggleLoopBtn.addEventListener("click", () => {
+      if (radarFrames.length === 0) {
+        alert("Load model loop frames first.");
+        return;
+      }
+      toggleLoop();
+      hrrrToggleLoopBtn.textContent = isLooping ? "Pause" : "Play";
+    });
+  }
+
+  const hrrrPrecacheBtn = document.getElementById("hrrrPrecacheBtn");
+  if (hrrrPrecacheBtn) {
+    hrrrPrecacheBtn.addEventListener("click", async () => {
+      if (dataMode !== "hrrr") {
+        alert("Switch to Model (HRRR) mode first.");
+        return;
+      }
+      await precacheModelRange(mapInstance);
+    });
+  }
 
   document
     .getElementById("radarSiteSelect")
@@ -5186,23 +6881,28 @@ window.onload = async () => {
         });
 
         document.getElementById("radarControlsSection").style.display = "block";
-        document.getElementById("loopSection").style.display = "block";
-        document.getElementById("tilt3DSection").style.display = "block";
+        applyDataModeUI();
 
         // Only start polling if not in archive mode
-        if (!isArchiveMode) {
-          startRadarPolling(mapInstance, selectedRadarSite);
+        if (!isArchiveMode && dataMode === "radar") {
+          startRadarPolling(
+            mapInstance,
+            selectedRadarSite,
+            selectedRadarProduct,
+            selectedRadarDataSource,
+          );
         }
         updateDockSummary();
       } else {
         document.getElementById("radarControlsSection").style.display = "none";
-        document.getElementById("loopSection").style.display = "none";
-        document.getElementById("tilt3DSection").style.display = "none";
+        applyDataModeUI();
 
         radarSiteLocation = null;
 
         removeRadarLayer(mapInstance);
         stopSweepAnimation(mapInstance);
+        stopArcSyncStream();
+        updateArcSyncToggleState();
 
         stopLoop();
         radarFrames = [];
@@ -5213,6 +6913,7 @@ window.onload = async () => {
   document
     .getElementById("radarProductSelect")
     .addEventListener("change", async (e) => {
+      if (dataMode !== "radar") return;
       const newProduct = e.target.value;
       console.log(`Product changed to: ${newProduct}`);
 
@@ -5276,21 +6977,64 @@ window.onload = async () => {
           mapInstance,
           selectedRadarSite,
           newProduct,
+          selectedRadarDataSource,
         );
         startSweepAnimation(mapInstance, selectedRadarSite);
 
         // Only start polling if not in archive mode
         if (!isArchiveMode) {
-          startRadarPolling(mapInstance, selectedRadarSite, newProduct);
+          startRadarPolling(
+            mapInstance,
+            selectedRadarSite,
+            newProduct,
+            selectedRadarDataSource,
+          );
         }
       }
     });
+
+  const radarDataSourceSelect = document.getElementById(
+    "radarDataSourceSelect",
+  );
+  if (radarDataSourceSelect) {
+    radarDataSourceSelect.value = selectedRadarDataSource;
+    radarDataSourceSelect.addEventListener("change", async (e) => {
+      const nextSource = e.target.value === "level2" ? "level2" : "level3";
+      if (nextSource === selectedRadarDataSource) {
+        return;
+      }
+
+      selectedRadarDataSource = nextSource;
+      lastRadarKey = null;
+      stopArcSyncStream();
+      updateArcSyncToggleState();
+
+      if (dataMode === "radar" && selectedRadarSite && !isArchiveMode) {
+        await fetchAndDisplayRadarData(
+          mapInstance,
+          selectedRadarSite,
+          selectedRadarProduct,
+          selectedRadarDataSource,
+        );
+        startSweepAnimation(mapInstance, selectedRadarSite);
+        startRadarPolling(
+          mapInstance,
+          selectedRadarSite,
+          selectedRadarProduct,
+          selectedRadarDataSource,
+        );
+      }
+
+      updateDockSummary();
+    });
+  }
 
   updateDockSummary();
 
   document
     .getElementById("radarProductSelect")
     .addEventListener("change", (e) => {
+      if (dataMode !== "radar") return;
       const product = e.target.value;
       const isVelocityProduct = product.match(/N[0-3][GVS]$/);
       const stormControls = document.getElementById("stormMotionControls");
@@ -5305,34 +7049,59 @@ window.onload = async () => {
       inputs.style.display = useStormMotion ? "block" : "none";
 
       if (selectedRadarSite && !isArchiveMode) {
-        fetchAndDisplayRadarData(mapInstance, selectedRadarSite);
+        fetchAndDisplayRadarData(
+          mapInstance,
+          selectedRadarSite,
+          selectedRadarProduct,
+          selectedRadarDataSource,
+        );
       }
     });
 
   document.getElementById("stormMotionU").addEventListener("change", (e) => {
     stormMotionU = parseFloat(e.target.value) || 0;
     if (useStormMotion && selectedRadarSite && !isArchiveMode) {
-      fetchAndDisplayRadarData(mapInstance, selectedRadarSite);
+      fetchAndDisplayRadarData(
+        mapInstance,
+        selectedRadarSite,
+        selectedRadarProduct,
+        selectedRadarDataSource,
+      );
     }
   });
 
   document.getElementById("stormMotionV").addEventListener("change", (e) => {
     stormMotionV = parseFloat(e.target.value) || 0;
     if (useStormMotion && selectedRadarSite && !isArchiveMode) {
-      fetchAndDisplayRadarData(mapInstance, selectedRadarSite);
+      fetchAndDisplayRadarData(
+        mapInstance,
+        selectedRadarSite,
+        selectedRadarProduct,
+        selectedRadarDataSource,
+      );
     }
   });
 
   document
     .getElementById("refreshRadar")
     .addEventListener("click", async () => {
+      if (dataMode === "hrrr") {
+        await fetchAndDisplayHRRRData(mapInstance);
+        return;
+      }
+
       if (isArchiveMode) {
         alert("Cannot refresh while in archive mode. Exit archive mode first.");
         return;
       }
 
       if (selectedRadarSite) {
-        await fetchAndDisplayRadarData(mapInstance, selectedRadarSite);
+        await fetchAndDisplayRadarData(
+          mapInstance,
+          selectedRadarSite,
+          selectedRadarProduct,
+          selectedRadarDataSource,
+        );
         startSweepAnimation(mapInstance, selectedRadarSite);
       }
     });
@@ -5410,7 +7179,7 @@ window.onload = async () => {
       for (let i = 0; i < framesToLoad.length; i++) {
         const ts = framesToLoad[i];
         try {
-          const apiUrl = `http://localhost:5100/api/radar-webgl/${selectedRadarSite.id}?product=${selectedRadarProduct}&key=${ts.key}&format=binary`;
+          const apiUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${selectedRadarSite.id}?product=${selectedRadarProduct}&key=${ts.key}&format=binary`;
           const response = await fetch(apiUrl);
           const contentEncoding = response.headers.get("Content-Encoding");
           let arrayBuffer;
@@ -5537,14 +7306,52 @@ window.onload = async () => {
       stormTrackEnabled = false;
       stormTrackPoint = null;
       stormTrackLine = [];
-      // Clear storm track from map
-      if (mapInstance.getLayer("storm-track-path")) {
-        mapInstance.removeLayer("storm-track-path");
-        mapInstance.removeSource("storm-track-path");
-      }
+      stormTrackMode = null;
+      stormTrackFirstMarker = null;
+      stormTrackSecondMarker = null;
+      stormTrackTimeElapsed = 0;
+
+      // Clear all storm track layers from map
+      const layers = [
+        "storm-track-path",
+        "storm-track-cone-fill",
+        "storm-track-cone-outline",
+        "storm-track-centerline",
+        "storm-city-markers",
+        "storm-city-labels",
+      ];
+      const sources = [
+        "storm-track-path",
+        "storm-track-cone",
+        "storm-track-centerline",
+        "storm-cities",
+      ];
+
+      layers.forEach((layer) => {
+        if (mapInstance.getLayer(layer)) {
+          mapInstance.removeLayer(layer);
+        }
+      });
+
+      sources.forEach((source) => {
+        if (mapInstance.getSource(source)) {
+          mapInstance.removeSource(source);
+        }
+      });
+
+      // Remove markers
       stormTrackMarkers.forEach((m) => m.remove());
       stormTrackMarkers = [];
+
+      // Remove city ETA dialog if open
+      const dialog = document.getElementById("city-eta-dialog");
+      if (dialog) dialog.remove();
     }
+  });
+
+  // Traffic Cameras Toggle
+  document.getElementById("camerasToggle").addEventListener("change", (e) => {
+    toggleCameras(e.target.checked);
   });
 
   document
@@ -5658,9 +7465,15 @@ window.onload = async () => {
           mapInstance,
           selectedRadarSite,
           selectedRadarProduct,
+          selectedRadarDataSource,
         );
         startSweepAnimation(mapInstance, selectedRadarSite);
-        startRadarPolling(mapInstance, selectedRadarSite, selectedRadarProduct);
+        startRadarPolling(
+          mapInstance,
+          selectedRadarSite,
+          selectedRadarProduct,
+          selectedRadarDataSource,
+        );
       }
     });
 
@@ -5724,6 +7537,8 @@ window.onload = async () => {
             radarPollingTimer = null;
             console.log("Radar polling stopped - entering archive mode");
           }
+          stopArcSyncStream();
+          updateArcSyncToggleState();
 
           fetchArchivedWarnings = document.getElementById(
             "fetchArchivedWarningsCheckbox",
@@ -6901,6 +8716,8 @@ const RadarWebGLLayer = {
     this.rawVertexLonLat = null;
     this.rawValues = null;
     this.smoothedValues = null;
+    this.chunkFlashEndTime = 0;
+    this.chunkFlashDurationMs = 420;
 
     customRadarLayerInstance = this;
 
@@ -6952,6 +8769,10 @@ const RadarWebGLLayer = {
           uniform float u_enableShadows;
           uniform float u_shadowOpacity;
           uniform float u_enable3D;
+          uniform float u_chunkFlash;
+          uniform float u_flash_enabled;
+          uniform float u_flash_threshold;
+          uniform float u_flash_opacity;
 
           void main() {
               float normalized_dbz = (v_dbz - u_dbz_range[0]) / (u_dbz_range[1] - u_dbz_range[0]);
@@ -6966,7 +8787,16 @@ const RadarWebGLLayer = {
                   shadowFactor = clamp(shadowFactor, 0.7, 1.0);
                   color.rgb *= shadowFactor;
               }
-              
+
+                // Arc-Sync pulse when a fresh Level 2 chunk lands
+                color.rgb = mix(color.rgb, vec3(1.0), clamp(u_chunkFlash, 0.0, 1.0));
+
+                // High dBZ flash overlay: blend toward white when enabled and value >= threshold
+                if (u_flash_enabled > 0.5 && v_dbz >= u_flash_threshold) {
+                    float ao = clamp(u_flash_opacity, 0.0, 1.0);
+                    color.rgb = mix(color.rgb, vec3(1.0), ao);
+                }
+
               gl_FragColor = color;
           }`;
 
@@ -7091,6 +8921,19 @@ const RadarWebGLLayer = {
       this.program,
       "u_shadowOpacity",
     );
+    this.u_chunkFlash_loc = gl.getUniformLocation(this.program, "u_chunkFlash");
+    this.u_flash_enabled_loc = gl.getUniformLocation(
+      this.program,
+      "u_flash_enabled",
+    );
+    this.u_flash_threshold_loc = gl.getUniformLocation(
+      this.program,
+      "u_flash_threshold",
+    );
+    this.u_flash_opacity_loc = gl.getUniformLocation(
+      this.program,
+      "u_flash_opacity",
+    );
 
     if (this.a_pos_loc === -1 || this.a_dbz_loc === -1) {
       console.error("❌ Failed to get essential attribute locations:", {
@@ -7179,11 +9022,7 @@ const RadarWebGLLayer = {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-
-    this.map.on("render", this.onMapRendered.bind(this));
   },
-
-  onMapRendered: function () {},
 
   updateData: function (data) {
     console.time("updateData-TOTAL");
@@ -7331,6 +9170,13 @@ const RadarWebGLLayer = {
     console.timeEnd("3-triggerRepaint");
   },
 
+  triggerChunkFlash: function () {
+    this.chunkFlashEndTime = performance.now() + this.chunkFlashDurationMs;
+    if (this.map) {
+      this.map.triggerRepaint();
+    }
+  },
+
   removeData: function () {
     this.rawData = null;
     this.mercatorPositions = null;
@@ -7378,6 +9224,35 @@ const RadarWebGLLayer = {
     if (this.u_shadowOpacity_loc)
       gl.uniform1f(this.u_shadowOpacity_loc, shadowOpacity);
 
+    const now = performance.now();
+    const flashRemaining = Math.max(0, this.chunkFlashEndTime - now);
+    const chunkFlash =
+      flashRemaining > 0
+        ? Math.min(1, flashRemaining / this.chunkFlashDurationMs)
+        : 0;
+    if (this.u_chunkFlash_loc) {
+      gl.uniform1f(this.u_chunkFlash_loc, chunkFlash);
+    }
+
+    if (this.u_flash_enabled_loc) {
+      const enabled = enableAlertFlashing ? 1.0 : 0.0;
+      gl.uniform1f(this.u_flash_enabled_loc, enabled);
+    }
+    if (this.u_flash_threshold_loc) {
+      gl.uniform1f(
+        this.u_flash_threshold_loc,
+        Number(HIGH_DBZ_FLASH_THRESHOLD) || 50,
+      );
+    }
+    if (this.u_flash_opacity_loc) {
+      // Smooth sine-based flash opacity between 0.20 and 0.55 (dedicated high-dBZ period)
+      const nowMs = performance.now();
+      const period = Math.max(50, Number(HIGH_DBZ_FLASH_PERIOD_MS) || 1400);
+      const phase = ((nowMs % period) / period) * Math.PI * 2;
+      const smoothOpacity = 0.2 + 0.35 * (0.5 * (1 + Math.sin(phase))); // ~0.20-0.55
+      gl.uniform1f(this.u_flash_opacity_loc, smoothOpacity);
+    }
+
     if (this.useVAO && this.vao) {
       this.vaoExt.bindVertexArrayOES(this.vao);
     } else {
@@ -7418,6 +9293,10 @@ const RadarWebGLLayer = {
 
     gl.disable(gl.BLEND);
     gl.enable(gl.DEPTH_TEST);
+
+    if (chunkFlash > 0 && this.map) {
+      this.map.triggerRepaint();
+    }
   },
 
   ensureSmoothedValues: function () {
@@ -7511,10 +9390,6 @@ const RadarWebGLLayer = {
   },
 
   onRemove: function (gl) {
-    if (this.map && this.onMapRendered) {
-      this.map.off("render", this.onMapRendered);
-    }
-
     if (this.program) gl.deleteProgram(this.program);
     if (this.positionBuffer) gl.deleteBuffer(this.positionBuffer);
     if (this.dbzBuffer) gl.deleteBuffer(this.dbzBuffer);
@@ -7536,10 +9411,1468 @@ const RadarWebGLLayer = {
 };
 
 let lastRadarKey = null;
+let latestArcSyncState = null;
+let lastRenderedRadarToken = null;
 let radarPollingTimer = null;
 const POLLING_INTERVAL = 15000;
+const LEVEL2_POLLING_INTERVAL = 5000;
+let arcSyncEnabled = true;
+let arcSyncEventSource = null;
+let arcSyncSessionKey = null;
+let arcSyncReconnectTimer = null;
+const ARC_SYNC_RECONNECT_MS = 4000;
 
-async function pollForNewRadarData(map, site, product) {
+// Partial-scan flash state (used when a sweep is still filling in)
+const partialScanFlash = {
+  active: false,
+  rafId: null,
+  startTs: 0,
+  periodMs: 1000,
+  minOpacity: 0.25,
+  maxOpacity: 0.5,
+};
+
+function _b64ToUint8Array(b64) {
+  const bin = atob(b64);
+  const len = bin.length;
+  const arr = new Uint8Array(len);
+  for (let i = 0; i < len; i++) arr[i] = bin.charCodeAt(i);
+  return arr;
+}
+
+function _setHighDbzOpacity(map, v) {
+  try {
+    if (map && map.getLayer && map.getLayer("radar-high-dbz-flash")) {
+      map.setPaintProperty("radar-high-dbz-flash", "fill-opacity", v);
+    }
+  } catch (e) {
+    // Ignore errors when map not ready
+  }
+}
+
+function _partialFlashTick(map) {
+  const now = performance.now();
+  const t =
+    ((now - partialScanFlash.startTs) % partialScanFlash.periodMs) /
+    partialScanFlash.periodMs; // 0..1
+  // sinusoidal between min and max
+  const v =
+    partialScanFlash.minOpacity +
+    (partialScanFlash.maxOpacity - partialScanFlash.minOpacity) *
+      (0.5 * (1 + Math.sin(2 * Math.PI * t)));
+  _setHighDbzOpacity(map, v);
+  partialScanFlash.rafId = requestAnimationFrame(() => _partialFlashTick(map));
+}
+
+function startPartialScanFlash(map) {
+  if (partialScanFlash.active) return;
+  partialScanFlash.active = true;
+  partialScanFlash.startTs = performance.now();
+  if (partialScanFlash.rafId) cancelAnimationFrame(partialScanFlash.rafId);
+  partialScanFlash.rafId = requestAnimationFrame(() => _partialFlashTick(map));
+}
+
+function stopPartialScanFlash(map) {
+  if (!partialScanFlash.active) return;
+  partialScanFlash.active = false;
+  if (partialScanFlash.rafId) {
+    cancelAnimationFrame(partialScanFlash.rafId);
+    partialScanFlash.rafId = null;
+  }
+  // restore default opacity
+  _setHighDbzOpacity(map, partialScanFlash.maxOpacity);
+}
+
+function formatBytesForArcSync(bytes) {
+  const value = Number(bytes || 0);
+  if (!Number.isFinite(value) || value <= 0) return "--";
+  if (value < 1024) return `${value} B`;
+  if (value < 1024 * 1024) return `${(value / 1024).toFixed(1)} KB`;
+  return `${(value / (1024 * 1024)).toFixed(2)} MB`;
+}
+
+function formatLocalDateTimeParts(isoString) {
+  if (!isoString) {
+    return { date: "--", time: "--" };
+  }
+
+  const parsed = new Date(isoString);
+  if (Number.isNaN(parsed.getTime())) {
+    return { date: "--", time: "--" };
+  }
+
+  const date = parsed.toLocaleDateString(undefined, {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+  const time = parsed.toLocaleTimeString(undefined, {
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short",
+  });
+  return { date, time };
+}
+
+function updateHRRRTimeCard(meta) {
+  const runDateEl = document.getElementById("hrrrRunDateLocal");
+  const runTimeEl = document.getElementById("hrrrRunTimeLocal");
+  const validDateEl = document.getElementById("hrrrValidDateLocal");
+  const validTimeEl = document.getElementById("hrrrValidTimeLocal");
+  const unitsEl = document.getElementById("hrrrUnitsLabel");
+  const hourValueEl = document.getElementById("hrrrForecastSliderValue");
+  const numberInput = document.getElementById("hrrrForecastHour");
+  const sliderInput = document.getElementById("hrrrForecastSlider");
+
+  if (hourValueEl) {
+    hourValueEl.textContent = `F${String(selectedHRRRForecastHour).padStart(2, "0")}`;
+  }
+  if (numberInput) {
+    numberInput.value = String(selectedHRRRForecastHour);
+  }
+  if (sliderInput) {
+    sliderInput.value = String(selectedHRRRForecastHour);
+  }
+
+  const runParts = formatLocalDateTimeParts(meta?.runIso);
+  const validParts = formatLocalDateTimeParts(meta?.validIso);
+
+  if (runDateEl) runDateEl.textContent = runParts.date;
+  if (runTimeEl) runTimeEl.textContent = runParts.time;
+  if (validDateEl) validDateEl.textContent = validParts.date;
+  if (validTimeEl) validTimeEl.textContent = validParts.time;
+  if (unitsEl) unitsEl.textContent = meta?.units || "--";
+}
+
+function setModelSmoothingState(enabled) {
+  const smoothingToggle = document.getElementById("enableSmoothing");
+
+  if (enabled) {
+    enableSmoothing = true;
+    if (customRadarLayerInstance?.setSmoothingEnabled) {
+      customRadarLayerInstance.setSmoothingEnabled(true);
+    }
+    if (smoothingToggle) {
+      smoothingToggle.checked = true;
+      smoothingToggle.disabled = true;
+      smoothingToggle.title = "Smoothing is always enabled for model data";
+    }
+    return;
+  }
+
+  enableSmoothing = !!radarSmoothingPreference;
+  if (customRadarLayerInstance?.setSmoothingEnabled) {
+    customRadarLayerInstance.setSmoothingEnabled(enableSmoothing);
+  }
+  if (smoothingToggle) {
+    smoothingToggle.disabled = false;
+    smoothingToggle.checked = enableSmoothing;
+    smoothingToggle.title = "Bilinear Smoothing";
+  }
+}
+
+function getCurrentMapBoundsObject(map) {
+  const bounds =
+    map && typeof map.getBounds === "function" ? map.getBounds() : null;
+  if (!bounds) return null;
+  return {
+    minLon: bounds.getWest(),
+    minLat: bounds.getSouth(),
+    maxLon: bounds.getEast(),
+    maxLat: bounds.getNorth(),
+  };
+}
+
+function getRequestedHRRRVariable() {
+  if (dataMode === "mrms") {
+    return "refc";
+  }
+  if (precipTypeModeEnabled && selectedHRRRVariable === "refc") {
+    return "refc_ptype";
+  }
+  return selectedHRRRVariable;
+}
+
+function applyModelControlConstraints() {
+  const variableSelect = document.getElementById("hrrrVariableSelect");
+  const forecastHourInput = document.getElementById("hrrrForecastHour");
+  const forecastSlider = document.getElementById("hrrrForecastSlider");
+  const forecastSliderValue = document.getElementById(
+    "hrrrForecastSliderValue",
+  );
+  const mrmsMode = dataMode === "mrms";
+
+  if (variableSelect) {
+    Array.from(variableSelect.options).forEach((option) => {
+      option.disabled = mrmsMode && option.value !== "refc";
+    });
+
+    if (mrmsMode && selectedHRRRVariable !== "refc") {
+      selectedHRRRVariable = "refc";
+      variableSelect.value = "refc";
+    }
+  }
+
+  if (mrmsMode) {
+    selectedHRRRForecastHour = 0;
+  }
+
+  if (forecastHourInput) {
+    forecastHourInput.value = String(selectedHRRRForecastHour);
+    forecastHourInput.disabled = mrmsMode;
+    forecastHourInput.title = mrmsMode
+      ? "MRMS uses latest observed scan only"
+      : "Forecast hour";
+  }
+
+  if (forecastSlider) {
+    forecastSlider.value = String(selectedHRRRForecastHour);
+    forecastSlider.disabled = mrmsMode;
+    forecastSlider.title = mrmsMode
+      ? "MRMS uses latest observed scan only"
+      : "Model forecast hour";
+  }
+
+  if (forecastSliderValue) {
+    forecastSliderValue.textContent = `F${String(selectedHRRRForecastHour).padStart(2, "0")}`;
+  }
+}
+
+async function applyPrecipTypeToModelReflectivityIfNeeded(
+  map,
+  modelData,
+  requestedVariable,
+) {
+  if (
+    !(
+      precipTypeModeEnabled &&
+      dataMode === "mrms" &&
+      requestedVariable === "refc"
+    )
+  ) {
+    return modelData;
+  }
+
+  const ptypeLookup = await fetchHRRRPTypeLookup(map);
+  return applyPTypeEncodingToRadarData(modelData, ptypeLookup);
+}
+
+function getActiveModelLabel() {
+  if (dataMode === "mrms") return "MRMS Seamless HSR";
+  return MODEL_LABELS[selectedModel] || selectedModel.toUpperCase();
+}
+
+function makePTypeCoordKey(lon, lat, scale = PTYPE_LOOKUP_COORD_SCALE) {
+  const x = Math.round(Number(lon) * scale);
+  const y = Math.round(Number(lat) * scale);
+  return `${x}|${y}`;
+}
+
+function decodePTypeCodeFromValue(value) {
+  if (!Number.isFinite(value) || value <= 0) {
+    return 0;
+  }
+
+  if (value >= 300) return 4;
+  if (value >= 200) return 3;
+  if (value >= 100) return 2;
+
+  if (value <= 4.5) {
+    return Math.max(1, Math.min(4, Math.round(value)));
+  }
+
+  return 1;
+}
+
+function resolvePTypeCodeFromLookup(
+  lon,
+  lat,
+  ptypeLookup,
+  scale,
+  searchRadius,
+) {
+  const x = Math.round(Number(lon) * scale);
+  const y = Math.round(Number(lat) * scale);
+
+  const direct = ptypeLookup.get(`${x}|${y}`);
+  if (direct) {
+    return direct;
+  }
+
+  let bestCode = 1;
+  for (let dx = -searchRadius; dx <= searchRadius; dx += 1) {
+    for (let dy = -searchRadius; dy <= searchRadius; dy += 1) {
+      if (dx === 0 && dy === 0) continue;
+      const nearby = ptypeLookup.get(`${x + dx}|${y + dy}`);
+      if (nearby && nearby > bestCode) {
+        bestCode = nearby;
+      }
+    }
+  }
+
+  return bestCode;
+}
+
+function buildPTypeLookupFromTriangles(
+  hrrrPTypeData,
+  scale = PTYPE_LOOKUP_COORD_SCALE,
+) {
+  const lookup = new Map();
+  if (!hrrrPTypeData?.vertices || !hrrrPTypeData?.values) {
+    return lookup;
+  }
+
+  const vertices = hrrrPTypeData.vertices;
+  const values = hrrrPTypeData.values;
+  const pairCount = Math.min(values.length, Math.floor(vertices.length / 2));
+
+  for (let i = 0; i < pairCount; i += 1) {
+    const ptypeCode = decodePTypeCodeFromValue(values[i]);
+    if (ptypeCode <= 0) {
+      continue;
+    }
+
+    const lon = vertices[i * 2];
+    const lat = vertices[i * 2 + 1];
+    const key = makePTypeCoordKey(lon, lat, scale);
+    const existing = lookup.get(key);
+    if (!existing || ptypeCode > existing) {
+      lookup.set(key, ptypeCode);
+    }
+  }
+
+  return lookup;
+}
+
+function encodeDbzByPType(dbz, ptypeCode) {
+  const clampedDbz = Math.max(0, Math.min(95, Number(dbz) || 0));
+  switch (ptypeCode) {
+    case 2:
+      return 100 + clampedDbz;
+    case 3:
+      return 200 + clampedDbz;
+    case 4:
+      return 300 + clampedDbz;
+    case 1:
+    default:
+      return clampedDbz;
+  }
+}
+
+function applyPTypeEncodingToRadarData(radarData, ptypeLookup) {
+  if (
+    !radarData?.vertices ||
+    !radarData?.values ||
+    !ptypeLookup ||
+    !(ptypeLookup.fine instanceof Map) ||
+    !(ptypeLookup.coarse instanceof Map)
+  ) {
+    return radarData;
+  }
+
+  const encodedValues = new Float32Array(radarData.values.length);
+  let matchedCount = 0;
+  let nonRainCount = 0;
+
+  for (let i = 0; i < radarData.values.length; i += 1) {
+    const value = radarData.values[i];
+    if (!Number.isFinite(value)) {
+      encodedValues[i] = value;
+      continue;
+    }
+
+    const lon = radarData.vertices[i * 2];
+    const lat = radarData.vertices[i * 2 + 1];
+    let ptypeCode = resolvePTypeCodeFromLookup(
+      lon,
+      lat,
+      ptypeLookup.fine,
+      PTYPE_LOOKUP_COORD_SCALE,
+      2,
+    );
+    if (ptypeCode <= 1) {
+      ptypeCode = resolvePTypeCodeFromLookup(
+        lon,
+        lat,
+        ptypeLookup.coarse,
+        PTYPE_LOOKUP_COARSE_SCALE,
+        3,
+      );
+    }
+
+    if (ptypeCode > 1) {
+      nonRainCount += 1;
+    }
+    if (ptypeCode >= 1) {
+      matchedCount += 1;
+    }
+    encodedValues[i] = encodeDbzByPType(value, ptypeCode);
+  }
+
+  const totalCount = radarData.values.length;
+  const matchedPct = totalCount
+    ? ((matchedCount / totalCount) * 100).toFixed(1)
+    : "0.0";
+  const nonRainPct = totalCount
+    ? ((nonRainCount / totalCount) * 100).toFixed(1)
+    : "0.0";
+  console.log(
+    `[PrecipType] Radar mapping total=${totalCount} matched=${matchedPct}% nonRain=${nonRainPct}% fineBins=${ptypeLookup.fine.size} coarseBins=${ptypeLookup.coarse.size}`,
+  );
+
+  return {
+    vertices: radarData.vertices,
+    values: encodedValues,
+  };
+}
+
+async function fetchHRRRPTypeLookup(map) {
+  const bounds = getCurrentMapBoundsObject(map);
+  const cacheKey = JSON.stringify({
+    model: selectedModel,
+    runDate: selectedHRRRRunDate || "latest",
+    runHour:
+      selectedHRRRRunHour === null || selectedHRRRRunHour === undefined
+        ? "latest"
+        : Number(selectedHRRRRunHour),
+    forecastHour: Number(selectedHRRRForecastHour) || 0,
+    bounds,
+  });
+
+  const now = Date.now();
+  const cached = hrrrPTypeLookupCache.get(cacheKey);
+  if (cached && now - cached.time < HRRR_PTYPE_CACHE_TTL_MS) {
+    return cached.lookup;
+  }
+
+  const params = new URLSearchParams({
+    model: selectedModel,
+    variable: "refc_ptype",
+    forecast_hour: String(selectedHRRRForecastHour),
+    format: "binary",
+    stride: "1",
+  });
+
+  if (selectedHRRRRunDate && selectedHRRRRunHour !== null) {
+    params.set("date", selectedHRRRRunDate);
+    params.set("run_hour", String(selectedHRRRRunHour));
+  }
+
+  if (bounds) {
+    params.set("minLon", String(bounds.minLon));
+    params.set("minLat", String(bounds.minLat));
+    params.set("maxLon", String(bounds.maxLon));
+    params.set("maxLat", String(bounds.maxLat));
+  }
+
+  const fetchLookupWithParams = async (queryParams) => {
+    const response = await fetch(
+      `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${queryParams.toString()}`,
+    );
+    if (!response.ok) {
+      throw new Error(
+        `Failed to fetch HRRR precip lookup (${response.status})`,
+      );
+    }
+
+    const contentEncoding = response.headers.get("Content-Encoding");
+    let arrayBuffer;
+    if (contentEncoding === "gzip") {
+      const blob = await response.blob();
+      const decompressedStream = blob
+        .stream()
+        .pipeThrough(new DecompressionStream("gzip"));
+      const decompressedBlob = await new Response(decompressedStream).blob();
+      arrayBuffer = await decompressedBlob.arrayBuffer();
+    } else {
+      arrayBuffer = await response.arrayBuffer();
+    }
+
+    const ptypeData = parseBinaryRadarData(arrayBuffer);
+    const lookup = {
+      fine: buildPTypeLookupFromTriangles(ptypeData, PTYPE_LOOKUP_COORD_SCALE),
+      coarse: buildPTypeLookupFromTriangles(
+        ptypeData,
+        PTYPE_LOOKUP_COARSE_SCALE,
+      ),
+    };
+    return { lookup, vertexCount: ptypeData.values.length };
+  };
+
+  let { lookup, vertexCount } = await fetchLookupWithParams(params);
+
+  if (bounds && lookup.fine.size === 0 && lookup.coarse.size === 0) {
+    console.warn(
+      "[PrecipType] Empty bounded ptype lookup; retrying without bounds",
+    );
+    const unboundedParams = new URLSearchParams(params);
+    unboundedParams.delete("minLon");
+    unboundedParams.delete("minLat");
+    unboundedParams.delete("maxLon");
+    unboundedParams.delete("maxLat");
+    ({ lookup, vertexCount } = await fetchLookupWithParams(unboundedParams));
+  }
+
+  console.log(
+    `[PrecipType] HRRR ptype fetch vertices=${vertexCount} fineBins=${lookup.fine.size} coarseBins=${lookup.coarse.size}`,
+  );
+  hrrrPTypeLookupCache.set(cacheKey, { time: now, lookup });
+  return lookup;
+}
+
+async function fetchAvailableHRRRRuns() {
+  const requestedVariable = getRequestedHRRRVariable();
+  const params = new URLSearchParams({
+    model: selectedModel,
+    variable: requestedVariable,
+    forecast_hour: String(selectedHRRRForecastHour),
+    lookback: HRRR_RUNS_LOOKBACK_HOURS,
+    max_runs: HRRR_RUNS_MAX,
+  });
+  const cacheKey = params.toString();
+  const now = Date.now();
+
+  if (
+    hrrrRunsCachePayload &&
+    hrrrRunsCacheKey === cacheKey &&
+    now - hrrrRunsCacheTime < HRRR_RUNS_CACHE_TTL_MS
+  ) {
+    return hrrrRunsCachePayload;
+  }
+
+  const response = await fetch(
+    `https://radar-api-production-076b.up.railway.app/api/hrrr-runs?${params.toString()}`,
+  );
+  if (!response.ok) {
+    throw new Error(`Failed to load HRRR runs (${response.status})`);
+  }
+  const payload = await response.json();
+  hrrrRunsCacheKey = cacheKey;
+  hrrrRunsCachePayload = payload;
+  hrrrRunsCacheTime = now;
+  return payload;
+}
+
+async function refreshHRRRRunSelector() {
+  const runSelect = document.getElementById("hrrrRunSelect");
+  if (!runSelect) return;
+
+  const previousValue = runSelect.value;
+  runSelect.innerHTML = `<option value="latest">Latest ${getActiveModelLabel()} run</option>`;
+
+  try {
+    const payload = await fetchAvailableHRRRRuns();
+    const runs = Array.isArray(payload?.runs) ? payload.runs : [];
+
+    for (const run of runs) {
+      const runDate = String(run.date || "");
+      const runHour = Number(run.hour);
+      if (!runDate || !Number.isFinite(runHour)) continue;
+
+      const value = `${runDate}|${String(runHour).padStart(2, "0")}`;
+      const localParts = formatLocalDateTimeParts(run.runTimestampUtc);
+      const label = `${runDate} ${String(runHour).padStart(2, "0")}z (${localParts.date} ${localParts.time})${run.isLastSuccessful ? " • last good" : ""}`;
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = label;
+      runSelect.appendChild(option);
+    }
+
+    if (selectedHRRRRunDate && selectedHRRRRunHour !== null) {
+      const selectedValue = `${selectedHRRRRunDate}|${String(selectedHRRRRunHour).padStart(2, "0")}`;
+      if (runSelect.querySelector(`option[value="${selectedValue}"]`)) {
+        runSelect.value = selectedValue;
+      } else {
+        runSelect.value = "latest";
+        selectedHRRRRunDate = null;
+        selectedHRRRRunHour = null;
+      }
+    } else if (
+      previousValue &&
+      runSelect.querySelector(`option[value="${previousValue}"]`)
+    ) {
+      runSelect.value = previousValue;
+    } else {
+      runSelect.value = "latest";
+    }
+  } catch (error) {
+    console.warn("Failed to refresh HRRR run selector:", error);
+    runSelect.value = "latest";
+    selectedHRRRRunDate = null;
+    selectedHRRRRunHour = null;
+  }
+}
+
+function getModelLoopHours() {
+  if (modelLoopMode !== "range") {
+    return Array.from({ length: 49 }, (_, index) => index);
+  }
+
+  const start = Math.max(0, Math.min(48, Number(modelLoopStartHour) || 0));
+  const end = Math.max(0, Math.min(48, Number(modelLoopEndHour) || 48));
+  const minHour = Math.min(start, end);
+  const maxHour = Math.max(start, end);
+  const hours = [];
+  for (let hour = minHour; hour <= maxHour; hour += 1) {
+    hours.push(hour);
+  }
+  return hours;
+}
+
+function generateModelFrameCacheKey(
+  model,
+  variable,
+  forecastHour,
+  runDate,
+  runHour,
+  bounds,
+) {
+  const boundsKey = bounds
+    ? `${bounds.minLon.toFixed(2)},${bounds.minLat.toFixed(2)},${bounds.maxLon.toFixed(2)},${bounds.maxLat.toFixed(2)}`
+    : "nobounds";
+  const runKey =
+    runDate && runHour !== null ? `${runDate}_${runHour}` : "latest";
+  return `${model}_${variable}_f${String(forecastHour).padStart(2, "0")}_${runKey}_${boundsKey}`;
+}
+
+function buildRenderableFrameFromRaw(
+  rawData,
+  timestampValue,
+  keyValue,
+  meta = null,
+) {
+  const rawVertices = new Float32Array(rawData.vertices);
+  const rawValues = new Float32Array(rawData.values);
+  const smoothedValues = computeBilinearCornerValues(rawVertices, rawValues);
+  const mercatorCoords = new Float32Array(rawVertices.length);
+
+  const DEG_TO_RAD = Math.PI / 180;
+  const RAD_TO_DEG = 180 / Math.PI;
+  const PI_4 = Math.PI / 4;
+  const MIN_LAT = -85.0511 * DEG_TO_RAD;
+  const MAX_LAT = 85.0511 * DEG_TO_RAD;
+
+  for (let index = 0; index < rawVertices.length; index += 2) {
+    const longitude = rawVertices[index];
+    const latitude = rawVertices[index + 1];
+
+    mercatorCoords[index] = (longitude + 180) / 360;
+    const latitudeRadians = Math.max(
+      MIN_LAT,
+      Math.min(MAX_LAT, latitude * DEG_TO_RAD),
+    );
+    mercatorCoords[index + 1] =
+      (180 - RAD_TO_DEG * Math.log(Math.tan(PI_4 + latitudeRadians / 2))) / 360;
+  }
+
+  return {
+    mercatorPositions: mercatorCoords,
+    rawVertices,
+    rawValues,
+    smoothedValues,
+    timestamp: timestampValue,
+    key: keyValue,
+    vertexCount: rawVertices.length / 2,
+    meta,
+  };
+}
+
+async function fetchHRRRFrameForHour(map, forecastHour) {
+  const requestedVariable = getRequestedHRRRVariable();
+  const bounds = getCurrentMapBoundsObject(map);
+
+  const effectiveModel = dataMode === "mrms" ? "mrms" : selectedModel;
+  const effectiveForecastHour = dataMode === "mrms" ? 0 : forecastHour;
+
+  // Generate cache key for this frame
+  const cacheKey = generateModelFrameCacheKey(
+    effectiveModel,
+    requestedVariable,
+    effectiveForecastHour,
+    selectedHRRRRunDate,
+    selectedHRRRRunHour,
+    bounds,
+  );
+
+  // Check if we have this frame cached
+  const cachedFrame = modelFrameCache.get(cacheKey);
+  if (cachedFrame) {
+    // Return cached frame with proper structure
+    const frameTimestamp = cachedFrame.meta.validIso
+      ? new Date(cachedFrame.meta.validIso)
+      : new Date();
+    return {
+      data: cachedFrame.data,
+      timestamp: frameTimestamp,
+      key: `${effectiveModel}_${requestedVariable}_f${String(effectiveForecastHour).padStart(2, "0")}`,
+      meta: cachedFrame.meta,
+    };
+  }
+
+  // Not in cache, proceed with fetch
+  const params = new URLSearchParams({
+    model: effectiveModel,
+    variable: requestedVariable,
+    forecast_hour: String(effectiveForecastHour),
+    format: "binary",
+    stride: "1",
+  });
+  if (selectedHRRRRunDate && selectedHRRRRunHour !== null) {
+    params.set("date", selectedHRRRRunDate);
+    params.set("run_hour", String(selectedHRRRRunHour));
+  }
+
+  if (bounds) {
+    params.set("minLon", String(bounds.minLon));
+    params.set("minLat", String(bounds.minLat));
+    params.set("maxLon", String(bounds.maxLon));
+    params.set("maxLat", String(bounds.maxLat));
+  }
+
+  const response = await fetch(
+    `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${params.toString()}`,
+  );
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch HRRR hour ${forecastHour} (${response.status})`,
+    );
+  }
+
+  const responseMeta = {
+    runIso: response.headers.get("X-HRRR-Run-ISO"),
+    validIso: response.headers.get("X-HRRR-Valid-ISO"),
+    units: response.headers.get("X-HRRR-Units") || "",
+    variable: response.headers.get("X-HRRR-Variable") || requestedVariable,
+    valueName: response.headers.get("X-HRRR-Value-Name") || "",
+    forecastHour,
+  };
+
+  const contentEncoding = response.headers.get("Content-Encoding");
+  let arrayBuffer;
+  if (contentEncoding === "gzip") {
+    const blob = await response.blob();
+    const decompressedStream = blob
+      .stream()
+      .pipeThrough(new DecompressionStream("gzip"));
+    const decompressedBlob = await new Response(decompressedStream).blob();
+    arrayBuffer = await decompressedBlob.arrayBuffer();
+  } else {
+    arrayBuffer = await response.arrayBuffer();
+  }
+
+  const parsedData = parseBinaryRadarData(arrayBuffer);
+  const displayData = await applyPrecipTypeToModelReflectivityIfNeeded(
+    map,
+    parsedData,
+    requestedVariable,
+  );
+  const frameTimestamp = responseMeta.validIso
+    ? new Date(responseMeta.validIso)
+    : new Date();
+
+  // Store in cache for future use
+  modelFrameCache.set(cacheKey, {
+    data: displayData,
+    meta: responseMeta,
+  });
+
+  return {
+    data: displayData,
+    timestamp: frameTimestamp,
+    key: `${effectiveModel}_${requestedVariable}_f${String(effectiveForecastHour).padStart(2, "0")}`,
+    meta: responseMeta,
+  };
+}
+
+async function loadAndPlayModelLoop(map) {
+  if (modelLoopLoading) {
+    return;
+  }
+
+  const hours = getModelLoopHours();
+  if (hours.length < 2) {
+    alert("Model loop needs at least 2 forecast hours.");
+    return;
+  }
+
+  modelLoopLoading = true;
+  stopLoop();
+
+  try {
+    const statusDiv = document.getElementById("sidebarStatus");
+    const statusText = document.getElementById("statusText");
+    if (statusDiv) {
+      statusDiv.style.display = "block";
+    }
+
+    const downloadedFrames = [];
+    for (let index = 0; index < hours.length; index += 1) {
+      const hour = hours[index];
+      if (statusText) {
+        statusText.textContent = `Loading model loop ${index + 1}/${hours.length} (F${String(hour).padStart(2, "0")})...`;
+      }
+      const frame = await fetchHRRRFrameForHour(map, hour);
+      downloadedFrames.push(frame);
+    }
+
+    radarFrames = downloadedFrames.map((frame) =>
+      buildRenderableFrameFromRaw(
+        frame.data,
+        frame.timestamp,
+        frame.key,
+        frame.meta,
+      ),
+    );
+
+    if (!radarFrames.length) {
+      throw new Error("No model frames available for loop.");
+    }
+
+    const totalFramesEl = document.getElementById("totalFrames");
+    const loopControlsContainer = document.getElementById(
+      "loopControlsContainer",
+    );
+    if (totalFramesEl) {
+      totalFramesEl.textContent = String(radarFrames.length);
+    }
+    if (loopControlsContainer) {
+      loopControlsContainer.style.display = "flex";
+    }
+
+    currentFrameIndex = 0;
+    displayFrameFast(currentFrameIndex);
+    startLoop();
+  } finally {
+    modelLoopLoading = false;
+    const statusDiv = document.getElementById("sidebarStatus");
+    if (statusDiv) {
+      statusDiv.style.display = "none";
+    }
+  }
+}
+
+async function precacheModelRange(map) {
+  const hours = getModelLoopHours();
+  if (!hours.length) {
+    alert("No model hours selected to pre-cache.");
+    return;
+  }
+
+  const startHour = Math.min(...hours);
+  const endHour = Math.max(...hours);
+  const bounds = getCurrentMapBoundsObject(map);
+
+  const statusDiv = document.getElementById("sidebarStatus");
+  const statusText = document.getElementById("statusText");
+  if (statusDiv) {
+    statusDiv.style.display = "block";
+  }
+  if (statusText) {
+    statusText.textContent = `Pre-caching ${getActiveModelLabel()} F${String(startHour).padStart(2, "0")}–F${String(endHour).padStart(2, "0")}...`;
+  }
+
+  try {
+    const response = await fetch(
+      "https://radar-api-production-076b.up.railway.app/api/hrrr-precache",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: selectedModel,
+          variable: getRequestedHRRRVariable(),
+          start_hour: startHour,
+          end_hour: endHour,
+          date: selectedHRRRRunDate,
+          run_hour: selectedHRRRRunHour,
+          bounds,
+        }),
+      },
+    );
+
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result?.error || `Pre-cache failed (${response.status})`);
+    }
+
+    const summary = `Pre-cache complete: fetched ${result.fetchedCount}, already cached ${result.cachedCount}, errors ${result.errorCount}.`;
+    if (statusText) {
+      statusText.textContent = summary;
+    }
+    alert(summary);
+  } finally {
+    if (statusDiv) {
+      statusDiv.style.display = "none";
+    }
+  }
+}
+
+function applyDataModeUI() {
+  const radarSiteControl = document.getElementById("radarSiteControl");
+  const radarProductControl = document.getElementById("radarProductControl");
+  const hrrrControls = document.getElementById("hrrrControls");
+  const loopSection = document.getElementById("loopSection");
+  const tilt3DSection = document.getElementById("tilt3DSection");
+  const stormMotionControls = document.getElementById("stormMotionControls");
+
+  const radarVisible = dataMode === "radar";
+  if (radarSiteControl)
+    radarSiteControl.style.display = radarVisible ? "" : "none";
+  if (radarProductControl)
+    radarProductControl.style.display = radarVisible ? "" : "none";
+  if (hrrrControls)
+    hrrrControls.style.display = radarVisible ? "none" : "block";
+
+  if (loopSection) {
+    loopSection.style.display =
+      radarVisible && selectedRadarSite ? "block" : "none";
+  }
+  if (tilt3DSection) {
+    tilt3DSection.style.display =
+      radarVisible && selectedRadarSite ? "block" : "none";
+  }
+  const sweepAnimationSection = document.getElementById(
+    "sweepAnimationSection",
+  );
+  if (sweepAnimationSection) {
+    sweepAnimationSection.style.display =
+      radarVisible && selectedRadarSite ? "block" : "none";
+  }
+
+  const showStormMotion =
+    radarVisible && typeof selectedRadarProduct === "string"
+      ? Boolean(selectedRadarProduct.match(/N[0-3][GVS]$/))
+      : false;
+  if (stormMotionControls) {
+    stormMotionControls.style.display = showStormMotion ? "block" : "none";
+  }
+
+  setModelSmoothingState(!radarVisible);
+  updateArcSyncToggleState();
+}
+
+async function fetchAndDisplayHRRRData(map, retryWithFallback = true) {
+  try {
+    const requestedVariable = getRequestedHRRRVariable();
+    const effectiveForecastHour =
+      dataMode === "mrms" ? 0 : selectedHRRRForecastHour;
+    const bounds = getCurrentMapBoundsObject(map);
+    const effectiveModel = dataMode === "mrms" ? "mrms" : selectedModel;
+
+    // Generate cache key for this request
+    const cacheKey = generateModelFrameCacheKey(
+      effectiveModel,
+      requestedVariable,
+      effectiveForecastHour,
+      selectedHRRRRunDate,
+      selectedHRRRRunHour,
+      bounds,
+    );
+
+    // Check if we have this frame cached
+    const cachedFrame = modelFrameCache.get(cacheKey);
+    if (cachedFrame) {
+      // Use cached frame for instant display
+      currentHRRRMeta = cachedFrame.meta;
+      currentHRRRUnitsByVariable[selectedHRRRVariable] = cachedFrame.meta.units;
+      currentRenderProductCode = `HRRR_${selectedHRRRVariable.toUpperCase()}`;
+
+      if (
+        customRadarLayerInstance &&
+        customRadarLayerInstance.updateColorRamp
+      ) {
+        customRadarLayerInstance.updateColorRamp(currentRenderProductCode);
+      }
+
+      createColorScaleLegend(currentRenderProductCode);
+      const cachedDisplayData =
+        await applyPrecipTypeToModelReflectivityIfNeeded(
+          map,
+          cachedFrame.data,
+          requestedVariable,
+        );
+      updateRadarLayer(map, cachedDisplayData);
+      updateHRRRTimeCard(cachedFrame.meta);
+      updateAllProbes();
+      updateDockSummary();
+
+      const legend = document.getElementById("radarLegend");
+      if (legend) legend.style.display = "block";
+
+      return; // Exit early since we used cached data
+    }
+
+    // Not in cache, proceed with fetch
+    const statusDiv = document.getElementById("sidebarStatus");
+    if (statusDiv) {
+      statusDiv.style.display = "block";
+      const statusText = document.getElementById("statusText");
+      if (statusText) {
+        statusText.textContent = `Loading ${getActiveModelLabel()} data...`;
+      }
+    }
+
+    const params = new URLSearchParams({
+      model: effectiveModel,
+      variable: requestedVariable,
+      forecast_hour: String(effectiveForecastHour),
+      format: "binary",
+      stride: "1",
+    });
+    if (selectedHRRRRunDate && selectedHRRRRunHour !== null) {
+      params.set("date", selectedHRRRRunDate);
+      params.set("run_hour", String(selectedHRRRRunHour));
+    }
+
+    if (bounds) {
+      params.set("minLon", String(bounds.minLon));
+      params.set("minLat", String(bounds.minLat));
+      params.set("maxLon", String(bounds.maxLon));
+      params.set("maxLat", String(bounds.maxLat));
+    }
+
+    const response = await fetch(
+      `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${params.toString()}`,
+    );
+    if (!response.ok) {
+      let backendError = "";
+      try {
+        const errPayload = await response.json();
+        backendError = errPayload?.error ? String(errPayload.error) : "";
+      } catch (_) {
+        backendError = "";
+      }
+
+      if (
+        response.status === 404 &&
+        retryWithFallback &&
+        !selectedHRRRRunDate &&
+        selectedHRRRRunHour === null
+      ) {
+        try {
+          const runsPayload = await fetchAvailableHRRRRuns();
+          const fallbackRun = runsPayload?.lastSuccessfulRun;
+          if (
+            fallbackRun &&
+            fallbackRun.date &&
+            Number.isFinite(Number(fallbackRun.hour))
+          ) {
+            selectedHRRRRunDate = String(fallbackRun.date);
+            selectedHRRRRunHour = Number(fallbackRun.hour);
+
+            const runSelect = document.getElementById("hrrrRunSelect");
+            if (runSelect) {
+              const fallbackValue = `${selectedHRRRRunDate}|${String(selectedHRRRRunHour).padStart(2, "0")}`;
+              if (runSelect.querySelector(`option[value="${fallbackValue}"]`)) {
+                runSelect.value = fallbackValue;
+              }
+            }
+
+            return await fetchAndDisplayHRRRData(map, false);
+          }
+        } catch (fallbackError) {
+          console.warn("HRRR fallback run retry failed:", fallbackError);
+        }
+      }
+
+      const detailSuffix = backendError ? `: ${backendError}` : "";
+      throw new Error(
+        `Failed to fetch HRRR data (${response.status})${detailSuffix}`,
+      );
+    }
+
+    const responseMeta = {
+      runIso: response.headers.get("X-HRRR-Run-ISO"),
+      validIso: response.headers.get("X-HRRR-Valid-ISO"),
+      units: response.headers.get("X-HRRR-Units") || "",
+      variable: response.headers.get("X-HRRR-Variable") || requestedVariable,
+      valueName: response.headers.get("X-HRRR-Value-Name") || "",
+      forecastHour: effectiveForecastHour,
+    };
+
+    const contentEncoding = response.headers.get("Content-Encoding");
+    let arrayBuffer;
+    if (contentEncoding === "gzip") {
+      const blob = await response.blob();
+      const decompressedStream = blob
+        .stream()
+        .pipeThrough(new DecompressionStream("gzip"));
+      const decompressedBlob = await new Response(decompressedStream).blob();
+      arrayBuffer = await decompressedBlob.arrayBuffer();
+    } else {
+      arrayBuffer = await response.arrayBuffer();
+    }
+
+    const hrrrData = parseBinaryRadarData(arrayBuffer);
+    const displayData = await applyPrecipTypeToModelReflectivityIfNeeded(
+      map,
+      hrrrData,
+      requestedVariable,
+    );
+
+    // Store in cache for instant future access
+    modelFrameCache.set(cacheKey, {
+      data: displayData,
+      meta: responseMeta,
+    });
+
+    currentHRRRMeta = responseMeta;
+    currentHRRRUnitsByVariable[selectedHRRRVariable] = responseMeta.units;
+    currentRenderProductCode = `HRRR_${selectedHRRRVariable.toUpperCase()}`;
+
+    if (customRadarLayerInstance && customRadarLayerInstance.updateColorRamp) {
+      customRadarLayerInstance.updateColorRamp(currentRenderProductCode);
+    }
+
+    createColorScaleLegend(currentRenderProductCode);
+    updateRadarLayer(map, displayData);
+    updateHRRRTimeCard(responseMeta);
+    updateAllProbes();
+    updateDockSummary();
+
+    const legend = document.getElementById("radarLegend");
+    if (legend) legend.style.display = "block";
+  } catch (error) {
+    console.error("Error loading HRRR data:", error);
+    alert(`Error loading HRRR data: ${error.message}`);
+  } finally {
+    const statusDiv = document.getElementById("sidebarStatus");
+    if (statusDiv) {
+      statusDiv.style.display = "none";
+    }
+  }
+}
+
+async function switchDataMode(nextMode) {
+  // Support explicit mrms mode in addition to hrrr/radar
+  if (nextMode === "hrrr") dataMode = "hrrr";
+  else if (nextMode === "mrms") dataMode = "mrms";
+  else dataMode = "radar";
+  if (dataMode === "hrrr" || dataMode === "mrms") {
+    radarSmoothingPreference = !!enableSmoothing;
+  }
+  applyDataModeUI();
+  stopLoop();
+
+  if (dataMode === "hrrr") {
+    if (radarPollingTimer) {
+      clearInterval(radarPollingTimer);
+      radarPollingTimer = null;
+    }
+    stopArcSyncStream();
+    stopSweepAnimation(mapInstance);
+    applyModelControlConstraints();
+    await refreshHRRRRunSelector();
+    await fetchAndDisplayHRRRData(mapInstance);
+    return;
+  }
+
+  if (dataMode === "mrms") {
+    if (radarPollingTimer) {
+      clearInterval(radarPollingTimer);
+      radarPollingTimer = null;
+    }
+    stopArcSyncStream();
+    stopSweepAnimation(mapInstance);
+    applyModelControlConstraints();
+
+    // Auto-select MRMS in the products menu if present
+    const productSelect = document.getElementById("radarProductSelect");
+    if (productSelect) {
+      const mrmsOption = Array.from(productSelect.options).find(
+        (o) => String(o.value).toLowerCase() === "mrms",
+      );
+      if (mrmsOption) {
+        productSelect.value = mrmsOption.value;
+        selectedRadarProduct = mrmsOption.value;
+      }
+    }
+
+    currentRenderProductCode = selectedRadarProduct;
+    createColorScaleLegend(currentRenderProductCode);
+    await fetchAndDisplayHRRRData(mapInstance);
+    return;
+  }
+
+  const productSelect = document.getElementById("radarProductSelect");
+  if (productSelect && productSelect.value) {
+    selectedRadarProduct = productSelect.value;
+  }
+  currentRenderProductCode = selectedRadarProduct;
+  createColorScaleLegend(currentRenderProductCode);
+  if (selectedRadarSite) {
+    await fetchAndDisplayRadarData(
+      mapInstance,
+      selectedRadarSite,
+      selectedRadarProduct,
+      selectedRadarDataSource,
+    );
+    startSweepAnimation(mapInstance, selectedRadarSite);
+    startRadarPolling(
+      mapInstance,
+      selectedRadarSite,
+      selectedRadarProduct,
+      selectedRadarDataSource,
+    );
+  } else {
+    removeRadarLayer(mapInstance);
+  }
+  updateDockSummary();
+}
+
+function stopArcSyncStream() {
+  if (arcSyncEventSource) {
+    arcSyncEventSource.close();
+    arcSyncEventSource = null;
+  }
+  if (arcSyncReconnectTimer) {
+    clearTimeout(arcSyncReconnectTimer);
+    arcSyncReconnectTimer = null;
+  }
+  arcSyncSessionKey = null;
+}
+
+function updateArcSyncToggleState() {
+  const toggle = document.getElementById("arcSyncToggle");
+  if (!toggle) return;
+  const isLevel2 = selectedRadarDataSource === "level2";
+  const enabled = dataMode === "radar" && isLevel2 && !isArchiveMode;
+  toggle.disabled = !enabled;
+  toggle.title = enabled
+    ? "Arc-Sync Live (Level 2 SSE)"
+    : "Arc-Sync is available for live Level 2 radar";
+}
+
+function buildRadarDataFromPayload(payload) {
+  try {
+    // Prefer binary base64-encoded payloads (more efficient)
+    if (payload?.verticesB64 && payload?.valuesB64) {
+      const vBytes = _b64ToUint8Array(payload.verticesB64);
+      const valBytes = _b64ToUint8Array(payload.valuesB64);
+
+      const vCount = Number(payload.verticesCount || 0);
+      const valCount = Number(payload.valuesCount || 0);
+
+      const vDtype = (payload.verticesDtype || "float32").toLowerCase();
+      const valDtype = (payload.valuesDtype || "float32").toLowerCase();
+
+      let verticesArr;
+      if (vDtype.includes("float32")) {
+        verticesArr = new Float32Array(
+          vBytes.buffer,
+          vBytes.byteOffset,
+          vCount,
+        );
+      } else if (vDtype.includes("float64")) {
+        verticesArr = new Float64Array(
+          vBytes.buffer,
+          vBytes.byteOffset,
+          vCount,
+        );
+      } else {
+        verticesArr = new Float32Array(
+          vBytes.buffer,
+          vBytes.byteOffset,
+          vCount,
+        );
+      }
+
+      let valuesArr;
+      if (valDtype.includes("float32")) {
+        valuesArr = new Float32Array(
+          valBytes.buffer,
+          valBytes.byteOffset,
+          valCount,
+        );
+      } else if (valDtype.includes("float64")) {
+        valuesArr = new Float64Array(
+          valBytes.buffer,
+          valBytes.byteOffset,
+          valCount,
+        );
+      } else {
+        valuesArr = new Float32Array(
+          valBytes.buffer,
+          valBytes.byteOffset,
+          valCount,
+        );
+      }
+
+      return { vertices: verticesArr, values: valuesArr };
+    }
+  } catch (e) {
+    console.warn("Failed to decode binary SSE payload, falling back:", e);
+  }
+
+  const vertices = Array.isArray(payload?.vertices) ? payload.vertices : [];
+  const values = Array.isArray(payload?.values) ? payload.values : [];
+  return {
+    vertices: new Float32Array(vertices),
+    values: new Float32Array(values),
+  };
+}
+
+function mergeRadarData(baseData, deltaData) {
+  if (!baseData || !baseData.vertices || baseData.vertices.length === 0) {
+    return deltaData;
+  }
+
+  const mergedVertices = new Float32Array(
+    baseData.vertices.length + deltaData.vertices.length,
+  );
+  mergedVertices.set(baseData.vertices, 0);
+  mergedVertices.set(deltaData.vertices, baseData.vertices.length);
+
+  const mergedValues = new Float32Array(
+    baseData.values.length + deltaData.values.length,
+  );
+  mergedValues.set(baseData.values, 0);
+  mergedValues.set(deltaData.values, baseData.values.length);
+
+  return { vertices: mergedVertices, values: mergedValues };
+}
+
+function applyIncrementalRadarUpdate(map, deltaData, meta) {
+  const merged = mergeRadarData(currentRadarData, deltaData);
+  currentRadarData = merged;
+
+  if (customRadarLayerInstance?.updateColorRamp) {
+    customRadarLayerInstance.updateColorRamp(currentRenderProductCode);
+  }
+  updateRadarLayer(map, merged);
+  updateAllProbes();
+  // If the incoming metadata indicates a partial sweep (coverage < 360°),
+  // animate the high-dBZ flash to indicate old/partial data while the sweep fills in.
+  try {
+    const coverageDeg = Number(meta?.sweepCoverageDeg || 0);
+    const rayCount = Number(meta?.rayCount || 0);
+    const totalRays = Number(meta?.totalRays || meta?.sweepRays || 0);
+    const sweepComplete = Boolean(meta?.sweepComplete);
+    const partial =
+      meta &&
+      rayCount > 0 &&
+      ((coverageDeg > 0 && coverageDeg < 360) ||
+        (!sweepComplete && totalRays > 0 && rayCount < totalRays));
+    if (partial) {
+      startPartialScanFlash(map);
+    } else {
+      stopPartialScanFlash(map);
+    }
+  } catch (e) {
+    // ignore
+  }
+
+  if (meta && selectedRadarSite) {
+    latestArcSyncState = {
+      sessionKey: meta.sessionKey || null,
+      updateToken: meta.sessionKey || null,
+      sweepCoverageDeg: 0,
+      sweepRays: Number(meta.totalRays || meta.rayCount || 0),
+      sweepComplete: false,
+      prodBytes: Number(meta.totalBytes || 0),
+      elevation: Number(meta.elevation || 0).toFixed(2),
+      sweepIndex: Number(meta.sweepIndex || 0),
+      timestamp: meta.timestamp || null,
+      connectionStatus: "connected",
+      updatedAt: Date.now(),
+    };
+    updateRadarInfo(selectedRadarSite, "level2", latestArcSyncState);
+  }
+}
+
+function startArcSyncStream(map, site, product) {
+  if (!arcSyncEnabled || !site || dataMode !== "radar" || isArchiveMode) {
+    return;
+  }
+
+  stopArcSyncStream();
+  currentRadarData = null;
+  arcSyncSessionKey = null;
+  lastRenderedRadarToken = null;
+
+  const radarProduct = product || selectedRadarProduct;
+  const streamUrl = `https://radar-api-production-076b.up.railway.app/api/radar/level2-stream?site=${encodeURIComponent(
+    site.id,
+  )}&product=${encodeURIComponent(radarProduct)}`;
+
+  arcSyncEventSource = new EventSource(streamUrl);
+
+  arcSyncEventSource.onopen = () => {
+    console.log("Arc-Sync SSE connection opened for Level 2 data");
+    if (latestArcSyncState) {
+      latestArcSyncState.connectionStatus = "connected";
+      updateRadarInfo(site, "level2", latestArcSyncState);
+    }
+  };
+
+  arcSyncEventSource.onmessage = (event) => {
+    if (!event?.data) return;
+
+    let payload;
+    try {
+      payload = JSON.parse(event.data);
+    } catch (e) {
+      console.warn("Failed to parse SSE message:", e);
+      return;
+    }
+
+    if (payload.error) {
+      console.error("Arc-Sync stream error:", payload.error);
+      // Show error in UI
+      if (latestArcSyncState) {
+        latestArcSyncState.lastError = payload.error;
+      }
+      return;
+    }
+
+    const sessionKey = payload.sessionKey || null;
+    if (sessionKey && sessionKey !== arcSyncSessionKey) {
+      arcSyncSessionKey = sessionKey;
+      currentRadarData = null;
+      lastRenderedRadarToken = null;
+      console.log("New Level 2 file detected:", sessionKey);
+    }
+
+    const deltaData = buildRadarDataFromPayload(payload);
+    if (!deltaData.vertices.length) {
+      console.log("No vertex data in payload (keepalive or empty update)");
+      return;
+    }
+
+    applyIncrementalRadarUpdate(map, deltaData, payload);
+  };
+
+  arcSyncEventSource.onerror = (err) => {
+    console.error("Arc-Sync SSE error:", err);
+
+    // Update connection status
+    if (latestArcSyncState) {
+      latestArcSyncState.connectionStatus = "disconnected";
+      latestArcSyncState.lastError = `Connection error: ${err.type || "unknown"}`;
+      updateRadarInfo(site, "level2", latestArcSyncState);
+    }
+
+    if (arcSyncEventSource) {
+      arcSyncEventSource.close();
+      arcSyncEventSource = null;
+    }
+    if (!arcSyncEnabled || dataMode !== "radar" || isArchiveMode) {
+      return;
+    }
+    if (arcSyncReconnectTimer) {
+      clearTimeout(arcSyncReconnectTimer);
+    }
+    arcSyncReconnectTimer = setTimeout(() => {
+      startArcSyncStream(map, site, radarProduct);
+    }, ARC_SYNC_RECONNECT_MS);
+  };
+}
+
+async function pollForNewRadarData(map, site, product, source) {
+  if (dataMode !== "radar") {
+    return;
+  }
+
   // Don't poll for new data while in archive mode
   if (isArchiveMode) {
     console.log("Skipping radar poll - in archive mode");
@@ -7549,16 +10882,51 @@ async function pollForNewRadarData(map, site, product) {
   console.log("Polling for new radar data...");
   try {
     const radarProduct = product || selectedRadarProduct;
+    const radarSource = source || selectedRadarDataSource;
 
     const keyResp = await fetch(
-      `http://127.0.0.1:5100/api/radar-latest-key/${site.id}?product=${radarProduct}`,
+      `https://radar-api-production-076b.up.railway.app/api/radar-latest-key/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}`,
     );
     if (!keyResp.ok) throw new Error("Failed to check latest radar key");
-    const { key } = await keyResp.json();
+    const keyData = await keyResp.json();
+    const key = keyData?.key;
+    let updateToken = keyData?.updateToken || key;
 
-    if (key && key !== lastRadarKey) {
-      lastRadarKey = key;
-      await fetchAndDisplayRadarData(map, site, radarProduct);
+    if (radarSource === "level2") {
+      if (!arcSyncEnabled) {
+        // Arc-Sync disabled: use full file key, skip sweep metadata
+        updateToken = key;
+        latestArcSyncState = null;
+      } else {
+        const sweepCoverageDeg = Number(keyData?.sweepCoverageDeg || 0);
+        const sweepRays = Number(keyData?.sweepRays || 0);
+        const sweepComplete = Boolean(keyData?.sweepComplete);
+        const prodBytes = Number(keyData?.prodBytes || 0);
+
+        latestArcSyncState = {
+          sessionKey: key || null,
+          updateToken: updateToken || null,
+          sweepCoverageDeg,
+          sweepRays,
+          sweepComplete,
+          prodBytes,
+          updatedAt: Date.now(),
+        };
+      }
+    } else {
+      latestArcSyncState = null;
+    }
+
+    if (updateToken && updateToken !== lastRadarKey) {
+      lastRadarKey = updateToken;
+      await fetchAndDisplayRadarData(
+        map,
+        site,
+        radarProduct,
+        radarSource,
+        updateToken,
+        latestArcSyncState,
+      );
       startSweepAnimation(mapInstance, selectedRadarSite);
     }
   } catch (err) {
@@ -7566,8 +10934,13 @@ async function pollForNewRadarData(map, site, product) {
   }
 }
 
-function startRadarPolling(map, site, product) {
+function startRadarPolling(map, site, product, source) {
   if (radarPollingTimer) clearInterval(radarPollingTimer);
+  stopArcSyncStream();
+
+  if (dataMode !== "radar") {
+    return;
+  }
 
   // Don't start polling while in archive mode
   if (isArchiveMode) {
@@ -7576,14 +10949,29 @@ function startRadarPolling(map, site, product) {
   }
 
   const radarProduct = product || selectedRadarProduct;
+  const radarSource = source || selectedRadarDataSource;
+  const pollInterval =
+    radarSource === "level2" ? LEVEL2_POLLING_INTERVAL : POLLING_INTERVAL;
 
-  pollForNewRadarData(map, site, radarProduct);
+  if (radarSource === "level2" && arcSyncEnabled) {
+    startArcSyncStream(map, site, radarProduct);
+    return;
+  }
+
+  pollForNewRadarData(map, site, radarProduct, radarSource);
   radarPollingTimer = setInterval(() => {
-    pollForNewRadarData(map, site, radarProduct);
-  }, POLLING_INTERVAL);
+    pollForNewRadarData(map, site, radarProduct, radarSource);
+  }, pollInterval);
 }
 
-async function fetchAndDisplayRadarData(map, site, product) {
+async function fetchAndDisplayRadarData(
+  map,
+  site,
+  product,
+  source,
+  refreshToken = null,
+  arcSyncState = null,
+) {
   try {
     console.time("FETCH-TOTAL");
 
@@ -7595,10 +10983,15 @@ async function fetchAndDisplayRadarData(map, site, product) {
     }
 
     const radarProduct = product || selectedRadarProduct;
+    const radarSource = source || selectedRadarDataSource;
+    currentRenderProductCode = radarProduct;
 
     console.time("FETCH-request");
+    const revQuery = refreshToken
+      ? `&rev=${encodeURIComponent(refreshToken)}`
+      : "";
     let response = await fetch(
-      `http://127.0.0.1:5100/api/radar-webgl/${site.id}?product=${radarProduct}&format=binary`,
+      `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary${revQuery}`,
     );
 
     let radarData;
@@ -7637,7 +11030,7 @@ async function fetchAndDisplayRadarData(map, site, product) {
       console.log("⚠️ Binary format not available, using JSON fallback");
 
       response = await fetch(
-        `http://127.0.0.1:5100/api/radar-webgl/${site.id}?product=${radarProduct}`,
+        `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}`,
       );
       if (!response.ok) {
         throw new Error(`Failed to fetch radar data: ${response.statusText}`);
@@ -7648,18 +11041,49 @@ async function fetchAndDisplayRadarData(map, site, product) {
       console.timeEnd("PARSE-json");
     }
 
+    if (precipTypeModeEnabled && isRadarReflectivityProductCode(radarProduct)) {
+      try {
+        const ptypeLookup = await fetchHRRRPTypeLookup(map);
+        radarData = applyPTypeEncodingToRadarData(radarData, ptypeLookup);
+      } catch (ptypeError) {
+        console.warn(
+          "Failed to apply precip-type color encoding to radar:",
+          ptypeError,
+        );
+      }
+    }
+
     console.timeEnd("FETCH-TOTAL");
     console.log(
       `Received ${radarData.vertices.length / 2} vertices for WebGL rendering.`,
     );
 
     console.time("UPDATE-radar-layer");
+    if (customRadarLayerInstance && customRadarLayerInstance.updateColorRamp) {
+      customRadarLayerInstance.updateColorRamp(currentRenderProductCode);
+    }
+    createColorScaleLegend(currentRenderProductCode);
     updateRadarLayer(map, radarData);
     console.timeEnd("UPDATE-radar-layer");
 
     updateAllProbes();
 
-    updateRadarInfo(site);
+    const didRenderData =
+      radarData && radarData.vertices && radarData.vertices.length > 0;
+    if (
+      radarSource === "level2" &&
+      refreshToken &&
+      didRenderData &&
+      refreshToken !== lastRenderedRadarToken &&
+      customRadarLayerInstance
+    ) {
+      customRadarLayerInstance.triggerChunkFlash?.();
+      lastRenderedRadarToken = refreshToken;
+    } else if (radarSource !== "level2") {
+      lastRenderedRadarToken = null;
+    }
+
+    updateRadarInfo(site, radarSource, arcSyncState || latestArcSyncState);
     document.getElementById("radarLegend").style.display = "block";
   } catch (error) {
     console.error("Error fetching or rendering WebGL radar data:", error);
@@ -7809,7 +11233,11 @@ function removeRadarLayer(map) {
   document.getElementById("toggleRadar").title = "Show Radar";
 }
 
-function updateRadarInfo(site) {
+function updateRadarInfo(
+  site,
+  source = selectedRadarDataSource,
+  arcSyncState = null,
+) {
   try {
     const infoDiv = document.querySelector(".radar-info");
     const now = new Date();
@@ -7821,12 +11249,70 @@ function updateRadarInfo(site) {
       minute: "2-digit",
     };
     const formattedDate = now.toLocaleDateString("en-US", dateOptions);
+    const productInfo = getRadarProductInfo(selectedRadarProduct);
+    const productName = productInfo?.name || selectedRadarProduct;
+
     let html = `
             <strong>Radar Site:</strong> ${site.id} - ${site.name}<br>
             <strong>Rendered with:</strong> WebGL Custom Layer<br>
             <strong>Approx. Time:</strong> ${formattedDate}<br>
-            <strong>Product:</strong> N0B (Base Reflectivity)<br>
+            <strong>Product:</strong> ${selectedRadarProduct} (${productName})<br>
         `;
+
+    if (source === "level2") {
+      const sync = arcSyncState || latestArcSyncState;
+      const coverage = Number(sync?.sweepCoverageDeg || 0);
+      const rays = Number(sync?.sweepRays || 0);
+      const prodBytes = Number(sync?.prodBytes || 0);
+      const prodLabel = formatBytesForArcSync(prodBytes);
+      const vstLabel = sync?.sessionKey || "--";
+      const liveStatus = sync?.sweepComplete ? "Complete" : "Live";
+      const coverageLine =
+        rays > 0 && coverage > 0
+          ? `${coverage.toFixed(1)}° (${rays} rays)`
+          : "--";
+
+      // Format elevation
+      const elevationStr = sync?.elevation ? `${sync.elevation}°` : "--";
+
+      // Format sweep index
+      const sweepIndexStr =
+        sync?.sweepIndex !== undefined ? `Sweep ${sync.sweepIndex}` : "--";
+
+      // Format timestamp
+      let timestampStr = "--";
+      if (sync?.timestamp) {
+        try {
+          const ts = new Date(sync.timestamp);
+          timestampStr = ts.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+          });
+        } catch (e) {
+          timestampStr = sync.timestamp;
+        }
+      }
+
+      // Connection status indicator
+      const connectionStatus = sync?.connectionStatus || "disconnected";
+      const statusBadge =
+        connectionStatus === "connected"
+          ? '<span style="color: #4ade80; font-weight: bold;">● Connected</span>'
+          : '<span style="color: #ef4444; font-weight: bold;">● Disconnected</span>';
+
+      html += `
+            <strong>Arc-Sync:</strong> ${liveStatus}<br>
+            <strong>Connection:</strong> ${statusBadge}<br>
+            <strong>VST:</strong> ${vstLabel}<br>
+            <strong>Prod:</strong> ${prodLabel}<br>
+            <strong>Coverage:</strong> ${coverageLine}<br>
+            <strong>Elevation:</strong> ${elevationStr}<br>
+            <strong>Sweep:</strong> ${sweepIndexStr}<br>
+            <strong>Collection Time:</strong> ${timestampStr}<br>
+      `;
+    }
+
     infoDiv.innerHTML = html;
   } catch (error) {
     console.error("Error updating radar info:", error);
@@ -7835,6 +11321,43 @@ function updateRadarInfo(site) {
 
 function buildLegendMeta(productCode, productInfo) {
   const unitLabel = productInfo.unit || "";
+
+  if (precipTypeModeEnabled && isReflectivityProductCode(productCode)) {
+    return {
+      subtitle:
+        "Reflectivity recolored by precip type using HRRR CRAIN/CFRZR/CICEP/CSNOW classification",
+      leftLabel: "Lower intensity",
+      rightLabel: "Higher intensity",
+      footnote:
+        "Green/teal = rain, pink = freezing rain, orange = sleet, blue = snow.",
+      badges: [
+        {
+          label: "Rain",
+          range: unitLabel ? `0-95 ${unitLabel}` : "0-95 dBZ",
+          description: "Liquid precipitation",
+          color: "rgba(35,196,232,0.7)",
+        },
+        {
+          label: "Freezing Rain",
+          range: unitLabel ? `100-195 ${unitLabel}` : "100-195 encoded",
+          description: "Surface icing risk",
+          color: "rgba(245,82,178,0.7)",
+        },
+        {
+          label: "Sleet",
+          range: unitLabel ? `200-295 ${unitLabel}` : "200-295 encoded",
+          description: "Ice pellets / mixed",
+          color: "rgba(242,122,54,0.72)",
+        },
+        {
+          label: "Snow",
+          range: unitLabel ? `300-395 ${unitLabel}` : "300-395 encoded",
+          description: "Frozen precipitation",
+          color: "rgba(70,146,240,0.72)",
+        },
+      ],
+    };
+  }
 
   if (productInfo.isVelocity) {
     const strongThreshold = Math.round(20 * MS_TO_MPH);
@@ -7925,11 +11448,26 @@ function createColorScaleLegend(productCode = selectedRadarProduct) {
   const gradientStops = [];
   const values = [];
 
+  // Filter function to remove sentinel/error values and absurd values
+  const isValidLegendValue = (value) => {
+    // Must be a finite number
+    if (typeof value !== "number" || !isFinite(value)) return false;
+
+    // Filter out known sentinel values (range folding, no data, etc.)
+    if (Math.abs(value) === 9999 || Math.abs(value) === 999) return false;
+    if (Math.abs(value) === 32768 || Math.abs(value) === 65535) return false;
+
+    // Filter out absurdly high values (typical for error flags in radar data)
+    if (value > 200) return false;
+
+    return true;
+  };
+
   for (let i = 0; i < expressionStops.length; i += 2) {
     const value = expressionStops[i];
     const color = expressionStops[i + 1];
 
-    if (typeof value !== "number" || !isFinite(value) || value >= 900) {
+    if (!isValidLegendValue(value)) {
       continue;
     }
 
@@ -7981,8 +11519,9 @@ function createColorScaleLegend(productCode = selectedRadarProduct) {
         </div>
         <span class="legend-pill">${productInfo.unit || ""}</span>
       </div>
-      <div class="legend-gradient">
-        <div class="legend-gradient__bar" style="background: ${gradientCSS};"></div>
+      <div class="legend-gradient" style="position: relative;">
+        <div class="legend-gradient__bar" style="background: ${gradientCSS}; cursor: crosshair;" data-min-value="${gradientStops.length ? Math.min(...values) : 0}" data-max-value="${gradientStops.length ? Math.max(...values) : 1}"></div>
+        <div class="legend-gradient__hover-value" style="display: none; position: absolute; background: rgba(0,0,0,0.8); color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; white-space: nowrap; pointer-events: none; z-index: 1000;"></div>
         <div class="legend-gradient__minmax">
           <span>${leftLabel}</span>
           <span>${rightLabel}</span>
@@ -7994,10 +11533,43 @@ function createColorScaleLegend(productCode = selectedRadarProduct) {
   `;
 
   legendDiv.innerHTML = html;
+
+  // Add hover value display functionality
+  const gradientBar = legendDiv.querySelector(".legend-gradient__bar");
+  const hoverValue = legendDiv.querySelector(".legend-gradient__hover-value");
+
+  if (gradientBar && hoverValue && gradientStops.length > 0) {
+    const minValue = Math.min(...values);
+    const maxValue = Math.max(...values);
+    const range = maxValue - minValue === 0 ? 1 : maxValue - minValue;
+    const unit = productInfo.unit || "";
+
+    gradientBar.addEventListener("mousemove", (e) => {
+      const rect = gradientBar.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const pct = Math.max(0, Math.min(1, x / rect.width));
+      const value = minValue + pct * range;
+
+      hoverValue.textContent = `${value.toFixed(1)} ${unit}`;
+      hoverValue.style.display = "block";
+      hoverValue.style.left = `${x}px`;
+      hoverValue.style.top = `-28px`;
+    });
+
+    gradientBar.addEventListener("mouseleave", () => {
+      hoverValue.style.display = "none";
+    });
+  }
 }
 
 function startSweepAnimation(map, site) {
   stopSweepAnimation(map);
+
+  // Check if sweep is disabled
+  if (sweepMode === "disabled") {
+    return;
+  }
+
   const center = [site.longitude, site.latitude];
 
   // Create source if it doesn't exist
@@ -8008,8 +11580,7 @@ function startSweepAnimation(map, site) {
     });
   }
 
-  // Add layer with fill styling for smooth gradient wedge trail
-  // Position AFTER radar layer but BEFORE labels/contours
+  // Add appropriate layer based on mode
   if (!map.getLayer(sweepLayerId)) {
     // Find the anchor layer (labels/roads) to position sweep before it
     const sweepBeforeLayerId = map
@@ -8024,24 +11595,67 @@ function startSweepAnimation(map, site) {
               l.id.includes("Railway"))),
       )?.id;
 
-    map.addLayer(
-      {
-        id: sweepLayerId,
-        type: "fill",
-        source: sweepSourceId,
-        paint: {
-          "fill-color": SWEEP_COLOR,
-          "fill-opacity": ["get", "opacity"],
-          "fill-outline-color": "rgba(255, 255, 255, 0)",
+    if (sweepMode === "simple") {
+      // Simple mode: Use line layer with gradient opacity
+      map.addLayer(
+        {
+          id: sweepLayerId,
+          type: "line",
+          source: sweepSourceId,
+          paint: {
+            "line-color": SWEEP_COLOR,
+            "line-width": 2,
+            "line-opacity": ["get", "opacity"],
+          },
         },
-      },
-      sweepBeforeLayerId,
-    );
+        sweepBeforeLayerId,
+      );
+    } else {
+      // Full mode: Use fill layer with wedges
+      map.addLayer(
+        {
+          id: sweepLayerId,
+          type: "fill",
+          source: sweepSourceId,
+          paint: {
+            "fill-color": SWEEP_COLOR,
+            "fill-opacity": ["get", "opacity"],
+            "fill-outline-color": "rgba(255, 255, 255, 0)",
+          },
+        },
+        sweepBeforeLayerId,
+      );
+    }
   }
 
   const animateSweep = () => {
-    // Increment angle clockwise
-    currentSweepAngle = (currentSweepAngle + SWEEP_SPEED_DPS) % 360;
+    // If arc-sync provides a sweep head azimuth for a partial scan, prefer that
+    // to align the visual sweep with incoming data. Otherwise, advance normally.
+    try {
+      const s = latestArcSyncState;
+      if (
+        s &&
+        typeof s.sweepAzimuth === "number" &&
+        s.sweepCoverageDeg > 0 &&
+        s.sweepCoverageDeg < 360
+      ) {
+        // Smoothly converge currentSweepAngle to reported sweepAzimuth to avoid jumps
+        const target = Number(s.sweepAzimuth) % 360;
+        let delta = ((target - currentSweepAngle + 540) % 360) - 180; // shortest signed delta
+        // Limit per-frame step to avoid instant jumps
+        const maxStep = Math.max(1.0, SWEEP_SPEED_DPS * 8);
+        if (Math.abs(delta) > maxStep) delta = Math.sign(delta) * maxStep;
+        currentSweepAngle = (currentSweepAngle + delta + 360) % 360;
+      } else {
+        // Increment angle clockwise
+        currentSweepAngle = (currentSweepAngle + SWEEP_SPEED_DPS) % 360;
+      }
+    } catch (e) {
+      currentSweepAngle = (currentSweepAngle + SWEEP_SPEED_DPS) % 360;
+    }
+
+    // Update pulse phase for simple mode
+    sweepPulsePhase = (sweepPulsePhase + 0.03) % (Math.PI * 2);
 
     // Update flash cycle for high dBZ
     flashCycleTime += 16; // ~60fps
@@ -8053,39 +11667,73 @@ function startSweepAnimation(map, site) {
 
     const features = [];
 
-    // Create smooth gradient trail using many thin wedge segments with no overlap
-    for (let i = 0; i < SWEEP_TRAIL_SEGMENTS; i++) {
-      const angleStep = SWEEP_TRAIL_LENGTH / SWEEP_TRAIL_SEGMENTS;
-      const startAngle = currentSweepAngle - i * angleStep;
-      const endAngle = currentSweepAngle - (i + 1) * angleStep; // No overlap - segments are adjacent
+    if (sweepMode === "simple") {
+      // Simple mode: Single line with distance-based fade and pulse
+      const numSegments = 60;
+      const lineCoords = [];
 
-      // Calculate opacity with smooth exponential falloff
-      const t = i / SWEEP_TRAIL_SEGMENTS;
-      const opacity = Math.pow(1 - t, 2.2) * 0.85;
+      for (let i = 0; i <= numSegments; i++) {
+        const ratio = i / numSegments;
+        const distance = SWEEP_RADIUS_KM * ratio;
 
-      // Create wedge polygon from center
-      const arcSteps = 40;
-      const wedgeCoords = [center];
-
-      // Add arc points from start to end angle with interpolation
-      for (let step = 0; step <= arcSteps; step++) {
-        const ratio = step / arcSteps;
-        const angle = startAngle * (1 - ratio) + endAngle * ratio;
         const point = turf.destination(
           turf.point(center),
-          SWEEP_RADIUS_KM,
-          angle,
+          distance,
+          currentSweepAngle,
           { units: "kilometers" },
         );
-        wedgeCoords.push(point.geometry.coordinates);
+        lineCoords.push(point.geometry.coordinates);
       }
 
-      // Close the polygon back to center
-      wedgeCoords.push(center);
+      // Calculate pulsing opacity (0.6 to 1.0)
+      const pulseValue = 0.7 + 0.3 * (Math.sin(sweepPulsePhase) * 0.5 + 0.5);
 
-      const wedge = turf.polygon([wedgeCoords]);
-      wedge.properties = { opacity: opacity };
-      features.push(wedge);
+      // Create line segments with distance fade
+      for (let i = 0; i < lineCoords.length - 1; i++) {
+        const ratio = i / (lineCoords.length - 1);
+        // Fade based on distance: stronger near center, fades at distance
+        const distanceFade = Math.pow(1 - ratio, 1.5);
+        const opacity = distanceFade * pulseValue;
+
+        const line = turf.lineString([lineCoords[i], lineCoords[i + 1]]);
+        line.properties = { opacity: opacity };
+        features.push(line);
+      }
+    } else {
+      // Full mode: Smooth gradient trail using many thin wedge segments
+      for (let i = 0; i < SWEEP_TRAIL_SEGMENTS; i++) {
+        const angleStep = SWEEP_TRAIL_LENGTH / SWEEP_TRAIL_SEGMENTS;
+        const startAngle = currentSweepAngle - i * angleStep;
+        const endAngle = currentSweepAngle - (i + 1) * angleStep;
+
+        // Calculate opacity with smooth exponential falloff
+        const t = i / SWEEP_TRAIL_SEGMENTS;
+        const opacity = Math.pow(1 - t, 2.2) * 0.85;
+
+        // Create wedge polygon from center
+        const arcSteps = 40;
+        const wedgeCoords = [center];
+
+        // Add arc points from start to end angle with interpolation
+        for (let step = 0; step <= arcSteps; step++) {
+          const ratio = step / arcSteps;
+          const angle = startAngle * (1 - ratio) + endAngle * ratio;
+          const point = turf.destination(
+            turf.point(center),
+            SWEEP_RADIUS_KM,
+            angle,
+            { units: "kilometers" },
+          );
+          wedgeCoords.push(point.geometry.coordinates);
+        }
+
+        // Close the polygon back to center
+        wedgeCoords.push(center);
+
+        const wedge = turf.polygon([wedgeCoords]);
+        wedge.properties = { opacity: opacity };
+        features.push(wedge);
+      }
     }
 
     map.getSource(sweepSourceId).setData({
@@ -8175,9 +11823,16 @@ function updateHighDBZFlash(map) {
 
   try {
     if (map.getLayer("radar-high-dbz-flash")) {
-      // Simple toggle between visible (0.5 opacity) and invisible (0 opacity)
-      const opacity = isFlashOn ? 0.5 : 0;
-      map.setPaintProperty("radar-high-dbz-flash", "fill-opacity", opacity);
+      // Compute smooth opacity matching shader (so geojson layer blends smoothly)
+      const nowMs = performance.now();
+      const period = Math.max(50, Number(HIGH_DBZ_FLASH_PERIOD_MS) || 1400);
+      const phase = ((nowMs % period) / period) * Math.PI * 2;
+      const smoothOpacity = 0.12 + 0.38 * (0.5 * (1 + Math.sin(phase))); // ~0.12-0.5
+      map.setPaintProperty(
+        "radar-high-dbz-flash",
+        "fill-opacity",
+        smoothOpacity,
+      );
     }
   } catch (e) {
     // Layer might not exist yet, skip
@@ -8201,6 +11856,32 @@ const MAX_PARALLEL_DOWNLOADS = 6;
  */
 async function fetchAvailableRadarFiles(siteId, product, date = new Date()) {
   const radarProduct = product || selectedRadarProduct;
+  const radarSource = selectedRadarDataSource || "level3";
+
+  if (radarSource === "level2") {
+    const level2Url = `https://radar-api-production-076b.up.railway.app/api/radar-level2-files/${siteId}?limit=500`;
+    console.time("fetch-file-list");
+    console.log(`📡 Fetching Level 2 radar file list from: ${level2Url}`);
+
+    try {
+      const response = await fetch(level2Url);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch Level 2 list (${response.status})`);
+      }
+      const payload = await response.json();
+      const files = (payload.files || []).map((entry) => ({
+        key: entry.key,
+        timestamp: new Date(entry.timestamp),
+      }));
+      files.sort((a, b) => a.timestamp - b.timestamp);
+      console.timeEnd("fetch-file-list");
+      console.log(`✅ Found ${files.length} Level 2 radar files`);
+      return files;
+    } catch (error) {
+      console.error("❌ Error fetching Level 2 radar file list:", error);
+      throw error;
+    }
+  }
 
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -8255,13 +11936,14 @@ async function fetchAvailableRadarFiles(siteId, product, date = new Date()) {
 async function downloadSingleFrame(site, file, index, total, product) {
   try {
     const radarProduct = product || selectedRadarProduct;
+    const radarSource = selectedRadarDataSource || "level3";
 
     const response = await fetch(
-      `http://127.0.0.1:5100/api/radar-webgl/${
+      `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${
         site.id
-      }?product=${radarProduct}&format=binary&key=${encodeURIComponent(
-        file.key,
-      )}`,
+      }?product=${radarProduct}&source=${encodeURIComponent(
+        radarSource,
+      )}&format=binary&key=${encodeURIComponent(file.key)}`,
       {
         cache: "force-cache",
       },
@@ -8546,11 +12228,21 @@ function displayFrameFast(frameIndex) {
     }
   }
 
-  updateAllProbes();
+  updateAllProbesThrottled();
 
   document.getElementById("currentFrame").textContent = frameIndex + 1;
 
-  updateRadarInfoWithTimestamp(selectedRadarSite, frame.timestamp);
+  if (dataMode === "hrrr") {
+    if (frame.meta) {
+      currentHRRRMeta = frame.meta;
+      if (typeof frame.meta.forecastHour === "number") {
+        selectedHRRRForecastHour = frame.meta.forecastHour;
+      }
+    }
+    updateHRRRTimeCard(currentHRRRMeta);
+  } else {
+    updateRadarInfoWithTimestamp(selectedRadarSite, frame.timestamp);
+  }
 }
 
 /**
@@ -8640,17 +12332,23 @@ function stopLoop() {
 
 function setPlayPauseButtonState(isPlaying) {
   const playPauseBtn = document.getElementById("playPauseBtn");
-  if (!playPauseBtn) return;
+  const modelPlayPauseBtn = document.getElementById("hrrrToggleLoopBtn");
 
   const iconName = isPlaying ? "pause" : "play";
   const label = isPlaying ? "Pause" : "Play";
 
-  playPauseBtn.innerHTML = `<i data-lucide="${iconName}"></i>`;
-  playPauseBtn.title = label;
-  playPauseBtn.setAttribute("aria-label", label);
+  if (playPauseBtn) {
+    playPauseBtn.innerHTML = `<i data-lucide="${iconName}"></i>`;
+    playPauseBtn.title = label;
+    playPauseBtn.setAttribute("aria-label", label);
+  }
 
   if (window.lucide && typeof window.lucide.createIcons === "function") {
     window.lucide.createIcons();
+  }
+
+  if (modelPlayPauseBtn) {
+    modelPlayPauseBtn.textContent = isPlaying ? "Pause" : "Play";
   }
 }
 
@@ -9783,10 +13481,29 @@ function removeProbe(probeId) {
  * Update all probe values (called when radar data changes)
  */
 function updateAllProbes() {
+  if (!probeMarkers || probeMarkers.length === 0) {
+    return;
+  }
   probeMarkers.forEach((probe) => {
     const newValue = sampleRadarAtPoint(probe.lngLat.lng, probe.lngLat.lat);
     updateProbePopup(probe, newValue);
   });
+}
+
+function updateAllProbesThrottled(force = false) {
+  if (force) {
+    lastProbeUpdateTs = performance.now();
+    updateAllProbes();
+    return;
+  }
+
+  const now = performance.now();
+  if (now - lastProbeUpdateTs < PROBE_UPDATE_MIN_INTERVAL_MS) {
+    return;
+  }
+
+  lastProbeUpdateTs = now;
+  updateAllProbes();
 }
 
 document.getElementById("enable3DTilt").addEventListener("change", (e) => {
@@ -9800,7 +13517,28 @@ document.getElementById("enable3DTilt").addEventListener("change", (e) => {
   }
 
   console.log(`3D Tilt Mode: ${enable3DTilt ? "ENABLED" : "DISABLED"}`);
+  saveUserSettings();
 });
+
+// Load persisted user settings and apply to controls
+try {
+  loadUserSettings();
+  const enableFlashEl = document.getElementById("enableAlertFlashing");
+  if (enableFlashEl) enableFlashEl.checked = !!enableAlertFlashing;
+  const sweepModeEl = document.getElementById("sweepMode");
+  if (sweepModeEl) sweepModeEl.value = sweepMode;
+  const tiltEl = document.getElementById("tiltExaggeration");
+  if (tiltEl) tiltEl.value = tiltExaggeration;
+  const beamEl = document.getElementById("beamElevation");
+  if (beamEl) beamEl.value = beamElevationAngle;
+  const shadowsEl = document.getElementById("enableShadows");
+  if (shadowsEl) shadowsEl.checked = !!enableShadows;
+  const shadowOpacityEl = document.getElementById("shadowOpacity");
+  if (shadowOpacityEl)
+    shadowOpacityEl.value = Math.round((shadowOpacity || 0) * 100);
+} catch (e) {
+  console.warn("Error applying saved settings:", e);
+}
 
 document.getElementById("beamElevation").addEventListener("input", (e) => {
   beamElevationAngle = parseFloat(e.target.value);
@@ -9810,6 +13548,7 @@ document.getElementById("beamElevation").addEventListener("input", (e) => {
   if (mapInstance) {
     mapInstance.triggerRepaint();
   }
+  saveUserSettings();
 });
 
 document.getElementById("tiltExaggeration").addEventListener("input", (e) => {
@@ -9820,6 +13559,7 @@ document.getElementById("tiltExaggeration").addEventListener("input", (e) => {
   if (mapInstance) {
     mapInstance.triggerRepaint();
   }
+  saveUserSettings();
 });
 
 document.getElementById("enableShadows").addEventListener("change", (e) => {
@@ -9830,6 +13570,7 @@ document.getElementById("enableShadows").addEventListener("change", (e) => {
   }
 
   console.log(`Shadows: ${enableShadows ? "ENABLED" : "DISABLED"}`);
+  saveUserSettings();
 });
 
 document.getElementById("shadowOpacity").addEventListener("input", (e) => {
@@ -9840,6 +13581,22 @@ document.getElementById("shadowOpacity").addEventListener("input", (e) => {
   if (mapInstance) {
     mapInstance.triggerRepaint();
   }
+  saveUserSettings();
+});
+
+document.getElementById("sweepMode").addEventListener("change", (e) => {
+  sweepMode = e.target.value;
+  console.log(`Sweep Mode: ${sweepMode}`);
+
+  // Restart sweep animation with new mode
+  if (mapInstance && selectedRadarSite && dataMode === "radar") {
+    if (sweepMode === "disabled") {
+      stopSweepAnimation(mapInstance);
+    } else {
+      startSweepAnimation(mapInstance, selectedRadarSite);
+    }
+  }
+  saveUserSettings();
 });
 
 document
@@ -9861,6 +13618,7 @@ document
       });
       console.log("Alert flashing: DISABLED");
     }
+    saveUserSettings();
   });
 
 console.log("Setting up playPauseBtn event listener");
@@ -9922,8 +13680,15 @@ if (probeToggleBtn) {
 
 const smoothingToggle = document.getElementById("enableSmoothing");
 if (smoothingToggle) {
+  radarSmoothingPreference = smoothingToggle.checked;
   smoothingToggle.addEventListener("change", (e) => {
-    enableSmoothing = e.target.checked;
+    if (dataMode === "hrrr") {
+      e.target.checked = true;
+      return;
+    }
+
+    radarSmoothingPreference = e.target.checked;
+    enableSmoothing = radarSmoothingPreference;
     console.log(`Smoothing: ${enableSmoothing ? "ENABLED" : "DISABLED"}`);
 
     if (
@@ -9938,4 +13703,30 @@ if (smoothingToggle) {
   console.log("Smoothing toggle event listener added");
 } else {
   console.warn("Smoothing toggle not found");
+}
+
+const arcSyncToggle = document.getElementById("arcSyncToggle");
+if (arcSyncToggle) {
+  arcSyncToggle.checked = arcSyncEnabled;
+  updateArcSyncToggleState();
+  arcSyncToggle.addEventListener("change", (e) => {
+    arcSyncEnabled = Boolean(e.target.checked);
+    stopArcSyncStream();
+    updateArcSyncToggleState();
+    if (!arcSyncEnabled) {
+      lastRadarKey = null;
+    }
+
+    if (dataMode === "radar" && selectedRadarSite && !isArchiveMode) {
+      startRadarPolling(
+        mapInstance,
+        selectedRadarSite,
+        selectedRadarProduct,
+        selectedRadarDataSource,
+      );
+    }
+  });
+  console.log("Arc-Sync toggle event listener added");
+} else {
+  console.warn("Arc-Sync toggle not found");
 }

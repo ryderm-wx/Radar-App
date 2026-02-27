@@ -1,0 +1,4425 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.88645,
+          36.008532
+        ]
+      },
+      "properties": {
+        "id": 2,
+        "locationName": "727014",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/2/snap-1764192583.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:29:46.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192583.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85938054,
+          36.081295788
+        ]
+      },
+      "properties": {
+        "id": 3,
+        "locationName": "727103",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/3/snap-1764194960.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:09:23.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194960.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.859933,
+          36.113758
+        ]
+      },
+      "properties": {
+        "id": 4,
+        "locationName": "727068",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/4/snap-1764195546.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:19:10.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195546.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.918016,
+          36.098066
+        ]
+      },
+      "properties": {
+        "id": 5,
+        "locationName": "727098",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/5/snap-1764194905.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:08:28.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194905.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.873481,
+          36.102857
+        ]
+      },
+      "properties": {
+        "id": 6,
+        "locationName": "727104",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/6/snap-1764194307.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:58:30.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194307.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.83913,
+          36.154064
+        ]
+      },
+      "properties": {
+        "id": 7,
+        "locationName": "727019",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/7/snap-1764196002.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:26:46.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196002.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.81500624,
+          36.162403609
+        ]
+      },
+      "properties": {
+        "id": 8,
+        "locationName": "667105",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/8/snap-1764193472.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:44:39.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193472.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.84284525,
+          36.16647268
+        ]
+      },
+      "properties": {
+        "id": 9,
+        "locationName": "727090",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/9/snap-1764192344.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T21:25:48.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192344.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.011541,
+          36.00058
+        ]
+      },
+      "properties": {
+        "id": 10,
+        "locationName": "727011",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/10/snap-1764194965.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:09:29.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194965.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.00653225,
+          36.06839983
+        ]
+      },
+      "properties": {
+        "id": 11,
+        "locationName": "727102",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/11/snap-1764195804.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T22:23:27.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195804.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.0247836,
+          36.101541534
+        ]
+      },
+      "properties": {
+        "id": 12,
+        "locationName": "727100",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/12/snap-1764194569.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:02:53.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194569.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.06746,
+          36.065198
+        ]
+      },
+      "properties": {
+        "id": 13,
+        "locationName": "197009",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/13/snap-1764151221.jpg",
+        "temperature": 37,
+        "pictureTime": "2025-11-26T10:00:29.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764151221.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.00728623,
+          36.100018871
+        ]
+      },
+      "properties": {
+        "id": 14,
+        "locationName": "727101",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/14/snap-1758680823.jpg",
+        "temperature": 74,
+        "pictureTime": "2025-09-24T02:27:07.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1758680823.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.99357506,
+          36.144553154
+        ]
+      },
+      "properties": {
+        "id": 15,
+        "locationName": "727093",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/15/snap-1764195752.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:22:36.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195752.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.008202,
+          36.134564
+        ]
+      },
+      "properties": {
+        "id": 16,
+        "locationName": "727063",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/16/snap-1719201317.jpg",
+        "temperature": 91,
+        "pictureTime": "2024-06-24T03:55:20.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1719201317.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.851645,
+          36.191865
+        ]
+      },
+      "properties": {
+        "id": 17,
+        "locationName": "727010",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/17/snap-1764193186.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:39:49.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193186.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.87620566,
+          36.127870364
+        ]
+      },
+      "properties": {
+        "id": 18,
+        "locationName": "727097",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/18/snap-1764194392.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:59:55.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194392.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.933405,
+          36.159375
+        ]
+      },
+      "properties": {
+        "id": 19,
+        "locationName": "727064",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/19/snap-1763833168.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-22T17:39:32.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1763833168.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.845791,
+          36.220498
+        ]
+      },
+      "properties": {
+        "id": 20,
+        "locationName": "727012",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/20/snap-1764195190.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T22:13:13.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195190.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.9655132,
+          36.182053938
+        ]
+      },
+      "properties": {
+        "id": 22,
+        "locationName": "727092",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/22/snap-1747642105.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-05-19T08:08:32.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642105.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.98024348,
+          36.154450963
+        ]
+      },
+      "properties": {
+        "id": 23,
+        "locationName": "727094",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/23/snap-1764195834.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:23:58.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195834.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.118403,
+          36.093075
+        ]
+      },
+      "properties": {
+        "id": 24,
+        "locationName": "727013",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/24/snap-1764195920.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:25:23.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195920.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.326952515,
+          36.441469137
+        ]
+      },
+      "properties": {
+        "id": 25,
+        "locationName": "527121",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/25/snap-1764193122.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T21:38:46.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193122.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.357049,
+          36.695319
+        ]
+      },
+      "properties": {
+        "id": 26,
+        "locationName": "367016",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/26/snap-1764193252.jpg",
+        "temperature": 48,
+        "pictureTime": "2025-11-26T21:40:56.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193252.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.345729,
+          36.74622
+        ]
+      },
+      "properties": {
+        "id": 27,
+        "locationName": "367527",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/27/snap-1764195620.jpg",
+        "temperature": 47,
+        "pictureTime": "2025-11-26T22:20:24.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195620.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.982348,
+          36.676737
+        ]
+      },
+      "properties": {
+        "id": 28,
+        "locationName": "577041",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/28/snap-1764195648.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T22:20:51.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195648.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.343224,
+          36.996934
+        ]
+      },
+      "properties": {
+        "id": 29,
+        "locationName": "367031",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/29/snap-1764192875.jpg",
+        "temperature": 48,
+        "pictureTime": "2025-11-26T21:34:39.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192875.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.58495929,
+          35.616254881
+        ]
+      },
+      "properties": {
+        "id": 30,
+        "locationName": "557120",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/30/snap-1764192719.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:32:02.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192719.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.42474029,
+          35.630690243
+        ]
+      },
+      "properties": {
+        "id": 31,
+        "locationName": "557107",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/31/snap-1764194649.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:04:13.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194649.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.503496,
+          35.509249
+        ]
+      },
+      "properties": {
+        "id": 32,
+        "locationName": "557118",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/32/snap-1764194574.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:02:58.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194574.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.584663,
+          35.720562
+        ]
+      },
+      "properties": {
+        "id": 33,
+        "locationName": "557071",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/33/snap-1764193482.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:44:46.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193482.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.575943,
+          35.547179
+        ]
+      },
+      "properties": {
+        "id": 34,
+        "locationName": "557065",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/34/snap-1764194641.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:04:04.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194641.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.51035374,
+          35.483812585
+        ]
+      },
+      "properties": {
+        "id": 35,
+        "locationName": "557111",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/35/snap-1764194941.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:09:04.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194941.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.54383532,
+          35.518298374
+        ]
+      },
+      "properties": {
+        "id": 36,
+        "locationName": "557113",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/36/snap-1764193415.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:43:42.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193415.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.61352914,
+          35.5470194
+        ]
+      },
+      "properties": {
+        "id": 37,
+        "locationName": "557119",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/37/snap-1764195258.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:14:21.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195258.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.58805,
+          35.511223
+        ]
+      },
+      "properties": {
+        "id": 38,
+        "locationName": "557006",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/38/snap-1764195858.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:24:25.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195858.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.832111,
+          35.50067
+        ]
+      },
+      "properties": {
+        "id": 39,
+        "locationName": "097528",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/39/snap-1764194287.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:58:10.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194287.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.578517,
+          35.497796
+        ]
+      },
+      "properties": {
+        "id": 40,
+        "locationName": "557112",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/40/snap-1764195493.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:18:17.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195493.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.53914429,
+          35.391622051
+        ]
+      },
+      "properties": {
+        "id": 41,
+        "locationName": "557061",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/41/snap-1760788462.jpg",
+        "temperature": 70,
+        "pictureTime": "2025-10-18T11:54:28.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1760788462.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57399164,
+          35.384538701
+        ]
+      },
+      "properties": {
+        "id": 42,
+        "locationName": "557114",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/42/snap-1764194290.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:58:14.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194290.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.410023,
+          35.170749
+        ]
+      },
+      "properties": {
+        "id": 43,
+        "locationName": "147002",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/43/snap-1764195503.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:18:27.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195503.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49493757,
+          35.370636617
+        ]
+      },
+      "properties": {
+        "id": 44,
+        "locationName": "147069",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/44/snap-1764194128.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:55:31.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194128.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.569755,
+          35.441676
+        ]
+      },
+      "properties": {
+        "id": 45,
+        "locationName": "557023",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/45/snap-1764195592.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:19:56.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195592.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48694537,
+          35.462165681
+        ]
+      },
+      "properties": {
+        "id": 46,
+        "locationName": "557109",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/46/snap-1764195392.jpg",
+        "temperature": 74,
+        "pictureTime": "2025-11-26T22:16:36.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195392.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48543221,
+          35.243395128
+        ]
+      },
+      "properties": {
+        "id": 47,
+        "locationName": "147116",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/47/snap-1764194374.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:59:37.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194374.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.449054,
+          35.391216
+        ]
+      },
+      "properties": {
+        "id": 49,
+        "locationName": "557503",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/49/snap-1764192801.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:33:25.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192801.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.75943433,
+          36.184083659
+        ]
+      },
+      "properties": {
+        "id": 50,
+        "locationName": "667089",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/50/snap-1764192467.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T21:27:51.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192467.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.240541,
+          36.628594
+        ]
+      },
+      "properties": {
+        "id": 51,
+        "locationName": "187042",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/51/snap-1764196155.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T22:29:19.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196155.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.281641,
+          36.612279
+        ]
+      },
+      "properties": {
+        "id": 52,
+        "locationName": "187043",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/52/snap-1764192927.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T21:35:33.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192927.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.28380544,
+          36.404006854
+        ]
+      },
+      "properties": {
+        "id": 53,
+        "locationName": "497085",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/53/snap-1764194133.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T21:55:36.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194133.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.364597,
+          36.074065
+        ]
+      },
+      "properties": {
+        "id": 54,
+        "locationName": "737505",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/54/snap-1747642093.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-05-19T08:08:16.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642093.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.144706,
+          36.116183
+        ]
+      },
+      "properties": {
+        "id": 55,
+        "locationName": "607032",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/55/snap-1764194818.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T22:07:06.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194818.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.12268827,
+          35.798251722
+        ]
+      },
+      "properties": {
+        "id": 56,
+        "locationName": "117078",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/56/snap-1764053436.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-25T06:50:43.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764053436.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.625876,
+          35.771109
+        ]
+      },
+      "properties": {
+        "id": 57,
+        "locationName": "017044",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/57/snap-1762649185.jpg",
+        "temperature": 64,
+        "pictureTime": "2025-11-09T00:46:32.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1762649185.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.742733,
+          35.445802
+        ]
+      },
+      "properties": {
+        "id": 58,
+        "locationName": "687529",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/58/snap-1764193532.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:45:40.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193532.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.309667,
+          35.533543
+        ]
+      },
+      "properties": {
+        "id": 59,
+        "locationName": "517021",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/59/snap-1764193133.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:38:57.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193133.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.463849,
+          35.626048
+        ]
+      },
+      "properties": {
+        "id": 60,
+        "locationName": "517030",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/60/snap-1764193837.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:50:40.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193837.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.823969,
+          36.083363
+        ]
+      },
+      "properties": {
+        "id": 61,
+        "locationName": "727025",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/61/snap-1764194661.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T22:04:25.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194661.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.465942,
+          35.474792
+        ]
+      },
+      "properties": {
+        "id": 62,
+        "locationName": "557056",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/62/snap-1764194582.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:03:05.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194582.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.935272,
+          36.636906
+        ]
+      },
+      "properties": {
+        "id": 63,
+        "locationName": "747501",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/63/snap-1764196031.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:27:15.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196031.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.912091,
+          35.407804
+        ]
+      },
+      "properties": {
+        "id": 65,
+        "locationName": "637070",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/65/snap-1764194387.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:59:51.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194387.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.961864,
+          35.664581
+        ]
+      },
+      "properties": {
+        "id": 66,
+        "locationName": "567035",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/66/snap-1764193230.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:40:34.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193230.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.416162,
+          35.733785
+        ]
+      },
+      "properties": {
+        "id": 67,
+        "locationName": "427504",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/67/snap-1764195844.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:24:12.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195844.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.446692,
+          35.181552
+        ]
+      },
+      "properties": {
+        "id": 68,
+        "locationName": "147003",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/68/snap-1764195206.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:13:30.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195206.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.868845,
+          35.985914
+        ]
+      },
+      "properties": {
+        "id": 69,
+        "locationName": "607040",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/69/snap-1764192341.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:25:44.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192341.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.837737,
+          35.709654
+        ]
+      },
+      "properties": {
+        "id": 70,
+        "locationName": "417047",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/70/snap-1764196159.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:29:23.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196159.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7817036,
+          35.383854981
+        ]
+      },
+      "properties": {
+        "id": 71,
+        "locationName": "637087",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/71/snap-1764193745.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:49:13.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193745.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.278181,
+          35.398339
+        ]
+      },
+      "properties": {
+        "id": 72,
+        "locationName": "557067",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/72/snap-1764193124.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:38:47.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193124.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.487461,
+          35.534553
+        ]
+      },
+      "properties": {
+        "id": 76,
+        "locationName": "557026",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/76/snap-1764193203.jpg",
+        "temperature": 54,
+        "pictureTime": "2025-11-26T21:40:07.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193203.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.503717,
+          35.460305
+        ]
+      },
+      "properties": {
+        "id": 77,
+        "locationName": "557072",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/77/snap-1764195094.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:11:42.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195094.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.45753343,
+          35.545806628
+        ]
+      },
+      "properties": {
+        "id": 78,
+        "locationName": "557108",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/78/snap-1764195431.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:17:19.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195431.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.884595,
+          36.172032
+        ]
+      },
+      "properties": {
+        "id": 79,
+        "locationName": "727091",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/79/snap-1764194970.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T22:09:33.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194970.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.077904,
+          36.145004
+        ]
+      },
+      "properties": {
+        "id": 80,
+        "locationName": "727018",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/80/snap-1764195035.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:10:43.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195035.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.902594,
+          34.942427
+        ]
+      },
+      "properties": {
+        "id": 81,
+        "locationName": "617051",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/81/snap-1764195393.jpg",
+        "temperature": 54,
+        "pictureTime": "2025-11-26T22:16:42.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195393.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.142872,
+          35.239666
+        ]
+      },
+      "properties": {
+        "id": 82,
+        "locationName": "327050",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/82/snap-1747642255.jpg",
+        "temperature": 55,
+        "pictureTime": "2025-05-19T08:10:59.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642255.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.70518,
+          35.068675
+        ]
+      },
+      "properties": {
+        "id": 83,
+        "locationName": "617510",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/83/snap-1764194345.jpg",
+        "temperature": 54,
+        "pictureTime": "2025-11-26T21:59:14.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194345.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.614706,
+          35.10529
+        ]
+      },
+      "properties": {
+        "id": 84,
+        "locationName": "407522",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/84/snap-1764195606.jpg",
+        "temperature": 55,
+        "pictureTime": "2025-11-26T22:20:16.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195606.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.49437724,
+          33.998194077
+        ]
+      },
+      "properties": {
+        "id": 86,
+        "locationName": "077084",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/86/snap-1764194412.jpg",
+        "temperature": 59,
+        "pictureTime": "2025-11-26T22:00:20.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194412.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.52007863,
+          33.838155244
+        ]
+      },
+      "properties": {
+        "id": 87,
+        "locationName": "077521",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/87/snap-1764195352.jpg",
+        "temperature": 58,
+        "pictureTime": "2025-11-26T22:16:00.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195352.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.674944,
+          35.192057
+        ]
+      },
+      "properties": {
+        "id": 88,
+        "locationName": "677053",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/88/snap-1764194728.jpg",
+        "temperature": 54,
+        "pictureTime": "2025-11-26T22:05:36.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194728.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.74884957,
+          34.806456085
+        ]
+      },
+      "properties": {
+        "id": 89,
+        "locationName": "627079",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/89/snap-1764195288.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:14:55.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195288.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.289381,
+          35.493143
+        ]
+      },
+      "properties": {
+        "id": 90,
+        "locationName": "557005",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/90/snap-1764194613.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:03:36.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194613.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.953694,
+          35.281686
+        ]
+      },
+      "properties": {
+        "id": 91,
+        "locationName": "267033",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/91/snap-1764194984.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T22:09:53.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194984.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.63078372,
+          35.421098035
+        ]
+      },
+      "properties": {
+        "id": 92,
+        "locationName": "557115",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/92/snap-1764194024.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:53:48.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194024.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.734781,
+          35.391728
+        ]
+      },
+      "properties": {
+        "id": 93,
+        "locationName": "097004",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/93/snap-1764196142.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:29:05.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196142.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.65323251,
+          35.162213133
+        ]
+      },
+      "properties": {
+        "id": 94,
+        "locationName": "447077",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/94/snap-1764194095.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:54:58.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194095.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.59207978,
+          35.182166342
+        ]
+      },
+      "properties": {
+        "id": 95,
+        "locationName": "447082",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/95/snap-1764194292.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:58:16.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194292.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.066686794,
+          35.086156442
+        ]
+      },
+      "properties": {
+        "id": 96,
+        "locationName": "267081",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/96/snap-1747642147.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-05-19T08:09:10.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642147.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.961404,
+          35.097382
+        ]
+      },
+      "properties": {
+        "id": 97,
+        "locationName": "267055",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/97/snap-1764194051.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:54:14.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194051.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.958095,
+          34.730346
+        ]
+      },
+      "properties": {
+        "id": 98,
+        "locationName": "267511",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/98/snap-1764195590.jpg",
+        "temperature": -40,
+        "pictureTime": "2025-11-26T22:19:53.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195590.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.345225925,
+          36.035376695
+        ]
+      },
+      "properties": {
+        "id": 99,
+        "locationName": "607122",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/99/snap-1764192326.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T21:25:29.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192326.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.395454,
+          34.637613
+        ]
+      },
+      "properties": {
+        "id": 100,
+        "locationName": "337017",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/100/snap-1764194373.jpg",
+        "temperature": 56,
+        "pictureTime": "2025-11-26T21:59:36.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194373.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.655226,
+          34.637947
+        ]
+      },
+      "properties": {
+        "id": 101,
+        "locationName": "167518",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/101/snap-1764196125.jpg",
+        "temperature": 59,
+        "pictureTime": "2025-11-26T22:28:48.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196125.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.377128,
+          34.601433
+        ]
+      },
+      "properties": {
+        "id": 102,
+        "locationName": "167015",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/102/snap-1764194911.jpg",
+        "temperature": 58,
+        "pictureTime": "2025-11-26T22:08:34.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194911.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.527094,
+          34.112868
+        ]
+      },
+      "properties": {
+        "id": 103,
+        "locationName": "177036",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/103/snap-1764194917.jpg",
+        "temperature": 60,
+        "pictureTime": "2025-11-26T22:08:41.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194917.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.835484,
+          33.896244
+        ]
+      },
+      "properties": {
+        "id": 104,
+        "locationName": "487076",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/104/snap-1764195371.jpg",
+        "temperature": 63,
+        "pictureTime": "2025-11-26T22:16:19.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195371.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.153723,
+          33.733158
+        ]
+      },
+      "properties": {
+        "id": 105,
+        "locationName": "437028",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/105/snap-1706713551.jpg",
+        "temperature": 58,
+        "pictureTime": "2024-01-31T15:06:03.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1706713551.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.927322,
+          34.158367
+        ]
+      },
+      "properties": {
+        "id": 106,
+        "locationName": "347049",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/106/snap-1764194903.jpg",
+        "temperature": 62,
+        "pictureTime": "2025-11-26T22:08:27.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194903.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.982231,
+          34.187334
+        ]
+      },
+      "properties": {
+        "id": 107,
+        "locationName": "347048",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/107/snap-1764194676.jpg",
+        "temperature": 63,
+        "pictureTime": "2025-11-26T22:04:40.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194676.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.49735235,
+          33.885869524
+        ]
+      },
+      "properties": {
+        "id": 108,
+        "locationName": "127083",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/108/snap-1764195341.jpg",
+        "temperature": 63,
+        "pictureTime": "2025-11-26T22:15:48.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195341.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.14685,
+          34.462906
+        ]
+      },
+      "properties": {
+        "id": 109,
+        "locationName": "507502",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/109/snap-1747642136.jpg",
+        "temperature": 57,
+        "pictureTime": "2025-05-19T08:09:00.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642136.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.851394,
+          36.116521
+        ]
+      },
+      "properties": {
+        "id": 111,
+        "locationName": "377039",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/111/snap-1764193164.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T21:39:28.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193164.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.872704,
+          36.536745
+        ]
+      },
+      "properties": {
+        "id": 112,
+        "locationName": "247034",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/112/snap-1764194190.jpg",
+        "temperature": 48,
+        "pictureTime": "2025-11-26T21:56:38.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194190.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.274046,
+          36.391222
+        ]
+      },
+      "properties": {
+        "id": 113,
+        "locationName": "477523",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/113/snap-1764192563.jpg",
+        "temperature": 48,
+        "pictureTime": "2025-11-26T21:29:27.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192563.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.479747,
+          36.328963
+        ]
+      },
+      "properties": {
+        "id": 114,
+        "locationName": "477057",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/114/snap-1764195765.jpg",
+        "temperature": 48,
+        "pictureTime": "2025-11-26T22:22:49.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195765.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.800576,
+          36.797782
+        ]
+      },
+      "properties": {
+        "id": 115,
+        "locationName": "767038",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/115/snap-1764193474.jpg",
+        "temperature": 46,
+        "pictureTime": "2025-11-26T21:44:44.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193474.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.92419246,
+          36.119967643
+        ]
+      },
+      "properties": {
+        "id": 116,
+        "locationName": "727096",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/116/snap-1764194665.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:04:31.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194665.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.517409,
+          36.810189
+        ]
+      },
+      "properties": {
+        "id": 117,
+        "locationName": "137525",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/117/snap-1764194381.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:59:44.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194381.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.344219,
+          36.768273
+        ]
+      },
+      "properties": {
+        "id": 118,
+        "locationName": "707058",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/118/snap-1764192335.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T21:25:39.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192335.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.205987,
+          36.634517
+        ]
+      },
+      "properties": {
+        "id": 119,
+        "locationName": "707059",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/119/snap-1764194024.jpg",
+        "temperature": 57,
+        "pictureTime": "2025-11-26T21:53:48.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194024.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.298782,
+          36.36257
+        ]
+      },
+      "properties": {
+        "id": 120,
+        "locationName": "777027",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/120/snap-1764195900.jpg",
+        "temperature": 47,
+        "pictureTime": "2025-11-26T22:25:10.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195900.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.675184,
+          35.407319
+        ]
+      },
+      "properties": {
+        "id": 121,
+        "locationName": "057074",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/121/snap-1764195514.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:18:38.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195514.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.346853,
+          35.421399
+        ]
+      },
+      "properties": {
+        "id": 122,
+        "locationName": "757514",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/122/snap-1764195499.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T22:18:25.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195499.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.01558,
+          35.291316
+        ]
+      },
+      "properties": {
+        "id": 123,
+        "locationName": "757037",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/123/snap-1764194680.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:04:43.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194680.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.37375192,
+          35.529132224
+        ]
+      },
+      "properties": {
+        "id": 124,
+        "locationName": "087086",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/124/snap-1764195862.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T22:24:27.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195862.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.470341,
+          35.117331
+        ]
+      },
+      "properties": {
+        "id": 125,
+        "locationName": "087060",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/125/snap-1764194921.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T22:08:44.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194921.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.723979,
+          35.298823927
+        ]
+      },
+      "properties": {
+        "id": 126,
+        "locationName": "267080",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/126/snap-1764195234.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T22:13:57.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195234.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.468251,
+          35.841311
+        ]
+      },
+      "properties": {
+        "id": 127,
+        "locationName": "067507",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/127/snap-1764195538.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T22:19:02.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195538.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.383615,
+          36.170296
+        ]
+      },
+      "properties": {
+        "id": 128,
+        "locationName": "497516",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/128/snap-1764196113.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T22:28:37.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196113.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.998733,
+          35.226867
+        ]
+      },
+      "properties": {
+        "id": 131,
+        "locationName": "057054",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/131/snap-1764193255.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:41:01.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193255.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.514225,
+          35.574836
+        ]
+      },
+      "properties": {
+        "id": 132,
+        "locationName": "557024",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/132/snap-1764195056.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:11:04.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195056.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.98383989,
+          35.370346129
+        ]
+      },
+      "properties": {
+        "id": 134,
+        "locationName": "637123",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/134/snap-1764195256.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:14:19.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195256.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.314371,
+          35.037862
+        ]
+      },
+      "properties": {
+        "id": 135,
+        "locationName": "397045",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/135/snap-1764195026.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:10:35.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195026.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48640183,
+          35.462896711
+        ]
+      },
+      "properties": {
+        "id": 136,
+        "locationName": "557110",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/136/snap-1764195109.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:11:52.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195109.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.21294,
+          34.7207
+        ]
+      },
+      "properties": {
+        "id": 137,
+        "locationName": "257022",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/137/snap-1764195846.jpg",
+        "temperature": 56,
+        "pictureTime": "2025-11-26T22:24:09.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195846.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.36861642,
+          34.954956939
+        ]
+      },
+      "properties": {
+        "id": 138,
+        "locationName": "447088",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/138/snap-1764195465.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:17:49.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195465.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.123401,
+          34.534063
+        ]
+      },
+      "properties": {
+        "id": 139,
+        "locationName": "507046",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/139/snap-1764193145.jpg",
+        "temperature": 59,
+        "pictureTime": "2025-11-26T21:39:11.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193145.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.233324,
+          34.550147
+        ]
+      },
+      "properties": {
+        "id": 141,
+        "locationName": "157052",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/141/snap-1764193508.jpg",
+        "temperature": 57,
+        "pictureTime": "2025-11-26T21:45:16.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193508.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.692414,
+          34.75817
+        ]
+      },
+      "properties": {
+        "id": 142,
+        "locationName": "627509",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/142/snap-1764195357.jpg",
+        "temperature": 54,
+        "pictureTime": "2025-11-26T22:16:05.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195357.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.6104684,
+          35.460018994
+        ]
+      },
+      "properties": {
+        "id": 143,
+        "locationName": "557007",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/143/snap-1764192849.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:34:16.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192849.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.535011,
+          35.334272
+        ]
+      },
+      "properties": {
+        "id": 144,
+        "locationName": "147001",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/144/snap-1764194317.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:58:41.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194317.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.36108547,
+          35.428333818
+        ]
+      },
+      "properties": {
+        "id": 145,
+        "locationName": "557117",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/145/snap-1698958488.jpg",
+        "temperature": 56,
+        "pictureTime": "2023-11-02T20:54:54.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1698958488.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.317917,
+          36.144628336
+        ]
+      },
+      "properties": {
+        "id": 146,
+        "locationName": "227075",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/146/snap-1764194094.jpg",
+        "temperature": 47,
+        "pictureTime": "2025-11-26T21:54:58.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194094.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.415171,
+          35.439393
+        ]
+      },
+      "properties": {
+        "id": 147,
+        "locationName": "557008",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/147/snap-1764193062.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:37:49.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193062.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.92376547,
+          36.27151121
+        ]
+      },
+      "properties": {
+        "id": 148,
+        "locationName": "727106",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/148/snap-1764195479.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:18:02.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195479.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.92419246,
+          36.119967643
+        ]
+      },
+      "properties": {
+        "id": 149,
+        "locationName": "727095",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/149/snap-1764193941.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:52:25.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193941.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.39997,
+          34.000052
+        ]
+      },
+      "properties": {
+        "id": 150,
+        "locationName": "127062",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/150/snap-1764195525.jpg",
+        "temperature": 58,
+        "pictureTime": "2025-11-26T22:18:51.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195525.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.267711,
+          34.141403
+        ]
+      },
+      "properties": {
+        "id": 151,
+        "locationName": "077029",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/151/snap-1758905487.jpg",
+        "temperature": 58,
+        "pictureTime": "2025-09-26T16:51:38.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1758905487.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.156395,
+          34.122513
+        ]
+      },
+      "properties": {
+        "id": 152,
+        "locationName": "107125",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/152/snap-1764195831.jpg",
+        "temperature": 59,
+        "pictureTime": "2025-11-26T22:23:54.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195831.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.558252,
+          35.458412
+        ]
+      },
+      "properties": {
+        "id": 153,
+        "locationName": "467127",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/153/snap-1764194002.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:53:28.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194002.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.109583,
+          34.40876
+        ]
+      },
+      "properties": {
+        "id": 154,
+        "locationName": "037124",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/154/snap-1764195290.jpg",
+        "temperature": 57,
+        "pictureTime": "2025-11-26T22:14:58.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195290.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.482005,
+          35.158434
+        ]
+      },
+      "properties": {
+        "id": 155,
+        "locationName": "447530",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/155/snap-1709130589.jpg",
+        "temperature": 29,
+        "pictureTime": "2024-02-28T14:29:55.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1709130589.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.033031,
+          36.08921
+        ]
+      },
+      "properties": {
+        "id": 156,
+        "locationName": "727099",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/156/snap-1764194800.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:06:47.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194800.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.490256,
+          35.312834
+        ]
+      },
+      "properties": {
+        "id": 157,
+        "locationName": "147126",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/157/snap-1764192636.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:30:40.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192636.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.678069,
+          35.460504
+        ]
+      },
+      "properties": {
+        "id": 158,
+        "locationName": "557066",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/158/snap-1747642368.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-05-19T08:12:54.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642368.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.22396,
+          35.38471
+        ]
+      },
+      "properties": {
+        "id": 160,
+        "locationName": "557130",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/160/snap-1764194069.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:54:32.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194069.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.500749,
+          35.603487
+        ]
+      },
+      "properties": {
+        "id": 161,
+        "locationName": "557132",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/161/snap-1764195856.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:24:20.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195856.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.50314,
+          35.18285
+        ]
+      },
+      "properties": {
+        "id": 162,
+        "locationName": "447133",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/162/snap-1764194480.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:01:23.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194480.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.48953,
+          35.45468
+        ]
+      },
+      "properties": {
+        "id": 163,
+        "locationName": "557129",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/163/snap-1764194000.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:53:23.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194000.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.002432,
+          36.151782
+        ]
+      },
+      "properties": {
+        "id": 167,
+        "locationName": "727128",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/167/snap-1764194661.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:04:25.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194661.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.69192,
+          35.515
+        ]
+      },
+      "properties": {
+        "id": 174,
+        "locationName": "097134",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/174/snap-1764195992.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:26:36.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195992.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.58543,
+          35.59885
+        ]
+      },
+      "properties": {
+        "id": 175,
+        "locationName": "557131",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/175/snap-1764193922.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:52:05.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193922.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.912125,
+          33.940282
+        ]
+      },
+      "properties": {
+        "id": 176,
+        "locationName": "457532",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/176/snap-1764193899.jpg",
+        "temperature": 67,
+        "pictureTime": "2025-11-26T21:51:43.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193899.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.739496,
+          34.10532
+        ]
+      },
+      "properties": {
+        "id": 177,
+        "locationName": "457138",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/177/snap-1764194373.jpg",
+        "temperature": 61,
+        "pictureTime": "2025-11-26T21:59:37.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194373.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.762561,
+          34.168648
+        ]
+      },
+      "properties": {
+        "id": 178,
+        "locationName": "457136",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/178/snap-1764192866.jpg",
+        "temperature": 58,
+        "pictureTime": "2025-11-26T21:34:30.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192866.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.763603,
+          36.057137
+        ]
+      },
+      "properties": {
+        "id": 179,
+        "locationName": "727141",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/179/snap-1764195470.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T22:17:54.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195470.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.973102,
+          36.143179
+        ]
+      },
+      "properties": {
+        "id": 180,
+        "locationName": "727140",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/180/snap-1764193225.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:40:29.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193225.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.931116,
+          36.19954
+        ]
+      },
+      "properties": {
+        "id": 181,
+        "locationName": "727139",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/181/snap-1764194528.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:02:12.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194528.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.996237,
+          36.160947
+        ]
+      },
+      "properties": {
+        "id": 199,
+        "locationName": "727137",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/199/snap-1764193177.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:39:44.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193177.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.437144,
+          35.587476
+        ]
+      },
+      "properties": {
+        "id": 327,
+        "locationName": "557155",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/327/snap-1764194078.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:54:46.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194078.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.359017,
+          35.389148
+        ]
+      },
+      "properties": {
+        "id": 328,
+        "locationName": "557160",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/328/snap-1764194778.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:06:26.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194778.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.516483,
+          35.514462
+        ]
+      },
+      "properties": {
+        "id": 329,
+        "locationName": "557157",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/329/snap-1764184487.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T19:14:55.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764184487.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.584927,
+          35.685632
+        ]
+      },
+      "properties": {
+        "id": 330,
+        "locationName": "557161",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/330/snap-1764195290.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:14:58.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195290.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.419959,
+          35.672969
+        ]
+      },
+      "properties": {
+        "id": 331,
+        "locationName": "557154",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/331/snap-1764193182.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:39:50.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193182.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.576853,
+          35.525529
+        ]
+      },
+      "properties": {
+        "id": 332,
+        "locationName": "557156",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/332/snap-1764194990.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:09:59.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194990.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.578461,
+          35.410284
+        ]
+      },
+      "properties": {
+        "id": 333,
+        "locationName": "557159",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/333/snap-1737640130.jpg",
+        "temperature": 34,
+        "pictureTime": "2025-01-23T13:48:57.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1737640130.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.494466,
+          35.352129
+        ]
+      },
+      "properties": {
+        "id": 334,
+        "locationName": "147153",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/334/snap-1764193475.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:44:43.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193475.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.598435,
+          35.309231
+        ]
+      },
+      "properties": {
+        "id": 335,
+        "locationName": "147152",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/335/snap-1764192829.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:33:59.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192829.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.568929,
+          35.460975
+        ]
+      },
+      "properties": {
+        "id": 336,
+        "locationName": "557173",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/336/snap-1764196113.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:28:41.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196113.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.568929,
+          35.460975
+        ]
+      },
+      "properties": {
+        "id": 337,
+        "locationName": "557158",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/337/snap-1764193084.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:38:12.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193084.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.459806,
+          35.514297
+        ]
+      },
+      "properties": {
+        "id": 338,
+        "locationName": "557073",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/338/snap-1747642254.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-05-19T08:11:01.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642254.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.860256,
+          36.152605
+        ]
+      },
+      "properties": {
+        "id": 339,
+        "locationName": "727144",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/339/snap-1764193200.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:40:07.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193200.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.741289,
+          36.163307
+        ]
+      },
+      "properties": {
+        "id": 340,
+        "locationName": "667143",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/340/snap-1764196088.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:28:15.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196088.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.014848,
+          36.156741
+        ]
+      },
+      "properties": {
+        "id": 341,
+        "locationName": "727145",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/341/snap-1764194935.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:09:03.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194935.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.966774,
+          36.089861
+        ]
+      },
+      "properties": {
+        "id": 342,
+        "locationName": "727148",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/342/snap-1764196079.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:28:07.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196079.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.972857,
+          36.158919
+        ]
+      },
+      "properties": {
+        "id": 343,
+        "locationName": "727151",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/343/snap-1764193748.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:49:16.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193748.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.874976,
+          36.025353
+        ]
+      },
+      "properties": {
+        "id": 344,
+        "locationName": "727146",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/344/snap-1764195554.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:19:22.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195554.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.95949,
+          35.632763
+        ]
+      },
+      "properties": {
+        "id": 345,
+        "locationName": "097164",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/345/snap-1747642100.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-05-19T08:08:27.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642100.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.49045021,
+          35.414661116
+        ]
+      },
+      "properties": {
+        "id": 346,
+        "locationName": "557020",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/346/snap-1764192784.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:33:12.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192784.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.859441,
+          36.043018
+        ]
+      },
+      "properties": {
+        "id": 347,
+        "locationName": "727150",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/347/snap-1747642291.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-05-19T08:11:40.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642291.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.284564,
+          35.561874
+        ]
+      },
+      "properties": {
+        "id": 348,
+        "locationName": "097163",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/348/snap-1764195791.jpg",
+        "temperature": 49,
+        "pictureTime": "2025-11-26T22:23:19.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195791.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.552624,
+          35.44078
+        ]
+      },
+      "properties": {
+        "id": 349,
+        "locationName": "467167",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/349/snap-1747642108.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-05-19T08:08:35.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642108.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.1068912,
+          35.42958073
+        ]
+      },
+      "properties": {
+        "id": 350,
+        "locationName": "547506",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/350/snap-1747642533.jpg",
+        "temperature": 55,
+        "pictureTime": "2025-05-19T08:15:43.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642533.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.450699,
+          35.447749
+        ]
+      },
+      "properties": {
+        "id": 351,
+        "locationName": "687170",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/351/snap-1764195635.jpg",
+        "temperature": 54,
+        "pictureTime": "2025-11-26T22:20:43.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195635.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.278445,
+          34.186125
+        ]
+      },
+      "properties": {
+        "id": 352,
+        "locationName": "647169",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/352/snap-1764193195.jpg",
+        "temperature": 70,
+        "pictureTime": "2025-11-26T21:39:58.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193195.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.574394,
+          36.397864
+        ]
+      },
+      "properties": {
+        "id": 355,
+        "locationName": "247166",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/355/snap-1764194028.jpg",
+        "temperature": 48,
+        "pictureTime": "2025-11-26T21:53:56.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194028.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.051004,
+          35.995101
+        ]
+      },
+      "properties": {
+        "id": 356,
+        "locationName": "607168",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/356/snap-1764193460.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T21:44:27.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193460.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.012024,
+          35.969554
+        ]
+      },
+      "properties": {
+        "id": 357,
+        "locationName": "727149",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/357/snap-1764193025.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:37:13.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193025.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.848352,
+          36.269731
+        ]
+      },
+      "properties": {
+        "id": 358,
+        "locationName": "727147",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/358/snap-1764196052.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:27:40.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196052.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.001256,
+          36.1534
+        ]
+      },
+      "properties": {
+        "id": 359,
+        "locationName": "727172",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/359/snap-1764192762.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:32:50.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192762.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.402971,
+          35.82364
+        ]
+      },
+      "properties": {
+        "id": 360,
+        "locationName": "737171",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/360/snap-1764185859.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T19:37:42.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764185859.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.395423,
+          34.638105
+        ]
+      },
+      "properties": {
+        "id": 361,
+        "locationName": "167162",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/361/snap-1764195436.jpg",
+        "temperature": 59,
+        "pictureTime": "2025-11-26T22:17:24.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195436.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.658978,
+          36.179144
+        ]
+      },
+      "properties": {
+        "id": 365,
+        "locationName": "217165",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/365/snap-1764195263.jpg",
+        "temperature": 47,
+        "pictureTime": "2025-11-26T22:14:31.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195263.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.306087,
+          35.189213
+        ]
+      },
+      "properties": {
+        "id": 368,
+        "locationName": "147176",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/368/snap-1764193601.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:46:49.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193601.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.020741,
+          35.380529
+        ]
+      },
+      "properties": {
+        "id": 369,
+        "locationName": "637182",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/369/snap-1764194780.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:06:28.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194780.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.458794,
+          35.460527
+        ]
+      },
+      "properties": {
+        "id": 370,
+        "locationName": "557180",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/370/snap-1764195378.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:16:26.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195378.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.750898,
+          35.481753
+        ]
+      },
+      "properties": {
+        "id": 371,
+        "locationName": "097174",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/371/snap-1764195685.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T22:21:32.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764195685.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.600217,
+          35.222452
+        ]
+      },
+      "properties": {
+        "id": 372,
+        "locationName": "447178",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/372/snap-1764194072.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:54:35.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194072.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.62277,
+          35.291142
+        ]
+      },
+      "properties": {
+        "id": 373,
+        "locationName": "447177",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/373/snap-1764196177.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:29:41.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764196177.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.483072,
+          35.210457
+        ]
+      },
+      "properties": {
+        "id": 374,
+        "locationName": "147175",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/374/snap-1764192549.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:29:12.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192549.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.365126,
+          35.652511
+        ]
+      },
+      "properties": {
+        "id": 375,
+        "locationName": "557181",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/375/snap-1747642327.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-05-19T08:12:15.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642327.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.579467,
+          35.475027
+        ]
+      },
+      "properties": {
+        "id": 376,
+        "locationName": "557179",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/376/snap-1760027239.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-10-09T16:27:23.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1760027239.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.987535,
+          34.506548
+        ]
+      },
+      "properties": {
+        "id": 377,
+        "locationName": "507198",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/377/snap-1764193493.jpg",
+        "temperature": 60,
+        "pictureTime": "2025-11-26T21:45:00.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193493.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.185596,
+          35.989332
+        ]
+      },
+      "properties": {
+        "id": 378,
+        "locationName": "197194",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/378/snap-1764194680.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T22:04:48.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194680.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.009229,
+          36.035711
+        ]
+      },
+      "properties": {
+        "id": 379,
+        "locationName": "727187",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/379/snap-1764193172.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:39:41.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193172.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.951984,
+          35.944655
+        ]
+      },
+      "properties": {
+        "id": 380,
+        "locationName": "727191",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/380/snap-1764192881.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:34:49.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192881.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.015562,
+          35.853511
+        ]
+      },
+      "properties": {
+        "id": 381,
+        "locationName": "567183",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/381/snap-1747642455.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-05-19T08:14:22.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642455.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.952982,
+          36.139005
+        ]
+      },
+      "properties": {
+        "id": 382,
+        "locationName": "727189",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/382/snap-1764192862.jpg",
+        "temperature": 52,
+        "pictureTime": "2025-11-26T21:34:33.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192862.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.728279,
+          36.025681
+        ]
+      },
+      "properties": {
+        "id": 383,
+        "locationName": "737184",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/383/snap-1747642251.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-05-19T08:10:59.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642251.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.930829,
+          36.091608
+        ]
+      },
+      "properties": {
+        "id": 384,
+        "locationName": "727188",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/384/snap-1764194086.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:54:53.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194086.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.588556,
+          35.8827
+        ]
+      },
+      "properties": {
+        "id": 385,
+        "locationName": "427197",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/385/snap-1764194985.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T22:09:53.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194985.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.95334,
+          36.116735
+        ]
+      },
+      "properties": {
+        "id": 386,
+        "locationName": "607201",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/386/snap-1764194691.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T22:04:58.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194691.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.371019,
+          36.216933
+        ]
+      },
+      "properties": {
+        "id": 387,
+        "locationName": "597200",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/387/snap-1764192587.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:29:58.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192587.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.953843,
+          36.139302
+        ]
+      },
+      "properties": {
+        "id": 388,
+        "locationName": "727190",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/388/snap-1764193783.jpg",
+        "temperature": 51,
+        "pictureTime": "2025-11-26T21:49:54.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193783.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.641819,
+          36.276637
+        ]
+      },
+      "properties": {
+        "id": 389,
+        "locationName": "667186",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/389/snap-1764193799.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T21:50:07.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193799.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.821513,
+          36.34317
+        ]
+      },
+      "properties": {
+        "id": 390,
+        "locationName": "727192",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/390/snap-1764192604.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-11-26T21:30:12.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192604.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.436858,
+          35.292288
+        ]
+      },
+      "properties": {
+        "id": 391,
+        "locationName": "407196",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/391/snap-1764192905.jpg",
+        "temperature": 54,
+        "pictureTime": "2025-11-26T21:35:12.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764192905.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.74549,
+          34.917413
+        ]
+      },
+      "properties": {
+        "id": 392,
+        "locationName": "617202",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/392/snap-1764194687.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T22:04:57.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764194687.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.964014,
+          35.468749
+        ]
+      },
+      "properties": {
+        "id": 393,
+        "locationName": "567199",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/393/snap-1764193772.jpg",
+        "temperature": 53,
+        "pictureTime": "2025-11-26T21:49:40.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1764193772.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.778039,
+          36.517586
+        ]
+      },
+      "properties": {
+        "id": 394,
+        "locationName": "217195",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/394/snap-1762010144.jpg",
+        "temperature": 40,
+        "pictureTime": "2025-11-01T15:15:51.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1762010144.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.730582,
+          36.314545
+        ]
+      },
+      "properties": {
+        "id": 396,
+        "locationName": "667185",
+        "updatedAt": "2025-11-26T22:30:01.000Z",
+        "imagePath": "http://oktrafficradar.org/hrserver/396/snap-1747642312.jpg",
+        "temperature": 50,
+        "pictureTime": "2025-05-19T08:11:59.000Z",
+        "resolution": "320x240",
+        "fileName": "snap-1747642312.jpg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-106.61, 35.08]
+      },
+      "properties": {
+        "name": "I-25 at Paseo del Norte",
+        "image_url": "https://example.com/nm_cam_01.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-106.65, 35.12]
+      },
+      "properties": {
+        "name": "I-40 at Carlisle",
+        "video_url": "https://example.com/nm_cam_02.m3u8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-106.7, 35.15]
+      },
+      "properties": {
+        "name": "Big I Interchange",
+        "image_url": "https://example.com/nm_cam_03.jpg",
+        "video_url": "https://example.com/nm_cam_03.mp4"
+      }
+    }
+  ]
+}

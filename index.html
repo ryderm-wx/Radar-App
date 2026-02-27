@@ -279,6 +279,60 @@
         padding-right: 4px;
       }
 
+      .dock-section {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .dock-section--actions {
+        align-items: flex-start;
+      }
+
+      .dock-section-header {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.7rem;
+        color: var(--muted-strong);
+      }
+
+      .dock-section-body {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .dock-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .dock-field label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .dock-toggle-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--surface-muted);
+      }
+
       .dock-header {
         display: flex;
         align-items: center;
@@ -299,6 +353,13 @@
         display: flex;
         gap: 6px;
         align-items: center;
+      }
+
+      .quick-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
       }
 
       .button-group button {
@@ -1687,6 +1748,40 @@
         text-shadow: 0 0 20px rgba(99, 211, 255, 0.4);
       }
 
+      /* Traffic Camera Popup Styles */
+      .camera-popup-dark .maplibregl-popup-content {
+        background: rgba(13, 16, 24, 0.98) !important;
+        border: 1px solid rgba(79, 184, 255, 0.25);
+        border-radius: 14px;
+        padding: 0 !important;
+        box-shadow:
+          0 16px 48px rgba(0, 0, 0, 0.65),
+          0 0 30px rgba(79, 184, 255, 0.15);
+        backdrop-filter: blur(24px);
+        color: #f7f9ff;
+      }
+
+      .camera-popup-dark .maplibregl-popup-tip {
+        border-top-color: rgba(13, 16, 24, 0.98) !important;
+      }
+
+      .camera-popup-dark .maplibregl-popup-close-button {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 22px;
+        padding: 8px 12px;
+        right: 4px;
+        top: 4px;
+        transition: all 0.2s;
+        background: transparent;
+        border-radius: 8px;
+      }
+
+      .camera-popup-dark .maplibregl-popup-close-button:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        transform: none;
+      }
+
       .probe-popup__unit {
         font-size: 0.85rem;
         color: rgba(255, 255, 255, 0.65);
@@ -2065,83 +2160,324 @@
             </div>
           </summary>
           <div class="dock-content">
-            <div class="control-grid control-grid--2">
-              <div class="control-group">
-                <label for="radarSiteSelect" title="Radar Site"
-                  ><i class="fas fa-tower-broadcast"></i
+            <div class="dock-section" id="primaryControls">
+              <div class="dock-section-header">Core Controls</div>
+              <div class="dock-section-body">
+                <div class="dock-field" id="dataModeControl">
+                  <label for="dataModeSelect" title="Data Mode">
+                    <i class="fas fa-database"></i>
+                    Mode
+                  </label>
+                  <select id="dataModeSelect">
+                    <option value="radar" selected>Radar (NEXRAD)</option>
+                    <option value="hrrr">Model Data</option>
+                    <option value="mrms">MRMS Seamless HSR</option>
+                  </select>
+                </div>
+                <div class="dock-field" id="radarSiteControl">
+                  <label for="radarSiteSelect" title="Radar Site">
+                    <i class="fas fa-tower-broadcast"></i>
+                    Site
+                  </label>
+                  <select id="radarSiteSelect">
+                    <option value="">Loading sites...</option>
+                  </select>
+                </div>
+                <div class="dock-field" id="radarSourceControl">
+                  <label for="radarDataSourceSelect" title="Radar Data Source">
+                    <i class="fas fa-database"></i>
+                    Source
+                  </label>
+                  <select id="radarDataSourceSelect">
+                    <option value="level3" selected>
+                      Level 3 (Unidata Feed)
+                    </option>
+                    <option value="level2">Level 2 (NOMADS)</option>
+                  </select>
+                </div>
+                <div class="dock-field" id="radarProductControl">
+                  <label for="radarProductSelect" title="Radar Product">
+                    <i class="fas fa-layer-group"></i>
+                    Product
+                  </label>
+                  <select id="radarProductSelect">
+                    <optgroup label="Reflectivity">
+                      <option value="MRMS">MRMS Seamless HSR</option>
+                      <option value="N0B">
+                        Base Reflectivity - Tilt 1 (N0B)
+                      </option>
+                      <option value="N1B">
+                        Base Reflectivity - Tilt 2 (N1B)
+                      </option>
+                      <option value="N2B">
+                        Base Reflectivity - Tilt 3 (N2B)
+                      </option>
+                      <option value="N3B">
+                        Base Reflectivity - Tilt 4 (N3B)
+                      </option>
+                    </optgroup>
+                    <optgroup label="Velocity">
+                      <option value="N0G">Base Velocity - Tilt 1 (N0G)</option>
+                      <option value="N1G">Base Velocity - Tilt 2 (N1G)</option>
+                      <option value="N2G">Base Velocity - Tilt 3 (N2G)</option>
+                      <option value="N3G">Base Velocity - Tilt 4 (N3G)</option>
+                      <option value="N0V">
+                        Radial Velocity - Tilt 1 (N0V)
+                      </option>
+                    </optgroup>
+                    <optgroup label="Storm Relative">
+                      <option value="N0S">
+                        Storm Relative Velocity - Tilt 1 (N0S)
+                      </option>
+                      <option value="N1S">
+                        Storm Relative Velocity - Tilt 2 (N1S)
+                      </option>
+                      <option value="N2S">
+                        Storm Relative Velocity - Tilt 3 (N2S)
+                      </option>
+                      <option value="N3S">
+                        Storm Relative Velocity - Tilt 4 (N3S)
+                      </option>
+                    </optgroup>
+                    <optgroup label="Dual-Pol Products">
+                      <option value="N0C">
+                        Correlation Coefficient - Tilt 1 (N0C)
+                      </option>
+                      <option value="N1C">
+                        Correlation Coefficient - Tilt 2 (N1C)
+                      </option>
+                      <option value="N0X">
+                        Differential Reflectivity - Tilt 1 (N0X)
+                      </option>
+                      <option value="N1X">
+                        Differential Reflectivity - Tilt 2 (N1X)
+                      </option>
+                      <option value="N0H">
+                        Hydrometeor Classification - Tilt 1 (N0H)
+                      </option>
+                      <option value="N1H">
+                        Hydrometeor Classification - Tilt 2 (N1H)
+                      </option>
+                    </optgroup>
+                    <optgroup label="Advanced">
+                      <option value="N0W">Spectrum Width - Tilt 1 (N0W)</option>
+                      <option value="N0P">
+                        Differential Phase - Tilt 1 (N0P)
+                      </option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="dock-section" id="enhancementControls">
+              <div class="dock-section-header">Enhancements</div>
+              <div class="dock-section-body">
+                <div class="dock-toggle-row" id="precipTypeControl">
+                  <label for="precipTypeToggle" title="Precip Type Mode">
+                    <i class="fas fa-cloud-rain"></i>
+                    Precip Type
+                  </label>
+                  <input type="checkbox" id="precipTypeToggle" />
+                </div>
+              </div>
+            </div>
+
+            <div class="dock-section dock-section--actions">
+              <div class="dock-section-header">Quick Actions</div>
+              <div class="button-group">
+                <button
+                  id="refreshRadar"
+                  class="real-button-toggle btn-secondary"
+                  title="Refresh Radar"
+                >
+                  <i class="fas fa-rotate"></i>
+                </button>
+                <button
+                  id="toggleRadar"
+                  class="button-ghost"
+                  title="Hide Radar"
+                >
+                  <i class="fas fa-eye-slash"></i>
+                </button>
+                <button
+                  id="archiveRadar"
+                  class="real-button-toggle btn-secondary"
+                  title="Archive Mode"
+                >
+                  <i class="fas fa-box-archive"></i>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="control-section"
+              id="hrrrControls"
+              style="display: none"
+            >
+              <div class="control-grid control-grid--2">
+                <div class="control-group">
+                  <label for="modelSourceSelect" title="Model Source"
+                    ><i class="fas fa-cloud"></i
+                  ></label>
+                  <select id="modelSourceSelect">
+                    <option value="hrrr" selected>HRRR</option>
+                    <option value="rrfs-a">RRFS-a</option>
+                    <option value="nam3k">NAM 3km Nest</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label for="hrrrVariableSelect" title="HRRR Variable"
+                    ><i class="fas fa-temperature-half"></i
+                  ></label>
+                  <select id="hrrrVariableSelect">
+                    <option value="tmp2m" selected>2m Temperature</option>
+                    <option value="rh2m">2m Relative Humidity</option>
+                    <option value="refc">Composite Reflectivity</option>
+                    <option value="ugrd10m">10m U Wind</option>
+                    <option value="vgrd10m">10m V Wind</option>
+                  </select>
+                </div>
+                <div class="control-group">
+                  <label for="hrrrForecastHour" title="Forecast Hour"
+                    ><i class="fas fa-clock"></i
+                  ></label>
+                  <input
+                    type="number"
+                    id="hrrrForecastHour"
+                    min="0"
+                    max="48"
+                    step="1"
+                    value="0"
+                  />
+                </div>
+              </div>
+
+              <div class="control-group" style="margin-top: 8px">
+                <label for="hrrrRunSelect" title="HRRR Run"
+                  ><i class="fas fa-calendar-days"></i
                 ></label>
-                <select id="radarSiteSelect">
-                  <option value="">Loading sites...</option>
+                <select id="hrrrRunSelect">
+                  <option value="latest" selected>Latest available run</option>
                 </select>
               </div>
-              <div class="control-group">
-                <label for="radarProductSelect" title="Radar Product"
-                  ><i class="fas fa-layer-group"></i
-                ></label>
-                <select id="radarProductSelect">
-                  <optgroup label="Reflectivity">
-                    <option value="N0B">
-                      Base Reflectivity - Tilt 1 (N0B)
-                    </option>
-                    <option value="N1B">
-                      Base Reflectivity - Tilt 2 (N1B)
-                    </option>
-                    <option value="N2B">
-                      Base Reflectivity - Tilt 3 (N2B)
-                    </option>
-                    <option value="N3B">
-                      Base Reflectivity - Tilt 4 (N3B)
-                    </option>
-                  </optgroup>
-                  <optgroup label="Velocity">
-                    <option value="N0G">Base Velocity - Tilt 1 (N0G)</option>
-                    <option value="N1G">Base Velocity - Tilt 2 (N1G)</option>
-                    <option value="N2G">Base Velocity - Tilt 3 (N2G)</option>
-                    <option value="N3G">Base Velocity - Tilt 4 (N3G)</option>
-                    <option value="N0V">Radial Velocity - Tilt 1 (N0V)</option>
-                  </optgroup>
-                  <optgroup label="Storm Relative">
-                    <option value="N0S">
-                      Storm Relative Velocity - Tilt 1 (N0S)
-                    </option>
-                    <option value="N1S">
-                      Storm Relative Velocity - Tilt 2 (N1S)
-                    </option>
-                    <option value="N2S">
-                      Storm Relative Velocity - Tilt 3 (N2S)
-                    </option>
-                    <option value="N3S">
-                      Storm Relative Velocity - Tilt 4 (N3S)
-                    </option>
-                  </optgroup>
-                  <optgroup label="Dual-Pol Products">
-                    <option value="N0C">
-                      Correlation Coefficient - Tilt 1 (N0C)
-                    </option>
-                    <option value="N1C">
-                      Correlation Coefficient - Tilt 2 (N1C)
-                    </option>
-                    <option value="N0X">
-                      Differential Reflectivity - Tilt 1 (N0X)
-                    </option>
-                    <option value="N1X">
-                      Differential Reflectivity - Tilt 2 (N1X)
-                    </option>
-                    <option value="N0H">
-                      Hydrometeor Classification - Tilt 1 (N0H)
-                    </option>
-                    <option value="N1H">
-                      Hydrometeor Classification - Tilt 2 (N1H)
-                    </option>
-                  </optgroup>
-                  <optgroup label="Advanced">
-                    <option value="N0W">Spectrum Width - Tilt 1 (N0W)</option>
-                    <option value="N0P">
-                      Differential Phase - Tilt 1 (N0P)
-                    </option>
-                  </optgroup>
-                </select>
+
+              <div class="slider-container" style="margin-top: 10px">
+                <label for="hrrrForecastSlider"
+                  >Model Timestamp
+                  <span class="slider-value" id="hrrrForecastSliderValue"
+                    >F00</span
+                  ></label
+                >
+                <input
+                  id="hrrrForecastSlider"
+                  type="range"
+                  min="0"
+                  max="48"
+                  step="1"
+                  value="0"
+                />
               </div>
+
+              <div class="control-section" style="margin-top: 10px">
+                <div class="control-grid control-grid--2">
+                  <div>
+                    <div class="help-text" style="margin-bottom: 2px">
+                      Run (Local)
+                    </div>
+                    <div id="hrrrRunDateLocal">--</div>
+                    <div id="hrrrRunTimeLocal" class="help-text">--</div>
+                  </div>
+                  <div>
+                    <div class="help-text" style="margin-bottom: 2px">
+                      Valid (Local)
+                    </div>
+                    <div id="hrrrValidDateLocal">--</div>
+                    <div id="hrrrValidTimeLocal" class="help-text">--</div>
+                  </div>
+                </div>
+                <div class="help-text" style="margin-top: 8px">
+                  Units: <span id="hrrrUnitsLabel">--</span>
+                </div>
+              </div>
+
+              <div class="control-section" style="margin-top: 10px">
+                <div class="control-grid control-grid--2">
+                  <div class="control-group">
+                    <label for="hrrrLoopMode" title="Model Loop Range"
+                      ><i class="fas fa-repeat"></i
+                    ></label>
+                    <select id="hrrrLoopMode">
+                      <option value="all" selected>
+                        Loop All Hours (F00-F48)
+                      </option>
+                      <option value="range">Loop Specific Hours</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div
+                  id="hrrrLoopRangeControls"
+                  class="control-grid control-grid--2"
+                  style="display: none; margin-top: 8px"
+                >
+                  <div class="control-group">
+                    <label for="hrrrLoopStartHour" title="Loop Start Hour"
+                      ><i class="fas fa-hourglass-start"></i
+                    ></label>
+                    <input
+                      type="number"
+                      id="hrrrLoopStartHour"
+                      min="0"
+                      max="48"
+                      step="1"
+                      value="0"
+                    />
+                  </div>
+                  <div class="control-group">
+                    <label for="hrrrLoopEndHour" title="Loop End Hour"
+                      ><i class="fas fa-hourglass-end"></i
+                    ></label>
+                    <input
+                      type="number"
+                      id="hrrrLoopEndHour"
+                      min="0"
+                      max="48"
+                      step="1"
+                      value="48"
+                    />
+                  </div>
+                </div>
+
+                <div class="button-group" style="margin-top: 8px">
+                  <button
+                    id="hrrrLoadLoopBtn"
+                    class="real-button-toggle btn-secondary"
+                    title="Load and Play Model Loop"
+                  >
+                    <i class="fas fa-play"></i>
+                  </button>
+                  <button
+                    id="hrrrToggleLoopBtn"
+                    class="real-button-toggle btn-secondary"
+                    title="Play/Pause Model Loop"
+                  >
+                    Play
+                  </button>
+                  <button
+                    id="hrrrPrecacheBtn"
+                    class="real-button-toggle btn-secondary"
+                    title="Pre-cache selected model hours"
+                  >
+                    <i class="fas fa-bolt"></i>
+                  </button>
+                </div>
+              </div>
+
+              <p class="help-text">
+                Loads latest available HRRR CONUS run from NOMADS with fast
+                byte-range fetching.
+              </p>
             </div>
 
             <div
@@ -2404,6 +2740,54 @@
               </div>
             </details>
 
+            <details
+              class="control-section accordion"
+              id="sweepAnimationSection"
+              style="display: none"
+            >
+              <summary>
+                <div class="section-header accordion__header">
+                  <div>
+                    <p class="section-label">Display</p>
+                    <h3>Sweep Animation</h3>
+                  </div>
+                  <span class="section-icon" aria-hidden="true">
+                    <i data-lucide="radar"></i>
+                  </span>
+                </div>
+                <span class="accordion__chev" aria-hidden="true">
+                  <i data-lucide="chevron-down"></i>
+                </span>
+              </summary>
+              <div class="accordion__content">
+                <p class="help-text">
+                  Customize the live radar sweep animation appearance.
+                </p>
+
+                <div class="control-group">
+                  <label for="sweepMode" title="Sweep Animation Mode">
+                    <i class="fas fa-radar"></i> Mode
+                  </label>
+                  <select id="sweepMode">
+                    <option value="full">Full Trail (Default)</option>
+                    <option value="simple">Simple Line</option>
+                    <option value="disabled">Disabled</option>
+                  </select>
+                </div>
+
+                <p
+                  class="help-text"
+                  style="font-size: 0.85rem; margin-top: 8px"
+                >
+                  <strong>Full Trail:</strong> Animated gradient wedge with
+                  trailing effect.<br />
+                  <strong>Simple Line:</strong> Clean white line with distance
+                  fade and pulse.<br />
+                  <strong>Disabled:</strong> No sweep animation.
+                </p>
+              </div>
+            </details>
+
             <div class="radar-info"></div>
           </div>
         </details>
@@ -2477,26 +2861,14 @@
             <i class="fas fa-wand-magic-sparkles"></i>
             <input type="checkbox" id="enableSmoothing" />
           </label>
-        </div>
-
-        <div class="button-group">
-          <button
-            id="refreshRadar"
-            class="real-button-toggle btn-secondary"
-            title="Refresh Radar"
-          >
-            <i class="fas fa-rotate"></i>
-          </button>
-          <button id="toggleRadar" class="button-ghost" title="Hide Radar">
-            <i class="fas fa-eye-slash"></i>
-          </button>
-          <button
-            id="archiveRadar"
-            class="real-button-toggle btn-secondary"
-            title="Archive Mode"
-          >
-            <i class="fas fa-box-archive"></i>
-          </button>
+          <label class="check-row" title="Arc-Sync Live (Level 2 SSE)">
+            <i class="fas fa-satellite-dish"></i>
+            <input type="checkbox" id="arcSyncToggle" checked />
+          </label>
+          <label class="check-row" title="Traffic Cameras">
+            <i class="fas fa-camera"></i>
+            <input type="checkbox" id="camerasToggle" />
+          </label>
         </div>
 
         <div

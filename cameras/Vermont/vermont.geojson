@@ -1,0 +1,1785 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.56346,
+          44.63578
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-102",
+        "direction": "Northbound",
+        "location": "MAIDSTONE VT-102 North",
+        "image": "https://newengland511.org/map/Cctv/1016",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.030393,
+          44.716517
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-5A",
+        "direction": "Northbound",
+        "location": "WESTMORE VT-5A NB North",
+        "image": "https://newengland511.org/map/Cctv/1014",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.030289,
+          44.716117
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-5A",
+        "direction": "Northbound",
+        "location": "WESTMORE VT-5A South",
+        "image": "https://newengland511.org/map/Cctv/985",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.50459,
+          44.91222
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-242",
+        "direction": "Eastbound",
+        "location": "WESTFIELD VT-242 EB West",
+        "image": "https://newengland511.org/map/Cctv/972",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.50389,
+          44.91272
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-242",
+        "direction": "Northbound",
+        "location": "WESTFIELD VT-242 North",
+        "image": "https://newengland511.org/map/Cctv/971",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.750494,
+          43.355475
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-100",
+        "direction": "Southbound",
+        "location": "LUDLOW VT-100 South",
+        "image": "https://newengland511.org/map/Cctv/967",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.72275,
+          44.419617
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-100",
+        "direction": "Southbound",
+        "location": "Waterbury VT-100",
+        "image": "https://newengland511.org/map/Cctv/1231",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.374039,
+          44.534464
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-14",
+        "direction": "Northbound",
+        "location": "HARDWICK VT-14",
+        "image": "https://newengland511.org/map/Cctv/998",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.778063,
+          44.526127
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-108",
+        "direction": "Northbound",
+        "location": "Stowe VT-108",
+        "image": "https://newengland511.org/map/Cctv/1006",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.930035,
+          44.209618
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-17",
+        "direction": "Eastbound",
+        "location": "BUELS GORE VT-17 East",
+        "image": "https://newengland511.org/map/Cctv/1024",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.293056,
+          44.12222
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-22A",
+        "direction": "Southbound",
+        "location": "PANTON VT-22A South",
+        "image": "https://newengland511.org/map/Cctv/1013",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.280173,
+          43.608231
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-22A",
+        "direction": "Northbound",
+        "location": "FAIR HAVEN VT-22A North",
+        "image": "https://newengland511.org/map/Cctv/960",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.279803,
+          43.6079
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-22A",
+        "direction": "Southbound",
+        "location": "FAIR HAVEN 22A NB South",
+        "image": "https://newengland511.org/map/Cctv/1003",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.786579,
+          43.45176
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-103",
+        "direction": "Eastbound",
+        "location": "MOUNT HOLLY VT-103 East",
+        "image": "https://newengland511.org/map/Cctv/1005",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.427604,
+          43.261268
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-11",
+        "direction": "Westbound",
+        "location": "Springfield VT-11 NH Border CCTV",
+        "image": "https://newengland511.org/map/Cctv/980",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.95997,
+          43.20552
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-11",
+        "direction": "Eastbound",
+        "location": "WINHALL VT-11 EB West",
+        "image": "https://newengland511.org/map/Cctv/976",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.95937,
+          43.20552
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-11",
+        "direction": "Eastbound",
+        "location": "WINHALL VT-11 East",
+        "image": "https://newengland511.org/map/Cctv/1011",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.797847,
+          42.853125
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-9",
+        "direction": "Eastbound",
+        "location": "MARLBORO VT-9 East",
+        "image": "https://newengland511.org/map/Cctv/953",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.97122,
+          42.89463
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-9",
+        "direction": "Eastbound",
+        "location": "SEARSBURG VT-9 East",
+        "image": "https://newengland511.org/map/Cctv/975",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.09439,
+          42.87799
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-9",
+        "direction": "Eastbound",
+        "location": "WOODFORD VT-9 East",
+        "image": "https://newengland511.org/map/Cctv/1001",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.300608,
+          44.176511
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-302",
+        "direction": "Westbound",
+        "location": "TOPSHAM US-302 West",
+        "image": "https://newengland511.org/map/Cctv/994",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.347043,
+          44.686718
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-314",
+        "direction": "Northbound",
+        "location": "GRAND ISLE VT-314 West",
+        "image": "https://newengland511.org/map/Cctv/1002",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.347043,
+          44.686318
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-314",
+        "direction": "Northbound",
+        "location": "GRAND ISLE VT-314 South",
+        "image": "https://newengland511.org/map/Cctv/1021",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.242972,
+          44.627625
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-2",
+        "direction": "Westbound",
+        "location": "MILTON US-2 West",
+        "image": "https://newengland511.org/map/Cctv/1025",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.287198,
+          44.366367
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-2",
+        "direction": "Eastbound",
+        "location": "CABOT US-2 East",
+        "image": "https://newengland511.org/map/Cctv/983",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8315,
+          43.66388
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-4",
+        "direction": "Eastbound",
+        "location": "MENDON MOUNTAIN US-4 EB West",
+        "image": "https://newengland511.org/map/Cctv/993",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.8309,
+          43.66408
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-4",
+        "direction": "Eastbound",
+        "location": "MENDON MOUNTAIN US-4 East",
+        "image": "https://newengland511.org/map/Cctv/1018",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.06527,
+          43.60444
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-4",
+        "direction": "Westbound",
+        "location": "W RUTLAND US-4 West",
+        "image": "https://newengland511.org/map/Cctv/962",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.2929,
+          43.586352
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-4",
+        "direction": "Eastbound",
+        "location": "FAIR HAVEN US-4 East",
+        "image": "https://newengland511.org/map/Cctv/1007",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.449061,
+          43.137367
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-5",
+        "direction": "Northbound",
+        "location": "Bellows Falls Arch Bridge CCTV",
+        "image": "https://newengland511.org/map/Cctv/963",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.248821,
+          44.198495
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-7",
+        "direction": "Southbound",
+        "location": "FERRISBURGH US-7",
+        "image": "https://newengland511.org/map/Cctv/965",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.050249,
+          43.767145
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-7",
+        "direction": "Northbound",
+        "location": "BRANDON US-7 North",
+        "image": "https://newengland511.org/map/Cctv/957",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.967163,
+          43.510494
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-7",
+        "direction": "Northbound",
+        "location": "CLARENDON US-7 North",
+        "image": "https://newengland511.org/map/Cctv/987",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.147572,
+          42.986549
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-7",
+        "direction": "Northbound",
+        "location": "Shaftsbury US-7",
+        "image": "https://newengland511.org/map/Cctv/969",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.92287,
+          44.38222
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-93",
+        "direction": "Southbound",
+        "location": "WATERFORD I-93 South",
+        "image": "https://newengland511.org/map/Cctv/1008",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.126381,
+          44.975052
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Southbound",
+        "location": "DERBY I-91 South",
+        "image": "https://newengland511.org/map/Cctv/970",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.1314,
+          44.6388
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Southbound",
+        "location": "SHEFFIELD RW I-91 South",
+        "image": "https://newengland511.org/map/Cctv/958",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.02146,
+          44.4022
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Southbound",
+        "location": "ST.JOHNSBURY I-91 South",
+        "image": "https://newengland511.org/map/Cctv/964",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.091722,
+          44.156981
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Southbound",
+        "location": "NEWBURY I-91 South",
+        "image": "https://newengland511.org/map/Cctv/959",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.215463,
+          43.813062
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Northbound",
+        "location": "THETFORD I-91 North",
+        "image": "https://newengland511.org/map/Cctv/979",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.31538,
+          43.68285
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Southbound",
+        "location": "WILDER I-91 South",
+        "image": "https://newengland511.org/map/Cctv/1028",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.347842,
+          43.62101
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Northbound",
+        "location": "HARTFORD I-91 North",
+        "image": "https://newengland511.org/map/Cctv/1030",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.414582,
+          43.402698
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Southbound",
+        "location": "WEATHERSFIELD I-91 South",
+        "image": "https://newengland511.org/map/Cctv/1026",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.46305,
+          43.18166
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Southbound",
+        "location": "ROCKINGHAM I-91 South",
+        "image": "https://newengland511.org/map/Cctv/954",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.472803,
+          43.02411
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Southbound",
+        "location": "WESTMINSTER I-91 South",
+        "image": "https://newengland511.org/map/Cctv/1017",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.57205,
+          42.87399
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Southbound",
+        "location": "BRATTLEBORO BRIDGE I-91 SB North",
+        "image": "https://newengland511.org/map/Cctv/1000",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.57245,
+          42.87369
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Southbound",
+        "location": "BRATTLEBORO BRIDGE I-91 South",
+        "image": "https://newengland511.org/map/Cctv/999",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.567728,
+          42.812656
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-91",
+        "direction": "Northbound",
+        "location": "GUILFORD I-91 North",
+        "image": "https://newengland511.org/map/Cctv/989",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.077883,
+          44.754764
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Southbound",
+        "location": "GEORGIA I-89 South",
+        "image": "https://newengland511.org/map/Cctv/992",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.139901,
+          44.63852
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "MILTON BRIDGE I-89 NB North",
+        "image": "https://newengland511.org/map/Cctv/988",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.14001,
+          44.63812
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "MILTON BRIDGE I-89 South",
+        "image": "https://newengland511.org/map/Cctv/1012",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.147801,
+          44.629548
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "MILTON I-89 North",
+        "image": "https://newengland511.org/map/Cctv/951",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.18473,
+          44.554777
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Southbound",
+        "location": "COLCHESTER I-89 South",
+        "image": "https://newengland511.org/map/Cctv/1020",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.177508,
+          44.504281
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "COLCHESTER Exit 16 NB",
+        "image": "https://newengland511.org/map/Cctv/973",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.062843,
+          44.43308
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Southbound",
+        "location": "I-89 MM 81.35 SB WILLISTON",
+        "image": "https://newengland511.org/map/Cctv/1022",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.062877,
+          44.433885
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "WILLISTON I-89 North",
+        "image": "https://newengland511.org/map/Cctv/982",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.911881,
+          44.379049
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Southbound",
+        "location": "BOLTON I-89 SB RT2 North",
+        "image": "https://newengland511.org/map/Cctv/968",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.911881,
+          44.379449
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Southbound",
+        "location": "BOLTON I-89 South",
+        "image": "https://newengland511.org/map/Cctv/1015",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.782259,
+          44.352994
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "WATERBURY I-89 North",
+        "image": "https://newengland511.org/map/Cctv/950",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.756308,
+          44.344532
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Southbound",
+        "location": "WATERBURY I-89 Exit 10 South",
+        "image": "https://newengland511.org/map/Cctv/995",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.7475,
+          44.34028
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "WATERBURY 1-89 Exit 10 North",
+        "image": "https://newengland511.org/map/Cctv/1027",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.74725,
+          44.34
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "I-89 NB Exit 10 Waterbury South",
+        "image": "https://newengland511.org/map/Cctv/1029",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.63989,
+          44.27331
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "MIDDLESEX I-89 North",
+        "image": "https://newengland511.org/map/Cctv/956",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.606547,
+          44.065745
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "BROOKFIELD I-89 North",
+        "image": "https://newengland511.org/map/Cctv/990",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.606547,
+          44.065345
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "BROOKFIELD I-89 NB South",
+        "image": "https://newengland511.org/map/Cctv/1019",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.609458,
+          44.042818
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "BROOKFIELD GUA I-89 North",
+        "image": "https://newengland511.org/map/Cctv/984",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.603841,
+          43.851763
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "BETHEL I-89 North",
+        "image": "https://newengland511.org/map/Cctv/1023",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.374182,
+          43.662454
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Southbound",
+        "location": "HARTFORD I-89 SB North",
+        "image": "https://newengland511.org/map/Cctv/991",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.373582,
+          43.662454
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Southbound",
+        "location": "HARTFORD I-89 South",
+        "image": "https://newengland511.org/map/Cctv/966",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.199637,
+          44.449335
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-189",
+        "direction": "Westbound",
+        "location": "I-189 SOUTH BURLINGTON",
+        "image": "https://newengland511.org/map/Cctv/1230",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.67818,
+          45.00595
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-114",
+        "direction": "Southbound",
+        "location": "CANAAN VT-114 South",
+        "image": "https://newengland511.org/map/Cctv/1232",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.227072,
+          44.975151
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-78",
+        "direction": "Eastbound",
+        "location": "Alburgh CCTV",
+        "image": "https://newengland511.org/map/Cctv/1234",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.227872,
+          44.975151
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-78",
+        "direction": "Westbound",
+        "location": "Alburgh CCTV West",
+        "image": "https://newengland511.org/map/Cctv/1235",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.20299,
+          42.90512
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-7",
+        "direction": "Northbound",
+        "location": "BENNINGTON US-7 North",
+        "image": "https://newengland511.org/map/Cctv/1422",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.583354,
+          44.212323
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Southbound",
+        "location": "BERLIN I-89 South",
+        "image": "https://newengland511.org/map/Cctv/1423",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.50455,
+          44.986428
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-105",
+        "direction": "Westbound",
+        "location": "JAY VT-105 West",
+        "image": "https://newengland511.org/map/Cctv/1424",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.457778,
+          44.753611
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-100",
+        "direction": "Northbound",
+        "location": "LOWELL VT-100 North",
+        "image": "https://newengland511.org/map/Cctv/1425",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.3311,
+          44.99878
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-2",
+        "direction": "Northbound",
+        "location": "ALBURGH US-2 East",
+        "image": "https://newengland511.org/map/Cctv/1426",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.708178,
+          44.940486
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-105",
+        "direction": "Westbound",
+        "location": "BERKSHIRE VT-105",
+        "image": "https://newengland511.org/map/Cctv/1427",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.361728,
+          44.819214
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-58",
+        "direction": "Westbound",
+        "location": "LOWELL VT-58",
+        "image": "https://newengland511.org/map/Cctv/1428",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.968256,
+          43.943853
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-125",
+        "direction": "Westbound",
+        "location": "Ripton VT-125 Snowbowl",
+        "image": "https://newengland511.org/map/Cctv/1843",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.396251,
+          43.63706
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "US-4",
+        "direction": "Westbound",
+        "location": "QUECHEE US-4",
+        "image": "https://newengland511.org/map/Cctv/1848",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.70565,
+          43.412989
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-100",
+        "direction": "Northbound",
+        "location": "LUDLOW VT-100",
+        "image": "https://newengland511.org/map/Cctv/1849",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.183796,
+          44.470027
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "I-89 South Burlington Exit-14 CCTV-1",
+        "image": "https://newengland511.org/map/Cctv/2064",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.183796,
+          44.470027
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "I-89 South Burlington Exit-14 CCTV-2",
+        "image": "https://newengland511.org/map/Cctv/2065",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.183796,
+          44.470027
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "I-89 South Burlington Exit-14 CCTV-3",
+        "image": "https://newengland511.org/map/Cctv/2066",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.183796,
+          44.470027
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Northbound",
+        "location": "I-89 South Burlington Exit-14 CCTV-4",
+        "image": "https://newengland511.org/map/Cctv/2067",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.594131,
+          44.248912
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "I-89",
+        "direction": "Southbound",
+        "location": "I-89 SB MM 52.75 Montpelier",
+        "image": "https://newengland511.org/map/Cctv/2279",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.007568,
+          42.81419
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Vermont",
+        "road": "VT-8",
+        "direction": "Northbound",
+        "location": "Readsboro VT-8",
+        "image": "https://newengland511.org/map/Cctv/2280",
+        "source": "Vermont",
+        "agency": "NewEngland511"
+      }
+    }
+  ]
+}

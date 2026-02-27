@@ -1,0 +1,5269 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.223475,
+          51.106617
+        ]
+      },
+      "properties": {
+        "id": 1,
+        "image_url": "https://511.alberta.ca/map/Cctv/1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.0014507,
+          51.1393524
+        ]
+      },
+      "properties": {
+        "id": 2,
+        "image_url": "https://511.alberta.ca/map/Cctv/2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.033121,
+          51.042536
+        ]
+      },
+      "properties": {
+        "id": 3,
+        "image_url": "https://511.alberta.ca/map/Cctv/3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.069036,
+          51.172817
+        ]
+      },
+      "properties": {
+        "id": 4,
+        "image_url": "https://511.alberta.ca/map/Cctv/4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.447483,
+          51.175914
+        ]
+      },
+      "properties": {
+        "id": 5,
+        "image_url": "https://511.alberta.ca/map/Cctv/5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.024877,
+          50.892051
+        ]
+      },
+      "properties": {
+        "id": 6,
+        "image_url": "https://511.alberta.ca/map/Cctv/6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.922281,
+          51.015421
+        ]
+      },
+      "properties": {
+        "id": 7,
+        "image_url": "https://511.alberta.ca/map/Cctv/7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.9198006,
+          50.9471624
+        ]
+      },
+      "properties": {
+        "id": 8,
+        "image_url": "https://511.alberta.ca/map/Cctv/8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.134181,
+          50.919277
+        ]
+      },
+      "properties": {
+        "id": 9,
+        "image_url": "https://511.alberta.ca/map/Cctv/9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.576429,
+          51.166912
+        ]
+      },
+      "properties": {
+        "id": 10,
+        "image_url": "https://511.alberta.ca/map/Cctv/10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.560434,
+          51.152068
+        ]
+      },
+      "properties": {
+        "id": 11,
+        "image_url": "https://511.alberta.ca/map/Cctv/11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.560371,
+          51.152011
+        ]
+      },
+      "properties": {
+        "id": 12,
+        "image_url": "https://511.alberta.ca/map/Cctv/12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.568722,
+          51.180881
+        ]
+      },
+      "properties": {
+        "id": 13,
+        "image_url": "https://511.alberta.ca/map/Cctv/13"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.574265,
+          51.178528
+        ]
+      },
+      "properties": {
+        "id": 14,
+        "image_url": "https://511.alberta.ca/map/Cctv/14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.570784,
+          51.176611
+        ]
+      },
+      "properties": {
+        "id": 15,
+        "image_url": "https://511.alberta.ca/map/Cctv/15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.570137,
+          51.174515
+        ]
+      },
+      "properties": {
+        "id": 16,
+        "image_url": "https://511.alberta.ca/map/Cctv/16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.571239,
+          51.172063
+        ]
+      },
+      "properties": {
+        "id": 17,
+        "image_url": "https://511.alberta.ca/map/Cctv/17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.569533,
+          51.17114
+        ]
+      },
+      "properties": {
+        "id": 18,
+        "image_url": "https://511.alberta.ca/map/Cctv/18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.565698,
+          51.166911
+        ]
+      },
+      "properties": {
+        "id": 19,
+        "image_url": "https://511.alberta.ca/map/Cctv/19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.5762,
+          51.167009
+        ]
+      },
+      "properties": {
+        "id": 20,
+        "image_url": "https://511.alberta.ca/map/Cctv/20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.073742,
+          51.044821
+        ]
+      },
+      "properties": {
+        "id": 21,
+        "image_url": "https://511.alberta.ca/map/Cctv/21"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.013638,
+          51.067122
+        ]
+      },
+      "properties": {
+        "id": 22,
+        "image_url": "https://511.alberta.ca/map/Cctv/22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.906655,
+          50.906327
+        ]
+      },
+      "properties": {
+        "id": 23,
+        "image_url": "https://511.alberta.ca/map/Cctv/23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.862,
+          49.6884
+        ]
+      },
+      "properties": {
+        "id": 24,
+        "image_url": "https://511.alberta.ca/map/Cctv/24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.580417,
+          51.182857
+        ]
+      },
+      "properties": {
+        "id": 25,
+        "image_url": "https://511.alberta.ca/map/Cctv/27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.056649,
+          50.894894
+        ]
+      },
+      "properties": {
+        "id": 26,
+        "image_url": "https://511.alberta.ca/map/Cctv/28"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.04,
+          52.4904
+        ]
+      },
+      "properties": {
+        "id": 27,
+        "image_url": "https://511.alberta.ca/map/Cctv/29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.473,
+          55.3164
+        ]
+      },
+      "properties": {
+        "id": 28,
+        "image_url": "https://511.alberta.ca/map/Cctv/32"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.61,
+          56.2192
+        ]
+      },
+      "properties": {
+        "id": 29,
+        "image_url": "https://511.alberta.ca/map/Cctv/35"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.597,
+          55.9246
+        ]
+      },
+      "properties": {
+        "id": 30,
+        "image_url": "https://511.alberta.ca/map/Cctv/38"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.698,
+          55.7236
+        ]
+      },
+      "properties": {
+        "id": 31,
+        "image_url": "https://511.alberta.ca/map/Cctv/41"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.839,
+          52.319
+        ]
+      },
+      "properties": {
+        "id": 32,
+        "image_url": "https://511.alberta.ca/map/Cctv/44"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.495,
+          52.9238
+        ]
+      },
+      "properties": {
+        "id": 33,
+        "image_url": "https://511.alberta.ca/map/Cctv/47"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.021,
+          52.8414
+        ]
+      },
+      "properties": {
+        "id": 34,
+        "image_url": "https://511.alberta.ca/map/Cctv/50"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.182,
+          49.7212
+        ]
+      },
+      "properties": {
+        "id": 35,
+        "image_url": "https://511.alberta.ca/map/Cctv/53"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.932,
+          53.205
+        ]
+      },
+      "properties": {
+        "id": 36,
+        "image_url": "https://511.alberta.ca/map/Cctv/56"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.044,
+          54.1221
+        ]
+      },
+      "properties": {
+        "id": 37,
+        "image_url": "https://511.alberta.ca/map/Cctv/59"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.535,
+          54.3206
+        ]
+      },
+      "properties": {
+        "id": 38,
+        "image_url": "https://511.alberta.ca/map/Cctv/62"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.828,
+          52.3463
+        ]
+      },
+      "properties": {
+        "id": 39,
+        "image_url": "https://511.alberta.ca/map/Cctv/65"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.833,
+          53.5499
+        ]
+      },
+      "properties": {
+        "id": 40,
+        "image_url": "https://511.alberta.ca/map/Cctv/68"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.716,
+          54.5561
+        ]
+      },
+      "properties": {
+        "id": 41,
+        "image_url": "https://511.alberta.ca/map/Cctv/71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.253,
+          49.2293
+        ]
+      },
+      "properties": {
+        "id": 42,
+        "image_url": "https://511.alberta.ca/map/Cctv/72"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.102,
+          54.6428
+        ]
+      },
+      "properties": {
+        "id": 43,
+        "image_url": "https://511.alberta.ca/map/Cctv/73"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.223,
+          58.5089
+        ]
+      },
+      "properties": {
+        "id": 44,
+        "image_url": "https://511.alberta.ca/map/Cctv/76"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.026,
+          54.0636
+        ]
+      },
+      "properties": {
+        "id": 45,
+        "image_url": "https://511.alberta.ca/map/Cctv/79"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.287,
+          56.7666
+        ]
+      },
+      "properties": {
+        "id": 46,
+        "image_url": "https://511.alberta.ca/map/Cctv/82"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.149,
+          58.5094
+        ]
+      },
+      "properties": {
+        "id": 47,
+        "image_url": "https://511.alberta.ca/map/Cctv/85"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.977,
+          50.9007
+        ]
+      },
+      "properties": {
+        "id": 49,
+        "image_url": "https://511.alberta.ca/map/Cctv/94"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.057,
+          50.8949
+        ]
+      },
+      "properties": {
+        "id": 50,
+        "image_url": "https://511.alberta.ca/map/Cctv/97"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.143,
+          50.9486
+        ]
+      },
+      "properties": {
+        "id": 51,
+        "image_url": "https://511.alberta.ca/map/Cctv/101"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.166,
+          50.9932
+        ]
+      },
+      "properties": {
+        "id": 52,
+        "image_url": "https://511.alberta.ca/map/Cctv/104"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.142,
+          50.9276
+        ]
+      },
+      "properties": {
+        "id": 53,
+        "image_url": "https://511.alberta.ca/map/Cctv/107"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.162,
+          51.008
+        ]
+      },
+      "properties": {
+        "id": 54,
+        "image_url": "https://511.alberta.ca/map/Cctv/110"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.392853,
+          53.633779
+        ]
+      },
+      "properties": {
+        "id": 55,
+        "image_url": "https://511.alberta.ca/map/Cctv/114"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.354,
+          53.6098
+        ]
+      },
+      "properties": {
+        "id": 56,
+        "image_url": "https://511.alberta.ca/map/Cctv/117"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.393,
+          53.6338
+        ]
+      },
+      "properties": {
+        "id": 57,
+        "image_url": "https://511.alberta.ca/map/Cctv/120"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.344,
+          53.5688
+        ]
+      },
+      "properties": {
+        "id": 58,
+        "image_url": "https://511.alberta.ca/map/Cctv/122"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.663,
+          53.5417
+        ]
+      },
+      "properties": {
+        "id": 59,
+        "image_url": "https://511.alberta.ca/map/Cctv/127"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.654,
+          53.5375
+        ]
+      },
+      "properties": {
+        "id": 60,
+        "image_url": "https://511.alberta.ca/map/Cctv/130"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.657,
+          53.518
+        ]
+      },
+      "properties": {
+        "id": 61,
+        "image_url": "https://511.alberta.ca/map/Cctv/133"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.659,
+          53.5726
+        ]
+      },
+      "properties": {
+        "id": 62,
+        "image_url": "https://511.alberta.ca/map/Cctv/136"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.246,
+          51.0405
+        ]
+      },
+      "properties": {
+        "id": 63,
+        "image_url": "https://511.alberta.ca/map/Cctv/139"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.492,
+          51.0873
+        ]
+      },
+      "properties": {
+        "id": 64,
+        "image_url": "https://511.alberta.ca/map/Cctv/144"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.714,
+          51.0381
+        ]
+      },
+      "properties": {
+        "id": 65,
+        "image_url": "https://511.alberta.ca/map/Cctv/146"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.784,
+          50.8339
+        ]
+      },
+      "properties": {
+        "id": 66,
+        "image_url": "https://511.alberta.ca/map/Cctv/149"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.475,
+          50.8337
+        ]
+      },
+      "properties": {
+        "id": 67,
+        "image_url": "https://511.alberta.ca/map/Cctv/152"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.473,
+          50.391
+        ]
+      },
+      "properties": {
+        "id": 68,
+        "image_url": "https://511.alberta.ca/map/Cctv/155"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.967,
+          50.6284
+        ]
+      },
+      "properties": {
+        "id": 69,
+        "image_url": "https://511.alberta.ca/map/Cctv/158"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.052,
+          50.1852
+        ]
+      },
+      "properties": {
+        "id": 70,
+        "image_url": "https://511.alberta.ca/map/Cctv/161"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.716,
+          50.0404
+        ]
+      },
+      "properties": {
+        "id": 71,
+        "image_url": "https://511.alberta.ca/map/Cctv/164"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.408,
+          49.9798
+        ]
+      },
+      "properties": {
+        "id": 72,
+        "image_url": "https://511.alberta.ca/map/Cctv/167"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.525,
+          49.8643
+        ]
+      },
+      "properties": {
+        "id": 73,
+        "image_url": "https://511.alberta.ca/map/Cctv/170"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.689,
+          50.2735
+        ]
+      },
+      "properties": {
+        "id": 74,
+        "image_url": "https://511.alberta.ca/map/Cctv/173"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.883,
+          50.7171
+        ]
+      },
+      "properties": {
+        "id": 75,
+        "image_url": "https://511.alberta.ca/map/Cctv/176"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.021,
+          51.0086
+        ]
+      },
+      "properties": {
+        "id": 76,
+        "image_url": "https://511.alberta.ca/map/Cctv/179"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.001,
+          51.2316
+        ]
+      },
+      "properties": {
+        "id": 77,
+        "image_url": "https://511.alberta.ca/map/Cctv/182"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.026,
+          51.5337
+        ]
+      },
+      "properties": {
+        "id": 78,
+        "image_url": "https://511.alberta.ca/map/Cctv/186"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.025,
+          51.8975
+        ]
+      },
+      "properties": {
+        "id": 79,
+        "image_url": "https://511.alberta.ca/map/Cctv/189"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.664,
+          52.6085
+        ]
+      },
+      "properties": {
+        "id": 80,
+        "image_url": "https://511.alberta.ca/map/Cctv/192"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.856,
+          52.3311
+        ]
+      },
+      "properties": {
+        "id": 81,
+        "image_url": "https://511.alberta.ca/map/Cctv/195"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.643,
+          52.8897
+        ]
+      },
+      "properties": {
+        "id": 82,
+        "image_url": "https://511.alberta.ca/map/Cctv/199"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.568,
+          53.236
+        ]
+      },
+      "properties": {
+        "id": 83,
+        "image_url": "https://511.alberta.ca/map/Cctv/202"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.133,
+          55.9845
+        ]
+      },
+      "properties": {
+        "id": 84,
+        "image_url": "https://511.alberta.ca/map/Cctv/205"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.673,
+          49.6271
+        ]
+      },
+      "properties": {
+        "id": 85,
+        "image_url": "https://511.alberta.ca/map/Cctv/208"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.093,
+          49.5784
+        ]
+      },
+      "properties": {
+        "id": 86,
+        "image_url": "https://511.alberta.ca/map/Cctv/211"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.568,
+          49.6496
+        ]
+      },
+      "properties": {
+        "id": 87,
+        "image_url": "https://511.alberta.ca/map/Cctv/214"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.052,
+          49.7875
+        ]
+      },
+      "properties": {
+        "id": 88,
+        "image_url": "https://511.alberta.ca/map/Cctv/217"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.363,
+          49.7565
+        ]
+      },
+      "properties": {
+        "id": 89,
+        "image_url": "https://511.alberta.ca/map/Cctv/220"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.926,
+          49.8149
+        ]
+      },
+      "properties": {
+        "id": 90,
+        "image_url": "https://511.alberta.ca/map/Cctv/223"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.071,
+          49.8735
+        ]
+      },
+      "properties": {
+        "id": 91,
+        "image_url": "https://511.alberta.ca/map/Cctv/226"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.496,
+          49.829
+        ]
+      },
+      "properties": {
+        "id": 92,
+        "image_url": "https://511.alberta.ca/map/Cctv/229"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.18,
+          49.2561
+        ]
+      },
+      "properties": {
+        "id": 93,
+        "image_url": "https://511.alberta.ca/map/Cctv/230"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.024,
+          49.077
+        ]
+      },
+      "properties": {
+        "id": 94,
+        "image_url": "https://511.alberta.ca/map/Cctv/233"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.503,
+          49.5024
+        ]
+      },
+      "properties": {
+        "id": 95,
+        "image_url": "https://511.alberta.ca/map/Cctv/234"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.833,
+          49.1675
+        ]
+      },
+      "properties": {
+        "id": 96,
+        "image_url": "https://511.alberta.ca/map/Cctv/237"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.817,
+          51.4162
+        ]
+      },
+      "properties": {
+        "id": 97,
+        "image_url": "https://511.alberta.ca/map/Cctv/240"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.719,
+          51.6487
+        ]
+      },
+      "properties": {
+        "id": 98,
+        "image_url": "https://511.alberta.ca/map/Cctv/243"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.272,
+          51.6493
+        ]
+      },
+      "properties": {
+        "id": 99,
+        "image_url": "https://511.alberta.ca/map/Cctv/246"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.662,
+          51.4017
+        ]
+      },
+      "properties": {
+        "id": 101,
+        "image_url": "https://511.alberta.ca/map/Cctv/251"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.298,
+          51.3873
+        ]
+      },
+      "properties": {
+        "id": 102,
+        "image_url": "https://511.alberta.ca/map/Cctv/252"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.279,
+          53.5218
+        ]
+      },
+      "properties": {
+        "id": 103,
+        "image_url": "https://511.alberta.ca/map/Cctv/255"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.777,
+          53.2494
+        ]
+      },
+      "properties": {
+        "id": 104,
+        "image_url": "https://511.alberta.ca/map/Cctv/258"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.624,
+          53.5692
+        ]
+      },
+      "properties": {
+        "id": 105,
+        "image_url": "https://511.alberta.ca/map/Cctv/261"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.047,
+          53.5783
+        ]
+      },
+      "properties": {
+        "id": 106,
+        "image_url": "https://511.alberta.ca/map/Cctv/265"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.212,
+          53.6093
+        ]
+      },
+      "properties": {
+        "id": 107,
+        "image_url": "https://511.alberta.ca/map/Cctv/266"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.547,
+          53.5815
+        ]
+      },
+      "properties": {
+        "id": 108,
+        "image_url": "https://511.alberta.ca/map/Cctv/267"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.875,
+          53.5706
+        ]
+      },
+      "properties": {
+        "id": 109,
+        "image_url": "https://511.alberta.ca/map/Cctv/270"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.272,
+          53.5707
+        ]
+      },
+      "properties": {
+        "id": 110,
+        "image_url": "https://511.alberta.ca/map/Cctv/273"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.731,
+          53.5706
+        ]
+      },
+      "properties": {
+        "id": 111,
+        "image_url": "https://511.alberta.ca/map/Cctv/278"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.327,
+          53.5699
+        ]
+      },
+      "properties": {
+        "id": 112,
+        "image_url": "https://511.alberta.ca/map/Cctv/281"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.75,
+          53.428
+        ]
+      },
+      "properties": {
+        "id": 113,
+        "image_url": "https://511.alberta.ca/map/Cctv/284"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.73,
+          53.3443
+        ]
+      },
+      "properties": {
+        "id": 114,
+        "image_url": "https://511.alberta.ca/map/Cctv/287"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.192,
+          53.2887
+        ]
+      },
+      "properties": {
+        "id": 115,
+        "image_url": "https://511.alberta.ca/map/Cctv/290"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.149,
+          50.0205
+        ]
+      },
+      "properties": {
+        "id": 116,
+        "image_url": "https://511.alberta.ca/map/Cctv/291"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.551,
+          57.1069
+        ]
+      },
+      "properties": {
+        "id": 117,
+        "image_url": "https://511.alberta.ca/map/Cctv/294"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.615,
+          57.905
+        ]
+      },
+      "properties": {
+        "id": 118,
+        "image_url": "https://511.alberta.ca/map/Cctv/295"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.691,
+          59.0923
+        ]
+      },
+      "properties": {
+        "id": 119,
+        "image_url": "https://511.alberta.ca/map/Cctv/296"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.039,
+          59.868
+        ]
+      },
+      "properties": {
+        "id": 120,
+        "image_url": "https://511.alberta.ca/map/Cctv/297"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.999,
+          55.4806
+        ]
+      },
+      "properties": {
+        "id": 121,
+        "image_url": "https://511.alberta.ca/map/Cctv/298"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.383,
+          55.1879
+        ]
+      },
+      "properties": {
+        "id": 122,
+        "image_url": "https://511.alberta.ca/map/Cctv/301"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.691,
+          55.2294
+        ]
+      },
+      "properties": {
+        "id": 123,
+        "image_url": "https://511.alberta.ca/map/Cctv/304"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.962,
+          55.2144
+        ]
+      },
+      "properties": {
+        "id": 124,
+        "image_url": "https://511.alberta.ca/map/Cctv/307"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.282,
+          55.0126
+        ]
+      },
+      "properties": {
+        "id": 125,
+        "image_url": "https://511.alberta.ca/map/Cctv/310"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.09,
+          54.6546
+        ]
+      },
+      "properties": {
+        "id": 126,
+        "image_url": "https://511.alberta.ca/map/Cctv/313"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.849,
+          54.4056
+        ]
+      },
+      "properties": {
+        "id": 127,
+        "image_url": "https://511.alberta.ca/map/Cctv/314"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.254,
+          54.2973
+        ]
+      },
+      "properties": {
+        "id": 128,
+        "image_url": "https://511.alberta.ca/map/Cctv/315"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.483,
+          54.0635
+        ]
+      },
+      "properties": {
+        "id": 129,
+        "image_url": "https://511.alberta.ca/map/Cctv/316"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.845,
+          53.8798
+        ]
+      },
+      "properties": {
+        "id": 130,
+        "image_url": "https://511.alberta.ca/map/Cctv/317"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.238,
+          53.7162
+        ]
+      },
+      "properties": {
+        "id": 131,
+        "image_url": "https://511.alberta.ca/map/Cctv/318"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.131,
+          55.4794
+        ]
+      },
+      "properties": {
+        "id": 132,
+        "image_url": "https://511.alberta.ca/map/Cctv/321"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.624,
+          54.8201
+        ]
+      },
+      "properties": {
+        "id": 133,
+        "image_url": "https://511.alberta.ca/map/Cctv/322"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.968,
+          55.9931
+        ]
+      },
+      "properties": {
+        "id": 134,
+        "image_url": "https://511.alberta.ca/map/Cctv/325"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.454,
+          56.8994
+        ]
+      },
+      "properties": {
+        "id": 135,
+        "image_url": "https://511.alberta.ca/map/Cctv/328"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.924,
+          51.068
+        ]
+      },
+      "properties": {
+        "id": 136,
+        "image_url": "https://511.alberta.ca/map/Cctv/331"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.917,
+          51.066
+        ]
+      },
+      "properties": {
+        "id": 137,
+        "image_url": "https://511.alberta.ca/map/Cctv/334"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.228,
+          51.0873
+        ]
+      },
+      "properties": {
+        "id": 138,
+        "image_url": "https://511.alberta.ca/map/Cctv/337"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.003,
+          51.1771
+        ]
+      },
+      "properties": {
+        "id": 139,
+        "image_url": "https://511.alberta.ca/map/Cctv/341"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.996,
+          51.175
+        ]
+      },
+      "properties": {
+        "id": 140,
+        "image_url": "https://511.alberta.ca/map/Cctv/344"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.613,
+          53.4586
+        ]
+      },
+      "properties": {
+        "id": 141,
+        "image_url": "https://511.alberta.ca/map/Cctv/347"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.664,
+          53.5755
+        ]
+      },
+      "properties": {
+        "id": 142,
+        "image_url": "https://511.alberta.ca/map/Cctv/351"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.671,
+          55.0316
+        ]
+      },
+      "properties": {
+        "id": 143,
+        "image_url": "https://511.alberta.ca/map/Cctv/354"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.128,
+          55.6244
+        ]
+      },
+      "properties": {
+        "id": 144,
+        "image_url": "https://511.alberta.ca/map/Cctv/355"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.557456576771,
+          51.1490897619322
+        ]
+      },
+      "properties": {
+        "id": 145,
+        "image_url": "https://511.alberta.ca/map/Cctv/356"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.447483,
+          51.175914
+        ]
+      },
+      "properties": {
+        "id": 147,
+        "image_url": "https://511.alberta.ca/map/Cctv/358"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.271,
+          53.7088
+        ]
+      },
+      "properties": {
+        "id": 148,
+        "image_url": "https://511.alberta.ca/map/Cctv/359"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.94,
+          53.7745
+        ]
+      },
+      "properties": {
+        "id": 149,
+        "image_url": "https://511.alberta.ca/map/Cctv/360"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.245,
+          53.5803
+        ]
+      },
+      "properties": {
+        "id": 150,
+        "image_url": "https://511.alberta.ca/map/Cctv/363"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.101,
+          53.9488
+        ]
+      },
+      "properties": {
+        "id": 151,
+        "image_url": "https://511.alberta.ca/map/Cctv/366"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.863,
+          53.8909
+        ]
+      },
+      "properties": {
+        "id": 152,
+        "image_url": "https://511.alberta.ca/map/Cctv/369"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.231,
+          53.8326
+        ]
+      },
+      "properties": {
+        "id": 153,
+        "image_url": "https://511.alberta.ca/map/Cctv/372"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.074,
+          53.7426
+        ]
+      },
+      "properties": {
+        "id": 154,
+        "image_url": "https://511.alberta.ca/map/Cctv/375"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.976,
+          53.8768
+        ]
+      },
+      "properties": {
+        "id": 155,
+        "image_url": "https://511.alberta.ca/map/Cctv/378"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.999989,
+          51.174981
+        ]
+      },
+      "properties": {
+        "id": 156,
+        "image_url": "https://511.alberta.ca/map/Cctv/381"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.11504,
+          51.156685
+        ]
+      },
+      "properties": {
+        "id": 157,
+        "image_url": "https://511.alberta.ca/map/Cctv/382"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.071935,
+          51.001522
+        ]
+      },
+      "properties": {
+        "id": 158,
+        "image_url": "https://511.alberta.ca/map/Cctv/383"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.57176,
+          51.183115
+        ]
+      },
+      "properties": {
+        "id": 159,
+        "image_url": "https://511.alberta.ca/map/Cctv/384"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.981671,
+          51.081599
+        ]
+      },
+      "properties": {
+        "id": 160,
+        "image_url": "https://511.alberta.ca/map/Cctv/385"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.0321,
+          51.047427
+        ]
+      },
+      "properties": {
+        "id": 161,
+        "image_url": "https://511.alberta.ca/map/Cctv/386"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.98144,
+          50.97948
+        ]
+      },
+      "properties": {
+        "id": 162,
+        "image_url": "https://511.alberta.ca/map/Cctv/387"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.18739,
+          51.038075
+        ]
+      },
+      "properties": {
+        "id": 163,
+        "image_url": "https://511.alberta.ca/map/Cctv/388"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.071566536991,
+          50.9939804777268
+        ]
+      },
+      "properties": {
+        "id": 164,
+        "image_url": "https://511.alberta.ca/map/Cctv/389"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.063600828168,
+          50.9046226213972
+        ]
+      },
+      "properties": {
+        "id": 165,
+        "image_url": "https://511.alberta.ca/map/Cctv/390"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.060065773841,
+          50.9052179201621
+        ]
+      },
+      "properties": {
+        "id": 166,
+        "image_url": "https://511.alberta.ca/map/Cctv/391"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.981820614306,
+          50.9505105560844
+        ]
+      },
+      "properties": {
+        "id": 167,
+        "image_url": "https://511.alberta.ca/map/Cctv/392"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.975613299912,
+          50.9319815244688
+        ]
+      },
+      "properties": {
+        "id": 168,
+        "image_url": "https://511.alberta.ca/map/Cctv/393"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.093731302179,
+          50.9937570886578
+        ]
+      },
+      "properties": {
+        "id": 169,
+        "image_url": "https://511.alberta.ca/map/Cctv/394"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.91578174122,
+          51.0967674227516
+        ]
+      },
+      "properties": {
+        "id": 170,
+        "image_url": "https://511.alberta.ca/map/Cctv/395"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.066019623348,
+          50.9042671645657
+        ]
+      },
+      "properties": {
+        "id": 171,
+        "image_url": "https://511.alberta.ca/map/Cctv/396"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.01804020254,
+          51.0375990173983
+        ]
+      },
+      "properties": {
+        "id": 172,
+        "image_url": "https://511.alberta.ca/map/Cctv/397"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.066084513708,
+          50.9306158072727
+        ]
+      },
+      "properties": {
+        "id": 173,
+        "image_url": "https://511.alberta.ca/map/Cctv/398"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.18931480313,
+          51.0804598399515
+        ]
+      },
+      "properties": {
+        "id": 174,
+        "image_url": "https://511.alberta.ca/map/Cctv/399"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.071154221531,
+          50.9199627406091
+        ]
+      },
+      "properties": {
+        "id": 175,
+        "image_url": "https://511.alberta.ca/map/Cctv/400"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.093466986216,
+          50.9503353188563
+        ]
+      },
+      "properties": {
+        "id": 176,
+        "image_url": "https://511.alberta.ca/map/Cctv/401"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.06006394413,
+          51.0511552496484
+        ]
+      },
+      "properties": {
+        "id": 177,
+        "image_url": "https://511.alberta.ca/map/Cctv/402"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.073908912408,
+          51.0485413731606
+        ]
+      },
+      "properties": {
+        "id": 178,
+        "image_url": "https://511.alberta.ca/map/Cctv/403"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.117362177818,
+          51.0240945122928
+        ]
+      },
+      "properties": {
+        "id": 179,
+        "image_url": "https://511.alberta.ca/map/Cctv/404"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.112736973744,
+          51.0436749731035
+        ]
+      },
+      "properties": {
+        "id": 180,
+        "image_url": "https://511.alberta.ca/map/Cctv/405"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.164045515367,
+          51.0527429371556
+        ]
+      },
+      "properties": {
+        "id": 181,
+        "image_url": "https://511.alberta.ca/map/Cctv/406"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.17815002818,
+          51.1112745334512
+        ]
+      },
+      "properties": {
+        "id": 182,
+        "image_url": "https://511.alberta.ca/map/Cctv/407"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.062606834696,
+          51.0668183987315
+        ]
+      },
+      "properties": {
+        "id": 183,
+        "image_url": "https://511.alberta.ca/map/Cctv/408"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.958507579833,
+          51.0960663011208
+        ]
+      },
+      "properties": {
+        "id": 184,
+        "image_url": "https://511.alberta.ca/map/Cctv/409"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.088624871175,
+          51.0462579080308
+        ]
+      },
+      "properties": {
+        "id": 185,
+        "image_url": "https://511.alberta.ca/map/Cctv/410"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.992990678136,
+          51.0377098744063
+        ]
+      },
+      "properties": {
+        "id": 186,
+        "image_url": "https://511.alberta.ca/map/Cctv/411"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.114618803796,
+          51.0002205223451
+        ]
+      },
+      "properties": {
+        "id": 187,
+        "image_url": "https://511.alberta.ca/map/Cctv/412"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.118116946861,
+          51.0742083063161
+        ]
+      },
+      "properties": {
+        "id": 188,
+        "image_url": "https://511.alberta.ca/map/Cctv/413"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.018228050095,
+          51.0478640084657
+        ]
+      },
+      "properties": {
+        "id": 189,
+        "image_url": "https://511.alberta.ca/map/Cctv/414"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.00518185042714,
+          51.03681492094389
+        ]
+      },
+      "properties": {
+        "id": 190,
+        "image_url": "https://511.alberta.ca/map/Cctv/415"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.998118961383,
+          51.03323198862
+        ]
+      },
+      "properties": {
+        "id": 191,
+        "image_url": "https://511.alberta.ca/map/Cctv/416"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.002164961529,
+          51.0153279773524
+        ]
+      },
+      "properties": {
+        "id": 192,
+        "image_url": "https://511.alberta.ca/map/Cctv/417"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.999855430902,
+          51.0247525049066
+        ]
+      },
+      "properties": {
+        "id": 193,
+        "image_url": "https://511.alberta.ca/map/Cctv/418"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.958862821582,
+          51.0087893276802
+        ]
+      },
+      "properties": {
+        "id": 194,
+        "image_url": "https://511.alberta.ca/map/Cctv/419"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.202305563926,
+          51.1198839870851
+        ]
+      },
+      "properties": {
+        "id": 195,
+        "image_url": "https://511.alberta.ca/map/Cctv/420"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.094762411776,
+          50.9613985163357
+        ]
+      },
+      "properties": {
+        "id": 196,
+        "image_url": "https://511.alberta.ca/map/Cctv/421"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.094481568751,
+          50.9795544660184
+        ]
+      },
+      "properties": {
+        "id": 197,
+        "image_url": "https://511.alberta.ca/map/Cctv/422"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.093731302179,
+          50.9937570886578
+        ]
+      },
+      "properties": {
+        "id": 198,
+        "image_url": "https://511.alberta.ca/map/Cctv/423"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.071346108187,
+          50.9938871814145
+        ]
+      },
+      "properties": {
+        "id": 199,
+        "image_url": "https://511.alberta.ca/map/Cctv/424"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.067143721049,
+          50.9943212460051
+        ]
+      },
+      "properties": {
+        "id": 200,
+        "image_url": "https://511.alberta.ca/map/Cctv/425"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.958834479835,
+          50.9504719932292
+        ]
+      },
+      "properties": {
+        "id": 201,
+        "image_url": "https://511.alberta.ca/map/Cctv/426"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.001574629629,
+          51.0085396212677
+        ]
+      },
+      "properties": {
+        "id": 202,
+        "image_url": "https://511.alberta.ca/map/Cctv/427"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.05008900814,
+          51.0507972144958
+        ]
+      },
+      "properties": {
+        "id": 203,
+        "image_url": "https://511.alberta.ca/map/Cctv/428"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.064419795441,
+          51.0159311825057
+        ]
+      },
+      "properties": {
+        "id": 204,
+        "image_url": "https://511.alberta.ca/map/Cctv/429"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.05570565074,
+          51.0469589446794
+        ]
+      },
+      "properties": {
+        "id": 205,
+        "image_url": "https://511.alberta.ca/map/Cctv/430"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.057841508145,
+          51.0491900209227
+        ]
+      },
+      "properties": {
+        "id": 206,
+        "image_url": "https://511.alberta.ca/map/Cctv/431"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.058337487314,
+          51.0422333306351
+        ]
+      },
+      "properties": {
+        "id": 207,
+        "image_url": "https://511.alberta.ca/map/Cctv/432"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.085623541627,
+          51.0517212794964
+        ]
+      },
+      "properties": {
+        "id": 208,
+        "image_url": "https://511.alberta.ca/map/Cctv/433"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.060367003363,
+          51.0483194191933
+        ]
+      },
+      "properties": {
+        "id": 209,
+        "image_url": "https://511.alberta.ca/map/Cctv/434"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.149493610146,
+          51.0979976858372
+        ]
+      },
+      "properties": {
+        "id": 210,
+        "image_url": "https://511.alberta.ca/map/Cctv/435"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.979519891092,
+          51.0670647555646
+        ]
+      },
+      "properties": {
+        "id": 211,
+        "image_url": "https://511.alberta.ca/map/Cctv/436"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.094451943904,
+          51.0669285883288
+        ]
+      },
+      "properties": {
+        "id": 212,
+        "image_url": "https://511.alberta.ca/map/Cctv/437"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.955990854463,
+          51.0531541599882
+        ]
+      },
+      "properties": {
+        "id": 213,
+        "image_url": "https://511.alberta.ca/map/Cctv/438"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.047926173395,
+          51.0209973335666
+        ]
+      },
+      "properties": {
+        "id": 214,
+        "image_url": "https://511.alberta.ca/map/Cctv/439"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.981814399704,
+          51.0517058011635
+        ]
+      },
+      "properties": {
+        "id": 215,
+        "image_url": "https://511.alberta.ca/map/Cctv/440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.044546427048,
+          50.8755792068887
+        ]
+      },
+      "properties": {
+        "id": 216,
+        "image_url": "https://511.alberta.ca/map/Cctv/441"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.95827780908,
+          51.0815721549312
+        ]
+      },
+      "properties": {
+        "id": 217,
+        "image_url": "https://511.alberta.ca/map/Cctv/442"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.05100647458,
+          51.029826827349
+        ]
+      },
+      "properties": {
+        "id": 218,
+        "image_url": "https://511.alberta.ca/map/Cctv/443"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.139584829012,
+          51.1091856038416
+        ]
+      },
+      "properties": {
+        "id": 219,
+        "image_url": "https://511.alberta.ca/map/Cctv/444"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.070969643017,
+          50.9652100697712
+        ]
+      },
+      "properties": {
+        "id": 220,
+        "image_url": "https://511.alberta.ca/map/Cctv/445"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.03510910734,
+          51.0813405693366
+        ]
+      },
+      "properties": {
+        "id": 221,
+        "image_url": "https://511.alberta.ca/map/Cctv/446"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.117766719076,
+          51.052259747222
+        ]
+      },
+      "properties": {
+        "id": 222,
+        "image_url": "https://511.alberta.ca/map/Cctv/447"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.028176010214,
+          51.0672825565416
+        ]
+      },
+      "properties": {
+        "id": 223,
+        "image_url": "https://511.alberta.ca/map/Cctv/448"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.041416328563,
+          51.0959722873254
+        ]
+      },
+      "properties": {
+        "id": 224,
+        "image_url": "https://511.alberta.ca/map/Cctv/449"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.035412634479,
+          50.9930388057184
+        ]
+      },
+      "properties": {
+        "id": 225,
+        "image_url": "https://511.alberta.ca/map/Cctv/450"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.102801392366,
+          51.0471940684857
+        ]
+      },
+      "properties": {
+        "id": 226,
+        "image_url": "https://511.alberta.ca/map/Cctv/451"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.094702439528,
+          51.0470278768524
+        ]
+      },
+      "properties": {
+        "id": 227,
+        "image_url": "https://511.alberta.ca/map/Cctv/452"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.083768681076,
+          51.0500605491511
+        ]
+      },
+      "properties": {
+        "id": 228,
+        "image_url": "https://511.alberta.ca/map/Cctv/453"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.091337471592,
+          51.0474890311706
+        ]
+      },
+      "properties": {
+        "id": 229,
+        "image_url": "https://511.alberta.ca/map/Cctv/454"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.094705362061,
+          51.0488666699464
+        ]
+      },
+      "properties": {
+        "id": 230,
+        "image_url": "https://511.alberta.ca/map/Cctv/455"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.086580094417,
+          51.0517853817892
+        ]
+      },
+      "properties": {
+        "id": 231,
+        "image_url": "https://511.alberta.ca/map/Cctv/456"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.081153520403,
+          51.0536169939056
+        ]
+      },
+      "properties": {
+        "id": 232,
+        "image_url": "https://511.alberta.ca/map/Cctv/457"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.08366623733,
+          51.0500300574547
+        ]
+      },
+      "properties": {
+        "id": 233,
+        "image_url": "https://511.alberta.ca/map/Cctv/458"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.052273983417,
+          50.9941063294193
+        ]
+      },
+      "properties": {
+        "id": 234,
+        "image_url": "https://511.alberta.ca/map/Cctv/459"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.135599430569,
+          51.0418337590255
+        ]
+      },
+      "properties": {
+        "id": 235,
+        "image_url": "https://511.alberta.ca/map/Cctv/460"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.958110585009,
+          50.9313858309363
+        ]
+      },
+      "properties": {
+        "id": 236,
+        "image_url": "https://511.alberta.ca/map/Cctv/461"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.981153086417,
+          51.0954914755116
+        ]
+      },
+      "properties": {
+        "id": 237,
+        "image_url": "https://511.alberta.ca/map/Cctv/462"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.961435066698,
+          50.9794595506601
+        ]
+      },
+      "properties": {
+        "id": 238,
+        "image_url": "https://511.alberta.ca/map/Cctv/463"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.056195767912,
+          51.0668148242962
+        ]
+      },
+      "properties": {
+        "id": 239,
+        "image_url": "https://511.alberta.ca/map/Cctv/464"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.047940442767,
+          51.1104601284398
+        ]
+      },
+      "properties": {
+        "id": 240,
+        "image_url": "https://511.alberta.ca/map/Cctv/465"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.958409718803,
+          51.0668854521215
+        ]
+      },
+      "properties": {
+        "id": 241,
+        "image_url": "https://511.alberta.ca/map/Cctv/466"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.03348910188,
+          50.9674376046706
+        ]
+      },
+      "properties": {
+        "id": 242,
+        "image_url": "https://511.alberta.ca/map/Cctv/467"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.082984121154,
+          50.9941904345655
+        ]
+      },
+      "properties": {
+        "id": 243,
+        "image_url": "https://511.alberta.ca/map/Cctv/468"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.984351,
+          50.944834
+        ]
+      },
+      "properties": {
+        "id": 244,
+        "image_url": "https://511.alberta.ca/map/Cctv/469"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.0388819289,
+          50.9658677439108
+        ]
+      },
+      "properties": {
+        "id": 245,
+        "image_url": "https://511.alberta.ca/map/Cctv/470"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.164801,
+          51.153142
+        ]
+      },
+      "properties": {
+        "id": 246,
+        "image_url": "https://511.alberta.ca/map/Cctv/471"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.981658414231,
+          51.1543076830233
+        ]
+      },
+      "properties": {
+        "id": 247,
+        "image_url": "https://511.alberta.ca/map/Cctv/472"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.085043950756,
+          51.0667606289178
+        ]
+      },
+      "properties": {
+        "id": 248,
+        "image_url": "https://511.alberta.ca/map/Cctv/473"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.078575438381,
+          51.0488328327109
+        ]
+      },
+      "properties": {
+        "id": 249,
+        "image_url": "https://511.alberta.ca/map/Cctv/474"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.074279534415,
+          51.0418272453366
+        ]
+      },
+      "properties": {
+        "id": 250,
+        "image_url": "https://511.alberta.ca/map/Cctv/475"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.958063144911,
+          51.037847205604
+        ]
+      },
+      "properties": {
+        "id": 251,
+        "image_url": "https://511.alberta.ca/map/Cctv/476"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.212841112295,
+          51.1498129934814
+        ]
+      },
+      "properties": {
+        "id": 252,
+        "image_url": "https://511.alberta.ca/map/Cctv/477"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.0086913511,
+          51.010801148113
+        ]
+      },
+      "properties": {
+        "id": 253,
+        "image_url": "https://511.alberta.ca/map/Cctv/478"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.053489359909,
+          51.0411906917399
+        ]
+      },
+      "properties": {
+        "id": 254,
+        "image_url": "https://511.alberta.ca/map/Cctv/479"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.059675059165,
+          51.0305085239864
+        ]
+      },
+      "properties": {
+        "id": 255,
+        "image_url": "https://511.alberta.ca/map/Cctv/480"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.048466621043,
+          51.0013529008159
+        ]
+      },
+      "properties": {
+        "id": 256,
+        "image_url": "https://511.alberta.ca/map/Cctv/481"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.920487740795,
+          51.0664731301786
+        ]
+      },
+      "properties": {
+        "id": 257,
+        "image_url": "https://511.alberta.ca/map/Cctv/482"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.230483806176,
+          51.0884548709704
+        ]
+      },
+      "properties": {
+        "id": 258,
+        "image_url": "https://511.alberta.ca/map/Cctv/483"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.976624,
+          50.900822
+        ]
+      },
+      "properties": {
+        "id": 259,
+        "image_url": "https://511.alberta.ca/map/Cctv/484"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.050118844897,
+          50.98075091484
+        ]
+      },
+      "properties": {
+        "id": 260,
+        "image_url": "https://511.alberta.ca/map/Cctv/485"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.069219391504,
+          50.9390700571202
+        ]
+      },
+      "properties": {
+        "id": 261,
+        "image_url": "https://511.alberta.ca/map/Cctv/486"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.062441339927,
+          51.0552641042542
+        ]
+      },
+      "properties": {
+        "id": 262,
+        "image_url": "https://511.alberta.ca/map/Cctv/487"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.071686207037,
+          50.9791921431295
+        ]
+      },
+      "properties": {
+        "id": 263,
+        "image_url": "https://511.alberta.ca/map/Cctv/488"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.037652777865,
+          50.8666787180583
+        ]
+      },
+      "properties": {
+        "id": 264,
+        "image_url": "https://511.alberta.ca/map/Cctv/489"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.055706752529,
+          51.0444056713517
+        ]
+      },
+      "properties": {
+        "id": 265,
+        "image_url": "https://511.alberta.ca/map/Cctv/490"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.00206992723,
+          51.0926525143057
+        ]
+      },
+      "properties": {
+        "id": 266,
+        "image_url": "https://511.alberta.ca/map/Cctv/491"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.002530898438,
+          51.0668580600484
+        ]
+      },
+      "properties": {
+        "id": 267,
+        "image_url": "https://511.alberta.ca/map/Cctv/492"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.164753801719,
+          51.0730748731323
+        ]
+      },
+      "properties": {
+        "id": 268,
+        "image_url": "https://511.alberta.ca/map/Cctv/493"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.062309730396,
+          51.0959935667279
+        ]
+      },
+      "properties": {
+        "id": 269,
+        "image_url": "https://511.alberta.ca/map/Cctv/494"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.070623975871,
+          50.9507420655196
+        ]
+      },
+      "properties": {
+        "id": 270,
+        "image_url": "https://511.alberta.ca/map/Cctv/495"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.064868162606,
+          50.9141399461354
+        ]
+      },
+      "properties": {
+        "id": 271,
+        "image_url": "https://511.alberta.ca/map/Cctv/496"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.580417,
+          51.182857
+        ]
+      },
+      "properties": {
+        "id": 272,
+        "image_url": "https://511.alberta.ca/map/Cctv/497"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.0352515,
+          51.1423169
+        ]
+      },
+      "properties": {
+        "id": 273,
+        "image_url": "https://511.alberta.ca/map/Cctv/498"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.447483,
+          51.175914
+        ]
+      },
+      "properties": {
+        "id": 274,
+        "image_url": "https://511.alberta.ca/map/Cctv/499"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.07021,
+          50.924972
+        ]
+      },
+      "properties": {
+        "id": 275,
+        "image_url": "https://511.alberta.ca/map/Cctv/500"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.166221,
+          51.01784
+        ]
+      },
+      "properties": {
+        "id": 276,
+        "image_url": "https://511.alberta.ca/map/Cctv/501"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.099181,
+          50.905386
+        ]
+      },
+      "properties": {
+        "id": 277,
+        "image_url": "https://511.alberta.ca/map/Cctv/502"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.981703,
+          51.139771
+        ]
+      },
+      "properties": {
+        "id": 278,
+        "image_url": "https://511.alberta.ca/map/Cctv/503"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.447483,
+          51.175914
+        ]
+      },
+      "properties": {
+        "id": 279,
+        "image_url": "https://511.alberta.ca/map/Cctv/504"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.934423,
+          51.26394
+        ]
+      },
+      "properties": {
+        "id": 280,
+        "image_url": "https://511.alberta.ca/map/Cctv/505"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.190079,
+          51.433175
+        ]
+      },
+      "properties": {
+        "id": 281,
+        "image_url": "https://511.alberta.ca/map/Cctv/508"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.673247,
+          51.161601
+        ]
+      },
+      "properties": {
+        "id": 282,
+        "image_url": "https://511.alberta.ca/map/Cctv/511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.96903,
+          51.174899
+        ]
+      },
+      "properties": {
+        "id": 283,
+        "image_url": "https://511.alberta.ca/map/Cctv/513"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.57176,
+          51.183115
+        ]
+      },
+      "properties": {
+        "id": 284,
+        "image_url": "https://511.alberta.ca/map/Cctv/514"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.919492,
+          51.1541373
+        ]
+      },
+      "properties": {
+        "id": 285,
+        "image_url": "https://511.alberta.ca/map/Cctv/515"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.141342,
+          51.045384
+        ]
+      },
+      "properties": {
+        "id": 286,
+        "image_url": "https://511.alberta.ca/map/Cctv/516"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.921642,
+          50.979773
+        ]
+      },
+      "properties": {
+        "id": 287,
+        "image_url": "https://511.alberta.ca/map/Cctv/517"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.139063,
+          50.949623
+        ]
+      },
+      "properties": {
+        "id": 288,
+        "image_url": "https://511.alberta.ca/map/Cctv/518"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.117788,
+          50.972334
+        ]
+      },
+      "properties": {
+        "id": 289,
+        "image_url": "https://511.alberta.ca/map/Cctv/519"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.61,
+          55.9175
+        ]
+      },
+      "properties": {
+        "id": 290,
+        "image_url": "https://511.alberta.ca/map/Cctv/520"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.402,
+          56.7453
+        ]
+      },
+      "properties": {
+        "id": 291,
+        "image_url": "https://511.alberta.ca/map/Cctv/523"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.418,
+          56.7589
+        ]
+      },
+      "properties": {
+        "id": 292,
+        "image_url": "https://511.alberta.ca/map/Cctv/526"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.482898,
+          53.43719
+        ]
+      },
+      "properties": {
+        "id": 293,
+        "image_url": "https://511.alberta.ca/map/Cctv/529"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.492,
+          53.4307
+        ]
+      },
+      "properties": {
+        "id": 294,
+        "image_url": "https://511.alberta.ca/map/Cctv/530"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.483,
+          53.4372
+        ]
+      },
+      "properties": {
+        "id": 295,
+        "image_url": "https://511.alberta.ca/map/Cctv/533"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.503,
+          53.4355
+        ]
+      },
+      "properties": {
+        "id": 296,
+        "image_url": "https://511.alberta.ca/map/Cctv/536"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.502583,
+          53.435512
+        ]
+      },
+      "properties": {
+        "id": 297,
+        "image_url": "https://511.alberta.ca/map/Cctv/539"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.66,
+          53.5129
+        ]
+      },
+      "properties": {
+        "id": 298,
+        "image_url": "https://511.alberta.ca/map/Cctv/542"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.66,
+          53.5408
+        ]
+      },
+      "properties": {
+        "id": 299,
+        "image_url": "https://511.alberta.ca/map/Cctv/545"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.666,
+          53.5746
+        ]
+      },
+      "properties": {
+        "id": 300,
+        "image_url": "https://511.alberta.ca/map/Cctv/549"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.4031,
+          56.7319
+        ]
+      },
+      "properties": {
+        "id": 301,
+        "image_url": "https://511.alberta.ca/map/Cctv/553"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.403,
+          56.7319
+        ]
+      },
+      "properties": {
+        "id": 302,
+        "image_url": "https://511.alberta.ca/map/Cctv/556"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.058841,
+          51.037933
+        ]
+      },
+      "properties": {
+        "id": 303,
+        "image_url": "https://511.alberta.ca/map/Cctv/559"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.017155,
+          51.15431
+        ]
+      },
+      "properties": {
+        "id": 304,
+        "image_url": "https://511.alberta.ca/map/Cctv/560"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.055627,
+          51.048044
+        ]
+      },
+      "properties": {
+        "id": 305,
+        "image_url": "https://511.alberta.ca/map/Cctv/561"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.230647,
+          51.133173
+        ]
+      },
+      "properties": {
+        "id": 306,
+        "image_url": "https://511.alberta.ca/map/Cctv/562"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.946659,
+          50.904391
+        ]
+      },
+      "properties": {
+        "id": 307,
+        "image_url": "https://511.alberta.ca/map/Cctv/563"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.558663680142,
+          51.1495248389501
+        ]
+      },
+      "properties": {
+        "id": 308,
+        "image_url": "https://511.alberta.ca/map/Cctv/564"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.091689,
+          51.142767
+        ]
+      },
+      "properties": {
+        "id": 309,
+        "image_url": "https://511.alberta.ca/map/Cctv/565"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.081377,
+          51.046909
+        ]
+      },
+      "properties": {
+        "id": 310,
+        "image_url": "https://511.alberta.ca/map/Cctv/566"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.202832,
+          51.144133
+        ]
+      },
+      "properties": {
+        "id": 311,
+        "image_url": "https://511.alberta.ca/map/Cctv/567"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.094556,
+          51.089956
+        ]
+      },
+      "properties": {
+        "id": 312,
+        "image_url": "https://511.alberta.ca/map/Cctv/568"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.092935,
+          50.895101
+        ]
+      },
+      "properties": {
+        "id": 313,
+        "image_url": "https://511.alberta.ca/map/Cctv/569"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.214,
+          51.5252
+        ]
+      },
+      "properties": {
+        "id": 314,
+        "image_url": "https://511.alberta.ca/map/Cctv/570"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.973,
+          50.895
+        ]
+      },
+      "properties": {
+        "id": 315,
+        "image_url": "https://511.alberta.ca/map/Cctv/573"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.155187,
+          50.976305
+        ]
+      },
+      "properties": {
+        "id": 316,
+        "image_url": "https://511.alberta.ca/map/Cctv/576"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.163473,
+          51.007889
+        ]
+      },
+      "properties": {
+        "id": 317,
+        "image_url": "https://511.alberta.ca/map/Cctv/577"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.465,
+          54.5041
+        ]
+      },
+      "properties": {
+        "id": 318,
+        "image_url": "https://511.alberta.ca/map/Cctv/578"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.688,
+          55.9344
+        ]
+      },
+      "properties": {
+        "id": 319,
+        "image_url": "https://511.alberta.ca/map/Cctv/579"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.918749,
+          51.125229
+        ]
+      },
+      "properties": {
+        "id": 320,
+        "image_url": "https://511.alberta.ca/map/Cctv/580"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.92282,
+          51.125204
+        ]
+      },
+      "properties": {
+        "id": 321,
+        "image_url": "https://511.alberta.ca/map/Cctv/581"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.058833,
+          51.037898
+        ]
+      },
+      "properties": {
+        "id": 322,
+        "image_url": "https://511.alberta.ca/map/Cctv/582"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.066445,
+          51.048497
+        ]
+      },
+      "properties": {
+        "id": 326,
+        "image_url": "https://511.alberta.ca/map/Cctv/586"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.032987,
+          51.042514
+        ]
+      },
+      "properties": {
+        "id": 329,
+        "image_url": "https://511.alberta.ca/map/Cctv/589"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.020713,
+          51.154252
+        ]
+      },
+      "properties": {
+        "id": 331,
+        "image_url": "https://511.alberta.ca/map/Cctv/591"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.055689,
+          51.048072
+        ]
+      },
+      "properties": {
+        "id": 334,
+        "image_url": "https://511.alberta.ca/map/Cctv/594"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.981519,
+          50.979509
+        ]
+      },
+      "properties": {
+        "id": 335,
+        "image_url": "https://511.alberta.ca/map/Cctv/595"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.071942,
+          51.001521
+        ]
+      },
+      "properties": {
+        "id": 338,
+        "image_url": "https://511.alberta.ca/map/Cctv/598"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.117716,
+          50.950702
+        ]
+      },
+      "properties": {
+        "id": 339,
+        "image_url": "https://511.alberta.ca/map/Cctv/599"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.081341,
+          51.046916
+        ]
+      },
+      "properties": {
+        "id": 341,
+        "image_url": "https://511.alberta.ca/map/Cctv/601"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.015597,
+          50.979386
+        ]
+      },
+      "properties": {
+        "id": 343,
+        "image_url": "https://511.alberta.ca/map/Cctv/603"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.117574,
+          51.015766
+        ]
+      },
+      "properties": {
+        "id": 344,
+        "image_url": "https://511.alberta.ca/map/Cctv/604"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.98204,
+          51.140026
+        ]
+      },
+      "properties": {
+        "id": 345,
+        "image_url": "https://511.alberta.ca/map/Cctv/605"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.001473,
+          51.138634
+        ]
+      },
+      "properties": {
+        "id": 346,
+        "image_url": "https://511.alberta.ca/map/Cctv/606"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.920364,
+          51.154252
+        ]
+      },
+      "properties": {
+        "id": 352,
+        "image_url": "https://511.alberta.ca/map/Cctv/612"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.165855,
+          51.039258
+        ]
+      },
+      "properties": {
+        "id": 355,
+        "image_url": "https://511.alberta.ca/map/Cctv/615"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.099182,
+          50.905383
+        ]
+      },
+      "properties": {
+        "id": 356,
+        "image_url": "https://511.alberta.ca/map/Cctv/616"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.187391,
+          51.037806
+        ]
+      },
+      "properties": {
+        "id": 357,
+        "image_url": "https://511.alberta.ca/map/Cctv/617"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.117792,
+          50.972333
+        ]
+      },
+      "properties": {
+        "id": 358,
+        "image_url": "https://511.alberta.ca/map/Cctv/618"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.141337,
+          51.045381
+        ]
+      },
+      "properties": {
+        "id": 359,
+        "image_url": "https://511.alberta.ca/map/Cctv/619"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.934737,
+          50.979382
+        ]
+      },
+      "properties": {
+        "id": 360,
+        "image_url": "https://511.alberta.ca/map/Cctv/620"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.181589,
+          51.051986
+        ]
+      },
+      "properties": {
+        "id": 361,
+        "image_url": "https://511.alberta.ca/map/Cctv/621"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.97039,
+          51.140014
+        ]
+      },
+      "properties": {
+        "id": 362,
+        "image_url": "https://511.alberta.ca/map/Cctv/622"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.969701,
+          51.154297
+        ]
+      },
+      "properties": {
+        "id": 363,
+        "image_url": "https://511.alberta.ca/map/Cctv/623"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.946725,
+          51.110758
+        ]
+      },
+      "properties": {
+        "id": 364,
+        "image_url": "https://511.alberta.ca/map/Cctv/624"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.123161,
+          51.142613
+        ]
+      },
+      "properties": {
+        "id": 365,
+        "image_url": "https://511.alberta.ca/map/Cctv/625"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.083166,
+          51.109292
+        ]
+      },
+      "properties": {
+        "id": 366,
+        "image_url": "https://511.alberta.ca/map/Cctv/626"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.001463,
+          51.081606
+        ]
+      },
+      "properties": {
+        "id": 367,
+        "image_url": "https://511.alberta.ca/map/Cctv/627"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.094503,
+          51.052441
+        ]
+      },
+      "properties": {
+        "id": 368,
+        "image_url": "https://511.alberta.ca/map/Cctv/628"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.164572,
+          51.137484
+        ]
+      },
+      "properties": {
+        "id": 369,
+        "image_url": "https://511.alberta.ca/map/Cctv/629"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.116543,
+          51.096727
+        ]
+      },
+      "properties": {
+        "id": 370,
+        "image_url": "https://511.alberta.ca/map/Cctv/630"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.041787,
+          50.948055
+        ]
+      },
+      "properties": {
+        "id": 371,
+        "image_url": "https://511.alberta.ca/map/Cctv/631"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.055806,
+          51.041292
+        ]
+      },
+      "properties": {
+        "id": 372,
+        "image_url": "https://511.alberta.ca/map/Cctv/632"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.071686,
+          51.029614
+        ]
+      },
+      "properties": {
+        "id": 373,
+        "image_url": "https://511.alberta.ca/map/Cctv/633"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.058233,
+          51.046431
+        ]
+      },
+      "properties": {
+        "id": 374,
+        "image_url": "https://511.alberta.ca/map/Cctv/634"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.067798,
+          51.049526
+        ]
+      },
+      "properties": {
+        "id": 375,
+        "image_url": "https://511.alberta.ca/map/Cctv/635"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.06513,
+          51.050368
+        ]
+      },
+      "properties": {
+        "id": 376,
+        "image_url": "https://511.alberta.ca/map/Cctv/636"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.071441,
+          51.037765
+        ]
+      },
+      "properties": {
+        "id": 377,
+        "image_url": "https://511.alberta.ca/map/Cctv/637"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.094573,
+          51.037905
+        ]
+      },
+      "properties": {
+        "id": 378,
+        "image_url": "https://511.alberta.ca/map/Cctv/638"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.06998,
+          51.050617
+        ]
+      },
+      "properties": {
+        "id": 379,
+        "image_url": "https://511.alberta.ca/map/Cctv/639"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.094862,
+          51.043183
+        ]
+      },
+      "properties": {
+        "id": 380,
+        "image_url": "https://511.alberta.ca/map/Cctv/640"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.141383,
+          51.022524
+        ]
+      },
+      "properties": {
+        "id": 381,
+        "image_url": "https://511.alberta.ca/map/Cctv/641"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.211309,
+          51.052707
+        ]
+      },
+      "properties": {
+        "id": 382,
+        "image_url": "https://511.alberta.ca/map/Cctv/642"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.052998,
+          51.046133
+        ]
+      },
+      "properties": {
+        "id": 383,
+        "image_url": "https://511.alberta.ca/map/Cctv/643"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.071696,
+          51.045729
+        ]
+      },
+      "properties": {
+        "id": 384,
+        "image_url": "https://511.alberta.ca/map/Cctv/644"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.083892,
+          51.045296
+        ]
+      },
+      "properties": {
+        "id": 385,
+        "image_url": "https://511.alberta.ca/map/Cctv/645"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.065375,
+          51.044675
+        ]
+      },
+      "properties": {
+        "id": 386,
+        "image_url": "https://511.alberta.ca/map/Cctv/646"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.211172,
+          51.066889
+        ]
+      },
+      "properties": {
+        "id": 387,
+        "image_url": "https://511.alberta.ca/map/Cctv/647"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.210959,
+          51.038167
+        ]
+      },
+      "properties": {
+        "id": 388,
+        "image_url": "https://511.alberta.ca/map/Cctv/648"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.941821,
+          50.884966
+        ]
+      },
+      "properties": {
+        "id": 389,
+        "image_url": "https://511.alberta.ca/map/Cctv/649"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.052672,
+          51.127991
+        ]
+      },
+      "properties": {
+        "id": 390,
+        "image_url": "https://511.alberta.ca/map/Cctv/650"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.055514,
+          51.046388
+        ]
+      },
+      "properties": {
+        "id": 391,
+        "image_url": "https://511.alberta.ca/map/Cctv/651"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.094612,
+          51.074394
+        ]
+      },
+      "properties": {
+        "id": 392,
+        "image_url": "https://511.alberta.ca/map/Cctv/652"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.065353,
+          51.045657
+        ]
+      },
+      "properties": {
+        "id": 393,
+        "image_url": "https://511.alberta.ca/map/Cctv/653"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.076254,
+          51.044955
+        ]
+      },
+      "properties": {
+        "id": 394,
+        "image_url": "https://511.alberta.ca/map/Cctv/654"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.151486,
+          51.167895
+        ]
+      },
+      "properties": {
+        "id": 395,
+        "image_url": "https://511.alberta.ca/map/Cctv/655"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.065473,
+          51.043289
+        ]
+      },
+      "properties": {
+        "id": 396,
+        "image_url": "https://511.alberta.ca/map/Cctv/656"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.081589,
+          51.043752
+        ]
+      },
+      "properties": {
+        "id": 397,
+        "image_url": "https://511.alberta.ca/map/Cctv/657"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.062313,
+          51.110734
+        ]
+      },
+      "properties": {
+        "id": 398,
+        "image_url": "https://511.alberta.ca/map/Cctv/658"
+      }
+    }
+  ]
+}

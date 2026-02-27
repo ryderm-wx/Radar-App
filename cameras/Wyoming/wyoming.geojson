@@ -1,0 +1,2203 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.47574213599995,
+          41.26648295000007
+        ]
+      },
+      "properties": {
+        "camera_name": "Telephone Canyon",
+        "route": "I-80",
+        "milepost": 320.2,
+        "deviceid": 3882,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Laramie",
+        "views": [
+          {
+            "label": "I 80 Telephone Canyon - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStpeCtwSW45V2dlcy9TMDlqUXlNV09KZXppUEM0KzVpdmV1T2xTQnV5dXROWThwS0dCd0gwNExhSXJjWlhrZW43cElCTFU5SFppYnpNaXlDdkNGaUkxYUprNmpmRVdSeTg9"
+          },
+          {
+            "label": "I 80 Telephone Canyon - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlESEZVdFBIR3NQUXNCMkU1UnNtblUxdHpyTFNwVTBocmxMdmVvMUhzNGNYYTVlRUtrMDVxay9nOHZpVGlHbkg3WnozdkNWb1VmY09TVlljKzg0Mi93NmlRNDBtUkJyVnM9"
+          },
+          {
+            "label": "I 80 Telephone Canyon - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlIZmFCcDlyMHhKMHpqOWhZWUV1cmh0TFVOdU9LaWt5UVA3clJHQVl4TzluMW5UMUdRcDZLQnl4UEwrSVlJenlOWkRxR0QrS25uRlp6TEVBTUtiZGx4YjVPVnk0eVF2aXBLYldhSkRQWDAzT2pOSDhBKzJ2VDE="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.34734361899996,
+          41.15738125300004
+        ]
+      },
+      "properties": {
+        "camera_name": "Carpenter Interchange",
+        "route": "I-80",
+        "milepost": 386.5,
+        "deviceid": 3883,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Pine Bluffs",
+        "views": [
+          {
+            "label": "I 80 Carpenter Interchange - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9CdzJaTHdYcW93aS94WlVEVXpoeGticjNlODdQZkxHeTNaTzRnb1ZEdDBJaHVBaUNvNkEvb2V1OFlJMUdzaDByVFdqU3hpQ3E5cko5Q1VRVG40Zi9Sb2wvbTIxcnFBeW89"
+          },
+          {
+            "label": "I 80 Carpenter Interchange - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStpM2ZUbVcyNzZRTjJOK29pOG5jL1d3bmdIVktmL2pKbTVyc2dRU2x3a3h4RE1Hb1lUUlR5bGt5N09KbXhmMm9qVFVNRGxxQnBxVStLb0dyUkJ0dklJODZkUElseEVYZG89"
+          },
+          {
+            "label": "I 80 Carpenter Interchange - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlTbG90bEp1czY0Q0FDWXFBTG8vbW9lemE5ZDZLZFJZR3VGY2w4UG1NMi9zOXozSXphWVk1bTY3VFk4bHAzdmpMeDNHZXc2YzRsK0tQdyt2dHlRaTJKcXJnMkVwSTFpQXc9"
+          },
+          {
+            "label": "I 80 Carpenter Interchange - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS92R29HYmtGV2UrMFo0VG5kMkNPYmZ5WmtKVXRrOGhlUFVrWG1hd1lYRkxEZ0JOb3hENzUzclEvV0pjdytodkE2MGMycnMrVm5DM3YzLzhleGc3UTlobkVmbXBHQmNQb2M9"
+          },
+          {
+            "label": "I 80 Carpenter Interchange - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStrUmcwM0FSNnZjUmNTUnIvRm83aGN6Nklkb3Zac1JzUTl5a3FGQkprL3Q5SHNDVW90Skl1clFDV2dZQXFkZnI5TllYcjErWTB1NnF5d29RTzFqaFJheFJSR1J3aDREblE9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.55010799999997,
+          41.854381000000046
+        ]
+      },
+      "properties": {
+        "camera_name": "Hanna Jct EM Com Tower (Proposed/New)",
+        "route": "US 30/287",
+        "milepost": 252.71,
+        "deviceid": 3306,
+        "directions": [
+          "west"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.97602499999999,
+          41.752211111000065
+        ]
+      },
+      "properties": {
+        "camera_name": "Rock River",
+        "route": "US 30/287",
+        "milepost": 288.2,
+        "deviceid": 3307,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.54041542199997,
+          41.11567701800004
+        ]
+      },
+      "properties": {
+        "camera_name": "Midway",
+        "route": "US 287",
+        "milepost": 414.5,
+        "deviceid": 4885,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": "Laramie",
+        "views": [
+          {
+            "label": "US 287 Midway - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThlWFY2Y1krZzlWeFpialFvNEhIeU9YY3hNM0xuby83a21hNHdLd2tMSWRYM2FIa1NmL1I1dTVoMVdiY1hMQjZtSm9wVW1iWnFzR0E9PQ=="
+          },
+          {
+            "label": "US 287 Midway - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStuRXJMNFFiaWFCVjYzUmxzSlBua3RjUWhnN1haeE8yYUU1Q2h0Y2xsYm5IVWo0UTBqYkVPTUV3SGt1N0dDR01ibXJEelJwZ2JKWnc9PQ=="
+          },
+          {
+            "label": "US 287 Midway - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStGNGpoYWdUTlFHUktjczFObVh5VG1WT0x6bkY2d0c5ejhIVDY1N1c0U1h2UnBsS29NN1diaVkzRTgxZm1OMXdsNS8yYUZRWTVxQkpqMXBYWE1iTTBVc3F4YkxRZlRuMzQ9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.35473413699998,
+          41.96828820300004
+        ]
+      },
+      "properties": {
+        "camera_name": "Willow Hill",
+        "route": "US 287/WY 789",
+        "milepost": 14.7,
+        "deviceid": 3305,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Rawlins",
+        "views": [
+          {
+            "label": "US 287 Willow Hill - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThCc3YxZU9SOHFKOVMxU3lSUmVVbWgwR2NiNit0c0JXYXVwUm05WHVQNy9OZHlYcUFTcStDbmlyU25qRmp6TEFFVGI5QTdQQXNLWHloRVNGMERLUk1RbERGdkNyMHdLYzA9"
+          },
+          {
+            "label": "US 287 Willow Hill - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9hSjhHUXErRFVYcGRBOVowWngva2ZCNEduT3J4Tlo1UEJZRGRDYUZlNXNoOC85bFNPUytPZTdXS0kzMzRBMmpudXZpc0YycC9NTEdhQlc1MlhyQVJkVmk5ak51Tm5Kclk9"
+          },
+          {
+            "label": "US 287 Willow Hill - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStrT3NwbkRybWtrWkFlK3ZCNEp5RExYV3VWdm16SkdZMGdBdGE2T2RHU05XUnk5d0FIcFhKRkYzK2RqL1RhVmJySmVnNUdGbkJWYXU2ZUVncjNMaVB4dHNXcTZ4L2sxQjQ9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.35738439599999,
+          41.771722074000024
+        ]
+      },
+      "properties": {
+        "camera_name": "Sybille Canyon",
+        "route": "WY 34",
+        "milepost": 24.7,
+        "deviceid": 4694,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Laramie",
+        "views": [
+          {
+            "label": "WYO 34 Sybille Canyon - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSttanBsKzFFcHhWeUN2V01meVpMTGRsMzR3Y1RGZVF0N2dtaDlJVTNSYzl0a3Nab1A5amRvYnFFeHlQbUhWdkFKbVI3RXJVL1ZxV0QySUsyazY4OWc1WWtvYjZ5cDFXVGs9"
+          },
+          {
+            "label": "WYO 34 Sybille Canyon - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTgrdWcvTVNrZENxY0xkUWo2Tng2V0R6SnlFZEwxTTcraFpqeDE0S0ZiempENTJMWFdEVFBlcnp1aTVxeFByKzRYUHZHTHY2R3VlNkRjeTRrMFgwL05UbEdqSThuTUsvSUk9"
+          },
+          {
+            "label": "WYO 34 Sybille Canyon - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSt0emE5UXZKdUUrSmpVUFpGY0Q3OHBFeG05bWQvTGovalFOdjVNdGI0ZDB3MWtLZkt6VHBmZEpaNUlCTDNMbHRENVo4b2pHQW1Yajk1SlBiOUJpV21EZWVYcXJuZTE0UlB5OFdrdVpxQjl2ei9wY0txWUpBekU="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.21644966899999,
+          41.348859127000026
+        ]
+      },
+      "properties": {
+        "camera_name": "Green Rock Trailhead",
+        "route": "WY 130",
+        "milepost": 33.9,
+        "deviceid": 5434,
+        "directions": [
+          "west"
+        ],
+        "nearest_town": "Laramie",
+        "views": [
+          {
+            "label": "WYO 130 Green Rock Trailhead - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlBTHFkdVo1dTh0alljNFhQY0ExQTY2SG9rL1RZTVVlc2JDcVcyQ0o2ZWhLRENjaVV1LzIyRkJKbkF0SmpMRCt2c3h1RjNQYnhYM0l1Q2NFWWtBS2JiU2JGWGp4L004QVE9"
+          },
+          {
+            "label": "WYO 130 Green Rock Trailhead - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStNd0syM3Z3WXZoZmR0WWlkUTZRbUNlNWprWnA4U2JnaTgrMWtRS01ld1NXZVh5UjBlYVIyaVVGTzMxSmdsN25GamQxdzBzNUNDWlp1MGs0SjRxZU92a2hSU2c1V0hkOFE9"
+          },
+          {
+            "label": "WYO 130 Green Rock Trailhead - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTgwcm9qSG5CMk0vQWNyNFJteEtuUDc3WWhHc2ZVeEF5SGlEV2Vxekx6Wk5SZDRqVlpWZG91UnNxdno5REl6N0pKbDAxNTNNaFh4OU9FT1NHYnlvVzlyWE93R2hXcG1IYzRlNFpXc1VHdWNVc2wxcFUwK3pMVUU="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.11367777799995,
+          41.07260000000008
+        ]
+      },
+      "properties": {
+        "camera_name": "Woods Creek",
+        "route": "WY 230",
+        "milepost": 33.2,
+        "deviceid": 4884,
+        "directions": [
+          "west"
+        ],
+        "nearest_town": "Laramie",
+        "views": [
+          {
+            "label": "WYO 230 Woods Creek - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStmYjVsM1E0cXpENlZhalI3MU9ObVlqYVhrQjlFMVdFOFVUZG5aaTFHTjUwQ1Z4MTdSa2IvR21IR3FJYWlpU0gxMExDSnc0L2RjMGMwQUlmQjFNYXk0cmhRelh0d1RXMVE9"
+          },
+          {
+            "label": "WYO 230 Woods Creek - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9ZYkdyMUtWc1JUSExvYjJ6QzRuSCtDSm5OemVwRWwxVms3azFpcjdxQXFRNkVWUWRpbDh0UlFRYXlOc0NjVmtGVGx2S2tTcVlwWFBEQTRCNm4yRjhQRjZNLzVRaFRjVG89"
+          },
+          {
+            "label": "WYO 230 Woods Creek - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTkwTmFIdGd3V3hmd1kzWk8wMHRuYVpvMm1tNDdWZEtoU0k5bWxMQ2RXUURFUlZjbmV1aXpIUGs5emgxT3BFWkUrckRpb2lrcU00bTFnSkRlcXhHc1BoSTdhZHhvWHNsSTA9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.40850688899997,
+          41.00754978300006
+        ]
+      },
+      "properties": {
+        "camera_name": "Colorado State Line",
+        "route": "WY 230",
+        "milepost": 126.4,
+        "deviceid": 5343,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Saratoga",
+        "views": [
+          {
+            "label": "WYO 230 Colorado State Line - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThqTkRJU3FRalRURjFZdTd2ZG9tTmdoa1lEWXRMZmJjSDlOY0xvcWpIbmV4b1ZmR1hkYU8zMFI1My8vNEVyb0UyaGJhQWFJMDdnclcyQ2toWlhSaVFubXh0OXRCbTAzc1k9"
+          },
+          {
+            "label": "WYO 230 Colorado State Line - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9MNFhhclFXV0IvVGY1Q05Qdzg1bUl3Vmt2ZzVya3Rlc1FSVjJnZWIvMEFuVXFHalRsNHZiQmFYTHJUMFVNVDZuRWtTekx1SnNsRG5rb09CeWVWdVBKajI0ZEFhQjB3U1U9"
+          },
+          {
+            "label": "WYO 230 Colorado State Line - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThscEZVWTN2OThPM3gzenZEalNpUWV4Z2U0QmxjRHpiZFBGSFUrM2pzZHBTdHh2RGVvM2hQNWtNdkVOcXkwMnJiZ3dZYjRCRnpNTVk3MjRMRDVZWGJIY1BQUnNxU0QxUnp0YkI4R0pWb0F1QWRwcmcycDB2VVU="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.76229999999998,
+          41.45860000000005
+        ]
+      },
+      "properties": {
+        "camera_name": "Overland Trail Monument",
+        "route": "WY 789",
+        "milepost": 19.18,
+        "deviceid": 2673,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Baggs",
+        "views": [
+          {
+            "label": "WYO 789 Overland Trail Monument - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSttejZzYW1LWkthaUROS3k0REFmd3ovYmVKVm1QZkh6cGV3UGI3S1FvZTUxZ2MwTFRJRlJPQi9WSTBod0NwUDBlam5KVlV5Sk9vTDc4SDhFTUtIaS9PQ2RnZS9BRnlJQVBOQmVKbzBkU3BCeG1pN3dLK0w4REU="
+          },
+          {
+            "label": "WYO 789 Overland Trail Monument - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThXYUsyRE1UbkNQOXBZZkRmcjJXTmw2Sk5hSWl2eDNuOW1CMFhRaDBVZ05xU2Y4V1hCL2hZcXhPamNiRUxyeS9qNm8vWkNZeVMwTDFyd3ZoTkdWbWpUVEw4RTAzSjc0b01hK3pOcTBNMnRWbmNsenViVHF1eFg="
+          },
+          {
+            "label": "WYO 789 Overland Trail Monument - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThmZnBPUkx2SEFmZHUrMUJZQysvQllEQUk3NUc0YmczMFVzcm0vNGR4S2ZqZXUrVzBmTmpUNFd6elRNdElSZyt3SjhpUzh5UytVUHA3UDdxb2tGaTBTdGdpdUZ2Yjk0TXNoOFI3VVFtcng5VGl2cytGMGNGYlViUVE4aERxa1AvVno2dXh2clIwb1RRPT0="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.61355555599994,
+          42.795075000000054
+        ]
+      },
+      "properties": {
+        "camera_name": "Natural Bridge",
+        "route": "I-25",
+        "milepost": 151.2,
+        "deviceid": 3399,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Douglas",
+        "views": [
+          {
+            "label": "I 25 Natural Bridge - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStLaTZzN0xXOHJRR3dtUGtSMlhSK3Z4UElPb2ZpYiswdU53R2NjdXdrVUZDOW5laVVUei8yaExZVGxxa0xPcTBNZ3daUWJjYVk2K25VQjRPc2lGY3RZQnc2ZWNVVzNqQ0k9"
+          },
+          {
+            "label": "I 25 Natural Bridge - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStqOW1vTit4eFV3ZFBJUFBRMHQwc202YTlmQTBpdUVBT1dsUExhSlJza3FZSEt1Q250SHg2RnczRDdrWEh4MWx1dzNIVTNJMTZXVGt3RFB0S3k3TDg1ZERMb1JmQ2VRYkU9"
+          },
+          {
+            "label": "I 25 Natural Bridge - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThWcWJGOXhnRG1FRTROSlJvYVFpOEhUd1Fza0ZYNWJ3NTBLeTZLNWY3L3locUxaSVVCRS8wdGJRVWJqd2Z2STFiYmlkTnhQK2gyK2ZQOTJxOTFXQ0Y5SkhWckFBbmQ4R289"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.20315137099999,
+          42.692526920000034
+        ]
+      },
+      "properties": {
+        "camera_name": "Duck Creek",
+        "route": "US 20",
+        "milepost": 55.0,
+        "deviceid": 3885,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Lusk",
+        "views": [
+          {
+            "label": "US 20 Duck Creek - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlDT3VtVEFVZkROS0Jtemw4cFoxQnhLWVBBR0RaSXVTcHlYbmR3YmdiMldPMXFzTzhvTkFlelF4bTdkWjNDS3JDVlg0Z3Bod3FEbzVCU0M5eXRoaExFT1RaTVJmQXpDaU09"
+          },
+          {
+            "label": "US 20 Duck Creek - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlpYUkrSGRQKzU1NHBNT0dpVVNBWnlRUEFEQnRTSzQzUkFkREhVY1djNXdROU5tdmlGMjZjZEtsYVJTSXZpRDAzY1R2a1pXdStoK21uQTNEOVVWazhySGY0WDRLeGdWdUU9"
+          },
+          {
+            "label": "US 20 Duck Creek - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStKRW9QV0xReFZjb2pCS0tjSTZiZHgrakh6Y0tONlhZaUdhMGV3Q2QrRWlzUjFPdUZZV0dBMFFvaFk5UFZwMTZmVDhzMzVHVVVXSzVqcndVWUs3SWZhZitvYUtjQUs3YjQ9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.24776110899995,
+          41.624253579000026
+        ]
+      },
+      "properties": {
+        "camera_name": "Lovercheck Hill",
+        "route": "US 85",
+        "milepost": 61.2,
+        "deviceid": 3884,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.29720833299996,
+          43.24182222200005
+        ]
+      },
+      "properties": {
+        "camera_name": "Redbird Road",
+        "route": "US 85",
+        "milepost": 185.0,
+        "deviceid": 3318,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.22198888899999,
+          43.37889166700006
+        ]
+      },
+      "properties": {
+        "camera_name": "Mule Creek Junction",
+        "route": "US 85",
+        "milepost": 196.0,
+        "deviceid": 3892,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.82558984199994,
+          42.49449431100004
+        ]
+      },
+      "properties": {
+        "camera_name": "Jeffrey City",
+        "route": "US 287/WY 789",
+        "milepost": 23.02,
+        "deviceid": 3315,
+        "directions": [
+          "south (east)"
+        ],
+        "nearest_town": "Muddy Gap",
+        "views": [
+          {
+            "label": "US 287 Jeffrey City - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThEbWR2TjBuYTB6ZEsxeEdTVEg2QU93UDJYL1YzaGd5VXRNaFBLbnhERnRWQzE4d3MzZ3Exb2lEb25RdkViL2QySGZPNVpPb1ZGNERPSlkxdjFoS2VDSC9LSzFsbW5kNms9"
+          },
+          {
+            "label": "US 287 Jeffrey City - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9md2YvNE9oSUlzZTdaVTg3U0NIOUwwOEZGSWlBQTdHNnd6UnlMMEdvR2lSN1dqamQwa0FCZ2hXN29QS0pwNlZWbi9mT2RhdWQrRlI5MUFQY0tQSmE3bGFUVGNWSzR0V0k9"
+          },
+          {
+            "label": "US 287 Jeffrey City - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStWa1pRbEpEeGdremo5VXMvMk54QWZuRnpReXlzM3RzSys3Y2NmMnYyWUtwL29JQi9NY2Z5SS9OUXNQY1ZMcEd0UllvcGVWR25rMHFRS0NncFhIazZOd1dqY2tCSmxjYTA9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.26492044499997,
+          43.06014860100004
+        ]
+      },
+      "properties": {
+        "camera_name": "Mile Marker 23",
+        "route": "WY 59",
+        "milepost": 23.4,
+        "deviceid": 5435,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": "Douglas",
+        "views": [
+          {
+            "label": "WYO 59 Mile Marker 23 - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTkyeDRxQ3YySHB0Tnd3ZW9tRiszU2dYWm9GRXBucUtOV3YwMlVVYjdkRTF2Yjc3SEZTNFVHOGxCZjdxUk0yTjlIV2RkdmRkUUVmSmc9PQ=="
+          },
+          {
+            "label": "WYO 59 Mile Marker 23 - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSttQkY3bzRDTytWeEhaSDQ2U3VKSGxvZmtLbWU0bVVicHVaU1RpK09pMDE2WVdGLzlKVzNqMWdyUDhuN2NQV1hVN0p4ejQ2SDdmYlE9PQ=="
+          },
+          {
+            "label": "WYO 59 Mile Marker 23 - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStrNGdIa0hZVEFhM0NVMTVoZllJT2txaUNrdnA1ZG1DMS96R0wxV3pXMGtHZVZkSnkxaFRrSVVaQmtvMGc5TzBWTzJYTGVzbmEyZG5Ub0lJOENQZlZ3MkRQU2RRQ0l3Qk09"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.39346175899999,
+          43.39673285500004
+        ]
+      },
+      "properties": {
+        "camera_name": "Jenne Trail",
+        "route": "WY 59",
+        "milepost": 49.0,
+        "deviceid": 5346,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": "Douglas",
+        "views": [
+          {
+            "label": "WYO 59 Jenne Trail - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTk3amRYNzB4WW83a2YrcmV3S2pFUWoyem9QbFl3S3VQcTd4TnVaeWRKcHJmY3BzaWFMbWhqU2h1QXoxRVZpdnUwN1A5eDlhTUtxQys4TUZ0eXJiamIzS254SDBianRwNDA9"
+          },
+          {
+            "label": "WYO 59 Jenne Trail - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThxb1ZRclJpVFo5azh6dExKdmorZnBacHVtY1dOOGNoQjR2VUVldmlJTnBWSHBSc2lJOXM5dVB1Y2VSYno4RnRJTGhvTnZvdzF3ckJDZ1BXdE9ydzNtWXNBSFIzcWd0SDQ9"
+          },
+          {
+            "label": "WYO 59 Jenne Trail - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTh0QzVlWGltQVptNmR1MEowZ0FhcUtSVHhBQm1GQk4ycTk3VmdWNU9ndUgxOUhQTVRMSjRqTGxaOUkyaEgwcjRSdmZnck1TYmt0NGZSd0xuUitHOVRNcGxNdTNSZXN1VmM9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.44526944399996,
+          42.36170000000004
+        ]
+      },
+      "properties": {
+        "camera_name": "Muddy Gap",
+        "route": "WY 220",
+        "milepost": 45.0,
+        "deviceid": 3317,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Muddy Gap",
+        "views": [
+          {
+            "label": "WYO 220 Muddy Gap - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTkrK1JCcnVhcTZoaHhZeTdjUXJOcDZSSHNTL0RyV0NVU2F5RW5KS29QSjFBUWVPNjdWMEY1Z1pGb1Q5czIvUVJXYy9zRkw2L0FaOGduVTlCaXVJckJOUEQ2RTdMNzNRZTg9"
+          },
+          {
+            "label": "WYO 220 Muddy Gap - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThVY2JiaUxocys1eUZnRTJrUTRrNnB4MzNqSkVGWFBrZlQ5bG1zeDlSM3VyTVpzZFJ6Q3o0V09XTlpkbDlTQ0tFTzAvWjVNTVNOdEJoM1kxWVg5MERTY01iNG82Q3V2cEE9"
+          },
+          {
+            "label": "WYO 220 Muddy Gap - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9LK2k5bi9Qc01KQTNTekNpdmlEYUh0MDhBYmw5S05RemRPY09rYU0xc2l3MkhOZDlxNFZqWU9TaTB4d2NyZjVwOHFzODFhem95b0xxRGJFVVhweWNPR2c2T2NGOFVYWGc9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.32849664399998,
+          42.77498322500003
+        ]
+      },
+      "properties": {
+        "camera_name": "Casper Mountain Road",
+        "route": "WY 251",
+        "milepost": 5.25,
+        "deviceid": 5073,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Casper",
+        "views": [
+          {
+            "label": "WYO 251 Casper Mtn Rd - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlZSm1obWdsSXlsVW1KSUg5cDdQTml2UVM4eTVlZUpJREFmSDVMM0dNVmVPY1pTYkVMUGlUSW1MZUx4YlJBaVlRVmk0VXU3YWYrSW1HTXNsZUVEc1hZS3NqTnJyNDFBeUk9"
+          },
+          {
+            "label": "WYO 251 Casper Mtn Rd - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSs3ZW1mUmszamhNZkFESGZIK3ppZE9WYk5oOGxURzRqMVhROTFvbVlqSjkwcVk5ajdYdjVRYktidTBLVmh3K0RXbENrYldFMmpXZEZpRWtlbyszYTg4YzRqZE1zbWdMSjg9"
+          },
+          {
+            "label": "WYO 251 Casper Mtn Rd - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS80cnZQSDVWVnhJejBJdERtUDFQWTQrcUNyYTRMZ3hFV2phZHA5anF1ZXJsTWZiMXhrOUxKa1pHQloyalpNVWZjbG1TSktWVkhkUm5hSEpVdW9sUytzVGRwUjBqeHVPYTUxNnRiallPRS9sZGhESC9aSWpnbTI="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.08538055599996,
+          43.55751388900006
+        ]
+      },
+      "properties": {
+        "camera_name": "Pugsley Hill",
+        "route": "WY 387",
+        "milepost": 115.0,
+        "deviceid": 3888,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Midwest",
+        "views": [
+          {
+            "label": "WYO 387 Pugsley Hill - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTg1WTA3bVFrK1cxckRFY0YxWnFTMTVQU1VLQnlQOHJ3WjNCMHpHRWRKVG5JZEdqVnpYbUFtSmhNZ0I3c04yU0Mrdmt4NlJXNWc3WU01VmpkRWxRZmpIdFRJNllNNzhIYTg9"
+          },
+          {
+            "label": "WYO 387 Pugsley Hill - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9QaUVEYVZDbGdyL2NTU2ZKSkNEdVk5RW40d2dtakYyck43VHFFN1RvbnpTZFpPUnhNcHVLd29BL1VlTUZMVmNpVTczTVhXZUhQMTBDYjhMbEpMSEtsZVRYM0MwSzdNZG89"
+          },
+          {
+            "label": "WYO 387 Pugsley Hill - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThudXNXWE1TTHJ1V2dBWUM1MmNUNEtRQTUzRHhGMk1ORVVKMHluQkttc3hjRFhWMFJlSnd0aForQnViK1dZTFJWa25KVDNKY2pjYnUrL1gxTXdxVVRuSmpwNXJZTUNrL3VGaE9qb2piRHp3dml4ZlF2ZC80ams="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.39846109999996,
+          42.41809167000008
+        ]
+      },
+      "properties": {
+        "camera_name": "WYO 487 / WYO 77",
+        "route": "WY 487",
+        "milepost": 46.03,
+        "deviceid": 4586,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Shirley Basin",
+        "views": [
+          {
+            "label": "WYO 487 / WYO 77 Junction - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9ENGNsRDdNOGthUUdCVFQyNUI3RS9WeEdxeFYwR3MvVWN6WnMwMUdpY2pnbVhTdXpZKzR4UnZ1Y045dHpBcFA1M2tpbE5KdnA4STc3MDY1QVBES2FtY2JqamNNb1NPc3c9"
+          },
+          {
+            "label": "WYO 487 / WYO 77 Junction - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStzWFhCR0RjUlZKc0U2QWEzY0wvVTRreU5ndUxQWE5Hc0NxZmZGQVNNRUdRQVdaMzlvbDRKL3JuU1NIWUpLT1VIY2VoTHFKRTcvdXRwd3pPR1cwb0cva0tqZzFBVE45UUU9"
+          },
+          {
+            "label": "WYO 487 / WYO 77 Junction - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9sZzVERFI0N0pJb2lQc2sxbjc2b0Y2Znllbmx5KzExcjhnVWNlVUthc0o0VUFwckNUck10eTM1ZTczdHR2UkxvZW5hU0NVMUhqbDZtem5QOXZwc1NieEhicTBJZGdUL1k9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.54507249799997,
+          41.300512463000075
+        ]
+      },
+      "properties": {
+        "camera_name": "French Interchange",
+        "route": "I-80",
+        "milepost": 28.3,
+        "deviceid": 3304,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Evanston",
+        "views": [
+          {
+            "label": "I 80 French Interchange - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThVczd4MEgwMmVJY2RjWWxiT3RPenVHT3ZXajZSUTlXNVhiR2xpZVZpTGREbUIwZVNNS2dIT0x0Z3ZPNDBlcm5odXBLK2VESUp0L2R3MGxwN050VUlmV2doMUVHVjZNakE9"
+          },
+          {
+            "label": "I 80 French Interchange - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlFZkJyY0VqODkrNU41czZ3OE5saEx0UURoeGcyTjcrYVJYL2JIUERQbTJuS2M5WHFMUEROQkxRL2xQbFh5WjkvYXczNXhjbGhjVjF0U2JBNEhNbTdpaS93bTloZW1FQjA9"
+          },
+          {
+            "label": "I 80 French Interchange - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9iaU9ZQVlXRG9rbERCMk83bE1sUytweVAxMUdQNldxS2N3eDhvSGNHWmdmN2pWNE5ydWpkUVNER1FHc1NCQ0JrYUlaUWNqM3A4RmJQaFZ2MHZ0OHdDL2tVTlFsRDNxTE09"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.31242644399998,
+          41.77096649900005
+        ]
+      },
+      "properties": {
+        "camera_name": "Opal",
+        "route": "US 30",
+        "milepost": 70.2,
+        "deviceid": 3877,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Granger",
+        "views": [
+          {
+            "label": "US 30 Opal - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStLNW5zOXZpcmVpM3FQL0Y4MVRjNTMyL1R6TzFHZFJyL2dQOS9kcEhoUWlxMHNzYjk1c1RUbHI1b1VhSldJSUc3ODlFWDBkNm9YclE9PQ=="
+          },
+          {
+            "label": "US 30 Opal - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTk0MjhIVGh3ZGNaQmNKelM3Zzgzd1RYUlc2TnVLUllQcFMvbk9ZM0NMTW4vSkxrbFdsOGR1ZTZSWDZhZFBzL2hCc21CSHJLa0ZZbFE9PQ=="
+          },
+          {
+            "label": "US 30 Opal - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSt3Nmd0V3l0Ym5vaE9Uc2FnUytzUnNnWlJyNk52MkdyNURYZ3c4ZHhzT3ppOU1kRHpLa205VnhBa1B0aER3cVJhZHNTOW80VlFSMXc9PQ=="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.90853611999995,
+          42.50586800600007
+        ]
+      },
+      "properties": {
+        "camera_name": "Salt Pass",
+        "route": "US 89",
+        "milepost": 69.0,
+        "deviceid": 3347,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": "Afton",
+        "views": [
+          {
+            "label": "US 89 Salt Pass - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThyS0hrVG9kRXAvRXlBL0ptM1FYTFJUWHROOVlmaGxJODkrSkhtdjB1R3krb2VFYVlCMjZ6TlVJVnlJVHUvd1RRRXJpNWVFRDZRMkxXVjVjdXpmc3A5OHZUcmJ2eFpjd2M9"
+          },
+          {
+            "label": "US 89 Salt Pass - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThlU041UXhZTUxrTjcyTzdpQWNhVHpySzFsM0hXbWRxcFpYd3UraENuNkVnR1phT0hRa2kvd0piZkNTZEgrVDgwMGtJZ2VQVitEazdZVGJBOGI4OFRrMVM1NEl3T2RFOHM9"
+          },
+          {
+            "label": "US 89 Salt Pass - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThQQ2VoSTNPQ2s0ZDhtMnM4VzlIZk41bFlvUzNDajNHMzlocStQYzZsbHdhdnhyOWs1dy9aRnV1OG1FeGFLazJEa1pMM2UyYWUyTGhjNmlkVVJCWjB6V1ZwOFlIV09nUXM9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.99742773799994,
+          42.907014520000075
+        ]
+      },
+      "properties": {
+        "camera_name": "Thayne",
+        "route": "US 89",
+        "milepost": 99.0,
+        "deviceid": 3878,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": "Afton",
+        "views": [
+          {
+            "label": "US 89 Thayne - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9PVDFHMWJlS3U3WDhzdk9qTmE4YWtoTUpCMHFHa0dObDJ3MnVDeGd3LzI3SnBRUEdJL1JLcHE1STF4ZDdxTm1NMWU3bm5DVUlESXc9PQ=="
+          },
+          {
+            "label": "US 89 Thayne - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSszYUwzVjd2Ujd3cXFWVGNXVnBicUZvV3ZZN3lHbkIvbGdZaDVLTmZLYzMyRi9pZXBSei9naVVWSVJlT0twMi9JRzc5bVJzMkRPNGc9PQ=="
+          },
+          {
+            "label": "US 89 Thayne - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSs3anhnRW5CNmtZYVdzelUrcnZVL0pjM2xSbGVrQkdEUjZ1cUxmY1VNTVU4dGZsUmtKdjNVZGQ0QTVhQS9jallMTVV3N0pPR0VEQUlEcXp5V0FBU2RUNW10WmtBelRRa009"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.27286649299998,
+          41.93258769700003
+        ]
+      },
+      "properties": {
+        "camera_name": "US 189 / WYO 240 Junction",
+        "route": "US 189/WY 240",
+        "milepost": 57.5,
+        "deviceid": 3879,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.20562799999999,
+          43.13317200000006
+        ]
+      },
+      "properties": {
+        "camera_name": "Hoback Rim",
+        "route": "US 189/191",
+        "milepost": 129.1,
+        "deviceid": 3302,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.46979199999998,
+          43.247239000000036
+        ]
+      },
+      "properties": {
+        "camera_name": "Bondurant",
+        "route": "US 189/191",
+        "milepost": 144.1,
+        "deviceid": 3300,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.42802888799997,
+          41.00243530700004
+        ]
+      },
+      "properties": {
+        "camera_name": "Minnies Gap",
+        "route": "US 191",
+        "milepost": 551.16,
+        "deviceid": 4886,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": "Rock Springs",
+        "views": [
+          {
+            "label": "US 191 Minnies Gap - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS93VFA4RGgrWTlGd0NmN1dpRDcrdUNSVmxBQlJwaXAxVzdIenhzbnBuR1ROS3VWaU1xUzcyNU0zU1lNdnBzRFlPdGk4MysyQVMyVENJWXA1cnFQODV3Z0pBL3dzV1l2Z0E9"
+          },
+          {
+            "label": "US 191 Minnies Gap - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9PS1d3Lzh2M2ZWamNwM2wzRDYwVmgvbkJ4UEJmTk4zRHJUYXpLM1hKM0lDNHRRRW1xSkRNWElYeVljZmtoNTVlRjE5OWJVNERNUEFpSVJOSjA1MExCNktwQk1mSEZzRmM9"
+          },
+          {
+            "label": "US 191 Minnies Gap - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlLbWMvaUVxdU9uWkJobnlJVEhSdnh3QXY1RzZFcnR6ZEY0RWI2c2tOTG5vWEI3eUI3bXhzb210azB3U3NCMEd1akl0WGxQUVMzVHl6OFJON1pPQkpuMXFpSUU1OTFhWXM9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.89966114199996,
+          43.49973340400004
+        ]
+      },
+      "properties": {
+        "camera_name": "Wilson",
+        "route": "WY 22",
+        "milepost": 6.9,
+        "deviceid": 3301,
+        "directions": [
+          "west"
+        ],
+        "nearest_town": "Jackson",
+        "views": [
+          {
+            "label": "WYO 22 Wilson - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStsUHhvT01Lb3FXTmNCQ0xlOEFpTitHTWtHQjZLeGxhbXUrUVJmamlJdzBZUnRCeDdvNm9OWEZRZXl2ejZYTWtaRVoxR2IvWUhVRFE9PQ=="
+          },
+          {
+            "label": "WYO 22 Wilson - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlQZElva2xYNzU0cmlMZmdkd25PcG9vZUM0RXhQaDhSTzFwK3RaVUErS2ZSKzhGaTdjSDRaL1ZRMmFoallVWE5HcHI4bXlQdDZGS3c9PQ=="
+          },
+          {
+            "label": "WYO 22 Wilson - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSttdzY4MjNGazIwaEtqZGlySDRBSjhUanFlREJBZGxncnVMTHA1RG80ODczZ3pEd21weDhnMFdYamJDZlhiSGhKVDUwTzZHb1NIVFZjYXlPRytNR3ZjVnNDYllwY3JLUGM9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.04354899999998,
+          42.27454700000004
+        ]
+      },
+      "properties": {
+        "camera_name": "Raymond",
+        "route": "WY 89",
+        "milepost": 49.5,
+        "deviceid": 3881,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Cokeville",
+        "views": [
+          {
+            "label": "WYO 89 Raymond - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThEQUV2cjJ3NWJWbXpwbVl4cDE5cWlvWmZveTJ2ay9CUVRBMDJMTVV2MUF1d3BUT2lkRjlFeGRGai9DNk5ac1pqUyt6R2JLbEZoR1k0VHltSEFpTC9VSGI2ajMwY1d6RDQ9"
+          },
+          {
+            "label": "WYO 89 Raymond - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThwMHQ3eWZyN0JQVlV5Rmt4S1VMN3Z4dTIxRU9sRC9CWC9CREN1REtZbTFySFB0SjZhSXNoNVVCTzJmdDV4NlIySnFmVUZRN1N3THdRb0xqb0xLZU01NEdPR3VIV1oveVk9"
+          },
+          {
+            "label": "WYO 89 Raymond - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStQL05Qb2ZIb1EyQ05Dd05rSFQ5aTZiTWJEVElVRWlQSVJodUJwb2ZLK0YySngyU1hIdmw3L2VZSFdnZXpTY21URkwzS25qd3NvSGR4L1JsUllVUGVSbnBFQmJkV0FtVkU9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.85909836399998,
+          41.86836843700007
+        ]
+      },
+      "properties": {
+        "camera_name": "WYO 372 / WYO 28",
+        "route": "WY 372",
+        "milepost": 26.8,
+        "deviceid": 3880,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Granger",
+        "views": [
+          {
+            "label": "WYO 372 / 28 Junction - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThFTmdmc2NpdlZaWjJud1NiNmNkbklab25GNzlXMm5yOXNMb2lxQU92REI5UFM0QUsvalNpcjJNVGE5NWVDL1Zyby8wZTJWdWR4UUVZNkk2UW5CUlpuVE9LTk9NZU9WVGc9"
+          },
+          {
+            "label": "WYO 372 / 28 Junction - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThkU1JjQVJkcXk2TUtrZnBQWEdYY1JZYUlLUGhkSnZIa1lQMks2Yy9idytHNG1LZ081NE1xUmVaYWtsTHNNZ2RXQzBaTVRRNDJhc2tqTDBUenE1TXRjVWJIU21SekVJTkk9"
+          },
+          {
+            "label": "WYO 372 / 28 Junction - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStCbVFGZmFFdHJhZ1JITS8rcXVUeDdwd0dKTDVtckNBcGx0NE1CSkR2UmROMVZ3cktqQ3FVWks0bCtidzhMZVdkZUpqVnRvLzFZemRUMjZJRmxabDI2NGc4NTJUTmxOSEU9"
+          },
+          {
+            "label": "WYO 372 / 28 Junction - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTh5Zlo1clhlcmtEM3VuaHo3T1ZIMEcrbEdQZXZaa3NpenZ2K3VlQ20yUTJzMWt4SE5hSzErSEh1cHE5eXBWMFZvK0JVSVZVR0lRajdFUkZDMUJOY2FGYjNRNW9uVVhodXc9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.92811944399995,
+          41.024352778000036
+        ]
+      },
+      "properties": {
+        "camera_name": "McKinnon",
+        "route": "WY 414",
+        "milepost": 134.0,
+        "deviceid": 5070,
+        "directions": [
+          "southeast"
+        ],
+        "nearest_town": "Lyman",
+        "views": [
+          {
+            "label": "WYO 414 McKinnon - Northwest",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlqL0U4Z3U2QzZJcFp5WUdyV3Z2dC82M3E4L2VldG03TWhid2NmenJjR0JHUzVSQ2VlWUVQazRFQzRQeFhvTFpuTVdqbEJlNDF3WHRSRzZYVmc0VDl5MXZEcGJITTluc1k9"
+          },
+          {
+            "label": "WYO 414 McKinnon - Southeast",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThHcmRXN3hlblN2N0VpbzZtYVdqaVdTNThSZVh2SC9FZ3k4UHcwOUJsK2JpMWRGQVFuRkhqL0NzWUdTeEsybkNaUjc3TjZnbU5BKzRWNlVMZE1aUGpaUnZncjF1OHRGMXM9"
+          },
+          {
+            "label": "WYO 414 McKinnon - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStOZDA2S0dMTElvTEZweUxjNndnOHJiVk1UQVc1VGtvcVdRcmlNUG5RblVlV1B4WmNhdWcxRXBMV2diUmYyTkt1UjFaS0pBMWczenRaRFZ6QWVCWU1vbG5LV2xXclhacjg9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.78916527999996,
+          41.08472891000008
+        ]
+      },
+      "properties": {
+        "camera_name": "Rife Ridge",
+        "route": "WY 430",
+        "milepost": 49.0,
+        "deviceid": 5071,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Rock Springs",
+        "views": [
+          {
+            "label": "WYO 430 Rife Ridge - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThvcWVuWWNQaVBROWpiaDBnYll0bEprZElVWm14U1BLcG9CdWJQN0ozSk43QUVOWTZ0aFdiRU5FYnhzTnQzZWoyOUFpREVjZHE1dVRsaktzVnlGTktlKzZQaCt0bmhmVDQ9"
+          },
+          {
+            "label": "WYO 430 Rife Ridge - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThsOE54RkRuelNzemVSNG5IVThwNW1oRnVBZzBEUVVpT08vTXlWTjZJWHB3bDBLa0lyRWF5QldyZG1zbUdLRmtUVG9CeHBrVjFHTks2VmlOY1ZCMS9tczJRZnFvZTFpY1U9"
+          },
+          {
+            "label": "WYO 430 Rife Ridge - Intersection",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTg1ZVdBbDBTOUl1U283aEZUZmRRdWRNSm9rVTJaeHQydHdxT1FJcG5XK3FFYUhIRHVPU2NPOUNPV01pMjJIU2FWUThzc2VvR3dIOGVWbkRNR0tNdHd6eE5PVmFEUTV5MFk9"
+          },
+          {
+            "label": "WYO 430 Rife Ridge - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTk1YVRyWkpNTS8ra3hVTGQrQkxFdUtUbUJYaUpJQzFBN3lIYTlBR1g2eVhxcmV6QldBcldRU0hNenNpZUhZSWhhbWxhd1dmVU0vazcwS21YRUo4a05HVFpwR0V1N3RPRXM9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.08451998099997,
+          44.15230603400005
+        ]
+      },
+      "properties": {
+        "camera_name": "Powder River Pass",
+        "route": "US 16",
+        "milepost": 55.6,
+        "deviceid": 5325,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Powder River Pass",
+        "views": [
+          {
+            "label": "US 16 Powder River Pass - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS90d0dDdFRVTjBpekk5MllmVUoyMytFdW1GY1IxQ0lmdktCSlJ6WGROem56b0hRNklNSER6YlhXeXh4N1Q0RXF2eFFjZCtwTEVUaXJ5N0ZJbWJoOEJMMEFFVzkzS3FHN0E9"
+          },
+          {
+            "label": "US 16 Powder River Pass - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTgwQkJaeXd1ODdXU3MzQktFUlRiUEpZL2ExSWdRakkwKzlUV28rQ1BGdFh1ZS9vRzlaaUEwNDdwcUZsLzNNUkxWeC9TZWdpUkYyeHpGeFI1OTRISmxXaTduYlNqMmVIMGM9"
+          },
+          {
+            "label": "US 16 Powder River Pass - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTh6V3pOVE9PZkphUkdpRTBJWVdFb2FHZkRpbS9WTU82UzFrUW1pTjNKRHNVVm1RWVN1THc5RnJuUWs4czdYV1kzZGVZVWl1VGZTOFFHSG1LTUhKQWYyaVNqOXQxZ2V6ZDlZbVlET1VQbnlGT1RaQ2EyaitPdkY="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.18476099999998,
+          44.886277000000064
+        ]
+      },
+      "properties": {
+        "camera_name": "Colony",
+        "route": "US 212",
+        "milepost": 8.5,
+        "deviceid": 4887,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Hulett",
+        "views": [
+          {
+            "label": "US 212 Colony - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStROVBDeGRpSEpvcWdnb1Fia2sySG1oL01obGpxbFIxeUcyM1VBOVFKVXZWTmVsOHRSYXY5M3BrL25rRmpxQldxQzVlVWxNdXpJeWc9PQ=="
+          },
+          {
+            "label": "US 212 Colony - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThqWTRkSnhKZXdMMUE3REVXd0YrQUtKL25HWDVwNnJhczhuS2xkSzBxb0g5OE5rMXBxSGNFZUszWGlQTWpzR3hwWkRHY1hvWkY4VFE9PQ=="
+          },
+          {
+            "label": "US 212 Colony - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThqTzdRZ3NkK0hCYm9XWkJoWkF0aFpnM3NqVk9YUzJ6WHM5N01IQjd5dzh4Q0N6YW8xSWN5YTRvbmgwZGd3SExtd3dTQWF6WXozYWJZNVMxcDBnNGJLNkdOclFvOW16cmc9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.52161914099997,
+          44.61402931200007
+        ]
+      },
+      "properties": {
+        "camera_name": "Antelope Butte",
+        "route": "US 14",
+        "milepost": 35.07,
+        "deviceid": 3312,
+        "directions": [
+          "west"
+        ],
+        "nearest_town": "Basin",
+        "views": [
+          {
+            "label": "US 14 Antelope Butte - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlZMjR0MlNFYXBXOFJKM2ZybXloR1NBdHUxMngvbEtxVXZwL2ZMaHlsckI4VTZmQ20vaVJ3aVcrV3dYcmNPbkNEMkR3VXZtRUp4Q25TRUlrVm53dER3ZVFQRVU1S1NDWXM9"
+          },
+          {
+            "label": "US 14 Antelope Butte - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSs2Wm51K3lUWjVIZE0xai9Yb0dKaDZwWnBLbTRQc0ljcWxETXZpK1lYampwQWdNZU1wOVZGeHIwLzlkQlFIY0g1THJyZm5rYVZxcG8xb3JET08zY1pLQ1NNbnJlMlNBR1U9"
+          },
+          {
+            "label": "US 14 Antelope Butte - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThvSmtkakFuUkFYU1dZSmtTVUd2bEwyU0dmTU1nZFdIWWpxZWRJaXo5SjZwSkV6NXovTkxucHFRd1dLM0NnSUxOb05hZWNMYmtDaTQyTmVhWEM0UENQSEZOQnNucUw4UUpFZFVTbUIycCtEUzBGcnR3emtJSEY="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.79727765799998,
+          44.739751600000034
+        ]
+      },
+      "properties": {
+        "camera_name": "Powell",
+        "route": "US 14A",
+        "milepost": 21.92,
+        "deviceid": 3916,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Cody",
+        "views": [
+          {
+            "label": "US 14A Powell - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStFK3BMZG9nZXkvVHBvTFIzRTFBc0tMaVkycFJ2eURIeDlJT0VBOXpiK0x4d2NrTi9zZUtsT2pUZTVtUWlnOHV6dXF1bE1SVTJ4aGc9PQ=="
+          },
+          {
+            "label": "US 14A Powell - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThFelRMTjZiS2hFbHIyaEVicngyODZ2OEdoK1Q5Q0lwU0d0Q1RwYUNmcnlWcXUxSTE1ZzZsNjRTMXNNTXlUeC9VKzVYMmN2Nmw4Q2c9PQ=="
+          },
+          {
+            "label": "US 14A Powell - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlSd25oNEphY1hrSGpZbjNXOXd5UWl3ZDlnd2RaYllCUUorVVZ0MFp5SER0bkJybmcxNHBhS3VzRkY4VFlIRXdRUXRia2VyVWs5OWFNM1FYMTNwUFBiVVpkMXZWMjhHRmM9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.83563335499997,
+          44.48212891900005
+        ]
+      },
+      "properties": {
+        "camera_name": "Eagle Pass",
+        "route": "US 14/16/20",
+        "milepost": 64.5,
+        "deviceid": 4393,
+        "directions": [
+          "west"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.42238486499997,
+          44.505718408000064
+        ]
+      },
+      "properties": {
+        "camera_name": "US 14/16/20 / WYO 32 Junction",
+        "route": "US 14/16/20",
+        "milepost": 86.26,
+        "deviceid": 4394,
+        "directions": [
+          "west"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.17351836699999,
+          43.41496675600007
+        ]
+      },
+      "properties": {
+        "camera_name": "Boysen Dam",
+        "route": "US 20/WY 789",
+        "milepost": 114.0,
+        "deviceid": 5345,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.17849999999999,
+          43.51006944400007
+        ]
+      },
+      "properties": {
+        "camera_name": "Wind River Canyon",
+        "route": "US 20/WY 789",
+        "milepost": 122.0,
+        "deviceid": 3313,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Thermopolis",
+        "views": [
+          {
+            "label": "US 20 Wind River Canyon - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStVaTJMdzlWSGdBMzNJWE5icmV2TGtBNUNUSS9zditiV0xWN1p3cTc2bklEbXhPSmdkWk9PdWJYNGdabFlyWTdlU2dVK0loVU9ZbXVZWFVSN1o0aDZ5SVV1bTg1OUlONTg9"
+          },
+          {
+            "label": "US 20 Wind River Canyon - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9hS2s5MUt6QXI2S3ZySU5HQ0hrb2xXSU80U1k2a25aK1psS3h6dU1PUEZVSnRDRHYxYVMwQmFROWZVRW1xZGdMVTBtM3U1NVVLUUNlemNQUUNaNFRtTExVL3o2ZWQyNEk9"
+          },
+          {
+            "label": "US 20 Wind River Canyon - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSs4Y0NaRFN6MkFkNmJ5SXpoU21uSFh6eWxCcmNJdzlPem9JZGYxNHYyZjNjWWxsakF3dndtM25HazNieXV6NWVSMEhTV2sxMUFpTjViVlBWVDNzd0FlcWZ3YXJVV3lCczRXYUtMd0s4TmovbmxYeEVqdXZxUTk="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.19779399999999,
+          43.84714400000007
+        ]
+      },
+      "properties": {
+        "camera_name": "Kirby Junction",
+        "route": "US 20/WY 789",
+        "milepost": 144.59,
+        "deviceid": 4395,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": "Thermopolis",
+        "views": [
+          {
+            "label": "US 20 Kirby Junction - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS93ZUpEZG5TSlprYTRVMzFTeG5jSVF2UUduTzE5RU5nYS9QYmxlak9scUZGVWRuQWZRQ1B5NGNHdElsV2VXeHBnNzhSOFcrRG1NVWlyYVBndHphLzZnOUpxU2x5ZlVGL1U9"
+          },
+          {
+            "label": "US 20 Kirby Junction - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThpVS9CYWhEZVp0UE5CRGIzOVJoay9NS0VoaHNzSklaSnBwMXIyeFhWdTcvNDhEeCtVTlV4ZG1nYU9xVlZrSXliR1I0ZzQ1akpuWVlkN1hjekVIV08rL0FCOXR3REMwamc9"
+          },
+          {
+            "label": "US 20 Kirby Junction - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStmbmFkY1d3MlJYN3loOFc2T1VsemdGMlFIMEJVRTdtZ2p2Sjk1N2VmYmRiSHZSUTZhSFA2dHRaY1dqK0NZazAzNC8wRGw4UGkyVEhxcXl0QXphL0d0RmJUU1hrZ2piR1U9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.96174559099995,
+          44.26655058100005
+        ]
+      },
+      "properties": {
+        "camera_name": "Manderson",
+        "route": "US 20/WY 789",
+        "milepost": 184.6,
+        "deviceid": 4396,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.19423700599998,
+          43.30944930600003
+        ]
+      },
+      "properties": {
+        "camera_name": "Crowheart",
+        "route": "US 26/287",
+        "milepost": 85.2,
+        "deviceid": 3914,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.00840225099995,
+          43.22989054800007
+        ]
+      },
+      "properties": {
+        "camera_name": "Diversion Dam",
+        "route": "US 26/287",
+        "milepost": 96.38,
+        "deviceid": 4397,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.29969431599994,
+          43.135263345000055
+        ]
+      },
+      "properties": {
+        "camera_name": "Kinnear Junction",
+        "route": "US 26",
+        "milepost": 114.6,
+        "deviceid": 3309,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Riverton",
+        "views": [
+          {
+            "label": "US 26 Kinnear Junction - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThHT2ZZRVkwQWxlMzJQNTRMZHhGR3lOZ1NibDBBdnZUZjVWaUtnVmYxb0NKTHpMc2NIMUI0YVFpTW1ZYU50bENOSFlNTlJjUEtoSjIveHA1YStqb3pjbkN1S2tLQWFETTA9"
+          },
+          {
+            "label": "US 26 Kinnear Junction - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStPdHJLcEJGUGN1RWVTOXZFcGRGS0MrcDljanZCa1VOL0E1TFhuZER4cG1yMm9XZDZvTzdUYlVZNVQwQjUzSG55S2NKaDRzSE1MbEFyVFRMVDdJZTlxWXM2RHFDaEluZDQ9"
+          },
+          {
+            "label": "US 26 Kinnear Junction - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTgxTzFOUUkrM0hjVnNXMEw1RTlmcmpPaTREOG9XZlJBS3NUWU96RlhnYmdaczJLSDNURDFKT0JQTjBzNjBwWlZlQ0ZHUzF2TzRYZEZCelhHRDhWM2ZoUVlpbzBobE1yVGc9"
+          },
+          {
+            "label": "US 26 Kinnear Junction - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9Rd3d6eTYvU01meHkrL3VBUFJaZllkQUl6ZTBXWGwvYjJSZUhMOHNvL3JaNWpwUjFjSURIN0UvNEFqdkMzMWJEajRmdFZ0ZlgzdWRqYk9WaWVPQWhpeGpsWC9OOHpSMTA9"
+          },
+          {
+            "label": "US 26 Kinnear Junction - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlDQStGRTc0NzV2VWl3alBtUUNZSXBIN3hHSVdMQVRqemthRHNHZGVoRm51THJtV2NhczNrQ0V3TTZSVTgxdFA4K2VrQkZjZnBBV3U4VGcyV1VIbStLbnVaOEs3eWhUUGs9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.26524785899994,
+          43.164956062000044
+        ]
+      },
+      "properties": {
+        "camera_name": "Eleven Mile Hill",
+        "route": "US 26",
+        "milepost": 117.3,
+        "deviceid": 3913,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.28896111099999,
+          42.58542500000004
+        ]
+      },
+      "properties": {
+        "camera_name": "Beaver Rim",
+        "route": "US 287/WY 789",
+        "milepost": 48.1,
+        "deviceid": 3308,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": "Lander",
+        "views": [
+          {
+            "label": "US 287 Beaver Rim - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSsxdmZRVjlteDV2QWlZa3l4UUtTM3puTDcyWXBFQXcwQ21QZmtDUEZraXhnUDF2aE14eDhZYlNkSE44OEh5dmVPUjROclRuQVc5RzVtMmpnblloY2hDbmh3V0podmdsYmc9"
+          },
+          {
+            "label": "US 287 Beaver Rim - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThhQW45VzJpdmFQa2x3SFFEOEtxL2RmeVVXUVV1bml1TEtGeFpCM0cwNWcwcU5OQXYraWV5eDdROCsrSDRwUk5mazBLZC9FTDkwT1lYZS9LUWlmNlNacEgzV2luNmdwMGs9"
+          },
+          {
+            "label": "US 287 Beaver Rim - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS85Y3V6MzFrL3lDelMxQlBjbzl0enNOOGVrQnJKWVY5VGtwV1N2cFRLenpBNllla3hvc3IzMjZVRjY0Yk50ZGxpS1V5WHJsc2pwT1czcFZRZUdVQ0ZzSUVYSDVQcm5Bc3c9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.30521260599994,
+          44.701729569000065
+        ]
+      },
+      "properties": {
+        "camera_name": "Blue Hill",
+        "route": "US 310/WY 789",
+        "milepost": 225.1,
+        "deviceid": 3917,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Lovell",
+        "views": [
+          {
+            "label": "US 310 Blue Hill - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThzWHZJVWxzNUtNc1l1ZUlSYUNFNEZsVE1yWWl1N2hhSGhZdStIbkkvNEhXa24vMEU3UytsbVhRcDhXMGdDakg4Z2s3QWpGQXhORDY5cUJzNVZ2MmMyWE9qL1VJMmVlb2M9"
+          },
+          {
+            "label": "US 310 Blue Hill - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9FWmo2VGxYZHByR3ZCUGg3VVBXUUFUUDBjRzlJSzU0ODQrRnRieEI2YW5DYlJDZ21idENyVk9GeEFBczhGdnNwUUhVRWcyaDhZSGVrV3hTcnJRVXFhclppaFZrMjR0Qlk9"
+          },
+          {
+            "label": "US 310 Blue Hill - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTljMUtwVGdNazJ1RHlidWhQNVpBcTdSTmMvaXFWYzhOdHFQWm55dUpibGptTVVBeFpYYVR6Vlp3YUFFRkx2T3ZLd3VKVGdzaHJ2eldpczhuNWRkM0NFelNrekN2YUozQjA9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.67104125399999,
+          44.01268038000006
+        ]
+      },
+      "properties": {
+        "camera_name": "Gooseberry Rest Area",
+        "route": "WY 120",
+        "milepost": 37.1,
+        "deviceid": 5344,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": "Meeteetse",
+        "views": [
+          {
+            "label": "WYO 120 Gooseberry Rest Area - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStydEV3WTBsWldvQkpCeEhmbzhSNGxDRVFlWlE3TzdTSUJoRlZia29ZYWgwUmF2RnhoWUJ5Wm10UlVnZDJXVWNpbmhwV1dDcVV2WEhaOGEvSTJnNldIUVFuaGZpRyt3bFRkaUl2OTVQRms1MTY5MzJyV1lUWWk="
+          },
+          {
+            "label": "WYO 120 Gooseberry Rest Area - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThyOVJwRWM5a25BNFFGSThzbXFRYk50LzhXOUIyUEVTdVIrS0R5U1htVVZ2T3drQnpzZmI0RkFCL2NJWm40L2VQQ2dwUXZIY0ZsU2pZanM2SHhvTlMwRkJqU3QvdXNRVHl1alAvK1JqTTNQUGZ0NVUvR2xNamY="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.87363055999998,
+          44.270983330000035
+        ]
+      },
+      "properties": {
+        "camera_name": "Meeteetse Rim",
+        "route": "WY 120",
+        "milepost": 61.2,
+        "deviceid": 3311,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": "Meeteetse",
+        "views": [
+          {
+            "label": "WYO 120 Meeteetse Rim - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9YSzh6RGZnZXlVSUhqVmZiY1l4VFFSTmdKc3JYWWJTUlVEL1lRRjltWm5RWlRNcmZNQ2RvczJlbDlaUXZBaklhOGcyOXNCWSs2Y21mTXZBRHBvYW5XRFExVHErZjcxSXc9"
+          },
+          {
+            "label": "WYO 120 Meeteetse Rim - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlhK0htQ09Bbm5oaytpN2lXYkxsQlN6eFh4KzF1eXg2OHMrZG9FdXN0czJBVHdhWFZxMGtrRGZMTit1bWQ1VWlPTDhOeDdKOGladzloWnI3RXNDSitPNFgzMUFRVFBzTVk9"
+          },
+          {
+            "label": "WYO 120 Meeteetse Rim - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9wRng0VC9mMWFJQ0F3bUs2and0em5DYTU3Z01lOGxOUnVRa1kxUjBpRVlJS1lzUFZ0SlhIVmdEUWQ1TUFDR0cyc2twMjlLdWFqR1dNdXlPMWYrNGxWMWkzdTZoYmNwakVsNUJVeVJORDNQaGZLSE1JU3NwTHg="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.16003417399997,
+          44.64003323900005
+        ]
+      },
+      "properties": {
+        "camera_name": "Skull Creek",
+        "route": "WY 120",
+        "milepost": 109.5,
+        "deviceid": 3310,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Cody",
+        "views": [
+          {
+            "label": "WYO 120 Skull Creek Hill - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThnRFZqdzVmZFVrbjdFMzdZdWRIWFc4OHNOcnZTcC8yQzliR1R0Y3BEUzBGT2JHN25INHZXWDIyZ3VkcEJGQ1BHZTlVTkRBTWNRQlptYkJUckZCWVpZQmRNRGh2dzlMSmtsN0hTMWVFUTV2Z0pKa2xoeTZZZWU="
+          },
+          {
+            "label": "WYO 120 Skull Creek Hill - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlEMWpEN0piYjk0WFJDVnNSeGdFejd1cUtjbFo3OU5nQlFHZDZqdFozalRMa3VuZUpweUJYWEpBM3FUTGk1UjlxcGJqVHdZZ05ucnpOaVd6WnNHZFZ4UEZ4QldhSFVGUU5TVnlzdGtmWnUzSlJGdXBhc0oycG8="
+          },
+          {
+            "label": "WYO 120 Skull Creek Hill - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSt3TE9uZmQ2VFJCL3EwU1Y3Znd0Y2ZHTVB1bngydUQ4ZXpWYzYzZ01RTnpQMFh6STZWMm5GdGJEbjYxTWtUZmZRT2htdkJER1Q1U2g3aFFmcWQ5TnpzZnBxOUI3VFlwMVRtL0hzU3F0NHBDNXA1SVRVSWxDVWc="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.18324427599998,
+          42.71312862600007
+        ]
+      },
+      "properties": {
+        "camera_name": "Cedar Rim",
+        "route": "WY 135",
+        "milepost": 22.3,
+        "deviceid": 5072,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Riverton",
+        "views": [
+          {
+            "label": "WYO 135 Cedar Rim - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlRVVNuVWU5ZG13VFBEbXBTd21CandvK0RXUExYY2RqOGJua3FGa1JEeFM0b0lOQ2VPcWYxdWk2K2VJV1J4RGJwcnhTYmlxUStBc3JGNHZpZlo3NWV3c1NVaG4yb0gyTEk9"
+          },
+          {
+            "label": "WYO 135 Cedar Rim - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTllVStNOTR4aTlLdGs2LzVaL3NZbjhHREtJa042bG9xSlAwSmNXYk1KRSsvMGYxaFUrcmxvdWVRbWpYR2oxSXM5T3grY01SR2VoNVVsUmJPMVlQbng2NDZLNmsyVWFoNHM9"
+          },
+          {
+            "label": "WYO 135 Cedar Rim - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9mRFhjTExTM1FpeFY1ams2Q2hycWdMYjZ5dFZiWG5GWGx5MkdKOXE2K2NSWm0wS0pFLzFnSExRUnRROXRONG5GVnpTbjlRbzRpUzFTbUhKTWJNcEgzTnVZN0J0M0hVUXc9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.38293627999997,
+          44.743190268000035
+        ]
+      },
+      "properties": {
+        "camera_name": "Chief Joseph",
+        "route": "WY 296",
+        "milepost": 32.71,
+        "deviceid": 3915,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Cody",
+        "views": [
+          {
+            "label": "WYO 296 Chief Joseph - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlmaFlFZHhCdXJ1QzZjVks1Y3N5RGxFOTFvOXU5WVp1QlRQUjN2YjZmTEtaSGZYM09yZ0hKUkh0MzlCYnNXa0JDME91TkxWVERXQlplcW1YNUpXNXRnUXVIQVIrZ2NjZjQ9"
+          },
+          {
+            "label": "WYO 296 Chief Joseph - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTkxdFRSejkxUnQ4VDEzcHdvWUNOTXloRml1STFDTnJCZ1UwOCtDbDRXVlVoclJsbjBOSE5aaUdMdWRVeHdRTVBlNmJ5VjRwRHhVeGl4VC9qYlBGMUFGVitxc2JJNWJ6RWs9"
+          },
+          {
+            "label": "WYO 296 Chief Joseph - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThlKzkwbzVmWnprZ1U5MWM3M0tGM3RYenQ3M1pIRzg0d0dDS0MzU2x1d3YxZHhqUWYrTEEwS0d4NVM0S0FxdEZlRlVCcWVMUHRaYjJBTTh4cFdjQzhlK1dMZTFYcmcwTmNyVVZTaVpyWGk5alNWNGdQd3hrRFI="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.39098333299995,
+          44.79028611100006
+        ]
+      },
+      "properties": {
+        "camera_name": "Black Mountain Pass",
+        "route": "US14",
+        "milepost": 67.92,
+        "deviceid": null,
+        "directions": [
+          "east"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.60312985399997,
+          41.834391647000075
+        ]
+      },
+      "properties": {
+        "camera_name": "Hanna Junction",
+        "route": "US 30/287",
+        "milepost": 249.6,
+        "deviceid": 3306,
+        "directions": [
+          "west"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.15092799999996,
+          41.100269000000026
+        ]
+      },
+      "properties": {
+        "camera_name": "Harriman",
+        "route": "I-80",
+        "milepost": 343.8,
+        "deviceid": null,
+        "directions": [
+          "West"
+        ],
+        "nearest_town": "Cheyenne",
+        "views": [
+          {
+            "label": "I 80 Harriman - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThLRlRWN0ZjN0IzZmxkVFJUVTlIWHQ2dkdOcURBZFlab3VZZjN2U1JMd3c3QnRMaGFmQkhOV3V2d3dvVkVDOExLdFkzZ1NEcUg4UEE9PQ=="
+          },
+          {
+            "label": "I 80 Harriman - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSthVzhuNnhYL3YxYlAyZENDaEEzNDQzRGkvaU1sM24zVm5vNzcxLy9XZC83ZzhCVHVlOTE4N21wNkRRRk1POFNZOHNQR0xNOW84Y1E9PQ=="
+          },
+          {
+            "label": "I 80 Harriman - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9kUGZ0aG5JbTV6eHB0Qk1keDdvZWJkM2VJTk8xZGZpMHJ4TURpNThqUWRpZVd4dUZPRlhOdUdOUHJpbGRINUxCNVdzckdrNFRCRGc9PQ=="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.30474299999997,
+          41.12568100000004
+        ]
+      },
+      "properties": {
+        "camera_name": "Buford",
+        "route": "I-80",
+        "milepost": 335.1,
+        "deviceid": null,
+        "directions": [
+          "West"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.40337777799999,
+          41.156588889000034
+        ]
+      },
+      "properties": {
+        "camera_name": "Vedawoo",
+        "route": "I-80",
+        "milepost": 329.32,
+        "deviceid": null,
+        "directions": [
+          "West"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.97449999999998,
+          41.73563000000007
+        ]
+      },
+      "properties": {
+        "camera_name": "Rock River Sand Shed",
+        "route": "US 30",
+        "milepost": 290.2,
+        "deviceid": null,
+        "directions": [
+          "East"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.53460599999994,
+          41.65381400000007
+        ]
+      },
+      "properties": {
+        "camera_name": "Morton Pass (Proposed/New)",
+        "route": "WY 34",
+        "milepost": 10.3,
+        "deviceid": null,
+        "directions": [
+          "East"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.81081388899997,
+          41.62745555600003
+        ]
+      },
+      "properties": {
+        "camera_name": "County Road 406 (replacing wyoming state line webcam)",
+        "route": "WY 130",
+        "milepost": 8.3,
+        "deviceid": null,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.20743599999997,
+          41.88291700000008
+        ]
+      },
+      "properties": {
+        "camera_name": "Sybille Canyon (Proposed/New)",
+        "route": "WY 34",
+        "milepost": 36.9,
+        "deviceid": null,
+        "directions": [
+          "West"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.34667499999995,
+          41.441702778000035
+        ]
+      },
+      "properties": {
+        "camera_name": "Gun Barrel",
+        "route": "US 85",
+        "milepost": 46.8,
+        "deviceid": 3314,
+        "directions": [
+          "north"
+        ],
+        "nearest_town": "Cheyenne",
+        "views": [
+          {
+            "label": "US 85 Gun Barrel - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStPSW4rYW1sU245WkNPR2NpT1N6WDY4SlBPRkUvUi9FUlZpVXhwcHJKRFlHWHBhaklwaXJ6QktUUEhJaHlvWHFlUGU1azFvWkUzL2hybTc2RHN5YTYrQ2NNUkNFeFNqeDQ9"
+          },
+          {
+            "label": "US 85 Gun Barrel - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTlXdGhBNHpWSFhRd0w5L3hxSXpOeXRBWVVlSlUzYno2Z29jbVhXN3JpUHVVNFhDaU4zcEdmWWFWSW8vSGw1a3NIT1QyQ0hzZTk1MVRSUnVMT2tvVmFhZXFXQUsyVlc2b3c9"
+          },
+          {
+            "label": "US 85 Gun Barrel - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9UWWdqVDNCVW5ZKzN2UEhmWFFPOXRvNWk2QlVBMXNsYmk1Z3VuTDVta005QzdUS0FqWlUwWWZGYkN4c0xkYXRxTHFRUmZPc0lOTGdReFljUXkrenBZMEdPR3ljV1YzaU09"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.09156699999994,
+          41.41865300000006
+        ]
+      },
+      "properties": {
+        "camera_name": "Albin",
+        "route": "WY216",
+        "milepost": 16.5,
+        "deviceid": null,
+        "directions": [
+          "West"
+        ],
+        "nearest_town": "Pine Bluffs",
+        "views": [
+          {
+            "label": "WYO 216 Albin - West",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9pY2dpRlFtTUR6cUUwL2Y0cFBtV1l4L2ZRVjR6WjZNa2pRVzRQRWJoTTFxb1pGNXhzRHVmRGhtSkpXczByNFVzQ3RJcFhkbmVMVVE9PQ=="
+          },
+          {
+            "label": "WYO 216 Albin - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTg5d3FQaVdCREtQRGVuTTdsejhwWERPU3ViVDJqZFV6WWd1L2hFYUgzWk9xUm9hS1FlbHVaQTBvSjQ1NHVRaXQ3MHBaWmpZcmUxQnc9PQ=="
+          },
+          {
+            "label": "WYO 216 Albin - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTh0c2lSSE5WcG1RMnRiRWhZdGFFVDVYckd1eHhVL2ZVNDdtTkIxeTJLeTRSVk1QeDZ6TzBuUnZtbUNMNlo4QjVXb1FOMjlFVDFtL3c9PQ=="
+          },
+          {
+            "label": "WYO 216 Albin - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSsrVk5OUkVGbUtneDNVenJ6K1VYV05vY1d4U2ZNTHhCUkVJcnplcHBEU1c2SGZHSGJESFRVQTBnNEszd29sY3BhaVRnRkhNNUpIOW1CVzhqUWptU2Rla050VU1xelRLbTg9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.64580559999996,
+          43.94293611000006
+        ]
+      },
+      "properties": {
+        "camera_name": "I25 Divide",
+        "route": "I25",
+        "milepost": 267.3,
+        "deviceid": 5433,
+        "directions": [
+          "South"
+        ],
+        "nearest_town": "Kaycee",
+        "views": [
+          {
+            "label": "I-25 Divide - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThvdk5OOW9wWEt1eldsaGNaclcvcEVWbVdyejN2b0pMRXF3Si9kUTVSVHFodDB2N1BnaHhVaFRxdzI5aVVxd2RFVkNoYTRtU3Z5TGc9PQ=="
+          },
+          {
+            "label": "I-25 Divide - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSt4ZlVjYzh1L2VQdUNMazRMN2RDTWdCdVVWdDJBUUYxZUNIRXdnaVdRK1RsUXdXQVU2K0hMaDBKc0NhSU5oTnRCUGMreE5KSnJxR3c9PQ=="
+          },
+          {
+            "label": "I-25 Divide - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTkwTWk0L1RXeHBlL0hDR2hLMXFjbzZacFdaeFNQakpFVUREbWZaekZ5akZxOHFXc0ZRdVFxNWJBWm5yMVNHM3JhMUlpZWZtSzV1dmxSeFNQcGJXQUJ2dDhFMHhtZXB0N2M9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.64590602299995,
+          43.96803778100008
+        ]
+      },
+      "properties": {
+        "camera_name": "Mile Marker 272",
+        "route": "I-25",
+        "milepost": 272.1,
+        "deviceid": 3889,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Kaycee",
+        "views": [
+          {
+            "label": "I 25 Mile Marker 272 - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStYWmgzWlJyeHR5bnpnbCtiRTRtNWNBTkdyQWVlWk9vMGVmT3lEc2NhTmV0UEhoSVRnbkpKOG5qYzJvWUVWNkc5S3FRbjJaR0pTSGc9PQ=="
+          },
+          {
+            "label": "I 25 Mile Marker 272 - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTl0dVhFVDBrRE9yMjV1VHJMb3F3LytKMjhZeHNVNjlCL2FQZVpkS0ZIV1g3OGlKRElYZzhWT1NnS0hXMHVyV0wvYit3V3pmbjdHSlE9PQ=="
+          },
+          {
+            "label": "I 25 Mile Marker 272 - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThLSlB4d25hODREZUJTVm9lUzN0alZmKzRVVWlrd1BFNkJ3N3ZQdmV0Z1hVYkh1UEd4SVNSS3V4ZlUwbDVrYWU5VXZtTkphV0w1eXc9PQ=="
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.71814999999998,
+          43.16197500000004
+        ]
+      },
+      "properties": {
+        "camera_name": "Moneta",
+        "route": "US 20/26",
+        "milepost": 79.1,
+        "deviceid": null,
+        "directions": [
+          "West"
+        ],
+        "nearest_town": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.68518055599998,
+          44.243761111000026
+        ]
+      },
+      "properties": {
+        "camera_name": "Trabing Interchange",
+        "route": "I-25",
+        "milepost": 291.1,
+        "deviceid": 3890,
+        "directions": [
+          "south"
+        ],
+        "nearest_town": "Buffalo",
+        "views": [
+          {
+            "label": "I 25 Trabing Interchange - South",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMTkzNTJ2bk9pYlNVd3VmNm4rMzlJMkdTWm1MVWU5VW9HK01mMThzNnBMSnF5YytjQVpFQkdwMVowdHlTbzBCR3Q4TmJyNDJjaWpXTmUxUnd6eFVPbmFzMTZHYzFDaHREdzg9"
+          },
+          {
+            "label": "I 25 Trabing Interchange - North",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMThmYXBjVzZZZndORGN0N3pLNzdHUWxEYXZhb1YrcjY2eG0wbzUvQUYzVjc4Y01zUS9Kc093RzUwbXY4aXF3OU90MnVqSHk0Nnp1N1R1OGtHNXlaa2VjbHZtdjVLUmg2NWs9"
+          },
+          {
+            "label": "I 25 Trabing Interchange - Road Surface",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMSsrUVJnK1JxOTNUbTNKWFlHaEZBeUh1YW5MRmJMNC8rZDIzMitXZVFxOEhmd3ZsMTg5Mnp3VDNzNGI1d0FSbFhRN1UyL0dPQVc3VVlqd2pmSHVOcDdZV3VKUFlTeFowNEk9"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.46950899999996,
+          41.052017000000035
+        ]
+      },
+      "properties": {
+        "camera_name": "Pumpkin Vine",
+        "route": "US287",
+        "milepost": 420.4,
+        "deviceid": null,
+        "directions": [
+          "South"
+        ],
+        "nearest_town": "Laramie",
+        "views": [
+          {
+            "label": "US 287 Pumpkin Vine",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMStoMjFzZ2R3NEEwTzR6Y256L3EzSGtJRHI0MDdySW9pTGlkYUFlcGY5c1doZE9uOG9NU3pEN0Y3ZWVLcktvazh6a0pkOGllSFdpSW5EN2hWUEpSMExCRTRsbXVma04zWTA9"
+          },
+          {
+            "label": "US 287 Pumpkin Vine - East",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9tcXF4UWNweWdKSnpEU25McE04Zm14SGk4WWVJMHo4NlRMdVh6L050TmFzUythM01BTEVzazhJZHloRytLVUJCR1V0Nkp0ajA2ZWpKQWtacm1mNU9OYm82aDVoRUNUQ1U9"
+          },
+          {
+            "label": "US 287 Pumpkin Vine - Northwest",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9TSEhNeGptYzFhQlJLTGVrd3QxeW9PWG5WdVROWE9uLzFxMnRjMnQyOFlKVEhLWjFnL2t1blV2Q2xkTmxZM3NXdTNZdEtpWGhWZjZzbVV2eVpteEJtdzVneGVRdUFWMFk9"
+          },
+          {
+            "label": "US 287 Pumpkin Vine - Comanche Peak",
+            "url": "https://www.wyoroad.info/web-cam/cache?ref=VTJGc2RHVmtYMS9GUnVKcHBpY3QrZUhFNXNUWXpCTFZrNExCU2srT2NsdXFhWVZJMkZGcncrMTBEZDd5MjJITkd3RXl0MzlIYjd3NXFxdi8yTEhvRGFIRUFwZXRJUnhUbmVjdkxkZGtPT3pMSk5vdVFKWGZhTVB6YThuYlIzMzk="
+          }
+        ]
+      }
+    }
+  ]
+}

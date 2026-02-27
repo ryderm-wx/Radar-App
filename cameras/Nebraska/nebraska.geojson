@@ -1,0 +1,5545 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.38478,
+          40.69004
+        ]
+      },
+      "properties": {
+        "id": "camera/5",
+        "title": "I-80: Holdrege-Elm Creek Exit",
+        "tooltip": "I-80: Holdrege-Elm Creek Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080257-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.25609,
+          40.67576
+        ]
+      },
+      "properties": {
+        "id": "camera/250",
+        "title": "I-80: Odessa Exit",
+        "tooltip": "I-80: Odessa Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080263-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.59767,
+          40.8211
+        ]
+      },
+      "properties": {
+        "id": "camera/6",
+        "title": "I-80: York Overpass",
+        "tooltip": "I-80: York Overpass",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080353-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.62501,
+          40.82112
+        ]
+      },
+      "properties": {
+        "id": "camera/198",
+        "title": "I-80: W of York",
+        "tooltip": "I-80: W of York",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080351-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.56449,
+          40.82195
+        ]
+      },
+      "properties": {
+        "id": "camera/197",
+        "title": "I-80: E of York WB Restarea",
+        "tooltip": "I-80: E of York WB Restarea",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080355-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.69291,
+          40.82125
+        ]
+      },
+      "properties": {
+        "id": "camera/265",
+        "title": "I-80: Bradshaw Exit",
+        "tooltip": "I-80: Bradshaw Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080348-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.4639,
+          40.82181
+        ]
+      },
+      "properties": {
+        "id": "camera/266",
+        "title": "I-80: Waco Exit",
+        "tooltip": "I-80: Waco Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080360-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.04458,
+          41.18289
+        ]
+      },
+      "properties": {
+        "id": "camera/7",
+        "title": "I-80: WYO Line",
+        "tooltip": "I-80: WYO Line",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080000-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080000-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080000-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080000-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080000-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.72143,
+          41.2049
+        ]
+      },
+      "properties": {
+        "id": "camera/8",
+        "title": "I-80: 3 Mi W of Kimball",
+        "tooltip": "I-80: 3 Mi W of Kimball",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080017-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080017-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080017-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.66361,
+          41.21625
+        ]
+      },
+      "properties": {
+        "id": "camera/234",
+        "title": "I-80: Kimball",
+        "tooltip": "I-80: Kimball",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080020-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080020-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080020-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080020-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080020-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.78703,
+          41.19178
+        ]
+      },
+      "properties": {
+        "id": "camera/426",
+        "title": "I-80: West Kimball",
+        "tooltip": "I-80: West Kimball",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080014-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080014-03.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.62565,
+          41.22031
+        ]
+      },
+      "properties": {
+        "id": "camera/235",
+        "title": "I-80: Kimball East",
+        "tooltip": "I-80: Kimball East",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080022-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080022-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080022-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080022-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080022-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.31791,
+          41.20575
+        ]
+      },
+      "properties": {
+        "id": "camera/9",
+        "title": "I-80: Potter Exit",
+        "tooltip": "I-80: Potter Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080039-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080039-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080039-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080039-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080039-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.94872,
+          41.11281
+        ]
+      },
+      "properties": {
+        "id": "camera/10",
+        "title": "I-80: Sidney Exit",
+        "tooltip": "I-80: Sidney Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080059-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080059-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080059-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080059-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080059-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.03072,
+          41.12587
+        ]
+      },
+      "properties": {
+        "id": "camera/237",
+        "title": "I-80: Sidney West Exit",
+        "tooltip": "I-80: Sidney West Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080055-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080055-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080055-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080055-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080055-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.62914,
+          41.11354
+        ]
+      },
+      "properties": {
+        "id": "camera/11",
+        "title": "I-80: Lodgepole Exit",
+        "tooltip": "I-80: Lodgepole Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080077-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080077-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080077-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080077-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080077-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.76357,
+          41.11292
+        ]
+      },
+      "properties": {
+        "id": "camera/238",
+        "title": "I-80: I80 at Sunol Exit 69",
+        "tooltip": "I-80: I80 at Sunol Exit 69",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080069-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080069-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080069-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080069-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080069-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.29813,
+          41.04567
+        ]
+      },
+      "properties": {
+        "id": "camera/12",
+        "title": "I-80: Oshkosh Exit 95",
+        "tooltip": "I-80: Oshkosh Exit 95",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080095-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080095-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080095-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080095-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080095-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.18045,
+          41.03059
+        ]
+      },
+      "properties": {
+        "id": "camera/13",
+        "title": "I-80: Exit 101",
+        "tooltip": "I-80: Exit 101",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080101-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080101-09.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080101-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080101-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080101-03.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.18987,
+          41.00231
+        ]
+      },
+      "properties": {
+        "id": "camera/381",
+        "title": "I-76: Nebraska / Colorado Border",
+        "tooltip": "I-76: Nebraska / Colorado Border",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006076000-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006076000-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006076000-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.15091,
+          41.02674
+        ]
+      },
+      "properties": {
+        "id": "camera/14",
+        "title": "I-80: Exit 102",
+        "tooltip": "I-80: Exit 102",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080102-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080102-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080102-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080102-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.0713,
+          41.04853
+        ]
+      },
+      "properties": {
+        "id": "camera/242",
+        "title": "I-80: Big Springs",
+        "tooltip": "I-80: Big Springs",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080107-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080107-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080107-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080107-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.71509,
+          41.11499
+        ]
+      },
+      "properties": {
+        "id": "camera/15",
+        "title": "I-80: Ogallala Exit",
+        "tooltip": "I-80: Ogallala Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080126-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080126-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080126-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080126-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.35678,
+          41.11086
+        ]
+      },
+      "properties": {
+        "id": "camera/16",
+        "title": "I-80: Paxton Exit",
+        "tooltip": "I-80: Paxton Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080145-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080145-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080145-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080145-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.23021,
+          41.13028
+        ]
+      },
+      "properties": {
+        "id": "camera/425",
+        "title": "I-80: Sutherland",
+        "tooltip": "I-80: Sutherland",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080152-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080152-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080152-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.14158,
+          41.1383
+        ]
+      },
+      "properties": {
+        "id": "camera/17",
+        "title": "I-80: Sutherland Exit",
+        "tooltip": "I-80: Sutherland Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080158-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080158-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080158-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080158-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.12103,
+          41.15734
+        ]
+      },
+      "properties": {
+        "id": "camera/316",
+        "title": "US 30: Sutherland",
+        "tooltip": "US 30: Sutherland",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006030157-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030157-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030157-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030157-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030157-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.12103,
+          41.15734
+        ]
+      },
+      "properties": {
+        "id": "camera/412",
+        "title": "US 30: Sutherland",
+        "tooltip": "US 30: Sutherland",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006030157-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030157-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030157-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030157-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030157-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.00936,
+          41.1625
+        ]
+      },
+      "properties": {
+        "id": "camera/380",
+        "title": "US 30: W of Hershey",
+        "tooltip": "US 30: W of Hershey",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006030164-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030164-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030164-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030164-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030164-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.764,
+          41.11122
+        ]
+      },
+      "properties": {
+        "id": "camera/18",
+        "title": "I-80: North Platte Exit 177",
+        "tooltip": "I-80: North Platte Exit 177",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080177-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080177-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080177-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080177-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.72589,
+          41.10516
+        ]
+      },
+      "properties": {
+        "id": "camera/19",
+        "title": "I-80: North Platte Exit to L56G ",
+        "tooltip": "I-80: North Platte Exit to L56G ",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080179-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080179-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080179-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080179-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.67629,
+          41.09683
+        ]
+      },
+      "properties": {
+        "id": "camera/20",
+        "title": "I-80: Bridge 181 E of North Platte",
+        "tooltip": "I-80: Bridge 181 E of North Platte",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080181-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080181-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.33572,
+          40.99332
+        ]
+      },
+      "properties": {
+        "id": "camera/21",
+        "title": "I-80: Brady at 201",
+        "tooltip": "I-80: Brady at 201",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080201-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080201-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.37541,
+          41.00184
+        ]
+      },
+      "properties": {
+        "id": "camera/228",
+        "title": "I-80: I80 at Brady exit",
+        "tooltip": "I-80: I80 at Brady exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080199-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080199-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080199-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080199-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.3735,
+          41.02647
+        ]
+      },
+      "properties": {
+        "id": "camera/383",
+        "title": "US 30: West Brady",
+        "tooltip": "US 30: West Brady",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006030200-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030200-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030200-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030200-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030200-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.25313,
+          40.95397
+        ]
+      },
+      "properties": {
+        "id": "camera/421",
+        "title": "I-80: W Gothenburg",
+        "tooltip": "I-80: W Gothenburg",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080206-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080206-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080206-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.74072,
+          40.74168
+        ]
+      },
+      "properties": {
+        "id": "camera/22",
+        "title": "I-80: Lexington Exit",
+        "tooltip": "I-80: Lexington Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080237-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080237-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080237-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080237-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.84467,
+          40.77983
+        ]
+      },
+      "properties": {
+        "id": "camera/226",
+        "title": "I-80: Darr Exit",
+        "tooltip": "I-80: Darr Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080231-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080231-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080231-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080231-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.43653,
+          42.44901
+        ]
+      },
+      "properties": {
+        "id": "camera/23",
+        "title": "I-129: Kingsbury Interchange",
+        "tooltip": "I-129: Kingsbury Interchange",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003129000-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003129000-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003129000-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003129000-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003129000-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.42673,
+          42.46246
+        ]
+      },
+      "properties": {
+        "id": "camera/417",
+        "title": "US 77: South Sioux City",
+        "tooltip": "US 77: South Sioux City",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003077187-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077187-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077187-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077187-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077187-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.88653,
+          40.23436
+        ]
+      },
+      "properties": {
+        "id": "camera/24",
+        "title": "US 6: W of Culbertson",
+        "tooltip": "US 6: W of Culbertson",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007006072-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006072-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006072-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006072-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006072-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.08467,
+          40.48404
+        ]
+      },
+      "properties": {
+        "id": "camera/25",
+        "title": "US 6: Axtell",
+        "tooltip": "US 6: Axtell",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007006174-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006174-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006174-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006174-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006174-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.38836,
+          40.92855
+        ]
+      },
+      "properties": {
+        "id": "camera/26",
+        "title": "US 183: Miller",
+        "tooltip": "US 183: Miller",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004183064-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004183064-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004183064-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004183064-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004183064-03.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.52633,
+          42.22307
+        ]
+      },
+      "properties": {
+        "id": "camera/27",
+        "title": "US 183: Rose - S of Bassett",
+        "tooltip": "US 183: Rose - S of Bassett",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008183157-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008183157-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008183157-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.29503,
+          41.29215
+        ]
+      },
+      "properties": {
+        "id": "camera/28",
+        "title": "US 275: Waterloo over NE-64 ",
+        "tooltip": "US 275: Waterloo over NE-64 ",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-00227516647-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.23426,
+          41.2622
+        ]
+      },
+      "properties": {
+        "id": "camera/166",
+        "title": "US 6: Dodge St at 204th St Underpass",
+        "tooltip": "US 6: Dodge St at 204th St Underpass",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-00200635691-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.2343,
+          41.2621
+        ]
+      },
+      "properties": {
+        "id": "camera/406",
+        "title": "US 6: 204th St Upper",
+        "tooltip": "US 6: 204th St Upper",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-00200635693-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.20688,
+          41.26291
+        ]
+      },
+      "properties": {
+        "id": "camera/407",
+        "title": "US 6: 192nd St",
+        "tooltip": "US 6: 192nd St",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-00200635820-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.17929,
+          41.26292
+        ]
+      },
+      "properties": {
+        "id": "camera/152",
+        "title": "US 6: Dodge St at 168th",
+        "tooltip": "US 6: Dodge St at 168th",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-002006360-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.6015,
+          42.02522
+        ]
+      },
+      "properties": {
+        "id": "camera/29",
+        "title": "US 275: W of Norfolk",
+        "tooltip": "US 275: W of Norfolk",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003275066-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275066-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275066-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275066-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275066-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.71088,
+          41.86073
+        ]
+      },
+      "properties": {
+        "id": "camera/30",
+        "title": "US 275: N of West Point",
+        "tooltip": "US 275: N of West Point",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003275116-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275116-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275116-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275116-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275116-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.54701,
+          41.78389
+        ]
+      },
+      "properties": {
+        "id": "camera/31",
+        "title": "US 281: S of Barlett",
+        "tooltip": "US 281: S of Barlett",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008281134-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281134-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281134-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281134-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281134-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.5484,
+          41.98635
+        ]
+      },
+      "properties": {
+        "id": "camera/32",
+        "title": "US 281: N of Bartlett",
+        "tooltip": "US 281: N of Bartlett",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008281148-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281148-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281148-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281148-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281148-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.65101,
+          42.20464
+        ]
+      },
+      "properties": {
+        "id": "camera/33",
+        "title": "US 281: E of Chambers",
+        "tooltip": "US 281: E of Chambers",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008281165-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281165-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281165-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281165-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.97291,
+          41.3955
+        ]
+      },
+      "properties": {
+        "id": "camera/34",
+        "title": "US 385: S of Dalton",
+        "tooltip": "US 385: S of Dalton",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005385052-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385052-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385052-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.02908,
+          42.34701
+        ]
+      },
+      "properties": {
+        "id": "camera/35",
+        "title": "US 20: E of Royal",
+        "tooltip": "US 20: E of Royal",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003020343-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003020343-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003020343-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003020343-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003020343-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.70622,
+          42.68325
+        ]
+      },
+      "properties": {
+        "id": "camera/36",
+        "title": "US 20: E of Harrison",
+        "tooltip": "US 20: E of Harrison",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005020019-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005020019-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005020019-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.77086,
+          42.72551
+        ]
+      },
+      "properties": {
+        "id": "camera/37",
+        "title": "US 20: W of Hay Springs",
+        "tooltip": "US 20: W of Hay Springs",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005020074-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005020074-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005020074-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.49657,
+          42.71525
+        ]
+      },
+      "properties": {
+        "id": "camera/38",
+        "title": "US 20: Rushville",
+        "tooltip": "US 20: Rushville",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005020090-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005020090-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005020090-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.07727,
+          42.79992
+        ]
+      },
+      "properties": {
+        "id": "camera/39",
+        "title": "US 20: Gordon",
+        "tooltip": "US 20: Gordon",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008020112-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020112-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020112-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020112-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.28465,
+          42.59387
+        ]
+      },
+      "properties": {
+        "id": "camera/40",
+        "title": "US 20: E of Newport",
+        "tooltip": "US 20: E of Newport",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008020272-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020272-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020272-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.9674,
+          40.02876
+        ]
+      },
+      "properties": {
+        "id": "camera/41",
+        "title": "US 34: Arikaree River W of Haigler",
+        "tooltip": "US 34: Arikaree River W of Haigler",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007034005-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007034005-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007034005-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007034005-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.82282,
+          40.05876
+        ]
+      },
+      "properties": {
+        "id": "camera/42",
+        "title": "US 75: S of Dawson",
+        "tooltip": "US 75: S of Dawson",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001075004-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075004-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075004-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075004-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075004-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85759,
+          40.50884
+        ]
+      },
+      "properties": {
+        "id": "camera/43",
+        "title": "US 75: S of Julian Spur S64A",
+        "tooltip": "US 75: S of Julian Spur S64A",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001075036-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075036-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075036-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.22099,
+          41.78552
+        ]
+      },
+      "properties": {
+        "id": "camera/44",
+        "title": "US 75: Tekamah",
+        "tooltip": "US 75: Tekamah",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003075133-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003075133-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003075133-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.47252,
+          42.23118
+        ]
+      },
+      "properties": {
+        "id": "camera/45",
+        "title": "US 75: S of Winnebago",
+        "tooltip": "US 75: S of Winnebago",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003075169-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003075169-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003075169-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003075169-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003075169-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.65218,
+          40.04441
+        ]
+      },
+      "properties": {
+        "id": "camera/46",
+        "title": "US 77: S of Wymore",
+        "tooltip": "US 77: S of Wymore",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001077003-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077003-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077003-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077003-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077003-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.73382,
+          40.46516
+        ]
+      },
+      "properties": {
+        "id": "camera/47",
+        "title": "US 77: S of Cortland",
+        "tooltip": "US 77: S of Cortland",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001077037-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077037-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077037-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.64088,
+          41.01114
+        ]
+      },
+      "properties": {
+        "id": "camera/48",
+        "title": "US 77: S of Ceresco",
+        "tooltip": "US 77: S of Ceresco",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001077079-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077079-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077079-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077079-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.64022,
+          41.05802
+        ]
+      },
+      "properties": {
+        "id": "camera/167",
+        "title": "US 77: Ceresco",
+        "tooltip": "US 77: Ceresco",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001077082-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077082-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077082-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.97473,
+          42.32169
+        ]
+      },
+      "properties": {
+        "id": "camera/50",
+        "title": "US 385: Hemingford",
+        "tooltip": "US 385: Hemingford",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005385132-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385132-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385132-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385132-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385132-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.22416,
+          43.00086
+        ]
+      },
+      "properties": {
+        "id": "camera/52",
+        "title": "US 385: NE-SD Line N of Chadron",
+        "tooltip": "US 385: NE-SD Line N of Chadron",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005385187-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385187-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385187-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.44499,
+          41.47638
+        ]
+      },
+      "properties": {
+        "id": "camera/53",
+        "title": "US 81: N of Columbus",
+        "tooltip": "US 81: N of Columbus",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003081117-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081117-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081117-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081117-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081117-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.36822,
+          41.43873
+        ]
+      },
+      "properties": {
+        "id": "camera/400",
+        "title": "US 30: Columbus",
+        "tooltip": "US 30: Columbus",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003030379-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003030379-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003030379-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003030379-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003030379-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.54475,
+          42.37225
+        ]
+      },
+      "properties": {
+        "id": "camera/54",
+        "title": "US 83: Brownlee Rd N of Thedford",
+        "tooltip": "US 83: Brownlee Rd N of Thedford",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008083179-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008083179-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008083179-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.44184,
+          41.83418
+        ]
+      },
+      "properties": {
+        "id": "camera/55",
+        "title": "US 81: Madison",
+        "tooltip": "US 81: Madison",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003081143-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081143-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081143-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081143-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.42611,
+          42.36554
+        ]
+      },
+      "properties": {
+        "id": "camera/56",
+        "title": "US 81: W of Randolph",
+        "tooltip": "US 81: W of Randolph",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003081180-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081180-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081180-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081180-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081180-06.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.42633,
+          42.46735
+        ]
+      },
+      "properties": {
+        "id": "camera/293",
+        "title": "US 81: Hwy 81 Magnet",
+        "tooltip": "US 81: Hwy 81 Magnet",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003081187-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081187-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081187-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081187-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081187-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.40054,
+          42.84464
+        ]
+      },
+      "properties": {
+        "id": "camera/57",
+        "title": "US 81: So Yankton",
+        "tooltip": "US 81: So Yankton",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003081213-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081213-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081213-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081213-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081213-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.71957,
+          40.74011
+        ]
+      },
+      "properties": {
+        "id": "camera/58",
+        "title": "US 83: Hwy 83 Medicine Creek",
+        "tooltip": "US 83: Hwy 83 Medicine Creek",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006083055-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083055-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083055-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083055-06.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.04849,
+          42.00111
+        ]
+      },
+      "properties": {
+        "id": "camera/59",
+        "title": "US 26: Hwy 26 NE-WY Line",
+        "tooltip": "US 26: Hwy 26 NE-WY Line",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005026000-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005026000-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005026000-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.73977,
+          41.91425
+        ]
+      },
+      "properties": {
+        "id": "camera/60",
+        "title": "US 26: Hwy 26 W of Scottsbluff",
+        "tooltip": "US 26: Hwy 26 W of Scottsbluff",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005026018-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005026018-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005026018-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.75412,
+          41.56417
+        ]
+      },
+      "properties": {
+        "id": "camera/61",
+        "title": "US 26: Lisco",
+        "tooltip": "US 26: Lisco",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005026082-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005026082-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005026082-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.12551,
+          41.31101
+        ]
+      },
+      "properties": {
+        "id": "camera/62",
+        "title": "US 26: Ash Hollow",
+        "tooltip": "US 26: Ash Hollow",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006026119-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006026119-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006026119-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.09041,
+          41.23728
+        ]
+      },
+      "properties": {
+        "id": "camera/399",
+        "title": "US 26: E. Lewellen",
+        "tooltip": "US 26: E. Lewellen",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006026125-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006026125-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006026125-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.97898,
+          42.20429
+        ]
+      },
+      "properties": {
+        "id": "camera/63",
+        "title": "NE 11: W of Chambers",
+        "tooltip": "NE 11: W of Chambers",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008011125-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011125-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011125-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011125-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011125-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.70507,
+          42.54738
+        ]
+      },
+      "properties": {
+        "id": "camera/64",
+        "title": "NE 12: S of Ponca",
+        "tooltip": "NE 12: S of Ponca",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003012235-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003012235-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003012235-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003012235-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003012235-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.1032,
+          42.86887
+        ]
+      },
+      "properties": {
+        "id": "camera/65",
+        "title": "NE 12: W of Norden",
+        "tooltip": "NE 12: W of Norden",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008012029-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008012029-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008012029-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.33458,
+          42.91855
+        ]
+      },
+      "properties": {
+        "id": "camera/66",
+        "title": "NE 12: Brocksburg",
+        "tooltip": "NE 12: Brocksburg",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008012080-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008012080-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008012080-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008012080-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.15219,
+          40.71931
+        ]
+      },
+      "properties": {
+        "id": "camera/67",
+        "title": "NE 25: S of Wallace",
+        "tooltip": "NE 25: S of Wallace",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006025055-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006025055-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006025055-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.78244,
+          42.25242
+        ]
+      },
+      "properties": {
+        "id": "camera/68",
+        "title": "NE 29: N of Mitchell",
+        "tooltip": "NE 29: N of Mitchell",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005029035-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005029035-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005029035-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.17379,
+          42.2351
+        ]
+      },
+      "properties": {
+        "id": "camera/69",
+        "title": "NE 35: W of Wayne",
+        "tooltip": "NE 35: W of Wayne",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003035022-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003035022-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003035022-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003035022-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003035022-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.19681,
+          41.26301
+        ]
+      },
+      "properties": {
+        "id": "camera/70",
+        "title": "NE 40: S of Arnold",
+        "tooltip": "NE 40: S of Arnold",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006040011-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040011-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040011-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040011-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.1004,
+          41.83068
+        ]
+      },
+      "properties": {
+        "id": "camera/72",
+        "title": "NE 2: Dunning",
+        "tooltip": "NE 2: Dunning",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006002237-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002237-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002237-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002237-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.70868,
+          40.29188
+        ]
+      },
+      "properties": {
+        "id": "camera/73",
+        "title": "NE 4: E of Campbell",
+        "tooltip": "NE 4: E of Campbell",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004004049-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004004049-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004004049-03.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.08394,
+          41.85022
+        ]
+      },
+      "properties": {
+        "id": "camera/74",
+        "title": "NE 14: Petersburg",
+        "tooltip": "NE 14: Petersburg",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003014136-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003014136-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003014136-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003014136-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003014136-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.02616,
+          42.5927
+        ]
+      },
+      "properties": {
+        "id": "camera/75",
+        "title": "NE 14: Verdigre Spur S54A",
+        "tooltip": "NE 14: Verdigre Spur S54A",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003014188-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003014188-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003014188-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003014188-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003014188-01.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.05149,
+          40.42314
+        ]
+      },
+      "properties": {
+        "id": "camera/76",
+        "title": "NE 14: S of Clay Center",
+        "tooltip": "NE 14: S of Clay Center",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004014030-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004014030-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004014030-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004014030-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004014030-03.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.17915,
+          40.48081
+        ]
+      },
+      "properties": {
+        "id": "camera/77",
+        "title": "NE 15: W of Wilber",
+        "tooltip": "NE 15: W of Wilber",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001015033-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001015033-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001015033-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001015033-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001015033-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.05941,
+          41.71378
+        ]
+      },
+      "properties": {
+        "id": "camera/79",
+        "title": "NE 15: E of Clarkson",
+        "tooltip": "NE 15: E of Clarkson",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003015127-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003015127-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003015127-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003015127-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003015127-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.69445,
+          42.44992
+        ]
+      },
+      "properties": {
+        "id": "camera/80",
+        "title": "NE 87: S of Hay Springs",
+        "tooltip": "NE 87: S of Hay Springs",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005087028-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005087028-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005087028-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.17817,
+          40.91423
+        ]
+      },
+      "properties": {
+        "id": "camera/81",
+        "title": "NE 50: Manley",
+        "tooltip": "NE 50: Manley",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-002050070-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-002050070-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-002050070-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-002050070-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-002050070-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.17861,
+          40.81302
+        ]
+      },
+      "properties": {
+        "id": "camera/269",
+        "title": "US 34: US 34 at Hwy 50",
+        "tooltip": "US 34: US 34 at Hwy 50",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001034352-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001034352-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001034352-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001034352-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001034352-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1721,
+          41.55229
+        ]
+      },
+      "properties": {
+        "id": "camera/82",
+        "title": "NE 56: W of Cedar Rapids",
+        "tooltip": "NE 56: W of Cedar Rapids",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003056020-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003056020-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003056020-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.68304,
+          41.25
+        ]
+      },
+      "properties": {
+        "id": "camera/83",
+        "title": "NE 61: Martin Bay at Ogallala",
+        "tooltip": "NE 61: Martin Bay at Ogallala",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006061099-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006061099-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006061099-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.75989,
+          41.82032
+        ]
+      },
+      "properties": {
+        "id": "camera/84",
+        "title": "NE 61: N of Arthur",
+        "tooltip": "NE 61: N of Arthur",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006061144-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006061144-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006061144-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.70578,
+          42.49492
+        ]
+      },
+      "properties": {
+        "id": "camera/85",
+        "title": "NE 61: S of Merriman",
+        "tooltip": "NE 61: S of Merriman",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008061194-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008061194-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008061194-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.21125,
+          41.39491
+        ]
+      },
+      "properties": {
+        "id": "camera/86",
+        "title": "NE 70: W of Arcadia",
+        "tooltip": "NE 70: W of Arcadia",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004070097-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004070097-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004070097-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.65815,
+          41.525
+        ]
+      },
+      "properties": {
+        "id": "camera/88",
+        "title": "NE 71: N of Kimball",
+        "tooltip": "NE 71: N of Kimball",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005071035-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071035-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071035-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071035-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.67665,
+          41.56823
+        ]
+      },
+      "properties": {
+        "id": "camera/89",
+        "title": "NE 71: Harrisburg ",
+        "tooltip": "NE 71: Harrisburg ",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005071040-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071040-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071040-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071040-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.62118,
+          42.99996
+        ]
+      },
+      "properties": {
+        "id": "camera/90",
+        "title": "NE 71: NE-SD Line",
+        "tooltip": "NE 71: NE-SD Line",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005071164-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071164-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071164-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.55215,
+          42.96635
+        ]
+      },
+      "properties": {
+        "id": "camera/91",
+        "title": "NE 87: S of Whiteclay",
+        "tooltip": "NE 87: S of Whiteclay",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005087073-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005087073-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005087073-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.86054,
+          41.93179
+        ]
+      },
+      "properties": {
+        "id": "camera/92",
+        "title": "NE 91: E of Brewster",
+        "tooltip": "NE 91: E of Brewster",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008091015-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008091015-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008091015-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008091015-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008091015-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.96312,
+          41.55313
+        ]
+      },
+      "properties": {
+        "id": "camera/93",
+        "title": "NE 92: Tryon",
+        "tooltip": "NE 92: Tryon",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006092203-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006092203-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006092203-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006092203-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.85124,
+          41.52367
+        ]
+      },
+      "properties": {
+        "id": "camera/398",
+        "title": "NE 92: Ringgold",
+        "tooltip": "NE 92: Ringgold",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006092213-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006092213-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006092213-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.03669,
+          41.84164
+        ]
+      },
+      "properties": {
+        "id": "camera/94",
+        "title": "NE 97: Dismal River S of Mullen",
+        "tooltip": "NE 97: Dismal River S of Mullen",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006097063-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006097063-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006097063-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.89663,
+          42.46752
+        ]
+      },
+      "properties": {
+        "id": "camera/95",
+        "title": "NE 97: Brownlee Rd S of Valentine ",
+        "tooltip": "NE 97: Brownlee Rd S of Valentine ",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006097102-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006097102-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006097102-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.04442,
+          40.82122
+        ]
+      },
+      "properties": {
+        "id": "camera/101",
+        "title": "I-80: Milford Exit",
+        "tooltip": "I-80: Milford Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001080382-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080382-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080382-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080382-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080382-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.10182,
+          40.82202
+        ]
+      },
+      "properties": {
+        "id": "camera/129",
+        "title": "I-80: Seward Exit",
+        "tooltip": "I-80: Seward Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001080379-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080379-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080379-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080379-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080379-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.93113,
+          40.82128
+        ]
+      },
+      "properties": {
+        "id": "camera/437",
+        "title": "I-80: Construction Trailer 4",
+        "tooltip": "I-80: Construction Trailer 4",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-opstrailer4.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.92946,
+          40.8139
+        ]
+      },
+      "properties": {
+        "id": "camera/271",
+        "title": "US 6: US 6 at Hwy 103",
+        "tooltip": "US 6: US 6 at Hwy 103",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001006302-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001006302-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001006302-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001006302-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001006302-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.91011,
+          40.82045
+        ]
+      },
+      "properties": {
+        "id": "camera/439",
+        "title": "I-80: Construction Trailer 6",
+        "tooltip": "I-80: Construction Trailer 6",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-opstrailer6.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7085,
+          41.70526
+        ]
+      },
+      "properties": {
+        "id": "camera/116",
+        "title": "US 275: Scribner",
+        "tooltip": "US 275: Scribner",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-002275128.860.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.52861,
+          41.77772
+        ]
+      },
+      "properties": {
+        "id": "camera/128",
+        "title": "US 83: Dismal River Bridge",
+        "tooltip": "US 83: Dismal River Bridge",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006083133-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083133-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083133-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083133-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.08565,
+          40.66917
+        ]
+      },
+      "properties": {
+        "id": "camera/130",
+        "title": "I-80: Kearney Exit 272",
+        "tooltip": "I-80: Kearney Exit 272",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080272-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.11971,
+          40.67023
+        ]
+      },
+      "properties": {
+        "id": "camera/186",
+        "title": "I-80: W of Kearney",
+        "tooltip": "I-80: W of Kearney",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080270-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.03189,
+          40.66974
+        ]
+      },
+      "properties": {
+        "id": "camera/177",
+        "title": "I-80: Kearney Archway",
+        "tooltip": "I-80: Kearney Archway",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080274-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.02882,
+          40.66975
+        ]
+      },
+      "properties": {
+        "id": "camera/249",
+        "title": "I-80: Kearney exit 275",
+        "tooltip": "I-80: Kearney exit 275",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080275-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.98595,
+          40.68038
+        ]
+      },
+      "properties": {
+        "id": "camera/232",
+        "title": "I-80: Kearney WB DMS",
+        "tooltip": "I-80: Kearney WB DMS",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080278-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.14569,
+          41.51948
+        ]
+      },
+      "properties": {
+        "id": "camera/137",
+        "title": "US 30: Blair Roundabout",
+        "tooltip": "US 30: Blair Roundabout",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-002034465-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.90936,
+          41.00258
+        ]
+      },
+      "properties": {
+        "id": "camera/139",
+        "title": "US 75: US 34 and NE 66 at Plattsmouth",
+        "tooltip": "US 75: US 34 and NE 66 at Plattsmouth",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-00203437955-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.88747,
+          41.07351
+        ]
+      },
+      "properties": {
+        "id": "camera/394",
+        "title": "US 34: La Platte East",
+        "tooltip": "US 34: La Platte East",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-002034387-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.92801,
+          41.08214
+        ]
+      },
+      "properties": {
+        "id": "camera/393",
+        "title": "US 34: La Platte",
+        "tooltip": "US 34: La Platte",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-002034385-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.92929,
+          41.101
+        ]
+      },
+      "properties": {
+        "id": "camera/411",
+        "title": "US 75: Fairview",
+        "tooltip": "US 75: Fairview",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-0020757900-01.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.75098,
+          42.89794
+        ]
+      },
+      "properties": {
+        "id": "camera/142",
+        "title": "US 183: Springview",
+        "tooltip": "US 183: Springview",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008183218-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008183218-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008183218-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008183218-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.98575,
+          40.84344
+        ]
+      },
+      "properties": {
+        "id": "camera/156",
+        "title": "I-80: Cozad Exit",
+        "tooltip": "I-80: Cozad Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080222-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080222-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080222-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080222-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.90917,
+          40.81418
+        ]
+      },
+      "properties": {
+        "id": "camera/419",
+        "title": "I-80: Darr",
+        "tooltip": "I-80: Darr",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080227-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080227-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080227-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080227-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080227-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.99525,
+          40.74589
+        ]
+      },
+      "properties": {
+        "id": "camera/220",
+        "title": "NE 21: Cozad South",
+        "tooltip": "NE 21: Cozad South",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006021005-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006021005-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006021005-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006021005-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.63022,
+          40.30721
+        ]
+      },
+      "properties": {
+        "id": "camera/157",
+        "title": "US 6: Oxford Intersection",
+        "tooltip": "US 6: Oxford Intersection",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007006140-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006140-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006140-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006140-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006140-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.66503,
+          40.8412
+        ]
+      },
+      "properties": {
+        "id": "camera/158",
+        "title": "NE 23: East of Grant",
+        "tooltip": "NE 23: East of Grant",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007023021-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007023021-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007023021-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007023021-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007023021-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.00078,
+          40.66296
+        ]
+      },
+      "properties": {
+        "id": "camera/159",
+        "title": "NE 23: Eustis East",
+        "tooltip": "NE 23: Eustis East",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007023122-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007023122-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007023122-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007023122-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007023122-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.51737,
+          40.43298
+        ]
+      },
+      "properties": {
+        "id": "camera/160",
+        "title": "US 6: Near Enders",
+        "tooltip": "US 6: Near Enders",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007006034-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006034-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007006034-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.36997,
+          40.13271
+        ]
+      },
+      "properties": {
+        "id": "camera/161",
+        "title": "US 136: North of Alma",
+        "tooltip": "US 136: North of Alma",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007136027-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007136027-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007136027-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007136027-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007136027-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.01989,
+          40.77328
+        ]
+      },
+      "properties": {
+        "id": "camera/162",
+        "title": "NE 23: Venango",
+        "tooltip": "NE 23: Venango",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007023002-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007023002-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007023002-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.15536,
+          40.1039
+        ]
+      },
+      "properties": {
+        "id": "camera/163",
+        "title": "NE 89: Near Wilsonville",
+        "tooltip": "NE 89: Near Wilsonville",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007089023-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007089023-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007089023-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007089023-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.75812,
+          40.08933
+        ]
+      },
+      "properties": {
+        "id": "camera/164",
+        "title": "US 136: E of Riverton",
+        "tooltip": "US 136: E of Riverton",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007136062-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007136062-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007136062-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007136062-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007136062-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.50669,
+          40.71162
+        ]
+      },
+      "properties": {
+        "id": "camera/168",
+        "title": "NE 2: Bennet Corner",
+        "tooltip": "NE 2: Bennet Corner",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001002470-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002470-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002470-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002470-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002470-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.4077,
+          40.71141
+        ]
+      },
+      "properties": {
+        "id": "camera/212",
+        "title": "NE 2: Palmyra",
+        "tooltip": "NE 2: Palmyra",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001002475-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002475-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002475-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002475-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002475-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.89601,
+          40.66886
+        ]
+      },
+      "properties": {
+        "id": "camera/169",
+        "title": "US 75: NE City",
+        "tooltip": "US 75: NE City",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001075048-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075048-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075048-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075048-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075048-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85947,
+          40.6531
+        ]
+      },
+      "properties": {
+        "id": "camera/285",
+        "title": "US 75: Hwy 2 at 75 South",
+        "tooltip": "US 75: Hwy 2 at 75 South",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001075046-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075046-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075046-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075046-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001075046-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.85182,
+          40.65405
+        ]
+      },
+      "properties": {
+        "id": "camera/286",
+        "title": "NE 2: Hwy 2 NE City",
+        "tooltip": "NE 2: Hwy 2 NE City",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001002503-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002503-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002503-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002503-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.83145,
+          40.66969
+        ]
+      },
+      "properties": {
+        "id": "camera/206",
+        "title": "NE 2: Ne City River Bridge",
+        "tooltip": "NE 2: Ne City River Bridge",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001002508-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002508-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002508-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002508-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.70538,
+          40.65385
+        ]
+      },
+      "properties": {
+        "id": "camera/170",
+        "title": "US 77: W of Roca",
+        "tooltip": "US 77: W of Roca",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001077051-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077051-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077051-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077051-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077051-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.09377,
+          42.7029
+        ]
+      },
+      "properties": {
+        "id": "camera/172",
+        "title": "NE 12: Obert",
+        "tooltip": "NE 12: Obert",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003012211-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003012211-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003012211-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003012211-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003012211-01.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72329,
+          42.29297
+        ]
+      },
+      "properties": {
+        "id": "camera/173",
+        "title": "NE 35: Emerson",
+        "tooltip": "NE 35: Emerson",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003035048-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003035048-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003035048-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003035048-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003035048-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.92169,
+          41.46684
+        ]
+      },
+      "properties": {
+        "id": "camera/174",
+        "title": "US 30: W of Rogers",
+        "tooltip": "US 30: W of Rogers",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003030404-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003030404-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003030404-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003030404-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.02348,
+          42.01858
+        ]
+      },
+      "properties": {
+        "id": "camera/175",
+        "title": "US 275: E of Pilger",
+        "tooltip": "US 275: E of Pilger",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003275096-003.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275096-002.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275096-004.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275096-005.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003275096-001.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.86684,
+          42.2811
+        ]
+      },
+      "properties": {
+        "id": "camera/176",
+        "title": "NE 7: Elsmere Rd",
+        "tooltip": "NE 7: Elsmere Rd",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008007024-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008007024-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008007024-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008007024-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008007024-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.32825,
+          41.81651
+        ]
+      },
+      "properties": {
+        "id": "camera/178",
+        "title": "US 26: N of Bayard",
+        "tooltip": "US 26: N of Bayard",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005026042-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005026042-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005026042-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005026042-01.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.74175,
+          40.7226
+        ]
+      },
+      "properties": {
+        "id": "camera/179",
+        "title": "I-80: Shelton Exit",
+        "tooltip": "I-80: Shelton Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080291-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004080291-03.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.84599,
+          40.70181
+        ]
+      },
+      "properties": {
+        "id": "camera/241",
+        "title": "I-80: Gibbon Exit",
+        "tooltip": "I-80: Gibbon Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080285-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.57337,
+          42.99095
+        ]
+      },
+      "properties": {
+        "id": "camera/180",
+        "title": "US 83: SD border N of Valentine",
+        "tooltip": "US 83: SD border N of Valentine",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008083222-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008083222-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008083222-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.24571,
+          42.63829
+        ]
+      },
+      "properties": {
+        "id": "camera/181",
+        "title": "US 20: Wood Lake",
+        "tooltip": "US 20: Wood Lake",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008020221-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020221-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020221-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.10469,
+          42.92777
+        ]
+      },
+      "properties": {
+        "id": "camera/182",
+        "title": "US 20: Nenzel",
+        "tooltip": "US 20: Nenzel",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008020167-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020167-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020167-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020167-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.46214,
+          42.33842
+        ]
+      },
+      "properties": {
+        "id": "camera/183",
+        "title": "US 20: Inman",
+        "tooltip": "US 20: Inman",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008020320-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020320-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020320-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020320-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.44284,
+          42.40806
+        ]
+      },
+      "properties": {
+        "id": "camera/184",
+        "title": "NE 250: Smith Lake",
+        "tooltip": "NE 250: Smith Lake",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005250026-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005250026-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005250026-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005250026-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.37816,
+          41.75269
+        ]
+      },
+      "properties": {
+        "id": "camera/185",
+        "title": "US 183: S Taylor",
+        "tooltip": "US 183: S Taylor",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008183122-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008183122-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008183122-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008183122-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.57645,
+          40.25617
+        ]
+      },
+      "properties": {
+        "id": "camera/189",
+        "title": "US 81: W of Belvidere",
+        "tooltip": "US 81: W of Belvidere",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004081018-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004081018-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-004081018-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.75464,
+          42.0435
+        ]
+      },
+      "properties": {
+        "id": "camera/190",
+        "title": "NE 61: N of Hyannis",
+        "tooltip": "NE 61: N of Hyannis",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008061165-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008061165-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008061165-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.89478,
+          42.69027
+        ]
+      },
+      "properties": {
+        "id": "camera/191",
+        "title": "US 20: Harrison ",
+        "tooltip": "US 20: Harrison ",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005020008-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005020008-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.37273,
+          41.41861
+        ]
+      },
+      "properties": {
+        "id": "camera/192",
+        "title": "US 26: Oshkosh",
+        "tooltip": "US 26: Oshkosh",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005026104-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005026104-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.95163,
+          40.68652
+        ]
+      },
+      "properties": {
+        "id": "camera/193",
+        "title": "I-80: Minden Exit",
+        "tooltip": "I-80: Minden Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080279-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.61335,
+          40.09517
+        ]
+      },
+      "properties": {
+        "id": "camera/195",
+        "title": "US 81: Hebron Scales",
+        "tooltip": "US 81: Hebron Scales",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004081006-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.61047,
+          40.00865
+        ]
+      },
+      "properties": {
+        "id": "camera/210",
+        "title": "US 81: Chester",
+        "tooltip": "US 81: Chester",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004081001-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.57138,
+          40.01595
+        ]
+      },
+      "properties": {
+        "id": "camera/200",
+        "title": "US 83: S of McCook",
+        "tooltip": "US 83: S of McCook",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007083001-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007083001-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007083001-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007083001-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.93452,
+          41.11745
+        ]
+      },
+      "properties": {
+        "id": "camera/203",
+        "title": "US 75: Capehart Rd in Bellevue",
+        "tooltip": "US 75: Capehart Rd in Bellevue",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/VID-00207508032-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.5451,
+          40.02178
+        ]
+      },
+      "properties": {
+        "id": "camera/205",
+        "title": "US 34: Benkelman",
+        "tooltip": "US 34: Benkelman",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-007034028-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007034028-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007034028-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-007034028-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.0645,
+          40.82184
+        ]
+      },
+      "properties": {
+        "id": "camera/207",
+        "title": "I-80: Aurora Anti-Icing ",
+        "tooltip": "I-80: Aurora Anti-Icing ",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080328-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.02436,
+          40.82183
+        ]
+      },
+      "properties": {
+        "id": "camera/208",
+        "title": "I-80: Aurora DMS",
+        "tooltip": "I-80: Aurora DMS",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080330-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.99615,
+          40.82194
+        ]
+      },
+      "properties": {
+        "id": "camera/209",
+        "title": "I-80: Aurora Jct 14",
+        "tooltip": "I-80: Aurora Jct 14",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080332-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.15024,
+          40.82207
+        ]
+      },
+      "properties": {
+        "id": "camera/262",
+        "title": "I-80: Giltner Exit",
+        "tooltip": "I-80: Giltner Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080324-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.94027,
+          40.82187
+        ]
+      },
+      "properties": {
+        "id": "camera/246",
+        "title": "I-80: Aurora WB DMS",
+        "tooltip": "I-80: Aurora WB DMS",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080334-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.61543,
+          41.08374
+        ]
+      },
+      "properties": {
+        "id": "camera/211",
+        "title": "I-80: 184 Platte River Bridge",
+        "tooltip": "I-80: 184 Platte River Bridge",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080184-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080184-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.523,
+          41.07848
+        ]
+      },
+      "properties": {
+        "id": "camera/382",
+        "title": "US 30: West Maxwell",
+        "tooltip": "US 30: West Maxwell",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006030190-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030190-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030190-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030190-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.52529,
+          41.0514
+        ]
+      },
+      "properties": {
+        "id": "camera/227",
+        "title": "I-80: Maxwell Exit",
+        "tooltip": "I-80: Maxwell Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080190-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080190-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080190-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080190-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.01111,
+          42.71811
+        ]
+      },
+      "properties": {
+        "id": "camera/214",
+        "title": "US 385: South Chadron",
+        "tooltip": "US 385: South Chadron",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005385154-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385154-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385154-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385154-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385154-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.25652,
+          42.75623
+        ]
+      },
+      "properties": {
+        "id": "camera/215",
+        "title": "US 20: Whitney Spur",
+        "tooltip": "US 20: Whitney Spur",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005020045-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005020045-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005020045-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.38546,
+          41.55287
+        ]
+      },
+      "properties": {
+        "id": "camera/216",
+        "title": "US 183: Sargent/Comstock Rd",
+        "tooltip": "US 183: Sargent/Comstock Rd",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006183108-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006183108-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006183108-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006183108-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.07892,
+          41.48025
+        ]
+      },
+      "properties": {
+        "id": "camera/217",
+        "title": "NE 92: Arnold East",
+        "tooltip": "NE 92: Arnold East",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006092257-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006092257-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006092257-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.71605,
+          41.4299
+        ]
+      },
+      "properties": {
+        "id": "camera/218",
+        "title": "NE 61: Arthur South",
+        "tooltip": "NE 61: Arthur South",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006061113-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006061113-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006061113-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.38169,
+          41.57014
+        ]
+      },
+      "properties": {
+        "id": "camera/219",
+        "title": "NE 92: Bucktail (Arthur East)",
+        "tooltip": "NE 92: Bucktail (Arthur East)",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006092184-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006092184-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006092184-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.74963,
+          41.01776
+        ]
+      },
+      "properties": {
+        "id": "camera/221",
+        "title": "NE 21: Oconto South",
+        "tooltip": "NE 21: Oconto South",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006021045-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006021045-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006021045-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.63094,
+          41.01078
+        ]
+      },
+      "properties": {
+        "id": "camera/390",
+        "title": "NE 40: Eddyville",
+        "tooltip": "NE 40: Eddyville",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006040050-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040050-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040050-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040050-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040050-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.54026,
+          40.69103
+        ]
+      },
+      "properties": {
+        "id": "camera/225",
+        "title": "I-80: Overton Exit",
+        "tooltip": "I-80: Overton Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080248-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080248-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080248-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080248-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.52293,
+          40.73647
+        ]
+      },
+      "properties": {
+        "id": "camera/391",
+        "title": "US 30: Overton",
+        "tooltip": "US 30: Overton",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006030248-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030248-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030248-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030248-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006030248-06.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.17939,
+          40.67191
+        ]
+      },
+      "properties": {
+        "id": "camera/229",
+        "title": "NE 2: Hwy 2 at Syracuse",
+        "tooltip": "NE 2: Hwy 2 at Syracuse",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001002488-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002488-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002488-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002488-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001002488-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.89428,
+          41.19181
+        ]
+      },
+      "properties": {
+        "id": "camera/233",
+        "title": "I-80: Bushnell",
+        "tooltip": "I-80: Bushnell",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080008-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080008-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080008-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080008-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080008-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.13342,
+          41.18045
+        ]
+      },
+      "properties": {
+        "id": "camera/236",
+        "title": "I-80: I80 at Brownson exit 48",
+        "tooltip": "I-80: I80 at Brownson exit 48",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080048-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080048-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080048-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080048-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080048-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.08446,
+          41.15365
+        ]
+      },
+      "properties": {
+        "id": "camera/427",
+        "title": "I-80: Sidney Rest Area",
+        "tooltip": "I-80: Sidney Rest Area",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080052-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080052-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080052-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.4748,
+          41.08077
+        ]
+      },
+      "properties": {
+        "id": "camera/239",
+        "title": "I-80: I80 at Chappell",
+        "tooltip": "I-80: I80 at Chappell",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080085-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080085-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080085-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080085-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080085-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.88815,
+          41.07924
+        ]
+      },
+      "properties": {
+        "id": "camera/243",
+        "title": "I-80: Brule",
+        "tooltip": "I-80: Brule",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080117-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080117-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080117-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080117-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.16692,
+          40.9143
+        ]
+      },
+      "properties": {
+        "id": "camera/244",
+        "title": "I-80: Gothenburg",
+        "tooltip": "I-80: Gothenburg",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080211-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080211-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080211-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080211-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.4898,
+          41.22082
+        ]
+      },
+      "properties": {
+        "id": "camera/245",
+        "title": "I-80: Dix",
+        "tooltip": "I-80: Dix",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005080029-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080029-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080029-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080029-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005080029-04.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.58719,
+          40.76294
+        ]
+      },
+      "properties": {
+        "id": "camera/247",
+        "title": "I-80: Wood River",
+        "tooltip": "I-80: Wood River",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080300-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.0023,
+          41.13707
+        ]
+      },
+      "properties": {
+        "id": "camera/251",
+        "title": "I-80: Hershey Exit",
+        "tooltip": "I-80: Hershey Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080164-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080164-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080164-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080164-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.57637,
+          41.11783
+        ]
+      },
+      "properties": {
+        "id": "camera/252",
+        "title": "I-80: Roscoe Interchange",
+        "tooltip": "I-80: Roscoe Interchange",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080133-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080133-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080133-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080133-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.88318,
+          40.82097
+        ]
+      },
+      "properties": {
+        "id": "camera/263",
+        "title": "I-80: Hampton Exit",
+        "tooltip": "I-80: Hampton Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080338-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.80706,
+          40.82101
+        ]
+      },
+      "properties": {
+        "id": "camera/264",
+        "title": "I-80: Henderson Exit",
+        "tooltip": "I-80: Henderson Exit",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-004080342-00.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.98537,
+          41.63977
+        ]
+      },
+      "properties": {
+        "id": "camera/267",
+        "title": "NE 88: 88 at 3.5",
+        "tooltip": "NE 88: 88 at 3.5",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005088003-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005088003-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005088003-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.12987,
+          41.20724
+        ]
+      },
+      "properties": {
+        "id": "camera/268",
+        "title": "NE 15: Near David City",
+        "tooltip": "NE 15: Near David City",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001015089-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001015089-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001015089-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001015089-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001015089-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.91207,
+          40.81315
+        ]
+      },
+      "properties": {
+        "id": "camera/270",
+        "title": "US 34: US 34 at US 75",
+        "tooltip": "US 34: US 34 at US 75",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001034366-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001034366-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001034366-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001034366-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001034366-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.3488,
+          40.8214
+        ]
+      },
+      "properties": {
+        "id": "camera/280",
+        "title": "I-80: I 80 at Utica Interchange",
+        "tooltip": "I-80: I 80 at Utica Interchange",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001080366-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080366-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080366-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080366-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080366-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.29197,
+          40.82191
+        ]
+      },
+      "properties": {
+        "id": "camera/281",
+        "title": "I-80: I 80 at Beaver Crossing",
+        "tooltip": "I-80: I 80 at Beaver Crossing",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001080369-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080369-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080369-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080369-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080369-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.21621,
+          40.82232
+        ]
+      },
+      "properties": {
+        "id": "camera/282",
+        "title": "I-80: I 80 at Goehner Interchange",
+        "tooltip": "I-80: I 80 at Goehner Interchange",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001080373-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080373-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080373-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080373-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001080373-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.97786,
+          41.96964
+        ]
+      },
+      "properties": {
+        "id": "camera/287",
+        "title": "US 385: D5-385-99 South Aliance",
+        "tooltip": "US 385: D5-385-99 South Aliance",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005385099-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385099-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385099-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385099-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385099-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.11233,
+          41.78425
+        ]
+      },
+      "properties": {
+        "id": "camera/288",
+        "title": "NE 11: Hwy 11 East of Burwell",
+        "tooltip": "NE 11: Hwy 11 East of Burwell",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008011093-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011093-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011093-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011093-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.70165,
+          42.54731
+        ]
+      },
+      "properties": {
+        "id": "camera/289",
+        "title": "US 20: Long Pine",
+        "tooltip": "US 20: Long Pine",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008020250-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020250-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020250-07.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020250-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020250-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.46667,
+          41.82371
+        ]
+      },
+      "properties": {
+        "id": "camera/290",
+        "title": "US 77: Oakland",
+        "tooltip": "US 77: Oakland",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003077141-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077141-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077141-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077141-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077141-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.84403,
+          42.46698
+        ]
+      },
+      "properties": {
+        "id": "camera/291",
+        "title": "US 20: Allen",
+        "tooltip": "US 20: Allen",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003020407-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003020407-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003020407-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003020407-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003020407-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.42632,
+          42.61282
+        ]
+      },
+      "properties": {
+        "id": "camera/292",
+        "title": "US 81: Hartington",
+        "tooltip": "US 81: Hartington",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003081197-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081197-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081197-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081197-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081197-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.8408,
+          42.91546
+        ]
+      },
+      "properties": {
+        "id": "camera/294",
+        "title": "NE 11: East Butte",
+        "tooltip": "NE 11: East Butte",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008011182-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011182-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011182-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011182-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008011182-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.50422,
+          42.80735
+        ]
+      },
+      "properties": {
+        "id": "camera/295",
+        "title": "US 20: East Valentne",
+        "tooltip": "US 20: East Valentne",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008020202-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020202-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020202-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008020202-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.65147,
+          42.84957
+        ]
+      },
+      "properties": {
+        "id": "camera/296",
+        "title": "US 281: South Spencer",
+        "tooltip": "US 281: South Spencer",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-008281210-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281210-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281210-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-008281210-03.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.65097,
+          42.80708
+        ]
+      },
+      "properties": {
+        "id": "camera/423",
+        "title": "US 281: Portable Trailer",
+        "tooltip": "US 281: Portable Trailer",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-99428-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-99428-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-99428-03.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.46313,
+          42.00228
+        ]
+      },
+      "properties": {
+        "id": "camera/297",
+        "title": "US 77: Lyons",
+        "tooltip": "US 77: Lyons",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003077153-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077153-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077153-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077153-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003077153-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.0183,
+          42.01881
+        ]
+      },
+      "properties": {
+        "id": "camera/298",
+        "title": "NE 2: NE 2 East of Bingham",
+        "tooltip": "NE 2: NE 2 East of Bingham",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005002132-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005002132-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005002132-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.58932,
+          42.06918
+        ]
+      },
+      "properties": {
+        "id": "camera/300",
+        "title": "NE 2: Hwy 2 at Antioch",
+        "tooltip": "NE 2: Hwy 2 at Antioch",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005002101-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005002101-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005002101-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.636,
+          41.20602
+        ]
+      },
+      "properties": {
+        "id": "camera/301",
+        "title": "US 77: Hwy 77 at Hwy 92 Wahoo",
+        "tooltip": "US 77: Hwy 77 at Hwy 92 Wahoo",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001077092-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077092-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077092-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077092-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077092-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.60058,
+          41.23462
+        ]
+      },
+      "properties": {
+        "id": "camera/302",
+        "title": "US 77: Hwy 77 at Hwy 109 Wahoo",
+        "tooltip": "US 77: Hwy 77 at Hwy 109 Wahoo",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-001077095-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077095-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077095-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077095-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-001077095-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.77508,
+          41.82903
+        ]
+      },
+      "properties": {
+        "id": "camera/304",
+        "title": "NE 45: Newman Grove",
+        "tooltip": "NE 45: Newman Grove",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003032183-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003032183-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003032183-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003032183-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003032183-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.46514,
+          41.6132
+        ]
+      },
+      "properties": {
+        "id": "camera/305",
+        "title": "US 81: Tarnov",
+        "tooltip": "US 81: Tarnov",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003081127-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081127-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081127-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081127-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003081127-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.43094,
+          41.94958
+        ]
+      },
+      "properties": {
+        "id": "camera/314",
+        "title": "NE 2: W of Halsey",
+        "tooltip": "NE 2: W of Halsey",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006002218-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002218-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002218-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.4308,
+          41.94948
+        ]
+      },
+      "properties": {
+        "id": "camera/413",
+        "title": "NE 2: Natick",
+        "tooltip": "NE 2: Natick",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006002218-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002218-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002218-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.56504,
+          41.98077
+        ]
+      },
+      "properties": {
+        "id": "camera/315",
+        "title": "US 83: Thedford",
+        "tooltip": "US 83: Thedford",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006083148-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083148-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083148-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083148-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083148-07.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.56469,
+          41.98111
+        ]
+      },
+      "properties": {
+        "id": "camera/414",
+        "title": "US 83: Thedford",
+        "tooltip": "US 83: Thedford",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006083148-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083148-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083148-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083148-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083148-07.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.21894,
+          41.18941
+        ]
+      },
+      "properties": {
+        "id": "camera/317",
+        "title": "NE 2: E of Mason City",
+        "tooltip": "NE 2: E of Mason City",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006002306-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002306-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002306-02.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002306-06.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.2178,
+          41.18887
+        ]
+      },
+      "properties": {
+        "id": "camera/415",
+        "title": "NE 2: Mason City",
+        "tooltip": "NE 2: Mason City",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006002306-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002306-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002306-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002306-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.30679,
+          42.32329
+        ]
+      },
+      "properties": {
+        "id": "camera/339",
+        "title": "NE 71: Hwy 71 & Hwy 2 Junction",
+        "tooltip": "NE 71: Hwy 71 & Hwy 2 Junction",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005071110-01.jpg",
+          "https://dot511.nebraska.gov/images/vid-005071110-03.jpg",
+          "https://dot511.nebraska.gov/images/vid-005071110-05.jpg",
+          "https://dot511.nebraska.gov/images/vid-005071110-02.jpg"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.22509,
+          42.25514
+        ]
+      },
+      "properties": {
+        "id": "camera/378",
+        "title": "NE 27: Gordon",
+        "tooltip": "NE 27: Gordon",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005027182-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005027182-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005027182-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.75364,
+          40.91564
+        ]
+      },
+      "properties": {
+        "id": "camera/379",
+        "title": "US 83: US 83 at MP 67",
+        "tooltip": "US 83: US 83 at MP 67",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006083068-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083068-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006083068-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.16264,
+          40.76878
+        ]
+      },
+      "properties": {
+        "id": "camera/384",
+        "title": "NE 47: South Gothenburg",
+        "tooltip": "NE 47: South Gothenburg",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006047051-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006047051-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006047051-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006047051-06.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.17854,
+          41.06251
+        ]
+      },
+      "properties": {
+        "id": "camera/388",
+        "title": "NE 47: North Gothenburg",
+        "tooltip": "NE 47: North Gothenburg",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006047072-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006047072-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006047072-05.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.92654,
+          41.27745
+        ]
+      },
+      "properties": {
+        "id": "camera/389",
+        "title": "NE 40: Callaway",
+        "tooltip": "NE 40: Callaway",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006040026-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040026-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040026-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040026-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006040026-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.82132,
+          42.03327
+        ]
+      },
+      "properties": {
+        "id": "camera/392",
+        "title": "NE 2: Seneca",
+        "tooltip": "NE 2: Seneca",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006002196-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002196-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002196-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002196-06.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002196-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.91318,
+          41.66091
+        ]
+      },
+      "properties": {
+        "id": "camera/396",
+        "title": "NE 2: Anselmo",
+        "tooltip": "NE 2: Anselmo",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006002254-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002254-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006002254-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.67429,
+          41.24794
+        ]
+      },
+      "properties": {
+        "id": "camera/397",
+        "title": "NE 21: N Oconto",
+        "tooltip": "NE 21: N Oconto",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006021062-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006021062-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006021062-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006021062-06.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.68776,
+          41.00179
+        ]
+      },
+      "properties": {
+        "id": "camera/418",
+        "title": "NE 71: South Kimball",
+        "tooltip": "NE 71: South Kimball",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005071001-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071001-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071001-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005071001-06.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.472,
+          41.03473
+        ]
+      },
+      "properties": {
+        "id": "camera/420",
+        "title": "I-80: SE Maxwell",
+        "tooltip": "I-80: SE Maxwell",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-006080193-01.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-006080193-05.jpg?1764992460000",
+          null,
+          "https://dot511.nebraska.gov/images/vid-006080193-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.14878,
+          41.81404
+        ]
+      },
+      "properties": {
+        "id": "camera/422",
+        "title": "US 385: Angora",
+        "tooltip": "US 385: Angora",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-005385085-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385085-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385085-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-005385085-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.70983,
+          42.11929
+        ]
+      },
+      "properties": {
+        "id": "camera/424",
+        "title": "NE 16: Pender",
+        "tooltip": "NE 16: Pender",
+        "active": true,
+        "views": [
+          "https://dot511.nebraska.gov/images/vid-003016012-03.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003016012-04.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003016012-05.jpg?1764992460000",
+          "https://dot511.nebraska.gov/images/vid-003016012-02.jpg?1764992460000"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.46228,
+          40.94366
+        ]
+      },
+      "properties": {
+        "id": "cluster/-96462284094366",
+        "title": "Show seven cameras",
+        "tooltip": "Show seven cameras",
+        "active": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.67179,
+          40.86024
+        ]
+      },
+      "properties": {
+        "id": "cluster/-96671794086024",
+        "title": "Show nine cameras",
+        "tooltip": "Show nine cameras",
+        "active": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.28471,
+          41.04984
+        ]
+      },
+      "properties": {
+        "id": "cluster/-96284714104984",
+        "title": "Show eight cameras",
+        "tooltip": "Show eight cameras",
+        "active": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.37881,
+          40.81206
+        ]
+      },
+      "properties": {
+        "id": "cluster/-98378814081206",
+        "title": "Show six cameras",
+        "tooltip": "Show six cameras",
+        "active": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.09847,
+          41.19251
+        ]
+      },
+      "properties": {
+        "id": "cluster/-96098474119251",
+        "title": "Show 34 cameras",
+        "tooltip": "Show 34 cameras",
+        "active": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.80505,
+          40.78221
+        ]
+      },
+      "properties": {
+        "id": "cluster/-96805054078221",
+        "title": "Show 11 cameras",
+        "tooltip": "Show 11 cameras",
+        "active": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.00904,
+          41.28571
+        ]
+      },
+      "properties": {
+        "id": "cluster/-96009044128571",
+        "title": "Show 13 cameras",
+        "tooltip": "Show 13 cameras",
+        "active": null,
+        "views": []
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.93916,
+          41.19932
+        ]
+      },
+      "properties": {
+        "id": "cluster/-95939164119932",
+        "title": "Show 14 cameras",
+        "tooltip": "Show 14 cameras",
+        "active": null,
+        "views": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,720 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.985026,
+          50.269695
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.270394,
+          50.411507
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.3652,
+          50.39039
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/64"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.498303,
+          50.44083
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.02043,
+          49.66838
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/65"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.950128,
+          52.347218
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/63"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.20765,
+          51.581903
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.3942201,
+          52.0127025
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.774676,
+          52.246532
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/49"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.97259,
+          50.658825
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/28"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.906395,
+          52.820072
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/53"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.284455,
+          50.477912
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/44"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.811738,
+          53.481823
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/62"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.500824,
+          52.433065
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.545226,
+          51.776339
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/61"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.91082,
+          52.035715
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/56"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.25869,
+          50.469953
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.648492,
+          52.420346
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/55"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.481333,
+          59.561333
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/38"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.51795,
+          50.419794
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/35"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.7883992,
+          54.40452334
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/60"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.93772,
+          51.22437571
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.497149,
+          51.75658627
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/13"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.99806,
+          53.022873
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.6136209,
+          53.5133164
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/40"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.137705,
+          50.559628
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.143955,
+          52.373383
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.255529,
+          50.49065
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.784463,
+          52.938707
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/50"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.67447,
+          52.289656
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/36"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.546988,
+          52.336172
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/57"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.290393,
+          53.406354
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/54"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.294816,
+          53.101336
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/33"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.184876,
+          59.33433
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.930662,
+          55.489423
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.296504,
+          53.956626
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -103.172418,
+          58.107035
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/58"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.277156,
+          55.54382
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/45"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.405,
+          56.4739
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.7198,
+          55.8993
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/39"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.5824,
+          55.5283
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/41"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.418,
+          55.8437
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.7496,
+          55.2878
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/42"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.8362,
+          59.2541
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/51"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.5203,
+          54.1218
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/31"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.762681,
+          51.969236
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.2777,
+          49.837679
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/34"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.356425,
+          53.367872
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/21"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.460092,
+          50.463272
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/48"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.977356,
+          51.395308
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.483774,
+          50.102112
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.77368,
+          50.947475
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/37"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.45452,
+          51.490288
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.901644,
+          49.131879
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.772892,
+          49.083177
+        ]
+      },
+      "properties": {
+        "image_url": "https://hotline.gov.sk.ca/map/Cctv/43"
+      }
+    }
+  ]
+}

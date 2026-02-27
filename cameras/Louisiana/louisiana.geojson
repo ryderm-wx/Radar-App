@@ -1,0 +1,4895 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1",
+        "name": "Camera 1",
+        "page_url": "https://www.511la.org/map/Cctv/1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.630833,
+          32.538889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "2",
+        "name": "Camera 2",
+        "page_url": "https://www.511la.org/map/Cctv/2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.83,
+          32.4609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3",
+        "name": "Camera 3",
+        "page_url": "https://www.511la.org/map/Cctv/3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.774,
+          32.4844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "4",
+        "name": "Camera 4",
+        "page_url": "https://www.511la.org/map/Cctv/4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.772,
+          32.4904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "5",
+        "name": "Camera 5",
+        "page_url": "https://www.511la.org/map/Cctv/5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.763,
+          32.4955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "6",
+        "name": "Camera 6",
+        "page_url": "https://www.511la.org/map/Cctv/6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.7586513133894,
+          32.497017684654
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "7",
+        "name": "Camera 7",
+        "page_url": "https://www.511la.org/map/Cctv/7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.749,
+          32.5017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "8",
+        "name": "Camera 8",
+        "page_url": "https://www.511la.org/map/Cctv/8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.746,
+          32.5053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "9",
+        "name": "Camera 9",
+        "page_url": "https://www.511la.org/map/Cctv/9"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.743,
+          32.5102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "10",
+        "name": "Camera 10",
+        "page_url": "https://www.511la.org/map/Cctv/10"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.736,
+          32.513553068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "11",
+        "name": "Camera 11",
+        "page_url": "https://www.511la.org/map/Cctv/11"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.715,
+          32.5137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "12",
+        "name": "Camera 12",
+        "page_url": "https://www.511la.org/map/Cctv/12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.709,
+          32.51821345231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "13",
+        "name": "Camera 13",
+        "page_url": "https://www.511la.org/map/Cctv/13"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.7,
+          32.5253710829875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "14",
+        "name": "Camera 14",
+        "page_url": "https://www.511la.org/map/Cctv/14"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.1915813120839,
+          32.5108037786353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "15",
+        "name": "Camera 15",
+        "page_url": "https://www.511la.org/map/Cctv/15"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.1580737937722,
+          32.5062188383432
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "16",
+        "name": "Camera 16",
+        "page_url": "https://www.511la.org/map/Cctv/16"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.1386191878242,
+          32.4980097035082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "17",
+        "name": "Camera 17",
+        "page_url": "https://www.511la.org/map/Cctv/17"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.1227372537574,
+          32.4950763748415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "18",
+        "name": "Camera 18",
+        "page_url": "https://www.511la.org/map/Cctv/18"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.1139252298313,
+          32.4969854617395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "19",
+        "name": "Camera 19",
+        "page_url": "https://www.511la.org/map/Cctv/19"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.74324,
+          29.60677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "20",
+        "name": "Camera 20",
+        "page_url": "https://www.511la.org/map/Cctv/20"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.06889343,
+          30.53148651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "21",
+        "name": "Camera 21",
+        "page_url": "https://www.511la.org/map/Cctv/21"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.44853,
+          30.15134574
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "22",
+        "name": "Camera 22",
+        "page_url": "https://www.511la.org/map/Cctv/22"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.40279,
+          30.25419097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "23",
+        "name": "Camera 23",
+        "page_url": "https://www.511la.org/map/Cctv/23"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.41557,
+          30.34837687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "24",
+        "name": "Camera 24",
+        "page_url": "https://www.511la.org/map/Cctv/24"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.46016667,
+          30.4385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "25",
+        "name": "Camera 25",
+        "page_url": "https://www.511la.org/map/Cctv/25"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.49783333,
+          30.49133333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "26",
+        "name": "Camera 26",
+        "page_url": "https://www.511la.org/map/Cctv/26"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.50366667,
+          30.504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "27",
+        "name": "Camera 27",
+        "page_url": "https://www.511la.org/map/Cctv/27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7375,
+          30.322
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "28",
+        "name": "Camera 28",
+        "page_url": "https://www.511la.org/map/Cctv/28"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.73833333,
+          30.34266667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "29",
+        "name": "Camera 29",
+        "page_url": "https://www.511la.org/map/Cctv/29"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.09590149,
+          30.4530442717707
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "30",
+        "name": "Camera 30",
+        "page_url": "https://www.511la.org/map/Cctv/30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.171515,
+          30.5085549311101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "31",
+        "name": "Camera 31",
+        "page_url": "https://www.511la.org/map/Cctv/31"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.149351,
+          30.5093188180344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "32",
+        "name": "Camera 32",
+        "page_url": "https://www.511la.org/map/Cctv/32"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.0089143646209,
+          30.3593106905663
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "33",
+        "name": "Camera 33",
+        "page_url": "https://www.511la.org/map/Cctv/33"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1210899090909,
+          30.4883038902307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "34",
+        "name": "Camera 34",
+        "page_url": "https://www.511la.org/map/Cctv/34"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1088807149758,
+          30.4712770865729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "35",
+        "name": "Camera 35",
+        "page_url": "https://www.511la.org/map/Cctv/35"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.13113,
+          30.5023290860851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "36",
+        "name": "Camera 36",
+        "page_url": "https://www.511la.org/map/Cctv/36"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.08879,
+          30.4432018578934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "37",
+        "name": "Camera 37",
+        "page_url": "https://www.511la.org/map/Cctv/37"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.0590200013652,
+          30.4043683798029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "38",
+        "name": "Camera 38",
+        "page_url": "https://www.511la.org/map/Cctv/38"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.0541948519492,
+          30.399070058138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "39",
+        "name": "Camera 39",
+        "page_url": "https://www.511la.org/map/Cctv/39"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.0513136700833,
+          30.3958943435194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "40",
+        "name": "Camera 40",
+        "page_url": "https://www.511la.org/map/Cctv/40"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.04190152,
+          30.3854966424065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "41",
+        "name": "Camera 41",
+        "page_url": "https://www.511la.org/map/Cctv/41"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.0223835872576,
+          30.364479795081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "42",
+        "name": "Camera 42",
+        "page_url": "https://www.511la.org/map/Cctv/42"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.85406380625,
+          30.1904979144651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "43",
+        "name": "Camera 43",
+        "page_url": "https://www.511la.org/map/Cctv/43"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9983281191554,
+          30.3496854041636
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "44",
+        "name": "Camera 44",
+        "page_url": "https://www.511la.org/map/Cctv/44"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9853846238102,
+          30.333174840859
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "45",
+        "name": "Camera 45",
+        "page_url": "https://www.511la.org/map/Cctv/45"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9732118494624,
+          30.3042635251613
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "46",
+        "name": "Camera 46",
+        "page_url": "https://www.511la.org/map/Cctv/46"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9416253154477,
+          30.26937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "47",
+        "name": "Camera 47",
+        "page_url": "https://www.511la.org/map/Cctv/47"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.93049622,
+          30.2570585516598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "48",
+        "name": "Camera 48",
+        "page_url": "https://www.511la.org/map/Cctv/48"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9207158343674,
+          30.2462633964743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "49",
+        "name": "Camera 49",
+        "page_url": "https://www.511la.org/map/Cctv/49"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9115801922308,
+          30.2361714396088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "50",
+        "name": "Camera 50",
+        "page_url": "https://www.511la.org/map/Cctv/50"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9780413338956,
+          30.31994009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "51",
+        "name": "Camera 51",
+        "page_url": "https://www.511la.org/map/Cctv/51"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.8416942591189,
+          30.181126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "52",
+        "name": "Camera 52",
+        "page_url": "https://www.511la.org/map/Cctv/52"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.48143371668,
+          30.0672499193392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "53",
+        "name": "Camera 53",
+        "page_url": "https://www.511la.org/map/Cctv/53"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.08742716,
+          30.45411438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "54",
+        "name": "Camera 54",
+        "page_url": "https://www.511la.org/map/Cctv/54"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.07753885,
+          30.45569314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "55",
+        "name": "Camera 55",
+        "page_url": "https://www.511la.org/map/Cctv/55"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.05775403,
+          30.45880406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "56",
+        "name": "Camera 56",
+        "page_url": "https://www.511la.org/map/Cctv/56"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.00886118,
+          30.466582
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "57",
+        "name": "Camera 57",
+        "page_url": "https://www.511la.org/map/Cctv/57"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.00335383,
+          30.46741981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "58",
+        "name": "Camera 58",
+        "page_url": "https://www.511la.org/map/Cctv/58"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0828034270737,
+          30.442263717927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "59",
+        "name": "Camera 59",
+        "page_url": "https://www.511la.org/map/Cctv/59"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0887205064498,
+          30.3938822247228
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "60",
+        "name": "Camera 60",
+        "page_url": "https://www.511la.org/map/Cctv/60"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.809142,
+          32.520086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "61",
+        "name": "Camera 61",
+        "page_url": "https://www.511la.org/map/Cctv/61"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.837778,
+          32.473056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "62",
+        "name": "Camera 62",
+        "page_url": "https://www.511la.org/map/Cctv/62"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.8275,
+          32.485278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "63",
+        "name": "Camera 63",
+        "page_url": "https://www.511la.org/map/Cctv/63"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.821353,
+          32.495708
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "64",
+        "name": "Camera 64",
+        "page_url": "https://www.511la.org/map/Cctv/64"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.632439,
+          32.547522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "65",
+        "name": "Camera 65",
+        "page_url": "https://www.511la.org/map/Cctv/65"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.1657986153846,
+          30.235438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "66",
+        "name": "Camera 66",
+        "page_url": "https://www.511la.org/map/Cctv/66"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.31909943,
+          29.9754048904634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "67",
+        "name": "Camera 67",
+        "page_url": "https://www.511la.org/map/Cctv/67"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.75906,
+          29.59929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "68",
+        "name": "Camera 68",
+        "page_url": "https://www.511la.org/map/Cctv/68"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.10884426,
+          29.99507819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "69",
+        "name": "Camera 69",
+        "page_url": "https://www.511la.org/map/Cctv/69"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.077042,
+          29.9928041193548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "70",
+        "name": "Camera 70",
+        "page_url": "https://www.511la.org/map/Cctv/70"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.06376648,
+          29.9909230949273
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "71",
+        "name": "Camera 71",
+        "page_url": "https://www.511la.org/map/Cctv/71"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0946279851272,
+          29.9937185133638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "72",
+        "name": "Camera 72",
+        "page_url": "https://www.511la.org/map/Cctv/72"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.75897,
+          29.63554
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "73",
+        "name": "Camera 73",
+        "page_url": "https://www.511la.org/map/Cctv/73"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.7417347637092,
+          29.5950263364601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "74",
+        "name": "Camera 74",
+        "page_url": "https://www.511la.org/map/Cctv/74"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.7461774885565,
+          29.6055122754751
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "75",
+        "name": "Camera 75",
+        "page_url": "https://www.511la.org/map/Cctv/75"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.84269714,
+          32.441879272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "138",
+        "name": "Camera 138",
+        "page_url": "https://www.511la.org/map/Cctv/138"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.9827331394232,
+          30.2483483697281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "139",
+        "name": "Camera 139",
+        "page_url": "https://www.511la.org/map/Cctv/139"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.72380066,
+          30.3419489250621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "140",
+        "name": "Camera 140",
+        "page_url": "https://www.511la.org/map/Cctv/140"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1191825604167,
+          30.4185009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "141",
+        "name": "Camera 141",
+        "page_url": "https://www.511la.org/map/Cctv/141"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.93390656,
+          30.4604920744393
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "143",
+        "name": "Camera 143",
+        "page_url": "https://www.511la.org/map/Cctv/143"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.0293863190462,
+          30.34597015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "144",
+        "name": "Camera 144",
+        "page_url": "https://www.511la.org/map/Cctv/144"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9857065594619,
+          30.26980019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "145",
+        "name": "Camera 145",
+        "page_url": "https://www.511la.org/map/Cctv/145"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.794765,
+          30.3226849867257
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "146",
+        "name": "Camera 146",
+        "page_url": "https://www.511la.org/map/Cctv/146"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.94716644,
+          30.2105202270196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "147",
+        "name": "Camera 147",
+        "page_url": "https://www.511la.org/map/Cctv/147"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.842118938466,
+          32.4568168355321
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "148",
+        "name": "Camera 148",
+        "page_url": "https://www.511la.org/map/Cctv/148"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.7976364358974,
+          32.472084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "149",
+        "name": "Camera 149",
+        "page_url": "https://www.511la.org/map/Cctv/149"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.7800296829268,
+          32.47877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "150",
+        "name": "Camera 150",
+        "page_url": "https://www.511la.org/map/Cctv/150"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.674864373913,
+          32.528267
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "154",
+        "name": "Camera 154",
+        "page_url": "https://www.511la.org/map/Cctv/154"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.678758,
+          32.5575095939227
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "155",
+        "name": "Camera 155",
+        "page_url": "https://www.511la.org/map/Cctv/155"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.781528,
+          32.55397172
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "156",
+        "name": "Camera 156",
+        "page_url": "https://www.511la.org/map/Cctv/156"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.7266479737318,
+          29.5747221700949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "157",
+        "name": "Camera 157",
+        "page_url": "https://www.511la.org/map/Cctv/157"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.7201352606066,
+          29.5911822083196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "158",
+        "name": "Camera 158",
+        "page_url": "https://www.511la.org/map/Cctv/158"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.7162137292158,
+          29.5985675822363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "159",
+        "name": "Camera 159",
+        "page_url": "https://www.511la.org/map/Cctv/159"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.70726,
+          29.5989565335298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "160",
+        "name": "Camera 160",
+        "page_url": "https://www.511la.org/map/Cctv/160"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.67958,
+          29.5916041180556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "161",
+        "name": "Camera 161",
+        "page_url": "https://www.511la.org/map/Cctv/161"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.7016409925512,
+          29.58722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "162",
+        "name": "Camera 162",
+        "page_url": "https://www.511la.org/map/Cctv/162"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.6773925,
+          29.5925351867816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "163",
+        "name": "Camera 163",
+        "page_url": "https://www.511la.org/map/Cctv/163"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.7827096459674,
+          29.6796221990984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "165",
+        "name": "Camera 165",
+        "page_url": "https://www.511la.org/map/Cctv/165"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.0699152949389,
+          30.416701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "166",
+        "name": "Camera 166",
+        "page_url": "https://www.511la.org/map/Cctv/166"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.0804310915751,
+          30.4314675290452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "168",
+        "name": "Camera 168",
+        "page_url": "https://www.511la.org/map/Cctv/168"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.180209849635,
+          30.449869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "169",
+        "name": "Camera 169",
+        "page_url": "https://www.511la.org/map/Cctv/169"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.112939589589,
+          30.4768945159783
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "170",
+        "name": "Camera 170",
+        "page_url": "https://www.511la.org/map/Cctv/170"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.8810785511128,
+          30.2114275831492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "171",
+        "name": "Camera 171",
+        "page_url": "https://www.511la.org/map/Cctv/171"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.0570886082113,
+          30.4022548297202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "172",
+        "name": "Camera 172",
+        "page_url": "https://www.511la.org/map/Cctv/172"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.405,
+          30.3003656020762
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "173",
+        "name": "Camera 173",
+        "page_url": "https://www.511la.org/map/Cctv/173"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.083734024947,
+          29.94825976656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "174",
+        "name": "Camera 174",
+        "page_url": "https://www.511la.org/map/Cctv/174"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.108154,
+          32.50052875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "175",
+        "name": "Camera 175",
+        "page_url": "https://www.511la.org/map/Cctv/175"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.099367,
+          32.5004990067114
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "176",
+        "name": "Camera 176",
+        "page_url": "https://www.511la.org/map/Cctv/176"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.07990265,
+          32.50040054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "177",
+        "name": "Camera 177",
+        "page_url": "https://www.511la.org/map/Cctv/177"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.054808,
+          32.4943559174147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "178",
+        "name": "Camera 178",
+        "page_url": "https://www.511la.org/map/Cctv/178"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.0806785507246,
+          32.522864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "179",
+        "name": "Camera 179",
+        "page_url": "https://www.511la.org/map/Cctv/179"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.128175,
+          32.50381996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "180",
+        "name": "Camera 180",
+        "page_url": "https://www.511la.org/map/Cctv/180"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.8741337789215,
+          30.148986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "181",
+        "name": "Camera 181",
+        "page_url": "https://www.511la.org/map/Cctv/181"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.8692235263158,
+          30.1201110000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "182",
+        "name": "Camera 182",
+        "page_url": "https://www.511la.org/map/Cctv/182"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.873696,
+          30.1078593056027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "183",
+        "name": "Camera 183",
+        "page_url": "https://www.511la.org/map/Cctv/183"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9018245886334,
+          30.0997224272476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "184",
+        "name": "Camera 184",
+        "page_url": "https://www.511la.org/map/Cctv/184"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9204921153753,
+          30.096475663973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "185",
+        "name": "Camera 185",
+        "page_url": "https://www.511la.org/map/Cctv/185"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.42940521,
+          31.24387573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "186",
+        "name": "Camera 186",
+        "page_url": "https://www.511la.org/map/Cctv/186"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.44637299,
+          31.30288124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "187",
+        "name": "Camera 187",
+        "page_url": "https://www.511la.org/map/Cctv/187"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.46170807,
+          31.3240934874286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "188",
+        "name": "Camera 188",
+        "page_url": "https://www.511la.org/map/Cctv/188"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.20935,
+          30.4345980192308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "189",
+        "name": "Camera 189",
+        "page_url": "https://www.511la.org/map/Cctv/189"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.2082958771701,
+          30.5062413547249
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "190",
+        "name": "Camera 190",
+        "page_url": "https://www.511la.org/map/Cctv/190"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.18811,
+          30.5075162680851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "192",
+        "name": "Camera 192",
+        "page_url": "https://www.511la.org/map/Cctv/192"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.98919,
+          30.4467771596244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "193",
+        "name": "Camera 193",
+        "page_url": "https://www.511la.org/map/Cctv/193"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.2706590184661,
+          30.4533816356295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "194",
+        "name": "Camera 194",
+        "page_url": "https://www.511la.org/map/Cctv/194"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.4265160910033,
+          30.0840466540992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "195",
+        "name": "Camera 195",
+        "page_url": "https://www.511la.org/map/Cctv/195"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.4317295289443,
+          30.4191102589378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "196",
+        "name": "Camera 196",
+        "page_url": "https://www.511la.org/map/Cctv/196"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.1940449031168,
+          30.2475981824756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "197",
+        "name": "Camera 197",
+        "page_url": "https://www.511la.org/map/Cctv/197"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1708426993296,
+          30.4281236277412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "198",
+        "name": "Camera 198",
+        "page_url": "https://www.511la.org/map/Cctv/198"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.008354611672,
+          30.4602324821043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "199",
+        "name": "Camera 199",
+        "page_url": "https://www.511la.org/map/Cctv/199"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.23,
+          30.4449192217857
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "200",
+        "name": "Camera 200",
+        "page_url": "https://www.511la.org/map/Cctv/200"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.89477,
+          30.4662018257971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "201",
+        "name": "Camera 201",
+        "page_url": "https://www.511la.org/map/Cctv/201"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.711192843031,
+          30.2981095987974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "202",
+        "name": "Camera 202",
+        "page_url": "https://www.511la.org/map/Cctv/202"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.737601919589,
+          30.3232494201656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "203",
+        "name": "Camera 203",
+        "page_url": "https://www.511la.org/map/Cctv/203"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.405239525906,
+          30.0778074325478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "204",
+        "name": "Camera 204",
+        "page_url": "https://www.511la.org/map/Cctv/204"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0849527875762,
+          29.9508191962124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "205",
+        "name": "Camera 205",
+        "page_url": "https://www.511la.org/map/Cctv/205"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.8634951388108,
+          30.3093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "206",
+        "name": "Camera 206",
+        "page_url": "https://www.511la.org/map/Cctv/206"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.95602,
+          30.2791071460734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "207",
+        "name": "Camera 207",
+        "page_url": "https://www.511la.org/map/Cctv/207"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.1296435864419,
+          30.2443368968803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "208",
+        "name": "Camera 208",
+        "page_url": "https://www.511la.org/map/Cctv/208"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.1620476444336,
+          30.245708198278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "209",
+        "name": "Camera 209",
+        "page_url": "https://www.511la.org/map/Cctv/209"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.1916384852829,
+          30.2363708806297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "210",
+        "name": "Camera 210",
+        "page_url": "https://www.511la.org/map/Cctv/210"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2042688232643,
+          30.2358226210778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "211",
+        "name": "Camera 211",
+        "page_url": "https://www.511la.org/map/Cctv/211"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2168652649439,
+          30.2357964326901
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "212",
+        "name": "Camera 212",
+        "page_url": "https://www.511la.org/map/Cctv/212"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2369686614743,
+          30.2370839728433
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "213",
+        "name": "Camera 213",
+        "page_url": "https://www.511la.org/map/Cctv/213"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2595535827498,
+          30.2369569105655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "214",
+        "name": "Camera 214",
+        "page_url": "https://www.511la.org/map/Cctv/214"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2799322436941,
+          30.2367947204975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "215",
+        "name": "Camera 215",
+        "page_url": "https://www.511la.org/map/Cctv/215"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.3014072103946,
+          30.2280125152755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "216",
+        "name": "Camera 216",
+        "page_url": "https://www.511la.org/map/Cctv/216"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.3174383303067,
+          30.2208449894648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "217",
+        "name": "Camera 217",
+        "page_url": "https://www.511la.org/map/Cctv/217"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.3249868353016,
+          30.2160271755088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "218",
+        "name": "Camera 218",
+        "page_url": "https://www.511la.org/map/Cctv/218"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.3591818762604,
+          30.2156686935241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "219",
+        "name": "Camera 219",
+        "page_url": "https://www.511la.org/map/Cctv/219"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.3763925714157,
+          30.2156207276061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "220",
+        "name": "Camera 220",
+        "page_url": "https://www.511la.org/map/Cctv/220"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0396764238088,
+          29.9261224966813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "221",
+        "name": "Camera 221",
+        "page_url": "https://www.511la.org/map/Cctv/221"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.038063679996,
+          29.9292030509628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "222",
+        "name": "Camera 222",
+        "page_url": "https://www.511la.org/map/Cctv/222"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0574711218345,
+          29.9089596979173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "223",
+        "name": "Camera 223",
+        "page_url": "https://www.511la.org/map/Cctv/223"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0831179113484,
+          29.8971005622346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "224",
+        "name": "Camera 224",
+        "page_url": "https://www.511la.org/map/Cctv/224"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0571154214299,
+          29.938923760141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "225",
+        "name": "Camera 225",
+        "page_url": "https://www.511la.org/map/Cctv/225"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.10594,
+          29.893929347902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "226",
+        "name": "Camera 226",
+        "page_url": "https://www.511la.org/map/Cctv/226"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0562062254918,
+          29.9097399215013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "227",
+        "name": "Camera 227",
+        "page_url": "https://www.511la.org/map/Cctv/227"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0372188252316,
+          29.9325270070306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "228",
+        "name": "Camera 228",
+        "page_url": "https://www.511la.org/map/Cctv/228"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.854953,
+          30.153753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "229",
+        "name": "Camera 229",
+        "page_url": "https://www.511la.org/map/Cctv/229"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.837021,
+          30.169801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "230",
+        "name": "Camera 230",
+        "page_url": "https://www.511la.org/map/Cctv/230"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.820483,
+          30.185375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "231",
+        "name": "Camera 231",
+        "page_url": "https://www.511la.org/map/Cctv/231"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.793302,
+          30.21209
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "232",
+        "name": "Camera 232",
+        "page_url": "https://www.511la.org/map/Cctv/232"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.2211,
+          29.2696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "233",
+        "name": "Camera 233",
+        "page_url": "https://www.511la.org/map/Cctv/233"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.2158,
+          29.258909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "236",
+        "name": "Camera 236",
+        "page_url": "https://www.511la.org/map/Cctv/236"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.22457,
+          30.41434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "237",
+        "name": "Camera 237",
+        "page_url": "https://www.511la.org/map/Cctv/237"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.074337,
+          32.568231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "238",
+        "name": "Camera 238",
+        "page_url": "https://www.511la.org/map/Cctv/238"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.077104,
+          32.551441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "239",
+        "name": "Camera 239",
+        "page_url": "https://www.511la.org/map/Cctv/239"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.080536,
+          32.529653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "240",
+        "name": "Camera 240",
+        "page_url": "https://www.511la.org/map/Cctv/240"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.080234,
+          32.51398
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "241",
+        "name": "Camera 241",
+        "page_url": "https://www.511la.org/map/Cctv/241"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.082748,
+          32.482146
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "242",
+        "name": "Camera 242",
+        "page_url": "https://www.511la.org/map/Cctv/242"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.084437,
+          32.448785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "243",
+        "name": "Camera 243",
+        "page_url": "https://www.511la.org/map/Cctv/243"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.12913956,
+          29.99622089
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "244",
+        "name": "Camera 244",
+        "page_url": "https://www.511la.org/map/Cctv/244"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.1163181071429,
+          29.987933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "245",
+        "name": "Camera 245",
+        "page_url": "https://www.511la.org/map/Cctv/245"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.10864258,
+          29.9687761369347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "246",
+        "name": "Camera 246",
+        "page_url": "https://www.511la.org/map/Cctv/246"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.1098203570609,
+          29.9708550236876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "247",
+        "name": "Camera 247",
+        "page_url": "https://www.511la.org/map/Cctv/247"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.1009,
+          29.96214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "248",
+        "name": "Camera 248",
+        "page_url": "https://www.511la.org/map/Cctv/248"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0966568,
+          29.95965195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "249",
+        "name": "Camera 249",
+        "page_url": "https://www.511la.org/map/Cctv/249"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.08535,
+          29.9539701806554
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "250",
+        "name": "Camera 250",
+        "page_url": "https://www.511la.org/map/Cctv/250"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0737700810955,
+          29.9634311897707
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "261",
+        "name": "Camera 261",
+        "page_url": "https://www.511la.org/map/Cctv/261"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.06374359,
+          29.9746442865292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "265",
+        "name": "Camera 265",
+        "page_url": "https://www.511la.org/map/Cctv/265"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0569260616223,
+          29.9810922157123
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "266",
+        "name": "Camera 266",
+        "page_url": "https://www.511la.org/map/Cctv/266"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.1218525423556,
+          29.9954798411796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "267",
+        "name": "Camera 267",
+        "page_url": "https://www.511la.org/map/Cctv/267"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.035362,
+          30.0028292657005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "269",
+        "name": "Camera 269",
+        "page_url": "https://www.511la.org/map/Cctv/269"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.012804,
+          30.011324
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "270",
+        "name": "Camera 270",
+        "page_url": "https://www.511la.org/map/Cctv/270"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7835,
+          30.222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "271",
+        "name": "Camera 271",
+        "page_url": "https://www.511la.org/map/Cctv/271"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.76523,
+          30.24706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "272",
+        "name": "Camera 272",
+        "page_url": "https://www.511la.org/map/Cctv/272"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7495,
+          30.28516667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "273",
+        "name": "Camera 273",
+        "page_url": "https://www.511la.org/map/Cctv/273"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.739222375882,
+          30.3038791115017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "274",
+        "name": "Camera 274",
+        "page_url": "https://www.511la.org/map/Cctv/274"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.47013,
+          31.317081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "275",
+        "name": "Camera 275",
+        "page_url": "https://www.511la.org/map/Cctv/275"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.480835,
+          31.299614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "276",
+        "name": "Camera 276",
+        "page_url": "https://www.511la.org/map/Cctv/276"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.50414,
+          31.295149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "277",
+        "name": "Camera 277",
+        "page_url": "https://www.511la.org/map/Cctv/277"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.47488,
+          31.286772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "278",
+        "name": "Camera 278",
+        "page_url": "https://www.511la.org/map/Cctv/278"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.469154,
+          31.275518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "279",
+        "name": "Camera 279",
+        "page_url": "https://www.511la.org/map/Cctv/279"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.4686,
+          31.272272
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "280",
+        "name": "Camera 280",
+        "page_url": "https://www.511la.org/map/Cctv/280"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.46509,
+          31.272743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "281",
+        "name": "Camera 281",
+        "page_url": "https://www.511la.org/map/Cctv/281"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.44901,
+          31.262054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "282",
+        "name": "Camera 282",
+        "page_url": "https://www.511la.org/map/Cctv/282"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.438324,
+          31.252947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "283",
+        "name": "Camera 283",
+        "page_url": "https://www.511la.org/map/Cctv/283"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.7131295433455,
+          30.2984104477655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "284",
+        "name": "Camera 284",
+        "page_url": "https://www.511la.org/map/Cctv/284"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.178718567,
+          30.443799973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "285",
+        "name": "Camera 285",
+        "page_url": "https://www.511la.org/map/Cctv/285"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.179374,
+          30.4570245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "286",
+        "name": "Camera 286",
+        "page_url": "https://www.511la.org/map/Cctv/286"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1662832943755,
+          30.458950043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "287",
+        "name": "Camera 287",
+        "page_url": "https://www.511la.org/map/Cctv/287"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.16709,
+          30.47113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "288",
+        "name": "Camera 288",
+        "page_url": "https://www.511la.org/map/Cctv/288"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.158442,
+          30.509044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "289",
+        "name": "Camera 289",
+        "page_url": "https://www.511la.org/map/Cctv/289"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.159115,
+          30.51702127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "290",
+        "name": "Camera 290",
+        "page_url": "https://www.511la.org/map/Cctv/290"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1056382017972,
+          30.4178512892951
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "291",
+        "name": "Camera 291",
+        "page_url": "https://www.511la.org/map/Cctv/291"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.09792,
+          30.41735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "292",
+        "name": "Camera 292",
+        "page_url": "https://www.511la.org/map/Cctv/292"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.089664,
+          30.417716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "293",
+        "name": "Camera 293",
+        "page_url": "https://www.511la.org/map/Cctv/293"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.05702972,
+          30.43048668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "294",
+        "name": "Camera 294",
+        "page_url": "https://www.511la.org/map/Cctv/294"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.041885,
+          30.43413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "295",
+        "name": "Camera 295",
+        "page_url": "https://www.511la.org/map/Cctv/295"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.07485199,
+          30.4238284536743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "296",
+        "name": "Camera 296",
+        "page_url": "https://www.511la.org/map/Cctv/296"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.02481842,
+          30.4379880678812
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "297",
+        "name": "Camera 297",
+        "page_url": "https://www.511la.org/map/Cctv/297"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.00709534,
+          30.44300652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "298",
+        "name": "Camera 298",
+        "page_url": "https://www.511la.org/map/Cctv/298"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.97001648,
+          30.4514395438341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "299",
+        "name": "Camera 299",
+        "page_url": "https://www.511la.org/map/Cctv/299"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9547335823453,
+          30.45526314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "300",
+        "name": "Camera 300",
+        "page_url": "https://www.511la.org/map/Cctv/300"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.9174639598624,
+          30.4644361675972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "301",
+        "name": "Camera 301",
+        "page_url": "https://www.511la.org/map/Cctv/301"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.86262335,
+          30.4700052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "302",
+        "name": "Camera 302",
+        "page_url": "https://www.511la.org/map/Cctv/302"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.5065,
+          30.47966667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "303",
+        "name": "Camera 303",
+        "page_url": "https://www.511la.org/map/Cctv/303"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.48942909,
+          30.47885731
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "304",
+        "name": "Camera 304",
+        "page_url": "https://www.511la.org/map/Cctv/304"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.46966667,
+          30.47866667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "305",
+        "name": "Camera 305",
+        "page_url": "https://www.511la.org/map/Cctv/305"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.11516667,
+          30.43816667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "306",
+        "name": "Camera 306",
+        "page_url": "https://www.511la.org/map/Cctv/306"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0690424155671,
+          30.425290166701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "307",
+        "name": "Camera 307",
+        "page_url": "https://www.511la.org/map/Cctv/307"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.084297,
+          30.428913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "308",
+        "name": "Camera 308",
+        "page_url": "https://www.511la.org/map/Cctv/308"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.80116667,
+          30.30983333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "309",
+        "name": "Camera 309",
+        "page_url": "https://www.511la.org/map/Cctv/309"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.74169922,
+          30.30682945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "310",
+        "name": "Camera 310",
+        "page_url": "https://www.511la.org/map/Cctv/310"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.865556,
+          32.451111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "311",
+        "name": "Camera 311",
+        "page_url": "https://www.511la.org/map/Cctv/311"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.898611,
+          32.447778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "312",
+        "name": "Camera 312",
+        "page_url": "https://www.511la.org/map/Cctv/312"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.116333,
+          29.9954220789946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "313",
+        "name": "Camera 313",
+        "page_url": "https://www.511la.org/map/Cctv/313"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.920129,
+          30.19261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "314",
+        "name": "Camera 314",
+        "page_url": "https://www.511la.org/map/Cctv/314"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.88094,
+          30.16645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "315",
+        "name": "Camera 315",
+        "page_url": "https://www.511la.org/map/Cctv/315"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.180506,
+          30.2464337865854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "316",
+        "name": "Camera 316",
+        "page_url": "https://www.511la.org/map/Cctv/316"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.06597815,
+          30.24681877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "317",
+        "name": "Camera 317",
+        "page_url": "https://www.511la.org/map/Cctv/317"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.01621057,
+          30.25916297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "318",
+        "name": "Camera 318",
+        "page_url": "https://www.511la.org/map/Cctv/318"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.99458313,
+          30.26761055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "319",
+        "name": "Camera 319",
+        "page_url": "https://www.511la.org/map/Cctv/319"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.91632843,
+          30.2949332751638
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "320",
+        "name": "Camera 320",
+        "page_url": "https://www.511la.org/map/Cctv/320"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.83283997,
+          30.3150284941001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "321",
+        "name": "Camera 321",
+        "page_url": "https://www.511la.org/map/Cctv/321"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.75952911,
+          30.3320754829659
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "322",
+        "name": "Camera 322",
+        "page_url": "https://www.511la.org/map/Cctv/322"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.67874908,
+          30.3540743217621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "323",
+        "name": "Camera 323",
+        "page_url": "https://www.511la.org/map/Cctv/323"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.62739515,
+          30.36804925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "324",
+        "name": "Camera 324",
+        "page_url": "https://www.511la.org/map/Cctv/324"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.56889343,
+          30.38439941
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "325",
+        "name": "Camera 325",
+        "page_url": "https://www.511la.org/map/Cctv/325"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.50747942,
+          30.4004653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "326",
+        "name": "Camera 326",
+        "page_url": "https://www.511la.org/map/Cctv/326"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.462502,
+          30.412639
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "327",
+        "name": "Camera 327",
+        "page_url": "https://www.511la.org/map/Cctv/327"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.244,
+          30.446
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "328",
+        "name": "Camera 328",
+        "page_url": "https://www.511la.org/map/Cctv/328"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.21071,
+          30.44021347
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "329",
+        "name": "Camera 329",
+        "page_url": "https://www.511la.org/map/Cctv/329"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1867054350063,
+          30.4389182592004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "330",
+        "name": "Camera 330",
+        "page_url": "https://www.511la.org/map/Cctv/330"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.17852,
+          30.43832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "331",
+        "name": "Camera 331",
+        "page_url": "https://www.511la.org/map/Cctv/331"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1743035708676,
+          30.4309177274243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "332",
+        "name": "Camera 332",
+        "page_url": "https://www.511la.org/map/Cctv/332"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.15739,
+          30.42511
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "333",
+        "name": "Camera 333",
+        "page_url": "https://www.511la.org/map/Cctv/333"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.150466919,
+          30.423879623
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "334",
+        "name": "Camera 334",
+        "page_url": "https://www.511la.org/map/Cctv/334"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1391002826232,
+          30.4228608785919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "335",
+        "name": "Camera 335",
+        "page_url": "https://www.511la.org/map/Cctv/335"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1295713240901,
+          30.4218196877623
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "336",
+        "name": "Camera 336",
+        "page_url": "https://www.511la.org/map/Cctv/336"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.10179138,
+          30.4076134863822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "337",
+        "name": "Camera 337",
+        "page_url": "https://www.511la.org/map/Cctv/337"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.40775,
+          30.53374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "338",
+        "name": "Camera 338",
+        "page_url": "https://www.511la.org/map/Cctv/338"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.55668,
+          30.554552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "339",
+        "name": "Camera 339",
+        "page_url": "https://www.511la.org/map/Cctv/339"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.086287114359,
+          30.39530182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "340",
+        "name": "Camera 340",
+        "page_url": "https://www.511la.org/map/Cctv/340"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.078108079865,
+          30.389948511684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "341",
+        "name": "Camera 341",
+        "page_url": "https://www.511la.org/map/Cctv/341"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.06578827,
+          30.38162994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "342",
+        "name": "Camera 342",
+        "page_url": "https://www.511la.org/map/Cctv/342"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.254695,
+          30.493825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "344",
+        "name": "Camera 344",
+        "page_url": "https://www.511la.org/map/Cctv/344"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.00264238,
+          30.31880048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "345",
+        "name": "Camera 345",
+        "page_url": "https://www.511la.org/map/Cctv/345"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.8766779613954,
+          30.171504046368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "346",
+        "name": "Camera 346",
+        "page_url": "https://www.511la.org/map/Cctv/346"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.80609894,
+          30.1537600464341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "347",
+        "name": "Camera 347",
+        "page_url": "https://www.511la.org/map/Cctv/347"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.481526,
+          30.10022463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "348",
+        "name": "Camera 348",
+        "page_url": "https://www.511la.org/map/Cctv/348"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.44127,
+          30.0884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "349",
+        "name": "Camera 349",
+        "page_url": "https://www.511la.org/map/Cctv/349"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.3897,
+          30.06802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "350",
+        "name": "Camera 350",
+        "page_url": "https://www.511la.org/map/Cctv/350"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.37249756,
+          30.05645943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "351",
+        "name": "Camera 351",
+        "page_url": "https://www.511la.org/map/Cctv/351"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.3559108337066,
+          30.04453087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "352",
+        "name": "Camera 352",
+        "page_url": "https://www.511la.org/map/Cctv/352"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.3375259160601,
+          30.0320957237701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "353",
+        "name": "Camera 353",
+        "page_url": "https://www.511la.org/map/Cctv/353"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.316444060294,
+          30.01773071
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "354",
+        "name": "Camera 354",
+        "page_url": "https://www.511la.org/map/Cctv/354"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.29219818,
+          30.0064210937083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "355",
+        "name": "Camera 355",
+        "page_url": "https://www.511la.org/map/Cctv/355"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.2659846311778,
+          30.00754224352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "356",
+        "name": "Camera 356",
+        "page_url": "https://www.511la.org/map/Cctv/356"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.2405014,
+          30.0092113089713
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "357",
+        "name": "Camera 357",
+        "page_url": "https://www.511la.org/map/Cctv/357"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.2219107776034,
+          30.0080280250151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "358",
+        "name": "Camera 358",
+        "page_url": "https://www.511la.org/map/Cctv/358"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.2085,
+          30.005107605985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "359",
+        "name": "Camera 359",
+        "page_url": "https://www.511la.org/map/Cctv/359"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.184305,
+          29.9988945257732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "360",
+        "name": "Camera 360",
+        "page_url": "https://www.511la.org/map/Cctv/360"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.15544891,
+          29.9973276669981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "361",
+        "name": "Camera 361",
+        "page_url": "https://www.511la.org/map/Cctv/361"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.15478115,
+          29.99730013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "362",
+        "name": "Camera 362",
+        "page_url": "https://www.511la.org/map/Cctv/362"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.14278891,
+          29.99686822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "363",
+        "name": "Camera 363",
+        "page_url": "https://www.511la.org/map/Cctv/363"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.0483982196295,
+          29.99301529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "364",
+        "name": "Camera 364",
+        "page_url": "https://www.511la.org/map/Cctv/364"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2665,
+          30.1956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "365",
+        "name": "Camera 365",
+        "page_url": "https://www.511la.org/map/Cctv/365"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.03494,
+          30.247608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "366",
+        "name": "Camera 366",
+        "page_url": "https://www.511la.org/map/Cctv/366"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2904,
+          30.2132
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "367",
+        "name": "Camera 367",
+        "page_url": "https://www.511la.org/map/Cctv/367"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2491,
+          30.197
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "368",
+        "name": "Camera 368",
+        "page_url": "https://www.511la.org/map/Cctv/368"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2328,
+          30.1972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "369",
+        "name": "Camera 369",
+        "page_url": "https://www.511la.org/map/Cctv/369"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2183,
+          30.1968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "370",
+        "name": "Camera 370",
+        "page_url": "https://www.511la.org/map/Cctv/370"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2049,
+          30.1971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "371",
+        "name": "Camera 371",
+        "page_url": "https://www.511la.org/map/Cctv/371"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.1805,
+          30.1976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "372",
+        "name": "Camera 372",
+        "page_url": "https://www.511la.org/map/Cctv/372"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.1703,
+          30.2057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "373",
+        "name": "Camera 373",
+        "page_url": "https://www.511la.org/map/Cctv/373"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.1681,
+          30.2281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "374",
+        "name": "Camera 374",
+        "page_url": "https://www.511la.org/map/Cctv/374"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.955986,
+          30.481329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "375",
+        "name": "Camera 375",
+        "page_url": "https://www.511la.org/map/Cctv/375"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.142036,
+          30.447161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "376",
+        "name": "Camera 376",
+        "page_url": "https://www.511la.org/map/Cctv/376"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.95599,
+          30.487306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "377",
+        "name": "Camera 377",
+        "page_url": "https://www.511la.org/map/Cctv/377"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.142036,
+          30.447161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "380",
+        "name": "Camera 380",
+        "page_url": "https://www.511la.org/map/Cctv/380"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.219284,
+          30.42136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "382",
+        "name": "Camera 382",
+        "page_url": "https://www.511la.org/map/Cctv/382"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.601707,
+          30.236103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "383",
+        "name": "Camera 383",
+        "page_url": "https://www.511la.org/map/Cctv/383"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.530342,
+          30.231508
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "384",
+        "name": "Camera 384",
+        "page_url": "https://www.511la.org/map/Cctv/384"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.463776,
+          30.23348
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "385",
+        "name": "Camera 385",
+        "page_url": "https://www.511la.org/map/Cctv/385"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.065804,
+          30.246655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "386",
+        "name": "Camera 386",
+        "page_url": "https://www.511la.org/map/Cctv/386"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.035797,
+          30.250883
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "387",
+        "name": "Camera 387",
+        "page_url": "https://www.511la.org/map/Cctv/387"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.38549,
+          30.235277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "388",
+        "name": "Camera 388",
+        "page_url": "https://www.511la.org/map/Cctv/388"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.269997,
+          30.2519
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "389",
+        "name": "Camera 389",
+        "page_url": "https://www.511la.org/map/Cctv/389"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.107094,
+          30.24688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "390",
+        "name": "Camera 390",
+        "page_url": "https://www.511la.org/map/Cctv/390"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.929688,
+          30.246246
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "391",
+        "name": "Camera 391",
+        "page_url": "https://www.511la.org/map/Cctv/391"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.822067,
+          30.247118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "392",
+        "name": "Camera 392",
+        "page_url": "https://www.511la.org/map/Cctv/392"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.740891,
+          30.247999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "393",
+        "name": "Camera 393",
+        "page_url": "https://www.511la.org/map/Cctv/393"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.66317,
+          30.246231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "394",
+        "name": "Camera 394",
+        "page_url": "https://www.511la.org/map/Cctv/394"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.631722,
+          30.243298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "395",
+        "name": "Camera 395",
+        "page_url": "https://www.511la.org/map/Cctv/395"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.165924,
+          30.481474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "396",
+        "name": "Camera 396",
+        "page_url": "https://www.511la.org/map/Cctv/396"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.163231,
+          30.492464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "397",
+        "name": "Camera 397",
+        "page_url": "https://www.511la.org/map/Cctv/397"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.165535,
+          30.52754
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "398",
+        "name": "Camera 398",
+        "page_url": "https://www.511la.org/map/Cctv/398"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.176003,
+          30.457621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "399",
+        "name": "Camera 399",
+        "page_url": "https://www.511la.org/map/Cctv/399"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.166122,
+          30.45895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "400",
+        "name": "Camera 400",
+        "page_url": "https://www.511la.org/map/Cctv/400"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.180473,
+          30.449881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "401",
+        "name": "Camera 401",
+        "page_url": "https://www.511la.org/map/Cctv/401"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.178719,
+          30.4438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "402",
+        "name": "Camera 402",
+        "page_url": "https://www.511la.org/map/Cctv/402"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.177818,
+          30.536354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "403",
+        "name": "Camera 403",
+        "page_url": "https://www.511la.org/map/Cctv/403"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.187958,
+          30.536087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "404",
+        "name": "Camera 404",
+        "page_url": "https://www.511la.org/map/Cctv/404"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.714996,
+          32.513699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "405",
+        "name": "Camera 405",
+        "page_url": "https://www.511la.org/map/Cctv/405"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.816,
+          32.4656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "406",
+        "name": "Camera 406",
+        "page_url": "https://www.511la.org/map/Cctv/406"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.76499,
+          32.49489
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "407",
+        "name": "Camera 407",
+        "page_url": "https://www.511la.org/map/Cctv/407"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.898611,
+          32.447778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "408",
+        "name": "Camera 408",
+        "page_url": "https://www.511la.org/map/Cctv/408"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.630833,
+          32.538889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "409",
+        "name": "Camera 409",
+        "page_url": "https://www.511la.org/map/Cctv/409"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.178406,
+          30.437586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "410",
+        "name": "Camera 410",
+        "page_url": "https://www.511la.org/map/Cctv/410"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.178406,
+          30.437586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "411",
+        "name": "Camera 411",
+        "page_url": "https://www.511la.org/map/Cctv/411"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.2322,
+          30.44561
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "412",
+        "name": "Camera 412",
+        "page_url": "https://www.511la.org/map/Cctv/412"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.127,
+          30.4214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "413",
+        "name": "Camera 413",
+        "page_url": "https://www.511la.org/map/Cctv/413"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.274544,
+          30.453011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "414",
+        "name": "Camera 414",
+        "page_url": "https://www.511la.org/map/Cctv/414"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.466003,
+          30.411501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "415",
+        "name": "Camera 415",
+        "page_url": "https://www.511la.org/map/Cctv/415"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.96369,
+          30.54623
+        ]
+      }
+    }
+  ]
+}

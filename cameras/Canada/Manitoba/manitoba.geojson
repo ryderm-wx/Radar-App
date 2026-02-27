@@ -1,0 +1,577 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.24401,
+          50.225502
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.6419278,
+          49.886583
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.237482,
+          49.00545
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.728849,
+          51.588676
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.907643,
+          49.649851
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.664209,
+          49.708607
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.370433,
+          54.440765
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.962665,
+          49.562169
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.15606,
+          54.669113
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.903941,
+          50.269818
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.364705,
+          49.35874
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.819559,
+          51.081987
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.0710281,
+          53.34965
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.185666,
+          49.570522
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.950068,
+          49.953245
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/21"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.935977,
+          49.820662
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.904943,
+          52.430643
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.320678,
+          49.192675
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.009608,
+          49.953948
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/31"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.500351,
+          51.00079
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/33"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.991207,
+          49.508902
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/34"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.054872,
+          50.896483
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/35"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.582156,
+          50.44239
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/36"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.954396,
+          50.454468
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/37"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.17679,
+          49.737527
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/38"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.232736,
+          53.894325
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/39"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.985470681498,
+          49.8223100957034
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/42"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.99884301171102,
+          49.848356898510225
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/43"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.38831729851132,
+          50.03529936995424
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/44"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.97162229704448,
+          49.87372630437929
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/45"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.91318210987714,
+          49.852144822276614
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/46"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.95942166011528,
+          49.84654918620791
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/47"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.14271717332672,
+          49.782229229630595
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/48"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.16630131923839,
+          49.773497516600365
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/49"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.15180554197023,
+          49.762372556028964
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/50"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.99634664550801,
+          49.88624967446833
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/51"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.90979519061284,
+          49.886992042265845
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/52"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.41073379696448,
+          49.974712565975764
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/53"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.19252842568903,
+          49.97470475866577
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/54"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.33317016815649,
+          49.87986957271405
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/55"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.3228242673139,
+          49.89303306336887
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/56"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.32519850358452,
+          49.86787430414601
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/57"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.31327027386367,
+          49.9888026113985
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/58"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.23743966212031,
+          49.0062212315584
+        ]
+      },
+      "properties": {
+        "image_url": "https://www.manitoba511.ca/map/Cctv/59"
+      }
+    }
+  ]
+}

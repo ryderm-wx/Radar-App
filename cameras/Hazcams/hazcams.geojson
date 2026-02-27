@@ -1,0 +1,1713 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -92.660499,
+          33.212343
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/el-dorado-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -92.47350184595659,
+          31.29169339273939
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "LA",
+        "videoUrl": "https://video.hazcams.com/alexandria-la-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.585,
+          33.58851
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/west-point-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.82785801095699,
+          35.2545668377758
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/wynne-ar-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.8370898,
+          35.6166763
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/linden-tn-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -85.99995725532958,
+          34.59221490718632
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/section-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -93.27820191715547,
+          31.05152342263396
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "LA",
+        "videoUrl": "https://video.hazcams.com/leesville-la-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.81457985778167,
+          33.77973241146006
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/grenada-ms-us-003/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -95.80995639288157,
+          36.322
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "OK",
+        "videoUrl": "https://video.hazcams.com/owasso-ok-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -75.551721,
+          40.618833
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "PA",
+        "videoUrl": "https://video.hazcams.com/allentown-pa-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.62532,
+          32.78294
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/clanton-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.60889,
+          34.80056
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/rienzi-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.02133370148339,
+          34.04070264712851
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/gadsden-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -85.95755756312356,
+          31.80252831332146
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/troy-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.169725,
+          35.041247
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/minor-hill-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.1349075,
+          31.6876328
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/laurel-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.8708889,
+          32.9031944
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/rolling-fork-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.03175,
+          35.336611
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/lynnville-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.47397,
+          33.96029
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/amory-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.03989081465909,
+          30.69101317398895
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/mobile-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.7906,
+          32.905
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/cedar-grove-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.3254,
+          33.68205
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/caledonia-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.783274,
+          34.575882
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/russellville-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.13889,
+          30.2495
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/dauphin-island-al-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -85.4341054,
+          31.7180117
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/abbeville-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.80858142244284,
+          33.5183190143315
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/birmingham-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -91.538,
+          34.473
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/stuttgart-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.219986,
+          35.538868
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/mount-pleasant-tn-us-003/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.619506,
+          34.545336
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/helena-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -83.55672629815191,
+          38.20177688215701
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "KY",
+        "videoUrl": "https://video.hazcams.com/morehead-ky-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.084808,
+          33.555382
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/maben-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.4196912,
+          33.6051518
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/bald-rock-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.50835243309132,
+          32.85686385009693
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/east-chilton-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.67498032387455,
+          30.24965207375856
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/gulf-shores-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.802,
+          33.975
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/shelby-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -79.73,
+          40.33
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "PA",
+        "videoUrl": "https://video.hazcams.com/north-huntingdon-pa-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -96.01885417426196,
+          36.08674169714745
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "OK",
+        "videoUrl": "https://video.hazcams.com/tulsa-ok-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.80740182511772,
+          33.37955789774394
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/hoover-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.550378,
+          33.208869
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/tuscaloosa-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.17684,
+          33.327
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/ackerman-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.14431385439319,
+          36.03728259924018
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/fairview-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.934652,
+          30.482895
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/point-clear-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.890189,
+          30.424913
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/diberville-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.603513,
+          33.063568
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/kosciusko-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -85.8088825,
+          33.485138
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/cheaha-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.207496,
+          35.534341
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/mount-pleasant-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.32920231692485,
+          31.31785332090254
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/hattiesburg-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -79.842843,
+          42.156368
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "PA",
+        "videoUrl": "https://video.hazcams.com/north-east-pa-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.682486,
+          34.809522
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/florence-al-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -85.823318,
+          33.655535
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/anniston-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -92.44948165512128,
+          31.31531312045797
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "LA",
+        "videoUrl": "https://video.hazcams.com/alexandria-la-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.34801,
+          32.83399
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/edinburgh-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -91.000892,
+          33.387698
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/greenville-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.12889,
+          30.2495
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/dauphin-island-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -92.28673646001154,
+          34.74543848860078
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/little-rock-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -91.96,
+          33.1315
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/crossett-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.914,
+          35.1514
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/frankewing-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -91.97745069892052,
+          30.7310652712371
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "LA",
+        "videoUrl": "https://video.hazcams.com/lebeau-la-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.5622850055102,
+          30.27315396430616
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/orange-beach-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.862858,
+          34.996253
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/ardmore-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -81.585,
+          40.019
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "OH",
+        "videoUrl": "https://video.hazcams.com/cambridge-oh-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -92.20531587630249,
+          31.63911390475982
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "LA",
+        "videoUrl": "https://video.hazcams.com/jena-la-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -92.35114,
+          31.10867
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "LA",
+        "videoUrl": "https://video.hazcams.com/lecompte-la-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -93.09697496536458,
+          31.74759828036264
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "LA",
+        "videoUrl": "https://video.hazcams.com/natchitoches-la-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.960331,
+          34.742784
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/cherokee-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.785857,
+          35.231421
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/wynne-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.7175647035789,
+          33.43341958546286
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/inverness-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.3918512,
+          31.5548497
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/dozier-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.542342,
+          34.215658
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/clarksdale-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -80.34185,
+          42.01755
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "PA",
+        "videoUrl": "https://video.hazcams.com/erie-pa-us-003/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -91.661485,
+          33.282617
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/snyder-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -79.991523,
+          42.044283
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "PA",
+        "videoUrl": "https://video.hazcams.com/erie-pa-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.217977,
+          35.54034
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/mount-pleasant-tn-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.5292,
+          34.7368
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/huntsville-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.19462,
+          34.50544
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/crenshaw-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.63133718941053,
+          34.8090631058076
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/florence-al-us-004/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -94.426997,
+          36.114741
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/siloam-springs-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.91099471449874,
+          30.52441667739557
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/fairhope-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.92989128555375,
+          32.81288256478027
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/maplesville-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.01001911007448,
+          34.03183355499417
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/gadsden-al-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.8751191,
+          32.36281
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/jefferson-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.562327,
+          33.05842
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/macon-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.56529748280416,
+          35.74349381731349
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/bay-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.7079,
+          33.2363
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/alabaster-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.23674678574677,
+          34.30878747594043
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/albertville-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.72131,
+          33.74252
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/cleveland-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -80.17686562932393,
+          42.08352539208506
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "PA",
+        "videoUrl": "https://video.hazcams.com/erie-pa-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -82.539368,
+          37.49689
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "KY",
+        "videoUrl": "https://video.hazcams.com/pikeville-ky-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.84498995324354,
+          33.78095046703599
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/grenada-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -93.71131729812703,
+          31.48719347985952
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "LA",
+        "videoUrl": "https://video.hazcams.com/many-la-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.254,
+          35.222
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/savannah-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.00299,
+          34.20862
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/pontotoc-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -95.861188,
+          36.096451
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "OK",
+        "videoUrl": "https://video.hazcams.com/tulsa-ok-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.89027097439187,
+          36.99640988013611
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "KY",
+        "videoUrl": "https://video.hazcams.com/gage-ky-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.9031662527613,
+          33.46550535056681
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/starkville-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.82512542762758,
+          33.78618611021624
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/grenada-ms-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.54170474957306,
+          33.83219399969482
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/aberdeen-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.72274444639733,
+          34.29081661839624
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/fairview-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.942222,
+          34.314981
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/batesville-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -91.79611808273629,
+          33.22762018446782
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/hamburg-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.045,
+          35.617
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/columbia-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.39778,
+          34.06823
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/smithville-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -85.757833,
+          38.251612
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "KY",
+        "videoUrl": "https://video.hazcams.com/louisville-ky-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.414139,
+          34.56477
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/hatton-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -91.550833,
+          35.948056
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/cave-city-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.2708921099557,
+          37.49089163481306
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "KY",
+        "videoUrl": "https://video.hazcams.com/leitchfield-ky-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.8422,
+          34.1765
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/cullman-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -94.202,
+          36.723
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MO",
+        "videoUrl": "https://video.hazcams.com/rocky-comfort-mo-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -83.98907304816208,
+          34.54180842999925
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "GA",
+        "videoUrl": "https://video.hazcams.com/dahlonega-ga-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.7141683,
+          34.2183688
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/tupelo-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -98.48401801365735,
+          29.43712158584554
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TX",
+        "videoUrl": "https://video.hazcams.com/san-antonio-tx-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.7779243,
+          35.3264782
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/waynesboro-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.136119,
+          30.85289
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/wiggins-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -92.44927703461437,
+          34.60191698988513
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AR",
+        "videoUrl": "https://video.hazcams.com/alexander-ar-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.80950872661823,
+          33.37934242556374
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/hoover-al-us-002/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.535105,
+          35.760885
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/centerville-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.2925209,
+          32.3819602
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "AL",
+        "videoUrl": "https://video.hazcams.com/montgomery-al-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.73626744678809,
+          33.4649601616937
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "MS",
+        "videoUrl": "https://video.hazcams.com/winona-ms-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.391356,
+          36.075994
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/dickson-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.554588,
+          35.549011
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/hohenwald-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.306,
+          35.436
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/summertown-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.8382348,
+          35.6167292
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "state": "TN",
+        "videoUrl": "https://video.hazcams.com/linden-tn-us-001/index.m3u8"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

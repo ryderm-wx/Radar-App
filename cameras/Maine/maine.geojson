@@ -1,0 +1,2225 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.75567,
+          43.09848
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "95 NS 0.6 CCTV AX MTA\t",
+        "image": "https://newengland511.org/map/Cctv/759",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.22858,
+          44.80757
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 161 SB (Plymouth)",
+        "image": "https://newengland511.org/map/Cctv/2076",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.987197,
+          44.763561
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 174 SB (Carmel)",
+        "image": "https://newengland511.org/map/Cctv/2077",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.07909,
+          43.89141
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 24 NB (Freeport)",
+        "image": "https://newengland511.org/map/Cctv/2079",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.96859,
+          43.95124
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 31 NB (Topsham)",
+        "image": "https://newengland511.org/map/Cctv/2080",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.52216,
+          44.64495
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 138 NB (Clinton)",
+        "image": "https://newengland511.org/map/Cctv/2081",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.40029,
+          44.791
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 150 NB (Pittsfield)",
+        "image": "https://newengland511.org/map/Cctv/2082",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.25249,
+          44.81545
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 159 NB (Newport)",
+        "image": "https://newengland511.org/map/Cctv/2083",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.21415,
+          44.79801
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 161 NB (Plymouth)",
+        "image": "https://newengland511.org/map/Cctv/2084",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.965732,
+          44.759422
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 174 NB (Newburgh)",
+        "image": "https://newengland511.org/map/Cctv/2085",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.83739,
+          44.77763
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 180 NB (Bangor)",
+        "image": "https://newengland511.org/map/Cctv/2086",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.69754,
+          44.87988
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 191 NB (Orono)",
+        "image": "https://newengland511.org/map/Cctv/2087",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.51049,
+          45.616124
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 244 NB (Medway)",
+        "image": "https://newengland511.org/map/Cctv/2088",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.409793,
+          45.878858
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 264 NB (Sherman)",
+        "image": "https://newengland511.org/map/Cctv/2089",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.283805,
+          46.02601
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 277 NB (Island Falls)",
+        "image": "https://newengland511.org/map/Cctv/2090",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.140228,
+          46.114631
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 286 NB (Oakfield)",
+        "image": "https://newengland511.org/map/Cctv/2091",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.03305,
+          46.14197
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 291 NB (Smyrna)",
+        "image": "https://newengland511.org/map/Cctv/2092",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.92681,
+          44.00419
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 37 SB (Bowdoinham)",
+        "image": "https://newengland511.org/map/Cctv/2094",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.875709,
+          44.089481
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 43 SB (Bowdoinham)",
+        "image": "https://newengland511.org/map/Cctv/2095",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.53424,
+          44.63403
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 138 SB (Clinton)",
+        "image": "https://newengland511.org/map/Cctv/2098",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.11393,
+          44.78587
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 167 SB (Etna)",
+        "image": "https://newengland511.org/map/Cctv/2100",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.60567,
+          45.36761
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 227 SB (Lincoln)",
+        "image": "https://newengland511.org/map/Cctv/2101",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.281082,
+          46.001426
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 276 SB (Island Falls)",
+        "image": "https://newengland511.org/map/Cctv/2102",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.169276,
+          46.106773
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 285 SB (Oakfield)",
+        "image": "https://newengland511.org/map/Cctv/2103",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.70582,
+          44.96763
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 197 NB (Old Town)",
+        "image": "https://newengland511.org/map/Cctv/2105",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.60242,
+          45.38977
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 227 NB (Lincoln)",
+        "image": "https://newengland511.org/map/Cctv/2106",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.70547,
+          44.97592
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 199 SB (Old Town)",
+        "image": "https://newengland511.org/map/Cctv/2107",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.67562,
+          45.22405
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 217 SB (Howland)",
+        "image": "https://newengland511.org/map/Cctv/2109",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.76431,
+          44.82178
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 185 NB (Bangor)",
+        "image": "https://newengland511.org/map/Cctv/2110",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.73651,
+          44.83802
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 187 NB (Bangor)",
+        "image": "https://newengland511.org/map/Cctv/2111",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.8739,
+          44.76923
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 180 SB (Hermon)",
+        "image": "https://newengland511.org/map/Cctv/2112",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.82744,
+          44.77944
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 182 SB (Bangor)",
+        "image": "https://newengland511.org/map/Cctv/2113",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.69072,
+          44.89761
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 193 SB (Old Town)",
+        "image": "https://newengland511.org/map/Cctv/2114",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.42367,
+          45.856781
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 264 SB (Sherman)",
+        "image": "https://newengland511.org/map/Cctv/2116",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.22761,
+          43.73624
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 10 NB (Falmouth)",
+        "image": "https://newengland511.org/map/Cctv/2117",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.09572,
+          43.87182
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 22 NB (Freeport)",
+        "image": "https://newengland511.org/map/Cctv/2118",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.81386,
+          44.32154
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 109 NB (Augusta)",
+        "image": "https://newengland511.org/map/Cctv/2119",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.83538,
+          44.16323
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 49 SB (Richmond)",
+        "image": "https://newengland511.org/map/Cctv/2121",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.82604,
+          44.19862
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 51 SB (Gardiner)",
+        "image": "https://newengland511.org/map/Cctv/2122",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.18363,
+          43.79028
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 15 NB (Cumberland)",
+        "image": "https://newengland511.org/map/Cctv/2123",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.20027,
+          43.77404
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 15 SB (Cumberland)",
+        "image": "https://newengland511.org/map/Cctv/2125",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.82889,
+          44.19063
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 49 NB (Gardiner)",
+        "image": "https://newengland511.org/map/Cctv/2126",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.86092,
+          44.10939
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 43 NB (Richmond)",
+        "image": "https://newengland511.org/map/Cctv/2128",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.11254,
+          43.8569
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 22 SB (Freeport)",
+        "image": "https://newengland511.org/map/Cctv/2130",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.99779,
+          43.92928
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 31 SB (Topsham)",
+        "image": "https://newengland511.org/map/Cctv/2132",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.711402,
+          44.462921
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 120 NB (Sidney)",
+        "image": "https://newengland511.org/map/Cctv/2133",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.705078,
+          44.496805
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 124 SB (Waterville)",
+        "image": "https://newengland511.org/map/Cctv/2134",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.11376,
+          43.85411
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 20 NB (Freeport)",
+        "image": "https://newengland511.org/map/Cctv/2135",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.676239,
+          44.553569
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 127 NB (Oakland)",
+        "image": "https://newengland511.org/map/Cctv/2136",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.07635,
+          46.13874
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 291 SB (Smyrna)",
+        "image": "https://newengland511.org/map/Cctv/2137",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.2565,
+          43.70396
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 09 NB (Falmouth)",
+        "image": "https://newengland511.org/map/Cctv/2138",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.80424,
+          44.79206
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 182 NB (Bangor)",
+        "image": "https://newengland511.org/map/Cctv/2141",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.24793,
+          43.72025
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 10 SB (Falmouth)",
+        "image": "https://newengland511.org/map/Cctv/2144",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.80198,
+          44.342235
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 112 SB (Augusta) ",
+        "image": "https://newengland511.org/map/Cctv/2149",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.666572,
+          44.569099
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 130 SB (Waterville)",
+        "image": "https://newengland511.org/map/Cctv/2150",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.71454,
+          44.86223
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 191 SB (Orono)",
+        "image": "https://newengland511.org/map/Cctv/2151",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.089445,
+          47.112566
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "ME-161",
+        "direction": "Westbound",
+        "location": "Rt 161 Mile 89 (Dickey Bridge, Allagash)",
+        "image": "https://newengland511.org/map/Cctv/2152",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.807128,
+          44.296517
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 108 NB (Augusta)",
+        "image": "https://newengland511.org/map/Cctv/2153",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.786094,
+          46.134232
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-2",
+        "direction": "Westbound",
+        "location": "Rt 2 Mile 273 (Houlton)",
+        "image": "https://newengland511.org/map/Cctv/2156",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.843772,
+          43.911781
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Southbound",
+        "location": "Rt 1 Mile 082 SB (West Bath)",
+        "image": "https://newengland511.org/map/Cctv/2160",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.08439,
+          43.87896
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 23 NB (Freeport)",
+        "image": "https://newengland511.org/map/Cctv/2167",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.811948,
+          44.787389
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-395",
+        "direction": "Westbound",
+        "location": "I-395 Mile 0 WB (Bangor)",
+        "image": "https://newengland511.org/map/Cctv/2168",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.66958,
+          44.005099
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Northbound",
+        "location": "Rt 1 Mile 094 (Wiscasset)",
+        "image": "https://newengland511.org/map/Cctv/2170",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.66433,
+          44.002367
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Southbound",
+        "location": "Rt 1 Mile 095 (Wiscasset)",
+        "image": "https://newengland511.org/map/Cctv/2171",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.284677,
+          43.655291
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 05 NB (Portland)",
+        "image": "https://newengland511.org/map/Cctv/2172",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.256388,
+          43.677944
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 08 SB (Portland)",
+        "image": "https://newengland511.org/map/Cctv/2174",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.256388,
+          43.678863
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 08 NB (Portland)",
+        "image": "https://newengland511.org/map/Cctv/2175",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.261445,
+          43.666042
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 07 NB (Portland)",
+        "image": "https://newengland511.org/map/Cctv/2176",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.261194,
+          43.665512
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 07 SB (Portland)",
+        "image": "https://newengland511.org/map/Cctv/2177",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.1652,
+          43.8085
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 17 SB (Yarmouth PTZ)",
+        "image": "https://newengland511.org/map/Cctv/2178",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.164857,
+          43.808749
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 17 NB (Yarmouth PTZ)",
+        "image": "https://newengland511.org/map/Cctv/2179",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.807674,
+          44.557179
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Northbound",
+        "location": "Rt1 Prospect (RWIS)",
+        "image": "https://newengland511.org/map/Cctv/2185",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.467185,
+          44.820501
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "ME-9",
+        "direction": "Eastbound",
+        "location": "Rt9 Clifton (RWIS)",
+        "image": "https://newengland511.org/map/Cctv/2186",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.536033,
+          45.331368
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "ME-6",
+        "direction": "Northbound",
+        "location": "Rt6 Monson (RWIS)",
+        "image": "https://newengland511.org/map/Cctv/2187",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.74995,
+          43.10323
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "95 SS 2.4 CCTV AX MTA",
+        "image": "https://newengland511.org/map/Cctv/2188",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.75567,
+          43.09848
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "95 NN 0.6 CCTV AX MTA\t",
+        "image": "https://newengland511.org/map/Cctv/2189",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.7238,
+          43.12322
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "95 NS 3.1 CCTV AX MTA",
+        "image": "https://newengland511.org/map/Cctv/2190",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.79777,
+          43.06178
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "95 NN 13.4 CCTV AX T",
+        "image": "https://newengland511.org/map/Cctv/2191",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.75478,
+          43.103914
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "95 SS 1.3 HLB CCTV MTA",
+        "image": "https://newengland511.org/map/Cctv/2210",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.75736,
+          43.10005
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "Dennett Rd NN 0.39 CCTV AX MTA",
+        "image": "https://newengland511.org/map/Cctv/2212",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.10861,
+          44.10724
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "Main St",
+        "direction": "Eastbound",
+        "location": "Rockland Terminal approach",
+        "image": "https://newengland511.org/map/Cctv/2215",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.30576,
+          43.63336
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "South Portland",
+        "image": "https://newengland511.org/map/Cctv/2216",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.25681,
+          43.69306
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "Portland",
+        "image": "https://newengland511.org/map/Cctv/2217",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.74111,
+          44.42279
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "Sidney",
+        "image": "https://newengland511.org/map/Cctv/2218",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.80695,
+          44.29677
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "Hallowell",
+        "image": "https://newengland511.org/map/Cctv/2219",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.87164,
+          44.76941
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "Hampden",
+        "image": "https://newengland511.org/map/Cctv/2220",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.73081,
+          44.84629
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "Bangor",
+        "image": "https://newengland511.org/map/Cctv/2221",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.080447,
+          44.189297
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Southbound",
+        "location": "RT1 rockport",
+        "image": "https://newengland511.org/map/Cctv/2223",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.007123,
+          44.280158
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "McKay Rd",
+        "direction": "Eastbound",
+        "location": "lincolnville ferry port parking lot",
+        "image": "https://newengland511.org/map/Cctv/2224",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.56289,
+          44.794459
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "ME-9",
+        "direction": "Eastbound",
+        "location": "Rt9 Clifton ",
+        "image": "https://newengland511.org/map/Cctv/2225",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.713283,
+          44.767795
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1A",
+        "direction": "Northbound",
+        "location": "RT1A Mile 42 EB (Holden)",
+        "image": "https://newengland511.org/map/Cctv/2228",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.622952,
+          44.587044
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Southbound",
+        "location": "I-95 Mile 132 SB (Fairfield New)",
+        "image": "https://newengland511.org/map/Cctv/2230",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.864995,
+          44.48534
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Northbound",
+        "location": "RT1 Mile 164 NB (Stockton Springs)",
+        "image": "https://newengland511.org/map/Cctv/2231",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.776298,
+          44.364891
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 113 NB ( Augusta New)",
+        "image": "https://newengland511.org/map/Cctv/2232",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.698013,
+          44.521499
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 124 NB (Waterville New)",
+        "image": "https://newengland511.org/map/Cctv/2233",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.634507,
+          44.5734
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Northbound",
+        "location": "I-95 Mile 130 NB (Waterville New)",
+        "image": "https://newengland511.org/map/Cctv/2237",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.9156,
+          44.02549
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Northbound",
+        "location": "I-295 Mile 37 NB (Bowdoinham)",
+        "image": "https://newengland511.org/map/Cctv/2238",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.05373,
+          43.907618
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 28 SB (Brunswick New)",
+        "image": "https://newengland511.org/map/Cctv/2239",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.7456,
+          44.77394
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-395",
+        "direction": "Westbound",
+        "location": "I-395 Mile 4 WB (Brewer New)",
+        "image": "https://newengland511.org/map/Cctv/2240",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.575742,
+          44.60551
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-95",
+        "direction": "Northbound",
+        "location": "I-95 Mile 133 NB (Fairfield new)",
+        "image": "https://newengland511.org/map/Cctv/2241",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.801662,
+          43.912847
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Southbound",
+        "location": "RT1 Mile 84 SB (Woolwich)",
+        "image": "https://newengland511.org/map/Cctv/2242",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.646212,
+          43.999974
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Southbound",
+        "location": "RT1 Mile 95 SB (Edgecomb)",
+        "image": "https://newengland511.org/map/Cctv/2243",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.866167,
+          46.756058
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1A",
+        "direction": "Southbound",
+        "location": "RT1A Mile 97 (Fort Fairfield)",
+        "image": "https://newengland511.org/map/Cctv/2250",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.000031,
+          46.871326
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Northbound",
+        "location": "RT1 Mile 460 (Caribou)",
+        "image": "https://newengland511.org/map/Cctv/2252",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.945779,
+          47.143029
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-1",
+        "direction": "Southbound",
+        "location": "Rt1 Mile 480 SB (Van Buren)",
+        "image": "https://newengland511.org/map/Cctv/2253",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.285687,
+          43.655291
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-295",
+        "direction": "Southbound",
+        "location": "I-295 Mile 5 SB (Portland PTZ)",
+        "image": "https://newengland511.org/map/Cctv/2257",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.687592,
+          43.476083
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "ME-111",
+        "direction": "Westbound",
+        "location": "RT 111 Alfred",
+        "image": "https://newengland511.org/map/Cctv/2259",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.340733,
+          43.887164
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "ME-26",
+        "direction": "Northbound",
+        "location": "RT26 Mile 17 NB (Gray)",
+        "image": "https://newengland511.org/map/Cctv/2266",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.350846,
+          45.122814
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "ME-9",
+        "direction": "Westbound",
+        "location": "Rt 9  Mile 281 WB (Bailyville)",
+        "image": "https://newengland511.org/map/Cctv/2268",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.987533,
+          44.009469
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "US-302",
+        "direction": "Eastbound",
+        "location": "RT 302 Mile 53 EB (Fryeburg)",
+        "image": "https://newengland511.org/map/Cctv/2269",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.792195,
+          44.786714
+        ]
+      },
+      "properties": {
+        "id": null,
+        "state": "Maine",
+        "road": "I-395",
+        "direction": "Eastbound",
+        "location": "I-395 Mile 2 EB Bangor",
+        "image": "https://newengland511.org/map/Cctv/2277",
+        "source": "Maine",
+        "agency": "NewEngland511"
+      }
+    }
+  ]
+}

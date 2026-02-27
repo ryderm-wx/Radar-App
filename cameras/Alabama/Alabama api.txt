@@ -1,0 +1,1 @@
+https://api.algotraffic.com/v3.0/Cameras

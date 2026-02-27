@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.04479, 42.491304]
+      },
+      "properties": {
+        "name": "I-75 at 8 Mile",
+        "image_url": "https://micamerasimages.net/thumbs/semtoc_cam_253.flv.jpg?item=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.04671, 42.491267]
+      },
+      "properties": {
+        "name": "I-696 at Dequindre",
+        "image_url": "https://micamerasimages.net/thumbs/semtoc_cam_252.flv.jpg?item=1",
+        "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.05123, 42.493456]
+      },
+      "properties": {
+        "name": "M-39 Southfield",
+        "video_url": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-83.15678, 42.523456]
+      },
+      "properties": {
+        "name": "I-94 at Livernois",
+        "image_url": "https://micamerasimages.net/thumbs/semtoc_cam_250.flv.jpg?item=1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-84.55123, 42.73389]
+      },
+      "properties": {
+        "name": "US-23 at M-14",
+        "image_url": "https://micamerasimages.net/thumbs/semtoc_cam_249.flv.jpg?item=1"
+      }
+    }
+  ]
+}

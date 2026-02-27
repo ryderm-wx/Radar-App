@@ -1,0 +1,5870 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.16269,
+                    32.33378
+                ]
+            },
+            "properties": {
+                "id": 1,
+                "title": "I-55 at Lakeland Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=1"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14179,
+                    32.33418
+                ]
+            },
+            "properties": {
+                "id": 2,
+                "title": "Lakeland Dr at Ridgewood Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=2"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.09265,
+                    32.33787
+                ]
+            },
+            "properties": {
+                "id": 3,
+                "title": "Lakeland Dr at Airport Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=3"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.13445,
+                    32.47027
+                ]
+            },
+            "properties": {
+                "id": 4,
+                "title": "I-55 at MS Highway 463",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=4"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.13424,
+                    32.26616
+                ]
+            },
+            "properties": {
+                "id": 6,
+                "title": "I-20 at Pearson Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=6"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.16647,
+                    32.3028
+                ]
+            },
+            "properties": {
+                "id": 7,
+                "title": "I-55 at High St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=7"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.21522,
+                    32.24206
+                ]
+            },
+            "properties": {
+                "id": 8,
+                "title": "I-55 at Savanna St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=8"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.24977,
+                    32.28978
+                ]
+            },
+            "properties": {
+                "id": 10,
+                "title": "I-20 at I-220",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=10"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.07008,
+                    32.58672
+                ]
+            },
+            "properties": {
+                "id": 11,
+                "title": "I-55 at Nissan Drive",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=11"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.93674,
+                    34.96241
+                ]
+            },
+            "properties": {
+                "id": 18,
+                "title": "MS 302 at Getwell Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=18"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.01652,
+                    34.96253
+                ]
+            },
+            "properties": {
+                "id": 19,
+                "title": "MS 302 at US 51",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=19"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.99446,
+                    34.93337
+                ]
+            },
+            "properties": {
+                "id": 20,
+                "title": "I-55 at Church Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=20"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.99927,
+                    34.96243
+                ]
+            },
+            "properties": {
+                "id": 21,
+                "title": "I-55 at MS 302",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=21"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.98992,
+                    34.96262
+                ]
+            },
+            "properties": {
+                "id": 22,
+                "title": "MS 302 at Airways Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=22"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.03118,
+                    30.44435
+                ]
+            },
+            "properties": {
+                "id": 23,
+                "title": "I-10 at MS 605 - Gulfport",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=23"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.78957,
+                    33.46779
+                ]
+            },
+            "properties": {
+                "id": 30,
+                "title": "MS 182 at Research Park",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=30"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.65905,
+                    33.6071
+                ]
+            },
+            "properties": {
+                "id": 31,
+                "title": "US Alt 45 at Main St (MS 50)",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=31"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.64877,
+                    33.60708
+                ]
+            },
+            "properties": {
+                "id": 32,
+                "title": "Main Street (MS 50) at Commerce",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=32"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.43174,
+                    33.50576
+                ]
+            },
+            "properties": {
+                "id": 34,
+                "title": "US 82 at US 45",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=34"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.43451,
+                    33.51616
+                ]
+            },
+            "properties": {
+                "id": 35,
+                "title": "US 45 at 18th Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=35"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.43822,
+                    33.53821
+                ]
+            },
+            "properties": {
+                "id": 36,
+                "title": "US 45 at Bluecut Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=36"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.32356,
+                    30.31944
+                ]
+            },
+            "properties": {
+                "id": 37,
+                "title": "US 90 at Bay St. Louis",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=37"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.21183,
+                    32.25233
+                ]
+            },
+            "properties": {
+                "id": 39,
+                "title": "I-55 at Daniel Lake Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=39"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.22604,
+                    32.22119
+                ]
+            },
+            "properties": {
+                "id": 40,
+                "title": "I-55 at Elton Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=40"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.23578,
+                    32.20975
+                ]
+            },
+            "properties": {
+                "id": 41,
+                "title": "I-55 at Old Byram Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=41"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.25719,
+                    32.18386
+                ]
+            },
+            "properties": {
+                "id": 42,
+                "title": "I-55 at Siwell Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=42"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.20934,
+                    32.27476
+                ]
+            },
+            "properties": {
+                "id": 43,
+                "title": "I-55 South at I-20 Interchange",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=43"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.21016,
+                    32.26812
+                ]
+            },
+            "properties": {
+                "id": 44,
+                "title": "I-55 at McDowell Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=44"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.21514,
+                    32.28521
+                ]
+            },
+            "properties": {
+                "id": 45,
+                "title": "I-20 at Valley St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=45"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.1451,
+                    32.39971
+                ]
+            },
+            "properties": {
+                "id": 46,
+                "title": "I-55 at County Line Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=46"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.15188,
+                    32.35571
+                ]
+            },
+            "properties": {
+                "id": 48,
+                "title": "I-55 at Northside Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=48"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.24554,
+                    32.30629
+                ]
+            },
+            "properties": {
+                "id": 51,
+                "title": "I-220 at Robinson Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=51"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.24646,
+                    32.32764
+                ]
+            },
+            "properties": {
+                "id": 52,
+                "title": "I-220 at Clinton Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=52"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.23578,
+                    32.35946
+                ]
+            },
+            "properties": {
+                "id": 54,
+                "title": "I-220 at US 49",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=54"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.22127,
+                    32.36951
+                ]
+            },
+            "properties": {
+                "id": 55,
+                "title": "I-220 at CN Railroad",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=55"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.19254,
+                    32.38937
+                ]
+            },
+            "properties": {
+                "id": 56,
+                "title": "I-220 at Watkins Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=56"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.18067,
+                    32.39759
+                ]
+            },
+            "properties": {
+                "id": 57,
+                "title": "I-220 at Highland Colony Pkwy",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=57"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14834,
+                    32.41263
+                ]
+            },
+            "properties": {
+                "id": 58,
+                "title": "I-55 at I-220",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=58"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.4233,
+                    30.35806
+                ]
+            },
+            "properties": {
+                "id": 63,
+                "title": "I-10 at MS 603 - Hancock county",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=63"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.37837,
+                    30.30604
+                ]
+            },
+            "properties": {
+                "id": 64,
+                "title": "US 90 at MS 603 (Waveland)",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=64"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.35234,
+                    31.32488
+                ]
+            },
+            "properties": {
+                "id": 65,
+                "title": "I-59 at Hardy Street",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=65"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.32904,
+                    31.32466
+                ]
+            },
+            "properties": {
+                "id": 66,
+                "title": "US 49 at Hardy Street",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=66"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.34357,
+                    31.35413
+                ]
+            },
+            "properties": {
+                "id": 67,
+                "title": "US 49 at Convention Center",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=67"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.34923,
+                    31.35932
+                ]
+            },
+            "properties": {
+                "id": 68,
+                "title": "US 49 at Classic Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=68"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.33528,
+                    31.34807
+                ]
+            },
+            "properties": {
+                "id": 69,
+                "title": "US 49 at 31st Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=69"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.34644,
+                    31.35664
+                ]
+            },
+            "properties": {
+                "id": 70,
+                "title": "I-59 at US 49",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=70"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14711,
+                    32.38027
+                ]
+            },
+            "properties": {
+                "id": 71,
+                "title": "I-55 at Briarwood Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=71"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.2456,
+                    32.34036
+                ]
+            },
+            "properties": {
+                "id": 72,
+                "title": "I-220 at Industrial Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=72"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.24648,
+                    30.31382
+                ]
+            },
+            "properties": {
+                "id": 73,
+                "title": "US 90 at Market St - Pass Christian",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=73"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.09273,
+                    30.36572
+                ]
+            },
+            "properties": {
+                "id": 74,
+                "title": "US 49 at US 90 - Gulfport",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=74"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.89433,
+                    30.3942
+                ]
+            },
+            "properties": {
+                "id": 75,
+                "title": "US 90 at I-110 - Biloxi",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=75"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.143,
+                    30.34674
+                ]
+            },
+            "properties": {
+                "id": 76,
+                "title": "US 90 at Cleveland - Long Beach",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=76"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.19308,
+                    32.27574
+                ]
+            },
+            "properties": {
+                "id": 77,
+                "title": "I-20 at Gallatin St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=77"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.01266,
+                    32.35792
+                ]
+            },
+            "properties": {
+                "id": 78,
+                "title": "Lakeland Dr at Grants Ferry/Castle Woods",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=78"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.06926,
+                    32.60583
+                ]
+            },
+            "properties": {
+                "id": 80,
+                "title": "I-55 at MS 22 - Canton",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=80"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.16351,
+                    32.30991
+                ]
+            },
+            "properties": {
+                "id": 81,
+                "title": "I-55 at Fortification St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=81"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.50352,
+                    31.01115
+                ]
+            },
+            "properties": {
+                "id": 82,
+                "title": "I-55 at LA Stateline",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=82"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.67934,
+                    30.47779
+                ]
+            },
+            "properties": {
+                "id": 83,
+                "title": "I-59 at LA Stateline - Picayune",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=83"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.14734,
+                    30.84416
+                ]
+            },
+            "properties": {
+                "id": 84,
+                "title": "US 49 at Wiggins",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=84"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.15445,
+                    32.34826
+                ]
+            },
+            "properties": {
+                "id": 86,
+                "title": "I-55 at Meadowbrook Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=86"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.00157,
+                    34.97738
+                ]
+            },
+            "properties": {
+                "id": 87,
+                "title": "I-55 at Rasco Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=87"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.71739,
+                    30.44157
+                ]
+            },
+            "properties": {
+                "id": 88,
+                "title": "I-10 at MS 57 - Ocean Springs",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=88"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.84292,
+                    30.45393
+                ]
+            },
+            "properties": {
+                "id": 89,
+                "title": "I-10 at 609 - Ocean Springs",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=89"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.15771,
+                    32.27823
+                ]
+            },
+            "properties": {
+                "id": 90,
+                "title": "US 49 at US 80",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=90"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.15737,
+                    32.2814
+                ]
+            },
+            "properties": {
+                "id": 91,
+                "title": "MS 468 (Flowood Dr) at Old Brandon Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=91"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.32756,
+                    31.37778
+                ]
+            },
+            "properties": {
+                "id": 92,
+                "title": "I-59 S of Evelyn Gandy",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=92"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.33267,
+                    31.21064
+                ]
+            },
+            "properties": {
+                "id": 93,
+                "title": "I-59 South of US 98E",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=93"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.35236,
+                    31.33659
+                ]
+            },
+            "properties": {
+                "id": 94,
+                "title": "I-59 at 4th Street",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=94"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.32331,
+                    31.2382
+                ]
+            },
+            "properties": {
+                "id": 95,
+                "title": "I-59 at US 98E",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=95"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.28992,
+                    31.27727
+                ]
+            },
+            "properties": {
+                "id": 96,
+                "title": "US 49 at Elks Lake Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=96"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.3166,
+                    31.30726
+                ]
+            },
+            "properties": {
+                "id": 97,
+                "title": "US 49 at Hwy 11/Broadway Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=97"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.30846,
+                    31.299
+                ]
+            },
+            "properties": {
+                "id": 98,
+                "title": "US 49 at Wisteria Drive",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=98"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.30361,
+                    31.29197
+                ]
+            },
+            "properties": {
+                "id": 99,
+                "title": "US 49 at WSF Tatum Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=99"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.26228,
+                    31.21251
+                ]
+            },
+            "properties": {
+                "id": 100,
+                "title": "US 49 at Lee Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=100"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.36839,
+                    31.38139
+                ]
+            },
+            "properties": {
+                "id": 101,
+                "title": "US 49 at Old Rawls Springs Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=101"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.30198,
+                    31.2401
+                ]
+            },
+            "properties": {
+                "id": 102,
+                "title": "US 98 at Elks Lake Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=102"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.24559,
+                    31.24498
+                ]
+            },
+            "properties": {
+                "id": 103,
+                "title": "US 98 at Ralston Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=103"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.41955,
+                    31.5585
+                ]
+            },
+            "properties": {
+                "id": 104,
+                "title": "MS River Bridge in Natchez",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=104"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.55789,
+                    34.36352
+                ]
+            },
+            "properties": {
+                "id": 105,
+                "title": "Jackson Ave at Heritage Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=105"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.54643,
+                    34.36832
+                ]
+            },
+            "properties": {
+                "id": 106,
+                "title": "Jackson Ave at Fraternity Row",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=106"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.5339,
+                    34.3719
+                ]
+            },
+            "properties": {
+                "id": 107,
+                "title": "Jackson Ave at College Hill Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=107"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.51916,
+                    34.36407
+                ]
+            },
+            "properties": {
+                "id": 108,
+                "title": "University Ave at Lamar Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=108"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.50596,
+                    34.36206
+                ]
+            },
+            "properties": {
+                "id": 109,
+                "title": "MS 7 at University Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=109"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.09309,
+                    32.41197
+                ]
+            },
+            "properties": {
+                "id": 111,
+                "title": "Lake Harbour Dr at Harbor Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=111"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.16119,
+                    32.38025
+                ]
+            },
+            "properties": {
+                "id": 112,
+                "title": "US 51 at Briarwood Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=112"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.57109,
+                    30.36406
+                ]
+            },
+            "properties": {
+                "id": 113,
+                "title": "Ingalls Shipyard",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=113"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.15982,
+                    32.32587
+                ]
+            },
+            "properties": {
+                "id": 116,
+                "title": "I-55 at Woodrow Wilson",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=116"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.15814,
+                    32.31677
+                ]
+            },
+            "properties": {
+                "id": 117,
+                "title": "I-55 at Waterworks Curve",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=117"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.1584,
+                    32.27287
+                ]
+            },
+            "properties": {
+                "id": 118,
+                "title": "I-20 at US 49/ The Stack",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=118"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.1672,
+                    32.2748
+                ]
+            },
+            "properties": {
+                "id": 119,
+                "title": "I-20 at I-55 N/ The Stack",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=119"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.11938,
+                    32.32904
+                ]
+            },
+            "properties": {
+                "id": 120,
+                "title": "Lakeland Dr at Treetops Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=120"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.10853,
+                    32.33128
+                ]
+            },
+            "properties": {
+                "id": 121,
+                "title": "Lakeland Dr at River Oaks Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=121"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.13663,
+                    30.42425
+                ]
+            },
+            "properties": {
+                "id": 123,
+                "title": "I-10 at Canal Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=123"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.19153,
+                    30.41702
+                ]
+            },
+            "properties": {
+                "id": 124,
+                "title": "I-10 at County Farm Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=124"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.89483,
+                    30.42997
+                ]
+            },
+            "properties": {
+                "id": 125,
+                "title": "I-110 at Rodriguez St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=125"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.89458,
+                    30.40469
+                ]
+            },
+            "properties": {
+                "id": 126,
+                "title": "I-110 at Division St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=126"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.17235,
+                    32.2814
+                ]
+            },
+            "properties": {
+                "id": 128,
+                "title": "I-55 North at the Stack",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=128"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.37335,
+                    31.32217
+                ]
+            },
+            "properties": {
+                "id": 130,
+                "title": "US 98 at Weathersby",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=130"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.00223,
+                    34.99179
+                ]
+            },
+            "properties": {
+                "id": 131,
+                "title": "I-55 at Stateline",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=131"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.00794,
+                    34.99179
+                ]
+            },
+            "properties": {
+                "id": 132,
+                "title": "Stateline at Millbranch Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=132"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.98983,
+                    34.99179
+                ]
+            },
+            "properties": {
+                "id": 133,
+                "title": "Stateline Rd at Airways Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=133"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.02236,
+                    34.99179
+                ]
+            },
+            "properties": {
+                "id": 134,
+                "title": "Stateline and US 51",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=134"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.39938,
+                    31.319
+                ]
+            },
+            "properties": {
+                "id": 140,
+                "title": "US 98 at Jackson Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=140"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.35939,
+                    31.32412
+                ]
+            },
+            "properties": {
+                "id": 141,
+                "title": "US 98 at Coca Cola Street",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=141"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.33601,
+                    31.32471
+                ]
+            },
+            "properties": {
+                "id": 142,
+                "title": "Hardy St at 31st Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=142"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.34554,
+                    31.32492
+                ]
+            },
+            "properties": {
+                "id": 143,
+                "title": "Hardy St at 38th",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=143"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.28677,
+                    30.31206
+                ]
+            },
+            "properties": {
+                "id": 144,
+                "title": "US 90 at Bayview St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=144"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.97276,
+                    30.3914
+                ]
+            },
+            "properties": {
+                "id": 145,
+                "title": "US 90 at Beauvior - Biloxi",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=145"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.02685,
+                    30.38215
+                ]
+            },
+            "properties": {
+                "id": 147,
+                "title": "US 90 at Cowan - Gulfport",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=147"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.00121,
+                    30.38801
+                ]
+            },
+            "properties": {
+                "id": 148,
+                "title": "US 90 at Debuys Rd - Gulfport",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=148"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.3402,
+                    31.32483
+                ]
+            },
+            "properties": {
+                "id": 149,
+                "title": "Hardy St at 34th Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=149"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.01643,
+                    34.99185
+                ]
+            },
+            "properties": {
+                "id": 150,
+                "title": "Stateline and Whitworth",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=150"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.13902,
+                    32.41411
+                ]
+            },
+            "properties": {
+                "id": 151,
+                "title": "US 51 at Lake Harbour Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=151"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.1287,
+                    32.42862
+                ]
+            },
+            "properties": {
+                "id": 152,
+                "title": "US 51 at Jackson St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=152"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.11697,
+                    32.45048
+                ]
+            },
+            "properties": {
+                "id": 153,
+                "title": "US 51 at St Augustine",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=153"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.10952,
+                    32.46511
+                ]
+            },
+            "properties": {
+                "id": 154,
+                "title": "US 51 at Hoy Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=154"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.10626,
+                    32.47139
+                ]
+            },
+            "properties": {
+                "id": 155,
+                "title": "US 51 at Olympic Way",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=155"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.0733,
+                    32.27133
+                ]
+            },
+            "properties": {
+                "id": 156,
+                "title": "I-20 at Airport Rd (MS 475)",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=156"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.28015,
+                    32.30066
+                ]
+            },
+            "properties": {
+                "id": 158,
+                "title": "I-20 West of Hwy 18",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=158"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14397,
+                    32.42829
+                ]
+            },
+            "properties": {
+                "id": 159,
+                "title": "I-55 North at Natchez Trace",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=159"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.22771,
+                    32.288
+                ]
+            },
+            "properties": {
+                "id": 160,
+                "title": "I-20 at Ellis Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=160"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.14671,
+                    31.6944
+                ]
+            },
+            "properties": {
+                "id": 161,
+                "title": "MS 15 at US 84",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=161"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.14672,
+                    31.68417
+                ]
+            },
+            "properties": {
+                "id": 162,
+                "title": "I-59 at US 84",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=162"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.4129,
+                    31.31753
+                ]
+            },
+            "properties": {
+                "id": 163,
+                "title": "US 98 at King Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=163"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.32908,
+                    31.3319
+                ]
+            },
+            "properties": {
+                "id": 164,
+                "title": "US 49 at 4th Street",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=164"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.06427,
+                    32.33972
+                ]
+            },
+            "properties": {
+                "id": 165,
+                "title": "Lakeland Dr at Old Fannin",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=165"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.0699,
+                    32.33888
+                ]
+            },
+            "properties": {
+                "id": 166,
+                "title": "Lakeland Dr at Lakeland Commons Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=166"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.90813,
+                    30.47
+                ]
+            },
+            "properties": {
+                "id": 167,
+                "title": "MS 67 at Lickskillet Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=167"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.1187,
+                    32.46292
+                ]
+            },
+            "properties": {
+                "id": 168,
+                "title": "MS 463 at Post Oak Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=168"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.13132,
+                    32.46902
+                ]
+            },
+            "properties": {
+                "id": 169,
+                "title": "MS 463 at Grand View Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=169"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.12607,
+                    32.46714
+                ]
+            },
+            "properties": {
+                "id": 170,
+                "title": "MS 463 at Welch Farms Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=170"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.35636,
+                    31.3245
+                ]
+            },
+            "properties": {
+                "id": 171,
+                "title": "US 98 at Westover",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=171"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.16879,
+                    32.33377
+                ]
+            },
+            "properties": {
+                "id": 173,
+                "title": "Lakeland Dr at University Drive",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=173"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.95437,
+                    34.9625
+                ]
+            },
+            "properties": {
+                "id": 174,
+                "title": "MS 302 at Tchulahoma Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=174"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.98038,
+                    34.96273
+                ]
+            },
+            "properties": {
+                "id": 175,
+                "title": "MS 302 at Elmore Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=175"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.919,
+                    34.96236
+                ]
+            },
+            "properties": {
+                "id": 176,
+                "title": "MS 302 at Malone Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=176"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.38823,
+                    31.32056
+                ]
+            },
+            "properties": {
+                "id": 177,
+                "title": "US 98 at Lake Forgetful",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=177"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.7436,
+                    34.89632
+                ]
+            },
+            "properties": {
+                "id": 178,
+                "title": "US 78 at Ingrams Mill",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=178"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.7177,
+                    34.87241
+                ]
+            },
+            "properties": {
+                "id": 179,
+                "title": "I-22 at Vinson Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=179"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.68861,
+                    34.85537
+                ]
+            },
+            "properties": {
+                "id": 180,
+                "title": "I-22 at MS 309",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=180"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.66328,
+                    34.85173
+                ]
+            },
+            "properties": {
+                "id": 181,
+                "title": "I-22 between Victoria Rd/MS 309",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=181"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.61742,
+                    34.83987
+                ]
+            },
+            "properties": {
+                "id": 182,
+                "title": "I-22 at Victoria Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=182"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.56462,
+                    34.82563
+                ]
+            },
+            "properties": {
+                "id": 183,
+                "title": "I-22 at Red Banks",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=183"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.51118,
+                    34.80733
+                ]
+            },
+            "properties": {
+                "id": 184,
+                "title": "I-22 at Bicycle Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=184"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.65178,
+                    30.39193
+                ]
+            },
+            "properties": {
+                "id": 185,
+                "title": "US 90 at Gautier Vancleave Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=185"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.37769,
+                    31.39037
+                ]
+            },
+            "properties": {
+                "id": 186,
+                "title": "US 49 at Peps Point Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=186"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.31864,
+                    31.5727
+                ]
+            },
+            "properties": {
+                "id": 187,
+                "title": "US 61 at US 84",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=187"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.85144,
+                    32.3377
+                ]
+            },
+            "properties": {
+                "id": 188,
+                "title": "I-20 at Clay Street",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=188"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.90632,
+                    32.31409
+                ]
+            },
+            "properties": {
+                "id": 189,
+                "title": "I-20 at MS River Bridge",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=189"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.58794,
+                    34.49664
+                ]
+            },
+            "properties": {
+                "id": 190,
+                "title": "US 49 at MS River Bridge",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=190"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.47002,
+                    34.40324
+                ]
+            },
+            "properties": {
+                "id": 191,
+                "title": "US 61 at US 49",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=191"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.8595,
+                    33.44559
+                ]
+            },
+            "properties": {
+                "id": 192,
+                "title": "US 82 at US 61",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=192"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.15425,
+                    33.28692
+                ]
+            },
+            "properties": {
+                "id": 193,
+                "title": "US 82 at Mississippi River Bridge",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=193"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.83198,
+                    33.41475
+                ]
+            },
+            "properties": {
+                "id": 194,
+                "title": "US 82 West of Dunleith",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=194"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.13359,
+                    32.42132
+                ]
+            },
+            "properties": {
+                "id": 195,
+                "title": "US 51 at School Street",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=195"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.171,
+                    33.27578
+                ]
+            },
+            "properties": {
+                "id": 199,
+                "title": "US 82 at Mississippi River Bridge AR",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=199"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.65599,
+                    30.43495
+                ]
+            },
+            "properties": {
+                "id": 200,
+                "title": "I-10 at Gautier Vancleave Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=200"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.44418,
+                    31.31539
+                ]
+            },
+            "properties": {
+                "id": 201,
+                "title": "US 98 at Cole Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=201"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.27567,
+                    31.24477
+                ]
+            },
+            "properties": {
+                "id": 202,
+                "title": "US 49 at US 98",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=202"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.57024,
+                    31.65107
+                ]
+            },
+            "properties": {
+                "id": 203,
+                "title": "US 49 at US 84 - Collins",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=203"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.48398,
+                    32.33648
+                ]
+            },
+            "properties": {
+                "id": 204,
+                "title": "I-20 at MS 35 - Forest",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=204"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.59749,
+                    30.95315
+                ]
+            },
+            "properties": {
+                "id": 205,
+                "title": "US 98 at Beaver Dam Rd - Lucedale",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=205"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.47201,
+                    31.31275
+                ]
+            },
+            "properties": {
+                "id": 206,
+                "title": "US 98 at MS 589",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=206"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14408,
+                    32.43081
+                ]
+            },
+            "properties": {
+                "id": 207,
+                "title": "I-55 at Old Agency Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=207"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.1445,
+                    32.4465
+                ]
+            },
+            "properties": {
+                "id": 208,
+                "title": "I-55 at Colony Park Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=208"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14232,
+                    32.45792
+                ]
+            },
+            "properties": {
+                "id": 209,
+                "title": "I-55 at Madison Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=209"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.17663,
+                    32.27665
+                ]
+            },
+            "properties": {
+                "id": 210,
+                "title": "I-55 at the Stack",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=210"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.10159,
+                    32.51704
+                ]
+            },
+            "properties": {
+                "id": 211,
+                "title": "I-55 at Gluckstadt Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=211"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.34027,
+                    32.04796
+                ]
+            },
+            "properties": {
+                "id": 212,
+                "title": "I-55 at MS 27 - Copiah/Hinds County Line",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=212"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.25216,
+                    31.35364
+                ]
+            },
+            "properties": {
+                "id": 213,
+                "title": "MS 42 at Old Richton Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=213"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.00407,
+                    32.28094
+                ]
+            },
+            "properties": {
+                "id": 214,
+                "title": "US 80 at Value Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=214"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.00068,
+                    32.27836
+                ]
+            },
+            "properties": {
+                "id": 215,
+                "title": "I-20 at US 80",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=215"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.00484,
+                    32.27818
+                ]
+            },
+            "properties": {
+                "id": 216,
+                "title": "I-20 West of US 80",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=216"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.57123,
+                    34.36088
+                ]
+            },
+            "properties": {
+                "id": 217,
+                "title": "MS 6 at Jackson Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=217"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.25142,
+                    31.1864
+                ]
+            },
+            "properties": {
+                "id": 218,
+                "title": "US 49 at Southgate Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=218"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.90182,
+                    30.39448
+                ]
+            },
+            "properties": {
+                "id": 219,
+                "title": "US 90 at Porter St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=219"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.8856,
+                    30.39281
+                ]
+            },
+            "properties": {
+                "id": 220,
+                "title": "US 90 at Main St (Biloxi)",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=220"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.895,
+                    30.4467
+                ]
+            },
+            "properties": {
+                "id": 221,
+                "title": "I-110 at Popps Ferry",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=221"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.89166,
+                    30.45385
+                ]
+            },
+            "properties": {
+                "id": 222,
+                "title": "I-10 at Lamey Bridge",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=222"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.90458,
+                    30.45169
+                ]
+            },
+            "properties": {
+                "id": 230,
+                "title": "I-10 at Old Hwy 67",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=230"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.78001,
+                    30.45874
+                ]
+            },
+            "properties": {
+                "id": 233,
+                "title": "I-10 at Old Fort Bayou Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=233"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.74466,
+                    30.44679
+                ]
+            },
+            "properties": {
+                "id": 234,
+                "title": "I-10 between Old Fort Bayou and MS 57",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=234"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.68459,
+                    30.43214
+                ]
+            },
+            "properties": {
+                "id": 235,
+                "title": "I-10 between MS 57 and Gautier Vancleave Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=235"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.5863,
+                    30.43804
+                ]
+            },
+            "properties": {
+                "id": 237,
+                "title": "I-10 at Pascagoula River Bridge",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=237"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.54405,
+                    30.43922
+                ]
+            },
+            "properties": {
+                "id": 238,
+                "title": "I-10 at MS 613",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=238"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.52873,
+                    30.44179
+                ]
+            },
+            "properties": {
+                "id": 239,
+                "title": "I-10 at MS 63",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=239"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.50985,
+                    30.45009
+                ]
+            },
+            "properties": {
+                "id": 240,
+                "title": "I-10 East of MS 63",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=240"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.43422,
+                    30.46128
+                ]
+            },
+            "properties": {
+                "id": 242,
+                "title": "I-10 at MS Welcome Center",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=242"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.71953,
+                    30.40243
+                ]
+            },
+            "properties": {
+                "id": 245,
+                "title": "US 90 at MS 57",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=245"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.83041,
+                    30.43555
+                ]
+            },
+            "properties": {
+                "id": 246,
+                "title": "MS 609 at Ponce De Leon",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=246"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.04816,
+                    32.34556
+                ]
+            },
+            "properties": {
+                "id": 247,
+                "title": "Lakeland Dr at Luckney Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=247"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.0356,
+                    32.34996
+                ]
+            },
+            "properties": {
+                "id": 248,
+                "title": "Lakeland Dr at Cooper Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=248"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.02446,
+                    32.3539
+                ]
+            },
+            "properties": {
+                "id": 249,
+                "title": "Lakeland Dr at Hugh Ward Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=249"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.07938,
+                    32.33917
+                ]
+            },
+            "properties": {
+                "id": 250,
+                "title": "Lakeland Dr at Flowood Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=250"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.64066,
+                    34.98822
+                ]
+            },
+            "properties": {
+                "id": 251,
+                "title": "I-269 to TN State Line",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=251"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.64065,
+                    34.96237
+                ]
+            },
+            "properties": {
+                "id": 252,
+                "title": "I-269 at MS 302",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=252"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.72514,
+                    34.87937
+                ]
+            },
+            "properties": {
+                "id": 253,
+                "title": "I-269 at I-22",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=253"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.7394,
+                    34.8921
+                ]
+            },
+            "properties": {
+                "id": 254,
+                "title": "US 78 East of Red Banks Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=254"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.70424,
+                    34.86007
+                ]
+            },
+            "properties": {
+                "id": 255,
+                "title": "I-22 at Stonewall Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=255"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.64086,
+                    34.94818
+                ]
+            },
+            "properties": {
+                "id": 256,
+                "title": "I-269 at Dogwood Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=256"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.64538,
+                    34.93032
+                ]
+            },
+            "properties": {
+                "id": 257,
+                "title": "I-269 at Coldwater Bridge",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=257"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.65515,
+                    34.91899
+                ]
+            },
+            "properties": {
+                "id": 258,
+                "title": "I-269 at Davis Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=258"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.6619,
+                    34.91019
+                ]
+            },
+            "properties": {
+                "id": 259,
+                "title": "I-269 at Deer Creek Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=259"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.67268,
+                    34.90025
+                ]
+            },
+            "properties": {
+                "id": 260,
+                "title": "I-269 North of MS 309",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=260"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.68904,
+                    34.8948
+                ]
+            },
+            "properties": {
+                "id": 261,
+                "title": "I-269 at MS 309",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=261"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.70632,
+                    34.88976
+                ]
+            },
+            "properties": {
+                "id": 262,
+                "title": "I-269 at Shinault Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=262"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.73778,
+                    34.87217
+                ]
+            },
+            "properties": {
+                "id": 263,
+                "title": "I-269 South of I-22",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=263"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.77924,
+                    34.86769
+                ]
+            },
+            "properties": {
+                "id": 264,
+                "title": "I-269 North to Redbanks Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=264"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.79291,
+                    34.86897
+                ]
+            },
+            "properties": {
+                "id": 265,
+                "title": "I-269 North of MS 305",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=265"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.83039,
+                    34.87036
+                ]
+            },
+            "properties": {
+                "id": 266,
+                "title": "I-269 at MS 305",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=266"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.85386,
+                    33.44083
+                ]
+            },
+            "properties": {
+                "id": 267,
+                "title": "MS 12 at MS 25",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=267"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.84519,
+                    33.44553
+                ]
+            },
+            "properties": {
+                "id": 268,
+                "title": "MS 12 at Stark Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=268"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.83334,
+                    33.4531
+                ]
+            },
+            "properties": {
+                "id": 269,
+                "title": "MS 12 at Avenue of Patriots St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=269"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.82204,
+                    33.45396
+                ]
+            },
+            "properties": {
+                "id": 270,
+                "title": "MS 12 at Louisville St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=270"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.4792,
+                    31.25998
+                ]
+            },
+            "properties": {
+                "id": 271,
+                "title": "I-55 at MS 570",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=271"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.04398,
+                    30.37852
+                ]
+            },
+            "properties": {
+                "id": 273,
+                "title": "US 90 at Courthouse Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=273"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.7595,
+                    34.86802
+                ]
+            },
+            "properties": {
+                "id": 274,
+                "title": "I-269 at Red Banks Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=274"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.93846,
+                    30.39361
+                ]
+            },
+            "properties": {
+                "id": 282,
+                "title": "US 90 at Rodenburg Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=282"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.96934,
+                    34.8056
+                ]
+            },
+            "properties": {
+                "id": 286,
+                "title": "I-55 at Welcome Center",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=286"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.98286,
+                    34.84036
+                ]
+            },
+            "properties": {
+                "id": 287,
+                "title": "I-55 between MS 304 and I-69",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=287"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.99115,
+                    34.86141
+                ]
+            },
+            "properties": {
+                "id": 288,
+                "title": "I-55 at I-269",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=288"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.99117,
+                    34.88329
+                ]
+            },
+            "properties": {
+                "id": 289,
+                "title": "I-55 at Nesbit Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=289"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.99119,
+                    34.89335
+                ]
+            },
+            "properties": {
+                "id": 290,
+                "title": "I-55 at Weigh Station",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=290"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.99126,
+                    34.91422
+                ]
+            },
+            "properties": {
+                "id": 291,
+                "title": "I-55 between Nesbit Rd and Church Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=291"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.01335,
+                    34.93356
+                ]
+            },
+            "properties": {
+                "id": 293,
+                "title": "US 51 at Church Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=293"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.01652,
+                    34.94827
+                ]
+            },
+            "properties": {
+                "id": 294,
+                "title": "US 51 at Nail Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=294"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.0159,
+                    34.97733
+                ]
+            },
+            "properties": {
+                "id": 295,
+                "title": "US 51 at Rasco Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=295"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.82778,
+                    34.96207
+                ]
+            },
+            "properties": {
+                "id": 296,
+                "title": "Goodman Rd at Pigeon Roost Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=296"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.8304,
+                    34.96185
+                ]
+            },
+            "properties": {
+                "id": 297,
+                "title": "MS 305 at Goodman Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=297"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.83042,
+                    34.9641
+                ]
+            },
+            "properties": {
+                "id": 298,
+                "title": "MS 305 at Pigeon Roost Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=298"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.83055,
+                    34.97685
+                ]
+            },
+            "properties": {
+                "id": 299,
+                "title": "MS 305 at Longwood Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=299"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.99412,
+                    34.82354
+                ]
+            },
+            "properties": {
+                "id": 300,
+                "title": "US 51 at MS 304",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=300"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.9838,
+                    34.82374
+                ]
+            },
+            "properties": {
+                "id": 301,
+                "title": "MS 304 at Mt Pleasant Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=301"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.97209,
+                    34.82383
+                ]
+            },
+            "properties": {
+                "id": 302,
+                "title": "MS 304 at McIngvale Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=302"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.9999,
+                    34.862
+                ]
+            },
+            "properties": {
+                "id": 303,
+                "title": "I-69 at I-55",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=303"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.84095,
+                    34.95216
+                ]
+            },
+            "properties": {
+                "id": 304,
+                "title": "US 78 at Weigh Station",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=304"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.83054,
+                    34.94569
+                ]
+            },
+            "properties": {
+                "id": 305,
+                "title": "US 78 at MS 305",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=305"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.96408,
+                    34.76925
+                ]
+            },
+            "properties": {
+                "id": 306,
+                "title": "I-55 at Rest Area",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=306"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.81385,
+                    34.93578
+                ]
+            },
+            "properties": {
+                "id": 307,
+                "title": "US 78 bewteen Bethel Rd and MS 305",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=307"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.795,
+                    34.92691
+                ]
+            },
+            "properties": {
+                "id": 308,
+                "title": "US 78 at Hacks Cross Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=308"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.7758,
+                    34.91777
+                ]
+            },
+            "properties": {
+                "id": 309,
+                "title": "US 78 between Bethel Rd and Red Banks Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=309"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.09609,
+                    34.96248
+                ]
+            },
+            "properties": {
+                "id": 310,
+                "title": "MS 301 at MS 302",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=310"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.06074,
+                    34.96267
+                ]
+            },
+            "properties": {
+                "id": 311,
+                "title": "MS 302 at Horn Lake Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=311"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.04685,
+                    34.96262
+                ]
+            },
+            "properties": {
+                "id": 312,
+                "title": "Tulane Rd at MS 302",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=312"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.03414,
+                    34.96263
+                ]
+            },
+            "properties": {
+                "id": 313,
+                "title": "MS 302 at Hurt Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=313"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.03974,
+                    34.96262
+                ]
+            },
+            "properties": {
+                "id": 314,
+                "title": "MS 302 at Mallard Creek Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=314"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.00396,
+                    34.96264
+                ]
+            },
+            "properties": {
+                "id": 315,
+                "title": "MS 302 at Interstate Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=315"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.97613,
+                    34.82396
+                ]
+            },
+            "properties": {
+                "id": 316,
+                "title": "I-55 at MS 304",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=316"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.90133,
+                    34.96256
+                ]
+            },
+            "properties": {
+                "id": 317,
+                "title": "MS 302 at Pleasant Hill Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=317"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.88365,
+                    34.96223
+                ]
+            },
+            "properties": {
+                "id": 318,
+                "title": "MS 302 at Davisdon Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=318"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.86568,
+                    34.96222
+                ]
+            },
+            "properties": {
+                "id": 319,
+                "title": "MS 302 at Craft Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=319"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.85268,
+                    34.96217
+                ]
+            },
+            "properties": {
+                "id": 320,
+                "title": "US 78 at MS 302",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=320"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.84566,
+                    34.96326
+                ]
+            },
+            "properties": {
+                "id": 321,
+                "title": "MS 302 at Craft-Goodmand Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=321"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.83043,
+                    34.96873
+                ]
+            },
+            "properties": {
+                "id": 322,
+                "title": "MS 302 at MS 305",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=322"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.81287,
+                    34.96915
+                ]
+            },
+            "properties": {
+                "id": 323,
+                "title": "MS 302 at Alexander Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=323"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.79571,
+                    34.96194
+                ]
+            },
+            "properties": {
+                "id": 324,
+                "title": "MS 302 at Hacks Cross Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=324"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.0342,
+                    34.94805
+                ]
+            },
+            "properties": {
+                "id": 325,
+                "title": "Nail Rd at Hurt Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=325"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.82503,
+                    34.96219
+                ]
+            },
+            "properties": {
+                "id": 326,
+                "title": "MS 178 at Goodman Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=326"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14063,
+                    32.47245
+                ]
+            },
+            "properties": {
+                "id": 327,
+                "title": "MS 463 at Highland Colony Pkwy",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=327"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14988,
+                    32.47407
+                ]
+            },
+            "properties": {
+                "id": 328,
+                "title": "MS 463 at Park Place",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=328"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.81028,
+                    33.45458
+                ]
+            },
+            "properties": {
+                "id": 329,
+                "title": "MS 12 at Montgomery St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=329"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.80582,
+                    33.45447
+                ]
+            },
+            "properties": {
+                "id": 330,
+                "title": "MS 12 at Blackjack Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=330"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.79937,
+                    33.4577
+                ]
+            },
+            "properties": {
+                "id": 331,
+                "title": "MS 12 at Russell St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=331"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.96917,
+                    34.86304
+                ]
+            },
+            "properties": {
+                "id": 332,
+                "title": "I-269 at McIngvale Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=332"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.91621,
+                    34.87089
+                ]
+            },
+            "properties": {
+                "id": 333,
+                "title": "I-269 at Malone Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=333"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.84942,
+                    34.8699
+                ]
+            },
+            "properties": {
+                "id": 334,
+                "title": "I-269 at Ross Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=334"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.95464,
+                    34.86951
+                ]
+            },
+            "properties": {
+                "id": 335,
+                "title": "I-269 btwn McIngvale Rd and Getwell Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=335"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.90163,
+                    34.87397
+                ]
+            },
+            "properties": {
+                "id": 336,
+                "title": "I-269 at Laughter Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=336"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.93689,
+                    34.87063
+                ]
+            },
+            "properties": {
+                "id": 337,
+                "title": "I-269 at Getwell Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=337"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.8658,
+                    34.86491
+                ]
+            },
+            "properties": {
+                "id": 338,
+                "title": "I-269 at Craft Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=338"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.89095,
+                    34.38668
+                ]
+            },
+            "properties": {
+                "id": 339,
+                "title": "I-22 at Magnolia Way",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=339"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.84103,
+                    34.35446
+                ]
+            },
+            "properties": {
+                "id": 340,
+                "title": "I-22 at 3rd Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=340"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.789,
+                    34.31428
+                ]
+            },
+            "properties": {
+                "id": 341,
+                "title": "I-22 at McCullough Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=341"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.76866,
+                    34.30701
+                ]
+            },
+            "properties": {
+                "id": 342,
+                "title": "I-22 at Coley Rd/Barnes Crossing",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=342"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.70296,
+                    34.29497
+                ]
+            },
+            "properties": {
+                "id": 343,
+                "title": "I-22 at US 45",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=343"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.67864,
+                    34.28578
+                ]
+            },
+            "properties": {
+                "id": 344,
+                "title": "I-22 at Veterans Memorial Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=344"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.70774,
+                    34.20966
+                ]
+            },
+            "properties": {
+                "id": 345,
+                "title": "US 45 at US 278",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=345"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.70056,
+                    34.23557
+                ]
+            },
+            "properties": {
+                "id": 346,
+                "title": "US 45 at Eason Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=346"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.69374,
+                    34.25742
+                ]
+            },
+            "properties": {
+                "id": 347,
+                "title": "US 45 at Main St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=347"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.70623,
+                    34.2751
+                ]
+            },
+            "properties": {
+                "id": 348,
+                "title": "US 45 at McCullough Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=348"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.69795,
+                    34.37665
+                ]
+            },
+            "properties": {
+                "id": 349,
+                "title": "US 45 at MS 145",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=349"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.77302,
+                    34.29849
+                ]
+            },
+            "properties": {
+                "id": 350,
+                "title": "McCullough Blvd at Coley Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=350"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.72005,
+                    34.20999
+                ]
+            },
+            "properties": {
+                "id": 351,
+                "title": "US 278 at MS 145",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=351"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.71957,
+                    34.23052
+                ]
+            },
+            "properties": {
+                "id": 352,
+                "title": "MS 145 at Eason Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=352"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.71791,
+                    34.24126
+                ]
+            },
+            "properties": {
+                "id": 353,
+                "title": "MS 145 at Garfield St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=353"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.71557,
+                    34.25722
+                ]
+            },
+            "properties": {
+                "id": 354,
+                "title": "MS 145 at Main St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=354"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.71566,
+                    34.26453
+                ]
+            },
+            "properties": {
+                "id": 355,
+                "title": "MS 145 at Jackson St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=355"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.28492,
+                    31.26654
+                ]
+            },
+            "properties": {
+                "id": 356,
+                "title": "US 49 at JM Tatum",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=356"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.07812,
+                    34.8613
+                ]
+            },
+            "properties": {
+                "id": 357,
+                "title": "I-69 at Fogg Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=357"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14105,
+                    32.41121
+                ]
+            },
+            "properties": {
+                "id": 358,
+                "title": "US 51 at Ridgewood Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=358"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.12288,
+                    32.43954
+                ]
+            },
+            "properties": {
+                "id": 359,
+                "title": "US 51 at McClellan Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=359"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.65906,
+                    33.58518
+                ]
+            },
+            "properties": {
+                "id": 360,
+                "title": "US 45 Alt at Airport Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=360"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.65897,
+                    33.62728
+                ]
+            },
+            "properties": {
+                "id": 361,
+                "title": "US 45 Alt at Industrial Access Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=361"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.10659,
+                    32.41404
+                ]
+            },
+            "properties": {
+                "id": 362,
+                "title": "Lake Harbour Dr at Old Canton",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=362"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.76543,
+                    33.47075
+                ]
+            },
+            "properties": {
+                "id": 363,
+                "title": "MS 182 at Old Mayhew",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=363"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.33739,
+                    30.31976
+                ]
+            },
+            "properties": {
+                "id": 364,
+                "title": "US 90 at Dunbar",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=364"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.34645,
+                    30.31695
+                ]
+            },
+            "properties": {
+                "id": 365,
+                "title": "US 90 at Main St (Bay St. Louis)",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=365"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.37048,
+                    30.30874
+                ]
+            },
+            "properties": {
+                "id": 366,
+                "title": "US 90 East of MS 603",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=366"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.38657,
+                    30.31189
+                ]
+            },
+            "properties": {
+                "id": 367,
+                "title": "MS 603 North of US 90",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=367"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.38672,
+                    30.3032
+                ]
+            },
+            "properties": {
+                "id": 368,
+                "title": "US 90 at Walmart (Waveland)",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=368"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.39748,
+                    30.29956
+                ]
+            },
+            "properties": {
+                "id": 369,
+                "title": "US 90 at Waveland Cutoff Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=369"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.03536,
+                    32.2705
+                ]
+            },
+            "properties": {
+                "id": 370,
+                "title": "MS 18 at Greenfield Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=370"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.03533,
+                    32.28372
+                ]
+            },
+            "properties": {
+                "id": 371,
+                "title": "US 80 at MS 18",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=371"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.03552,
+                    32.27696
+                ]
+            },
+            "properties": {
+                "id": 372,
+                "title": "I-20 at MS 18",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=372"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.58043,
+                    34.36072
+                ]
+            },
+            "properties": {
+                "id": 373,
+                "title": "MS 6 at Thacker Heights Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=373"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.69957,
+                    34.31554
+                ]
+            },
+            "properties": {
+                "id": 374,
+                "title": "US 45 at Barnes Crossing Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=374"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.70671,
+                    34.31553
+                ]
+            },
+            "properties": {
+                "id": 375,
+                "title": "MS 145 at Barnes Crossing Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=375"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.70714,
+                    34.3082
+                ]
+            },
+            "properties": {
+                "id": 376,
+                "title": "MS 145 at Symphony Ln",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=376"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.71519,
+                    34.28467
+                ]
+            },
+            "properties": {
+                "id": 377,
+                "title": "MS 145 at N Green St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=377"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.71558,
+                    34.27322
+                ]
+            },
+            "properties": {
+                "id": 378,
+                "title": "MS 145 at McCullough Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=378"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.28674,
+                    32.13253
+                ]
+            },
+            "properties": {
+                "id": 379,
+                "title": "I-55 at Wynndale Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=379"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.30259,
+                    32.10144
+                ]
+            },
+            "properties": {
+                "id": 380,
+                "title": "I-55 at Cunningham St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=380"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.40991,
+                    31.41956
+                ]
+            },
+            "properties": {
+                "id": 381,
+                "title": "US 49 at MS 42",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=381"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.42891,
+                    33.51462
+                ]
+            },
+            "properties": {
+                "id": 382,
+                "title": "US 82 at 18th Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=382"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.17531,
+                    32.35014
+                ]
+            },
+            "properties": {
+                "id": 383,
+                "title": "State St at Meadowbrook Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=383"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.17461,
+                    32.33371
+                ]
+            },
+            "properties": {
+                "id": 384,
+                "title": "Lakeland Dr at Old Canton Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=384"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.03989,
+                    33.37258
+                ]
+            },
+            "properties": {
+                "id": 385,
+                "title": "MS 1 at Bowman Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=385"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.03879,
+                    33.3853
+                ]
+            },
+            "properties": {
+                "id": 386,
+                "title": "MS 1 at Reed Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=386"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.03781,
+                    33.39964
+                ]
+            },
+            "properties": {
+                "id": 387,
+                "title": "MS 182 at MS 1",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=387"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.0405,
+                    33.4382
+                ]
+            },
+            "properties": {
+                "id": 388,
+                "title": "MS 1 at Broadway St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=388"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.07465,
+                    33.37256
+                ]
+            },
+            "properties": {
+                "id": 389,
+                "title": "MS 182 at Harbor Front Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=389"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.06677,
+                    33.38548
+                ]
+            },
+            "properties": {
+                "id": 390,
+                "title": "MS 182 at Broadway St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=390"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.00658,
+                    33.40019
+                ]
+            },
+            "properties": {
+                "id": 391,
+                "title": "MS 182 at Raceway Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=391"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.31878,
+                    31.40584
+                ]
+            },
+            "properties": {
+                "id": 392,
+                "title": "I-59 N of Evelyn Gandy",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=392"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.29967,
+                    31.36191
+                ]
+            },
+            "properties": {
+                "id": 393,
+                "title": "MS 42 at Monroe Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=393"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.28367,
+                    31.35965
+                ]
+            },
+            "properties": {
+                "id": 394,
+                "title": "MS 42 at Leaf River",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=394"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.27019,
+                    31.3592
+                ]
+            },
+            "properties": {
+                "id": 395,
+                "title": "MS 42 at US 11",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=395"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.25949,
+                    31.35746
+                ]
+            },
+            "properties": {
+                "id": 396,
+                "title": "MS 42 at Leeville Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=396"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.32366,
+                    31.38174
+                ]
+            },
+            "properties": {
+                "id": 397,
+                "title": "I-59 at Evelyn Gandy",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=397"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.39431,
+                    32.3522
+                ]
+            },
+            "properties": {
+                "id": 398,
+                "title": "I-20 at Norrel Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=398"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.17574,
+                    32.32654
+                ]
+            },
+            "properties": {
+                "id": 399,
+                "title": "US 51 at Woodrow Wilson Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=399"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14883,
+                    32.40029
+                ]
+            },
+            "properties": {
+                "id": 400,
+                "title": "US 51 at County Line Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=400"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.45656,
+                    31.31424
+                ]
+            },
+            "properties": {
+                "id": 401,
+                "title": "US 98 at Canebrake Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=401"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.1847,
+                    32.27718
+                ]
+            },
+            "properties": {
+                "id": 402,
+                "title": "I-20 at State St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=402"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.55519,
+                    30.37099
+                ]
+            },
+            "properties": {
+                "id": 403,
+                "title": "US 90 at Pascagoula River Bridge",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=403"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.54857,
+                    30.3717
+                ]
+            },
+            "properties": {
+                "id": 404,
+                "title": "Market St at US 90",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=404"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.53901,
+                    30.37126
+                ]
+            },
+            "properties": {
+                "id": 405,
+                "title": "US 90 of 14th St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=405"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.5346,
+                    30.3732
+                ]
+            },
+            "properties": {
+                "id": 406,
+                "title": "US 90 at Hospital Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=406"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.52567,
+                    30.37887
+                ]
+            },
+            "properties": {
+                "id": 407,
+                "title": "US 90 at Chicot Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=407"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.51759,
+                    30.38398
+                ]
+            },
+            "properties": {
+                "id": 408,
+                "title": "US 90 of Walmart Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=408"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.50771,
+                    30.39025
+                ]
+            },
+            "properties": {
+                "id": 409,
+                "title": "US 90 West of MS 63",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=409"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.50482,
+                    30.3921
+                ]
+            },
+            "properties": {
+                "id": 410,
+                "title": "US 90 East of MS 63",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=410"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.49205,
+                    30.40018
+                ]
+            },
+            "properties": {
+                "id": 411,
+                "title": "US 90 at Chevron Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=411"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.50935,
+                    30.39914
+                ]
+            },
+            "properties": {
+                "id": 412,
+                "title": "MS 63 at Frederick St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=412"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.51037,
+                    30.40718
+                ]
+            },
+            "properties": {
+                "id": 413,
+                "title": "MS 63 at Grierson St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=413"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.50328,
+                    30.38678
+                ]
+            },
+            "properties": {
+                "id": 414,
+                "title": "MS 611 to US 90",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=414"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.54855,
+                    30.3651
+                ]
+            },
+            "properties": {
+                "id": 415,
+                "title": "Market St at Jackson Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=415"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.54848,
+                    30.35482
+                ]
+            },
+            "properties": {
+                "id": 416,
+                "title": "Market St at Ingalls Ave",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=416"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.16316,
+                    32.24752
+                ]
+            },
+            "properties": {
+                "id": 418,
+                "title": "US 49 N of Old US 49",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=418"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.16515,
+                    32.23978
+                ]
+            },
+            "properties": {
+                "id": 419,
+                "title": "US 49 at Old US 49",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=419"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.16173,
+                    32.2319
+                ]
+            },
+            "properties": {
+                "id": 420,
+                "title": "US 49 at McBride St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=420"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.15986,
+                    32.22839
+                ]
+            },
+            "properties": {
+                "id": 421,
+                "title": "US 49 at Lowe Cir",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=421"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.15594,
+                    32.22115
+                ]
+            },
+            "properties": {
+                "id": 422,
+                "title": "US 49 at Harper St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=422"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.15218,
+                    32.21414
+                ]
+            },
+            "properties": {
+                "id": 423,
+                "title": "US 49 at Scarbrough St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=423"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.14872,
+                    32.20777
+                ]
+            },
+            "properties": {
+                "id": 424,
+                "title": "US 49 at Cleary Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=424"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.13942,
+                    32.19056
+                ]
+            },
+            "properties": {
+                "id": 425,
+                "title": "US 49 at Garden of Memories Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=425"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.13576,
+                    32.18103
+                ]
+            },
+            "properties": {
+                "id": 426,
+                "title": "US 49 at Gunter Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=426"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.13305,
+                    32.17392
+                ]
+            },
+            "properties": {
+                "id": 427,
+                "title": "US 49 at Florence Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=427"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.12397,
+                    32.15442
+                ]
+            },
+            "properties": {
+                "id": 428,
+                "title": "US 49 at MS 469",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=428"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.11551,
+                    32.14972
+                ]
+            },
+            "properties": {
+                "id": 429,
+                "title": "US 49 S of MS 469",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=429"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.12712,
+                    32.15841
+                ]
+            },
+            "properties": {
+                "id": 430,
+                "title": "US 49 at Crosspark Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=430"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.32572,
+                    32.32667
+                ]
+            },
+            "properties": {
+                "id": 431,
+                "title": "I-20 at Springridge Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=431"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.32709,
+                    32.33327
+                ]
+            },
+            "properties": {
+                "id": 432,
+                "title": "US 80 at Springridge Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=432"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.16691,
+                    32.48086
+                ]
+            },
+            "properties": {
+                "id": 433,
+                "title": "MS 463 at Cypress Lake Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=433"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.18069,
+                    32.49435
+                ]
+            },
+            "properties": {
+                "id": 435,
+                "title": "MS 463 at Reunion Pkwy",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=435"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.40231,
+                    34.2409
+                ]
+            },
+            "properties": {
+                "id": 437,
+                "title": "I-22 at MS 25 S",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=437"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.40312,
+                    34.24403
+                ]
+            },
+            "properties": {
+                "id": 438,
+                "title": "I-22 at MS 25 N",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=438"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.93559,
+                    32.3214
+                ]
+            },
+            "properties": {
+                "id": 439,
+                "title": "I-20 at LA Weigh Station",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=439"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -88.7153,
+                    30.4292
+                ]
+            },
+            "properties": {
+                "id": 440,
+                "title": "MS 57 at Linda Lee",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=440"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.87367,
+                    33.40385
+                ]
+            },
+            "properties": {
+                "id": 441,
+                "title": "US 61 at US 82",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=441"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.90672,
+                    33.39469
+                ]
+            },
+            "properties": {
+                "id": 442,
+                "title": "US 82 at Old Hwy 61",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=442"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.04297,
+                    33.3348
+                ]
+            },
+            "properties": {
+                "id": 443,
+                "title": "US 82 at MS 1",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=443"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.12526,
+                    33.30784
+                ]
+            },
+            "properties": {
+                "id": 444,
+                "title": "US 82 at MS 454",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=444"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -91.13103,
+                    33.30372
+                ]
+            },
+            "properties": {
+                "id": 445,
+                "title": "US 82 at MS 182",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=445"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.59811,
+                    34.49902
+                ]
+            },
+            "properties": {
+                "id": 446,
+                "title": "US 49 at MS River Bridge AR",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=446"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.5789,
+                    34.49451
+                ]
+            },
+            "properties": {
+                "id": 447,
+                "title": "US 49 at MS River Bridge MS",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=447"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.90428,
+                    33.39825
+                ]
+            },
+            "properties": {
+                "id": 448,
+                "title": "MS 182 at Old Hwy 61",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=448"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.66931,
+                    30.54573
+                ]
+            },
+            "properties": {
+                "id": 449,
+                "title": "US 11 at MS 43N",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=449"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.66667,
+                    30.55274
+                ]
+            },
+            "properties": {
+                "id": 450,
+                "title": "US 11 at Highland Pkwy",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=450"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.66449,
+                    30.56186
+                ]
+            },
+            "properties": {
+                "id": 451,
+                "title": "US 11 at Lakeshore Dr",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=451"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.65441,
+                    30.54307
+                ]
+            },
+            "properties": {
+                "id": 452,
+                "title": "MS 43 at Highland Pkwy",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=452"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.67965,
+                    30.52675
+                ]
+            },
+            "properties": {
+                "id": 453,
+                "title": "US 11 at 2nd St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=453"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.6818,
+                    30.51826
+                ]
+            },
+            "properties": {
+                "id": 454,
+                "title": "US 11 at Bruce St",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=454"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.68215,
+                    30.51707
+                ]
+            },
+            "properties": {
+                "id": 455,
+                "title": "US 11 at MS 43S",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=455"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.66493,
+                    30.51764
+                ]
+            },
+            "properties": {
+                "id": 456,
+                "title": "MS 43 at I-59 SB Ramp",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=456"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.66213,
+                    30.51763
+                ]
+            },
+            "properties": {
+                "id": 457,
+                "title": "MS 43 at I-55 NB Ramp",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=457"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.65778,
+                    30.51762
+                ]
+            },
+            "properties": {
+                "id": 458,
+                "title": "MS 43 at Merrill Rd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=458"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.6635,
+                    30.51763
+                ]
+            },
+            "properties": {
+                "id": 459,
+                "title": "I-59 at MS 43S",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=459"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -89.66214,
+                    30.51764
+                ]
+            },
+            "properties": {
+                "id": 460,
+                "title": "MS 43 at I-59 NB Ramp",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=460"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.13852,
+                    32.27962
+                ]
+            },
+            "properties": {
+                "id": 461,
+                "title": "US 80 at MS 468",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=461"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -90.12022,
+                    32.32108
+                ]
+            },
+            "properties": {
+                "id": 462,
+                "title": "MS 468 at Treetops Blvd",
+                "web_page_url": "https://www.mdottraffic.com/mapbubbles/camerasite.aspx?site=462"
+            }
+        }
+    ]
+}

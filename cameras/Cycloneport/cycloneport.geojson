@@ -1,0 +1,3135 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.096370412587,
+          35.593130217634
+        ]
+      },
+      "properties": {
+        "name": "Columbia, TN - Maury 911",
+        "uuid": "d45771e1-691b-497e-a180-c74470be4f19",
+        "m3u8": "https://video6.cdn.radaromega.com/live/ee84e79abe74/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.465918346011,
+          36.780241501043
+        ]
+      },
+      "properties": {
+        "name": "Boycom",
+        "uuid": "464da432-4528-442b-931e-7ab18a4dcecc",
+        "m3u8": "https://video4.cdn.radaromega.com/live/e5a82d97e070/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.86158825754,
+          36.813439186123
+        ]
+      },
+      "properties": {
+        "name": "Stoddard Co EMA - Essex, MO",
+        "uuid": "b29a3cf2-1c5f-47af-9859-00d6ad7d8478",
+        "m3u8": "https://video2.cdn.radaromega.com/live/9b8854ebcb7b/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:40",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.407357583604,
+          36.793142451892
+        ]
+      },
+      "properties": {
+        "name": "White Oak",
+        "uuid": "e4ace7e8-cd9e-41ee-9d78-447264e03a07",
+        "m3u8": "https://video3.cdn.radaromega.com/live/22216ae40e52/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.965164892193,
+          36.799316190719
+        ]
+      },
+      "properties": {
+        "name": "Stoddard Co EMA - Dexter, MO",
+        "uuid": "f3251366-4c99-4132-aed4-9e7d4bf04499",
+        "m3u8": "https://video4.cdn.radaromega.com/live/e20f5c7e4831/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.774815597847,
+          35.551183680467
+        ]
+      },
+      "properties": {
+        "name": "Jackson, TN - Madison County 911",
+        "uuid": "318a8ad1-d326-4f71-8842-aa9b23bda781",
+        "m3u8": "https://video4.cdn.radaromega.com/live/0b5e4eb56cd7/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.455206239363,
+          36.730198188668
+        ]
+      },
+      "properties": {
+        "name": "Heartland Express",
+        "uuid": "34eb426a-50b5-444c-876d-9cf2b4ee178f",
+        "m3u8": "https://video1.cdn.radaromega.com/live/9ef34db55a63/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.949124896059,
+          36.253047433405
+        ]
+      },
+      "properties": {
+        "name": "Carthage, TN",
+        "uuid": "ac114c4f-3dcb-4794-997b-4c209bd15e58",
+        "m3u8": "https://video5.cdn.radaromega.com/live/5cf68644fdc7/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.058260653629,
+          36.646428997564
+        ]
+      },
+      "properties": {
+        "name": "Stoddard Co EMA - Cyrus, Mo",
+        "uuid": "0044bf5a-ea9d-4c56-8cf6-9e68c91eb925",
+        "m3u8": "https://video6.cdn.radaromega.com/live/5577dd61ca81/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.523125569051,
+          36.148159680563
+        ]
+      },
+      "properties": {
+        "name": "Putnam EMA (Cookeville, TN)",
+        "uuid": "db19bb2b-d29e-4bef-892a-61886e3c6910",
+        "m3u8": "https://video6.cdn.radaromega.com/live/1921c1de9f28/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:41",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.970515943352,
+          35.639659401612
+        ]
+      },
+      "properties": {
+        "name": "Columbia, TN - Fire Station 3",
+        "uuid": "a7aa3698-eff2-4add-995c-8e67a8f949a0",
+        "m3u8": "https://video4.cdn.radaromega.com/live/e6184040eb23/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.81212,
+          35.96102
+        ]
+      },
+      "properties": {
+        "name": "Smithville, TN",
+        "uuid": "bc8f6978-2d7a-4bb8-abc3-d48f16ea94e9",
+        "m3u8": "https://video1.cdn.radaromega.com/live/b1627be2d6c2/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:50",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.943081457672,
+          36.432323200607
+        ]
+      },
+      "properties": {
+        "name": "Jamestown, TN",
+        "uuid": "8a3a1229-e14b-404c-ae7f-86cc0ab25f30",
+        "m3u8": "https://video6.cdn.radaromega.com/live/62a6c8dc8f01/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.610722053103,
+          34.005451836643
+        ]
+      },
+      "properties": {
+        "name": "Systems Atlanta",
+        "uuid": "590648c6-c657-480d-a2a1-736e3485fbd6",
+        "m3u8": "https://video3.cdn.radaromega.com/live/9ef01ebc06c2/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/27_HlvCuNul.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.008867,
+          36.189676
+        ]
+      },
+      "properties": {
+        "name": "Kenton, TN",
+        "uuid": "1fbf85a1-6c81-4482-be79-afdf9b7c5c88",
+        "m3u8": "https://video4.cdn.radaromega.com/live/5681cefc6b0d/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.622123,
+          36.162587
+        ]
+      },
+      "properties": {
+        "name": "Baxter Fire and Rescue",
+        "uuid": "41173520-7b2f-4136-9313-70f668878da5",
+        "m3u8": "https://video6.cdn.radaromega.com/live/6e2cbb466cca/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.861747598619,
+          36.345027791578
+        ]
+      },
+      "properties": {
+        "name": "UT Martin",
+        "uuid": "204bf5b8-e0fe-4c5b-9490-aa02e6010343",
+        "m3u8": "https://video4.cdn.radaromega.com/live/c4b80531716f/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.299311771734,
+          35.046743890552
+        ]
+      },
+      "properties": {
+        "name": "UT Chattanooga",
+        "uuid": "7e7c85d7-034d-417d-8187-aab365cd72de",
+        "m3u8": "https://video2.cdn.radaromega.com/live/11361d455bae/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.030567130012,
+          35.14062655985
+        ]
+      },
+      "properties": {
+        "name": "UT Health Science Center",
+        "uuid": "8b4aa517-a49f-43f8-8d55-01eadeb064ef",
+        "m3u8": "https://video5.cdn.radaromega.com/live/73bd78247939/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.213296292936,
+          36.585561147036
+        ]
+      },
+      "properties": {
+        "name": "Qulin, MO",
+        "uuid": "dd97f058-304f-4540-9a44-018a180e1543",
+        "m3u8": "https://video3.cdn.radaromega.com/live/94ff9fc31494/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:45:55",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.925763204363,
+          35.954464901586
+        ]
+      },
+      "properties": {
+        "name": "UT Knoxville ",
+        "uuid": "4dee7ce4-e7ed-403d-b2bb-86e6f99e3ad6",
+        "m3u8": "https://video2.cdn.radaromega.com/live/3fdb1f58c932/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.135039998914,
+          35.172370880199
+        ]
+      },
+      "properties": {
+        "name": "Franklin County EMA",
+        "uuid": "84eec7d4-f73c-4ca1-bf13-1235fe753c4d",
+        "m3u8": "https://video1.cdn.radaromega.com/live/89e36e6cb710/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.943669,
+          30.136111
+        ]
+      },
+      "properties": {
+        "name": "Cajun Broadband - Broussard LA",
+        "uuid": "3edb8741-2efa-4a2f-bac2-cf4c4a67a110",
+        "m3u8": "https://video4.cdn.radaromega.com/live/0de4dacd49e8/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.964965118272,
+          35.556714005812
+        ]
+      },
+      "properties": {
+        "name": "Denmark, TN - Madison County 911",
+        "uuid": "e13ef28a-366e-4255-bd6c-819c0e8b5563",
+        "m3u8": "https://video6.cdn.radaromega.com/live/24ca9daeb426/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:41",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.461374173959,
+          35.483390371862
+        ]
+      },
+      "properties": {
+        "name": " Bedford EMA @ Courthouse Annex",
+        "uuid": "67be0ed3-fbed-431a-ab92-7e4f4aefc899",
+        "m3u8": "https://video6.cdn.radaromega.com/live/e68cbe5af341/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.813280506202,
+          39.632841096588
+        ]
+      },
+      "properties": {
+        "name": "Dragon Nation",
+        "uuid": "2e8c56e8-9fe8-4dfe-9f48-d8bedbacdef8",
+        "m3u8": "https://video1.cdn.radaromega.com/live/9835e6965eac/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.790172678963,
+          35.454011493114
+        ]
+      },
+      "properties": {
+        "name": "Lewisburg, TN",
+        "uuid": "86325794-e89f-411d-a234-7eed92bb688f",
+        "m3u8": "https://video5.cdn.radaromega.com/live/4b942d6d83f5/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.7092,
+          35.6259
+        ]
+      },
+      "properties": {
+        "name": "Chapel Hill, TN",
+        "uuid": "e2707c3d-84c0-45c9-b0ee-150fbaf61c80",
+        "m3u8": "https://video5.cdn.radaromega.com/live/7f72fe0a9834/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.143405402951,
+          34.214490270752
+        ]
+      },
+      "properties": {
+        "name": "Forsyth County School District",
+        "uuid": "a59b8a10-ccd7-4a9c-b7dc-93f727fd1a56",
+        "m3u8": "https://video1.cdn.radaromega.com/live/8b084bfca24e/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/1662_5WJJXkNR.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.860072423105,
+          35.332262421548
+        ]
+      },
+      "properties": {
+        "name": "South Marshall FD",
+        "uuid": "fed31fad-65af-4c15-8137-d1f3539a78d7",
+        "m3u8": "https://video2.cdn.radaromega.com/live/42ba9ad4346f/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.10060792713,
+          35.318412099076
+        ]
+      },
+      "properties": {
+        "name": "UT Space Institute",
+        "uuid": "5c2a0025-0699-43d5-be97-19a4782d8811",
+        "m3u8": "https://video3.cdn.radaromega.com/live/54500ba0489e/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.112309820068,
+          35.785212763826
+        ]
+      },
+      "properties": {
+        "name": "Crockett EMA",
+        "uuid": "f7d64e13-e1d4-40fb-82fe-31af2d230333",
+        "m3u8": "https://video6.cdn.radaromega.com/live/989d024f1d90/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.094817,
+          32.246705
+        ]
+      },
+      "properties": {
+        "name": "Mississippi EMA",
+        "uuid": "4b106224-fb1d-48c4-a8b4-827cf9b2f864",
+        "m3u8": "https://video1.cdn.radaromega.com/live/ca1b3afcf69e/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.580958310675,
+          42.279683063406
+        ]
+      },
+      "properties": {
+        "name": "KDPS HQ",
+        "uuid": "0e8f273d-9ccb-49ee-b12f-a2baa87ed5c2",
+        "m3u8": "https://video1.cdn.radaromega.com/live/211d1edd2bee/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.970782400576,
+          35.86976517678
+        ]
+      },
+      "properties": {
+        "name": "Short Mountain - Dekalb 911",
+        "uuid": "0a127f6d-40c4-4afb-8dee-e6c0eaef7d32",
+        "m3u8": "https://video2.cdn.radaromega.com/live/9497bb965d6a/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.73331274100588,
+          31.069924130874302
+        ]
+      },
+      "properties": {
+        "name": "Killeen, TX",
+        "uuid": "a69ce637-5ae6-44ba-9dcf-b20a1b9ef8de",
+        "m3u8": "https://video2.cdn.radaromega.com/live/00e0e4d91373/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.9476749,
+          35.9514674
+        ]
+      },
+      "properties": {
+        "name": "Gibson County EOC",
+        "uuid": "1a382fa4-006e-4c7d-9204-737cac61503e",
+        "m3u8": "https://video1.cdn.radaromega.com/live/84bc1ee27fcf/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.101751151386,
+          34.414901661268
+        ]
+      },
+      "properties": {
+        "name": "Dawson High School",
+        "uuid": "78ae6226-dd96-40c9-abfe-4089ec6acbca",
+        "m3u8": "https://video2.cdn.radaromega.com/live/6324469156ae/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.0521484698,
+          29.462471664315
+        ]
+      },
+      "properties": {
+        "name": "Dickinson, TX OEM",
+        "uuid": "d627c2a7-7e9c-47e9-8731-fb9d9ac0e116",
+        "m3u8": "https://video2.cdn.radaromega.com/live/a81793f3f2e6/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:50",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.117620319418,
+          35.58317958756
+        ]
+      },
+      "properties": {
+        "name": "Decatur County EMA - Decaturville, TN",
+        "uuid": "4498a4fa-e9f1-4760-9dbc-e8067ebfd00b",
+        "m3u8": "https://video1.cdn.radaromega.com/live/2bee83b73c07/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.416944,
+          34.827222
+        ]
+      },
+      "properties": {
+        "name": "Rabun County High School",
+        "uuid": "168498f5-7835-4e52-a1db-ddeeb18843e9",
+        "m3u8": "https://video4.cdn.radaromega.com/live/3551a09412e2/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.249507264104,
+          36.016537585044
+        ]
+      },
+      "properties": {
+        "name": "UT - Oak Ridge IPS",
+        "uuid": "eb8e1949-8bbb-419f-b123-943e66a3e7b5",
+        "m3u8": "https://video5.cdn.radaromega.com/live/b38851ea0dcd/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:50",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.836312,
+          31.250268
+        ]
+      },
+      "properties": {
+        "name": "Columbia, MS - Marion EMA",
+        "uuid": "9522e4d1-5eb5-4827-ab54-a4b285633200",
+        "m3u8": "https://video6.cdn.radaromega.com/live/0e3e897fe26d/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.5547034,
+          34.3156007
+        ]
+      },
+      "properties": {
+        "name": "Cherokee Co. Fire Station 12",
+        "uuid": "c750adec-0e4c-4725-ab65-dd4cfd03f4f4",
+        "m3u8": "https://video3.cdn.radaromega.com/live/33b5184984ba/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.7748,
+          38.1839
+        ]
+      },
+      "properties": {
+        "name": "Burlington, KS",
+        "uuid": "94c76683-e296-4d06-bcca-e28198c4ac60",
+        "m3u8": "https://video2.cdn.radaromega.com/live/750aec71f0e6/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:50",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.112481705425,
+          34.418278355732
+        ]
+      },
+      "properties": {
+        "name": "Dawsonville City Hall",
+        "uuid": "6097b4b8-d70a-4a36-876a-6781dbba8dae",
+        "m3u8": "https://video1.cdn.radaromega.com/live/c9a15dcf95f0/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.114486375864,
+          34.334214227221
+        ]
+      },
+      "properties": {
+        "name": "Silver City, GA",
+        "uuid": "f15414be-3407-4721-868b-c21d74789693",
+        "m3u8": "https://video1.cdn.radaromega.com/live/ccb345a59c80/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.436409673902,
+          35.815987929776
+        ]
+      },
+      "properties": {
+        "name": "Centerville",
+        "uuid": "82a3971a-a7d4-4a6d-a7e9-ebaf28e82dea",
+        "m3u8": "https://video5.cdn.radaromega.com/live/c4a88346d4c4/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.03661,
+          35.2003556
+        ]
+      },
+      "properties": {
+        "name": "UT Southern",
+        "uuid": "d2e1c48d-0836-4239-baa1-2471a2f27c23",
+        "m3u8": "https://video3.cdn.radaromega.com/live/cfcf537c4d36/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.32964,
+          31.32724
+        ]
+      },
+      "properties": {
+        "name": "University of Southern Miss.",
+        "uuid": "f7d34f25-e0dd-494e-ab91-168e38af68a2",
+        "m3u8": "https://video2.cdn.radaromega.com/live/db24e96e5bf3/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.2591,
+          42.9195
+        ]
+      },
+      "properties": {
+        "name": "Boltek HQ",
+        "uuid": "eb39a72a-e3df-4cff-80a4-97de4c37dd41",
+        "m3u8": "https://video1.cdn.radaromega.com/live/a46740584b80/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.558889,
+          30.365
+        ]
+      },
+      "properties": {
+        "name": "Jackson County Office of Emergency Services",
+        "uuid": "ce91d288-5062-468a-924b-c36d0f5ba4ec",
+        "m3u8": "https://video3.cdn.radaromega.com/live/e024f9a8ba7a/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.844779213483,
+          35.767023661102
+        ]
+      },
+      "properties": {
+        "name": "Three Way, TN - Madison County 911",
+        "uuid": "f77a4e09-e05a-499a-b291-3c7f66facbd2",
+        "m3u8": "https://video2.cdn.radaromega.com/live/f584ff6f3dcb/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:50",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.976507,
+          35.121706
+        ]
+      },
+      "properties": {
+        "name": "Simmons Bank Liberty Stadium",
+        "uuid": "0c4b40d3-2bd6-40b0-b587-35b18941fb90",
+        "m3u8": "https://video5.cdn.radaromega.com/live/346f057e705c/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:40",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.7507685,
+          35.1514195
+        ]
+      },
+      "properties": {
+        "name": "Charlotte Football Club",
+        "uuid": "a8fdd5e6-77b8-4d75-9da8-a20a21c76771",
+        "m3u8": "https://video4.cdn.radaromega.com/live/43bab87e3713/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/2432_wBGXJuTv.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.123172175612,
+          35.643025148349
+        ]
+      },
+      "properties": {
+        "name": "Decatur County EMA - Parsons",
+        "uuid": "11433e20-8b88-4a69-9617-c8979338179c",
+        "m3u8": "https://video4.cdn.radaromega.com/live/c49db5274fe7/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:40",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.884534998333,
+          35.9900089147
+        ]
+      },
+      "properties": {
+        "name": "Dekalb EMA-Snows Hill",
+        "uuid": "2da36af5-8a0c-4fdb-aba2-2f5d222f8339",
+        "m3u8": "https://video4.cdn.radaromega.com/live/31e90165fee5/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.373397008164,
+          36.265810792573
+        ]
+      },
+      "properties": {
+        "name": "Rickman, TN",
+        "uuid": "66e0e84d-2c72-4730-a60b-57ae443fe923",
+        "m3u8": "https://video6.cdn.radaromega.com/live/912f0c984807/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.0005,
+          35.2671
+        ]
+      },
+      "properties": {
+        "name": "Bolivar, TN WATCH Coalition",
+        "uuid": "1efd0ccb-ac93-47db-8faf-93e269b4ebdc",
+        "m3u8": "https://video5.cdn.radaromega.com/live/2734a3eda4ef/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/2605_49Auql0z.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.918939,
+          35.819546
+        ]
+      },
+      "properties": {
+        "name": "Humboldt Fire",
+        "uuid": "318d1238-bdb3-4be9-bd5e-0d1dec7b8005",
+        "m3u8": "https://video6.cdn.radaromega.com/live/5ea66b1c7182/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.8328,
+          35.6367
+        ]
+      },
+      "properties": {
+        "name": "Jackson, TN WATCH Coalition",
+        "uuid": "70f262ae-145e-469b-9a9d-3df04645198f",
+        "m3u8": "https://video2.cdn.radaromega.com/live/b72d21a0410f/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/2606_5TTB0WPm.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.379858035139,
+          36.047983608872
+        ]
+      },
+      "properties": {
+        "name": "Dyersburg, TN WATCH Coalition",
+        "uuid": "de97825e-a76d-4d23-b5f5-496e2adfc074",
+        "m3u8": "https://video2.cdn.radaromega.com/live/b07cc75e5592/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/2609_UPDM21Kd.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.904565,
+          35.324525
+        ]
+      },
+      "properties": {
+        "name": "Millington, TN Sta. 2",
+        "uuid": "ae55cdec-89c0-4f42-bd6d-7d0da0142f9c",
+        "m3u8": "https://video2.cdn.radaromega.com/live/ed83cf45104a/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.564026,
+          38.231723
+        ]
+      },
+      "properties": {
+        "name": "Jefferson County Parks and Recreation",
+        "uuid": "3c289af4-932c-4ba4-960d-4964e091a1fd",
+        "m3u8": "https://video1.cdn.radaromega.com/live/1a127091919c/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.64471163,
+          35.7714942
+        ]
+      },
+      "properties": {
+        "name": "Lauderdale County E911& EMA",
+        "uuid": "92de6d1d-afb9-4e9c-b318-42fe8dfca1d5",
+        "m3u8": "https://video6.cdn.radaromega.com/live/ad43bce0e907/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.8488349,
+          35.2055396
+        ]
+      },
+      "properties": {
+        "name": "Bartlett, TN Fire Station #1",
+        "uuid": "2ef6cfec-6b24-4178-824b-c1b3261a9a0b",
+        "m3u8": "https://video3.cdn.radaromega.com/live/86af407068fa/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.0473,
+          36.4141
+        ]
+      },
+      "properties": {
+        "name": "Union City, TN WATCH Coalition",
+        "uuid": "fc51240f-4722-494a-baf2-50b091e1285e",
+        "m3u8": "https://video1.cdn.radaromega.com/live/cb2455ed8520/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/2607_ZAiBJhXt.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.262867,
+          33.0882132
+        ]
+      },
+      "properties": {
+        "name": "Baldwin County School District ",
+        "uuid": "189d9190-e24a-4797-a728-1168a830154c",
+        "m3u8": "https://video6.cdn.radaromega.com/live/e91f3c2a705c/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.1517,
+          32.3599
+        ]
+      },
+      "properties": {
+        "name": "Hinds County EMA",
+        "uuid": "726e6465-af24-427a-be2f-8c6f2874d27a",
+        "m3u8": "https://video3.cdn.radaromega.com/live/bba461eca5ca/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.732931,
+          37.152066
+        ]
+      },
+      "properties": {
+        "name": "Massac EMA",
+        "uuid": "2ef634ff-2784-4f3a-a436-994e53f82f54",
+        "m3u8": "https://video4.cdn.radaromega.com/live/ac34cdff5de8/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.1962,
+          32.7713
+        ]
+      },
+      "properties": {
+        "name": "Choctaw Emergency Management",
+        "uuid": "7b24aa10-e909-4806-a5ca-1868bb0aad67",
+        "m3u8": "https://video1.cdn.radaromega.com/live/97402e00be4c/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.908731069586,
+          29.39484528266
+        ]
+      },
+      "properties": {
+        "name": "Texas City",
+        "uuid": "737ba0da-1c3b-4df3-8fd1-5461b26659ba",
+        "m3u8": "https://video5.cdn.radaromega.com/live/a43c2d07ee9b/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.56545,
+          40.87127
+        ]
+      },
+      "properties": {
+        "name": "Van Wert Emergency Management",
+        "uuid": "143dbab7-1a01-408f-a5ff-6dcd10754680",
+        "m3u8": "https://video6.cdn.radaromega.com/live/c9e4b90979b3/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:50",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.23940377351,
+          34.371748690606
+        ]
+      },
+      "properties": {
+        "name": "Crystal Falls Golf Course",
+        "uuid": "8c8d67e2-3a6f-49d9-b924-0ce5a65c8f7c",
+        "m3u8": "https://video6.cdn.radaromega.com/live/7119f4094af0/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.331799646563,
+          39.320630086616
+        ]
+      },
+      "properties": {
+        "name": "Warren County OH Deerfield Twp.",
+        "uuid": "1b9abfc5-77e3-49b4-9eac-bdae86efc5ef",
+        "m3u8": "https://video6.cdn.radaromega.com/live/93ad469f9ab8/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/3281_7A9O5rDB.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.33850880000112,
+          34.52163897122386
+        ]
+      },
+      "properties": {
+        "name": "Pickens County EMA - 1",
+        "uuid": "e87e6100-eb40-42ca-9c71-694fc519510d",
+        "m3u8": "https://video2.cdn.radaromega.com/live/488a0afca2d7/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.028466484518,
+          39.520754346041
+        ]
+      },
+      "properties": {
+        "name": "Warren County OH Massie Twp",
+        "uuid": "e8640062-0e08-4d69-ab6f-a5a9564f2a80",
+        "m3u8": "https://video2.cdn.radaromega.com/live/40f0bc09de75/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/3288_PmBI1C0R.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.561467725289,
+          34.432500334148
+        ]
+      },
+      "properties": {
+        "name": "Pickens County EMA - 2 ",
+        "uuid": "54ed3636-2026-4a4f-9abf-c007ce768157",
+        "m3u8": "https://video4.cdn.radaromega.com/live/090cb9e181d4/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.494002,
+          34.19399
+        ]
+      },
+      "properties": {
+        "name": "Cherokee EMA - Canton",
+        "uuid": "b2c1aafc-a39e-4857-ada9-0736cf7ab0d8",
+        "m3u8": "https://video2.cdn.radaromega.com/live/f8f3e5bdb68a/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.373216745729,
+          36.185276623547
+        ]
+      },
+      "properties": {
+        "name": "Putnam County EMA - Brotherton Mountain",
+        "uuid": "9b0d4d63-3e26-445a-9b32-a3a40671a011",
+        "m3u8": "https://video2.cdn.radaromega.com/live/7592f083e95f/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.101987931708,
+          33.600016364936
+        ]
+      },
+      "properties": {
+        "name": "Rockdale County, GA EMA",
+        "uuid": "8b18f1c0-5aad-4512-8af0-885116f17b35",
+        "m3u8": "https://video3.cdn.radaromega.com/live/2339c1a95534/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.600395001536,
+          36.22652608863
+        ]
+      },
+      "properties": {
+        "name": "Old Gainesboro Rd, Water Tower",
+        "uuid": "92dab0d3-5434-4e01-8af0-55dfb264cac1",
+        "m3u8": "https://video1.cdn.radaromega.com/live/c796bcf017fc/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.748860032403,
+          36.179546878833
+        ]
+      },
+      "properties": {
+        "name": "Putnam County EMA (Gentry, TN)",
+        "uuid": "8e00df2d-82c1-4f80-9b88-076156f98466",
+        "m3u8": "https://video4.cdn.radaromega.com/live/f4c6a6b8c510/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.699425739875,
+          35.053545246206
+        ]
+      },
+      "properties": {
+        "name": "Collierville, TN Town Hall",
+        "uuid": "2e7ffdd9-5455-46b2-8bee-c29898f62a80",
+        "m3u8": "https://video2.cdn.radaromega.com/live/f948f8aecac8/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.722161920386,
+          36.42757967604
+        ]
+      },
+      "properties": {
+        "name": "Haydenburg Fire Tower",
+        "uuid": "e0dc07dc-2ba9-4cf5-9166-6c32a24a0ea7",
+        "m3u8": "https://video2.cdn.radaromega.com/live/6c9ca5364873/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.800760213119,
+          36.256059341973
+        ]
+      },
+      "properties": {
+        "name": "Wildwood Marina",
+        "uuid": "6801662a-e5f6-451f-96cc-938003b3c7da",
+        "m3u8": "https://video2.cdn.radaromega.com/live/67f4c960cafc/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.260145954036,
+          36.146449886355
+        ]
+      },
+      "properties": {
+        "name": "Putnam County EMA - Monterey, TN",
+        "uuid": "214b8e24-65fe-4d91-8d12-a3f9405d91c6",
+        "m3u8": "https://video3.cdn.radaromega.com/live/7e5f76ee68e7/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.818844678884,
+          37.024159673654
+        ]
+      },
+      "properties": {
+        "name": "Stoddard Co EMA - Bell City, MO",
+        "uuid": "d2e06cbe-1c5f-4455-b5f6-9dd3d9a5b0ed",
+        "m3u8": "https://video1.cdn.radaromega.com/live/41f2718a2fd8/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.589898049659,
+          36.076543588376
+        ]
+      },
+      "properties": {
+        "name": "Putnam Co EMA- Burgess Falls Rd",
+        "uuid": "13b8a96e-c9bf-4122-bf84-615f80414746",
+        "m3u8": "https://video1.cdn.radaromega.com/live/5ae584a4ec71/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.471992608742,
+          36.244238005039
+        ]
+      },
+      "properties": {
+        "name": "Putnam County EMA - Bangham, TN",
+        "uuid": "6a58892e-4263-4234-8857-b659ac098fea",
+        "m3u8": "https://video1.cdn.radaromega.com/live/13d39e43369c/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.671139,
+          35.28592
+        ]
+      },
+      "properties": {
+        "name": "Arlington, TN Fire Station #1",
+        "uuid": "80d3c490-b9cd-4977-b48d-7a705e42a178",
+        "m3u8": "https://video6.cdn.radaromega.com/live/c98948bf5dce/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.770417093363,
+          36.583269548893
+        ]
+      },
+      "properties": {
+        "name": "Hermitage Springs Tower",
+        "uuid": "cfff6271-bf1b-4c0f-b759-e4017a6e0993",
+        "m3u8": "https://video1.cdn.radaromega.com/live/b5383d92dd5d/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.021239530885,
+          36.192542553086
+        ]
+      },
+      "properties": {
+        "name": "Clarkrange Fentress County, TN",
+        "uuid": "1603db76-481b-49e3-a5bb-8a7d6f14fd0e",
+        "m3u8": "https://video1.cdn.radaromega.com/live/34eefea26b5b/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.179509444742,
+          35.827651503712
+        ]
+      },
+      "properties": {
+        "name": "Cumberland County - Midway",
+        "uuid": "ec680422-a076-4767-a566-9ab93138e867",
+        "m3u8": "https://video6.cdn.radaromega.com/live/8c19ca4859a1/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.43283,
+          36.36599
+        ]
+      },
+      "properties": {
+        "name": "City of Tiptonville",
+        "uuid": "432083c9-e0a6-4da1-834f-bac27009d8f8",
+        "m3u8": "https://video2.cdn.radaromega.com/live/d5d8d18b8702/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.318550310601,
+          42.019182554663
+        ]
+      },
+      "properties": {
+        "name": "Stanton County EMA",
+        "uuid": "09b7dde2-d126-4fc2-b739-0ccdf83bc08f",
+        "m3u8": "https://video4.cdn.radaromega.com/live/4457f25b959c/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.444183754129,
+          35.860998322468
+        ]
+      },
+      "properties": {
+        "name": "Upper Cumberland- Fire Tower Rd",
+        "uuid": "f32f6fc3-15f6-4d8f-851f-1c0b787cc516",
+        "m3u8": "https://video6.cdn.radaromega.com/live/3f6906cb0f71/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2455,
+          35.6105
+        ]
+      },
+      "properties": {
+        "name": "Haywood, TN WATCH Coalition",
+        "uuid": "3412e879-e68a-4e25-91bb-1c629c25e619",
+        "m3u8": "https://video1.cdn.radaromega.com/live/313764a36e47/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/2608_cgAF7bpZ.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.853408419732,
+          36.197853002342
+        ]
+      },
+      "properties": {
+        "name": "Pea Ridge",
+        "uuid": "823b8f23-cf46-4750-a218-043ecb24517d",
+        "m3u8": "https://video6.cdn.radaromega.com/live/827b22867455/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:50",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.528580793842,
+          36.055483347777
+        ]
+      },
+      "properties": {
+        "name": "WCOEM Upper Cumberland Airport",
+        "uuid": "dbc0cc77-0920-499c-8ef5-3f1ad03c8cd5",
+        "m3u8": "https://video3.cdn.radaromega.com/live/19474f4991e9/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.032760346711,
+          36.25202569463
+        ]
+      },
+      "properties": {
+        "name": "Beechboard",
+        "uuid": "9060c1e3-9cbe-4750-b6a8-9bae46dfc024",
+        "m3u8": "https://video2.cdn.radaromega.com/live/7f2a6efaab90/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.052501240542,
+          39.3180773618
+        ]
+      },
+      "properties": {
+        "name": "Warren County OH Harlan Twp.",
+        "uuid": "4cb5da68-f7d3-4ed6-876a-31932d5b179d",
+        "m3u8": "https://video3.cdn.radaromega.com/live/10715eea5d14/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/3346_RQjqOGzc.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.4197436,
+          35.2504591
+        ]
+      },
+      "properties": {
+        "name": "Vega High School",
+        "uuid": "9696e52b-8021-465f-b938-a505f9de3081",
+        "m3u8": "https://video1.cdn.radaromega.com/live/48821c75d927/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/3222_M7SPYjZC.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.8698,
+          32.3157
+        ]
+      },
+      "properties": {
+        "name": "United Rescue Alliance Camp Barkeley",
+        "uuid": "12a8af91-198d-474a-8c81-262185a2b287",
+        "m3u8": "https://video1.cdn.radaromega.com/live/c8a6b491812c/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.329379737983,
+          36.293193862965
+        ]
+      },
+      "properties": {
+        "name": "Henry County EMA - WATCH Coalition",
+        "uuid": "b4f43ec3-77b6-460d-8c73-e28febcda89e",
+        "m3u8": "https://video1.cdn.radaromega.com/live/1574f0aaf4f9/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/3405_f8lAdA6S.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.369137279723,
+          35.37488039484
+        ]
+      },
+      "properties": {
+        "name": "Milledgeville, TN - WATCH Coalition",
+        "uuid": "e586bd6c-c506-429e-9da0-746cdf8af821",
+        "m3u8": "https://video5.cdn.radaromega.com/live/0b3f000702f2/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.377379,
+          36.019144
+        ]
+      },
+      "properties": {
+        "name": "Carroll County EMA",
+        "uuid": "0e71235a-23cc-49fa-a6aa-f1a9d03494e3",
+        "m3u8": "https://video6.cdn.radaromega.com/live/47fb0319d45e/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/3403_X1bArxKK.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.39869,
+          35.655299
+        ]
+      },
+      "properties": {
+        "name": "Henderson Co. Community Hospital",
+        "uuid": "31210f4e-24a0-4d00-bfac-c7974df144ad",
+        "m3u8": "https://video2.cdn.radaromega.com/live/d2763d48bb7e/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/3404_nKgGgNLo.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.952371670787,
+          36.310548034611
+        ]
+      },
+      "properties": {
+        "name": "Smith County 911 - Radio Hill",
+        "uuid": "72f938ab-f512-4f56-a9ba-63cdbff39e42",
+        "m3u8": "https://video4.cdn.radaromega.com/live/6f29ce499721/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.650957,
+          35.43357
+        ]
+      },
+      "properties": {
+        "name": "City of Henderson Fire Dept.",
+        "uuid": "8916482f-6e78-43bd-88bc-20bbf51f2033",
+        "m3u8": "https://video1.cdn.radaromega.com/live/32a815c7d1c6/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/3406_35elPKpU.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.321425139071,
+          39.526434983122
+        ]
+      },
+      "properties": {
+        "name": "Warren County OH Franklin Twp.",
+        "uuid": "3bee53e2-fe87-49d1-b4f9-c94c5409b216",
+        "m3u8": "https://video4.cdn.radaromega.com/live/dbf7964a709b/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/3347_9TMCgShi.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.885303528758,
+          42.464308290449
+        ]
+      },
+      "properties": {
+        "name": "Macomb County Public Works",
+        "uuid": "38c07d16-7c20-4963-a073-7bd18dbd6222",
+        "m3u8": "https://video4.cdn.radaromega.com/live/686a4656c970/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.198653619188,
+          39.424093148641
+        ]
+      },
+      "properties": {
+        "name": "Warren County OH Turtlecreek Twp.",
+        "uuid": "c6c83278-8005-436c-baf6-a550aa2c0cd5",
+        "m3u8": "https://video1.cdn.radaromega.com/live/5facbd7faff9/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": "https://sdsweather-user-content.s3-us-west-2.amazonaws.com/iot_watermark/3279_L5PsiiQc.png"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.748434,
+          36.135502
+        ]
+      },
+      "properties": {
+        "name": "UT - Nashville IPS",
+        "uuid": "092abcbb-8a29-41fc-8ad2-feaed1b6391f",
+        "m3u8": "https://video1.cdn.radaromega.com/live/3cdcc6fc7b77/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.881888,
+          37.735503
+        ]
+      },
+      "properties": {
+        "name": "City of Perryville",
+        "uuid": "3a7f4f9d-6b7e-4c05-8ea6-4b51b7de3991",
+        "m3u8": "https://video1.cdn.radaromega.com/live/1a2c18cdb725/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.27347,
+          34.35739
+        ]
+      },
+      "properties": {
+        "name": "Cherokee Fire Station 15",
+        "uuid": "d25d19e7-8651-4f6e-987b-b6c34d8645da",
+        "m3u8": "https://video2.cdn.radaromega.com/live/22df011e13b8/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.487617394601,
+          36.662392215359
+        ]
+      },
+      "properties": {
+        "name": "Harviell Mo. KZMA",
+        "uuid": "684e6062-e6bf-4a57-af68-1f78b6d98e23",
+        "m3u8": "https://video6.cdn.radaromega.com/live/a8e9cf712e78/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.339325993105,
+          31.254632702146
+        ]
+      },
+      "properties": {
+        "name": "Forrest CO EOC",
+        "uuid": "a5c535af-b6e1-450e-9628-8d6172f52639",
+        "m3u8": "https://video5.cdn.radaromega.com/live/acc222aceef0/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.829577811471,
+          34.953504069629
+        ]
+      },
+      "properties": {
+        "name": "Sam Rikard - WeatherMayor LLC",
+        "uuid": "495cff6f-a337-4d87-86eb-8d18199a5341",
+        "m3u8": "https://video2.cdn.radaromega.com/live/be6b8c31861b/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.791957576157,
+          34.203755183767
+        ]
+      },
+      "properties": {
+        "name": "Bartow Co. Fire & Emergency Management",
+        "uuid": "1d892a83-66e5-4d5a-bd99-f5195023fde4",
+        "m3u8": "https://video1.cdn.radaromega.com/live/b98694ac2169/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.022781128191,
+          35.940850311403
+        ]
+      },
+      "properties": {
+        "name": "Cumberland EMA",
+        "uuid": "3ea63144-2601-4c55-8077-f30866a68fc5",
+        "m3u8": "https://video3.cdn.radaromega.com/live/527513815760/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.083391630749,
+          36.833419558741
+        ]
+      },
+      "properties": {
+        "name": "WXorNOT-#1",
+        "uuid": "5350df1f-f5b1-40e8-afa6-3a0f5ea0219c",
+        "m3u8": "https://video3.cdn.radaromega.com/live/39d8e2c642f8/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.149002,
+          34.19744
+        ]
+      },
+      "properties": {
+        "name": "Boaz-Marshall Dekalb Electric Coop",
+        "uuid": "db786b2b-1d0b-482a-ab2d-14baf08454f3",
+        "m3u8": "https://video1.cdn.radaromega.com/live/64a77729af87/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.981912245181,
+          34.403262232484
+        ]
+      },
+      "properties": {
+        "name": "Chestatee Golf Neighborhood",
+        "uuid": "f9288dd0-3a7b-4da3-a9e3-19bd3b63b6b6",
+        "m3u8": "https://video1.cdn.radaromega.com/live/1922f782ee4a/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.44046883188,
+          36.994268318133
+        ]
+      },
+      "properties": {
+        "name": "Bowling Green, KY",
+        "uuid": "f857562e-9bc1-4c7f-99f1-bda543ca43bf",
+        "m3u8": "https://video2.cdn.radaromega.com/live/92f235916909/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.683055277572,
+          37.225283892807
+        ]
+      },
+      "properties": {
+        "name": "Morgantown, KY",
+        "uuid": "9df18f2f-4010-42e5-affe-5a98703de16c",
+        "m3u8": "https://video2.cdn.radaromega.com/live/ee43ace63906/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.529817232061,
+          36.307104023087
+        ]
+      },
+      "properties": {
+        "name": "Dodson Branch",
+        "uuid": "14dc265e-fb65-452f-8783-29b1976af7f5",
+        "m3u8": "https://video6.cdn.radaromega.com/live/87b578553d1a/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.799343,
+          39.895726
+        ]
+      },
+      "properties": {
+        "name": "Clark State - Leffel Lane Campus",
+        "uuid": "c01f5cdf-a481-47db-833d-d6a8d32224c8",
+        "m3u8": "https://video1.cdn.radaromega.com/live/fa49d535a615/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.808195,
+          39.922848
+        ]
+      },
+      "properties": {
+        "name": "Clark State - Downtown",
+        "uuid": "a2557ac3-e0fa-4b5c-9832-636f79eabd2f",
+        "m3u8": "https://video1.cdn.radaromega.com/live/271083b29c72/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.103971856601,
+          36.525929883144
+        ]
+      },
+      "properties": {
+        "name": "Fire Tower - Pickett County",
+        "uuid": "80eaca68-6ba8-4acd-8c74-3268e0c8cd66",
+        "m3u8": "https://video6.cdn.radaromega.com/live/69a5dc9bee1b/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.837552097567,
+          36.082606642355
+        ]
+      },
+      "properties": {
+        "name": "Humphreys County EMA / TNHRHCC",
+        "uuid": "8cc23fe6-d389-4c1f-91a2-08cf822f937a",
+        "m3u8": "https://video5.cdn.radaromega.com/live/e2857b18d19b/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.889686847089,
+          36.535397523171
+        ]
+      },
+      "properties": {
+        "name": "Robertson County EMA / TNHRHCC",
+        "uuid": "47201442-0cfe-4868-b3d9-507d517c4101",
+        "m3u8": "https://video2.cdn.radaromega.com/live/71d22451cb75/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.35844,
+          36.5274
+        ]
+      },
+      "properties": {
+        "name": "Montgomery Co. EMA - TNHRHCC",
+        "uuid": "289ae55c-4e90-48e9-9a9e-bf711d8f7121",
+        "m3u8": "https://video6.cdn.radaromega.com/live/074abf28eb17/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.52725693391,
+          37.004406071311
+        ]
+      },
+      "properties": {
+        "name": "Rural Fire",
+        "uuid": "84ed7294-a211-41c2-ac91-aa17ab8f6a72",
+        "m3u8": "https://video2.cdn.radaromega.com/live/af85a7170432/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.641269611225,
+          36.431145051596
+        ]
+      },
+      "properties": {
+        "name": "Stewart County EMA - Hopewell",
+        "uuid": "d3f05c2f-9ce6-4133-8870-81da77892220",
+        "m3u8": "https://video1.cdn.radaromega.com/live/42b3011fd675/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.477443004773,
+          36.467211877997
+        ]
+      },
+      "properties": {
+        "name": "Sumner EMA - Music Mountain TNHRHCC",
+        "uuid": "bc08d3c3-9a8a-417e-b6c1-1d12565ba2be",
+        "m3u8": "https://video3.cdn.radaromega.com/live/2fe1900ec463/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:54",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.535972916673,
+          34.076120174278
+        ]
+      },
+      "properties": {
+        "name": "Burkburnett",
+        "uuid": "313622d6-bb21-41ee-bed8-fb846d6b6dc0",
+        "m3u8": "https://video2.cdn.radaromega.com/live/020bd634b69c/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.85636,
+          32.55255
+        ]
+      },
+      "properties": {
+        "name": "Glenn Heights ",
+        "uuid": "dff40926-7c7d-4318-9b12-af18a068d913",
+        "m3u8": "https://video1.cdn.radaromega.com/live/b8d5c15df74a/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.031145074874,
+          36.070239805867
+        ]
+      },
+      "properties": {
+        "name": "Alexandria, TN",
+        "uuid": "16a083cd-10f9-48af-b456-b9da8dd7a0bb",
+        "m3u8": "https://video5.cdn.radaromega.com/live/641b7d7b20c2/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:51",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.953501479325,
+          34.375230057149
+        ]
+      },
+      "properties": {
+        "name": "Bartow Co. Fire Station 10",
+        "uuid": "71241e9b-9370-4519-98f2-7fb0fe197029",
+        "m3u8": "https://video5.cdn.radaromega.com/live/adf25055df53/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.621337367772,
+          31.372653669784
+        ]
+      },
+      "properties": {
+        "name": "Red Level Weather",
+        "uuid": "fd99ae9b-0a08-42cd-a3fc-c11803e9f9f3",
+        "m3u8": "https://video6.cdn.radaromega.com/live/61c955b3b087/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.86063,
+          34.129308
+        ]
+      },
+      "properties": {
+        "name": "Bartow Co. Fire Station 9",
+        "uuid": "3389abd5-764e-4437-bdd9-99f25ea80ce0",
+        "m3u8": "https://video1.cdn.radaromega.com/live/43afc6b0fbff/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.464206325016,
+          35.925541296319
+        ]
+      },
+      "properties": {
+        "name": "White County OEM (Sparta, TN)",
+        "uuid": "f638484e-a76b-4a18-9bed-ea7054d99336",
+        "m3u8": "https://video6.cdn.radaromega.com/live/a6c88f46b162/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.51432,
+          35.87219
+        ]
+      },
+      "properties": {
+        "name": "Roane County EMA",
+        "uuid": "fa9bacd3-f229-460e-9953-11c56b79ef9e",
+        "m3u8": "https://video2.cdn.radaromega.com/live/3e98f0316118/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.968608899972,
+          36.41059994859
+        ]
+      },
+      "properties": {
+        "name": "Stewart County EMA - Brownsfield",
+        "uuid": "3aba3633-70e2-4356-b0be-ef58eb7f43c4",
+        "m3u8": "https://video1.cdn.radaromega.com/live/00ef6d15f257/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.822350853507,
+          36.503293220756
+        ]
+      },
+      "properties": {
+        "name": "Stewart County EMA - Dover",
+        "uuid": "9fed4949-6706-4201-8818-51b352842a8e",
+        "m3u8": "https://video1.cdn.radaromega.com/live/97f9a9702a0a/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:40",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.353432376577,
+          36.469082227772
+        ]
+      },
+      "properties": {
+        "name": "Overton County ",
+        "uuid": "98080d39-3e6f-487f-8bb6-d2dd384d303e",
+        "m3u8": "https://video5.cdn.radaromega.com/live/57e62f6a73fc/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.274196,
+          36.195522
+        ]
+      },
+      "properties": {
+        "name": "Lebanon Police Department",
+        "uuid": "661901a7-d5f6-4c82-b724-e38b8c1905a2",
+        "m3u8": "https://video6.cdn.radaromega.com/live/9777c20be086/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.82243,
+          35.70058
+        ]
+      },
+      "properties": {
+        "name": "Warren County 911",
+        "uuid": "e893920f-05f7-433f-a967-9fa7f8d525a5",
+        "m3u8": "https://video6.cdn.radaromega.com/live/5e220c9b1339/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.65397,
+          41.1456
+        ]
+      },
+      "properties": {
+        "name": "Mineola Tower",
+        "uuid": "def120df-99ef-495f-8186-cf38309b0e9d",
+        "m3u8": "https://video1.cdn.radaromega.com/live/92a97194ad93/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.17019039478,
+          36.935486732178
+        ]
+      },
+      "properties": {
+        "name": "Stoddard Co EMA - Puxico, MO",
+        "uuid": "98b423a3-294d-4c1e-8066-6e02bf9ef4ec",
+        "m3u8": "https://video2.cdn.radaromega.com/live/a8d640224f2c/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.454151,
+          41.014343
+        ]
+      },
+      "properties": {
+        "name": "Newton County Public Safety Building",
+        "uuid": "73004313-16d8-4d63-823c-43a7d786f5c1",
+        "m3u8": "https://video3.cdn.radaromega.com/live/4595570cd6e3/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.284135609512,
+          34.068119625959
+        ]
+      },
+      "properties": {
+        "name": "Alpharetta Fire/EMA",
+        "uuid": "7aa55047-c7fb-459f-903f-462b31fd5842",
+        "m3u8": "https://video2.cdn.radaromega.com/live/c5940911be94/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.421701533001,
+          32.994387000928
+        ]
+      },
+      "properties": {
+        "name": "Jefferson County Office Park",
+        "uuid": "bdee2f6c-c087-4aab-b4a2-90d102c4db4f",
+        "m3u8": "https://video1.cdn.radaromega.com/live/69c9ca433ac2/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.537018257167,
+          29.896522089907
+        ]
+      },
+      "properties": {
+        "name": "FS01",
+        "uuid": "c68907f2-78ee-4d88-b4bb-c3eff8aa10a3",
+        "m3u8": "https://video1.cdn.radaromega.com/live/4c91c38e58b6/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:54",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.699369159511,
+          29.998215371086
+        ]
+      },
+      "properties": {
+        "name": "FS04",
+        "uuid": "77ba73e4-6d75-4729-8b3a-562a87e887c7",
+        "m3u8": "https://video1.cdn.radaromega.com/live/e8e9a5435602/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.7121981797,
+          29.84712394626
+        ]
+      },
+      "properties": {
+        "name": "FS12",
+        "uuid": "e924135f-9e93-49fe-8e51-5e83c4cfcc8b",
+        "m3u8": "https://video1.cdn.radaromega.com/live/ab58cf5e3ab3/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:50",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.923471501379,
+          36.844416143171
+        ]
+      },
+      "properties": {
+        "name": "Russellville, KY",
+        "uuid": "e9892e02-c4c1-49c7-918d-d94e76e32043",
+        "m3u8": "https://video1.cdn.radaromega.com/live/c113345fbcea/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:42",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.644812485771,
+          29.928138518892
+        ]
+      },
+      "properties": {
+        "name": "OFC",
+        "uuid": "54a85c2d-6f16-48cf-8c37-c0fd5236aeb0",
+        "m3u8": "https://video1.cdn.radaromega.com/live/a1b0fbf93201/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.14638,
+          34.1846
+        ]
+      },
+      "properties": {
+        "name": "Chick-Fil-A  -  725 Atlanta Hwy",
+        "uuid": "cbdb10b5-dc8d-496b-b313-7dfe08665629",
+        "m3u8": "https://video4.cdn.radaromega.com/live/8c5917096a57/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.587813,
+          33.814687
+        ]
+      },
+      "properties": {
+        "name": "City of Denison",
+        "uuid": "67cf2786-537a-4f69-a2ac-6ba982fe6da9",
+        "m3u8": "https://video1.cdn.radaromega.com/live/382e0f3270d1/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.355364,
+          27.653072
+        ]
+      },
+      "properties": {
+        "name": "Ocean Grill - Vero Beach",
+        "uuid": "dcceaa47-6bb6-4bbf-86ba-c16850f57baf",
+        "m3u8": "https://video1.cdn.radaromega.com/live/8867d90c4528/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.826936106189,
+          34.96172706738
+        ]
+      },
+      "properties": {
+        "name": "Olive Branch, MS City Hall",
+        "uuid": "55f56af1-60fb-4601-ab35-15dfee86e896",
+        "m3u8": "https://video4.cdn.radaromega.com/live/4302de06a601/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.31532,
+          36.55435
+        ]
+      },
+      "properties": {
+        "name": "Willow Grove",
+        "uuid": "80c12627-ca46-472a-9677-6a550be94c0b",
+        "m3u8": "https://video6.cdn.radaromega.com/live/b739dfbacaf4/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:50",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.33932,
+          47.43615
+        ]
+      },
+      "properties": {
+        "name": "Pacific Northwest Weather Watch",
+        "uuid": "20f0cd2d-e2aa-4395-9cab-78a90755d808",
+        "m3u8": "https://video5.cdn.radaromega.com/live/53b81ee00844/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.696894,
+          35.252265
+        ]
+      },
+      "properties": {
+        "name": "WCMC",
+        "uuid": "1501f46f-172c-46b6-87d2-3be6a34aa99c",
+        "m3u8": "https://video2.cdn.radaromega.com/live/4ce969f732a5/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.545960324464,
+          35.676764551661
+        ]
+      },
+      "properties": {
+        "name": "FireTEXT",
+        "uuid": "a952bce8-6814-4002-8ad5-a09a7971a0cb",
+        "m3u8": "https://video1.cdn.radaromega.com/live/686b597517bf/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.318371,
+          40.868999
+        ]
+      },
+      "properties": {
+        "name": "Ashland EMA Office",
+        "uuid": "dc1ba801-f0e6-440a-8501-540983bedb7b",
+        "m3u8": "https://video2.cdn.radaromega.com/live/469cc1bb0212/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:50",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.816747046036,
+          35.959799417099
+        ]
+      },
+      "properties": {
+        "name": "Dekalb 911",
+        "uuid": "83e4ffd8-cc40-4c41-b761-33e4ab9b387d",
+        "m3u8": "https://video2.cdn.radaromega.com/live/f7cdf6a5c71e/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.574,
+          28.11583
+        ]
+      },
+      "properties": {
+        "name": "Lous Blues Bar and Grill ",
+        "uuid": "5df56f58-c62f-4e7c-9e93-7b8b55672dda",
+        "m3u8": "https://video1.cdn.radaromega.com/live/0198e19058c4/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.99404177836,
+          36.499658799952
+        ]
+      },
+      "properties": {
+        "name": "Macon County EMA",
+        "uuid": "b6879903-ba79-422e-9944-713f4d6cfdcd",
+        "m3u8": "https://video3.cdn.radaromega.com/live/4211e79dd6e1/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:49",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.42995,
+          34.469144
+        ]
+      },
+      "properties": {
+        "name": "Pickens County Courthouse",
+        "uuid": "b2a2d61b-455e-46ac-b0b3-38f4d50f8be8",
+        "m3u8": "https://video5.cdn.radaromega.com/live/b5b965cb14be/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.647469666271,
+          36.339698553226
+        ]
+      },
+      "properties": {
+        "name": "Sumner EMA - Center Point",
+        "uuid": "103a3769-5388-46d6-9265-99a8f1a49f5d",
+        "m3u8": "https://video1.cdn.radaromega.com/live/12518f75d4d9/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.582438501179,
+          41.027259327119
+        ]
+      },
+      "properties": {
+        "name": "Malvern Tower",
+        "uuid": "3cf908d5-40e5-4d06-b735-db309b24a702",
+        "m3u8": "https://video1.cdn.radaromega.com/live/e88c446a6374/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:48",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.176537359867,
+          34.433020477384
+        ]
+      },
+      "properties": {
+        "name": "Atlanta Motorsports Park (AMP)",
+        "uuid": "c6428251-bdda-417c-a7cf-951f6c32fabf",
+        "m3u8": "https://video6.cdn.radaromega.com/live/806a6fffb9c5/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.115346941997,
+          34.354525125467
+        ]
+      },
+      "properties": {
+        "name": "Dawson Middle School",
+        "uuid": "118fbe61-dff3-4f7e-aee0-ea4ad94e74f2",
+        "m3u8": "https://video4.cdn.radaromega.com/live/ee1502ab7e19/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:45",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -86.454744418619,
+          36.749840008276
+        ]
+      },
+      "properties": {
+        "name": "Gold City, KY",
+        "uuid": "ed7300cc-2003-4407-b498-62e0814d9c13",
+        "m3u8": "https://video2.cdn.radaromega.com/live/9d441ed2a679/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.361704,
+          36.377767
+        ]
+      },
+      "properties": {
+        "name": "Sunset Boat Ramp- Reelfoot Lake",
+        "uuid": "5629c754-a5b3-4884-b09c-e7f00c02b1d7",
+        "m3u8": "https://video6.cdn.radaromega.com/live/5b427b8e44da/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:52",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.691714650472,
+          36.989611518996
+        ]
+      },
+      "properties": {
+        "name": "Vanduser, MO",
+        "uuid": "05bdb424-c319-42bb-95b4-f0e6c4333a4c",
+        "m3u8": "https://video4.cdn.radaromega.com/live/ede8e24a6d73/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.527225,
+          38.550822
+        ]
+      },
+      "properties": {
+        "name": "Meramec Bluffs",
+        "uuid": "260a2a92-5a01-4394-b967-8b19da1aa340",
+        "m3u8": "https://video1.cdn.radaromega.com/live/7e8f7350670a/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:43",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.07119,
+          39.77179
+        ]
+      },
+      "properties": {
+        "name": "Clark State - Beavercreek",
+        "uuid": "61a632f8-e677-43b2-b037-6ce983ea0439",
+        "m3u8": "https://video6.cdn.radaromega.com/live/cb04850f09e8/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:46",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.187156,
+          42.504836
+        ]
+      },
+      "properties": {
+        "name": "The Betterway Project - 3 ",
+        "uuid": "0d842383-8e21-4acb-950f-961bfdbe3768",
+        "m3u8": "https://video1.cdn.radaromega.com/live/e38f632f2acf/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:47",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.226225,
+          41.956362
+        ]
+      },
+      "properties": {
+        "name": "Stanton EMA-Stanton Telecom",
+        "uuid": "4276f197-f3bf-4b13-ba0a-d10f3d8b64c5",
+        "m3u8": "https://video1.cdn.radaromega.com/live/46ac10939deb/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:53",
+        "watermark_url": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.39638,
+          37.88333
+        ]
+      },
+      "properties": {
+        "name": "Raven Run Nature Sanctuary",
+        "uuid": "cde6d821-34c4-44ae-a8cc-425ba5cbc518",
+        "m3u8": "https://video1.cdn.radaromega.com/live/abf2b8d98ed7/stream.m3u8",
+        "last_telemetry_at": "2026-02-10 01:46:44",
+        "watermark_url": null
+      }
+    }
+  ],
+  "generated_at_utc": "2026-02-10T01:47:43Z",
+  "source": "https://data3.radaromega.com/api/live-devices"
+}
