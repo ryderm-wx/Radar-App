@@ -30,6 +30,9 @@ const UI_DESIGN_HEIGHT = 2160;
 const UI_SCALE_MIN = 0.55;
 const UI_SCALE_MAX = 1.0;
 const UI_SCALE_MOBILE_BREAKPOINT = 900;
+// Mobile-specific scale bounds — keeps content dense but legible
+const UI_SCALE_MOBILE_MIN = 0.4;
+const UI_SCALE_MOBILE_MAX = 0.72;
 
 const THEME_STORAGE_KEY = "radar-ui-theme";
 
@@ -39,12 +42,26 @@ function clampNumber(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
+function isMobileDevice() {
+  return (
+    window.innerWidth <= UI_SCALE_MOBILE_BREAKPOINT ||
+    /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    )
+  );
+}
+
 function computeUiScale() {
   const w = window.innerWidth || UI_DESIGN_WIDTH;
   const h = window.innerHeight || UI_DESIGN_HEIGHT;
 
   if (w <= UI_SCALE_MOBILE_BREAKPOINT) {
-    return 1.0;
+    // Scale relative to a 1200px reference so phone-sized viewports get
+    // meaningfully smaller spacing/controls without becoming unreadable.
+    const portrait = h > w;
+    const ref = portrait ? 1200 : 900; // narrower ref in landscape
+    const mobileScale = w / ref;
+    return clampNumber(mobileScale, UI_SCALE_MOBILE_MIN, UI_SCALE_MOBILE_MAX);
   }
 
   const scale = Math.min(w / UI_DESIGN_WIDTH, h / UI_DESIGN_HEIGHT);
@@ -54,6 +71,18 @@ function computeUiScale() {
 function applyUiScale({ shouldResizeMap } = { shouldResizeMap: true }) {
   const scale = computeUiScale();
   document.documentElement.style.setProperty("--ui-scale", scale.toFixed(3));
+
+  // Tag <html> so CSS can target mobile mode without JS-in-CSS hacks
+  if (isMobileDevice()) {
+    document.documentElement.setAttribute("data-mobile", "true");
+    document.documentElement.setAttribute(
+      "data-orient",
+      window.innerHeight > window.innerWidth ? "portrait" : "landscape",
+    );
+  } else {
+    document.documentElement.removeAttribute("data-mobile");
+    document.documentElement.removeAttribute("data-orient");
+  }
 
   if (shouldResizeMap && typeof mapInstance?.resize === "function") {
     requestAnimationFrame(() => {
@@ -67,16 +96,22 @@ function applyUiScale({ shouldResizeMap } = { shouldResizeMap: true }) {
 }
 
 function installUiScaleResizeHandler() {
-  window.addEventListener(
-    "resize",
-    () => {
-      if (uiScaleResizeRaf) cancelAnimationFrame(uiScaleResizeRaf);
-      uiScaleResizeRaf = requestAnimationFrame(() => {
-        applyUiScale({ shouldResizeMap: true });
-      });
-    },
-    { passive: true },
-  );
+  const debouncedApply = () => {
+    if (uiScaleResizeRaf) cancelAnimationFrame(uiScaleResizeRaf);
+    uiScaleResizeRaf = requestAnimationFrame(() => {
+      applyUiScale({ shouldResizeMap: true });
+    });
+  };
+
+  window.addEventListener("resize", debouncedApply, { passive: true });
+
+  // Fire on orientation flip (phones/tablets rotating)
+  window.addEventListener("orientationchange", () => {
+    // Give the browser time to settle the new viewport dimensions
+    setTimeout(() => {
+      applyUiScale({ shouldResizeMap: true });
+    }, 150);
+  });
 }
 
 function applyTheme(theme) {
