@@ -55,13 +55,10 @@ function computeUiScale() {
   const w = window.innerWidth || UI_DESIGN_WIDTH;
   const h = window.innerHeight || UI_DESIGN_HEIGHT;
 
+  // On mobile, return 1.0 so --ui-scale CSS calc() expressions compute at
+  // their normal values. Panel zoom is handled entirely by CSS zoom rules.
   if (w <= UI_SCALE_MOBILE_BREAKPOINT) {
-    // Scale relative to a 1200px reference so phone-sized viewports get
-    // meaningfully smaller spacing/controls without becoming unreadable.
-    const portrait = h > w;
-    const ref = portrait ? 1200 : 900; // narrower ref in landscape
-    const mobileScale = w / ref;
-    return clampNumber(mobileScale, UI_SCALE_MOBILE_MIN, UI_SCALE_MOBILE_MAX);
+    return 1.0;
   }
 
   const scale = Math.min(w / UI_DESIGN_WIDTH, h / UI_DESIGN_HEIGHT);
