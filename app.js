@@ -30,9 +30,6 @@ const UI_DESIGN_HEIGHT = 2160;
 const UI_SCALE_MIN = 0.55;
 const UI_SCALE_MAX = 1.0;
 const UI_SCALE_MOBILE_BREAKPOINT = 900;
-// Mobile-specific scale bounds — keeps content dense but legible
-const UI_SCALE_MOBILE_MIN = 0.4;
-const UI_SCALE_MOBILE_MAX = 0.72;
 
 const THEME_STORAGE_KEY = "radar-ui-theme";
 
@@ -42,21 +39,28 @@ function clampNumber(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
+/**
+ * Detect mobile: true when running on a narrow screen OR a touch-primary
+ * device (phone/tablet), regardless of current orientation.
+ */
 function isMobileDevice() {
-  return (
-    window.innerWidth <= UI_SCALE_MOBILE_BREAKPOINT ||
-    /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent,
-    )
+  const narrowScreen = window.innerWidth <= UI_SCALE_MOBILE_BREAKPOINT;
+  const touchUA = /Mobi|Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(
+    navigator.userAgent,
   );
+  // navigator.maxTouchPoints > 1 catches iPads that omit "Mobile" from UA
+  const touchPoints =
+    typeof navigator.maxTouchPoints === "number" &&
+    navigator.maxTouchPoints > 1;
+  return narrowScreen || touchUA || touchPoints;
 }
 
 function computeUiScale() {
   const w = window.innerWidth || UI_DESIGN_WIDTH;
   const h = window.innerHeight || UI_DESIGN_HEIGHT;
 
-  // On mobile, return 1.0 so --ui-scale CSS calc() expressions compute at
-  // their normal values. Panel zoom is handled entirely by CSS zoom rules.
+  // On mobile, panels are full-width slide-up sheets so --ui-scale stays
+  // at 1.0 — sheet content renders at normal base sizes.
   if (w <= UI_SCALE_MOBILE_BREAKPOINT) {
     return 1.0;
   }
