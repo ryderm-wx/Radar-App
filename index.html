@@ -829,10 +829,8 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      @media (max-width: 900px) {
-        .control-grid--2 {
-          grid-template-columns: 1fr;
-        }
+      html[data-mobile] .control-grid--2 {
+        grid-template-columns: 1fr;
       }
 
       select,
@@ -1812,29 +1810,27 @@
         }
       }
 
-      @media (max-width: 900px) {
-        .bottom-dock {
-          left: 12px;
-          right: 12px;
-          bottom: 12px;
-          grid-template-columns: 1fr;
-        }
+      html[data-mobile] .bottom-dock {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        grid-template-columns: 1fr;
+      }
 
-        .bottom-panel {
-          max-height: 60vh;
-        }
+      html[data-mobile] .bottom-panel {
+        max-height: 60vh;
+      }
 
-        .tool-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+      html[data-mobile] .tool-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
 
-        .tool-toggles {
-          grid-template-columns: 1fr;
-        }
+      html[data-mobile] .tool-toggles {
+        grid-template-columns: 1fr;
+      }
 
-        .inspector-display {
-          max-width: calc(100vw - 40px);
-        }
+      html[data-mobile] .inspector-display {
+        max-width: calc(100vw - 40px);
       }
 
       /* Archive Modal Styles */
@@ -2139,7 +2135,10 @@
       .mobile-nav,
       .mobile-backdrop { display: none; }
 
-      @media (max-width: 900px) {
+      /* Mobile mode is activated by setting data-mobile on <html>.
+         It auto-applies on small screens, but can be toggled manually
+         on any screen size via the mobile-mode toggle button. */
+      html[data-mobile] {
 
         /* ── Radar legend → thin top colour bar ── */
         #radarLegend {
@@ -2306,6 +2305,41 @@
           top: 50px !important;
           right: 8px !important; left: auto !important;
         }
+
+        /* Hide desktop panels when mobile mode is on */
+        .bottom-dock .bottom-panel {
+          /* Already handled by slide-up sheet rules above */
+        }
+
+        /* Mobile toggle button: hide the desktop float version */
+        #mobileModeToggleFloat { display: none !important; }
+      }
+
+      /* Desktop-only: small floating toggle to enable mobile mode */
+      #mobileModeToggleFloat {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 1100;
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: var(--radius-md);
+        color: var(--muted);
+        padding: 8px 10px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: background 0.15s, color 0.15s;
+        backdrop-filter: blur(8px);
+      }
+      #mobileModeToggleFloat:hover {
+        background: var(--accent-soft);
+        color: var(--accent);
+        border-color: rgba(79,184,255,0.3);
       }
     </style>
   </head>
@@ -3184,7 +3218,13 @@
       <div id="legendScale"></div>
     </div>
 
-    <!-- Mobile nav bar (visible only on ≤ 900 px) -->
+    <!-- Desktop: floating button to enter mobile mode -->
+    <button id="mobileModeToggleFloat" title="Toggle Mobile Mode" type="button">
+      <i class="fas fa-mobile-screen"></i>
+      <span>Mobile</span>
+    </button>
+
+    <!-- Mobile nav bar (shown when data-mobile is set on <html>) -->
     <div class="mobile-backdrop" id="mobileBackdrop"></div>
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
       <div class="mobile-nav__info">
@@ -3206,6 +3246,15 @@
         <button class="mobile-tab" id="mobileTabTheme" type="button">
           <i class="fas fa-circle-half-stroke"></i>
           <span>Theme</span>
+        </button>
+        <button
+          class="mobile-tab"
+          id="mobileTabExitMobile"
+          type="button"
+          title="Exit Mobile Mode"
+        >
+          <i class="fas fa-desktop"></i>
+          <span>Desktop</span>
         </button>
       </div>
     </nav>
@@ -3327,9 +3376,12 @@
     </script>
     <script src="app.js"></script>
     <script>
-      // ── Mobile nav bar wiring ─────────────────────────────────
+      // ── Mobile mode wiring ────────────────────────────────────
       (function () {
-        function isMobile() {
+        const STORAGE_KEY = "radar-mobile-mode";
+
+        // Auto-detect: phone UA or narrow/touch screen
+        function shouldAutoMobile() {
           return (
             window.innerWidth <= 900 ||
             /Mobi|Android|iPhone|iPad|iPod|IEMobile/i.test(
@@ -3340,12 +3392,64 @@
           );
         }
 
+        function isMobileModeOn() {
+          return document.documentElement.hasAttribute("data-mobile");
+        }
+
+        function enableMobileMode() {
+          document.documentElement.setAttribute("data-mobile", "");
+          try {
+            localStorage.setItem(STORAGE_KEY, "1");
+          } catch (_) {}
+        }
+
+        function disableMobileMode() {
+          document.documentElement.removeAttribute("data-mobile");
+          closeAll();
+          try {
+            localStorage.setItem(STORAGE_KEY, "0");
+          } catch (_) {}
+        }
+
+        function toggleMobileMode() {
+          isMobileModeOn() ? disableMobileMode() : enableMobileMode();
+        }
+
+        // Initialise on load: respect explicit override, else auto-detect
+        (function initMode() {
+          let stored = null;
+          try {
+            stored = localStorage.getItem(STORAGE_KEY);
+          } catch (_) {}
+          if (stored === "1" || (stored === null && shouldAutoMobile())) {
+            enableMobileMode();
+          }
+        })();
+
+        // Re-check auto-detect on resize only if user hasn't set an override
+        window.addEventListener(
+          "resize",
+          function () {
+            let stored = null;
+            try {
+              stored = localStorage.getItem(STORAGE_KEY);
+            } catch (_) {}
+            if (stored === null) {
+              shouldAutoMobile() ? enableMobileMode() : disableMobileMode();
+            }
+          },
+          { passive: true },
+        );
+
+        // ── Panel sheet logic ─────────────────────────────────
         const backdrop = document.getElementById("mobileBackdrop");
         const panelLeft = document.querySelector(".bottom-panel.bottom-left");
         const panelCtr = document.querySelector(".bottom-panel.bottom-center");
         const tabRadar = document.getElementById("mobileTabRadar");
         const tabTools = document.getElementById("mobileTabTools");
         const tabTheme = document.getElementById("mobileTabTheme");
+        const tabExit = document.getElementById("mobileTabExitMobile");
+        const floatBtn = document.getElementById("mobileModeToggleFloat");
         const allTabs = [tabRadar, tabTools];
         const allPanels = [panelLeft, panelCtr];
 
@@ -3375,6 +3479,8 @@
             togglePanel(panelCtr, tabTools),
           );
         if (backdrop) backdrop.addEventListener("click", closeAll);
+        if (tabExit) tabExit.addEventListener("click", disableMobileMode);
+        if (floatBtn) floatBtn.addEventListener("click", enableMobileMode);
 
         // Theme tab fires the existing toggle button
         if (tabTheme) {
@@ -3386,7 +3492,7 @@
 
         // Mirror site/product/live state into the mobile nav info bar
         function syncNavInfo() {
-          if (!isMobile()) return;
+          if (!isMobileModeOn()) return;
           const siteName = document.getElementById("currentSiteName");
           const productName = document.getElementById("currentProductName");
           const loopState = document.getElementById("currentLoopState");
