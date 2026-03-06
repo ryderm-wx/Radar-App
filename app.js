@@ -16,6 +16,80 @@ let flashSpeed = 800;
 let selectedAlert = null;
 let alertFlashInterval = null;
 
+const ALERT_STYLE_STORAGE_KEY = "radar-alert-style-config-v1";
+let alertStyleConfig = null;
+let alertsButtonUpdateRaf = null;
+let inspectorMoveRaf = null;
+let pendingInspectorEvent = null;
+
+const ALERT_STYLE_GROUP_DEFINITIONS = [
+  {
+    id: "tornado",
+    label: "Tornado",
+    keywords: ["tornado"],
+    accent: "#f87171",
+  },
+  {
+    id: "severe-thunderstorm",
+    label: "Severe Thunderstorm",
+    keywords: ["severe thunderstorm", "thunderstorm", "svr"],
+    accent: "#fb923c",
+  },
+  {
+    id: "flash-flood",
+    label: "Flash Flood",
+    keywords: ["flash flood", "flash flood emergency"],
+    accent: "#facc15",
+  },
+  {
+    id: "flood",
+    label: "Flood & River",
+    keywords: ["flood", "river", "hydrologic"],
+    accent: "#22d3ee",
+  },
+  {
+    id: "winter",
+    label: "Winter Weather",
+    keywords: ["winter", "snow", "ice", "blizzard", "freezing"],
+    accent: "#38bdf8",
+  },
+  {
+    id: "heat",
+    label: "Heat & Fire",
+    keywords: ["heat", "heat advisory", "heat warning", "burn"],
+    accent: "#fb7185",
+  },
+  {
+    id: "cold",
+    label: "Cold & Freeze",
+    keywords: ["freezing", "cold", "freeze", "frost"],
+    accent: "#67e8f9",
+  },
+  {
+    id: "tropical",
+    label: "Tropical",
+    keywords: ["hurricane", "tropical"],
+    accent: "#c084fc",
+  },
+  {
+    id: "watch",
+    label: "Watches",
+    keywords: ["watch"],
+    accent: "#a5b4fc",
+  },
+  {
+    id: "advisory",
+    label: "Advisories & Outlooks",
+    keywords: ["advisory", "outlook", "statement"],
+    accent: "#94a3b8",
+  },
+];
+const DEFAULT_ALERT_STYLE_GROUP = {
+  id: "other",
+  label: "Other Alerts",
+  accent: "#94a3b8",
+};
+
 const PROBE_UPDATE_MIN_INTERVAL_MS = 150;
 let lastProbeUpdateTs = 0;
 
@@ -39,34 +113,145 @@ function clampNumber(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
+function getAlertStyleGroupDefinition(eventName) {
+  if (!eventName) return DEFAULT_ALERT_STYLE_GROUP;
+  const normalized = eventName.toLowerCase();
+  for (const group of ALERT_STYLE_GROUP_DEFINITIONS) {
+    if (group.keywords.some((keyword) => normalized.includes(keyword))) {
+      return group;
+    }
+  }
+  return DEFAULT_ALERT_STYLE_GROUP;
+}
+
 /**
  * Detect mobile: true when running on a narrow screen OR a touch-primary
  * device (phone/tablet), regardless of current orientation.
  */
 function isMobileDevice() {
-  const narrowScreen = window.innerWidth <= UI_SCALE_MOBILE_BREAKPOINT;
+  const width = window.innerWidth || 0;
+  const height = window.innerHeight || 0;
+  const shortestSide = Math.min(width, height);
+  const longestSide = Math.max(width, height);
+
   const touchUA = /Mobi|Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(
     navigator.userAgent,
   );
-  // navigator.maxTouchPoints > 1 catches iPads that omit "Mobile" from UA
+
   const touchPoints =
     typeof navigator.maxTouchPoints === "number" &&
-    navigator.maxTouchPoints > 1;
-  return narrowScreen || touchUA || touchPoints;
+    navigator.maxTouchPoints > 0;
+
+  const coarsePointer =
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(pointer: coarse)").matches;
+
+  const noHover =
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(hover: none)").matches;
+
+  const touchPrimaryDevice = touchPoints || coarsePointer || noHover;
+  const phoneTabletLikeViewport =
+    shortestSide <= UI_SCALE_MOBILE_BREAKPOINT && longestSide <= 1600;
+
+  return touchUA || (touchPrimaryDevice && phoneTabletLikeViewport);
 }
 
 function computeUiScale() {
   const w = window.innerWidth || UI_DESIGN_WIDTH;
   const h = window.innerHeight || UI_DESIGN_HEIGHT;
+  const shortestSide = Math.min(w, h);
+  const isPortrait = h > w;
 
-  // On mobile, panels are full-width slide-up sheets so --ui-scale stays
-  // at 1.0 — sheet content renders at normal base sizes.
-  if (w <= UI_SCALE_MOBILE_BREAKPOINT) {
-    return 1.0;
+  if (isMobileDevice()) {
+    // Scale against a mobile-appropriate reference dimension.
+    // Portrait → scale against width (panels are vertically stacked).
+    // Landscape → scale against height (screen is short, so that's the
+    //   constraining dimension for panel content).
+    if (isPortrait) {
+      // e.g. iPhone 14 portrait: 390 / 1300 ≈ 0.30
+      return clampNumber(shortestSide / 1300, 0.24, 0.46);
+    } else {
+      // Landscape phones need stronger downscale due to limited height.
+      // e.g. iPhone 14 landscape: 390 / 1040 ≈ 0.37
+      return clampNumber(shortestSide / 1040, 0.22, 0.4);
+    }
   }
 
   const scale = Math.min(w / UI_DESIGN_WIDTH, h / UI_DESIGN_HEIGHT);
   return clampNumber(scale, UI_SCALE_MIN, UI_SCALE_MAX);
+}
+
+function configureMobileDockSections() {
+  const mobileMode =
+    document.documentElement.getAttribute("data-mobile") === "true";
+  const sections = document.querySelectorAll("#siteDock .dock-section");
+
+  sections.forEach((section, index) => {
+    const header = section.querySelector(".dock-section-header");
+    const body = section.querySelector(".dock-section-body");
+    if (!header || !body) {
+      return;
+    }
+
+    if (mobileMode) {
+      section.classList.add("mobile-collapsible");
+      section.classList.remove("desktop-collapsible");
+      header.setAttribute("role", "button");
+      header.setAttribute("tabindex", "0");
+
+      if (!header.dataset.mobileToggleBound) {
+        const toggleSection = () => {
+          if (document.documentElement.getAttribute("data-mobile") !== "true") {
+            return;
+          }
+          section.classList.toggle("is-collapsed");
+          header.setAttribute(
+            "aria-expanded",
+            section.classList.contains("is-collapsed") ? "false" : "true",
+          );
+        };
+
+        header.addEventListener("click", toggleSection);
+        header.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleSection();
+          }
+        });
+        header.dataset.mobileToggleBound = "true";
+      }
+
+      const shouldExpand = index === 0;
+      section.classList.toggle("is-collapsed", !shouldExpand);
+      header.setAttribute("aria-expanded", shouldExpand ? "true" : "false");
+    } else {
+      section.classList.remove("mobile-collapsible");
+      section.classList.add("desktop-collapsible");
+
+      if (!header.dataset.desktopToggleBound) {
+        const toggleDesktopSection = () => {
+          if (document.documentElement.getAttribute("data-mobile") === "true") {
+            return;
+          }
+          section.classList.toggle("is-collapsed");
+          header.setAttribute(
+            "aria-expanded",
+            section.classList.contains("is-collapsed") ? "false" : "true",
+          );
+        };
+
+        header.addEventListener("click", toggleDesktopSection);
+        header.dataset.desktopToggleBound = "true";
+      }
+
+      const shouldExpand = index === 0;
+      section.classList.toggle("is-collapsed", !shouldExpand);
+      header.removeAttribute("role");
+      header.removeAttribute("tabindex");
+      header.setAttribute("aria-expanded", shouldExpand ? "true" : "false");
+    }
+  });
 }
 
 function applyUiScale({ shouldResizeMap } = { shouldResizeMap: true }) {
@@ -84,6 +269,8 @@ function applyUiScale({ shouldResizeMap } = { shouldResizeMap: true }) {
     document.documentElement.removeAttribute("data-mobile");
     document.documentElement.removeAttribute("data-orient");
   }
+
+  configureMobileDockSections();
 
   if (shouldResizeMap && typeof mapInstance?.resize === "function") {
     requestAnimationFrame(() => {
@@ -146,6 +333,28 @@ function initializeTheme() {
     // Ignore storage errors in restricted environments.
   }
   applyTheme(initialTheme);
+}
+
+function syncToolToggleVisualState() {
+  const rows = document.querySelectorAll(".tool-toggles .check-row");
+  rows.forEach((row) => {
+    const input = row.querySelector('input[type="checkbox"]');
+    if (!input) return;
+    row.classList.toggle("is-active", !!input.checked);
+  });
+}
+
+function bindToolToggleVisualState() {
+  const rows = document.querySelectorAll(".tool-toggles .check-row");
+  rows.forEach((row) => {
+    const input = row.querySelector('input[type="checkbox"]');
+    if (!input || input.dataset.visualBound === "true") return;
+
+    input.addEventListener("change", syncToolToggleVisualState);
+    input.dataset.visualBound = "true";
+  });
+
+  syncToolToggleVisualState();
 }
 
 function updateDockSummary() {
@@ -1567,58 +1776,41 @@ function showAlertsDropdown(position) {
 
   const dropdown = document.createElement("div");
   dropdown.id = "alerts-dropdown";
-  dropdown.style.position = "absolute";
+  dropdown.className = "alerts-dropdown-panel";
   dropdown.style.top = `${position ? position.y : 60}px`;
   dropdown.style.right = "10px";
-  dropdown.style.backgroundColor = "white";
-  dropdown.style.borderRadius = "8px";
-  dropdown.style.boxShadow = "0 3px 10px rgba(0,0,0,0.3)";
-  dropdown.style.zIndex = "1001";
-  dropdown.style.width = "300px";
-  dropdown.style.maxHeight = "400px";
-  dropdown.style.overflow = "auto";
-  dropdown.style.padding = "10px";
 
   const header = document.createElement("div");
-  header.style.borderBottom = "1px solid #eee";
-  header.style.paddingBottom = "10px";
-  header.style.marginBottom = "10px";
-  header.style.fontWeight = "bold";
+  header.className = "alerts-dropdown-header";
   header.innerHTML = `<span>Active Alerts (${alertsInView.length})</span>
-                      <span class="close-dropdown" style="float:right; cursor:pointer;">×</span>`;
+    <div class="alerts-dropdown-header-actions">
+      <button class="alert-style-open-btn" type="button" title="Alert style settings">Style</button>
+      <button class="close-dropdown" type="button" title="Close">x</button>
+    </div>`;
   dropdown.appendChild(header);
 
   alertsInView.forEach((alert) => {
     const alertItem = document.createElement("div");
     alertItem.className = "dropdown-alert-item";
-    alertItem.style.padding = "8px";
-    alertItem.style.margin = "5px 0";
-    alertItem.style.borderRadius = "5px";
-    alertItem.style.cursor = "pointer";
     alertItem.style.borderLeft = `4px solid ${getAlertColor(alert)}`;
-    alertItem.style.backgroundColor = "#f8f8f8";
-    alertItem.style.transition = "background-color 0.2s";
 
     const icon = getAlertIcon(alert.eventCode);
+    const eventName = getAlertEventName(alert);
+    const enabledBadge = isAlertEnabled(eventName)
+      ? ""
+      : '<span class="alert-muted-pill">Muted</span>';
 
     alertItem.innerHTML = `
-      <div style="display:flex; align-items:center;">
-        <div style="margin-right:10px;">${icon}</div>
+      <div class="dropdown-alert-item-row">
+        <div class="dropdown-alert-item-icon">${icon}</div>
         <div>
-          <div style="font-weight:bold;">${alert.eventName}</div>
-          <div style="font-size:0.8em; color:#666;">
+          <div class="dropdown-alert-item-title">${eventName} ${enabledBadge}</div>
+          <div class="dropdown-alert-item-subtitle">
             ${alert.counties ? alert.counties.join(", ") : "Unknown location"}
           </div>
         </div>
       </div>
     `;
-
-    alertItem.addEventListener("mouseover", () => {
-      alertItem.style.backgroundColor = "#f0f0f0";
-    });
-    alertItem.addEventListener("mouseout", () => {
-      alertItem.style.backgroundColor = "#f8f8f8";
-    });
 
     alertItem.addEventListener("click", () => {
       dropdown.remove();
@@ -1631,6 +1823,13 @@ function showAlertsDropdown(position) {
   dropdown.querySelector(".close-dropdown").addEventListener("click", () => {
     dropdown.remove();
   });
+
+  dropdown
+    .querySelector(".alert-style-open-btn")
+    .addEventListener("click", (event) => {
+      event.stopPropagation();
+      showAlertStyleMenu(event.currentTarget);
+    });
 
   document.addEventListener(
     "click",
@@ -1650,49 +1849,313 @@ function showAlertsDropdown(position) {
   return dropdown;
 }
 
-function createAlertsToggleButton() {
-  const existing = document.querySelector(".alerts-toggle-btn");
+function getAlertTypesForMenu() {
+  const names = new Set(Object.keys(DEFAULT_ALERT_NAME_COLORS));
+  activeAlerts.forEach((alert) => {
+    names.add(getAlertEventName(alert));
+  });
+  return Array.from(names).sort((a, b) => a.localeCompare(b));
+}
+
+function applyAlertStyleToMap(alert) {
+  if (!alert || !mapInstance) return;
+
+  const id = `alert-${alert.id}`;
+  const color = getAlertColor(alert);
+  const visible = isAlertEnabled(alert);
+  const nextVisibility = visible ? "visible" : "none";
+
+  if (mapInstance.getLayer(`${id}-fill`)) {
+    mapInstance.setPaintProperty(`${id}-fill`, "fill-color", color);
+    mapInstance.setLayoutProperty(`${id}-fill`, "visibility", nextVisibility);
+  }
+  if (mapInstance.getLayer(`${id}-outline-inner`)) {
+    mapInstance.setPaintProperty(
+      `${id}-outline-inner`,
+      "line-color",
+      ALERT_OUTLINE_CONFIG.innerColor(color),
+    );
+    mapInstance.setLayoutProperty(
+      `${id}-outline-inner`,
+      "visibility",
+      nextVisibility,
+    );
+  }
+  if (mapInstance.getLayer(`${id}-outline-outer`)) {
+    mapInstance.setLayoutProperty(
+      `${id}-outline-outer`,
+      "visibility",
+      nextVisibility,
+    );
+  }
+
+  if (alert.marker && alert.marker.getElement) {
+    const markerEl = alert.marker.getElement();
+    if (markerEl) {
+      markerEl.style.display = visible ? "" : "none";
+      markerEl.style.backgroundColor = color;
+    }
+  }
+
+  if (!visible && selectedAlert && selectedAlert.id === alert.id) {
+    stopAlertFlashing(selectedAlert);
+    selectedAlert = null;
+  }
+}
+
+function applyAlertStylesToAllActiveAlerts() {
+  activeAlerts.forEach((alert) => applyAlertStyleToMap(alert));
+  scheduleAlertsButtonUpdate();
+}
+
+function showAlertStyleMenu(anchorButton) {
+  const existing = document.getElementById("alert-style-menu");
   if (existing) existing.remove();
 
-  const button = document.createElement("div");
+  const menu = document.createElement("div");
+  menu.id = "alert-style-menu";
+  menu.className = "alert-style-menu";
+
+  const alertTypes = getAlertTypesForMenu();
+  menu.innerHTML = `
+    <div class="alert-style-menu__header">
+      <strong>Alert Styles</strong>
+      <button type="button" class="alert-style-menu__close">x</button>
+    </div>
+    <div class="alert-style-menu__list"></div>
+  `;
+
+  const list = menu.querySelector(".alert-style-menu__list");
+  const groupedEntries = new Map();
+  ALERT_STYLE_GROUP_DEFINITIONS.forEach((definition) => {
+    groupedEntries.set(definition.id, {
+      ...definition,
+      events: [],
+    });
+  });
+  groupedEntries.set(DEFAULT_ALERT_STYLE_GROUP.id, {
+    ...DEFAULT_ALERT_STYLE_GROUP,
+    events: [],
+  });
+
+  alertTypes.forEach((eventName) => {
+    const group = getAlertStyleGroupDefinition(eventName);
+    const entry =
+      groupedEntries.get(group.id) ??
+      groupedEntries.get(DEFAULT_ALERT_STYLE_GROUP.id);
+    entry.events.push(eventName);
+  });
+
+  const orderedGroups = [];
+  ALERT_STYLE_GROUP_DEFINITIONS.forEach((definition) => {
+    const entry = groupedEntries.get(definition.id);
+    if (entry && entry.events.length) {
+      orderedGroups.push(entry);
+    }
+  });
+  const fallbackEntry = groupedEntries.get(DEFAULT_ALERT_STYLE_GROUP.id);
+  if (fallbackEntry && fallbackEntry.events.length) {
+    orderedGroups.push(fallbackEntry);
+  }
+
+  const fragment = document.createDocumentFragment();
+  orderedGroups.forEach((group) => {
+    const groupSection = document.createElement("section");
+    groupSection.className = "alert-style-group";
+    groupSection.dataset.groupId = group.id;
+    groupSection.style.setProperty(
+      "--group-accent",
+      group.accent || DEFAULT_ALERT_STYLE_GROUP.accent,
+    );
+
+    const header = document.createElement("div");
+    header.className = "alert-style-group__header";
+
+    const titleRow = document.createElement("div");
+    titleRow.className = "alert-style-group__title";
+    const titleLabel = document.createElement("span");
+    titleLabel.textContent = group.label;
+    const titleCount = document.createElement("span");
+    titleCount.className = "alert-style-group__count";
+    titleCount.textContent = `${group.events.length} type${
+      group.events.length === 1 ? "" : "s"
+    }`;
+    titleRow.appendChild(titleLabel);
+    titleRow.appendChild(titleCount);
+
+    const controls = document.createElement("div");
+    controls.className = "alert-style-group__controls";
+    const enableAll = document.createElement("button");
+    enableAll.type = "button";
+    enableAll.className = "alert-style-group__control";
+    enableAll.dataset.groupId = group.id;
+    enableAll.dataset.action = "enable";
+    enableAll.textContent = "Enable all";
+    const muteAll = document.createElement("button");
+    muteAll.type = "button";
+    muteAll.className = "alert-style-group__control";
+    muteAll.dataset.groupId = group.id;
+    muteAll.dataset.action = "disable";
+    muteAll.textContent = "Mute all";
+    controls.appendChild(enableAll);
+    controls.appendChild(muteAll);
+
+    header.appendChild(titleRow);
+    header.appendChild(controls);
+
+    const rowsContainer = document.createElement("div");
+    rowsContainer.className = "alert-style-group__rows";
+    group.events.forEach((eventName) => {
+      const style = getAlertStyle(eventName);
+      const row = document.createElement("div");
+      row.className = "alert-style-row";
+      row.dataset.group = group.id;
+
+      const nameLabel = document.createElement("label");
+      nameLabel.className = "alert-style-row__name";
+      nameLabel.title = eventName;
+      nameLabel.textContent = eventName;
+
+      const enabledInput = document.createElement("input");
+      enabledInput.className = "alert-style-row__enabled";
+      enabledInput.type = "checkbox";
+      enabledInput.checked = !!style.enabled;
+      enabledInput.dataset.eventName = eventName;
+
+      const colorInput = document.createElement("input");
+      colorInput.className = "alert-style-row__color";
+      colorInput.type = "color";
+      colorInput.value = style.color || "#ffffff";
+      colorInput.dataset.eventName = eventName;
+
+      row.appendChild(nameLabel);
+      row.appendChild(enabledInput);
+      row.appendChild(colorInput);
+      rowsContainer.appendChild(row);
+    });
+
+    groupSection.appendChild(header);
+    groupSection.appendChild(rowsContainer);
+    fragment.appendChild(groupSection);
+  });
+
+  list.appendChild(fragment);
+  document.body.appendChild(menu);
+
+  const anchorRect = anchorButton.getBoundingClientRect();
+  menu.style.top = `${Math.round(anchorRect.bottom + 8)}px`;
+  menu.style.right = `${Math.max(10, Math.round(window.innerWidth - anchorRect.right))}px`;
+
+  menu.addEventListener("change", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLInputElement)) return;
+
+    const eventName = target.dataset.eventName;
+    if (!eventName) return;
+
+    const style = getAlertStyle(eventName);
+    if (target.classList.contains("alert-style-row__enabled")) {
+      style.enabled = target.checked;
+    }
+    if (target.classList.contains("alert-style-row__color")) {
+      style.color = target.value;
+    }
+
+    saveAlertStyleConfig();
+    applyAlertStylesToAllActiveAlerts();
+  });
+
+  menu.addEventListener("click", (event) => {
+    const control =
+      event.target instanceof HTMLElement
+        ? event.target.closest(".alert-style-group__control")
+        : null;
+    if (!control) return;
+    event.stopPropagation();
+
+    const { action, groupId } = control.dataset;
+    if (!action || !groupId) return;
+
+    const shouldEnable = action === "enable";
+    const checkboxes = menu.querySelectorAll(
+      `.alert-style-row[data-group="${groupId}"] .alert-style-row__enabled`,
+    );
+    if (!checkboxes.length) return;
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = shouldEnable;
+      const eventName = checkbox.dataset.eventName;
+      if (!eventName) return;
+      const style = getAlertStyle(eventName);
+      style.enabled = shouldEnable;
+    });
+
+    saveAlertStyleConfig();
+    applyAlertStylesToAllActiveAlerts();
+  });
+
+  menu
+    .querySelector(".alert-style-menu__close")
+    .addEventListener("click", () => menu.remove());
+
+  document.addEventListener(
+    "click",
+    (e) => {
+      if (
+        menu &&
+        !menu.contains(e.target) &&
+        !e.target.closest(".alert-style-btn") &&
+        !e.target.closest(".alert-style-open-btn")
+      ) {
+        menu.remove();
+      }
+    },
+    { once: true },
+  );
+}
+
+function createAlertsToggleButton() {
+  const existingToolbar = document.querySelector(".alerts-toolbar");
+  if (existingToolbar) existingToolbar.remove();
+
+  const toolbar = document.createElement("div");
+  toolbar.className = "alerts-toolbar";
+
+  const button = document.createElement("button");
   button.className = "alerts-toggle-btn";
-  button.innerHTML = `<div style="display:flex; align-items:center;">
-                        <span style="margin-right:5px;">⚠️</span>
-                        <span>Alerts</span>
-                        <span class="alert-count" style="margin-left:5px; background-color:red; color:white; border-radius:50%; width:20px; height:20px; display:flex; justify-content:center; align-items:center; font-size:0.8em;">
-                          ${activeAlerts.size}
-                        </span>
-                      </div>`;
+  button.type = "button";
+  button.innerHTML = `<span class="alert-main-icon">!</span>
+    <span>Alerts</span>
+    <span class="alert-count">${activeAlerts.size}</span>`;
 
-  Object.assign(button.style, {
-    position: "absolute",
-    top: "10px",
-    right: "10px",
-    backgroundColor: "#333",
-    color: "white",
-    padding: "8px 15px",
-    borderRadius: "5px",
-    cursor: "pointer",
-    zIndex: "1000",
-    boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
-    transition: "all 0.3s ease",
-  });
-
-  button.addEventListener("mouseover", () => {
-    button.style.backgroundColor = "#555";
-  });
-
-  button.addEventListener("mouseout", () => {
-    button.style.backgroundColor = "#333";
-  });
+  const styleButton = document.createElement("button");
+  styleButton.className = "alert-style-btn";
+  styleButton.type = "button";
+  styleButton.title = "Alert style settings";
+  styleButton.textContent = "Style";
 
   button.addEventListener("click", (e) => {
     e.stopPropagation();
     showAlertsDropdown({ x: e.clientX, y: e.clientY + 30 });
   });
 
-  document.body.appendChild(button);
+  styleButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    showAlertStyleMenu(styleButton);
+  });
+
+  toolbar.appendChild(button);
+  toolbar.appendChild(styleButton);
+  document.body.appendChild(toolbar);
   return button;
+}
+
+function scheduleAlertsButtonUpdate() {
+  if (alertsButtonUpdateRaf) return;
+  alertsButtonUpdateRaf = requestAnimationFrame(() => {
+    alertsButtonUpdateRaf = null;
+    updateAlertsButton();
+  });
 }
 
 function updateAlertsButton() {
@@ -1705,23 +2168,294 @@ function updateAlertsButton() {
   const countElement = button.querySelector(".alert-count");
   if (countElement) {
     countElement.textContent = activeAlerts.size;
-
-    if (activeAlerts.size > 0) {
-      button.style.animation = "pulse 2s infinite";
-    } else {
-      button.style.animation = "none";
-    }
   }
 }
 
 const style = document.createElement("style");
 style.textContent = `
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+  .alerts-toolbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    z-index: 1000;
   }
-  
+
+  .alerts-toggle-btn,
+  .alert-style-btn {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(15, 23, 42, 0.9);
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  }
+
+  .alerts-toggle-btn:hover,
+  .alert-style-btn:hover {
+    background: rgba(30, 41, 59, 0.95);
+  }
+
+  .alert-main-icon {
+    font-weight: 700;
+    color: #60a5fa;
+  }
+
+  .alert-count {
+    margin-left: 2px;
+    background-color: #dc2626;
+    color: #fff;
+    border-radius: 999px;
+    min-width: 20px;
+    height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    padding: 0 6px;
+  }
+
+  .alerts-dropdown-panel {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    width: 320px;
+    max-height: 430px;
+    overflow: auto;
+    padding: 10px;
+  }
+
+  .alerts-dropdown-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .alerts-dropdown-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .alerts-dropdown-header-actions button {
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #f8fafc;
+    color: #0f172a;
+    font-size: 12px;
+    padding: 4px 8px;
+    cursor: pointer;
+  }
+
+  .dropdown-alert-item {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    transition: background-color 0.15s ease;
+  }
+
+  .dropdown-alert-item-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-alert-item-icon {
+    margin-right: 10px;
+  }
+
+  .dropdown-alert-item-title {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dropdown-alert-item-subtitle {
+    font-size: 0.8em;
+    color: #4b5563;
+  }
+
+  .alert-muted-pill {
+    background: #e5e7eb;
+    color: #374151;
+    border-radius: 999px;
+    font-size: 10px;
+    padding: 2px 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .alert-style-menu {
+    position: absolute;
+    z-index: 1010;
+    width: min(520px, calc(100vw - 20px));
+    max-height: 70vh;
+    background: #020617;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 16px;
+    padding: 12px 14px;
+    box-shadow: 0 25px 60px rgba(2, 6, 23, 0.35);
+    color: #e2e8f0;
+  }
+
+  .alert-style-menu__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+  }
+
+  .alert-style-menu__close {
+    border: 1px solid rgba(148, 163, 184, 0.5);
+    background: rgba(15, 23, 42, 0.7);
+    color: #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-weight: 600;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .alert-style-menu__close:hover {
+    border-color: rgba(248, 250, 252, 0.8);
+    background: rgba(51, 65, 85, 0.9);
+  }
+
+  .alert-style-menu__list {
+    max-height: calc(70vh - 64px);
+    overflow: auto;
+    padding-right: 4px;
+  }
+
+  .alert-style-group {
+    border-left: 3px solid var(--group-accent, #94a3b8);
+    padding: 12px 14px 14px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .alert-style-group__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .alert-style-group__title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .alert-style-group__count {
+    font-size: 0.65rem;
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .alert-style-group__controls {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .alert-style-group__control {
+    border: 1px solid rgba(226, 232, 240, 0.4);
+    background: rgba(226, 232, 240, 0.08);
+    color: #e2e8f0;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .alert-style-group__control:hover {
+    border-color: rgba(59, 130, 246, 0.7);
+    background: rgba(59, 130, 246, 0.18);
+  }
+
+  .alert-style-group__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .alert-style-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  }
+
+  .alert-style-row:last-child {
+    border-bottom: none;
+  }
+
+  .alert-style-row__name {
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .alert-style-row__name:hover {
+    color: #f8fafc;
+  }
+
+  .alert-style-row__enabled {
+    width: 20px;
+    height: 20px;
+    accent-color: #34d399;
+    cursor: pointer;
+  }
+
+  .alert-style-row__color {
+    width: 38px;
+    height: 28px;
+    border-radius: 8px;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .alert-style-row__color::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  .alert-style-row__color::-webkit-color-swatch {
+    border-radius: 6px;
+  }
+
   .dropdown-alert-item:hover {
     background-color: #f0f0f0 !important;
   }
@@ -1858,7 +2592,8 @@ function addAlertToMap(alert) {
     addAlertCounties(alert);
   }
 
-  updateAlertsButton();
+  applyAlertStyleToMap(alert);
+  scheduleAlertsButtonUpdate();
 }
 
 // Try to synthesize threat information when the alert doesn't include
@@ -1979,7 +2714,7 @@ function removeAlertFromMap(alertId) {
     stopAlertFlashing(alertToReset);
   }
 
-  updateAlertsButton();
+  scheduleAlertsButtonUpdate();
 }
 
 function detachAlertMapEventHandlers(map, alert) {
@@ -5570,97 +6305,159 @@ function getAlertName(alert) {
   return eventName;
 }
 
+const DEFAULT_ALERT_NAME_COLORS = {
+  "Tornado Warning": "#FF0000",
+  "Tornado Warning (Observed)": "#FF0000",
+  "Observed Tornado Warning": "#FF00FF",
+  "Radar Confirmed Tornado Warning": "#FF00FF",
+  "Spotter Confirmed Tornado Warning": "#FF00FF",
+  "Emergency Mgmt Confirmed Tornado Warning": "#FF00FF",
+  "Law Enforcement Confirmed Tornado Warning": "#FF00FF",
+  "Public Confirmed Tornado Warning": "#FF00FF",
+  "PDS Tornado Warning": "#FF00FF",
+  "Tornado Emergency": "#850085",
+  "Tornado Watch": "#8B0000",
+  "Severe Thunderstorm Warning": "#FF8000",
+  "Considerable Severe Thunderstorm Warning": "#FF6347",
+  "Destructive Severe Thunderstorm Warning": "#FF4500",
+  "Severe Thunderstorm Watch": "#DB7093",
+  "Flash Flood Warning": "#228B22",
+  "Flash Flood Emergency": "#8B0000",
+  "Considerable Flash Flood Warning": "#32CD32",
+  "Flood Warning": "#3CB371",
+  "Flood Watch": "#66CDAA",
+  "Flood Advisory": "#9ACD32",
+  "Coastal Flood Warning": "#4682B4",
+  "Coastal Flood Watch": "#87CEEB",
+  "Coastal Flood Advisory": "#ADD8E6",
+  "Winter Weather Advisory": "#7B68EE",
+  "Winter Storm Warning": "#FF69B4",
+  "Winter Storm Watch": "#6699CC",
+  "Ice Storm Warning": "#8B008B",
+  "Blizzard Warning": "#FF4500",
+  "Snow Squall Warning": "#64B5F6",
+  "Freezing Rain Advisory": "#008080",
+  "Freezing Fog Advisory": "#008080",
+  "Sleet Advisory": "#B0E0E6",
+  "Lake Effect Snow Warning": "#4169E1",
+  "Lake Effect Snow Advisory": "#87CEFA",
+  "High Wind Warning": "#DAA520",
+  "High Wind Watch": "#B8860B",
+  "Wind Advisory": "#D2B48C",
+  "Gale Warning": "#008B8B",
+  "Storm Warning": "#483D8B",
+  "Hurricane Force Wind Warning": "#8B0000",
+  "Excessive Heat Warning": "#FFD700",
+  "Heat Advisory": "#F0E68C",
+  "Excessive Wind Chill Warning": "#ADD8E6",
+  "Wind Chill Advisory": "#B0C4DE",
+  "Freeze Warning": "#6A5ACD",
+  "Hard Freeze Warning": "#483D8B",
+  "Red Flag Warning": "#B22222",
+  "Fire Weather Watch": "#CD5C5C",
+  "High Surf Advisory": "#4682B4",
+  "Rip Current Statement": "#1E90FF",
+  "Small Craft Advisory": "#5F9EA0",
+  "Dense Fog Advisory": "#708090",
+  "Dust Advisory": "#BDB76B",
+  "Dust Storm Warning": "#8B4513",
+  "Air Quality Alert": "#A9A9A9",
+  "Dense Smoke Advisory": "#696969",
+  "Hurricane Warning": "#8B0000",
+  "Hurricane Watch": "#DC143C",
+  "Tropical Storm Warning": "#FF4500",
+  "Tropical Storm Watch": "#FFA07A",
+  "Tropical Depression": "#FFB6C1",
+  "Storm Surge Warning": "#800000",
+  "Storm Surge Watch": "#A52A2A",
+  "Tsunami Warning": "#8B0000",
+  "Tsunami Watch": "#DC143C",
+  "Tsunami Advisory": "#FF4500",
+  "Volcanic Ash Advisory": "#8B4513",
+  "Special Weather Statement": "#FFE4B5",
+  "Mesoscale Discussion": "#0066ff",
+  "Hazardous Weather Outlook": "#808080",
+  "Hydrologic Outlook": "#B0C4DE",
+  "Beach Hazards Statement": "#F4A460",
+};
+
+function ensureAlertStyleConfig() {
+  if (alertStyleConfig) return;
+
+  const defaults = {};
+  Object.keys(DEFAULT_ALERT_NAME_COLORS).forEach((name) => {
+    defaults[name] = {
+      color: DEFAULT_ALERT_NAME_COLORS[name],
+      enabled: true,
+    };
+  });
+
+  try {
+    const raw = localStorage.getItem(ALERT_STYLE_STORAGE_KEY);
+    if (!raw) {
+      alertStyleConfig = defaults;
+      return;
+    }
+
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") {
+      alertStyleConfig = defaults;
+      return;
+    }
+
+    alertStyleConfig = defaults;
+    Object.entries(parsed).forEach(([eventName, style]) => {
+      if (!eventName || !style || typeof style !== "object") return;
+      const color =
+        typeof style.color === "string" && style.color.trim()
+          ? style.color
+          : DEFAULT_ALERT_NAME_COLORS[eventName] || "#ffffff";
+      const enabled = style.enabled !== false;
+      alertStyleConfig[eventName] = { color, enabled };
+    });
+  } catch (error) {
+    console.warn("Unable to restore alert style config:", error);
+    alertStyleConfig = defaults;
+  }
+}
+
+function saveAlertStyleConfig() {
+  try {
+    ensureAlertStyleConfig();
+    localStorage.setItem(
+      ALERT_STYLE_STORAGE_KEY,
+      JSON.stringify(alertStyleConfig),
+    );
+  } catch (error) {
+    console.warn("Unable to save alert style config:", error);
+  }
+}
+
+function getAlertEventName(alertOrName) {
+  return typeof alertOrName === "string"
+    ? alertOrName
+    : getAlertName(alertOrName);
+}
+
+function getAlertStyle(eventName) {
+  ensureAlertStyleConfig();
+  if (!alertStyleConfig[eventName]) {
+    alertStyleConfig[eventName] = {
+      color: DEFAULT_ALERT_NAME_COLORS[eventName] || "rgba(255, 255, 255, 0.9)",
+      enabled: true,
+    };
+  }
+  return alertStyleConfig[eventName];
+}
+
+function isAlertEnabled(alertOrName) {
+  const eventName = getAlertEventName(alertOrName);
+  return getAlertStyle(eventName).enabled !== false;
+}
+
 function getAlertColor(alert) {
-  const eventName = typeof alert === "string" ? alert : getAlertName(alert);
-
-  const nameColors = {
-    "Tornado Warning": "#FF0000",
-    "Tornado Warning (Observed)": "#FF0000",
-    "Observed Tornado Warning": "#FF00FF",
-    "Radar Confirmed Tornado Warning": "#FF00FF",
-    "Spotter Confirmed Tornado Warning": "#FF00FF",
-    "Emergency Mgmt Confirmed Tornado Warning": "#FF00FF",
-    "Law Enforcement Confirmed Tornado Warning": "#FF00FF",
-    "Public Confirmed Tornado Warning": "#FF00FF",
-    "PDS Tornado Warning": "#FF00FF",
-    "Tornado Emergency": "#850085",
-    "Tornado Watch": "#8B0000",
-
-    "Severe Thunderstorm Warning": "#FF8000",
-    "Considerable Severe Thunderstorm Warning": "#FF6347",
-    "Destructive Severe Thunderstorm Warning": "#FF4500",
-    "Severe Thunderstorm Watch": "#DB7093",
-
-    "Flash Flood Warning": "#228B22",
-    "Flash Flood Emergency": "#8B0000",
-    "Considerable Flash Flood Warning": "#32CD32",
-    "Flood Warning": "#3CB371",
-    "Flood Watch": "#66CDAA",
-    "Flood Advisory": "#9ACD32",
-    "Coastal Flood Warning": "#4682B4",
-    "Coastal Flood Watch": "#87CEEB",
-    "Coastal Flood Advisory": "#ADD8E6",
-
-    "Winter Weather Advisory": "#7B68EE",
-    "Winter Storm Warning": "#FF69B4",
-    "Winter Storm Watch": "#6699CC",
-    "Ice Storm Warning": "#8B008B",
-    "Blizzard Warning": "#FF4500",
-    "Snow Squall Warning": "#64B5F6",
-    "Freezing Rain Advisory": "#008080",
-    "Freezing Fog Advisory": "#008080",
-    "Sleet Advisory": "#B0E0E6",
-    "Lake Effect Snow Warning": "#4169E1",
-    "Lake Effect Snow Advisory": "#87CEFA",
-
-    "High Wind Warning": "#DAA520",
-    "High Wind Watch": "#B8860B",
-    "Wind Advisory": "#D2B48C",
-    "Gale Warning": "#008B8B",
-    "Storm Warning": "#483D8B",
-    "Hurricane Force Wind Warning": "#8B0000",
-
-    "Excessive Heat Warning": "#FFD700",
-    "Heat Advisory": "#F0E68C",
-    "Excessive Wind Chill Warning": "#ADD8E6",
-    "Wind Chill Advisory": "#B0C4DE",
-    "Freeze Warning": "#6A5ACD",
-    "Hard Freeze Warning": "#483D8B",
-
-    "Red Flag Warning": "#B22222",
-    "Fire Weather Watch": "#CD5C5C",
-
-    "High Surf Advisory": "#4682B4",
-    "Rip Current Statement": "#1E90FF",
-    "Small Craft Advisory": "#5F9EA0",
-
-    "Dense Fog Advisory": "#708090",
-    "Dust Advisory": "#BDB76B",
-    "Dust Storm Warning": "#8B4513",
-    "Air Quality Alert": "#A9A9A9",
-    "Dense Smoke Advisory": "#696969",
-
-    "Hurricane Warning": "#8B0000",
-    "Hurricane Watch": "#DC143C",
-    "Tropical Storm Warning": "#FF4500",
-    "Tropical Storm Watch": "#FFA07A",
-    "Tropical Depression": "#FFB6C1",
-    "Storm Surge Warning": "#800000",
-    "Storm Surge Watch": "#A52A2A",
-
-    "Tsunami Warning": "#8B0000",
-    "Tsunami Watch": "#DC143C",
-    "Tsunami Advisory": "#FF4500",
-    "Volcanic Ash Advisory": "#8B4513",
-
-    "Special Weather Statement": "#FFE4B5",
-    "Mesoscale Discussion": "#0066ff",
-    "Hazardous Weather Outlook": "#808080",
-    "Hydrologic Outlook": "#B0C4DE",
-    "Beach Hazards Statement": "#F4A460",
-  };
-
-  return nameColors[eventName] || "rgba(255, 255, 255, 0.9)";
+  const eventName = getAlertEventName(alert);
+  return getAlertStyle(eventName).color || "rgba(255, 255, 255, 0.9)";
 }
 
 function createAlertMarker(title, icon, color) {
@@ -6226,6 +7023,8 @@ function removeAlertFromMap(alertId) {
     alertDetailsElement = null;
     selectedAlert = null;
   }
+
+  scheduleAlertsButtonUpdate();
 }
 
 function getAlertIcon(eventCode) {
@@ -6598,6 +7397,7 @@ async function loadArchiveRadarData(siteId, product, key, timestamp) {
 
 window.onload = async () => {
   loadPalettesFromStorage();
+  ensureAlertStyleConfig();
 
   initializeTheme();
   const themeToggle = document.getElementById("themeToggle");
@@ -6630,14 +7430,20 @@ window.onload = async () => {
 
   installUiScaleResizeHandler();
   applyUiScale({ shouldResizeMap: false });
+  bindToolToggleVisualState();
+  createAlertsToggleButton();
 
   loadCountiesData();
 
   mapInstance = new maplibregl.Map({
     container: "map",
-    style: `https://api.maptiler.com/maps/01977107-2c8b-7b89-873e-7e5019dbb13c/style.json?key=SskdAs3Zk3tm9lBUtRKN&v=${Date.now()}`,
+    style: `https://api.maptiler.com/maps/01977107-2c8b-7b89-873e-7e5019dbb13c/style.json?key=${MAPTILER_API_KEY}`,
     center: [-98.585522, 39.8333333],
     zoom: 4,
+    antialias: false,
+    refreshExpiredTiles: false,
+    fadeDuration: 0,
+    pixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),
   });
   mapInstance.on("load", () => {
     initializeWeatherAlerts();
@@ -12448,18 +13254,37 @@ function toggleInspector() {
     toggleBtn.classList.add("active");
     mapInstance.getCanvas().style.cursor = "crosshair";
 
-    inspectorMouseHandler = (e) => handleInspectorMove(e);
+    inspectorMouseHandler = (e) => scheduleInspectorMove(e);
     mapInstance.on("mousemove", inspectorMouseHandler);
   } else {
     toggleBtn.classList.remove("active");
     display.classList.remove("active");
     mapInstance.getCanvas().style.cursor = "";
 
+    pendingInspectorEvent = null;
+    if (inspectorMoveRaf) {
+      cancelAnimationFrame(inspectorMoveRaf);
+      inspectorMoveRaf = null;
+    }
+
     if (inspectorMouseHandler) {
       mapInstance.off("mousemove", inspectorMouseHandler);
       inspectorMouseHandler = null;
     }
   }
+}
+
+function scheduleInspectorMove(e) {
+  pendingInspectorEvent = e;
+  if (inspectorMoveRaf) return;
+
+  inspectorMoveRaf = requestAnimationFrame(() => {
+    inspectorMoveRaf = null;
+    if (!pendingInspectorEvent) return;
+    const eventToProcess = pendingInspectorEvent;
+    pendingInspectorEvent = null;
+    handleInspectorMove(eventToProcess);
+  });
 }
 
 /**
@@ -12504,7 +13329,17 @@ function sampleRadarAtPoint(lng, lat) {
   let minDist = Infinity;
   let closestValue = null;
 
-  for (let i = 0; i < vertices.length; i += 2) {
+  const pointCount = values.length;
+  const stride =
+    pointCount > 200000
+      ? 16
+      : pointCount > 100000
+        ? 8
+        : pointCount > 40000
+          ? 4
+          : 1;
+
+  for (let i = 0; i < vertices.length; i += 2 * stride) {
     const vLng = vertices[i];
     const vLat = vertices[i + 1];
 
@@ -13572,6 +14407,7 @@ try {
   const shadowOpacityEl = document.getElementById("shadowOpacity");
   if (shadowOpacityEl)
     shadowOpacityEl.value = Math.round((shadowOpacity || 0) * 100);
+  syncToolToggleVisualState();
 } catch (e) {
   console.warn("Error applying saved settings:", e);
 }
