@@ -4796,24 +4796,54 @@ function initCameraLayer() {
   }
 }
 
-// Helper function to detect if a URL is a video based on file extension
+function escapeHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function decodeUrlParam(value) {
+  if (!value) return "";
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
+function isRtspUrl(url) {
+  return typeof url === "string" && /^rtsp:\/\//i.test(url);
+}
+
+function isHlsUrl(url) {
+  if (!url || typeof url !== "string") return false;
+  return /\.m3u8(?:$|[?#])/i.test(url);
+}
+
+function isDashUrl(url) {
+  if (!url || typeof url !== "string") return false;
+  return /\.mpd(?:$|[?#])/i.test(url);
+}
+
+// Helper function to detect if a URL is a video based on file extension or protocol
 function isVideoUrl(url) {
   if (!url) return false;
+  if (isRtspUrl(url)) return true;
 
-  // Remove query parameters
-  const urlWithoutQuery = url.split("?")[0].split("#")[0];
+  const urlWithoutQuery = String(url).split("?")[0].split("#")[0];
+  const lastDot = urlWithoutQuery.lastIndexOf(".");
+  if (lastDot === -1) return false;
+  const extension = urlWithoutQuery.substring(lastDot).toLowerCase();
 
-  // Get the file extension
-  const extension = urlWithoutQuery
-    .substring(urlWithoutQuery.lastIndexOf("."))
-    .toLowerCase();
-
-  // Check if it matches a known video extension
   const videoExtensions = [
     ".mp4",
     ".webm",
     ".ogg",
     ".m3u8",
+    ".mpd",
     ".flv",
     ".mov",
     ".avi",
@@ -4821,39 +4851,202 @@ function isVideoUrl(url) {
   return videoExtensions.includes(extension);
 }
 
+function getCameraSnapshotUrl(url) {
+  return `/api/camera/snapshot?url=${encodeURIComponent(url)}`;
+}
+
+function getVideoMimeType(url) {
+  if (isHlsUrl(url)) return "application/x-mpegURL";
+  if (isDashUrl(url)) return "application/dash+xml";
+  if (/\.webm(?:$|[?#])/i.test(url)) return "video/webm";
+  if (/\.ogg(?:$|[?#])/i.test(url)) return "video/ogg";
+  return "video/mp4";
+}
+
+function destroyCameraPlayers(root = document) {
+  if (!root || typeof root.querySelectorAll !== "function") return;
+  root.querySelectorAll("video").forEach((video) => {
+    if (video._hlsInstance && typeof video._hlsInstance.destroy === "function") {
+      video._hlsInstance.destroy();
+      video._hlsInstance = null;
+    }
+    if (video._dashPlayer && typeof video._dashPlayer.reset === "function") {
+      video._dashPlayer.reset();
+      video._dashPlayer = null;
+    }
+  });
+}
+
+function initializeCameraStreams(root = document) {
+  if (!root || typeof root.querySelectorAll !== "function") return;
+
+  root.querySelectorAll("video[data-camera-source]").forEach((video) => {
+    const sourceUrl = decodeUrlParam(video.dataset.cameraSource || "");
+    if (!sourceUrl) return;
+
+    if (isDashUrl(sourceUrl)) {
+      if (window.dashjs && window.dashjs.MediaPlayer) {
+        const dashPlayer = window.dashjs.MediaPlayer().create();
+        dashPlayer.initialize(video, sourceUrl, true);
+        video._dashPlayer = dashPlayer;
+      } else {
+        video.src = sourceUrl;
+      }
+      return;
+    }
+
+    if (isHlsUrl(sourceUrl)) {
+      if (window.Hls && window.Hls.isSupported()) {
+        const hls = new window.Hls();
+        hls.loadSource(sourceUrl);
+        hls.attachMedia(video);
+        video._hlsInstance = hls;
+      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        video.src = sourceUrl;
+      } else {
+        video.src = sourceUrl;
+      }
+      return;
+    }
+
+    video.src = sourceUrl;
+  });
+}
+
+function refreshCameraImage(encodedUrl, imageId) {
+  const imageEl = document.getElementById(imageId);
+  if (!imageEl) return;
+  const baseUrl = decodeUrlParam(encodedUrl);
+  const separator = baseUrl.includes("?") ? "&" : "?";
+  imageEl.src = `${baseUrl}${separator}t=${Date.now()}`;
+}
+
+function buildCameraMediaContent(url, type) {
+  if (!url) {
+    return '<div style="padding: 30px; text-align: center; color: rgba(255,255,255,0.5); font-size: 13px; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px dashed rgba(255,255,255,0.2);">📷<br/>No media available</div>';
+  }
+
+  const wantsVideo = type === "video" || isVideoUrl(url);
+  const rtspFallback = wantsVideo && isRtspUrl(url);
+  const mediaUrl = rtspFallback ? getCameraSnapshotUrl(url) : url;
+
+  if (wantsVideo && !rtspFallback) {
+    const videoId = `camera-video-${Date.now()}`;
+    const loaderId = `video-loading-${Date.now()}`;
+    const sourceType = getVideoMimeType(url);
+    const encodedSource = encodeURIComponent(url);
+    const safeMediaUrl = escapeHtml(mediaUrl);
+    const safeOpenUrl = escapeHtml(url);
+    return `
+      <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
+        <video 
+          id="${videoId}"
+          data-camera-source="${encodedSource}"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;"
+          autoplay
+          loop
+          muted
+          playsinline
+          onloadeddata="this.style.opacity='1'; const loader = document.getElementById('${loaderId}'); if(loader) loader.style.display='none';"
+          onerror="this.parentElement.innerHTML='<div style=\\'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.6); text-align: center; padding: 20px;\\'>⚠️<br/>Video unavailable<br/><span style=\\'font-size: 11px;\\'>Stream may be offline</span></div>';"
+        >
+          <source src="${safeMediaUrl}" type="${sourceType}">
+          Your browser does not support video playback.
+        </video>
+        <div id="${loaderId}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.7); font-size: 12px;">
+          <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(79, 184, 255, 0.3); border-top-color: #4fb8ff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 8px;"></div>
+          <div>Loading video...</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 8px;">
+        <button onclick="const vid = document.getElementById('${videoId}'); if(vid) { vid.paused ? vid.play() : vid.pause(); }" 
+          style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; transition: all 0.2s;"
+          onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+          onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+          ⏯️ Play/Pause
+        </button>
+        <a href="${safeOpenUrl}" target="_blank" rel="noopener noreferrer"
+          style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; text-decoration: none; text-align: center; transition: all 0.2s; display: block;"
+          onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+          onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+          🔗 Open Stream
+        </a>
+      </div>
+    `;
+  }
+
+  const imgId = `camera-img-${Date.now()}`;
+  const loaderId = `img-loading-${Date.now()}`;
+  const safeMediaUrl = escapeHtml(mediaUrl);
+  const safeOpenUrl = escapeHtml(url);
+  const encodedRefreshUrl = encodeURIComponent(mediaUrl);
+  const fallbackLabel = rtspFallback
+    ? `<div style="margin-top: 6px; font-size: 11px; color: rgba(180, 189, 210, 0.8);">RTSP fallback via FFmpeg snapshot.</div>`
+    : "";
+
+  return `
+    <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+      <img 
+        id="${imgId}"
+        src="${safeMediaUrl}" 
+        alt="Camera view" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.3s;"
+        onload="this.style.opacity='1'; const loader = document.getElementById('${loaderId}'); if(loader) loader.style.display='none';"
+        onerror="this.parentElement.innerHTML='<div style=\\'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.6); text-align: center; padding: 20px;\\'>⚠️<br/>Image unavailable<br/><span style=\\'font-size: 11px;\\'>Camera may be offline</span></div>';"
+      />
+      <div id="${loaderId}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.7); font-size: 12px; text-align: center;">
+        <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(79, 184, 255, 0.3); border-top-color: #4fb8ff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 8px;"></div>
+        <div>Loading image...</div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 8px; margin-top: 8px;">
+      <button onclick="refreshCameraImage('${encodedRefreshUrl}', '${imgId}')" 
+        style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; transition: all 0.2s;"
+        onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+        onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+        🔄 Refresh
+      </button>
+      <a href="${safeOpenUrl}" target="_blank" rel="noopener noreferrer"
+        style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; text-decoration: none; text-align: center; transition: all 0.2s; display: block;"
+        onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
+        onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
+        🖼️ Full Size
+      </a>
+    </div>
+    ${fallbackLabel}
+  `;
+}
+
 function handleCameraClick(e) {
   if (!e.features || e.features.length === 0) return;
 
   const feature = e.features[0];
   const coordinates = feature.geometry.coordinates.slice();
-  const imageUrl = feature.properties.image_url;
-  const videoUrl = feature.properties.video_url;
+  const imageUrl = feature.properties.image_url || "";
+  const videoUrl = feature.properties.video_url || "";
   const state = feature.properties.state || "Unknown";
   const name = feature.properties.name || "Traffic Camera";
 
-  // Ensure the popup appears over the correct location
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
 
-  // Close existing popup
   if (cameraPopup) {
+    const existingPopupEl =
+      typeof cameraPopup.getElement === "function" ? cameraPopup.getElement() : null;
+    if (existingPopupEl) {
+      destroyCameraPlayers(existingPopupEl);
+    }
     cameraPopup.remove();
   }
 
-  // Determine available media
   const hasImage = Boolean(imageUrl);
   const hasVideo = Boolean(videoUrl);
   const hasBoth = hasImage && hasVideo;
 
-  // Default to video if both available, otherwise first available
-  let activeMediaUrl = videoUrl || imageUrl;
-  let activeMediaType = videoUrl ? "video" : "image";
+  const activeMediaUrl = hasVideo ? videoUrl : imageUrl;
+  const activeMediaType = hasVideo ? "video" : "image";
 
-  // Detect if URL is a video format
-  const isVideo = activeMediaType === "video" || isVideoUrl(activeMediaUrl);
-
-  // Create popup content with dark mode styling
   const popupContent = document.createElement("div");
   popupContent.style.cssText = `
     min-width: 280px;
@@ -4865,20 +5058,21 @@ function handleCameraClick(e) {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   `;
 
-  // Media type toggle buttons (if both formats available)
+  const encodedVideoUrl = encodeURIComponent(videoUrl);
+  const encodedImageUrl = encodeURIComponent(imageUrl);
   const mediaToggle = hasBoth
     ? `
     <div style="display: flex; gap: 6px; margin-bottom: 12px; padding: 4px; background: rgba(0, 0, 0, 0.3); border-radius: 8px;">
       <button 
         id="camera-toggle-video"
-        onclick="switchCameraMedia('video', '${videoUrl}', '${imageUrl}')"
+        onclick="switchCameraMedia('video', '${encodedVideoUrl}', '${encodedImageUrl}')"
         style="flex: 1; padding: 6px 10px; background: rgba(79, 184, 255, 0.25); border: 1px solid rgba(79, 184, 255, 0.4); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 11px; font-weight: 600; transition: all 0.2s;"
       >
         🎥 Video
       </button>
       <button 
         id="camera-toggle-image"
-        onclick="switchCameraMedia('image', '${videoUrl}', '${imageUrl}')"
+        onclick="switchCameraMedia('image', '${encodedVideoUrl}', '${encodedImageUrl}')"
         style="flex: 1; padding: 6px 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; color: rgba(255, 255, 255, 0.5); cursor: pointer; font-size: 11px; font-weight: 600; transition: all 0.2s;"
       >
         🖼️ Image
@@ -4887,98 +5081,15 @@ function handleCameraClick(e) {
   `
     : "";
 
-  const buildMediaContent = (url, type) => {
-    if (!url) {
-      return '<div style="padding: 30px; text-align: center; color: rgba(255,255,255,0.5); font-size: 13px; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px dashed rgba(255,255,255,0.2);">📷<br/>No media available</div>';
-    }
-
-    const isVid = type === "video" || isVideoUrl(url);
-
-    if (isVid) {
-      const videoId = `camera-video-${Date.now()}`;
-      const loaderId = `video-loading-${Date.now()}`;
-      return `
-        <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-          <video 
-            id="${videoId}"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;"
-            autoplay
-            loop
-            muted
-            playsinline
-            onloadeddata="this.style.opacity='1'; const loader = document.getElementById('${loaderId}'); if(loader) loader.style.display='none';"
-            onerror="this.parentElement.innerHTML='<div style=\\'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.6); text-align: center; padding: 20px;\\'>⚠️<br/>Video unavailable<br/><span style=\\'font-size: 11px;\\'>Stream may be offline</span></div>';"
-          >
-            <source src="${url}" type="${url.includes(".m3u8") ? "application/x-mpegURL" : url.includes(".webm") ? "video/webm" : url.includes(".ogg") ? "video/ogg" : "video/mp4"}">
-            Your browser does not support video playback.
-          </video>
-          <div id="${loaderId}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.7); font-size: 12px;">
-            <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(79, 184, 255, 0.3); border-top-color: #4fb8ff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 8px;"></div>
-            <div>Loading video...</div>
-          </div>
-        </div>
-        <div style="display: flex; gap: 8px; margin-top: 8px;">
-          <button onclick="const vid = document.getElementById('${videoId}'); if(vid) { vid.paused ? vid.play() : vid.pause(); }" 
-            style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; transition: all 0.2s;"
-            onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
-            onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
-            ⏯️ Play/Pause
-          </button>
-          <a href="${url}" target="_blank" 
-            style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; text-decoration: none; text-align: center; transition: all 0.2s; display: block;"
-            onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
-            onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
-            🔗 Open Stream
-          </a>
-        </div>
-      `;
-    } else {
-      const imgId = `camera-img-${Date.now()}`;
-      const loaderId = `img-loading-${Date.now()}`;
-      return `
-        <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-          <img 
-            id="${imgId}"
-            src="${url}" 
-            alt="Camera view" 
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.3s;"
-            onload="this.style.opacity='1'; const loader = document.getElementById('${loaderId}'); if(loader) loader.style.display='none';"
-            onerror="this.parentElement.innerHTML='<div style=\\'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.6); text-align: center; padding: 20px;\\'>⚠️<br/>Image unavailable<br/><span style=\\'font-size: 11px;\\'>Camera may be offline</span></div>';"
-          />
-          <div id="${loaderId}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.7); font-size: 12px; text-align: center;">
-            <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(79, 184, 255, 0.3); border-top-color: #4fb8ff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 8px;"></div>
-            <div>Loading image...</div>
-          </div>
-        </div>
-        <div style="display: flex; gap: 8px; margin-top: 8px;">
-          <button onclick="const img = document.getElementById('${imgId}'); if(img) { img.src = img.src.split('?')[0] + '?t=' + Date.now(); }" 
-            style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; transition: all 0.2s;"
-            onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
-            onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
-            🔄 Refresh
-          </button>
-          <a href="${url}" target="_blank" 
-            style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px; text-decoration: none; text-align: center; transition: all 0.2s; display: block;"
-            onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
-            onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
-            🖼️ Full Size
-          </a>
-        </div>
-      `;
-    }
-  };
-
-  const mediaContent = buildMediaContent(activeMediaUrl, activeMediaType);
-
   popupContent.innerHTML = `
     <div style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
       <h3 style="margin: 0 0 6px 0; font-size: 15px; font-weight: 600; color: #f7f9ff; display: flex; align-items: center; gap: 8px;">
         <span style="font-size: 18px;">📹</span>
-        ${name}
+        ${escapeHtml(name)}
       </h3>
       <div style="font-size: 12px; color: rgba(180, 189, 210, 0.8);">
         <span style="display: inline-block; padding: 2px 8px; background: rgba(79, 184, 255, 0.15); border-radius: 4px; font-weight: 500;">
-          ${state}
+          ${escapeHtml(state)}
         </span>
         <span style="margin-left: 8px; opacity: 0.6;">
           ${coordinates[1].toFixed(4)}°, ${coordinates[0].toFixed(4)}°
@@ -4987,11 +5098,10 @@ function handleCameraClick(e) {
     </div>
     ${mediaToggle}
     <div id="camera-media-container">
-      ${mediaContent}
+      ${buildCameraMediaContent(activeMediaUrl, activeMediaType)}
     </div>
   `;
 
-  // Create and show popup with custom styling
   cameraPopup = new maplibregl.Popup({
     closeButton: true,
     closeOnClick: false,
@@ -5002,37 +5112,22 @@ function handleCameraClick(e) {
     .setDOMContent(popupContent)
     .addTo(mapInstance);
 
-  // Store media URLs for toggle function
-  if (hasBoth) {
-    popupContent._cameraVideoUrl = videoUrl;
-    popupContent._cameraImageUrl = imageUrl;
-  }
-
-  // Handle HLS video streams if available
-  if (isVideo && activeMediaUrl.includes(".m3u8")) {
-    const videoElement = popupContent.querySelector("video");
-    if (videoElement && window.Hls && Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(activeMediaUrl);
-      hls.attachMedia(videoElement);
-    } else if (
-      videoElement &&
-      videoElement.canPlayType("application/vnd.apple.mpegurl")
-    ) {
-      // Native HLS support (Safari)
-      videoElement.src = activeMediaUrl;
-    }
-  }
+  initializeCameraStreams(popupContent);
+  cameraPopup.on("close", () => {
+    destroyCameraPlayers(popupContent);
+    cameraPopup = null;
+  });
 }
 
 // Helper function to switch between image and video in camera popup
-function switchCameraMedia(type, videoUrl, imageUrl) {
+function switchCameraMedia(type, encodedVideoUrl, encodedImageUrl) {
   const container = document.getElementById("camera-media-container");
   if (!container) return;
 
+  const videoUrl = decodeUrlParam(encodedVideoUrl);
+  const imageUrl = decodeUrlParam(encodedImageUrl);
   const url = type === "video" ? videoUrl : imageUrl;
 
-  // Update toggle button styles
   const videoBtn = document.getElementById("camera-toggle-video");
   const imageBtn = document.getElementById("camera-toggle-image");
 
@@ -5060,95 +5155,9 @@ function switchCameraMedia(type, videoUrl, imageUrl) {
     }
   }
 
-  // Build new media content
-  const isVid = type === "video" || isVideoUrl(url);
-
-  if (isVid) {
-    const videoId = `camera-video-${Date.now()}`;
-    const loaderId = `video-loading-${Date.now()}`;
-    container.innerHTML = `
-      <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px;">
-        <video 
-          id="${videoId}"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;"
-          autoplay
-          loop
-          muted
-          playsinline
-          onloadeddata="this.style.opacity='1'; const loader = document.getElementById('${loaderId}'); if(loader) loader.style.display='none';"
-          onerror="this.parentElement.innerHTML='<div style=\\'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.6); text-align: center; padding: 20px;\\'>⚠️<br/>Video unavailable<br/><span style=\\'font-size: 11px;\\'>Stream may be offline</span></div>';"
-        >
-          <source src="${url}" type="${url.includes(".m3u8") ? "application/x-mpegURL" : url.includes(".webm") ? "video/webm" : "video/mp4"}">
-        </video>
-        <div id="${loaderId}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.7); font-size: 12px; text-align: center;">
-          <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(79, 184, 255, 0.3); border-top-color: #4fb8ff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 8px;"></div>
-          <div>Loading video...</div>
-        </div>
-      </div>
-      <div style="display: flex; gap: 8px;">
-        <button onclick="const vid = document.getElementById('${videoId}'); if(vid) { vid.paused ? vid.play() : vid.pause(); }" 
-          style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px;"
-          onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
-          onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
-          ⏯️ Play/Pause
-        </button>
-        <a href="${url}" target="_blank" 
-          style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; text-decoration: none; text-align: center; display: block;"
-          onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
-          onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
-          🔗 Open Stream
-        </a>
-      </div>
-    `;
-
-    // Handle HLS
-    if (url.includes(".m3u8")) {
-      const videoElement = document.getElementById(videoId);
-      if (videoElement && window.Hls && Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(videoElement);
-      } else if (
-        videoElement &&
-        videoElement.canPlayType("application/vnd.apple.mpegurl")
-      ) {
-        videoElement.src = url;
-      }
-    }
-  } else {
-    const imgId = `camera-img-${Date.now()}`;
-    const loaderId = `img-loading-${Date.now()}`;
-    container.innerHTML = `
-      <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
-        <img 
-          id="${imgId}"
-          src="${url}" 
-          alt="Camera view" 
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.3s;"
-          onload="this.style.opacity='1'; const loader = document.getElementById('${loaderId}'); if(loader) loader.style.display='none';"
-          onerror="this.parentElement.innerHTML='<div style=\\'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.6); text-align: center; padding: 20px;\\'>⚠️<br/>Image unavailable<br/><span style=\\'font-size: 11px;\\'>Camera may be offline</span></div>';"
-        />
-        <div id="${loaderId}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.7); font-size: 12px; text-align: center;">
-          <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(79, 184, 255, 0.3); border-top-color: #4fb8ff; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 8px;"></div>
-          <div>Loading image...</div>
-        </div>
-      </div>
-      <div style="display: flex; gap: 8px;">
-        <button onclick="const img = document.getElementById('${imgId}'); if(img) { img.src = img.src.split('?')[0] + '?t=' + Date.now(); }" 
-          style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; cursor: pointer; font-size: 12px;"
-          onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
-          onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
-          🔄 Refresh
-        </button>
-        <a href="${url}" target="_blank" 
-          style="flex: 1; padding: 6px 12px; background: rgba(79, 184, 255, 0.15); border: 1px solid rgba(79, 184, 255, 0.3); border-radius: 6px; color: #4fb8ff; text-decoration: none; text-align: center; display: block;"
-          onmouseover="this.style.background='rgba(79, 184, 255, 0.25)';"
-          onmouseout="this.style.background='rgba(79, 184, 255, 0.15)';">
-          🖼️ Full Size
-        </a>
-      </div>
-    `;
-  }
+  destroyCameraPlayers(container);
+  container.innerHTML = buildCameraMediaContent(url, type);
+  initializeCameraStreams(container);
 }
 
 function toggleCameras(enabled) {
@@ -12335,42 +12344,20 @@ function createColorScaleLegend(productCode = selectedRadarProduct) {
   }
 
   const legendMeta = buildLegendMeta(productCode, productInfo);
-  const badgesHtml = (legendMeta.badges || [])
-    .map(
-      (badge) => `
-        <div class="legend-badge" style="--badge-color: ${badge.color};">
-          <span class="legend-badge__label">${badge.label}</span>
-          <span class="legend-badge__range">${badge.range}</span>
-          <span class="legend-badge__description">${badge.description}</span>
-        </div>`,
-    )
-    .join("");
-
   const subtitle = legendMeta.subtitle || "";
-  const footnote = legendMeta.footnote || "";
-  const leftLabel = legendMeta.leftLabel || "";
-  const rightLabel = legendMeta.rightLabel || "";
 
   const html = `
-    <div class="legend-card">
-      <div class="legend-header">
-        <div>
-          <div class="legend-label">Radar Product</div>
-          <h4 class="legend-title">${productCode} - ${productInfo.name}</h4>
-          <p class="legend-subtitle">${subtitle}</p>
+    <div class="legend-strip">
+      <div class="legend-strip__header">
+        <div class="legend-strip__text">
+          <h4 class="legend-strip__title">${productCode} · ${productInfo.name}</h4>
+          ${subtitle ? `<p class="legend-strip__subtitle">${subtitle}</p>` : ""}
         </div>
-        <span class="legend-pill">${productInfo.unit || ""}</span>
       </div>
-      <div class="legend-gradient" style="position: relative;">
-        <div class="legend-gradient__bar" style="background: ${gradientCSS}; cursor: crosshair;" data-min-value="${gradientStops.length ? Math.min(...values) : 0}" data-max-value="${gradientStops.length ? Math.max(...values) : 1}"></div>
+      <div class="legend-strip__gradient" style="position: relative;">
+        <div class="legend-gradient__bar legend-strip__bar" style="background: ${gradientCSS}; cursor: crosshair;" data-min-value="${gradientStops.length ? Math.min(...values) : 0}" data-max-value="${gradientStops.length ? Math.max(...values) : 1}"></div>
         <div class="legend-gradient__hover-value" style="display: none; position: absolute; background: rgba(0,0,0,0.8); color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; white-space: nowrap; pointer-events: none; z-index: 1000;"></div>
-        <div class="legend-gradient__minmax">
-          <span>${leftLabel}</span>
-          <span>${rightLabel}</span>
-        </div>
       </div>
-      ${badgesHtml ? `<div class="legend-badges">${badgesHtml}</div>` : ""}
-      ${footnote ? `<p class="legend-footnote">${footnote}</p>` : ""}
     </div>
   `;
 
