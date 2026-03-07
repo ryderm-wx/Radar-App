@@ -1430,6 +1430,10 @@ const FLASH_INTERVAL = 500; // milliseconds
 const HIGH_DBZ_FLASH_PERIOD_MS = 1400; // slower pulse period for high dBZ flash
 const HIGH_DBZ_FLASH_THRESHOLD = 50; // dBZ threshold for flash effect
 let currentRadarData = null; // Store current radar data for flash processing
+const NEW_ALERT_FLASH_INTERVAL_MS = 500;
+const NEW_ALERT_FLASH_DURATION_MS = 2000;
+const NEW_ALERT_FLASH_DARK_COLOR = "#000000";
+const newAlertFlashTimers = new Map();
 
 // Persistent settings key
 const USER_SETTINGS_KEY = "radar_ui_settings_v1";
@@ -2678,6 +2682,8 @@ function removeAlertFromMap(alertId) {
   const alert = activeAlerts.get(alertId);
   if (!alert) return;
 
+  clearNewAlertFlash(alertId);
+
   detachAlertMapEventHandlers(mapInstance, alert);
 
   activeAlerts.delete(alertId);
@@ -2839,6 +2845,81 @@ function stopAlertFlashing(alertToReset = selectedAlert) {
       );
     }
   }
+}
+
+function clearNewAlertFlash(alertId) {
+  const timer = newAlertFlashTimers.get(alertId);
+  if (!timer) return;
+  clearInterval(timer.intervalId);
+  clearTimeout(timer.timeoutId);
+  newAlertFlashTimers.delete(alertId);
+}
+
+function flashNewAlertOutline(alert) {
+  if (
+    !alert ||
+    !alert.mapLayerId ||
+    !mapInstance ||
+    alert.isCountyBased ||
+    !mapInstance.getLayer(`${alert.mapLayerId}-outline-inner`)
+  ) {
+    return;
+  }
+
+  const innerLayerId = `${alert.mapLayerId}-outline-inner`;
+  const outerLayerId = `${alert.mapLayerId}-outline-outer`;
+
+  if (!mapInstance.getLayer(outerLayerId)) return;
+
+  clearNewAlertFlash(alert.id);
+
+  const color = getAlertColor(alert);
+  const normalInnerColor = ALERT_OUTLINE_CONFIG.innerColor(color);
+  const normalOuterColor = ALERT_OUTLINE_CONFIG.outerColor;
+
+  let isDark = true;
+
+  const applyColors = (dark) => {
+    mapInstance.setPaintProperty(
+      innerLayerId,
+      "line-color",
+      dark ? NEW_ALERT_FLASH_DARK_COLOR : normalInnerColor,
+    );
+    mapInstance.setPaintProperty(
+      outerLayerId,
+      "line-color",
+      dark ? NEW_ALERT_FLASH_DARK_COLOR : normalOuterColor,
+    );
+    mapInstance.setPaintProperty(
+      innerLayerId,
+      "line-width",
+      dark
+        ? ALERT_OUTLINE_CONFIG.innerWidth + 1
+        : ALERT_OUTLINE_CONFIG.innerWidth,
+    );
+    mapInstance.setPaintProperty(
+      outerLayerId,
+      "line-width",
+      dark
+        ? ALERT_OUTLINE_CONFIG.outerWidth + 1
+        : ALERT_OUTLINE_CONFIG.outerWidth,
+    );
+  };
+
+  applyColors(true);
+
+  const intervalId = setInterval(() => {
+    isDark = !isDark;
+    applyColors(isDark);
+  }, NEW_ALERT_FLASH_INTERVAL_MS);
+
+  const timeoutId = setTimeout(() => {
+    clearInterval(intervalId);
+    applyColors(false);
+    newAlertFlashTimers.delete(alert.id);
+  }, NEW_ALERT_FLASH_DURATION_MS);
+
+  newAlertFlashTimers.set(alert.id, { intervalId, timeoutId });
 }
 
 function initializeWeatherAlerts() {
@@ -3369,6 +3450,8 @@ function addAlertPolygon(map, alert) {
   map.on("mouseenter", `${id}-outline-outer`, onMouseEnter);
   map.on("mouseleave", `${id}-outline-inner`, onMouseLeave);
   map.on("mouseleave", `${id}-outline-outer`, onMouseLeave);
+
+  flashNewAlertOutline(alert);
 }
 
 function handleAlertClick(e, alert) {
@@ -6990,6 +7073,8 @@ function removeAlertFromMap(alertId) {
   const alert = activeAlerts.get(alertId);
   if (!alert) return;
 
+  clearNewAlertFlash(alertId);
+
   if (alert.marker) {
     alert.marker.remove();
   }
@@ -10263,6 +10348,12 @@ let arcSyncEventSource = null;
 let arcSyncSessionKey = null;
 let arcSyncReconnectTimer = null;
 const ARC_SYNC_RECONNECT_MS = 4000;
+let arcSyncConsecutiveErrors = 0;
+let arcSyncLastErrorLogTs = 0;
+let arcSyncLastEmptyLogTs = 0;
+const ARC_SYNC_ERROR_LOG_THROTTLE_MS = 10000;
+const ARC_SYNC_EMPTY_LOG_THROTTLE_MS = 30000;
+const ARC_SYNC_CONNECTING_WARN_AFTER = 3;
 
 // Partial-scan flash state (used when a sweep is still filling in)
 const partialScanFlash = {
@@ -11472,6 +11563,7 @@ function stopArcSyncStream() {
     arcSyncReconnectTimer = null;
   }
   arcSyncSessionKey = null;
+  arcSyncConsecutiveErrors = 0;
 }
 
 function updateArcSyncToggleState() {
@@ -11637,17 +11729,29 @@ function startArcSyncStream(map, site, product) {
     site.id,
   )}&product=${encodeURIComponent(radarProduct)}`;
 
-  arcSyncEventSource = new EventSource(streamUrl);
+  const eventSource = new EventSource(streamUrl);
+  arcSyncEventSource = eventSource;
 
-  arcSyncEventSource.onopen = () => {
+  eventSource.onopen = () => {
+    if (eventSource !== arcSyncEventSource) {
+      return;
+    }
+    const hadErrors = arcSyncConsecutiveErrors > 0;
+    arcSyncConsecutiveErrors = 0;
     console.log("Arc-Sync SSE connection opened for Level 2 data");
+    if (hadErrors) {
+      console.log("Arc-Sync SSE reconnected");
+    }
     if (latestArcSyncState) {
       latestArcSyncState.connectionStatus = "connected";
       updateRadarInfo(site, "level2", latestArcSyncState);
     }
   };
 
-  arcSyncEventSource.onmessage = (event) => {
+  eventSource.onmessage = (event) => {
+    if (eventSource !== arcSyncEventSource) {
+      return;
+    }
     if (!event?.data) return;
 
     let payload;
@@ -11677,25 +11781,67 @@ function startArcSyncStream(map, site, product) {
 
     const deltaData = buildRadarDataFromPayload(payload);
     if (!deltaData.vertices.length) {
-      console.log("No vertex data in payload (keepalive or empty update)");
+      const now = Date.now();
+      if (now - arcSyncLastEmptyLogTs >= ARC_SYNC_EMPTY_LOG_THROTTLE_MS) {
+        console.log("No vertex data in payload (keepalive or empty update)");
+        arcSyncLastEmptyLogTs = now;
+      }
       return;
     }
 
     applyIncrementalRadarUpdate(map, deltaData, payload);
   };
 
-  arcSyncEventSource.onerror = (err) => {
-    console.error("Arc-Sync SSE error:", err);
+  eventSource.onerror = (err) => {
+    if (eventSource !== arcSyncEventSource) {
+      return;
+    }
+
+    arcSyncConsecutiveErrors += 1;
+    const now = Date.now();
+    const readyState = Number(eventSource.readyState);
+    const stateLabel =
+      readyState === EventSource.CONNECTING
+        ? "connecting"
+        : readyState === EventSource.OPEN
+          ? "open"
+          : "closed";
+    const isConnecting = readyState === EventSource.CONNECTING;
+    const shouldWarn =
+      !isConnecting ||
+      arcSyncConsecutiveErrors >= ARC_SYNC_CONNECTING_WARN_AFTER;
+    if (
+      shouldWarn &&
+      now - arcSyncLastErrorLogTs >= ARC_SYNC_ERROR_LOG_THROTTLE_MS
+    ) {
+      const msg = isConnecting
+        ? `Arc-Sync SSE reconnect still pending (state=${stateLabel}, count=${arcSyncConsecutiveErrors})`
+        : `Arc-Sync SSE error (state=${stateLabel}, count=${arcSyncConsecutiveErrors})`;
+      console.warn(msg, err);
+      arcSyncLastErrorLogTs = now;
+    } else if (isConnecting && arcSyncConsecutiveErrors === 1) {
+      // First CONNECTING error is expected during normal auto-reconnect cycles.
+      console.log("Arc-Sync SSE reconnecting...");
+    }
 
     // Update connection status
     if (latestArcSyncState) {
-      latestArcSyncState.connectionStatus = "disconnected";
-      latestArcSyncState.lastError = `Connection error: ${err.type || "unknown"}`;
+      latestArcSyncState.connectionStatus =
+        readyState === EventSource.CONNECTING ? "reconnecting" : "disconnected";
+      if (!isConnecting) {
+        latestArcSyncState.lastError = `Connection error: ${err.type || "unknown"}`;
+      }
       updateRadarInfo(site, "level2", latestArcSyncState);
     }
 
-    if (arcSyncEventSource) {
-      arcSyncEventSource.close();
+    // Let EventSource handle transient reconnections internally.
+    // Only force-create a new connection when the stream is fully closed.
+    if (readyState !== EventSource.CLOSED) {
+      return;
+    }
+
+    eventSource.close();
+    if (arcSyncEventSource === eventSource) {
       arcSyncEventSource = null;
     }
     if (!arcSyncEnabled || dataMode !== "radar" || isArchiveMode) {
@@ -11705,6 +11851,7 @@ function startArcSyncStream(map, site, product) {
       clearTimeout(arcSyncReconnectTimer);
     }
     arcSyncReconnectTimer = setTimeout(() => {
+      arcSyncReconnectTimer = null;
       startArcSyncStream(map, site, radarProduct);
     }, ARC_SYNC_RECONNECT_MS);
   };
