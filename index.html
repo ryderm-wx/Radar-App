@@ -162,11 +162,24 @@
         max-height: min(46vh, 420px);
       }
 
+      .bottom-panel.bottom-left.radar-menu-panel {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 125px;
+        width: min(520px, calc(100vw - 40px));
+        max-height: min(62vh, 640px);
+        z-index: 1200;
+      }
+
+      .bottom-panel.bottom-left.radar-menu-panel.is-hidden {
+        display: none;
+      }
+
       .bottom-panel.bottom-center {
         left: 50%;
         transform: translateX(-50%);
         bottom: 20px;
-        flex-direction: row;
+        /* flex-direction: row; */
         align-items: center;
         flex-wrap: nowrap;
         padding: 10px 14px;
@@ -1200,10 +1213,10 @@
 
       .radar-legend {
         position: fixed;
-        top: auto;
-        left: auto;
-        right: 20px;
-        bottom: 20px;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        align-content: center;
         width: min(360px, calc(100vw - 40px));
         border-radius: 14px;
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2156,6 +2169,11 @@
         padding-bottom: max(8px, env(safe-area-inset-bottom)) !important;
       }
 
+      html[data-mobile="true"] .bottom-panel.bottom-left.radar-menu-panel {
+        bottom: calc(var(--mobile-sheet-gap) + 52px) !important;
+        border-radius: 16px !important;
+      }
+
       html[data-mobile="true"] .bottom-panel.bottom-center {
         bottom: calc(var(--mobile-sheet-height) + var(--mobile-sheet-gap)) !important;
         transform: none !important;
@@ -2238,7 +2256,10 @@
     <div id="map"></div>
 
     <div class="bottom-dock">
-      <div class="bottom-panel bottom-left">
+      <div
+        class="bottom-panel bottom-left radar-menu-panel is-hidden"
+        id="radarMenuPanel"
+      >
         <details class="dock-card" id="siteDock" open>
           <summary class="dock-summary">
             <div>
@@ -2917,6 +2938,16 @@
         </div>
 
         <div class="tool-grid">
+          <button
+            class="inspector-toggle btn-icon"
+            id="radarMenuToggle"
+            title="Radar Menu"
+            aria-expanded="false"
+          >
+            <span class="inspector-toggle-icon" aria-hidden="true">
+              <i data-lucide="sliders-horizontal"></i>
+            </span>
+          </button>
           <button
             class="inspector-toggle btn-icon"
             id="inspectorToggle"

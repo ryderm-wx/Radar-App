@@ -2132,25 +2132,39 @@ function createAlertsToggleButton() {
     <span>Alerts</span>
     <span class="alert-count">${activeAlerts.size}</span>`;
 
-  const styleButton = document.createElement("button");
-  styleButton.className = "alert-style-btn";
-  styleButton.type = "button";
-  styleButton.title = "Alert style settings";
-  styleButton.textContent = "Style";
-
   button.addEventListener("click", (e) => {
     e.stopPropagation();
     showAlertsDropdown({ x: e.clientX, y: e.clientY + 30 });
   });
 
-  styleButton.addEventListener("click", (e) => {
-    e.stopPropagation();
-    showAlertStyleMenu(styleButton);
-  });
-
   toolbar.appendChild(button);
-  toolbar.appendChild(styleButton);
   document.body.appendChild(toolbar);
+
+  // Add or update style button in the tool-grid of the bottom-center panel
+  let styleButton = document.querySelector(".alert-style-btn");
+  if (!styleButton) {
+    styleButton = document.createElement("button");
+    styleButton.className = "inspector-toggle btn-icon alert-style-btn";
+    styleButton.type = "button";
+    styleButton.title = "Alert style settings";
+    styleButton.innerHTML =
+      '<span class="inspector-toggle-icon" aria-hidden="true"><i data-lucide="palette"></i></span>';
+
+    styleButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showAlertStyleMenu(styleButton);
+    });
+
+    const toolGrid = document.querySelector(".bottom-center .tool-grid");
+    if (toolGrid) {
+      toolGrid.appendChild(styleButton);
+      // Render the lucide icon
+      if (window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
+      }
+    }
+  }
+
   return button;
 }
 
@@ -4949,7 +4963,10 @@ function getVideoMimeType(url) {
 function destroyCameraPlayers(root = document) {
   if (!root || typeof root.querySelectorAll !== "function") return;
   root.querySelectorAll("video").forEach((video) => {
-    if (video._hlsInstance && typeof video._hlsInstance.destroy === "function") {
+    if (
+      video._hlsInstance &&
+      typeof video._hlsInstance.destroy === "function"
+    ) {
       video._hlsInstance.destroy();
       video._hlsInstance = null;
     }
@@ -5116,7 +5133,9 @@ function handleCameraClick(e) {
 
   if (cameraPopup) {
     const existingPopupEl =
-      typeof cameraPopup.getElement === "function" ? cameraPopup.getElement() : null;
+      typeof cameraPopup.getElement === "function"
+        ? cameraPopup.getElement()
+        : null;
     if (existingPopupEl) {
       destroyCameraPlayers(existingPopupEl);
     }
@@ -7518,6 +7537,40 @@ window.onload = async () => {
           icon.className = "fas fa-window-minimize";
           dockMinimizeBtn.title = "Minimize Panel";
         }
+      }
+    });
+  }
+
+  const radarMenuToggle = document.getElementById("radarMenuToggle");
+  const radarMenuPanel = document.getElementById("radarMenuPanel");
+  if (radarMenuToggle && radarMenuPanel) {
+    const setRadarMenuOpen = (isOpen) => {
+      radarMenuPanel.classList.toggle("is-hidden", !isOpen);
+      radarMenuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    };
+
+    radarMenuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = !radarMenuPanel.classList.contains("is-hidden");
+      setRadarMenuOpen(!isOpen);
+    });
+
+    document.addEventListener("click", (e) => {
+      if (radarMenuPanel.classList.contains("is-hidden")) {
+        return;
+      }
+      if (
+        radarMenuPanel.contains(e.target) ||
+        radarMenuToggle.contains(e.target)
+      ) {
+        return;
+      }
+      setRadarMenuOpen(false);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        setRadarMenuOpen(false);
       }
     });
   }
