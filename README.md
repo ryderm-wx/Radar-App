@@ -5,7 +5,7 @@
 
 ## Prerequisites
 
-- **Node.js** (v13 or higher recommended)
+- **Node.js** (v18 or higher recommended)
 - **npm** (comes with Node.js)
 - **Python** (for backend scripts, optional)
 
@@ -28,6 +28,9 @@ npm install
 This will install all required packages listed in `package.json`, including:
 
 - `nexrad-level-3-data`
+- `hls.js` (HLS `.m3u8` playback)
+- `dashjs` (MPEG-DASH `.mpd` playback)
+- `ffmpeg-static` (RTSP snapshot fallback via `/api/camera/snapshot`)
 
 ---
 
@@ -54,27 +57,13 @@ The app will be available at [http://localhost:3000](http://localhost:3000).
 
 - **Radar Data:** The app fetches NEXRAD radar data from AWS S3.
 - **Counties Data:** County outlines are loaded from `counties.geojson` (included in the project).
+- **Camera Data:** `/api/cameras` merges local `cameras/` data with `maps-data` from GitHub (`anony121221/maps-data`).
 
 ---
 
-## 6. Python Backend (Also required)
+## 6. Python Notes (Optional)
 
-Some advanced features use Python scripts (see `app.py` and related files):
-
-- To use these, ensure you have Python 3 installed.
-- Install required Python packages (if any) using:
-
-  ```sh
-  pip install -r requirements.txt
-  ```
-
-  _(You may need to create this file based on your needs.)_
-
-- Run backend scripts as needed:
-
-  ```sh
-  python app.py
-  ```
+The runtime app is Node.js-based. A `requirements.txt` file is included for environments that expect it, but Python packages are not required for core app features.
 
 ---
 
