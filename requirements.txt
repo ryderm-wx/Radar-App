@@ -1,3 +1,0 @@
-# This project runs as a Node.js application.
-# Python packages are not required for runtime at this time.
-# System requirement: FFmpeg must be available (the app uses ffmpeg-static in Node).
