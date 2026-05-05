@@ -2112,7 +2112,7 @@ function extractMotionVectorFromRawText(rawText) {
 
 function initAlertFeed() {
   const eventSource = new EventSource(
-    "http://localhost:3500/live-alerts",
+    "https://xmpp-api-production.up.railway.app/live-alerts",
   );
 
   eventSource.addEventListener("INIT", (event) => {
@@ -6903,18 +6903,18 @@ function showDetailedAlert(alert) {
           gap: 2px;
         }
         .ac-name {
-          font-size: 1.55rem;
+          font-size: 1.25rem;
           font-weight: 700;
           line-height: 1.15;
           letter-spacing: -0.01em;
           color: #fff;
         }
         .ac-expires {
-          font-size: 0.95rem;
+          font-size: 0.78rem;
           font-weight: 500;
           letter-spacing: 0.04em;
           color: rgba(255,255,255,0.55);
-          margin-top: 2px;
+          margin-top: 1px;
         }
         .ac-expires.soon { color: #f87171; }
         .ac-close {
@@ -6943,11 +6943,11 @@ function showDetailedAlert(alert) {
           gap: 10px;
         }
         .ac-section-label {
-          font-size: 0.68rem;
+          font-size: 0.6rem;
           letter-spacing: 0.18em;
           text-transform: uppercase;
           color: rgba(255,255,255,0.38);
-          margin-bottom: 6px;
+          margin-bottom: 4px;
         }
         .ac-threats {
           display: flex;
@@ -6957,12 +6957,12 @@ function showDetailedAlert(alert) {
         .ac-threat-row {
           display: flex;
           align-items: baseline;
-          gap: 8px;
-          font-size: 1.15rem;
-          line-height: 1.45;
+          gap: 6px;
+          font-size: 0.97rem;
+          line-height: 1.4;
         }
         .ac-threat-icon {
-          font-size: 1rem;
+          font-size: 0.85rem;
           flex-shrink: 0;
           opacity: 0.85;
         }
@@ -6972,13 +6972,13 @@ function showDetailedAlert(alert) {
           white-space: nowrap;
         }
         .ac-threat-val {
-          color: rgba(255,255,255,0.8);
-          font-size: 1.1rem;
+          color: rgba(255,255,255,0.75);
+          font-size: 0.92rem;
         }
         .ac-counties {
-          font-size: 1rem;
+          font-size: 0.88rem;
           color: rgba(255,255,255,0.6);
-          line-height: 1.55;
+          line-height: 1.5;
         }
         .ac-divider {
           height: 1px;
@@ -7054,17 +7054,25 @@ function buildThreatsList(alert) {
 
   const rows = [];
 
-  // Wind: only show maxWindGust
-  if (threats.maxWindGust) {
+  // Wind: show if maxWindGust or windThreat present
+  const hasWind = threats.maxWindGust || threats.windThreat;
+  if (hasWind) {
+    const parts = [threats.maxWindGust, threats.windThreat]
+      .filter(Boolean)
+      .join(", ");
     rows.push(
-      `<div class="ac-threat-row"><span class="ac-threat-icon">💨</span><span class="ac-threat-label">Max Wind:</span><span class="ac-threat-val">${threats.maxWindGust}</span></div>`,
+      `<div class="ac-threat-row"><span class="ac-threat-icon">💨</span><span class="ac-threat-label">Max Wind:</span><span class="ac-threat-val">${parts}</span></div>`,
     );
   }
 
-  // Hail: only show maxHailSize
-  if (threats.maxHailSize) {
+  // Hail: show if maxHailSize or hailThreat present
+  const hasHail = threats.maxHailSize || threats.hailThreat;
+  if (hasHail) {
+    const parts = [threats.maxHailSize, threats.hailThreat]
+      .filter(Boolean)
+      .join(", ");
     rows.push(
-      `<div class="ac-threat-row"><span class="ac-threat-icon">🧊</span><span class="ac-threat-label">Max Hail:</span><span class="ac-threat-val">${threats.maxHailSize}</span></div>`,
+      `<div class="ac-threat-row"><span class="ac-threat-icon">🧊</span><span class="ac-threat-label">Max Hail:</span><span class="ac-threat-val">${parts}</span></div>`,
     );
   }
 
