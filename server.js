@@ -24,7 +24,8 @@ const MAPS_DATA_REMOTE_URLS = process.env.MAPS_DATA_REMOTE_URLS
       .map((url) => url.trim())
       .filter(Boolean)
   : DEFAULT_MAPS_DATA_REMOTE_URLS;
-const REMOTE_MAPS_DATA_ENABLED = process.env.REMOTE_MAPS_DATA_ENABLED !== "false";
+const REMOTE_MAPS_DATA_ENABLED =
+  process.env.REMOTE_MAPS_DATA_ENABLED !== "false";
 const REMOTE_MAPS_DATA_CACHE_MS = Number(
   process.env.REMOTE_MAPS_DATA_CACHE_MS || 60 * 60 * 1000,
 );
@@ -187,8 +188,9 @@ function normalizeCameraFeature(feature, options = {}) {
     props.id && `Camera ${props.id}`,
   ];
   const name =
-    nameCandidates.find((candidate) => typeof candidate === "string" && candidate.trim()) ||
-    "Traffic Camera";
+    nameCandidates.find(
+      (candidate) => typeof candidate === "string" && candidate.trim(),
+    ) || "Traffic Camera";
 
   const state =
     (typeof props.state === "string" && props.state.trim()) ||
@@ -262,12 +264,16 @@ function loadFeaturesFromFile(filePath, options = {}) {
 
     const normalized = [];
     for (const feature of collection.features) {
-      const featureProps = feature && feature.properties ? feature.properties : {};
+      const featureProps =
+        feature && feature.properties ? feature.properties : {};
       const sourceState = inferStateFromSourceFile(featureProps._source_file);
       const normalizedFeature = normalizeCameraFeature(feature, {
         stateFallback:
           sourceState ||
-          inferStateFromPath(filePath, options.rootDir || path.dirname(filePath)),
+          inferStateFromPath(
+            filePath,
+            options.rootDir || path.dirname(filePath),
+          ),
         sourceLabel: options.sourceLabel,
       });
       if (normalizedFeature) normalized.push(normalizedFeature);
@@ -389,12 +395,16 @@ async function loadRemoteMapsDataFeatures() {
           const payload = await fetchJson(remoteUrl);
           const collection = toFeatureCollection(payload);
           if (!collection) {
-            console.warn("Skipping non-FeatureCollection maps-data URL", remoteUrl);
+            console.warn(
+              "Skipping non-FeatureCollection maps-data URL",
+              remoteUrl,
+            );
             continue;
           }
 
           for (const feature of collection.features) {
-            const props = feature && feature.properties ? feature.properties : {};
+            const props =
+              feature && feature.properties ? feature.properties : {};
             const normalizedFeature = normalizeCameraFeature(feature, {
               stateFallback: inferStateFromSourceFile(props._source_file),
               sourceLabel: "maps-data-remote",
@@ -436,14 +446,20 @@ async function loadRemoteMapsDataFeatures() {
 }
 
 function buildFeatureKey(feature) {
-  if (!feature || !feature.geometry || !Array.isArray(feature.geometry.coordinates)) {
+  if (
+    !feature ||
+    !feature.geometry ||
+    !Array.isArray(feature.geometry.coordinates)
+  ) {
     return "";
   }
   const [lng, lat] = feature.geometry.coordinates;
   const props = feature.properties || {};
   const image = (props.image_url || "").toLowerCase();
   const video = (props.video_url || "").toLowerCase();
-  const name = String(props.name || "").trim().toLowerCase();
+  const name = String(props.name || "")
+    .trim()
+    .toLowerCase();
   return `${lat.toFixed(6)}|${lng.toFixed(6)}|${image}|${video}|${name}`;
 }
 

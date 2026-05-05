@@ -1012,6 +1012,85 @@
         color: rgba(255, 255, 255, 0.85);
       }
 
+      .radar-quick-panel {
+        position: fixed;
+        left: 16px;
+        bottom: 16px;
+        z-index: 1250;
+        width: min(360px, calc(100vw - 24px));
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(8, 12, 19, 0.88);
+        backdrop-filter: blur(10px);
+        padding: 10px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        pointer-events: auto;
+      }
+
+      .radar-quick-panel__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .radar-quick-panel__title {
+        margin: 0;
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted-strong);
+      }
+
+      .radar-quick-panel__meta {
+        font-size: 0.74rem;
+        color: var(--muted);
+      }
+
+      .radar-product-toggle {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .radar-product-toggle button {
+        padding: 7px 8px;
+        min-height: 32px;
+        font-size: 2rem;
+        border-radius: 10px;
+      }
+
+      .radar-product-toggle button.is-active {
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        color: #04111f;
+        border-color: rgba(79, 184, 255, 0.65);
+      }
+
+      .radar-timeline-scrubber {
+        width: 100%;
+      }
+
+      .radar-timeline-scrubber::-webkit-slider-thumb {
+        width: 28px;
+        height: 28px;
+        margin-top: -9px;
+      }
+
+      .radar-timeline-scrubber::-moz-range-thumb {
+        width: 28px;
+        height: 28px;
+      }
+
+      @media (max-width: 900px) {
+        .radar-quick-panel {
+          left: 8px;
+          bottom: calc(var(--mobile-sheet-height) + 8px);
+          width: calc(100vw - 16px);
+        }
+      }
+
       button {
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(255, 255, 255, 0.12);
@@ -2255,6 +2334,29 @@
   <body>
     <div id="map"></div>
 
+    <div class="radar-quick-panel" id="radarQuickPanel">
+      <div class="radar-quick-panel__header">
+        <p class="radar-quick-panel__title">Radar Timeline</p>
+        <span class="radar-quick-panel__meta" id="radarQuickFrameLabel"
+          >No frames</span
+        >
+      </div>
+      <div class="radar-product-toggle" id="radarQuickProducts">
+        <button type="button" data-product="N0B" class="is-active">REF</button>
+        <button type="button" data-product="N0G">VEL</button>
+        <button type="button" data-product="N0C">CC</button>
+      </div>
+      <input
+        type="range"
+        id="radarTimelineScrubber"
+        class="radar-timeline-scrubber"
+        min="0"
+        max="0"
+        step="1"
+        value="0"
+      />
+    </div>
+
     <div class="bottom-dock">
       <div
         class="bottom-panel bottom-left radar-menu-panel is-hidden"
@@ -2750,14 +2852,6 @@
                   style="display: none; margin-top: 12px"
                 >
                   <div style="display: flex; align-items: center; gap: 12px">
-                    <button
-                      class="loop-btn"
-                      id="playPauseBtn"
-                      title="Play/Pause"
-                      style="flex-shrink: 0"
-                    >
-                      <i data-lucide="play"></i>
-                    </button>
                     <div style="flex: 1">
                       <div
                         class="frame-info"
@@ -2940,6 +3034,16 @@
         <div class="tool-grid">
           <button
             class="inspector-toggle btn-icon"
+            id="quickPlayPauseBtn"
+            title="Play"
+            aria-label="Play"
+          >
+            <span class="inspector-toggle-icon" aria-hidden="true">
+              <i data-lucide="play"></i>
+            </span>
+          </button>
+          <button
+            class="inspector-toggle btn-icon"
             id="radarMenuToggle"
             title="Radar Menu"
             aria-expanded="false"
@@ -3002,6 +3106,10 @@
           <label class="check-row" title="Arc-Sync Live (Level 2 SSE)">
             <i class="fas fa-satellite-dish"></i>
             <input type="checkbox" id="arcSyncToggle" checked />
+          </label>
+          <label class="check-row" title="Batch Timeline Processing">
+            <i class="fas fa-boxes-stacked"></i>
+            <input type="checkbox" id="batchProcessingToggle" checked />
           </label>
           <label class="check-row" title="Traffic Cameras">
             <i class="fas fa-camera"></i>

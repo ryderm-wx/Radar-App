@@ -1,69 +1,226 @@
 // nexrad-processor.js
 import nexrad from "nexrad-level-3-data";
 
-/**
- * Fetches the latest available NEXRAD Level 3 radar data for a given site
- * @param {string} siteId - The NEXRAD site ID (e.g., 'GRR', 'DTX')
- * @param {string} product - The product code (default: 'N0B' for Base Reflectivity)
- * @returns {Promise<string>} - The URL of the latest radar data
- */
-export async function getLatestRadarUrl(siteId, product = "N0B") {
-  const now = new Date();
-  const NEXRAD_BUCKET_URL = "https://unidata-nexrad-level3.s3.amazonaws.com";
+const NEXRAD_BUCKET_URL = "https://unidata-nexrad-level3.s3.amazonaws.com";
+const EARTH_RADIUS_METERS = 6371008.8;
+const DEFAULT_MAX_RANGE_METERS = 124 * 1852;
+const LATEST_URL_TTL_MS = 10 * 1000;
+const PARSED_DATA_TTL_MS = 10 * 1000;
 
-  // Try up to the last hour in 5-minute intervals
-  for (let i = 0; i < 12; i++) {
-    const testTime = new Date(now.getTime() - i * 5 * 60000);
+const latestUrlCache = new Map();
+const parsedRadarCache = new Map();
 
-    const year = testTime.getFullYear();
-    const month = String(testTime.getMonth() + 1).padStart(2, "0");
-    const day = String(testTime.getDate()).padStart(2, "0");
-    const hours = String(testTime.getHours()).padStart(2, "0");
-    const minutes = String(Math.floor(testTime.getMinutes() / 5) * 5).padStart(
-      2,
-      "0"
-    );
-    const seconds = "00";
+function toDbz(bin) {
+  return (bin - 2) * 5;
+}
 
-    const url = `${NEXRAD_BUCKET_URL}/${siteId}_${product}_${year}_${month}_${day}_${hours}_${minutes}_${seconds}`;
+function dayPrefix(date = new Date()) {
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(date.getUTCDate()).padStart(2, "0");
+  return `${year}_${month}_${day}`;
+}
 
-    try {
-      const response = await fetch(url, { method: "HEAD" });
-      if (response.ok) {
-        console.log(`Found valid radar data at: ${url}`);
-        return url;
-      }
-    } catch (error) {
-      // Continue to next timestamp
-    }
+function pickNumber(...values) {
+  for (const value of values) {
+    const num = Number(value);
+    if (Number.isFinite(num) && num > 0) return num;
+  }
+  return null;
+}
+
+function inferMaxRangeMeters(level3Data, radialData) {
+  const productDescription = level3Data?.productDescription || {};
+  const kilometers = pickNumber(
+    productDescription.maxRangeKm,
+    productDescription.rangeKm,
+    productDescription.maximumRangeKm,
+    productDescription.rangeToLastBinKm,
+    productDescription.unambiguousRangeKm,
+  );
+
+  if (kilometers) return kilometers * 1000;
+
+  const nauticalMiles = pickNumber(
+    productDescription.maxRangeNm,
+    productDescription.rangeNm,
+    productDescription.maximumRangeNm,
+    productDescription.unambiguousRangeNm,
+  );
+
+  if (nauticalMiles) return nauticalMiles * 1852;
+
+  const firstBins = radialData?.[0]?.bins;
+  if (firstBins && firstBins.length > 0) {
+    const gateSize = inferGateSizeMeters(level3Data, radialData);
+    return firstBins.length * gateSize;
   }
 
-  throw new Error(`No recent radar data found for ${siteId} in the last hour`);
+  return DEFAULT_MAX_RANGE_METERS;
+}
+
+function inferGateSizeMeters(level3Data, radialData) {
+  const productDescription = level3Data?.productDescription || {};
+  const gateMeters = pickNumber(
+    productDescription.gateSizeMeters,
+    productDescription.gateSizeM,
+    productDescription.rangeBinSizeMeters,
+    productDescription.rangeBinSizeM,
+    productDescription.sampleIntervalMeters,
+    productDescription.binSizeMeters,
+  );
+
+  if (gateMeters) return gateMeters;
+
+  const gateKilometers = pickNumber(
+    productDescription.gateSizeKm,
+    productDescription.rangeBinSizeKm,
+    productDescription.sampleIntervalKm,
+    productDescription.binSizeKm,
+  );
+
+  if (gateKilometers) return gateKilometers * 1000;
+
+  const firstBins = radialData?.[0]?.bins;
+  if (firstBins && firstBins.length > 0) {
+    return inferMaxRangeMeters(level3Data, radialData) / firstBins.length;
+  }
+
+  return 250;
+}
+
+function destinationPoint(latDeg, lonDeg, bearingDeg, distanceMeters) {
+  const lat1 = (latDeg * Math.PI) / 180;
+  const lon1 = (lonDeg * Math.PI) / 180;
+  const theta = (bearingDeg * Math.PI) / 180;
+  const delta = distanceMeters / EARTH_RADIUS_METERS;
+
+  const sinLat1 = Math.sin(lat1);
+  const cosLat1 = Math.cos(lat1);
+  const sinDelta = Math.sin(delta);
+  const cosDelta = Math.cos(delta);
+  const sinTheta = Math.sin(theta);
+  const cosTheta = Math.cos(theta);
+
+  const sinLat2 = sinLat1 * cosDelta + cosLat1 * sinDelta * cosTheta;
+  const lat2 = Math.asin(Math.max(-1, Math.min(1, sinLat2)));
+
+  const y = sinTheta * sinDelta * cosLat1;
+  const x = cosDelta - sinLat1 * sinLat2;
+  const lon2 = lon1 + Math.atan2(y, x);
+
+  return {
+    lat: (lat2 * 180) / Math.PI,
+    lon: (((((lon2 * 180) / Math.PI + 540) % 360) + 360) % 360) - 180,
+  };
+}
+
+function parseKeysFromS3ListXml(xmlText) {
+  const keys = [];
+  let start = 0;
+  const openTag = "<Key>";
+  const closeTag = "</Key>";
+
+  while (start < xmlText.length) {
+    const keyOpen = xmlText.indexOf(openTag, start);
+    if (keyOpen === -1) break;
+
+    const valueStart = keyOpen + openTag.length;
+    const keyClose = xmlText.indexOf(closeTag, valueStart);
+    if (keyClose === -1) break;
+
+    keys.push(xmlText.slice(valueStart, keyClose));
+    start = keyClose + closeTag.length;
+  }
+
+  return keys;
 }
 
 /**
- * Fetches and parses NEXRAD Level 3 radar data
- * @param {string} siteId - The NEXRAD site ID
- * @param {Object} site - The site object with latitude and longitude
- * @returns {Promise<Object>} - Processed radar data in GeoJSON format
+ * Fetches the latest available NEXRAD Level 3 radar data URL for a given site.
+ * Uses one S3 list request instead of sequential HEAD probes.
  */
-export async function fetchRadarData(siteId, site) {
+export async function getLatestRadarUrl(
+  siteId,
+  product = "N0B",
+  date = new Date(),
+) {
+  const prefix = `${siteId}_${product}_${dayPrefix(date)}`;
+  const cacheKey = `${siteId}|${product}|${dayPrefix(date)}`;
+  const cached = latestUrlCache.get(cacheKey);
+  const now = Date.now();
+
+  if (cached && now - cached.createdAt < LATEST_URL_TTL_MS) {
+    return cached.url;
+  }
+
+  const listUrl = `${NEXRAD_BUCKET_URL}/?prefix=${encodeURIComponent(prefix)}`;
+  const response = await fetch(listUrl);
+
+  if (!response.ok) {
+    throw new Error(
+      `Failed to list radar files: ${response.status} ${response.statusText}`,
+    );
+  }
+
+  const xmlText = await response.text();
+  const keys = parseKeysFromS3ListXml(xmlText)
+    .filter((key) => key.startsWith(prefix))
+    .sort();
+
+  if (keys.length === 0) {
+    throw new Error(
+      `No radar files found for ${siteId} ${product} on ${dayPrefix(date)}`,
+    );
+  }
+
+  const latestKey = keys[keys.length - 1];
+  const url = `${NEXRAD_BUCKET_URL}/${latestKey}`;
+  latestUrlCache.set(cacheKey, { url, createdAt: now });
+  return url;
+}
+
+/**
+ * Fetches and parses NEXRAD Level 3 radar data.
+ * Result is cache-aware for repeated calls to the same URL.
+ */
+export async function fetchRadarData(siteId, site, options = {}) {
+  const {
+    product = "N0B",
+    date = new Date(),
+    url: explicitUrl = null,
+  } = options;
+
   try {
-    const url = await getLatestRadarUrl(siteId);
-    const response = await fetch(url);
+    const url = explicitUrl || (await getLatestRadarUrl(siteId, product, date));
+    const now = Date.now();
+    const cached = parsedRadarCache.get(url);
+
+    if (cached && now - cached.createdAt < PARSED_DATA_TTL_MS) {
+      return cached.payload;
+    }
+
+    const response = await fetch(url, {
+      cache: "force-cache",
+    });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch radar data: ${response.statusText}`);
+      throw new Error(
+        `Failed to fetch radar data: ${response.status} ${response.statusText}`,
+      );
     }
 
     const arrayBuffer = await response.arrayBuffer();
     const level3Data = new nexrad.Level3Data(arrayBuffer);
-
-    return {
+    const payload = {
       radarData: level3Data,
       geoJSON: processRadarDataToGeoJSON(level3Data, site),
       metadata: extractMetadata(level3Data),
+      sourceUrl: url,
     };
+
+    parsedRadarCache.set(url, { payload, createdAt: now });
+    return payload;
   } catch (error) {
     console.error("Error fetching radar data:", error);
     throw error;
@@ -71,164 +228,184 @@ export async function fetchRadarData(siteId, site) {
 }
 
 /**
- * Extracts metadata from Level 3 radar data
- * @param {Object} level3Data - The parsed Level 3 radar data
- * @returns {Object} - Extracted metadata
+ * Extracts metadata from Level 3 radar data.
  */
 function extractMetadata(level3Data) {
   return {
-    timestamp: level3Data.header.timestamp,
-    radarId: level3Data.header.icao,
-    productCode: level3Data.header.productCode,
-    elevationAngle: level3Data.productDescription?.elevationAngle || 0,
-    productName: level3Data.header.productName,
+    timestamp: level3Data?.header?.timestamp || null,
+    radarId: level3Data?.header?.icao || null,
+    productCode: level3Data?.header?.productCode || null,
+    elevationAngle: level3Data?.productDescription?.elevationAngle || 0,
+    productName: level3Data?.header?.productName || null,
     maxReflectivity: getMaxReflectivity(level3Data),
   };
 }
 
 /**
- * Gets the maximum reflectivity value from the radar data
- * @param {Object} level3Data - The parsed Level 3 radar data
- * @returns {number} - Maximum reflectivity value
+ * Gets the maximum reflectivity value from the radar data.
  */
 function getMaxReflectivity(level3Data) {
-  let maxValue = 0;
+  const radialData = level3Data?.symbologyBlock?.data;
+  if (!Array.isArray(radialData) || radialData.length === 0) return 0;
 
-  if (level3Data.symbologyBlock && level3Data.symbologyBlock.data) {
-    level3Data.symbologyBlock.data.forEach((radial) => {
-      radial.bins.forEach((bin) => {
-        if (bin > maxValue) maxValue = bin;
-      });
-    });
+  let maxValue = 0;
+  for (let i = 0; i < radialData.length; i += 1) {
+    const bins = radialData[i]?.bins;
+    if (!bins) continue;
+
+    for (let j = 0; j < bins.length; j += 1) {
+      const bin = bins[j];
+      if (bin > maxValue) maxValue = bin;
+    }
   }
 
-  // Convert bin value to dBZ (approximation)
-  return (maxValue - 2) * 5;
+  return toDbz(maxValue);
 }
 
 /**
- * Processes radar data into GeoJSON format
- * @param {Object} level3Data - The parsed Level 3 radar data
- * @param {Object} site - The site object with latitude and longitude
- * @returns {Object} - GeoJSON representation of radar data
+ * Processes radar data into GeoJSON format.
+ * Uses great-circle projection for accurate gate placement at all ranges.
  */
 function processRadarDataToGeoJSON(level3Data, site) {
+  const radialData = level3Data?.symbologyBlock?.data;
+  if (!Array.isArray(radialData) || radialData.length === 0 || !site) {
+    return {
+      type: "FeatureCollection",
+      features: [],
+      metadata: {
+        siteId: site?.id || null,
+        siteName: site?.name || null,
+        latitude: site?.latitude || null,
+        longitude: site?.longitude || null,
+        timestamp: level3Data?.header?.timestamp || null,
+      },
+    };
+  }
+
+  const siteLat = Number(site.latitude);
+  const siteLon = Number(site.longitude);
+  if (!Number.isFinite(siteLat) || !Number.isFinite(siteLon)) {
+    throw new Error("Site latitude/longitude must be finite numbers");
+  }
+
+  const gateSizeMeters = inferGateSizeMeters(level3Data, radialData);
+  const maxRangeMeters = inferMaxRangeMeters(level3Data, radialData);
+
   const features = [];
-  const radialData = level3Data.symbologyBlock.data;
 
-  // Calculate the radar range (max range in nautical miles)
-  const radarRangeNM = 124; // Typical NEXRAD range
-  const radarRangeMeters = radarRangeNM * 1852; // Convert NM to meters
+  for (let radialIndex = 0; radialIndex < radialData.length; radialIndex += 1) {
+    const radial = radialData[radialIndex];
+    if (!radial || !radial.bins || radial.bins.length === 0) continue;
 
-  // For each radial in the radar data
-  radialData.forEach((radial) => {
-    // For each bin (range gate) in the radial
-    radial.bins.forEach((bin, binIndex) => {
-      // Skip empty bins (no reflectivity)
-      if (bin === 0) return;
+    const azimuth = Number(radial?.header?.azimuth);
+    if (!Number.isFinite(azimuth)) continue;
 
-      // Calculate distance from radar (in proportion of max range)
-      const distance = (binIndex / radial.bins.length) * radarRangeMeters;
+    const bins = radial.bins;
+    const radialGateSize =
+      gateSizeMeters > 0 ? gateSizeMeters : maxRangeMeters / bins.length;
 
-      // Calculate angle in radians (adjusting for meteorological angle convention)
-      const angleRad = (90 - radial.header.azimuth) * (Math.PI / 180);
+    for (let binIndex = 0; binIndex < bins.length; binIndex += 1) {
+      const bin = bins[binIndex];
+      if (bin === 0 || bin == null) continue;
 
-      // Calculate the x and y offsets from the radar site
-      const x = Math.cos(angleRad) * distance;
-      const y = Math.sin(angleRad) * distance;
+      const distanceMeters = (binIndex + 0.5) * radialGateSize;
+      const point = destinationPoint(siteLat, siteLon, azimuth, distanceMeters);
 
-      // Convert to longitude/latitude
-      const metersPerDegreeLatitude = 111111;
-      const metersPerDegreeLongitude =
-        Math.cos(site.latitude * (Math.PI / 180)) * 111111;
-
-      const lon = site.longitude + x / metersPerDegreeLongitude;
-      const lat = site.latitude + y / metersPerDegreeLatitude;
-
-      // Create a GeoJSON feature for this radar bin
       features.push({
         type: "Feature",
         geometry: {
           type: "Point",
-          coordinates: [lon, lat],
+          coordinates: [point.lon, point.lat],
         },
         properties: {
           reflectivity: bin,
-          dbz: (bin - 2) * 5, // Convert bin value to dBZ (approximation)
-          azimuth: radial.header.azimuth,
-          distance: distance / 1000, // Convert to km
+          dbz: toDbz(bin),
+          azimuth,
+          distance: distanceMeters / 1000,
+          rangeIndex: binIndex,
         },
       });
-    });
-  });
+    }
+  }
 
   return {
     type: "FeatureCollection",
-    features: features,
+    features,
     metadata: {
       siteId: site.id,
       siteName: site.name,
-      latitude: site.latitude,
-      longitude: site.longitude,
-      timestamp: level3Data.header.timestamp,
+      latitude: siteLat,
+      longitude: siteLon,
+      timestamp: level3Data?.header?.timestamp || null,
+      gateSizeMeters,
+      maxRangeMeters,
     },
   };
 }
 
 /**
- * Extracts reflectivity data as a simplified JSON structure for direct use
- * @param {Object} level3Data - The parsed Level 3 radar data
- * @returns {Object} - Simplified reflectivity data
+ * Extracts reflectivity data as a simplified JSON structure for direct use.
  */
 export function extractReflectivityData(level3Data) {
+  const radialData = level3Data?.symbologyBlock?.data;
+  if (!Array.isArray(radialData) || radialData.length === 0) {
+    return {
+      timestamp: level3Data?.header?.timestamp || null,
+      radarId: level3Data?.header?.icao || null,
+      productCode: level3Data?.header?.productCode || null,
+      reflectivity: [],
+    };
+  }
+
+  const gateSizeMeters = inferGateSizeMeters(level3Data, radialData);
   const reflectivityData = [];
 
-  if (level3Data.symbologyBlock && level3Data.symbologyBlock.data) {
-    level3Data.symbologyBlock.data.forEach((radial) => {
-      const azimuth = radial.header.azimuth;
+  for (let i = 0; i < radialData.length; i += 1) {
+    const radial = radialData[i];
+    const bins = radial?.bins;
+    if (!bins || bins.length === 0) continue;
 
-      // Convert bin values to dBZ and include position data
-      const bins = radial.bins
-        .map((bin, index) => {
-          return {
-            value: bin === 0 ? null : (bin - 2) * 5, // Convert to dBZ or null if no data
-            rangeIndex: index,
-            // Range is approximate in meters, assuming equal distribution across bins
-            range: (index / radial.bins.length) * 124 * 1852, // 124 NM max range converted to meters
-          };
-        })
-        .filter((bin) => bin.value !== null); // Remove empty bins
+    const azimuth = radial?.header?.azimuth;
+    const outputBins = [];
 
-      if (bins.length > 0) {
-        reflectivityData.push({
-          azimuth,
-          bins,
-        });
-      }
-    });
+    for (let j = 0; j < bins.length; j += 1) {
+      const bin = bins[j];
+      if (bin === 0 || bin == null) continue;
+
+      outputBins.push({
+        value: toDbz(bin),
+        rangeIndex: j,
+        range: (j + 0.5) * gateSizeMeters,
+      });
+    }
+
+    if (outputBins.length > 0) {
+      reflectivityData.push({
+        azimuth,
+        bins: outputBins,
+      });
+    }
   }
 
   return {
-    timestamp: level3Data.header.timestamp,
-    radarId: level3Data.header.icao,
-    productCode: level3Data.header.productCode,
+    timestamp: level3Data?.header?.timestamp || null,
+    radarId: level3Data?.header?.icao || null,
+    productCode: level3Data?.header?.productCode || null,
     reflectivity: reflectivityData,
   };
 }
 
 /**
- * Gets reflectivity color for a dBZ value
- * @param {number} dbz - Reflectivity value in dBZ
- * @returns {string} - Hex color code
+ * Gets reflectivity color for a dBZ value.
  */
 export function getReflectivityColor(dbz) {
-  if (dbz < 5) return "#00000000"; // Transparent for no/minimal reflectivity
-  if (dbz < 10) return "#c0e8fe"; // Light blue
-  if (dbz < 20) return "#008ae6"; // Medium blue
-  if (dbz < 30) return "#00ef00"; // Light green
-  if (dbz < 40) return "#ffff00"; // Yellow
-  if (dbz < 50) return "#ff9600"; // Orange
-  if (dbz < 60) return "#fe0000"; // Red
-  if (dbz < 70) return "#c800fe"; // Purple
-  return "#ffc0cb"; // Pink for values above 70
+  if (dbz < 5) return "#00000000";
+  if (dbz < 10) return "#c0e8fe";
+  if (dbz < 20) return "#008ae6";
+  if (dbz < 30) return "#00ef00";
+  if (dbz < 40) return "#ffff00";
+  if (dbz < 50) return "#ff9600";
+  if (dbz < 60) return "#fe0000";
+  if (dbz < 70) return "#c800fe";
+  return "#ffc0cb";
 }

@@ -360,6 +360,7 @@ function bindToolToggleVisualState() {
 function updateDockSummary() {
   const siteEl = document.getElementById("currentSiteName");
   const productEl = document.getElementById("currentProductName");
+  const quickPanel = document.getElementById("radarQuickPanel");
 
   if (siteEl) {
     if (dataMode === "hrrr") {
@@ -384,6 +385,14 @@ function updateDockSummary() {
       productEl.textContent = "Select a product";
     }
   }
+
+  if (quickPanel) {
+    const visible = dataMode === "radar";
+    quickPanel.style.display = visible ? "flex" : "none";
+  }
+
+  setQuickTimelineProductButtons(selectedRadarProduct);
+  updateQuickTimelineFrameLabel();
 }
 
 const LONG_PRESS_MS = 500;
@@ -1403,7 +1412,9 @@ let useStormMotion = false;
 
 let currentSweepAngle = 0;
 let animationFrameId = null;
+let lastSweepFrameTime = 0;
 const SWEEP_SPEED_DPS = 0.15;
+const SWEEP_TARGET_FPS = 20;
 const SWEEP_LINE_WIDTH = 3;
 const SWEEP_RADIUS_KM = 500;
 const SWEEP_TRAIL_LENGTH = 35;
@@ -1434,6 +1445,8 @@ const NEW_ALERT_FLASH_INTERVAL_MS = 500;
 const NEW_ALERT_FLASH_DURATION_MS = 2000;
 const NEW_ALERT_FLASH_DARK_COLOR = "#000000";
 const newAlertFlashTimers = new Map();
+let focusedAlertPulseRaf = null;
+let focusedAlertPulseAlertId = null;
 
 // Persistent settings key
 const USER_SETTINGS_KEY = "radar_ui_settings_v1";
@@ -1453,6 +1466,37 @@ function loadUserSettings() {
     }
     if (typeof s.sweepMode === "string") sweepMode = s.sweepMode;
     if (typeof s.sweepSpeed === "number") SWEEP_SPEED_DPS = s.sweepSpeed;
+    if (typeof s.batchProcessingEnabled === "boolean")
+      batchProcessingEnabled = s.batchProcessingEnabled;
+    if (typeof s.loopSpeedMs === "number") {
+      const parsed = Math.trunc(s.loopSpeedMs);
+      if (Number.isFinite(parsed)) {
+        const clamped = Math.max(50, Math.min(2000, parsed));
+        const loopSpeedInput = document.getElementById("loopSpeed");
+        if (loopSpeedInput) loopSpeedInput.value = String(clamped);
+      }
+    }
+    if (typeof s.endPauseDurationMs === "number") {
+      const parsed = Math.trunc(s.endPauseDurationMs);
+      if (Number.isFinite(parsed)) {
+        endPauseDuration = Math.max(0, Math.min(5000, parsed));
+      }
+    }
+    if (typeof s.frameCount === "number") {
+      const parsed = Math.trunc(s.frameCount);
+      if (Number.isFinite(parsed)) {
+        const frameCountInput = document.getElementById("frameCount");
+        if (frameCountInput)
+          frameCountInput.value = String(Math.max(2, Math.min(30, parsed)));
+      }
+    }
+    if (typeof s.enableSmoothing === "boolean") {
+      radarSmoothingPreference = s.enableSmoothing;
+      enableSmoothing = s.enableSmoothing;
+    }
+    if (typeof s.arcSyncEnabled === "boolean") {
+      arcSyncEnabled = s.arcSyncEnabled;
+    }
   } catch (e) {
     console.warn("Failed to load user settings:", e);
   }
@@ -1467,11 +1511,138 @@ function saveUserSettings() {
       highDbzThreshold: Number(HIGH_DBZ_FLASH_THRESHOLD) || 50,
       sweepMode: String(sweepMode || "full"),
       sweepSpeed: Number(SWEEP_SPEED_DPS) || 0.15,
+      batchProcessingEnabled: !!batchProcessingEnabled,
+      loopSpeedMs: Number(document.getElementById("loopSpeed")?.value) || 220,
+      endPauseDurationMs: Number(endPauseDuration) || 0,
+      frameCount: Number(document.getElementById("frameCount")?.value) || 10,
+      enableSmoothing: !!radarSmoothingPreference,
+      arcSyncEnabled: !!arcSyncEnabled,
     };
     localStorage.setItem(USER_SETTINGS_KEY, JSON.stringify(payload));
   } catch (e) {
     console.warn("Failed to save user settings:", e);
   }
+}
+
+function focusAlertPolygonOnMap(alert, options = {}) {
+  if (!mapInstance || !alert) return false;
+
+  const geometry = alert.areaGeometry || alert.polygon;
+  if (!geometry?.coordinates?.length) return false;
+
+  let polygon = null;
+  if (geometry === alert.areaGeometry) {
+    polygon = {
+      type: "Polygon",
+      coordinates: geometry.coordinates,
+    };
+  } else {
+    polygon = {
+      type: "Polygon",
+      coordinates: geometry.coordinates.map((ring) =>
+        ring.map(([lat, lng]) => [lng, lat]),
+      ),
+    };
+  }
+
+  if (!polygon?.coordinates?.length) return false;
+
+  const bbox = turf.bbox(polygon);
+  mapInstance.fitBounds(
+    [
+      [bbox[0], bbox[1]],
+      [bbox[2], bbox[3]],
+    ],
+    {
+      padding: Number(options.padding) || 40,
+      duration: Number(options.duration) || 800,
+      maxZoom: Number(options.maxZoom) || 11,
+    },
+  );
+
+  return true;
+}
+
+function stopFocusedAlertPulse() {
+  if (focusedAlertPulseRaf) {
+    cancelAnimationFrame(focusedAlertPulseRaf);
+    focusedAlertPulseRaf = null;
+  }
+
+  if (!focusedAlertPulseAlertId || !mapInstance) {
+    focusedAlertPulseAlertId = null;
+    return;
+  }
+
+  const id = `alert-${focusedAlertPulseAlertId}`;
+  const innerOutlineId = `${id}-outline-inner`;
+  const outerOutlineId = `${id}-outline-outer`;
+  if (mapInstance.getLayer(innerOutlineId)) {
+    mapInstance.setPaintProperty(
+      innerOutlineId,
+      "line-opacity",
+      ALERT_OUTLINE_CONFIG.innerOpacity,
+    );
+    mapInstance.setPaintProperty(
+      innerOutlineId,
+      "line-width",
+      ALERT_OUTLINE_CONFIG.innerWidth,
+    );
+  }
+  if (mapInstance.getLayer(outerOutlineId)) {
+    mapInstance.setPaintProperty(
+      outerOutlineId,
+      "line-opacity",
+      ALERT_OUTLINE_CONFIG.outerOpacity,
+    );
+    mapInstance.setPaintProperty(
+      outerOutlineId,
+      "line-width",
+      ALERT_OUTLINE_CONFIG.outerWidth,
+    );
+  }
+  focusedAlertPulseAlertId = null;
+}
+
+function startFocusedAlertPulse(alert) {
+  if (!alert || !alert.mapLayerId || alert.isCountyBased || !mapInstance) {
+    return;
+  }
+
+  stopAlertFlashing();
+  stopFocusedAlertPulse();
+
+  focusedAlertPulseAlertId = alert.id;
+  const innerOutlineId = `${alert.mapLayerId}-outline-inner`;
+  const outerOutlineId = `${alert.mapLayerId}-outline-outer`;
+  const startTs = performance.now();
+
+  const animate = (now) => {
+    if (!mapInstance || focusedAlertPulseAlertId !== alert.id) {
+      return;
+    }
+    if (
+      !mapInstance.getLayer(innerOutlineId) ||
+      !mapInstance.getLayer(outerOutlineId)
+    ) {
+      focusedAlertPulseAlertId = null;
+      return;
+    }
+
+    const t = (now - startTs) / 1000;
+    const wave = (Math.sin(t * Math.PI * 1.35) + 1) / 2;
+    const innerOpacity = 0.2 + wave * 0.7;
+    const outerOpacity = 0.45 + wave * 0.5;
+    const outerWidth = ALERT_OUTLINE_CONFIG.outerWidth + wave * 1.25;
+
+    mapInstance.setPaintProperty(innerOutlineId, "line-opacity", innerOpacity);
+    mapInstance.setPaintProperty(outerOutlineId, "line-opacity", outerOpacity);
+    mapInstance.setPaintProperty(outerOutlineId, "line-width", outerWidth);
+
+    focusedAlertPulseRaf = requestAnimationFrame(animate);
+  };
+
+  focusedAlertPulseRaf = requestAnimationFrame(animate);
 }
 
 // TVS Detection
@@ -1484,11 +1655,19 @@ let stormTrackEnabled = false;
 let stormTrackPoint = null;
 let stormTrackLine = [];
 let stormTrackSpeed = 35; // mph
+let stormTrackTrackType = "single"; // "single" or "line"
+let stormTrackManualDirection = 90; // degrees
+let stormTrackUseNearestWarningVector = true;
 let stormTrackMarkers = [];
 let stormTrackMode = "manual"; // "manual" or "calculated"
 let stormTrackFirstMarker = null;
 let stormTrackSecondMarker = null;
 let stormTrackTimeElapsed = 0; // minutes between markers
+let stormTrackActiveMotion = null;
+
+let usCitiesData = [];
+let usCitiesLoadPromise = null;
+let usCitiesLoaded = false;
 
 // Traffic Cameras Feature
 let camerasEnabled = false;
@@ -1728,9 +1907,212 @@ async function loadCountiesData() {
   }
 }
 
+function parseCsvLine(line) {
+  const result = [];
+  let current = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') {
+      if (inQuotes && line[i + 1] === '"') {
+        current += '"';
+        i++;
+      } else {
+        inQuotes = !inQuotes;
+      }
+      continue;
+    }
+    if (ch === "," && !inQuotes) {
+      result.push(current);
+      current = "";
+      continue;
+    }
+    current += ch;
+  }
+  result.push(current);
+  return result;
+}
+
+async function loadUSCitiesData() {
+  if (usCitiesLoaded) return usCitiesData;
+  if (usCitiesLoadPromise) return usCitiesLoadPromise;
+
+  usCitiesLoadPromise = (async () => {
+    try {
+      const response = await fetch("uscities.csv", { cache: "force-cache" });
+      if (!response.ok) {
+        throw new Error(`Failed to load uscities.csv: ${response.statusText}`);
+      }
+
+      const csv = await response.text();
+      const lines = csv.split(/\r?\n/).filter(Boolean);
+      if (lines.length < 2) {
+        usCitiesData = [];
+        usCitiesLoaded = true;
+        return usCitiesData;
+      }
+
+      const headers = parseCsvLine(lines[0]).map((h) => h.trim());
+      const index = {
+        city: headers.indexOf("city"),
+        state: headers.indexOf("state_id"),
+        lat: headers.indexOf("lat"),
+        lng: headers.indexOf("lng"),
+        population: headers.indexOf("population"),
+        timezone: headers.indexOf("timezone"),
+      };
+
+      const parsedCities = [];
+      for (let i = 1; i < lines.length; i++) {
+        const row = parseCsvLine(lines[i]);
+        if (
+          index.city < 0 ||
+          index.state < 0 ||
+          index.lat < 0 ||
+          index.lng < 0
+        ) {
+          break;
+        }
+
+        const lat = parseFloat(row[index.lat]);
+        const lon = parseFloat(row[index.lng]);
+        if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+
+        const population = Number.parseInt(row[index.population] || "0", 10);
+        parsedCities.push({
+          name: row[index.city] || "Unknown",
+          state: row[index.state] || "",
+          lat,
+          lon,
+          population: Number.isFinite(population) ? population : 0,
+          timezone: row[index.timezone] || "",
+        });
+      }
+
+      usCitiesData = parsedCities;
+      usCitiesLoaded = true;
+      console.log(`🏙️ Loaded ${usCitiesData.length} US cities from CSV`);
+      return usCitiesData;
+    } catch (error) {
+      usCitiesData = [];
+      usCitiesLoaded = false;
+      console.error("❌ Error loading city dataset:", error);
+      return usCitiesData;
+    } finally {
+      usCitiesLoadPromise = null;
+    }
+  })();
+
+  return usCitiesLoadPromise;
+}
+
+function normalizeBearingDegrees(value) {
+  if (!Number.isFinite(value)) return null;
+  const normalized = value % 360;
+  return normalized < 0 ? normalized + 360 : normalized;
+}
+
+function cardinalToBearing(cardinal) {
+  const raw = String(cardinal || "")
+    .toUpperCase()
+    .replace(/[^A-Z]/g, "");
+  const wordMap = {
+    NORTH: "N",
+    NORTHEAST: "NE",
+    EAST: "E",
+    SOUTHEAST: "SE",
+    SOUTH: "S",
+    SOUTHWEST: "SW",
+    WEST: "W",
+    NORTHWEST: "NW",
+  };
+  const normalized = wordMap[raw] || raw;
+  const map = {
+    N: 0,
+    NNE: 22.5,
+    NE: 45,
+    ENE: 67.5,
+    E: 90,
+    ESE: 112.5,
+    SE: 135,
+    SSE: 157.5,
+    S: 180,
+    SSW: 202.5,
+    SW: 225,
+    WSW: 247.5,
+    W: 270,
+    WNW: 292.5,
+    NW: 315,
+    NNW: 337.5,
+  };
+  return Number.isFinite(map[normalized]) ? map[normalized] : null;
+}
+
+function extractMotionVectorFromRawText(rawText) {
+  if (!rawText || typeof rawText !== "string") return null;
+
+  const motMatch =
+    /TIME\.{3}MOT\.{3}LOC[\s\S]{0,100}?(\d{3})DEG\s+(\d{1,3})KT/i.exec(
+      rawText,
+    ) || /(\d{3})DEG\s+(\d{1,3})KT/i.exec(rawText);
+
+  if (motMatch) {
+    // NWS TIME...MOT...LOC direction is where the storm is moving FROM.
+    // Convert to "toward" bearing for forward projection.
+    const motionFromDeg = parseInt(motMatch[1], 10);
+    const bearingDeg = normalizeBearingDegrees(motionFromDeg + 180);
+    const speedKt = parseFloat(motMatch[2]);
+    if (Number.isFinite(bearingDeg) && Number.isFinite(speedKt)) {
+      return {
+        bearingDeg,
+        speedKt,
+        speedMph: speedKt * 1.15078,
+        source: "TIME...MOT...LOC (converted from-direction)",
+      };
+    }
+  }
+
+  const movingMphMatch =
+    /MOV(?:ING)?\s+([A-Z\-]+)\s+AT\s+(\d{1,3})\s*MPH/i.exec(rawText) ||
+    /MOVING\s+([A-Z\-]+)\s+AT\s+(\d{1,3})\s*MPH/i.exec(rawText);
+
+  if (movingMphMatch) {
+    const bearingDeg = cardinalToBearing(movingMphMatch[1]);
+    const speedMph = parseFloat(movingMphMatch[2]);
+    if (Number.isFinite(bearingDeg) && Number.isFinite(speedMph)) {
+      return {
+        bearingDeg,
+        speedKt: speedMph / 1.15078,
+        speedMph,
+        source: "MOVING ... AT ... MPH",
+      };
+    }
+  }
+
+  const movingKtMatch =
+    /MOV(?:ING)?\s+([A-Z\-]+)\s+AT\s+(\d{1,3})\s*KT/i.exec(rawText) ||
+    /MOVING\s+([A-Z\-]+)\s+AT\s+(\d{1,3})\s*KTS?/i.exec(rawText);
+
+  if (movingKtMatch) {
+    const bearingDeg = cardinalToBearing(movingKtMatch[1]);
+    const speedKt = parseFloat(movingKtMatch[2]);
+    if (Number.isFinite(bearingDeg) && Number.isFinite(speedKt)) {
+      return {
+        bearingDeg,
+        speedKt,
+        speedMph: speedKt * 1.15078,
+        source: "MOVING ... AT ... KT",
+      };
+    }
+  }
+
+  return null;
+}
+
 function initAlertFeed() {
   const eventSource = new EventSource(
-    "https://xmpp-api-production.up.railway.app/live-alerts",
+    "http://localhost:3500/live-alerts",
   );
 
   eventSource.addEventListener("INIT", (event) => {
@@ -2581,6 +2963,10 @@ function applyRealAlertPresetRules(alert) {
 function addAlertToMap(alert) {
   alert = applyRealAlertPresetRules(alert);
 
+  if (!alert.motionVector && alert.rawText) {
+    alert.motionVector = extractMotionVectorFromRawText(alert.rawText);
+  }
+
   // Detect special weather statements from SSE or product
   try {
     if (alert.eventName && /severe weather statement/i.test(alert.eventName)) {
@@ -2763,6 +3149,8 @@ function detachAlertMapEventHandlers(map, alert) {
 
 function startAlertFlashing() {
   if (!enableAlertFlashing || alertFlashInterval || !selectedAlert) return;
+
+  stopFocusedAlertPulse();
 
   const alert = selectedAlert;
   if (!mapInstance || !alert.mapLayerId) return;
@@ -3304,6 +3692,19 @@ function addAlertPolygon(map, alert) {
   }
 
   alert.areaGeometry = fixedPolygon;
+  try {
+    const center = turf.centroid({
+      type: "Feature",
+      geometry: fixedPolygon,
+      properties: {},
+    });
+    const [lon, lat] = center?.geometry?.coordinates || [];
+    if (Number.isFinite(lon) && Number.isFinite(lat)) {
+      alert.areaCenter = { lon, lat };
+    }
+  } catch (error) {
+    console.warn(`Centroid calc failed for alert ${alert.id}:`, error);
+  }
 
   if (map.getLayer(`${id}-fill`)) map.removeLayer(`${id}-fill`);
   if (map.getLayer(`${id}-outline-inner`))
@@ -3664,6 +4065,21 @@ function handleAlertLineClick(e, alert) {
     <div style="padding: 12px 14px; font-size: 12.5px; line-height: 1.55;">
   `;
 
+  infoHTML += `
+    <div style="margin-bottom: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <button class="alert-info-focus"
+        style="padding: 9px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.28);
+        background: rgba(255,255,255,0.08); color: white; cursor: pointer; font-weight: 700; letter-spacing: 0.2px;">
+        Focus
+      </button>
+      <button class="alert-info-track"
+        style="padding: 9px 10px; border-radius: 8px; border: 1px solid rgba(${accentRgb}, 0.45);
+        background: rgba(${accentRgb}, 0.2); color: white; cursor: pointer; font-weight: 700; letter-spacing: 0.2px;">
+        Show Track
+      </button>
+    </div>
+  `;
+
   // Display counties if available
   if (alert.counties && alert.counties.length > 0) {
     infoHTML += `
@@ -3785,6 +4201,24 @@ function handleAlertLineClick(e, alert) {
   const closeButton = infoBox.querySelector(".alert-info-close");
   if (closeButton) {
     closeButton.addEventListener("click", cleanupInfoBox);
+  }
+
+  const trackButton = infoBox.querySelector(".alert-info-track");
+  const focusButton = infoBox.querySelector(".alert-info-focus");
+  if (focusButton) {
+    focusButton.addEventListener("click", () => {
+      showDetailedAlert(alert);
+    });
+  }
+  if (trackButton) {
+    trackButton.addEventListener("click", () => {
+      startStormTrackFromAlert(alert, {
+        projectionHours: 2,
+        coneWidthFactor: 0.15,
+        trackType: "single",
+      });
+      cleanupInfoBox();
+    });
   }
 
   // Make draggable
@@ -3982,6 +4416,104 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   return R * c;
 }
 
+const EARTH_RADIUS_M = 6371008.8;
+
+function destinationPointMeters(latDeg, lonDeg, bearingDeg, distanceMeters) {
+  const lat1 = (latDeg * Math.PI) / 180;
+  const lon1 = (lonDeg * Math.PI) / 180;
+  const theta = (bearingDeg * Math.PI) / 180;
+  const delta = distanceMeters / EARTH_RADIUS_M;
+
+  const sinLat1 = Math.sin(lat1);
+  const cosLat1 = Math.cos(lat1);
+  const sinDelta = Math.sin(delta);
+  const cosDelta = Math.cos(delta);
+
+  const sinLat2 = sinLat1 * cosDelta + cosLat1 * sinDelta * Math.cos(theta);
+  const lat2 = Math.asin(Math.max(-1, Math.min(1, sinLat2)));
+
+  const y = Math.sin(theta) * sinDelta * cosLat1;
+  const x = cosDelta - sinLat1 * sinLat2;
+  const lon2 = lon1 + Math.atan2(y, x);
+
+  return {
+    lat: (lat2 * 180) / Math.PI,
+    lon: (((((lon2 * 180) / Math.PI + 540) % 360) + 360) % 360) - 180,
+  };
+}
+
+function correctLevel3VertexGeometry(vertices, site) {
+  if (!vertices || !site) return vertices;
+
+  const siteLon = Number(site.longitude);
+  const siteLat = Number(site.latitude);
+  if (!Number.isFinite(siteLon) || !Number.isFinite(siteLat)) return vertices;
+
+  const corrected = new Float32Array(vertices.length);
+  const metersPerDegLat = 111132.92;
+  const metersPerDegLonAtSite =
+    Math.max(1e-6, Math.cos((siteLat * Math.PI) / 180)) * 111320;
+
+  for (let i = 0; i < vertices.length; i += 2) {
+    const lon = vertices[i];
+    const lat = vertices[i + 1];
+
+    if (!Number.isFinite(lon) || !Number.isFinite(lat)) {
+      corrected[i] = lon;
+      corrected[i + 1] = lat;
+      continue;
+    }
+
+    // Invert common flat-earth conversion used by many Level 3 preprocessors.
+    const dx = (lon - siteLon) * metersPerDegLonAtSite;
+    const dy = (lat - siteLat) * metersPerDegLat;
+    const distanceMeters = Math.hypot(dx, dy);
+
+    if (distanceMeters < 1) {
+      corrected[i] = lon;
+      corrected[i + 1] = lat;
+      continue;
+    }
+
+    const bearingRaw = (Math.atan2(dx, dy) * 180) / Math.PI;
+    const bearingDeg = bearingRaw < 0 ? bearingRaw + 360 : bearingRaw;
+
+    const p = destinationPointMeters(
+      siteLat,
+      siteLon,
+      bearingDeg,
+      distanceMeters,
+    );
+    corrected[i] = p.lon;
+    corrected[i + 1] = p.lat;
+  }
+
+  return corrected;
+}
+
+function toMercatorXY(lng, lat) {
+  if (
+    typeof maplibregl !== "undefined" &&
+    maplibregl.MercatorCoordinate &&
+    Number.isFinite(lng) &&
+    Number.isFinite(lat)
+  ) {
+    const mc = maplibregl.MercatorCoordinate.fromLngLat([lng, lat]);
+    return [mc.x, mc.y];
+  }
+
+  const DEG_TO_RAD = Math.PI / 180;
+  const RAD_TO_DEG = 180 / Math.PI;
+  const PI_4 = Math.PI / 4;
+  const MIN_LAT = -85.0511 * DEG_TO_RAD;
+  const MAX_LAT = 85.0511 * DEG_TO_RAD;
+
+  const x = (lng + 180) / 360;
+  const latRad = Math.max(MIN_LAT, Math.min(MAX_LAT, lat * DEG_TO_RAD));
+  const y = (180 - RAD_TO_DEG * Math.log(Math.tan(PI_4 + latRad / 2))) / 360;
+  return [x, y];
+}
+
 // Global function to select radar from alert info box
 window.selectRadarSite = function (siteId) {
   const select = document.getElementById("radarSiteSelect");
@@ -4135,11 +4667,148 @@ function displayTVSMarkers(tvsLocations) {
 }
 
 // Storm Track Functions
+function getAlertCenterPoint(alert) {
+  if (!alert) return null;
+
+  if (
+    alert.areaCenter &&
+    Number.isFinite(alert.areaCenter.lon) &&
+    Number.isFinite(alert.areaCenter.lat)
+  ) {
+    return { lon: alert.areaCenter.lon, lat: alert.areaCenter.lat };
+  }
+
+  const geometry = alert.areaGeometry || alert.polygon;
+  const coords = geometry?.coordinates?.[0] || [];
+  const centroid = getPolygonCentroid(coords, Boolean(alert.areaGeometry));
+  if (!centroid) return null;
+
+  alert.areaCenter = { lon: centroid.lon, lat: centroid.lat };
+  return { lon: centroid.lon, lat: centroid.lat };
+}
+
+function getNearestPolygonAlertWithMotionVector(referencePoint) {
+  if (!referencePoint || !Number.isFinite(referencePoint[0])) return null;
+
+  let nearest = null;
+  let nearestDistance = Number.POSITIVE_INFINITY;
+
+  activeAlerts.forEach((alert) => {
+    if (!alert) return;
+    if (!alert.areaGeometry && !alert.polygon) return;
+    const motion =
+      alert.motionVector || extractMotionVectorFromRawText(alert.rawText);
+    if (!motion) return;
+
+    const center = getAlertCenterPoint(alert);
+    if (!center) return;
+
+    const distance = calculateDistance(
+      referencePoint[1],
+      referencePoint[0],
+      center.lat,
+      center.lon,
+    );
+
+    if (distance < nearestDistance) {
+      nearestDistance = distance;
+      nearest = {
+        alert,
+        motion,
+        distance,
+      };
+    }
+  });
+
+  return nearest;
+}
+
+function getStormTrackReferencePoint() {
+  if (stormTrackTrackType === "line" && stormTrackLine?.length >= 2) {
+    const [a, b] = stormTrackLine;
+    return [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+  }
+  if (stormTrackLine?.length >= 1) return stormTrackLine[0];
+  if (stormTrackPoint) return stormTrackPoint;
+  return null;
+}
+
+function resolveStormTrackMotionVector(options = {}) {
+  const reference = options.referencePoint || getStormTrackReferencePoint();
+  const manualSpeed = Number.isFinite(options.manualSpeed)
+    ? options.manualSpeed
+    : stormTrackSpeed;
+  const fallbackBearing = Number.isFinite(options.fallbackBearing)
+    ? normalizeBearingDegrees(options.fallbackBearing)
+    : null;
+  const useNearest =
+    options.useNearestWarningVector !== undefined
+      ? Boolean(options.useNearestWarningVector)
+      : Boolean(stormTrackUseNearestWarningVector);
+
+  if (useNearest && reference) {
+    const nearest = getNearestPolygonAlertWithMotionVector(reference);
+    if (nearest && nearest.motion) {
+      return {
+        bearingDeg: normalizeBearingDegrees(nearest.motion.bearingDeg),
+        speedMph:
+          Number.isFinite(nearest.motion.speedMph) &&
+          nearest.motion.speedMph > 0
+            ? nearest.motion.speedMph
+            : manualSpeed,
+        source: `Nearest warning (${nearest.alert.eventCode || "NWS"})`,
+        nearestAlert: nearest.alert,
+      };
+    }
+  }
+
+  return {
+    bearingDeg: fallbackBearing,
+    speedMph: manualSpeed,
+    source: "Manual",
+    nearestAlert: null,
+  };
+}
+
+function clearStormTrackVisuals() {
+  const layers = [
+    "storm-track-path",
+    "storm-track-cone-fill",
+    "storm-track-cone-outline",
+    "storm-track-centerline",
+    "storm-city-markers",
+    "storm-city-labels",
+  ];
+  const sources = [
+    "storm-track-path",
+    "storm-track-cone",
+    "storm-track-centerline",
+    "storm-cities",
+  ];
+
+  layers.forEach((layer) => {
+    if (mapInstance.getLayer(layer)) {
+      mapInstance.removeLayer(layer);
+    }
+  });
+
+  sources.forEach((source) => {
+    if (mapInstance.getSource(source)) {
+      mapInstance.removeSource(source);
+    }
+  });
+
+  stormTrackMarkers.forEach((m) => m.remove());
+  stormTrackMarkers = [];
+
+  const dialog = document.getElementById("city-eta-dialog");
+  if (dialog) dialog.remove();
+}
+
 function enableStormTrack() {
   stormTrackEnabled = true;
   mapInstance.getCanvas().style.cursor = "crosshair";
 
-  // Show instructions
   const instructions = document.createElement("div");
   instructions.id = "storm-track-instructions";
   instructions.style.cssText = `
@@ -4156,17 +4825,15 @@ function enableStormTrack() {
     border: 1px solid rgba(255,255,255,0.2);
   `;
   instructions.textContent =
-    "Click to set storm origin, then click to set direction. ESC to cancel.";
+    "Click first point, then second point. Single mode: origin->direction. Line mode: storm-line endpoints.";
   document.body.appendChild(instructions);
 
-  // Add click handler
   const clickHandler = (e) => {
     if (!stormTrackPoint) {
-      // First click: set origin
       stormTrackPoint = [e.lngLat.lng, e.lngLat.lat];
-      instructions.textContent = "Click to set storm movement direction...";
+      instructions.textContent =
+        "Click second point to complete track setup...";
     } else {
-      // Second click: set direction
       stormTrackLine = [stormTrackPoint, [e.lngLat.lng, e.lngLat.lat]];
       showStormTrackDialog();
       mapInstance.off("click", clickHandler);
@@ -4176,7 +4843,6 @@ function enableStormTrack() {
 
   mapInstance.on("click", clickHandler);
 
-  // ESC to cancel
   const escHandler = (e) => {
     if (e.key === "Escape") {
       stormTrackEnabled = false;
@@ -4191,7 +4857,12 @@ function enableStormTrack() {
   document.addEventListener("keydown", escHandler);
 }
 
-function showStormTrackDialog() {
+function showStormTrackDialog(seed = {}) {
+  const referencePoint = seed.referencePoint || getStormTrackReferencePoint();
+  const nearestWithMotion = referencePoint
+    ? getNearestPolygonAlertWithMotionVector(referencePoint)
+    : null;
+
   const dialog = document.createElement("div");
   dialog.style.cssText = `
     position: absolute;
@@ -4205,11 +4876,41 @@ function showStormTrackDialog() {
     padding: 20px;
     color: white;
     z-index: 10001;
-    min-width: 350px;
+    min-width: 390px;
   `;
+
+  const nearestText = nearestWithMotion
+    ? `${(nearestWithMotion.motion.speedMph || 0).toFixed(0)} mph @ ${Math.round(
+        nearestWithMotion.motion.bearingDeg,
+      )}°`
+    : "No nearby warning motion vector found";
+
+  const nearestLabel = nearestWithMotion?.alert
+    ? `${nearestWithMotion.alert.eventCode || "ALERT"} • ${Math.round(
+        nearestWithMotion.distance,
+      )} mi away`
+    : "";
 
   dialog.innerHTML = `
     <h3 style="margin: 0 0 16px 0; font-size: 16px;">Storm Track Projection</h3>
+
+    <div style="margin-bottom: 14px;">
+      <label style="display:block; margin-bottom:8px; font-size:13px; font-weight:600;">Track Type:</label>
+      <div style="display:flex; gap:8px;">
+        <button class="track-type-btn ${stormTrackTrackType === "single" ? "active" : ""}" data-type="single"
+          style="flex:1; padding:8px; border-radius:6px; border:1px solid rgba(255,255,255,0.3); background:${
+            stormTrackTrackType === "single"
+              ? "rgba(79, 184, 255, 0.3)"
+              : "rgba(255,255,255,0.1)"
+          }; color:white; cursor:pointer; font-size:12px;">Single Storm</button>
+        <button class="track-type-btn ${stormTrackTrackType === "line" ? "active" : ""}" data-type="line"
+          style="flex:1; padding:8px; border-radius:6px; border:1px solid rgba(255,255,255,0.3); background:${
+            stormTrackTrackType === "line"
+              ? "rgba(79, 184, 255, 0.3)"
+              : "rgba(255,255,255,0.1)"
+          }; color:white; cursor:pointer; font-size:12px;">Line of Storms</button>
+      </div>
+    </div>
     
     <div style="margin-bottom: 16px;">
       <label style="display: block; margin-bottom: 8px; font-size: 13px; font-weight: 600;">Speed Mode:</label>
@@ -4227,10 +4928,40 @@ function showStormTrackDialog() {
       </div>
     </div>
 
+    <div style="margin-bottom: 12px; padding: 10px; background: rgba(255,255,255,0.06); border-radius: 8px; border: 1px solid rgba(255,255,255,0.14);">
+      <label style="display:flex; gap:8px; align-items:flex-start; font-size:12px; cursor:pointer;">
+        <input type="checkbox" id="useNearestWarningMotion" ${
+          stormTrackUseNearestWarningVector ? "checked" : ""
+        } style="margin-top:2px;" />
+        <span>
+          Use nearest warning as motion vector
+          <div style="opacity:0.75; margin-top:4px;">${nearestText}</div>
+          ${
+            nearestLabel
+              ? `<div style="opacity:0.6; font-size:11px;">${nearestLabel}</div>`
+              : ""
+          }
+        </span>
+      </label>
+    </div>
+
+    <div id="manualDirectionWrap" style="margin-bottom:12px; display:${
+      stormTrackUseNearestWarningVector ? "none" : "block"
+    }">
+      <label style="display:block; margin-bottom:4px; font-size:13px;">Manual Direction (degrees):</label>
+      <input type="number" id="stormTrackDirection" value="${Math.round(
+        Number.isFinite(stormTrackManualDirection)
+          ? stormTrackManualDirection
+          : 90,
+      )}" min="0" max="359"
+        style="width:100%; padding:8px; border-radius:4px; border:1px solid rgba(255,255,255,0.3);
+        background:rgba(255,255,255,0.1); color:white;">
+    </div>
+
     <div id="manualSpeedInputs" style="display: block;">
       <div style="margin-bottom: 12px;">
         <label style="display: block; margin-bottom: 4px; font-size: 13px;">Speed (mph):</label>
-        <input type="number" id="stormTrackSpeed" value="${stormTrackSpeed}" min="5" max="100" 
+        <input type="number" id="stormTrackSpeed" value="${stormTrackSpeed}" min="5" max="120" 
           style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.3); 
           background: rgba(255,255,255,0.1); color: white;">
       </div>
@@ -4239,7 +4970,7 @@ function showStormTrackDialog() {
     <div id="calculatedSpeedInputs" style="display: none;">
       <div style="margin-bottom: 12px; padding: 12px; background: rgba(79, 184, 255, 0.1); border-radius: 6px;">
         <div style="font-size: 12px; margin-bottom: 8px;">
-          Click on two points (past and current storm location) and enter the time elapsed between them.
+          Click two points (past and current storm location) and set elapsed time.
         </div>
         <label style="display: block; margin-bottom: 4px; font-size: 13px;">Time Elapsed (minutes):</label>
         <input type="number" id="stormTrackTimeElapsed" value="30" min="1" max="360" 
@@ -4251,17 +4982,19 @@ function showStormTrackDialog() {
 
     <div style="margin-bottom: 12px;">
       <label style="display: block; margin-bottom: 4px; font-size: 13px;">Projection Time (hours):</label>
-      <input type="number" id="stormTrackTime" value="3" min="0.5" max="24" step="0.5"
+      <input type="number" id="stormTrackTime" value="${
+        Number.isFinite(seed.projectionHours) ? seed.projectionHours : 3
+      }" min="0.5" max="24" step="0.5"
         style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.3); 
         background: rgba(255,255,255,0.1); color: white;">
     </div>
 
     <div style="margin-bottom: 12px;">
-      <label style="display: block; margin-bottom: 4px; font-size: 13px;">Cone Width Factor:</label>
+      <label style="display: block; margin-bottom: 4px; font-size: 13px;">Spread Factor:</label>
       <input type="range" id="stormTrackConeWidth" value="0.15" min="0.05" max="0.5" step="0.05"
         style="width: 100%;">
       <div style="font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 4px;">
-        Wider cone = more uncertainty
+        Controls uncertainty width for the projected impact area.
       </div>
     </div>
 
@@ -4279,19 +5012,34 @@ function showStormTrackDialog() {
 
   document.body.appendChild(dialog);
 
-  // Mode switching
+  dialog.querySelectorAll(".track-type-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const type = btn.dataset.type;
+      stormTrackTrackType = type === "line" ? "line" : "single";
+      dialog.querySelectorAll(".track-type-btn").forEach((candidate) => {
+        candidate.style.background = "rgba(255,255,255,0.1)";
+      });
+      btn.style.background = "rgba(79, 184, 255, 0.3)";
+    });
+  });
+
+  const nearestCheckbox = dialog.querySelector("#useNearestWarningMotion");
+  nearestCheckbox.addEventListener("change", (event) => {
+    stormTrackUseNearestWarningVector = event.target.checked;
+    dialog.querySelector("#manualDirectionWrap").style.display =
+      stormTrackUseNearestWarningVector ? "none" : "block";
+  });
+
   const modeButtons = dialog.querySelectorAll(".speed-mode-btn");
   modeButtons.forEach((btn) => {
     btn.onclick = () => {
       const mode = btn.dataset.mode;
       stormTrackMode = mode;
 
-      modeButtons.forEach((b) => {
-        b.style.background = "rgba(255,255,255,0.1)";
-        b.classList.remove("active");
+      modeButtons.forEach((candidate) => {
+        candidate.style.background = "rgba(255,255,255,0.1)";
       });
       btn.style.background = "rgba(79, 184, 255, 0.3)";
-      btn.classList.add("active");
 
       document.getElementById("manualSpeedInputs").style.display =
         mode === "manual" ? "block" : "none";
@@ -4299,7 +5047,7 @@ function showStormTrackDialog() {
         mode === "calculated" ? "block" : "none";
 
       if (mode === "calculated") {
-        enableMarkerSelection(dialog);
+        enableMarkerSelection();
       }
     };
   });
@@ -4321,12 +5069,17 @@ function showStormTrackDialog() {
         stormTrackSecondMarker[1],
         stormTrackSecondMarker[0],
       );
-      speed = (distance / timeMinutes) * 60; // Convert to mph
+      speed = (distance / timeMinutes) * 60;
       stormTrackSpeed = speed;
     } else if (stormTrackMode === "manual") {
       speed = parseFloat(document.getElementById("stormTrackSpeed").value);
       stormTrackSpeed = speed;
     }
+
+    const manualDirectionInput = parseFloat(
+      document.getElementById("stormTrackDirection").value,
+    );
+    stormTrackManualDirection = normalizeBearingDegrees(manualDirectionInput);
 
     const projectionHours = parseFloat(
       document.getElementById("stormTrackTime").value,
@@ -4335,7 +5088,29 @@ function showStormTrackDialog() {
       document.getElementById("stormTrackConeWidth").value,
     );
 
-    projectStormPath(projectionHours, coneWidth);
+    const fallbackBearing =
+      stormTrackTrackType === "single" && stormTrackLine.length >= 2
+        ? calculateBearing(
+            stormTrackLine[0][1],
+            stormTrackLine[0][0],
+            stormTrackLine[1][1],
+            stormTrackLine[1][0],
+          )
+        : stormTrackManualDirection;
+
+    const motion = resolveStormTrackMotionVector({
+      referencePoint,
+      useNearestWarningVector: stormTrackUseNearestWarningVector,
+      fallbackBearing,
+      manualSpeed: speed,
+    });
+
+    projectStormPath(projectionHours, coneWidth, {
+      trackType: stormTrackTrackType,
+      motionBearing: motion.bearingDeg,
+      motionSpeed: motion.speedMph,
+      motionSource: motion.source,
+    });
     dialog.remove();
   };
 
@@ -4346,16 +5121,13 @@ function showStormTrackDialog() {
     stormTrackSecondMarker = null;
     stormTrackEnabled = false;
     mapInstance.getCanvas().style.cursor = "";
-
-    // Remove marker visuals
-    stormTrackMarkers.forEach((m) => m.remove());
-    stormTrackMarkers = [];
-
+    stormTrackActiveMotion = null;
+    clearStormTrackVisuals();
     dialog.remove();
   };
 }
 
-function enableMarkerSelection(dialog) {
+function enableMarkerSelection() {
   const display = document.getElementById("calculatedSpeedDisplay");
   display.textContent = "Click first marker (past location)...";
 
@@ -4365,7 +5137,6 @@ function enableMarkerSelection(dialog) {
     if (!stormTrackFirstMarker) {
       stormTrackFirstMarker = [e.lngLat.lng, e.lngLat.lat];
 
-      // Add marker visual
       const marker = new maplibregl.Marker({ color: "#ff9800" })
         .setLngLat(stormTrackFirstMarker)
         .addTo(mapInstance);
@@ -4375,16 +5146,11 @@ function enableMarkerSelection(dialog) {
     } else if (!stormTrackSecondMarker) {
       stormTrackSecondMarker = [e.lngLat.lng, e.lngLat.lat];
 
-      // Add marker visual
       const marker = new maplibregl.Marker({ color: "#f44336" })
         .setLngLat(stormTrackSecondMarker)
         .addTo(mapInstance);
       stormTrackMarkers.push(marker);
 
-      // Update line
-      stormTrackLine = [stormTrackFirstMarker, stormTrackSecondMarker];
-
-      // Calculate and display speed
       const timeMinutes = parseFloat(
         document.getElementById("stormTrackTimeElapsed").value,
       );
@@ -4419,56 +5185,125 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   return R * c;
 }
 
-function projectStormPath(hours, coneWidthFactor = 0.15) {
+function buildLineTrackPolygonCoords(start, end, motionBearing, distanceMiles) {
+  const projectedStart = destinationPoint(
+    start[1],
+    start[0],
+    motionBearing,
+    distanceMiles,
+  );
+  const projectedEnd = destinationPoint(
+    end[1],
+    end[0],
+    motionBearing,
+    distanceMiles,
+  );
+
+  const coords = [
+    [start[0], start[1]],
+    [end[0], end[1]],
+    [projectedEnd.lon, projectedEnd.lat],
+    [projectedStart.lon, projectedStart.lat],
+    [start[0], start[1]],
+  ];
+
+  return {
+    polygonCoords: coords,
+    centerLineCoords: [
+      [(start[0] + end[0]) / 2, (start[1] + end[1]) / 2],
+      [
+        (projectedStart.lon + projectedEnd.lon) / 2,
+        (projectedStart.lat + projectedEnd.lat) / 2,
+      ],
+    ],
+    trackReference: [(start[0] + end[0]) / 2, (start[1] + end[1]) / 2],
+  };
+}
+
+function projectStormPath(hours, coneWidthFactor = 0.15, options = {}) {
   if (!stormTrackLine || stormTrackLine.length < 2) return;
 
   const [start, end] = stormTrackLine;
-  const bearing = calculateBearing(start[1], start[0], end[1], end[0]);
-  const distanceMiles = stormTrackSpeed * hours;
+  const trackType = options.trackType === "line" ? "line" : "single";
+  const fallbackBearing = calculateBearing(start[1], start[0], end[1], end[0]);
+  const bearing = Number.isFinite(options.motionBearing)
+    ? normalizeBearingDegrees(options.motionBearing)
+    : fallbackBearing;
+  const speed =
+    Number.isFinite(options.motionSpeed) && options.motionSpeed > 0
+      ? options.motionSpeed
+      : stormTrackSpeed;
+  const distanceMiles = speed * hours;
 
-  // Create expanding cone polygon
+  stormTrackTrackType = trackType;
+  stormTrackSpeed = speed;
+  stormTrackActiveMotion = {
+    source: options.motionSource || "Manual",
+    bearingDeg: bearing,
+    speedMph: speed,
+  };
+
   const centerPoints = [];
-  const leftPoints = [];
-  const rightPoints = [];
-  const steps = 30;
+  let polygonCoords = [];
+  let centerLineCoords = [];
+  let trackReferencePoint = [start[0], start[1]];
 
-  for (let i = 0; i <= steps; i++) {
-    const fraction = i / steps;
-    const dist = distanceMiles * fraction;
-    const widthAtPoint = dist * coneWidthFactor; // Width grows with distance
-
-    const centerPoint = destinationPoint(start[1], start[0], bearing, dist);
-    centerPoints.push(centerPoint);
-
-    // Calculate perpendicular points for cone edges
-    const leftBearing = (bearing - 90 + 360) % 360;
-    const rightBearing = (bearing + 90) % 360;
-
-    const leftPoint = destinationPoint(
-      centerPoint.lat,
-      centerPoint.lon,
-      leftBearing,
-      widthAtPoint,
+  if (trackType === "line") {
+    const lineTrack = buildLineTrackPolygonCoords(
+      start,
+      end,
+      bearing,
+      distanceMiles,
     );
-    const rightPoint = destinationPoint(
-      centerPoint.lat,
-      centerPoint.lon,
-      rightBearing,
-      widthAtPoint,
+    polygonCoords = lineTrack.polygonCoords;
+    centerLineCoords = lineTrack.centerLineCoords;
+    trackReferencePoint = lineTrack.trackReference;
+    centerPoints.push(
+      { lat: centerLineCoords[0][1], lon: centerLineCoords[0][0] },
+      { lat: centerLineCoords[1][1], lon: centerLineCoords[1][0] },
     );
+  } else {
+    const leftPoints = [];
+    const rightPoints = [];
+    const steps = 30;
 
-    leftPoints.push(leftPoint);
-    rightPoints.push(rightPoint);
+    for (let i = 0; i <= steps; i++) {
+      const fraction = i / steps;
+      const dist = distanceMiles * fraction;
+      const widthAtPoint = dist * coneWidthFactor;
+
+      const centerPoint = destinationPoint(start[1], start[0], bearing, dist);
+      centerPoints.push(centerPoint);
+
+      const leftBearing = (bearing - 90 + 360) % 360;
+      const rightBearing = (bearing + 90) % 360;
+
+      const leftPoint = destinationPoint(
+        centerPoint.lat,
+        centerPoint.lon,
+        leftBearing,
+        widthAtPoint,
+      );
+      const rightPoint = destinationPoint(
+        centerPoint.lat,
+        centerPoint.lon,
+        rightBearing,
+        widthAtPoint,
+      );
+
+      leftPoints.push(leftPoint);
+      rightPoints.push(rightPoint);
+    }
+
+    polygonCoords = [
+      ...leftPoints.map((p) => [p.lon, p.lat]),
+      ...rightPoints.reverse().map((p) => [p.lon, p.lat]),
+      [leftPoints[0].lon, leftPoints[0].lat],
+    ];
+
+    centerLineCoords = centerPoints.map((p) => [p.lon, p.lat]);
   }
 
-  // Create polygon coordinates (left edge, then right edge reversed)
-  const polygonCoords = [
-    ...leftPoints.map((p) => [p.lon, p.lat]),
-    ...rightPoints.reverse().map((p) => [p.lon, p.lat]),
-    [leftPoints[0].lon, leftPoints[0].lat], // Close polygon
-  ];
-
-  // Draw cone on map
   if (!mapInstance.getSource("storm-track-cone")) {
     mapInstance.addSource("storm-track-cone", {
       type: "geojson",
@@ -4509,7 +5344,7 @@ function projectStormPath(hours, coneWidthFactor = 0.15) {
         type: "Feature",
         geometry: {
           type: "LineString",
-          coordinates: centerPoints.map((p) => [p.lon, p.lat]),
+          coordinates: centerLineCoords,
         },
       },
     });
@@ -4535,13 +5370,15 @@ function projectStormPath(hours, coneWidthFactor = 0.15) {
       type: "Feature",
       geometry: {
         type: "LineString",
-        coordinates: centerPoints.map((p) => [p.lon, p.lat]),
+        coordinates: centerLineCoords,
       },
     });
   }
 
-  // Query cities from MapTiler and calculate ETAs
-  findCitiesAlongPath(polygonCoords, centerPoints, hours);
+  findCitiesAlongPath(polygonCoords, centerPoints, hours, {
+    trackType,
+    trackReferencePoint,
+  });
 }
 
 function calculateBearing(lat1, lon1, lat2, lon2) {
@@ -4582,73 +5419,69 @@ function destinationPoint(lat, lon, bearing, distanceMiles) {
   };
 }
 
-function findCitiesAlongPath(polygonCoords, centerPoints, hours) {
-  // Query rendered features from MapTiler to find cities
-  const cityLayers = [
-    "place-city-label",
-    "place-town-label",
-    "place-village-label",
-    "place-label",
-  ];
-
-  // Create bounding box from polygon
-  const lngs = polygonCoords.map((c) => c[0]);
-  const lats = polygonCoords.map((c) => c[1]);
-  const bbox = [
-    [Math.min(...lngs), Math.min(...lats)],
-    [Math.max(...lngs), Math.max(...lats)],
-  ];
-
-  // Query features
-  let features = [];
-  try {
-    features = mapInstance.queryRenderedFeatures(undefined, {
-      layers: cityLayers,
+function findCitiesAlongPath(polygonCoords, centerPoints, hours, options = {}) {
+  if (!usCitiesLoaded) {
+    loadUSCitiesData().then(() => {
+      findCitiesAlongPath(polygonCoords, centerPoints, hours, options);
     });
-  } catch (e) {
-    console.log("Could not query city features:", e);
+    displayCityETAs([], hours, {
+      loading: true,
+      trackType: options.trackType || stormTrackTrackType,
+    });
+    return;
   }
 
-  // Filter features within polygon and calculate ETAs
+  const lngs = polygonCoords.map((c) => c[0]);
+  const lats = polygonCoords.map((c) => c[1]);
+  const minLon = Math.min(...lngs);
+  const maxLon = Math.max(...lngs);
+  const minLat = Math.min(...lats);
+  const maxLat = Math.max(...lats);
+
   const citiesWithETA = [];
-  const startPoint = centerPoints[0];
+  const fallbackStart = centerPoints[0]
+    ? [centerPoints[0].lon, centerPoints[0].lat]
+    : [polygonCoords[0][0], polygonCoords[0][1]];
+  const startPoint = options.trackReferencePoint || fallbackStart;
 
-  features.forEach((feature) => {
-    if (!feature.properties || !feature.properties.name) return;
+  usCitiesData.forEach((city) => {
+    if (
+      city.lon < minLon ||
+      city.lon > maxLon ||
+      city.lat < minLat ||
+      city.lat > maxLat
+    ) {
+      return;
+    }
+    if (!isPointInPolygon([city.lon, city.lat], polygonCoords)) return;
 
-    const coords = feature.geometry.coordinates;
-    if (!coords || coords.length < 2) return;
-
-    // Check if point is in polygon
-    if (!isPointInPolygon([coords[0], coords[1]], polygonCoords)) return;
-
-    // Calculate distance from storm origin
-    const cityLat = coords[1];
-    const cityLon = coords[0];
     const distance = calculateDistance(
-      startPoint.lat,
-      startPoint.lon,
-      cityLat,
-      cityLon,
+      startPoint[1],
+      startPoint[0],
+      city.lat,
+      city.lon,
     );
     const eta = distance / stormTrackSpeed; // hours
+    const etaDate = new Date(Date.now() + eta * 60 * 60 * 1000);
 
     citiesWithETA.push({
-      name: feature.properties.name,
+      name: city.name,
+      state: city.state,
+      population: city.population || 0,
+      timezone: city.timezone || "",
       distance: distance,
       eta: eta,
-      lat: cityLat,
-      lon: cityLon,
+      etaDate,
+      lat: city.lat,
+      lon: city.lon,
     });
   });
 
-  // Sort by ETA
   citiesWithETA.sort((a, b) => a.eta - b.eta);
 
-  // Display results
-  displayCityETAs(citiesWithETA, hours);
-
-  // Mark cities on map
+  displayCityETAs(citiesWithETA, hours, {
+    trackType: options.trackType || stormTrackTrackType,
+  });
   markCitiesOnMap(citiesWithETA);
 }
 
@@ -4671,8 +5504,32 @@ function isPointInPolygon(point, polygon) {
   return inside;
 }
 
-function displayCityETAs(cities, maxHours) {
-  // Remove existing dialog
+function formatEtaClock(date, timezone) {
+  try {
+    return new Intl.DateTimeFormat("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: timezone || Intl.DateTimeFormat().resolvedOptions().timeZone,
+    }).format(date);
+  } catch (error) {
+    return date.toLocaleTimeString([], {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+  }
+}
+
+function formatEtaCountdown(hours) {
+  const totalMinutes = Math.max(0, Math.round(hours * 60));
+  const h = Math.floor(totalMinutes / 60);
+  const m = totalMinutes % 60;
+  if (h > 0) return `${h}h ${m}m`;
+  return `${m}m`;
+}
+
+function displayCityETAs(cities, maxHours, options = {}) {
   const existing = document.getElementById("city-eta-dialog");
   if (existing) existing.remove();
 
@@ -4699,23 +5556,36 @@ function displayCityETAs(cities, maxHours) {
     <div style="font-size: 12px; line-height: 1.6;">
       <div><strong>Speed:</strong> ${stormTrackSpeed.toFixed(1)} mph</div>
       <div><strong>Projection:</strong> ${maxHours} hours</div>
+      <div><strong>Track Mode:</strong> ${
+        options.trackType === "line" ? "Line of Storms" : "Single Storm"
+      }</div>
+      <div><strong>Motion:</strong> ${
+        Number.isFinite(stormTrackActiveMotion?.bearingDeg)
+          ? `${Math.round(stormTrackActiveMotion.bearingDeg)}°`
+          : "N/A"
+      } (${stormTrackActiveMotion?.source || "Manual"})</div>
       <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.2);">
   `;
 
-  if (cities.length === 0) {
+  if (options.loading) {
+    html += `<em>Loading city dataset from uscities.csv...</em>`;
+  } else if (cities.length === 0) {
     html += `<em>No cities found in projected path</em>`;
   } else {
     html += `<div style="margin-bottom: 8px;"><strong>Cities in Path (${cities.length}):</strong></div>`;
     cities.slice(0, 20).forEach((city) => {
-      const hours = Math.floor(city.eta);
-      const minutes = Math.round((city.eta - hours) * 60);
-      const timeStr = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+      const countdown = formatEtaCountdown(city.eta);
+      const clockTime = formatEtaClock(city.etaDate, city.timezone);
+      const populationText = city.population
+        ? ` • Pop ${city.population.toLocaleString()}`
+        : "";
+      const stateText = city.state ? `, ${city.state}` : "";
 
       html += `
         <div style="padding: 6px; margin: 4px 0; background: rgba(255,255,255,0.1); border-radius: 4px;">
-          <div style="font-weight: bold;">${city.name}</div>
+          <div style="font-weight: bold;">${city.name}${stateText}</div>
           <div style="font-size: 11px; opacity: 0.8;">
-            ETA: ${timeStr} (${city.distance.toFixed(1)} mi)
+            ETA: ${clockTime} (${countdown}) • ${city.distance.toFixed(1)} mi${populationText}
           </div>
         </div>
       `;
@@ -4741,7 +5611,6 @@ function displayCityETAs(cities, maxHours) {
 }
 
 function markCitiesOnMap(cities) {
-  // Remove existing city markers
   if (mapInstance.getLayer("storm-city-markers")) {
     mapInstance.removeLayer("storm-city-markers");
   }
@@ -4761,8 +5630,8 @@ function markCitiesOnMap(cities) {
       coordinates: [city.lon, city.lat],
     },
     properties: {
-      name: city.name,
-      eta: city.eta.toFixed(2),
+      name: `${city.name}${city.state ? `, ${city.state}` : ""}`,
+      eta: formatEtaCountdown(city.eta),
       distance: city.distance.toFixed(1),
     },
   }));
@@ -4803,6 +5672,88 @@ function markCitiesOnMap(cities) {
       "text-halo-width": 2,
     },
   });
+}
+
+function startStormTrackFromAlert(alertFeature, options = {}) {
+  if (!alertFeature || !mapInstance) return;
+
+  const center = getAlertCenterPoint(alertFeature);
+  if (!center) {
+    window.alert("Unable to determine warning center for storm track.");
+    return;
+  }
+
+  const alertMotion =
+    alertFeature.motionVector ||
+    extractMotionVectorFromRawText(alertFeature.rawText);
+  const nearestMotion = getNearestPolygonAlertWithMotionVector([
+    center.lon,
+    center.lat,
+  ]);
+  const motion =
+    alertMotion ||
+    (nearestMotion && nearestMotion.motion ? nearestMotion.motion : null);
+
+  const bearingDeg = Number.isFinite(motion?.bearingDeg)
+    ? motion.bearingDeg
+    : 90;
+  const speedMph =
+    Number.isFinite(motion?.speedMph) && motion.speedMph > 0
+      ? motion.speedMph
+      : stormTrackSpeed;
+
+  const endPoint = destinationPoint(center.lat, center.lon, bearingDeg, 8);
+  stormTrackPoint = [center.lon, center.lat];
+  stormTrackLine = [
+    [center.lon, center.lat],
+    [endPoint.lon, endPoint.lat],
+  ];
+  stormTrackTrackType = options.trackType === "line" ? "line" : "single";
+  stormTrackSpeed = speedMph;
+  stormTrackUseNearestWarningVector = true;
+  stormTrackActiveMotion = {
+    source: alertMotion
+      ? `${alertFeature.eventCode || "ALERT"} raw text`
+      : nearestMotion
+        ? "Nearest warning"
+        : "Manual",
+    bearingDeg,
+    speedMph,
+  };
+
+  projectStormPath(
+    options.projectionHours || 2,
+    options.coneWidthFactor || 0.15,
+    {
+      trackType: stormTrackTrackType,
+      motionBearing: bearingDeg,
+      motionSpeed: speedMph,
+      motionSource: stormTrackActiveMotion.source,
+    },
+  );
+
+  try {
+    const projectionDistance = speedMph * (options.projectionHours || 2);
+    const destination = destinationPoint(
+      center.lat,
+      center.lon,
+      bearingDeg,
+      projectionDistance,
+    );
+    const bounds = new maplibregl.LngLatBounds(
+      [
+        Math.min(center.lon, destination.lon),
+        Math.min(center.lat, destination.lat),
+      ],
+      [
+        Math.max(center.lon, destination.lon),
+        Math.max(center.lat, destination.lat),
+      ],
+    );
+    mapInstance.fitBounds(bounds, { padding: 60, duration: 700, maxZoom: 9.5 });
+  } catch (error) {
+    console.warn("Unable to auto-fit warning track bounds:", error);
+  }
 }
 
 // ========================================
@@ -5894,295 +6845,203 @@ function showAlertDropdown(point, alerts, clickedLngLat = null) {
 
 function showDetailedAlert(alert) {
   try {
-    const polygon = alert.polygon?.coordinates?.length
-      ? {
-          type: "Polygon",
-          coordinates: alert.polygon.coordinates.map((ring) =>
-            ring.map(([lat, lng]) => [lng, lat]),
-          ),
-        }
-      : null;
+    focusAlertPolygonOnMap(alert, { padding: 44, duration: 900, maxZoom: 11 });
 
-    if (polygon) {
-      const bbox = turf.bbox(polygon);
-      mapInstance.fitBounds(
-        [
-          [bbox[0], bbox[1]],
-          [bbox[2], bbox[3]],
-        ],
-        { padding: 40, duration: 900, maxZoom: 11 },
-      );
-    }
-
-    const color = getAlertColor(alert);
-    const icon = getAlertIcon(alert.eventCode);
-    const issued = alert.effective ? formatDate(alert.effective) : "N/A";
-    const expires = alert.expires ? formatDate(alert.expires) : "N/A";
-    const expiringSoon = isExpiringSoon(alert.expires);
+    const previousSelection = selectedAlert;
+    selectedAlert = alert;
+    stopAlertFlashing(previousSelection);
+    startFocusedAlertPulse(alert);
 
     const existing = document.getElementById("alert-detail");
     if (existing) existing.remove();
 
-    const panel = document.createElement("div");
-    panel.id = "alert-detail";
-    panel.className = "alert-cinematic";
+    const color = getAlertColor(alert);
+    const expireStr = formatExpiry12h(alert.expires);
+    const expiringSoon = isExpiringSoon(alert.expires);
+    const threatsHtml = buildThreatsList(alert);
+    const countiesHtml =
+      alert.counties && alert.counties.length
+        ? alert.counties.join(" &bull; ")
+        : "Not specified";
 
-    // 🔑 Accent variables (THIS is the magic)
-    panel.style.setProperty("--accent", color);
-    panel.style.setProperty("--accent-glass", `${color}22`);
-    panel.style.setProperty("--accent-soft", `${color}14`);
-
-    panel.innerHTML = `
-      <header class="alert-cinematic__header">
-        <div class="alert-cinematic__badge">
-          <span>${icon}</span>
-          <small>${alert.eventCode || "ALERT"}</small>
-        </div>
-
-        <div class="alert-cinematic__title">
-          <p>${alert.office || "National Weather Service"}</p>
-          <h2>${alert.eventName || "Weather Alert"}</h2>
-          <span>
-            ${alert.counties?.slice(0, 2).join(", ") || "Multiple areas"}
-            ${
-              alert.counties?.length > 2 ? ` +${alert.counties.length - 2}` : ""
-            }
-          </span>
-        </div>
-
-        <button class="alert-cinematic__close">×</button>
-      </header>
-
-      <section class="alert-cinematic__meta">
-        <article>
-          <p>Issued</p>
-          <strong>${issued}</strong>
-        </article>
-        <article class="${expiringSoon ? "alert-soon" : ""}">
-          <p>Expires</p>
-          <strong>${expires}</strong>
-        </article>
-        <article>
-          <p>Severity</p>
-          <strong>${alert.severity || "Unknown"}</strong>
-        </article>
-      </section>
-
-      <section class="alert-cinematic__body">
-        <div>
-          <h4>Threats & Impacts</h4>
-          ${buildThreatsList(alert)}
-        </div>
-
-        <div>
-          <h4>Affected Areas</h4>
-          <p>${alert.counties?.join(", ") || "Not specified"}</p>
-        </div>
-
-        <div>
-          <h4>Summary</h4>
-          <p>${
-            alert.headline || alert.description || "Details unavailable."
-          }</p>
-        </div>
-      </section>
-
-      <footer class="alert-cinematic__actions">
-        <button class="ghost">Focus Polygon</button>
-        <button class="primary">View Full Alert</button>
-      </footer>
-    `;
-
-    document.body.appendChild(panel);
-
+    // Inject styles once
     if (!document.getElementById("alert-cinematic-style")) {
       const style = document.createElement("style");
       style.id = "alert-cinematic-style";
       style.textContent = `
-        @keyframes panelEnter {
-          from { opacity: 0; transform: translateY(14px); }
-          to { opacity: 1; transform: translateY(0); }
+        @keyframes acPanelIn {
+          from { opacity: 0; transform: translateY(12px) scale(0.98); }
+          to   { opacity: 1; transform: translateY(0)   scale(1);    }
         }
-
         .alert-cinematic {
           position: fixed;
           top: 20px;
-          left: 23%;
-          width: 460px;
-          max-height: calc(100vh - 40px);
-          background:
-            linear-gradient(180deg, var(--accent-soft), transparent 40%),
-            rgba(10,15,30,0.92);
+          left: 20px;
+          width: min(340px, calc(100vw - 40px));
+          background: rgba(10, 12, 18, 0.93);
           backdrop-filter: blur(18px) saturate(130%);
-          border: 1px solid rgba(255,255,255,0.08);
-          border-left: 4px solid var(--accent);
-          border-radius: 18px;
-          box-shadow: 0 20px 60px rgba(0,0,0,0.55);
-          color: #e5e7eb;
-          animation: panelEnter 0.35s ease-out;
-          display: flex;
-          flex-direction: column;
+          border-radius: 16px;
+          border-left: 4px solid var(--ac-color);
+          box-shadow: 0 16px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.07);
+          color: #e8eaf0;
+          font-family: system-ui, -apple-system, sans-serif;
+          animation: acPanelIn 0.28s ease-out;
           z-index: 1300;
+          overflow: hidden;
         }
-
-        .alert-cinematic__header {
+        .ac-header {
           display: flex;
-          gap: 16px;
-          padding: 20px 22px;
-          background:
-            linear-gradient(90deg, var(--accent-glass), transparent 65%),
-            rgba(15,23,42,0.75);
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 14px 14px 10px 16px;
+          background: linear-gradient(90deg, color-mix(in srgb, var(--ac-color) 14%, transparent), transparent 70%);
           border-bottom: 1px solid rgba(255,255,255,0.06);
-          align-items: center;
         }
-
-        .alert-cinematic__badge {
-          width: 54px;
-          height: 54px;
-          border-radius: 14px;
-          background:
-            linear-gradient(145deg, var(--accent-glass), rgba(255,255,255,0.03));
+        .ac-title {
           display: flex;
           flex-direction: column;
+          gap: 2px;
+        }
+        .ac-name {
+          font-size: 1.55rem;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -0.01em;
+          color: #fff;
+        }
+        .ac-expires {
+          font-size: 0.95rem;
+          font-weight: 500;
+          letter-spacing: 0.04em;
+          color: rgba(255,255,255,0.55);
+          margin-top: 2px;
+        }
+        .ac-expires.soon { color: #f87171; }
+        .ac-close {
+          flex-shrink: 0;
+          width: 26px;
+          height: 26px;
+          border-radius: 7px;
+          border: 1px solid rgba(255,255,255,0.15);
+          background: rgba(255,255,255,0.05);
+          color: rgba(255,255,255,0.7);
+          font-size: 1rem;
+          line-height: 1;
+          cursor: pointer;
+          display: flex;
           align-items: center;
           justify-content: center;
+          transition: background 0.15s, color 0.15s;
+          margin-left: 10px;
+          margin-top: 1px;
         }
-
-        .alert-cinematic__badge small {
-          font-size: 0.6rem;
-          opacity: 0.7;
-          letter-spacing: 0.12em;
-        }
-
-        .alert-cinematic__title p {
-          margin: 0;
-          font-size: 0.7rem;
-          letter-spacing: 0.18em;
-          opacity: 0.65;
-          text-transform: uppercase;
-        }
-
-        .alert-cinematic__title h2 {
-          margin: 6px 0;
-          font-size: 1.35rem;
-          font-weight: 600;
-        }
-
-        .alert-cinematic__title span {
-          font-size: 0.85rem;
-          opacity: 0.75;
-        }
-
-        .alert-cinematic__close {
-          margin-left: auto;
-          background: none;
-          border: none;
-          color: #9ca3af;
-          font-size: 1.3rem;
-          cursor: pointer;
-        }
-
-        .alert-cinematic__meta {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 12px;
-          padding: 16px 20px;
-          border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .alert-cinematic__meta article {
-          background: rgba(255,255,255,0.03);
-          border-radius: 12px;
-          padding: 12px;
-          text-align: center;
-        }
-
-        .alert-cinematic__meta p {
-          font-size: 0.6rem;
-          letter-spacing: 0.18em;
-          opacity: 0.6;
-          text-transform: uppercase;
-          margin: 0;
-        }
-
-        .alert-cinematic__meta strong {
-          display: block;
-          margin-top: 6px;
-          font-size: 0.95rem;
-        }
-
-        .alert-soon {
-          border: 1px solid rgba(239,68,68,0.6);
-        }
-
-        .alert-cinematic__body {
-          padding: 18px 20px;
+        .ac-close:hover { background: rgba(255,255,255,0.12); color: #fff; }
+        .ac-body {
+          padding: 10px 16px 14px;
           display: flex;
           flex-direction: column;
-          gap: 14px;
-          overflow-y: auto;
+          gap: 10px;
         }
-
-        .alert-cinematic__body > div {
-          background: rgba(255,255,255,0.025);
-          border-radius: 14px;
-          padding: 14px;
-        }
-
-        .alert-cinematic__body h4 {
-          font-size: 0.65rem;
+        .ac-section-label {
+          font-size: 0.68rem;
           letter-spacing: 0.18em;
-          opacity: 0.7;
           text-transform: uppercase;
+          color: rgba(255,255,255,0.38);
           margin-bottom: 6px;
         }
-
-        .alert-cinematic__actions {
+        .ac-threats {
           display: flex;
-          gap: 12px;
-          padding: 16px 20px 20px;
+          flex-direction: column;
+          gap: 4px;
         }
-
-        .alert-cinematic__actions button {
-          flex: 1;
-          padding: 12px;
-          border-radius: 12px;
-          border: 1px solid rgba(255,255,255,0.08);
-          background: rgba(255,255,255,0.04);
-          color: #e5e7eb;
+        .ac-threat-row {
+          display: flex;
+          align-items: baseline;
+          gap: 8px;
+          font-size: 1.15rem;
+          line-height: 1.45;
+        }
+        .ac-threat-icon {
+          font-size: 1rem;
+          flex-shrink: 0;
+          opacity: 0.85;
+        }
+        .ac-threat-label {
           font-weight: 600;
-          cursor: pointer;
+          color: #fff;
+          white-space: nowrap;
         }
-
-        .alert-cinematic__actions .primary {
-          background: var(--accent);
-          color: #020617;
-          border: none;
+        .ac-threat-val {
+          color: rgba(255,255,255,0.8);
+          font-size: 1.1rem;
+        }
+        .ac-counties {
+          font-size: 1rem;
+          color: rgba(255,255,255,0.6);
+          line-height: 1.55;
+        }
+        .ac-divider {
+          height: 1px;
+          background: rgba(255,255,255,0.06);
+          margin: 0;
+        }
+        @media (max-width: 420px) {
+          .alert-cinematic { top: 10px; left: 10px; width: calc(100vw - 20px); }
         }
       `;
       document.head.appendChild(style);
     }
 
-    panel.querySelector(".alert-cinematic__close").onclick = () =>
+    const panel = document.createElement("div");
+    panel.id = "alert-detail";
+    panel.className = "alert-cinematic";
+    panel.style.setProperty("--ac-color", color);
+
+    panel.innerHTML = `
+      <div class="ac-header">
+        <div class="ac-title">
+          <div class="ac-name">${alert.eventName || "Weather Alert"}</div>
+          <div class="ac-expires${expiringSoon ? " soon" : ""}">Until ${expireStr}</div>
+        </div>
+        <button class="ac-close" aria-label="Close">&#x2715;</button>
+      </div>
+      <div class="ac-body">
+        ${
+          threatsHtml
+            ? `<div>
+          <div class="ac-section-label">Threats</div>
+          <div class="ac-threats">${threatsHtml}</div>
+        </div><div class="ac-divider"></div>`
+            : ""
+        }
+        <div>
+          <div class="ac-section-label">Counties</div>
+          <div class="ac-counties">${countiesHtml}</div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(panel);
+
+    panel.querySelector(".ac-close").onclick = () => {
       panel.remove();
-
-    panel.querySelector(".ghost").onclick = () => {
-      if (!polygon) return;
-      const bbox = turf.bbox(polygon);
-      mapInstance.fitBounds(
-        [
-          [bbox[0], bbox[1]],
-          [bbox[2], bbox[3]],
-        ],
-        { padding: 40, duration: 800, maxZoom: 11 },
-      );
+      stopFocusedAlertPulse();
+      if (enableAlertFlashing && selectedAlert) startAlertFlashing();
     };
-
-    panel.querySelector(".primary").onclick = () =>
-      alert.rawText ? showFullAlertText(alert.rawText) : alert("No text.");
   } catch (err) {
     console.error("showDetailedAlert failed:", err);
   }
+}
+
+function formatExpiry12h(expiresDate) {
+  if (!expiresDate) return "N/A";
+  const d = new Date(expiresDate);
+  if (isNaN(d)) return "N/A";
+  return d.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
 }
 
 function buildThreatsList(alert) {
@@ -6191,58 +7050,36 @@ function buildThreatsList(alert) {
       ? alert.threats
       : synthesizeThreats(alert);
 
-  if (!threats || Object.keys(threats).length === 0) {
-    // Provide useful fallback text from hazards/impact/precautionaryActions
-    const parts = [];
-    if (alert.hazards) parts.push(alert.hazards);
-    if (alert.impact) parts.push(alert.impact);
-    if (alert.precautionaryActions) parts.push(alert.precautionaryActions);
-    if (parts.length > 0) {
-      return `<p style="opacity: 0.9;">${parts.join(" — ")}</p>`;
-    }
-    return '<p style="opacity: 0.7;">No specific threat information available.</p>';
+  if (!threats || Object.keys(threats).length === 0) return "";
+
+  const rows = [];
+
+  // Wind: only show maxWindGust
+  if (threats.maxWindGust) {
+    rows.push(
+      `<div class="ac-threat-row"><span class="ac-threat-icon">💨</span><span class="ac-threat-label">Max Wind:</span><span class="ac-threat-val">${threats.maxWindGust}</span></div>`,
+    );
   }
 
-  let html = '<ul style="margin: 0; padding-left: 20px; line-height: 1.8;">';
-
-  if (threats.wind) {
-    html += `<li><strong>💨 Wind:</strong> ${threats.wind}</li>`;
-  }
-  if (threats.hail) {
-    html += `<li><strong>🧊 Hail:</strong> ${threats.hail}</li>`;
-  }
-  if (threats.tornado) {
-    html += `<li><strong>🌪️ Tornado:</strong> ${threats.tornado}</li>`;
-  }
-  if (threats.tornadoDetection && !threats.tornado) {
-    html += `<li><strong>🌪️ Detection:</strong> ${threats.tornadoDetection}</li>`;
-  } else if (threats.tornadoDetection && threats.tornado) {
-    html += `<li><strong>🌪️ Detection:</strong> ${threats.tornadoDetection}</li>`;
-  }
-  if (threats.tornadoDamageThreat) {
-    html += `<li><strong>⚠️ Damage Threat:</strong> ${threats.tornadoDamageThreat}</li>`;
-  }
-  if (threats.flooding) {
-    html += `<li><strong>🌊 Flooding:</strong> ${threats.flooding}</li>`;
-  }
-  if (threats.lightning) {
-    html += `<li><strong>⚡ Lightning:</strong> ${threats.lightning}</li>`;
+  // Hail: only show maxHailSize
+  if (threats.maxHailSize) {
+    rows.push(
+      `<div class="ac-threat-row"><span class="ac-threat-icon">🧊</span><span class="ac-threat-label">Max Hail:</span><span class="ac-threat-val">${threats.maxHailSize}</span></div>`,
+    );
   }
 
-  if (threats.hazards && !threats.hail && !threats.tornado && !threats.wind) {
-    html += `<li><strong>⚠️ Hazards:</strong> ${threats.hazards}</li>`;
+  // Tornado: show if tornadoDetection or tornadoDamageThreat present
+  const hasTornado = threats.tornadoDetection || threats.tornadoDamageThreat;
+  if (hasTornado) {
+    const parts = [threats.tornadoDetection, threats.tornadoDamageThreat]
+      .filter(Boolean)
+      .join(", ");
+    rows.push(
+      `<div class="ac-threat-row"><span class="ac-threat-icon">🌪️</span><span class="ac-threat-label">Tornado:</span><span class="ac-threat-val">${parts}</span></div>`,
+    );
   }
 
-  // Always show hazards/source if present but keep them subtle to avoid clutter
-  if (threats.hazards && (threats.hail || threats.tornado || threats.wind)) {
-    html += `<li style="opacity:0.92"><strong>⚠️ Hazards:</strong> ${threats.hazards}</li>`;
-  }
-  if (threats.source) {
-    html += `<li style="opacity:0.85"><strong>📡 Source:</strong> ${threats.source}</li>`;
-  }
-
-  html += "</ul>";
-  return html;
+  return rows.join("");
 }
 
 function isExpiringSoon(expiresDate) {
@@ -7231,8 +8068,8 @@ async function fetchHistoricalWarnings(timestamp) {
 
     console.log(`🌩️ Fetching warnings ACTIVE at ${dateStr} ${timeStr}...`);
 
-    const torUrl = `https://radar-api-production-076b.up.railway.app/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=TOR`;
-    const svrUrl = `https://radar-api-production-076b.up.railway.app/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=SVR`;
+    const torUrl = `http://localhost:5100/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=TOR`;
+    const svrUrl = `http://localhost:5100/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=SVR`;
 
     console.log(`   Fetching TOR: ${torUrl}`);
     console.log(`   Fetching SVR: ${svrUrl}`);
@@ -7412,7 +8249,7 @@ function clearHistoricalAlerts() {
  */
 async function fetchArchiveTimestamps(siteId, product, date) {
   try {
-    const apiUrl = `https://radar-api-production-076b.up.railway.app/api/archive/timestamps/${siteId}?product=${product}&date=${date}`;
+    const apiUrl = `http://localhost:5100/api/archive/timestamps/${siteId}?product=${product}&date=${date}`;
     console.log(`Fetching archive timestamps via backend: ${apiUrl}`);
 
     const response = await fetch(apiUrl);
@@ -7448,6 +8285,395 @@ async function fetchArchiveTimestamps(siteId, product, date) {
   }
 }
 
+function makeQuickTimelineCacheKey(siteId, product, source, key) {
+  return `${siteId}|${product}|${source}|${key}`;
+}
+
+function pruneQuickTimelineCache() {
+  while (quickTimelineFrameCache.size > QUICK_TIMELINE_MAX_CACHE) {
+    const first = quickTimelineFrameCache.keys().next();
+    if (first.done) break;
+    quickTimelineFrameCache.delete(first.value);
+  }
+}
+
+function setQuickTimelineProductButtons(product) {
+  const productContainer = document.getElementById("radarQuickProducts");
+  if (!productContainer) return;
+  productContainer.querySelectorAll("button[data-product]").forEach((btn) => {
+    btn.classList.toggle("is-active", btn.dataset.product === product);
+  });
+}
+
+function updateQuickTimelineFrameLabel() {
+  const label = document.getElementById("radarQuickFrameLabel");
+  const scrubber = document.getElementById("radarTimelineScrubber");
+  if (!label || !scrubber) return;
+
+  if (!quickTimelineFrames.length || quickTimelineIndex < 0) {
+    label.textContent = "No frames";
+    return;
+  }
+
+  const frame = quickTimelineFrames[quickTimelineIndex];
+  const when = frame?.timestamp instanceof Date ? frame.timestamp : null;
+  const indexDisplay = `${quickTimelineIndex + 1}/${quickTimelineFrames.length}`;
+  const timeDisplay = when
+    ? when.toISOString().slice(11, 19) + "Z"
+    : "--:--:--";
+  label.textContent = `${timeDisplay} (${indexDisplay})`;
+
+  if (Number(scrubber.value) !== quickTimelineIndex) {
+    scrubber.value = String(quickTimelineIndex);
+  }
+}
+
+function base64ToUint8Array(payloadBase64) {
+  const raw = atob(payloadBase64);
+  const bytes = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; i += 1) {
+    bytes[i] = raw.charCodeAt(i);
+  }
+  return bytes;
+}
+
+async function decodeRadarPayloadBase64(payloadBase64, isGzipped) {
+  const bytes = base64ToUint8Array(payloadBase64);
+  const payloadBuffer = bytes.buffer.slice(
+    bytes.byteOffset,
+    bytes.byteOffset + bytes.byteLength,
+  );
+  if (!isGzipped) {
+    return parseRadarPayload(payloadBuffer);
+  }
+
+  const blob = new Blob([payloadBuffer]);
+  const decompressedStream = blob
+    .stream()
+    .pipeThrough(new DecompressionStream("gzip"));
+  const decompressedBlob = await new Response(decompressedStream).blob();
+  const arrayBuffer = await decompressedBlob.arrayBuffer();
+  return parseRadarPayload(arrayBuffer);
+}
+
+function yieldToMainThread() {
+  return new Promise((resolve) => {
+    if (typeof requestAnimationFrame === "function") {
+      requestAnimationFrame(() => resolve());
+      return;
+    }
+    setTimeout(resolve, 0);
+  });
+}
+
+async function fetchQuickTimelineBatch(
+  siteId,
+  product,
+  source,
+  keys,
+  options = {},
+) {
+  const { maxWorkers = 6, progressiveDecode = false } = options;
+  const decodedByKey = new Map();
+  const transport = source === "level3" ? "radial" : "triangles";
+
+  // If batch processing is disabled, skip directly to fallback single-fetch loop
+  if (batchProcessingEnabled === false) {
+    console.log("[BATCH] Processing disabled by user, using fallback loop");
+    const fallbackConcurrency = Math.max(1, Math.min(3, maxWorkers));
+    await runConcurrentTaskPool(keys, fallbackConcurrency, async (key) => {
+      const response = await fetch(
+        `http://localhost:5100/api/radar-webgl/${siteId}?product=${product}&source=${encodeURIComponent(source)}&format=binary&transport=${encodeURIComponent(transport)}&key=${encodeURIComponent(key)}`,
+        { cache: "force-cache" },
+      );
+      if (!response.ok) return;
+      const { arrayBuffer } = await readRadarBinaryArrayBuffer(response);
+      decodedByKey.set(key, parseRadarPayload(arrayBuffer));
+      if (progressiveDecode) {
+        await yieldToMainThread();
+      }
+    });
+    return decodedByKey;
+  }
+
+  try {
+    const response = await fetch(
+      `http://localhost:5100/api/radar-webgl-batch/${siteId}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          product,
+          source,
+          transport,
+          keys,
+          includePayload: true,
+          gzip: false,
+          maxWorkers,
+        }),
+      },
+    );
+
+    if (!response.ok) {
+      throw new Error(`Batch radar fetch failed (${response.status})`);
+    }
+
+    const payload = await response.json();
+    const results = Array.isArray(payload.results) ? payload.results : [];
+
+    if (progressiveDecode) {
+      for (let i = 0; i < results.length; i += 1) {
+        const entry = results[i];
+        if (!entry || entry.status !== "ok" || !entry.payloadBase64) continue;
+        const decoded = await decodeRadarPayloadBase64(
+          entry.payloadBase64,
+          Boolean(entry.isGzipped),
+        );
+        decodedByKey.set(entry.key, decoded);
+        await yieldToMainThread();
+      }
+    } else {
+      await Promise.all(
+        results.map(async (entry) => {
+          if (!entry || entry.status !== "ok" || !entry.payloadBase64) return;
+          const decoded = await decodeRadarPayloadBase64(
+            entry.payloadBase64,
+            Boolean(entry.isGzipped),
+          );
+          decodedByKey.set(entry.key, decoded);
+        }),
+      );
+    }
+  } catch (batchError) {
+    console.warn(
+      "Batch endpoint unavailable, falling back to single fetch:",
+      batchError,
+    );
+
+    const fallbackConcurrency = Math.max(1, Math.min(3, maxWorkers));
+    await runConcurrentTaskPool(keys, fallbackConcurrency, async (key) => {
+      const response = await fetch(
+        `http://localhost:5100/api/radar-webgl/${siteId}?product=${product}&source=${encodeURIComponent(source)}&format=binary&transport=${encodeURIComponent(transport)}&key=${encodeURIComponent(key)}`,
+        { cache: "force-cache" },
+      );
+      if (!response.ok) return;
+      const { arrayBuffer } = await readRadarBinaryArrayBuffer(response);
+      decodedByKey.set(key, parseRadarPayload(arrayBuffer));
+      if (progressiveDecode) {
+        await yieldToMainThread();
+      }
+    });
+  }
+
+  return decodedByKey;
+}
+
+async function ensureQuickTimelineFrames(
+  siteId,
+  product,
+  source,
+  indices,
+  options = {},
+) {
+  const { background = false } = options;
+  const neededFrames = [];
+  const cacheTargets = [];
+
+  indices.forEach((idx) => {
+    if (idx < 0 || idx >= quickTimelineFrames.length) return;
+    const frame = quickTimelineFrames[idx];
+    if (!frame || !frame.key) return;
+    const cacheKey = makeQuickTimelineCacheKey(
+      siteId,
+      product,
+      source,
+      frame.key,
+    );
+    if (
+      quickTimelineFrameCache.has(cacheKey) ||
+      quickTimelineInflight.has(cacheKey)
+    ) {
+      return;
+    }
+    neededFrames.push(frame);
+    cacheTargets.push(cacheKey);
+  });
+
+  if (!neededFrames.length) {
+    return;
+  }
+
+  cacheTargets.forEach((cacheKey) => quickTimelineInflight.set(cacheKey, true));
+
+  try {
+    const chunkSize = background
+      ? QUICK_TIMELINE_BG_CHUNK_SIZE
+      : Math.max(1, neededFrames.length);
+    const maxWorkers = background ? QUICK_TIMELINE_BG_MAX_WORKERS : 6;
+    const progressiveDecode = background;
+
+    for (let start = 0; start < neededFrames.length; start += chunkSize) {
+      const chunk = neededFrames.slice(start, start + chunkSize);
+      const decodedByKey = await fetchQuickTimelineBatch(
+        siteId,
+        product,
+        source,
+        chunk.map((f) => f.key),
+        { maxWorkers, progressiveDecode },
+      );
+
+      chunk.forEach((frame) => {
+        const cacheKey = makeQuickTimelineCacheKey(
+          siteId,
+          product,
+          source,
+          frame.key,
+        );
+        const decoded = decodedByKey.get(frame.key);
+        if (!decoded) return;
+        const normalizedPayload = normalizeRadarPayloadForRendering(
+          selectedRadarSite,
+          selectedRadarProduct,
+          decoded,
+        );
+        quickTimelineFrameCache.set(cacheKey, {
+          data: normalizedPayload,
+          timestamp: frame.timestamp,
+          key: frame.key,
+        });
+      });
+
+      if (background) {
+        await yieldToMainThread();
+      }
+    }
+
+    pruneQuickTimelineCache();
+  } finally {
+    cacheTargets.forEach((cacheKey) => quickTimelineInflight.delete(cacheKey));
+  }
+}
+
+async function renderQuickTimelineFrame(index, options = {}) {
+  const { preloadNeighbors = true, activateTimeline = true } = options;
+  if (!selectedRadarSite || !quickTimelineFrames.length) return;
+
+  const normalized = Math.max(
+    0,
+    Math.min(index, quickTimelineFrames.length - 1),
+  );
+  const frame = quickTimelineFrames[normalized];
+  if (!frame || !frame.key) return;
+
+  const source = selectedRadarDataSource || "level3";
+  const cacheKey = makeQuickTimelineCacheKey(
+    selectedRadarSite.id,
+    selectedRadarProduct,
+    source,
+    frame.key,
+  );
+
+  if (!quickTimelineFrameCache.has(cacheKey)) {
+    await ensureQuickTimelineFrames(
+      selectedRadarSite.id,
+      selectedRadarProduct,
+      source,
+      [normalized],
+    );
+  }
+
+  const cached = quickTimelineFrameCache.get(cacheKey);
+  if (!cached || !cached.data) return;
+
+  quickTimelineActive = Boolean(activateTimeline);
+  quickTimelineIndex = normalized;
+  archiveTimestamp = frame.timestamp;
+  updateRadarLayer(mapInstance, cached.data);
+  updateAllProbes();
+  updateQuickTimelineFrameLabel();
+
+  if (preloadNeighbors) {
+    const preloadIndices = [];
+    for (let offset = 1; offset <= QUICK_TIMELINE_PRELOAD_RADIUS; offset += 1) {
+      preloadIndices.push(normalized - offset, normalized + offset);
+    }
+    ensureQuickTimelineFrames(
+      selectedRadarSite.id,
+      selectedRadarProduct,
+      source,
+      preloadIndices,
+      { background: true },
+    ).catch((error) => {
+      console.warn("Quick timeline preload failed:", error);
+    });
+  }
+}
+
+async function refreshQuickTimeline(site, product = selectedRadarProduct) {
+  if (!site || dataMode !== "radar") return;
+
+  // Passive refresh should not suppress live scan rendering.
+  quickTimelineActive = false;
+
+  const version = ++quickTimelineLoadVersion;
+  const files = await fetchAvailableRadarFiles(site.id, product);
+  if (version !== quickTimelineLoadVersion) return;
+
+  quickTimelineFrames = files.slice(-QUICK_TIMELINE_WINDOW_SIZE);
+  const scrubber = document.getElementById("radarTimelineScrubber");
+  if (scrubber) {
+    const max = Math.max(0, quickTimelineFrames.length - 1);
+    scrubber.max = String(max);
+    scrubber.value = String(max);
+    scrubber.disabled = quickTimelineFrames.length <= 1;
+  }
+
+  if (quickTimelineFrames.length) {
+    // Keep the currently displayed radar scan on screen.
+    // We only update timeline state immediately, then preload all frames in the background.
+    quickTimelineIndex = quickTimelineFrames.length - 1;
+    updateQuickTimelineFrameLabel();
+
+    const backgroundVersion = version;
+    const source = selectedRadarDataSource || "level3";
+    const allIndices = quickTimelineFrames.map((_, idx) => idx);
+
+    void ensureQuickTimelineFrames(site.id, product, source, allIndices, {
+      background: true,
+    })
+      .then(() => {
+        if (backgroundVersion !== quickTimelineLoadVersion) {
+          return;
+        }
+      })
+      .catch((error) => {
+        console.warn("Quick timeline full-window preload failed:", error);
+      });
+  } else {
+    quickTimelineIndex = -1;
+    updateQuickTimelineFrameLabel();
+  }
+}
+
+function scheduleQuickTimelineRender(index) {
+  quickTimelinePendingIndex = index;
+  if (quickTimelineScrubRaf) return;
+
+  quickTimelineScrubRaf = requestAnimationFrame(() => {
+    const target = quickTimelinePendingIndex;
+    quickTimelinePendingIndex = -1;
+    quickTimelineScrubRaf = null;
+    if (!Number.isFinite(target) || target < 0) return;
+    renderQuickTimelineFrame(target, { activateTimeline: true }).catch(
+      (error) => {
+        console.warn("Quick timeline render failed:", error);
+      },
+    );
+  });
+}
+
 /**
  * Load archive radar data for a specific S3 key
  * @param {string} siteId - Radar site ID
@@ -7459,7 +8685,7 @@ async function loadArchiveRadarData(siteId, product, key, timestamp) {
   try {
     console.log(`Loading archive radar: ${key}`);
 
-    const apiUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${product}&key=${key}&format=binary`;
+    const apiUrl = `http://localhost:5100/api/radar-webgl/${siteId}?product=${product}&key=${key}&format=binary&transport=radial`;
     const response = await fetch(apiUrl);
 
     if (!response.ok) {
@@ -7481,7 +8707,12 @@ async function loadArchiveRadarData(siteId, product, key, timestamp) {
       arrayBuffer = await response.arrayBuffer();
     }
 
-    const radarData = parseBinaryRadarData(arrayBuffer);
+    const radarPayload = parseRadarPayload(arrayBuffer);
+    const radarData = normalizeRadarPayloadForRendering(
+      selectedRadarSite || { id: siteId },
+      product,
+      radarPayload,
+    );
 
     const cacheKey = `${siteId}_${product}_${timestamp.getTime()}`;
     archiveProductCache[cacheKey] = radarData;
@@ -7581,6 +8812,7 @@ window.onload = async () => {
   createAlertsToggleButton();
 
   loadCountiesData();
+  loadUSCitiesData();
 
   mapInstance = new maplibregl.Map({
     container: "map",
@@ -7592,10 +8824,23 @@ window.onload = async () => {
     fadeDuration: 0,
     pixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),
   });
+
+  const enforceMercatorProjection = () => {
+    try {
+      if (mapInstance && typeof mapInstance.setProjection === "function") {
+        mapInstance.setProjection({ type: "mercator" });
+      }
+    } catch (error) {
+      console.warn("Unable to set mercator projection:", error);
+    }
+  };
+
   mapInstance.on("load", () => {
+    enforceMercatorProjection();
     initializeWeatherAlerts();
     initDrawTool(mapInstance);
   });
+  mapInstance.on("styledata", enforceMercatorProjection);
   mapInstance.on("contextmenu", handleMapPointerDown);
   mapInstance.on("mouseup", cancelMapLongPress);
   mapInstance.on("touchend", cancelMapLongPress);
@@ -7608,6 +8853,102 @@ window.onload = async () => {
   populateRadarSitesDropdown(radarSites);
 
   addRadarSitesToMap(mapInstance, radarSites);
+
+  const quickTimelineScrubber = document.getElementById(
+    "radarTimelineScrubber",
+  );
+  if (quickTimelineScrubber) {
+    quickTimelineScrubber.addEventListener("input", (e) => {
+      const idx = Number.parseInt(e.target.value, 10);
+      if (!Number.isFinite(idx)) return;
+      scheduleQuickTimelineRender(idx);
+    });
+  }
+
+  const quickProductContainer = document.getElementById("radarQuickProducts");
+  if (quickProductContainer) {
+    quickProductContainer.addEventListener("click", async (e) => {
+      const button = e.target.closest("button[data-product]");
+      if (!button) return;
+
+      const nextProduct = String(button.dataset.product || "").toUpperCase();
+      if (!nextProduct || !selectedRadarSite || dataMode !== "radar") return;
+      if (nextProduct === selectedRadarProduct) return;
+
+      const requestVersion = ++quickProductSwitchVersion;
+
+      // START AGGRESSIVE FETCHING IMMEDIATELY
+      console.log(
+        `[LATENCY] Product changed to ${nextProduct} - starting background pre-fetch`,
+      );
+      const radarSource = selectedRadarDataSource || "level3";
+      const prefetchUrl = `http://localhost:5100/api/radar-webgl/${selectedRadarSite.id}?product=${nextProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
+      fetch(prefetchUrl, { priority: "high" }).catch(() => {});
+
+      selectedRadarProduct = nextProduct;
+      setQuickTimelineProductButtons(nextProduct);
+      quickTimelineActive = false;
+
+      // Force immediate color ramp update for the WebGL layer
+      if (
+        customRadarLayerInstance &&
+        customRadarLayerInstance.updateColorRamp
+      ) {
+        customRadarLayerInstance.updateColorRamp(nextProduct);
+      }
+
+      const productSelect = document.getElementById("radarProductSelect");
+      if (productSelect) {
+        productSelect.value = nextProduct;
+      }
+
+      createColorScaleLegend(nextProduct);
+
+      if (radarPollingTimer) {
+        clearInterval(radarPollingTimer);
+        radarPollingTimer = null;
+      }
+
+      stopLoop();
+      radarFrames = [];
+
+      await fetchAndDisplayRadarData(
+        mapInstance,
+        selectedRadarSite,
+        nextProduct,
+        selectedRadarDataSource,
+      );
+
+      // Ignore stale completions from older quick-product clicks.
+      if (
+        requestVersion !== quickProductSwitchVersion ||
+        selectedRadarProduct !== nextProduct
+      ) {
+        return;
+      }
+
+      startSweepAnimation(mapInstance, selectedRadarSite);
+      if (!isArchiveMode) {
+        startRadarPolling(
+          mapInstance,
+          selectedRadarSite,
+          nextProduct,
+          selectedRadarDataSource,
+        );
+      }
+
+      await refreshQuickTimeline(selectedRadarSite, nextProduct);
+      if (quickTimelineFrames.length > 0) {
+        await renderQuickTimelineFrame(quickTimelineFrames.length - 1, {
+          activateTimeline: false,
+        });
+      }
+      updateDockSummary();
+    });
+  }
+
+  setQuickTimelineProductButtons(selectedRadarProduct);
+  updateQuickTimelineFrameLabel();
 
   createColorScaleLegend();
   applyDataModeUI();
@@ -7869,6 +9210,10 @@ window.onload = async () => {
           duration: 1500,
         });
 
+        if (typeof mapInstance.__setSelectedRadarSiteMarker === "function") {
+          mapInstance.__setSelectedRadarSiteMarker(siteId);
+        }
+
         document.getElementById("radarControlsSection").style.display = "block";
         applyDataModeUI();
 
@@ -7881,6 +9226,7 @@ window.onload = async () => {
             selectedRadarDataSource,
           );
         }
+        await refreshQuickTimeline(selectedRadarSite, selectedRadarProduct);
         updateDockSummary();
       } else {
         document.getElementById("radarControlsSection").style.display = "none";
@@ -7889,12 +9235,18 @@ window.onload = async () => {
         radarSiteLocation = null;
 
         removeRadarLayer(mapInstance);
+        if (typeof mapInstance.__setSelectedRadarSiteMarker === "function") {
+          mapInstance.__setSelectedRadarSiteMarker("");
+        }
         stopSweepAnimation(mapInstance);
         stopArcSyncStream();
         updateArcSyncToggleState();
 
         stopLoop();
         radarFrames = [];
+        quickTimelineFrames = [];
+        quickTimelineIndex = -1;
+        updateQuickTimelineFrameLabel();
         updateDockSummary();
       }
     });
@@ -7907,6 +9259,7 @@ window.onload = async () => {
       console.log(`Product changed to: ${newProduct}`);
 
       selectedRadarProduct = newProduct;
+      setQuickTimelineProductButtons(newProduct);
       createColorScaleLegend(newProduct);
       updateDockSummary();
 
@@ -7979,6 +9332,8 @@ window.onload = async () => {
             selectedRadarDataSource,
           );
         }
+
+        await refreshQuickTimeline(selectedRadarSite, newProduct);
       }
     });
 
@@ -8012,6 +9367,7 @@ window.onload = async () => {
           selectedRadarProduct,
           selectedRadarDataSource,
         );
+        await refreshQuickTimeline(selectedRadarSite, selectedRadarProduct);
       }
 
       updateDockSummary();
@@ -8085,6 +9441,7 @@ window.onload = async () => {
       }
 
       if (selectedRadarSite) {
+        quickTimelineActive = false;
         await fetchAndDisplayRadarData(
           mapInstance,
           selectedRadarSite,
@@ -8164,12 +9521,16 @@ window.onload = async () => {
         startIndex + frameCount,
       );
 
-      const downloadedFrames = [];
-      for (let i = 0; i < framesToLoad.length; i++) {
-        const ts = framesToLoad[i];
-        try {
-          const apiUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${selectedRadarSite.id}?product=${selectedRadarProduct}&key=${ts.key}&format=binary`;
-          const response = await fetch(apiUrl);
+      const archiveFetchResults = await runConcurrentTaskPool(
+        framesToLoad,
+        MAX_PARALLEL_DOWNLOADS,
+        async (ts) => {
+          const apiUrl = `http://localhost:5100/api/radar-webgl/${selectedRadarSite.id}?product=${selectedRadarProduct}&key=${ts.key}&format=binary&transport=radial`;
+          const response = await fetch(apiUrl, { cache: "force-cache" });
+          if (!response.ok) {
+            throw new Error(`Archive frame fetch failed (${response.status})`);
+          }
+
           const contentEncoding = response.headers.get("Content-Encoding");
           let arrayBuffer;
           if (contentEncoding === "gzip") {
@@ -8185,23 +9546,24 @@ window.onload = async () => {
             arrayBuffer = await response.arrayBuffer();
           }
 
-          const radarData = parseBinaryRadarData(arrayBuffer);
-
-          downloadedFrames.push({
-            data: radarData,
+          return {
+            data: normalizeRadarPayloadForRendering(
+              selectedRadarSite,
+              selectedRadarProduct,
+              parseRadarPayload(arrayBuffer),
+            ),
             timestamp: ts.timestamp,
             key: ts.key,
-          });
-
-          const percent = Math.round(((i + 1) / framesToLoad.length) * 100);
-          progressText.textContent = `${percent}% (${i + 1}/${
-            framesToLoad.length
-          })`;
+          };
+        },
+        (loaded, total) => {
+          const percent = Math.round((loaded / total) * 100);
+          progressText.textContent = `${percent}% (${loaded}/${total})`;
           if (progressBar) progressBar.style.width = `${percent}%`;
-        } catch (error) {
-          console.error(`Failed to load archive frame ${ts.key}:`, error);
-        }
-      }
+        },
+      );
+
+      const downloadedFrames = archiveFetchResults.filter(Boolean);
 
       radarFrames = downloadedFrames.map((frame) => {
         const rawVertices = new Float32Array(frame.data.vertices);
@@ -8212,20 +9574,12 @@ window.onload = async () => {
         );
         const mercatorCoords = new Float32Array(rawVertices.length);
 
-        const DEG_TO_RAD = Math.PI / 180;
-        const RAD_TO_DEG = 180 / Math.PI;
-        const PI_4 = Math.PI / 4;
-        const MIN_LAT = -85.0511 * DEG_TO_RAD;
-        const MAX_LAT = 85.0511 * DEG_TO_RAD;
-
         for (let i = 0; i < rawVertices.length; i += 2) {
           const lng = rawVertices[i];
           const lat = rawVertices[i + 1];
-
-          mercatorCoords[i] = (lng + 180) / 360;
-          const latRad = Math.max(MIN_LAT, Math.min(MAX_LAT, lat * DEG_TO_RAD));
-          mercatorCoords[i + 1] =
-            (180 - RAD_TO_DEG * Math.log(Math.tan(PI_4 + latRad / 2))) / 360;
+          const [mx, my] = toMercatorXY(lng, lat);
+          mercatorCoords[i] = mx;
+          mercatorCoords[i + 1] = my;
         }
 
         return {
@@ -8247,19 +9601,25 @@ window.onload = async () => {
       if (radarFrames.length > 0) {
         document.getElementById("loopControlsContainer").style.display = "flex";
         document.getElementById("totalFrames").textContent = radarFrames.length;
-        displayFrame(0);
+        displayFrame(radarFrames.length - 1);
         startLoop();
       }
     } else {
-      await loadRadarFrames(selectedRadarSite, frameCount, (current, total) => {
-        if (total > 0) {
-          const percent = Math.round((current / total) * 100);
-          progressText.textContent = `${percent}% (${current}/${total})`;
-          if (progressBar) progressBar.style.width = `${percent}%`;
-        } else {
-          progressDiv.style.display = "none";
-        }
-      });
+      await loadRadarFrames(
+        selectedRadarSite,
+        frameCount,
+        (current, total) => {
+          if (total > 0) {
+            const percent = Math.round((current / total) * 100);
+            progressText.textContent = `${percent}% (${current}/${total})`;
+            if (progressBar) progressBar.style.width = `${percent}%`;
+          } else {
+            progressDiv.style.display = "none";
+          }
+        },
+        selectedRadarProduct,
+        { showLatestFrame: true, showFirstFrame: false, autoStart: true },
+      );
 
       progressDiv.style.display = "none";
     }
@@ -8299,42 +9659,10 @@ window.onload = async () => {
       stormTrackFirstMarker = null;
       stormTrackSecondMarker = null;
       stormTrackTimeElapsed = 0;
+      stormTrackTrackType = "single";
+      stormTrackActiveMotion = null;
 
-      // Clear all storm track layers from map
-      const layers = [
-        "storm-track-path",
-        "storm-track-cone-fill",
-        "storm-track-cone-outline",
-        "storm-track-centerline",
-        "storm-city-markers",
-        "storm-city-labels",
-      ];
-      const sources = [
-        "storm-track-path",
-        "storm-track-cone",
-        "storm-track-centerline",
-        "storm-cities",
-      ];
-
-      layers.forEach((layer) => {
-        if (mapInstance.getLayer(layer)) {
-          mapInstance.removeLayer(layer);
-        }
-      });
-
-      sources.forEach((source) => {
-        if (mapInstance.getSource(source)) {
-          mapInstance.removeSource(source);
-        }
-      });
-
-      // Remove markers
-      stormTrackMarkers.forEach((m) => m.remove());
-      stormTrackMarkers = [];
-
-      // Remove city ETA dialog if open
-      const dialog = document.getElementById("city-eta-dialog");
-      if (dialog) dialog.remove();
+      clearStormTrackVisuals();
     }
   });
 
@@ -8431,6 +9759,7 @@ window.onload = async () => {
     .addEventListener("click", async () => {
       isArchiveMode = false;
       archiveTimestamp = null;
+      quickTimelineActive = false;
       document.getElementById("archiveModal").classList.remove("active");
 
       const badge = document.querySelector(".archive-badge");
@@ -8456,6 +9785,7 @@ window.onload = async () => {
           selectedRadarProduct,
           selectedRadarDataSource,
         );
+        await refreshQuickTimeline(selectedRadarSite, selectedRadarProduct);
         startSweepAnimation(mapInstance, selectedRadarSite);
         startRadarPolling(
           mapInstance,
@@ -8582,6 +9912,58 @@ window.onload = async () => {
 
 async function fetchRadarSites() {
   try {
+    const response = await fetch("https://api.weather.gov/radar/stations", {
+      headers: {
+        Accept: "application/geo+json, application/ld+json, application/json",
+      },
+    });
+
+    if (response.ok) {
+      const payload = await response.json();
+      const features = Array.isArray(payload?.features) ? payload.features : [];
+
+      const sites = features
+        .map((feature) => {
+          const props = feature?.properties || {};
+          const coords = feature?.geometry?.coordinates || [];
+          const lon = Number(coords[0]);
+          const lat = Number(coords[1]);
+          const rawId = String(props.id || "")
+            .trim()
+            .toUpperCase();
+          if (!rawId || !Number.isFinite(lat) || !Number.isFinite(lon)) {
+            return null;
+          }
+
+          const stationType = String(props.stationType || "")
+            .trim()
+            .toUpperCase();
+          const normalizedId =
+            stationType === "WSR-88D" && /^K[A-Z0-9]{3}$/.test(rawId)
+              ? rawId.slice(1)
+              : rawId;
+
+          return {
+            id: normalizedId,
+            sourceId: rawId,
+            name: String(props.name || normalizedId),
+            stationType,
+            latitude: lat,
+            longitude: lon,
+          };
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.id.localeCompare(b.id));
+
+      if (sites.length > 0) {
+        console.log(`Loaded ${sites.length} radar sites from weather.gov`);
+        return sites;
+      }
+    }
+
+    console.warn(
+      "weather.gov radar station list unavailable, using local fallback list",
+    );
     return [
       // NEXRAD - Continental US
       {
@@ -9563,6 +10945,7 @@ async function fetchRadarSites() {
         longitude: -114.656708,
       },
       // TDWR
+      /*
       {
         id: "TADW",
         name: "Andrews AFB, MD (TDWR)",
@@ -9844,7 +11227,7 @@ async function fetchRadarSites() {
         name: "Tulsa, OK (TDWR)",
         latitude: 36.071111,
         longitude: -95.826944,
-      },
+      },*/
     ];
   } catch (error) {
     console.error("Error fetching radar sites:", error);
@@ -9857,16 +11240,20 @@ function populateRadarSitesDropdown(sites) {
   select.innerHTML = '<option value="">Select a radar site</option>';
 
   let optionsHtml = sites
-    .map(
-      (site) => `<option value="${site.id}">${site.id} - ${site.name}</option>`,
-    )
+    .map((site) => {
+      const typeTag = site.stationType ? ` (${site.stationType})` : "";
+      const sourceTag =
+        site.sourceId && site.sourceId !== site.id ? ` [${site.sourceId}]` : "";
+      return `<option value="${site.id}">${site.id} - ${site.name}${sourceTag}${typeTag}</option>`;
+    })
     .join("");
   select.insertAdjacentHTML("beforeend", optionsHtml);
 }
 
 function addRadarSitesToMap(map, sites) {
-  const features = sites.map((site) => ({
+  const features = sites.map((site, index) => ({
     type: "Feature",
+    id: index + 1, // Set a numeric ID for each feature
     geometry: {
       type: "Point",
       coordinates: [site.longitude, site.latitude],
@@ -9877,29 +11264,162 @@ function addRadarSitesToMap(map, sites) {
     },
   }));
 
-  map.on("load", () => {
-    map.addSource("radar-sites", {
-      type: "geojson",
-      data: {
-        type: "FeatureCollection",
-        features: features,
-      },
-    });
-    map.addLayer({
-      id: "radar-sites-layer",
-      type: "circle",
-      source: "radar-sites",
-      paint: {
-        "circle-radius": 6,
-        "circle-color": "#B42222",
-        "circle-stroke-width": 2,
-        "circle-stroke-color": "#FFFFFF",
-      },
+  const iconId = "radar-site-doppler-icon";
+  let selectedMarkerFeatureId = null;
+  const layerCircleId = "radar-sites-layer";
+  const layerIconId = "radar-sites-selected-icon-layer";
+
+  const clearSelectedMarkerState = () => {
+    if (selectedMarkerFeatureId === null) return;
+    map.setFeatureState(
+      { source: "radar-sites", id: selectedMarkerFeatureId },
+      { selected: false },
+    );
+    selectedMarkerFeatureId = null;
+  };
+
+  const setSelectedMarkerStateByFeature = (feature) => {
+    if (!feature) return;
+    clearSelectedMarkerState();
+    selectedMarkerFeatureId = feature.id || feature.properties?.id;
+    if (
+      selectedMarkerFeatureId === null ||
+      selectedMarkerFeatureId === undefined
+    ) {
+      return;
+    }
+    map.setFeatureState(
+      { source: "radar-sites", id: selectedMarkerFeatureId },
+      { selected: true },
+    );
+  };
+
+  const setSelectedMarkerStateBySiteId = (siteId) => {
+    if (!siteId) {
+      clearSelectedMarkerState();
+      return;
+    }
+    const feature = features.find(
+      (f) => String(f.properties?.id) === String(siteId),
+    );
+    if (!feature) return;
+    setSelectedMarkerStateByFeature(feature);
+  };
+
+  const ensureIcon = () =>
+    new Promise((resolve) => {
+      if (map.hasImage(iconId)) {
+        resolve(true);
+        return;
+      }
+
+      map.loadImage("Doppler.png", (error, image) => {
+        if (error || !image) {
+          console.warn(
+            "Failed to load Doppler.png icon for radar sites",
+            error,
+          );
+          resolve(false);
+          return;
+        }
+        if (!map.hasImage(iconId)) {
+          map.addImage(iconId, image, { pixelRatio: 1 });
+        }
+        resolve(true);
+      });
     });
 
-    map.on("click", "radar-sites-layer", (e) => {
-      const siteId = e.features[0].properties.id;
-      const siteName = e.features[0].properties.name;
+  const ensureRadarSiteSourceAndLayer = () => {
+    const sourceData = {
+      type: "FeatureCollection",
+      features,
+    };
+
+    const existingSource = map.getSource("radar-sites");
+    if (!existingSource) {
+      map.addSource("radar-sites", {
+        type: "geojson",
+        data: sourceData,
+      });
+    } else if (typeof existingSource.setData === "function") {
+      existingSource.setData(sourceData);
+    }
+
+    ensureIcon().then((loaded) => {
+      if (!map.getLayer(layerCircleId)) {
+        map.addLayer({
+          id: layerCircleId,
+          type: "circle",
+          source: "radar-sites",
+          paint: {
+            "circle-radius": 4,
+            "circle-color": "#B42222",
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#FFFFFF",
+            "circle-opacity": [
+              "case",
+              ["boolean", ["feature-state", "selected"], false],
+              0,
+              1,
+            ],
+          },
+        });
+      }
+
+      if (loaded && !map.getLayer(layerIconId)) {
+        map.addLayer({
+          id: layerIconId,
+          type: "symbol",
+          source: "radar-sites",
+          layout: {
+            "icon-image": iconId,
+            "icon-size": 0.72,
+            "icon-allow-overlap": true,
+            "icon-ignore-placement": true,
+            "icon-anchor": "center",
+            "icon-offset": [0, 0],
+          },
+          paint: {
+            "icon-opacity": [
+              "case",
+              ["boolean", ["feature-state", "selected"], false],
+              1,
+              0,
+            ],
+          },
+          minzoom: 1,
+        });
+      }
+
+      if (selectedRadarSite?.id) {
+        setSelectedMarkerStateBySiteId(selectedRadarSite.id);
+      }
+    });
+  };
+
+  const attachRadarSiteHandlersOnce = () => {
+    if (map.__radarSiteHandlersAttached) {
+      return;
+    }
+    map.__radarSiteHandlersAttached = true;
+
+    map.__setSelectedRadarSiteMarker = setSelectedMarkerStateBySiteId;
+
+    map.on("click", layerCircleId, (e) => {
+      const feature = e.features && e.features[0] ? e.features[0] : null;
+      if (!feature) return;
+      const siteId = feature.properties.id;
+
+      setSelectedMarkerStateByFeature(feature);
+
+      console.log(
+        `[LATENCY] Site ${siteId} clicked - starting background pre-fetch`,
+      );
+      const radarProduct = selectedRadarProduct || "N0B";
+      const radarSource = selectedRadarDataSource || "level3";
+
+      const prefetchUrl = `http://localhost:5100/api/radar-webgl/${siteId}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
+      fetch(prefetchUrl, { priority: "high" }).catch(() => {});
 
       document.getElementById("radarSiteSelect").value = siteId;
 
@@ -9907,14 +11427,50 @@ function addRadarSitesToMap(map, sites) {
       document.getElementById("radarSiteSelect").dispatchEvent(event);
     });
 
-    map.on("mouseenter", "radar-sites-layer", () => {
+    map.on("click", layerIconId, (e) => {
+      const siteId = e.features[0].properties.id;
+      setSelectedMarkerStateByFeature(e.features[0]);
+
+      console.log(
+        `[LATENCY] Site ${siteId} clicked - starting background pre-fetch`,
+      );
+      const radarProduct = selectedRadarProduct || "N0B";
+      const radarSource = selectedRadarDataSource || "level3";
+
+      const prefetchUrl = `http://localhost:5100/api/radar-webgl/${siteId}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
+      fetch(prefetchUrl, { priority: "high" }).catch(() => {});
+
+      document.getElementById("radarSiteSelect").value = siteId;
+
+      const event = new Event("change");
+      document.getElementById("radarSiteSelect").dispatchEvent(event);
+    });
+
+    map.on("mouseenter", layerCircleId, () => {
+      map.getCanvas().style.cursor = "pointer";
+    });
+    map.on("mouseenter", layerIconId, () => {
       map.getCanvas().style.cursor = "pointer";
     });
 
-    map.on("mouseleave", "radar-sites-layer", () => {
+    map.on("mouseleave", layerCircleId, () => {
       map.getCanvas().style.cursor = "";
     });
-  });
+    map.on("mouseleave", layerIconId, () => {
+      map.getCanvas().style.cursor = "";
+    });
+  };
+
+  const initRadarSites = () => {
+    ensureRadarSiteSourceAndLayer();
+    attachRadarSiteHandlersOnce();
+  };
+
+  if (map.isStyleLoaded && map.isStyleLoaded()) {
+    initRadarSites();
+  } else {
+    map.once("load", initRadarSites);
+  }
 }
 
 /**
@@ -10019,6 +11575,7 @@ const RadarWebGLLayer = {
     this.rawVertexLonLat = null;
     this.rawValues = null;
     this.smoothedValues = null;
+    this.currentMeshId = null;
     this.chunkFlashEndTime = 0;
     this.chunkFlashDurationMs = 420;
 
@@ -10029,25 +11586,35 @@ const RadarWebGLLayer = {
     const vertexSource = `
       precision mediump float;
       uniform mat4 u_matrix;
-          attribute vec2 a_position;
-          attribute float a_dbz;
-          attribute float a_distance; // Distance from radar in meters (pre-computed)
+        attribute vec2 a_position; // lon/lat degrees
+        attribute float a_dbz;
           varying float v_dbz;
           varying float v_distance;
+        uniform vec2 u_radar_origin; // mercator xy, or (-1,-1) when unavailable
           
           uniform float u_enable3D; // 0.0 or 1.0
           uniform float u_beamAngle; // Beam elevation angle in radians
           uniform float u_heightExaggeration; // Height multiplier
 
+        vec2 lngLatToMercator(vec2 lngLat) {
+          float x = (lngLat.x + 180.0) / 360.0;
+          float latRad = clamp(radians(lngLat.y), -1.48442223, 1.48442223);
+          float y = (180.0 - degrees(log(tan(0.78539816339 + latRad * 0.5)))) / 360.0;
+          return vec2(x, y);
+        }
+
           void main() {
-              vec2 pos = a_position;
+          vec2 pos = lngLatToMercator(a_position);
               float elevation = 0.0;
+          float dist = 0.0;
+
+          if (u_radar_origin.x >= 0.0) {
+            vec2 dxy = pos - u_radar_origin;
+            dist = min(length(dxy) * 100.0, 1.0);
+          }
               
               // Calculate 3D elevation if enabled
               if (u_enable3D > 0.5) {
-                  // Use pre-computed distance from radar origin
-                  float dist = a_distance;
-                  
                   // Calculate beam height: height = distance * tan(angle)
                   // Add Earth curvature correction: curve = distance^2 / (2 * Earth_radius)
                   float beamHeight = dist * tan(u_beamAngle);
@@ -10060,7 +11627,7 @@ const RadarWebGLLayer = {
               
               gl_Position = u_matrix * vec4(pos, elevation, 1.0);
               v_dbz = a_dbz;
-              v_distance = a_distance;
+                v_distance = dist;
           }`;
 
     const fragmentSource = `
@@ -10205,8 +11772,11 @@ const RadarWebGLLayer = {
 
     this.a_pos_loc = gl.getAttribLocation(this.program, "a_position");
     this.a_dbz_loc = gl.getAttribLocation(this.program, "a_dbz");
-    this.a_distance_loc = gl.getAttribLocation(this.program, "a_distance");
     this.u_matrix_loc = gl.getUniformLocation(this.program, "u_matrix");
+    this.u_radar_origin_loc = gl.getUniformLocation(
+      this.program,
+      "u_radar_origin",
+    );
     this.u_color_ramp_loc = gl.getUniformLocation(this.program, "u_color_ramp");
     this.u_dbz_range_loc = gl.getUniformLocation(this.program, "u_dbz_range");
 
@@ -10242,29 +11812,20 @@ const RadarWebGLLayer = {
       console.error("❌ Failed to get essential attribute locations:", {
         a_position: this.a_pos_loc,
         a_dbz: this.a_dbz_loc,
-        a_distance: this.a_distance_loc,
       });
       this.programValid = false;
       return;
     }
 
-    this.hasDistanceAttr = this.a_distance_loc !== -1;
-
     console.log("✅ Attribute locations:", {
       a_position: this.a_pos_loc,
       a_dbz: this.a_dbz_loc,
-      a_distance: this.a_distance_loc,
-      hasDistanceAttr: this.hasDistanceAttr,
     });
 
     this.positionBuffer = gl.createBuffer();
     this.dbzBuffer = gl.createBuffer();
-    this.distanceBuffer = gl.createBuffer();
     this.vertexCount = 0;
     this.rawData = null;
-    this.mercatorPositions = null;
-    this.distanceData = null;
-    this.needsMercatorUpdate = true;
 
     const vaoExt = gl.getExtension("OES_vertex_array_object");
     if (vaoExt) {
@@ -10290,12 +11851,6 @@ const RadarWebGLLayer = {
       if (this.a_dbz_loc !== -1) {
         gl.enableVertexAttribArray(this.a_dbz_loc);
         gl.vertexAttribPointer(this.a_dbz_loc, 1, gl.FLOAT, false, 0, 0);
-      }
-
-      if (this.hasDistanceAttr && this.a_distance_loc !== -1) {
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.distanceBuffer);
-        gl.enableVertexAttribArray(this.a_distance_loc);
-        gl.vertexAttribPointer(this.a_distance_loc, 1, gl.FLOAT, false, 0, 0);
       }
 
       this.vaoExt.bindVertexArrayOES(null);
@@ -10333,9 +11888,30 @@ const RadarWebGLLayer = {
       `Processing ${data ? data.vertices.length / 2 : 0} vertices...`,
     );
     const hasData = Boolean(data && data.vertices && data.values);
+    const incomingMeshId = hasData ? data.meshId || null : null;
+    const canReuseGeometry = Boolean(
+      hasData &&
+      incomingMeshId &&
+      this.currentMeshId === incomingMeshId &&
+      this.rawVertexLonLat &&
+      this.rawVertexLonLat.length === data.vertices.length,
+    );
     this.vertexCount = hasData ? data.vertices.length / 2 : 0;
-    this.rawVertexLonLat = hasData ? new Float32Array(data.vertices) : null;
-    this.rawValues = hasData ? new Float32Array(data.values) : null;
+    if (!hasData) {
+      this.rawVertexLonLat = null;
+    } else if (!canReuseGeometry) {
+      this.rawVertexLonLat =
+        data.vertices instanceof Float32Array
+          ? data.vertices
+          : new Float32Array(data.vertices);
+    }
+
+    // Geometry correction is now handled in the API for both Level 2 and Level 3.
+    this.rawValues = hasData
+      ? data.values instanceof Float32Array
+        ? data.values
+        : new Float32Array(data.values)
+      : null;
 
     if (
       hasData &&
@@ -10357,6 +11933,7 @@ const RadarWebGLLayer = {
     }
 
     this.smoothedValues = null;
+    this.currentMeshId = hasData ? incomingMeshId : null;
     this.rawData = hasData
       ? { vertices: this.rawVertexLonLat, values: this.rawValues }
       : null;
@@ -10364,63 +11941,8 @@ const RadarWebGLLayer = {
     if (this.gl && hasData && this.rawVertexLonLat) {
       const gl = this.gl;
 
-      console.time("1-mercator-conversion");
-      const vertices = this.rawVertexLonLat;
-      const mercatorCoords = new Float32Array(vertices.length);
-      const distances = new Float32Array(vertices.length / 2);
-
-      const DEG_TO_RAD = Math.PI / 180;
-      const RAD_TO_DEG = 180 / Math.PI;
-      const PI_4 = Math.PI / 4;
-      const MIN_LAT = -85.0511 * DEG_TO_RAD;
-      const MAX_LAT = 85.0511 * DEG_TO_RAD;
-
-      const radarOriginMercator = radarSiteLocation
-        ? [
-            (radarSiteLocation.longitude + 180) / 360,
-            (180 -
-              RAD_TO_DEG *
-                Math.log(
-                  Math.tan(
-                    PI_4 +
-                      Math.max(
-                        MIN_LAT,
-                        Math.min(
-                          MAX_LAT,
-                          radarSiteLocation.latitude * DEG_TO_RAD,
-                        ),
-                      ) /
-                        2,
-                  ),
-                )) /
-              360,
-          ]
-        : [0, 0];
-
-      for (let i = 0, j = 0; i < vertices.length; i += 2, j++) {
-        const lng = vertices[i];
-        const lat = vertices[i + 1];
-
-        const mercX = (lng + 180) / 360;
-        mercatorCoords[i] = mercX;
-
-        const latRad = Math.max(MIN_LAT, Math.min(MAX_LAT, lat * DEG_TO_RAD));
-        const mercY =
-          (180 - RAD_TO_DEG * Math.log(Math.tan(PI_4 + latRad / 2))) / 360;
-        mercatorCoords[i + 1] = mercY;
-
-        if (radarSiteLocation) {
-          const dx = mercX - radarOriginMercator[0];
-          const dy = mercY - radarOriginMercator[1];
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          distances[j] = Math.min(dist * 100, 1.0);
-        } else {
-          distances[j] = 0.0;
-        }
-      }
-      this.mercatorPositions = mercatorCoords;
-      this.distanceData = distances;
-      console.timeEnd("1-mercator-conversion");
+      console.time("1-position-prep");
+      console.timeEnd("1-position-prep");
 
       console.time("2-buffer-upload");
 
@@ -10429,36 +11951,30 @@ const RadarWebGLLayer = {
       if (this.useVAO && this.vao) {
         this.vaoExt.bindVertexArrayOES(this.vao);
 
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, this.mercatorPositions, gl.STATIC_DRAW);
-        gl.enableVertexAttribArray(this.a_pos_loc);
-        gl.vertexAttribPointer(this.a_pos_loc, 2, gl.FLOAT, false, 0, 0);
+        if (!canReuseGeometry) {
+          gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
+          gl.bufferData(gl.ARRAY_BUFFER, this.rawVertexLonLat, gl.STATIC_DRAW);
+          gl.enableVertexAttribArray(this.a_pos_loc);
+          gl.vertexAttribPointer(this.a_pos_loc, 2, gl.FLOAT, false, 0, 0);
+        }
 
         gl.bindBuffer(gl.ARRAY_BUFFER, this.dbzBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, valueArray, gl.STATIC_DRAW);
         gl.enableVertexAttribArray(this.a_dbz_loc);
         gl.vertexAttribPointer(this.a_dbz_loc, 1, gl.FLOAT, false, 0, 0);
 
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.distanceBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, this.distanceData, gl.STATIC_DRAW);
-        gl.enableVertexAttribArray(this.a_distance_loc);
-        gl.vertexAttribPointer(this.a_distance_loc, 1, gl.FLOAT, false, 0, 0);
-
         this.vaoExt.bindVertexArrayOES(null);
       } else {
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, this.mercatorPositions, gl.STATIC_DRAW);
+        if (!canReuseGeometry) {
+          gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
+          gl.bufferData(gl.ARRAY_BUFFER, this.rawVertexLonLat, gl.STATIC_DRAW);
+        }
 
         gl.bindBuffer(gl.ARRAY_BUFFER, this.dbzBuffer);
         gl.bufferData(gl.ARRAY_BUFFER, valueArray, gl.STATIC_DRAW);
-
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.distanceBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, this.distanceData, gl.STATIC_DRAW);
       }
 
       console.timeEnd("2-buffer-upload");
-
-      this.needsMercatorUpdate = false;
       this.rawData = {
         vertices: this.rawVertexLonLat,
         values: valueArray,
@@ -10482,9 +11998,7 @@ const RadarWebGLLayer = {
 
   removeData: function () {
     this.rawData = null;
-    this.mercatorPositions = null;
     this.vertexCount = 0;
-    this.needsMercatorUpdate = true;
     this.rawVertexLonLat = null;
     this.rawValues = null;
     this.smoothedValues = null;
@@ -10499,7 +12013,7 @@ const RadarWebGLLayer = {
       return;
     }
 
-    if (!this.mercatorPositions || this.vertexCount === 0) return;
+    if (!this.rawVertexLonLat || this.vertexCount === 0) return;
 
     gl.useProgram(this.program);
 
@@ -10515,6 +12029,22 @@ const RadarWebGLLayer = {
 
     if (this.u_matrix_loc)
       gl.uniformMatrix4fv(this.u_matrix_loc, false, matrix);
+
+    if (this.u_radar_origin_loc) {
+      if (radarSiteLocation) {
+        const radarOriginMercator = toMercatorXY(
+          radarSiteLocation.longitude,
+          radarSiteLocation.latitude,
+        );
+        gl.uniform2f(
+          this.u_radar_origin_loc,
+          radarOriginMercator[0],
+          radarOriginMercator[1],
+        );
+      } else {
+        gl.uniform2f(this.u_radar_origin_loc, -1.0, -1.0);
+      }
+    }
 
     if (this.u_enable3D_loc)
       gl.uniform1f(this.u_enable3D_loc, enable3DTilt ? 1.0 : 0.0);
@@ -10566,12 +12096,6 @@ const RadarWebGLLayer = {
       gl.bindBuffer(gl.ARRAY_BUFFER, this.dbzBuffer);
       gl.enableVertexAttribArray(this.a_dbz_loc);
       gl.vertexAttribPointer(this.a_dbz_loc, 1, gl.FLOAT, false, 0, 0);
-
-      if (this.hasDistanceAttr && this.a_distance_loc !== -1) {
-        gl.bindBuffer(gl.ARRAY_BUFFER, this.distanceBuffer);
-        gl.enableVertexAttribArray(this.a_distance_loc);
-        gl.vertexAttribPointer(this.a_distance_loc, 1, gl.FLOAT, false, 0, 0);
-      }
     }
 
     gl.activeTexture(gl.TEXTURE0);
@@ -10696,7 +12220,6 @@ const RadarWebGLLayer = {
     if (this.program) gl.deleteProgram(this.program);
     if (this.positionBuffer) gl.deleteBuffer(this.positionBuffer);
     if (this.dbzBuffer) gl.deleteBuffer(this.dbzBuffer);
-    if (this.distanceBuffer) gl.deleteBuffer(this.distanceBuffer);
     if (this.colorRampTexture) gl.deleteTexture(this.colorRampTexture);
 
     if (this.useVAO && this.vao && this.vaoExt) {
@@ -10704,7 +12227,6 @@ const RadarWebGLLayer = {
     }
 
     this.rawData = null;
-    this.mercatorPositions = null;
     this.vertexCount = 0;
     customRadarLayerInstance = null;
     console.log(
@@ -10717,9 +12239,12 @@ let lastRadarKey = null;
 let latestArcSyncState = null;
 let lastRenderedRadarToken = null;
 let radarPollingTimer = null;
-const POLLING_INTERVAL = 15000;
+const RADIAL_PAYLOAD_MAGIC = 0x52414452; // 'RADR'
+const radialMeshCache = new Map();
+const POLLING_INTERVAL = 10000;
 const LEVEL2_POLLING_INTERVAL = 5000;
 let arcSyncEnabled = true;
+let batchProcessingEnabled = true;
 let arcSyncEventSource = null;
 let arcSyncSessionKey = null;
 let arcSyncReconnectTimer = null;
@@ -10736,10 +12261,13 @@ const partialScanFlash = {
   active: false,
   rafId: null,
   startTs: 0,
+  lastFrameTs: 0,
   periodMs: 1000,
   minOpacity: 0.25,
   maxOpacity: 0.5,
 };
+
+const PARTIAL_FLASH_TARGET_FPS = 12;
 
 function _b64ToUint8Array(b64) {
   const bin = atob(b64);
@@ -10759,8 +12287,28 @@ function _setHighDbzOpacity(map, v) {
   }
 }
 
-function _partialFlashTick(map) {
-  const now = performance.now();
+function _partialFlashTick(map, frameTs) {
+  const now = Number.isFinite(frameTs) ? frameTs : performance.now();
+
+  if (document.hidden) {
+    partialScanFlash.rafId = requestAnimationFrame((ts) =>
+      _partialFlashTick(map, ts),
+    );
+    return;
+  }
+
+  const frameIntervalMs = 1000 / PARTIAL_FLASH_TARGET_FPS;
+  if (
+    partialScanFlash.lastFrameTs > 0 &&
+    now - partialScanFlash.lastFrameTs < frameIntervalMs
+  ) {
+    partialScanFlash.rafId = requestAnimationFrame((ts) =>
+      _partialFlashTick(map, ts),
+    );
+    return;
+  }
+  partialScanFlash.lastFrameTs = now;
+
   const t =
     ((now - partialScanFlash.startTs) % partialScanFlash.periodMs) /
     partialScanFlash.periodMs; // 0..1
@@ -10770,15 +12318,20 @@ function _partialFlashTick(map) {
     (partialScanFlash.maxOpacity - partialScanFlash.minOpacity) *
       (0.5 * (1 + Math.sin(2 * Math.PI * t)));
   _setHighDbzOpacity(map, v);
-  partialScanFlash.rafId = requestAnimationFrame(() => _partialFlashTick(map));
+  partialScanFlash.rafId = requestAnimationFrame((ts) =>
+    _partialFlashTick(map, ts),
+  );
 }
 
 function startPartialScanFlash(map) {
   if (partialScanFlash.active) return;
   partialScanFlash.active = true;
   partialScanFlash.startTs = performance.now();
+  partialScanFlash.lastFrameTs = 0;
   if (partialScanFlash.rafId) cancelAnimationFrame(partialScanFlash.rafId);
-  partialScanFlash.rafId = requestAnimationFrame(() => _partialFlashTick(map));
+  partialScanFlash.rafId = requestAnimationFrame((ts) =>
+    _partialFlashTick(map, ts),
+  );
 }
 
 function stopPartialScanFlash(map) {
@@ -11177,7 +12730,7 @@ async function fetchHRRRPTypeLookup(map) {
 
   const fetchLookupWithParams = async (queryParams) => {
     const response = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${queryParams.toString()}`,
+      `http://localhost:5100/api/hrrr-webgl?${queryParams.toString()}`,
     );
     if (!response.ok) {
       throw new Error(
@@ -11251,7 +12804,7 @@ async function fetchAvailableHRRRRuns() {
   }
 
   const response = await fetch(
-    `https://radar-api-production-076b.up.railway.app/api/hrrr-runs?${params.toString()}`,
+    `http://localhost:5100/api/hrrr-runs?${params.toString()}`,
   );
   if (!response.ok) {
     throw new Error(`Failed to load HRRR runs (${response.status})`);
@@ -11440,7 +12993,7 @@ async function fetchHRRRFrameForHour(map, forecastHour) {
   }
 
   const response = await fetch(
-    `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${params.toString()}`,
+    `http://localhost:5100/api/hrrr-webgl?${params.toString()}`,
   );
   if (!response.ok) {
     throw new Error(
@@ -11582,22 +13135,19 @@ async function precacheModelRange(map) {
   }
 
   try {
-    const response = await fetch(
-      "https://radar-api-production-076b.up.railway.app/api/hrrr-precache",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: selectedModel,
-          variable: getRequestedHRRRVariable(),
-          start_hour: startHour,
-          end_hour: endHour,
-          date: selectedHRRRRunDate,
-          run_hour: selectedHRRRRunHour,
-          bounds,
-        }),
-      },
-    );
+    const response = await fetch("http://localhost:5100/api/hrrr-precache", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: selectedModel,
+        variable: getRequestedHRRRVariable(),
+        start_hour: startHour,
+        end_hour: endHour,
+        date: selectedHRRRRunDate,
+        run_hour: selectedHRRRRunHour,
+        bounds,
+      }),
+    });
 
     const result = await response.json();
     if (!response.ok) {
@@ -11741,7 +13291,7 @@ async function fetchAndDisplayHRRRData(map, retryWithFallback = true) {
     }
 
     const response = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${params.toString()}`,
+      `http://localhost:5100/api/hrrr-webgl?${params.toString()}`,
     );
     if (!response.ok) {
       let backendError = "";
@@ -11862,6 +13412,7 @@ async function switchDataMode(nextMode) {
   }
   applyDataModeUI();
   stopLoop();
+  quickTimelineActive = false;
 
   if (dataMode === "hrrr") {
     if (radarPollingTimer) {
@@ -11916,6 +13467,7 @@ async function switchDataMode(nextMode) {
       selectedRadarProduct,
       selectedRadarDataSource,
     );
+    await refreshQuickTimeline(selectedRadarSite, selectedRadarProduct);
     startSweepAnimation(mapInstance, selectedRadarSite);
     startRadarPolling(
       mapInstance,
@@ -12101,7 +13653,7 @@ function startArcSyncStream(map, site, product) {
   lastRenderedRadarToken = null;
 
   const radarProduct = product || selectedRadarProduct;
-  const streamUrl = `https://radar-api-production-076b.up.railway.app/api/radar/level2-stream?site=${encodeURIComponent(
+  const streamUrl = `http://localhost:5100/api/radar/level2-stream?site=${encodeURIComponent(
     site.id,
   )}&product=${encodeURIComponent(radarProduct)}`;
 
@@ -12250,7 +13802,7 @@ async function pollForNewRadarData(map, site, product, source) {
     const radarSource = source || selectedRadarDataSource;
 
     const keyResp = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/radar-latest-key/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}`,
+      `http://localhost:5100/api/radar-latest-key/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}`,
     );
     if (!keyResp.ok) throw new Error("Failed to check latest radar key");
     const keyData = await keyResp.json();
@@ -12284,6 +13836,10 @@ async function pollForNewRadarData(map, site, product, source) {
 
     if (updateToken && updateToken !== lastRadarKey) {
       lastRadarKey = updateToken;
+      const shouldFollowLatestTimeline =
+        !quickTimelineActive ||
+        quickTimelineIndex >= quickTimelineFrames.length - 1;
+
       await fetchAndDisplayRadarData(
         map,
         site,
@@ -12293,6 +13849,18 @@ async function pollForNewRadarData(map, site, product, source) {
         latestArcSyncState,
       );
       startSweepAnimation(mapInstance, selectedRadarSite);
+
+      if (dataMode === "radar" && !isArchiveMode) {
+        await refreshQuickTimeline(site, radarProduct);
+
+        if (quickTimelineFrames.length > 0 && shouldFollowLatestTimeline) {
+          await renderQuickTimelineFrame(quickTimelineFrames.length - 1, {
+            activateTimeline: false,
+          });
+        } else {
+          updateQuickTimelineFrameLabel();
+        }
+      }
     }
   } catch (err) {
     console.error("Radar polling error:", err);
@@ -12355,55 +13923,56 @@ async function fetchAndDisplayRadarData(
     const revQuery = refreshToken
       ? `&rev=${encodeURIComponent(refreshToken)}`
       : "";
+    const transportQuery = radarSource === "level3" ? "&transport=radial" : "";
     let response = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary${revQuery}`,
+      `http://localhost:5100/api/radar-webgl/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary${transportQuery}${revQuery}`,
     );
 
     let radarData;
-    const contentType = response.headers.get("content-type");
 
-    if (
-      response.ok &&
-      contentType &&
-      contentType.includes("application/octet-stream")
-    ) {
+    if (response.ok) {
       console.timeEnd("FETCH-request");
       console.time("PARSE-binary");
 
-      const contentEncoding = response.headers.get("Content-Encoding");
-      let arrayBuffer;
+      const { arrayBuffer, encoding } =
+        await readRadarBinaryArrayBuffer(response);
 
-      if (contentEncoding === "gzip") {
-        const blob = await response.blob();
-        const decompressedStream = blob
-          .stream()
-          .pipeThrough(new DecompressionStream("gzip"));
-        const decompressedBlob = await new Response(decompressedStream).blob();
-        arrayBuffer = await decompressedBlob.arrayBuffer();
-      } else {
-        arrayBuffer = await response.arrayBuffer();
-      }
-
-      radarData = parseBinaryRadarData(arrayBuffer);
+      radarData = parseRadarPayload(arrayBuffer);
       console.timeEnd("PARSE-binary");
       console.log(
-        "✅ Using fast binary format" +
-          (contentEncoding === "gzip" ? " (gzip)" : ""),
+        "✅ Using fast binary format" + (encoding ? ` (${encoding})` : ""),
       );
     } else {
       console.timeEnd("FETCH-request");
-      console.log("⚠️ Binary format not available, using JSON fallback");
+      // Read the error message from the JSON response if available
+      let errorMsg = `Server error: ${response.status} ${response.statusText}`;
+      try {
+        const errJson = await response.json();
+        if (errJson.error) errorMsg = errJson.error;
+      } catch (e) {}
+      throw new Error(`Radar API error: ${errorMsg}`);
+    }
 
-      response = await fetch(
-        `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}`,
-      );
-      if (!response.ok) {
-        throw new Error(`Failed to fetch radar data: ${response.statusText}`);
-      }
+    if (radarData && radarData.error) {
+      throw new Error(`Radar API error: ${radarData.error}`);
+    }
 
-      console.time("PARSE-json");
-      radarData = await response.json();
-      console.timeEnd("PARSE-json");
+    radarData = normalizeRadarPayloadForRendering(
+      site,
+      radarProduct,
+      radarData,
+    );
+
+    if (!radarData || radarData.vertices == null || radarData.values == null) {
+      throw new Error("Radar payload missing vertices/values");
+    }
+
+    // Normalize plain JSON arrays to typed arrays for downstream render paths.
+    if (!(radarData.vertices instanceof Float32Array)) {
+      radarData.vertices = new Float32Array(radarData.vertices);
+    }
+    if (!(radarData.values instanceof Float32Array)) {
+      radarData.values = new Float32Array(radarData.values);
     }
 
     if (precipTypeModeEnabled && isRadarReflectivityProductCode(radarProduct)) {
@@ -12419,9 +13988,8 @@ async function fetchAndDisplayRadarData(
     }
 
     console.timeEnd("FETCH-TOTAL");
-    console.log(
-      `Received ${radarData.vertices.length / 2} vertices for WebGL rendering.`,
-    );
+    const vertexPairs = Math.floor((radarData.vertices.length || 0) / 2);
+    console.log(`Received ${vertexPairs} vertices for WebGL rendering.`);
 
     console.time("UPDATE-radar-layer");
     if (customRadarLayerInstance && customRadarLayerInstance.updateColorRamp) {
@@ -12461,6 +14029,15 @@ async function fetchAndDisplayRadarData(
   }
 }
 
+function parseRadarPayload(arrayBuffer) {
+  const view = new DataView(arrayBuffer);
+  const magic = view.getUint32(0, true);
+  if (magic === RADIAL_PAYLOAD_MAGIC) {
+    return parseRadialBinaryPayload(arrayBuffer);
+  }
+  return parseBinaryRadarData(arrayBuffer);
+}
+
 function parseBinaryRadarData(arrayBuffer) {
   const view = new DataView(arrayBuffer);
   let offset = 0;
@@ -12477,8 +14054,391 @@ function parseBinaryRadarData(arrayBuffer) {
   return {
     vertices: vertices,
     values: values,
+    format: "triangles",
   };
 }
+
+function readFloat32Segment(arrayBuffer, byteOffset, count) {
+  const byteLength = count * 4;
+  const end = byteOffset + byteLength;
+  if (byteOffset < 0 || end > arrayBuffer.byteLength) {
+    throw new Error("Radar payload truncated");
+  }
+
+  if (byteOffset % 4 === 0) {
+    return new Float32Array(arrayBuffer, byteOffset, count);
+  }
+
+  // Radial payload includes variable-length meshId; float arrays may begin unaligned.
+  const copied = arrayBuffer.slice(byteOffset, end);
+  return new Float32Array(copied);
+}
+
+function parseRadialBinaryPayload(arrayBuffer) {
+  const view = new DataView(arrayBuffer);
+  let offset = 0;
+
+  const magic = view.getUint32(offset, true);
+  offset += 4;
+  if (magic !== RADIAL_PAYLOAD_MAGIC) {
+    throw new Error("Invalid radial payload magic");
+  }
+
+  const version = view.getUint16(offset, true);
+  offset += 2;
+  offset += 2; // flags
+
+  const numAzimuths = view.getUint32(offset, true);
+  offset += 4;
+  const numRanges = view.getUint32(offset, true);
+  offset += 4;
+  const meshIdLength = view.getUint16(offset, true);
+  offset += 2;
+  offset += 2; // reserved
+
+  const meshIdBytes = new Uint8Array(arrayBuffer, offset, meshIdLength);
+  const meshId = new TextDecoder("utf-8").decode(meshIdBytes);
+  offset += meshIdLength;
+
+  const azimuths = readFloat32Segment(arrayBuffer, offset, numAzimuths);
+  offset += numAzimuths * 4;
+  const ranges = readFloat32Segment(arrayBuffer, offset, numRanges);
+  offset += numRanges * 4;
+  const values = readFloat32Segment(
+    arrayBuffer,
+    offset,
+    numAzimuths * numRanges,
+  );
+
+  return {
+    format: "radial",
+    version,
+    meshId,
+    numAzimuths,
+    numRanges,
+    azimuths,
+    ranges,
+    values,
+  };
+}
+
+function radialPointToLonLat(site, rangeKm, azimuthDeg) {
+  const azRad = (azimuthDeg * Math.PI) / 180;
+  const lat0 = Number(site.lat || site.latitude || 0);
+  const lon0 = Number(site.lon || site.longitude || 0);
+  const lat0Rad = (lat0 * Math.PI) / 180;
+
+  const dNorth = rangeKm * Math.cos(azRad);
+  const dEast = rangeKm * Math.sin(azRad);
+  const lat = lat0 + dNorth / 110.574;
+  const lon = lon0 + dEast / (111.32 * Math.max(0.1, Math.cos(lat0Rad)));
+  return [lon, lat];
+}
+
+function buildRadialMesh(
+  site,
+  meshId,
+  azimuths,
+  ranges,
+  numAzimuths,
+  numRanges,
+) {
+  const vertices = [];
+  const valueIndices = [];
+
+  for (let i = 0; i < numAzimuths; i += 1) {
+    const nextI = (i + 1) % numAzimuths;
+    const az0 = azimuths[i];
+    const az1 = azimuths[nextI];
+    const azDiff = (az1 - az0 + 360) % 360;
+    if (!Number.isFinite(azDiff) || azDiff >= 10) {
+      continue;
+    }
+
+    for (let j = 0; j < numRanges - 1; j += 1) {
+      const valIndex = i * numRanges + j;
+      const r0 = ranges[j];
+      const r1 = ranges[j + 1];
+
+      const c0 = radialPointToLonLat(site, r0, az0);
+      const c1 = radialPointToLonLat(site, r1, az0);
+      const c2 = radialPointToLonLat(site, r1, az1);
+      const c3 = radialPointToLonLat(site, r0, az1);
+
+      vertices.push(c0[0], c0[1], c1[0], c1[1], c2[0], c2[1]);
+      vertices.push(c0[0], c0[1], c2[0], c2[1], c3[0], c3[1]);
+
+      for (let k = 0; k < 6; k += 1) {
+        valueIndices.push(valIndex);
+      }
+    }
+  }
+
+  const mesh = {
+    meshId,
+    vertices: new Float32Array(vertices),
+    valueIndices: new Uint32Array(valueIndices),
+    valuesScratch: new Float32Array(valueIndices.length),
+  };
+  radialMeshCache.set(meshId, mesh);
+  return mesh;
+}
+
+function convertRadialPayloadToRenderable(site, radarProduct, payload) {
+  const { meshId, azimuths, ranges, numAzimuths, numRanges, values } = payload;
+
+  let mesh = radialMeshCache.get(meshId);
+  if (!mesh) {
+    mesh = buildRadialMesh(
+      site,
+      meshId,
+      azimuths,
+      ranges,
+      numAzimuths,
+      numRanges,
+    );
+    console.log(`Built client mesh ${meshId} for ${radarProduct}`);
+  }
+
+  if (
+    !mesh.valuesScratch ||
+    mesh.valuesScratch.length !== mesh.valueIndices.length
+  ) {
+    mesh.valuesScratch = new Float32Array(mesh.valueIndices.length);
+  }
+
+  const expanded = mesh.valuesScratch;
+  for (let i = 0; i < mesh.valueIndices.length; i += 1) {
+    expanded[i] = values[mesh.valueIndices[i]];
+  }
+
+  return {
+    format: "triangles",
+    meshId,
+    vertices: mesh.vertices,
+    values: expanded,
+  };
+}
+
+function getPaletteMinimumValue(productCode) {
+  const productInfo = getRadarProductInfo(productCode || selectedRadarProduct);
+  const expression = productInfo?.colorExpression;
+  if (!Array.isArray(expression) || expression.length < 5) {
+    return 0;
+  }
+
+  let minStop = Number.POSITIVE_INFINITY;
+  for (let i = 3; i < expression.length; i += 2) {
+    const stop = expression[i];
+    if (typeof stop !== "number" || !Number.isFinite(stop) || stop >= 900) {
+      continue;
+    }
+    if (stop < minStop) {
+      minStop = stop;
+    }
+  }
+
+  return Number.isFinite(minStop) ? minStop : 0;
+}
+
+function getRadarMinimumRenderableValue(productCode) {
+  const normalized = String(productCode || "")
+    .trim()
+    .toUpperCase();
+
+  // Apply low-end filtering only for N0B, and use the true palette minimum.
+  if (normalized !== "N0B") {
+    return Number.NaN;
+  }
+
+  return getPaletteMinimumValue(normalized);
+}
+
+function isVelocityProductCode(productCode) {
+  const normalized = String(productCode || "")
+    .trim()
+    .toUpperCase();
+  return /N[0-3][GVS]$/.test(normalized);
+}
+
+function isCorrelationCoefficientProductCode(productCode) {
+  const normalized = String(productCode || "")
+    .trim()
+    .toUpperCase();
+  return /N[0-3]C$/.test(normalized);
+}
+
+function isInvalidRadarValue(value, productCode) {
+  if (!Number.isFinite(value)) return true;
+
+  // Common no-data / range-folded sentinels seen in radar payloads.
+  const absVal = Math.abs(value);
+  if (absVal >= 900 || absVal === 32768 || absVal === 65535) return true;
+
+  if (isVelocityProductCode(productCode)) {
+    // Velocity outside any practical meteorological bound is treated as invalid.
+    if (absVal > 180) return true;
+  }
+
+  if (isCorrelationCoefficientProductCode(productCode)) {
+    // CC should be approximately (0, 1]. Values outside indicate missing/flagged bins.
+    if (value <= 0 || value > 1.05) return true;
+  }
+
+  return false;
+}
+
+function filterRadarTrianglesByThreshold(payload, minimumValue, productCode) {
+  if (!payload || !payload.vertices || !payload.values) {
+    return payload;
+  }
+
+  const vertices =
+    payload.vertices instanceof Float32Array
+      ? payload.vertices
+      : new Float32Array(payload.vertices);
+  const values =
+    payload.values instanceof Float32Array
+      ? payload.values
+      : new Float32Array(payload.values);
+
+  if (!Number.isFinite(minimumValue) || values.length === 0) {
+    return {
+      ...payload,
+      vertices,
+      values,
+    };
+  }
+
+  const gatePacked =
+    vertices.length === values.length * 2 && values.length % 6 === 0;
+  if (!gatePacked) {
+    return {
+      ...payload,
+      vertices,
+      values,
+    };
+  }
+
+  const gateCount = values.length / 6;
+  let keptGates = 0;
+  for (let gate = 0; gate < gateCount; gate += 1) {
+    const gateValue = values[gate * 6];
+    if (isInvalidRadarValue(gateValue, productCode)) {
+      continue;
+    }
+    if (!Number.isFinite(minimumValue) || gateValue >= minimumValue) {
+      keptGates += 1;
+    }
+  }
+
+  if (keptGates === gateCount) {
+    return {
+      ...payload,
+      vertices,
+      values,
+    };
+  }
+
+  if (keptGates === 0) {
+    return {
+      ...payload,
+      vertices: new Float32Array(0),
+      values: new Float32Array(0),
+    };
+  }
+
+  const filteredVertices = new Float32Array(keptGates * 12);
+  const filteredValues = new Float32Array(keptGates * 6);
+  let outGate = 0;
+
+  for (let gate = 0; gate < gateCount; gate += 1) {
+    const inValueOffset = gate * 6;
+    const gateValue = values[inValueOffset];
+    if (isInvalidRadarValue(gateValue, productCode)) {
+      continue;
+    }
+    if (Number.isFinite(minimumValue) && gateValue < minimumValue) {
+      continue;
+    }
+
+    const inVertexOffset = gate * 12;
+    const outVertexOffset = outGate * 12;
+    const outValueOffset = outGate * 6;
+
+    filteredVertices.set(
+      vertices.subarray(inVertexOffset, inVertexOffset + 12),
+      outVertexOffset,
+    );
+    filteredValues.set(
+      values.subarray(inValueOffset, inValueOffset + 6),
+      outValueOffset,
+    );
+
+    outGate += 1;
+  }
+
+  return {
+    ...payload,
+    vertices: filteredVertices,
+    values: filteredValues,
+  };
+}
+
+function normalizeRadarPayloadForRendering(site, radarProduct, payload) {
+  if (!payload) return payload;
+  const minimumRenderableValue = getRadarMinimumRenderableValue(radarProduct);
+  if (payload.format === "radial") {
+    return filterRadarTrianglesByThreshold(
+      convertRadialPayloadToRenderable(site, radarProduct, payload),
+      minimumRenderableValue,
+      radarProduct,
+    );
+  }
+  return filterRadarTrianglesByThreshold(
+    payload,
+    minimumRenderableValue,
+    radarProduct,
+  );
+}
+
+async function readRadarBinaryArrayBuffer(response) {
+  const encoding = (
+    response.headers.get("Content-Encoding") || ""
+  ).toLowerCase();
+
+  // Browsers usually auto-decompress gzip responses for fetch.
+  const arrayBuffer = await response.arrayBuffer();
+  if (encoding !== "gzip") {
+    return { arrayBuffer, encoding: null };
+  }
+
+  // If payload already looks like radar binary, skip manual decompression.
+  try {
+    const view = new DataView(arrayBuffer);
+    const vertexCount = view.getUint32(0, true);
+    const expectedBytes = 4 + vertexCount * 12;
+    if (vertexCount > 0 && expectedBytes <= arrayBuffer.byteLength) {
+      return { arrayBuffer, encoding: "gzip(auto)" };
+    }
+  } catch (e) {
+    // Fall through to manual decompression attempt.
+  }
+
+  try {
+    const blob = new Blob([arrayBuffer]);
+    const decompressedStream = blob
+      .stream()
+      .pipeThrough(new DecompressionStream("gzip"));
+    const decompressedBlob = await new Response(decompressedStream).blob();
+    const decompressed = await decompressedBlob.arrayBuffer();
+    return { arrayBuffer: decompressed, encoding: "gzip(manual)" };
+  } catch (e) {
+    console.warn("Gzip manual decompression failed, using raw payload", e);
+    return { arrayBuffer, encoding: "gzip(raw)" };
+  }
+}
+
 function updateRadarLayer(map, data) {
   if (!customRadarLayerInstance) {
     const beforeLayerId = map
@@ -12700,19 +14660,19 @@ function buildLegendMeta(productCode, productInfo) {
           label: "Rain",
           range: unitLabel ? `0-95 ${unitLabel}` : "0-95 dBZ",
           description: "Liquid precipitation",
-          color: "rgba(35,196,232,0.7)",
+          color: "rgba(90, 220, 170, 0.65)",
         },
         {
-          label: "Freezing Rain",
+          label: "Freezing rain",
           range: unitLabel ? `100-195 ${unitLabel}` : "100-195 encoded",
-          description: "Surface icing risk",
-          color: "rgba(245,82,178,0.7)",
+          description: "Supercooled rain",
+          color: "rgba(240, 145, 210, 0.68)",
         },
         {
           label: "Sleet",
           range: unitLabel ? `200-295 ${unitLabel}` : "200-295 encoded",
-          description: "Ice pellets / mixed",
-          color: "rgba(242,122,54,0.72)",
+          description: "Ice pellets",
+          color: "rgba(250, 175, 110, 0.68)",
         },
         {
           label: "Snow",
@@ -12907,6 +14867,7 @@ function createColorScaleLegend(productCode = selectedRadarProduct) {
 
 function startSweepAnimation(map, site) {
   stopSweepAnimation(map);
+  lastSweepFrameTime = 0;
 
   // Check if sweep is disabled
   if (sweepMode === "disabled") {
@@ -12971,7 +14932,36 @@ function startSweepAnimation(map, site) {
     }
   }
 
-  const animateSweep = () => {
+  const animateSweep = (currentTime) => {
+    const frameIntervalMs = 1000 / SWEEP_TARGET_FPS;
+
+    if (document.hidden) {
+      animationFrameId = requestAnimationFrame(animateSweep);
+      return;
+    }
+
+    const radarVisible =
+      !map.getLayer(radarLayerId) ||
+      map.getLayoutProperty(radarLayerId, "visibility") !== "none";
+    if (!radarVisible) {
+      animationFrameId = requestAnimationFrame(animateSweep);
+      return;
+    }
+
+    if (
+      lastSweepFrameTime > 0 &&
+      currentTime - lastSweepFrameTime < frameIntervalMs
+    ) {
+      animationFrameId = requestAnimationFrame(animateSweep);
+      return;
+    }
+
+    const deltaMs =
+      lastSweepFrameTime > 0
+        ? currentTime - lastSweepFrameTime
+        : frameIntervalMs;
+    lastSweepFrameTime = currentTime;
+
     // If arc-sync provides a sweep head azimuth for a partial scan, prefer that
     // to align the visual sweep with incoming data. Otherwise, advance normally.
     try {
@@ -13001,7 +14991,7 @@ function startSweepAnimation(map, site) {
     sweepPulsePhase = (sweepPulsePhase + 0.03) % (Math.PI * 2);
 
     // Update flash cycle for high dBZ
-    flashCycleTime += 16; // ~60fps
+    flashCycleTime += deltaMs;
     if (flashCycleTime >= FLASH_INTERVAL) {
       flashCycleTime = 0;
       isFlashOn = !isFlashOn;
@@ -13095,6 +15085,7 @@ function stopSweepAnimation(map) {
     cancelAnimationFrame(animationFrameId);
     animationFrameId = null;
   }
+  lastSweepFrameTime = 0;
   if (map && map.getLayer(sweepLayerId)) {
     map.removeLayer(sweepLayerId);
   }
@@ -13192,6 +15183,65 @@ let isPaused = false;
 let pauseStartTime = 0;
 
 const MAX_PARALLEL_DOWNLOADS = 6;
+const LOOP_REFRESH_INTERVAL_MS = 30_000;
+let loopRefreshTimerId = null;
+let loopRefreshInFlight = false;
+
+const QUICK_TIMELINE_WINDOW_SIZE = 10;
+const QUICK_TIMELINE_PRELOAD_RADIUS = 2;
+const QUICK_TIMELINE_MAX_CACHE = 84;
+const QUICK_TIMELINE_BG_MAX_WORKERS = 2;
+const QUICK_TIMELINE_BG_CHUNK_SIZE = 2;
+let quickTimelineFrames = [];
+let quickTimelineIndex = -1;
+let quickTimelineScrubRaf = null;
+let quickTimelinePendingIndex = -1;
+let quickTimelineActive = false;
+let quickTimelineLoadVersion = 0;
+let quickProductSwitchVersion = 0;
+const quickTimelineFrameCache = new Map();
+const quickTimelineInflight = new Map();
+
+async function runConcurrentTaskPool(
+  items,
+  concurrency,
+  worker,
+  progressCallback = null,
+) {
+  if (!Array.isArray(items) || items.length === 0) {
+    return [];
+  }
+
+  const limit = Math.max(1, Math.min(items.length, Number(concurrency) || 1));
+  const results = new Array(items.length).fill(null);
+  let nextIndex = 0;
+  let completed = 0;
+
+  const runners = Array.from({ length: limit }, async () => {
+    while (true) {
+      const currentIndex = nextIndex;
+      nextIndex += 1;
+      if (currentIndex >= items.length) break;
+
+      try {
+        results[currentIndex] = await worker(items[currentIndex], currentIndex);
+      } catch (error) {
+        console.error(
+          `Concurrent worker failed at index ${currentIndex}:`,
+          error,
+        );
+      }
+
+      completed += 1;
+      if (typeof progressCallback === "function") {
+        progressCallback(completed, items.length);
+      }
+    }
+  });
+
+  await Promise.all(runners);
+  return results;
+}
 
 /**
  * OPTIMIZED: Fetches list of available radar files for a given date
@@ -13202,7 +15252,7 @@ async function fetchAvailableRadarFiles(siteId, product, date = new Date()) {
   const radarSource = selectedRadarDataSource || "level3";
 
   if (radarSource === "level2") {
-    const level2Url = `https://radar-api-production-076b.up.railway.app/api/radar-level2-files/${siteId}?limit=500`;
+    const level2Url = `http://localhost:5100/api/radar-level2-files/${siteId}?limit=500`;
     console.time("fetch-file-list");
     console.log(`📡 Fetching Level 2 radar file list from: ${level2Url}`);
 
@@ -13226,9 +15276,9 @@ async function fetchAvailableRadarFiles(siteId, product, date = new Date()) {
     }
   }
 
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(date.getUTCDate()).padStart(2, "0");
   const datePrefix = `${year}_${month}_${day}`;
 
   const prefix = `${siteId}_${radarProduct}_${datePrefix}`;
@@ -13282,7 +15332,7 @@ async function downloadSingleFrame(site, file, index, total, product) {
     const radarSource = selectedRadarDataSource || "level3";
 
     const response = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${
+      `http://localhost:5100/api/radar-webgl/${
         site.id
       }?product=${radarProduct}&source=${encodeURIComponent(
         radarSource,
@@ -13342,51 +15392,24 @@ async function downloadFramesBatch(
   progressCallback = null,
   product = null,
 ) {
-  const batches = [];
-
   const radarProduct = product || selectedRadarProduct;
 
-  for (let i = 0; i < files.length; i += MAX_PARALLEL_DOWNLOADS) {
-    batches.push(files.slice(i, i + MAX_PARALLEL_DOWNLOADS));
-  }
-
-  const allFrames = [];
-  let loadedCount = 0;
-
   console.log(
-    `📦 Downloading ${files.length} frames in ${batches.length} parallel batches (${MAX_PARALLEL_DOWNLOADS} at a time)`,
+    `📦 Downloading ${files.length} frames with concurrency ${MAX_PARALLEL_DOWNLOADS}`,
   );
 
-  for (const batch of batches) {
-    const promises = batch.map((file, batchIndex) => {
-      const globalIndex = loadedCount + batchIndex;
-      return downloadSingleFrame(
-        site,
-        file,
-        globalIndex,
-        files.length,
-        radarProduct,
-      );
-    });
+  const results = await runConcurrentTaskPool(
+    files,
+    MAX_PARALLEL_DOWNLOADS,
+    (file, index) =>
+      downloadSingleFrame(site, file, index, files.length, radarProduct),
+    progressCallback,
+  );
 
-    const results = await Promise.allSettled(promises);
-
-    const successfulFrames = results
-      .filter((r) => r.status === "fulfilled" && r.value !== null)
-      .map((r) => r.value);
-
-    allFrames.push(...successfulFrames);
-    loadedCount += batch.length;
-
-    if (progressCallback) {
-      progressCallback(loadedCount, files.length);
-    }
-
-    console.log(
-      `✅ Batch complete: ${successfulFrames.length}/${batch.length} frames loaded (${allFrames.length}/${files.length} total)`,
-    );
-  }
-
+  const allFrames = results.filter(Boolean);
+  console.log(
+    `✅ Parallel download complete: ${allFrames.length}/${files.length}`,
+  );
   return allFrames;
 }
 
@@ -13399,12 +15422,22 @@ async function loadRadarFrames(
   frameCount = 10,
   progressCallback = null,
   product = null,
+  options = {},
 ) {
   console.time("TOTAL-LOAD-TIME");
 
+  const opts = {
+    showFirstFrame: true,
+    showLatestFrame: false,
+    preserveCurrentFrame: false,
+    autoStart: false,
+    silent: false,
+    ...options,
+  };
+
   try {
     const statusDiv = document.getElementById("sidebarStatus");
-    if (statusDiv) {
+    if (statusDiv && !opts.silent) {
       statusDiv.style.display = "block";
       document.getElementById("statusText").textContent =
         "Loading animation frames...";
@@ -13418,7 +15451,9 @@ async function loadRadarFrames(
     );
 
     if (availableFiles.length === 0) {
-      alert("No radar data available for this site and date.");
+      if (!opts.silent) {
+        alert("No radar data available for this site and date.");
+      }
       return;
     }
 
@@ -13426,8 +15461,6 @@ async function loadRadarFrames(
     console.log(
       `� Starting parallel download of ${filesToLoad.length} frames...`,
     );
-
-    radarFrames = [];
 
     console.time("parallel-download");
     const downloadedFrames = await downloadFramesBatch(
@@ -13439,12 +15472,14 @@ async function loadRadarFrames(
     console.timeEnd("parallel-download");
 
     if (downloadedFrames.length === 0) {
-      alert("Failed to load any radar frames. Please try again.");
+      if (!opts.silent) {
+        alert("Failed to load any radar frames. Please try again.");
+      }
       return;
     }
 
     console.time("pre-process-frames");
-    radarFrames = downloadedFrames.map((frame) => {
+    const nextRadarFrames = downloadedFrames.map((frame) => {
       const rawVertices = new Float32Array(frame.data.vertices);
       const rawValues = new Float32Array(frame.data.values);
       const smoothedValues = computeBilinearCornerValues(
@@ -13453,20 +15488,12 @@ async function loadRadarFrames(
       );
       const mercatorCoords = new Float32Array(rawVertices.length);
 
-      const DEG_TO_RAD = Math.PI / 180;
-      const RAD_TO_DEG = 180 / Math.PI;
-      const PI_4 = Math.PI / 4;
-      const MIN_LAT = -85.0511 * DEG_TO_RAD;
-      const MAX_LAT = 85.0511 * DEG_TO_RAD;
-
       for (let i = 0; i < rawVertices.length; i += 2) {
         const lng = rawVertices[i];
         const lat = rawVertices[i + 1];
-
-        mercatorCoords[i] = (lng + 180) / 360;
-        const latRad = Math.max(MIN_LAT, Math.min(MAX_LAT, lat * DEG_TO_RAD));
-        mercatorCoords[i + 1] =
-          (180 - RAD_TO_DEG * Math.log(Math.tan(PI_4 + latRad / 2))) / 360;
+        const [mx, my] = toMercatorXY(lng, lat);
+        mercatorCoords[i] = mx;
+        mercatorCoords[i + 1] = my;
       }
 
       return {
@@ -13479,6 +15506,9 @@ async function loadRadarFrames(
         vertexCount: rawVertices.length / 2,
       };
     });
+
+    // Atomically swap frame buffers so the animation loop never sees an empty array.
+    radarFrames = nextRadarFrames;
     console.timeEnd("pre-process-frames");
 
     console.log(
@@ -13496,16 +15526,36 @@ async function loadRadarFrames(
 
     console.log("loopControlsContainer display set to flex");
 
-    currentFrameIndex = 0;
-    displayFrameFast(currentFrameIndex);
+    if (opts.showLatestFrame && radarFrames.length > 0) {
+      currentFrameIndex = radarFrames.length - 1;
+      displayFrameFast(currentFrameIndex);
+    } else if (opts.preserveCurrentFrame && radarFrames.length > 0) {
+      const numericCurrent = Number.isFinite(Number(currentFrameIndex))
+        ? Number(currentFrameIndex)
+        : 0;
+      currentFrameIndex = Math.max(
+        0,
+        Math.min(numericCurrent, radarFrames.length - 1),
+      );
+      displayFrameFast(currentFrameIndex);
+    } else if (opts.showFirstFrame && radarFrames.length > 0) {
+      currentFrameIndex = 0;
+      displayFrameFast(currentFrameIndex);
+    }
+
+    if (opts.autoStart && radarFrames.length > 1) {
+      startLoop();
+    }
 
     console.log("Loop is ready! Click play button to start animation.");
   } catch (error) {
     console.error("❌ Error loading radar frames:", error);
-    alert(`Error loading radar frames: ${error.message}`);
+    if (!opts.silent) {
+      alert(`Error loading radar frames: ${error.message}`);
+    }
   } finally {
     const statusDiv = document.getElementById("sidebarStatus");
-    if (statusDiv) {
+    if (statusDiv && !opts.silent) {
       statusDiv.style.display = "none";
     }
     if (progressCallback) {
@@ -13515,16 +15565,23 @@ async function loadRadarFrames(
 }
 
 /**
- * OPTIMIZED: Ultra-fast frame display using pre-computed mercator coords
- * Bypasses expensive coordinate conversion - just updates GPU buffers
+ * Ultra-fast frame display using raw lon/lat coords.
+ * Mercator conversion now happens in the vertex shader.
  */
 function displayFrameFast(frameIndex) {
-  if (frameIndex < 0 || frameIndex >= radarFrames.length) {
+  const normalizedFrameIndex = Number.isFinite(Number(frameIndex))
+    ? Math.trunc(Number(frameIndex))
+    : -1;
+
+  if (normalizedFrameIndex < 0 || normalizedFrameIndex >= radarFrames.length) {
     return;
   }
 
-  currentFrameIndex = frameIndex;
-  const frame = radarFrames[frameIndex];
+  currentFrameIndex = normalizedFrameIndex;
+  const frame = radarFrames[normalizedFrameIndex];
+  if (!frame || !frame.rawValues || !frame.rawVertices) {
+    return;
+  }
   const smoothingActive =
     (customRadarLayerInstance && customRadarLayerInstance.enableSmoothing) ||
     enableSmoothing;
@@ -13542,7 +15599,7 @@ function displayFrameFast(frameIndex) {
       );
 
       gl.bindBuffer(gl.ARRAY_BUFFER, customRadarLayerInstance.positionBuffer);
-      gl.bufferData(gl.ARRAY_BUFFER, frame.mercatorPositions, gl.STATIC_DRAW);
+      gl.bufferData(gl.ARRAY_BUFFER, frame.rawVertices, gl.STATIC_DRAW);
 
       gl.bindBuffer(gl.ARRAY_BUFFER, customRadarLayerInstance.dbzBuffer);
       gl.bufferData(gl.ARRAY_BUFFER, frameValues, gl.STATIC_DRAW);
@@ -13550,14 +15607,13 @@ function displayFrameFast(frameIndex) {
       customRadarLayerInstance.vaoExt.bindVertexArrayOES(null);
     } else {
       gl.bindBuffer(gl.ARRAY_BUFFER, customRadarLayerInstance.positionBuffer);
-      gl.bufferData(gl.ARRAY_BUFFER, frame.mercatorPositions, gl.STATIC_DRAW);
+      gl.bufferData(gl.ARRAY_BUFFER, frame.rawVertices, gl.STATIC_DRAW);
 
       gl.bindBuffer(gl.ARRAY_BUFFER, customRadarLayerInstance.dbzBuffer);
       gl.bufferData(gl.ARRAY_BUFFER, frameValues, gl.STATIC_DRAW);
     }
 
     customRadarLayerInstance.vertexCount = frame.vertexCount;
-    customRadarLayerInstance.mercatorPositions = frame.mercatorPositions;
     customRadarLayerInstance.rawVertexLonLat = frame.rawVertices;
     customRadarLayerInstance.rawValues = frame.rawValues;
     customRadarLayerInstance.smoothedValues = frame.smoothedValues;
@@ -13573,7 +15629,8 @@ function displayFrameFast(frameIndex) {
 
   updateAllProbesThrottled();
 
-  document.getElementById("currentFrame").textContent = frameIndex + 1;
+  document.getElementById("currentFrame").textContent =
+    normalizedFrameIndex + 1;
 
   if (dataMode === "hrrr") {
     if (frame.meta) {
@@ -13586,6 +15643,69 @@ function displayFrameFast(frameIndex) {
   } else {
     updateRadarInfoWithTimestamp(selectedRadarSite, frame.timestamp);
   }
+}
+
+function displayLatestLoopFrame() {
+  if (!radarFrames.length) return;
+  const latestIndex = radarFrames.length - 1;
+  currentFrameIndex = latestIndex;
+  displayFrameFast(latestIndex);
+}
+
+function displayOldestLoopFrame() {
+  if (!radarFrames.length) return;
+  currentFrameIndex = 0;
+  displayFrameFast(0);
+}
+
+function stopLoopRefreshScheduler() {
+  if (loopRefreshTimerId) {
+    clearInterval(loopRefreshTimerId);
+    loopRefreshTimerId = null;
+  }
+}
+
+async function refreshLoopFramesFromLatest() {
+  if (
+    loopRefreshInFlight ||
+    !selectedRadarSite ||
+    dataMode !== "radar" ||
+    isArchiveMode
+  ) {
+    return;
+  }
+
+  const frameCountInput = document.getElementById("frameCount");
+  const frameCount = Math.max(2, parseInt(frameCountInput?.value, 10) || 10);
+
+  loopRefreshInFlight = true;
+  try {
+    await loadRadarFrames(
+      selectedRadarSite,
+      frameCount,
+      null,
+      selectedRadarProduct,
+      { showFirstFrame: false, preserveCurrentFrame: true, silent: true },
+    );
+  } catch (error) {
+    console.warn("Background loop refresh failed:", error);
+  } finally {
+    loopRefreshInFlight = false;
+  }
+}
+
+function startLoopRefreshScheduler() {
+  stopLoopRefreshScheduler();
+  if (!selectedRadarSite || dataMode !== "radar" || isArchiveMode) {
+    return;
+  }
+
+  void refreshLoopFramesFromLatest();
+  loopRefreshTimerId = setInterval(() => {
+    if (isLooping) {
+      void refreshLoopFramesFromLatest();
+    }
+  }, LOOP_REFRESH_INTERVAL_MS);
 }
 
 /**
@@ -13614,6 +15734,7 @@ function startLoop() {
   isLooping = true;
   isPaused = false;
   setPlayPauseButtonState(true);
+  startLoopRefreshScheduler();
 
   console.log("Loop started successfully");
 
@@ -13622,6 +15743,11 @@ function startLoop() {
 
   const animate = (currentTime) => {
     if (!isLooping) return;
+
+    if (radarFrames.length === 0) {
+      loopAnimationFrameId = requestAnimationFrame(animate);
+      return;
+    }
 
     if (isPaused) {
       const pauseElapsed = currentTime - pauseStartTime;
@@ -13637,7 +15763,11 @@ function startLoop() {
     const elapsed = currentTime - lastFrameTime;
 
     if (elapsed >= loopSpeed) {
-      currentFrameIndex = (currentFrameIndex + 1) % radarFrames.length;
+      currentFrameIndex =
+        (Number.isFinite(Number(currentFrameIndex))
+          ? Number(currentFrameIndex)
+          : 0) + 1;
+      currentFrameIndex %= radarFrames.length;
       displayFrameFast(currentFrameIndex);
       lastFrameTime = currentTime - (elapsed % loopSpeed);
 
@@ -13666,15 +15796,20 @@ function stopLoop() {
 
   isLooping = false;
   setPlayPauseButtonState(false);
+  stopLoopRefreshScheduler();
 
   if (loopAnimationFrameId) {
     cancelAnimationFrame(loopAnimationFrameId);
     loopAnimationFrameId = null;
   }
+
+  // Pause behavior requirement: jump to the latest frame when playback stops.
+  displayLatestLoopFrame();
 }
 
 function setPlayPauseButtonState(isPlaying) {
   const playPauseBtn = document.getElementById("playPauseBtn");
+  const quickPlayPauseBtn = document.getElementById("quickPlayPauseBtn");
   const modelPlayPauseBtn = document.getElementById("hrrrToggleLoopBtn");
 
   const iconName = isPlaying ? "pause" : "play";
@@ -13684,6 +15819,12 @@ function setPlayPauseButtonState(isPlaying) {
     playPauseBtn.innerHTML = `<i data-lucide="${iconName}"></i>`;
     playPauseBtn.title = label;
     playPauseBtn.setAttribute("aria-label", label);
+  }
+
+  if (quickPlayPauseBtn) {
+    quickPlayPauseBtn.innerHTML = `<span class="inspector-toggle-icon" aria-hidden="true"><i data-lucide="${iconName}"></i></span>`;
+    quickPlayPauseBtn.title = label;
+    quickPlayPauseBtn.setAttribute("aria-label", label);
   }
 
   if (window.lucide && typeof window.lucide.createIcons === "function") {
@@ -13708,6 +15849,28 @@ function toggleLoop() {
   if (isLooping) {
     stopLoop();
   } else {
+    if (!radarFrames.length) {
+      if (!selectedRadarSite) {
+        alert("Please select a radar site first.");
+        return;
+      }
+
+      const frameCountInput = document.getElementById("frameCount");
+      const frameCount = Math.max(
+        2,
+        parseInt(frameCountInput?.value, 10) || 10,
+      );
+      loadRadarFrames(
+        selectedRadarSite,
+        frameCount,
+        null,
+        selectedRadarProduct,
+        { showLatestFrame: false, showFirstFrame: true, autoStart: true },
+      );
+      return;
+    }
+
+    displayOldestLoopFrame();
     startLoop();
   }
 }
@@ -13718,6 +15881,7 @@ function toggleLoop() {
 function updateRadarInfoWithTimestamp(site, timestamp) {
   try {
     const infoDiv = document.querySelector(".radar-info");
+    if (!infoDiv || !site) return;
     const dateOptions = {
       year: "numeric",
       month: "short",
@@ -13726,7 +15890,10 @@ function updateRadarInfoWithTimestamp(site, timestamp) {
       minute: "2-digit",
       second: "2-digit",
     };
-    const formattedDate = timestamp.toLocaleDateString("en-US", dateOptions);
+    const ts = timestamp instanceof Date ? timestamp : new Date(timestamp);
+    const validTs =
+      ts instanceof Date && !Number.isNaN(ts.getTime()) ? ts : new Date();
+    const formattedDate = validTs.toLocaleDateString("en-US", dateOptions);
 
     const productInfo = getRadarProductInfo(selectedRadarProduct);
 
@@ -13830,27 +15997,83 @@ function sampleRadarAtPoint(lng, lat) {
   let minDist = Infinity;
   let closestValue = null;
 
-  const pointCount = values.length;
-  const stride =
-    pointCount > 200000
-      ? 16
-      : pointCount > 100000
-        ? 8
-        : pointCount > 40000
-          ? 4
-          : 1;
+  // Prefer gate-center sampling for Level 3 WebGL buffers (6 vertices per gate).
+  // This avoids directional bias from picking whichever triangle vertex is nearest.
+  const isGatePacked =
+    vertices.length === values.length * 2 && values.length >= 6;
 
-  for (let i = 0; i < vertices.length; i += 2 * stride) {
-    const vLng = vertices[i];
-    const vLat = vertices[i + 1];
+  if (isGatePacked) {
+    const gateCount = Math.floor(values.length / 6);
+    const gateStride =
+      gateCount > 60000
+        ? 10
+        : gateCount > 30000
+          ? 6
+          : gateCount > 15000
+            ? 3
+            : 1;
 
-    const dx = vLng - lng;
-    const dy = vLat - lat;
-    const dist = dx * dx + dy * dy;
+    for (let gate = 0; gate < gateCount; gate += gateStride) {
+      const base = gate * 6;
 
-    if (dist < minDist) {
-      minDist = dist;
-      closestValue = values[i / 2];
+      // 4 unique corners out of the 2-triangle gate representation.
+      const c0 = base;
+      const c1 = base + 1;
+      const c2 = base + 2;
+      const c3 = base + 5;
+
+      const centerLng =
+        (vertices[c0 * 2] +
+          vertices[c1 * 2] +
+          vertices[c2 * 2] +
+          vertices[c3 * 2]) /
+        4;
+      const centerLat =
+        (vertices[c0 * 2 + 1] +
+          vertices[c1 * 2 + 1] +
+          vertices[c2 * 2 + 1] +
+          vertices[c3 * 2 + 1]) /
+        4;
+
+      const dx = centerLng - lng;
+      const dy = centerLat - lat;
+      const dist = dx * dx + dy * dy;
+
+      if (dist < minDist) {
+        minDist = dist;
+        closestValue =
+          (values[base] +
+            values[base + 1] +
+            values[base + 2] +
+            values[base + 3] +
+            values[base + 4] +
+            values[base + 5]) /
+          6;
+      }
+    }
+  } else {
+    const pointCount = values.length;
+    const stride =
+      pointCount > 200000
+        ? 16
+        : pointCount > 100000
+          ? 8
+          : pointCount > 40000
+            ? 4
+            : 1;
+
+    for (let i = 0; i < vertices.length; i += 2 * stride) {
+      const vLng = vertices[i];
+      const vLat = vertices[i + 1];
+
+      const dx = vLng - lng;
+      const dy = vLat - lat;
+      const dist = dx * dx + dy * dy;
+
+      if (dist < minDist) {
+        minDist = dist;
+        closestValue = values[i / 2];
+      }
     }
   }
 
@@ -14908,6 +17131,20 @@ try {
   const shadowOpacityEl = document.getElementById("shadowOpacity");
   if (shadowOpacityEl)
     shadowOpacityEl.value = Math.round((shadowOpacity || 0) * 100);
+  const loopSpeedEl = document.getElementById("loopSpeed");
+  const loopSpeedValueEl = document.getElementById("loopSpeedValue");
+  if (loopSpeedEl && loopSpeedValueEl) {
+    const speed = parseInt(loopSpeedEl.value, 10);
+    if (Number.isFinite(speed)) {
+      loopSpeedValueEl.textContent = `${speed}ms`;
+    }
+  }
+  const endPauseEl = document.getElementById("endPauseDuration");
+  const endPauseValueEl = document.getElementById("endPauseDurationValue");
+  if (endPauseEl) endPauseEl.value = String(endPauseDuration);
+  if (endPauseValueEl) endPauseValueEl.textContent = `${endPauseDuration}ms`;
+  const smoothingEl = document.getElementById("enableSmoothing");
+  if (smoothingEl) smoothingEl.checked = !!radarSmoothingPreference;
   syncToolToggleVisualState();
 } catch (e) {
   console.warn("Error applying saved settings:", e);
@@ -14994,16 +17231,14 @@ document
     saveUserSettings();
   });
 
-console.log("Setting up playPauseBtn event listener");
 const playPauseBtn = document.getElementById("playPauseBtn");
 if (playPauseBtn) {
-  console.log("playPauseBtn found, adding click listener");
-  playPauseBtn.addEventListener("click", () => {
-    console.log("playPauseBtn clicked!");
-    toggleLoop();
-  });
-} else {
-  console.error("playPauseBtn not found!");
+  playPauseBtn.addEventListener("click", toggleLoop);
+}
+
+const quickPlayPauseBtn = document.getElementById("quickPlayPauseBtn");
+if (quickPlayPauseBtn) {
+  quickPlayPauseBtn.addEventListener("click", toggleLoop);
 }
 
 document.getElementById("loopSpeed").addEventListener("input", (e) => {
@@ -15014,12 +17249,14 @@ document.getElementById("loopSpeed").addEventListener("input", (e) => {
     stopLoop();
     startLoop();
   }
+  saveUserSettings();
 });
 
 document.getElementById("endPauseDuration").addEventListener("input", (e) => {
   endPauseDuration = parseInt(e.target.value);
   document.getElementById("endPauseDurationValue").textContent =
     `${endPauseDuration}ms`;
+  saveUserSettings();
 });
 
 document.getElementById("frameCount").addEventListener("change", async (e) => {
@@ -15033,6 +17270,7 @@ document.getElementById("frameCount").addEventListener("change", async (e) => {
   if (selectedRadarSite) {
     await loadRadarFrames(selectedRadarSite, newCount);
   }
+  saveUserSettings();
 });
 
 const inspectorToggleBtn = document.getElementById("inspector-toggle");
@@ -15072,6 +17310,7 @@ if (smoothingToggle) {
     } else if (mapInstance) {
       mapInstance.triggerRepaint();
     }
+    saveUserSettings();
   });
   console.log("Smoothing toggle event listener added");
 } else {
@@ -15098,8 +17337,21 @@ if (arcSyncToggle) {
         selectedRadarDataSource,
       );
     }
+    saveUserSettings();
   });
   console.log("Arc-Sync toggle event listener added");
 } else {
   console.warn("Arc-Sync toggle not found");
+}
+
+const batchProcessingToggle = document.getElementById("batchProcessingToggle");
+if (batchProcessingToggle) {
+  batchProcessingToggle.checked = batchProcessingEnabled;
+  batchProcessingToggle.addEventListener("change", (e) => {
+    batchProcessingEnabled = Boolean(e.target.checked);
+    saveUserSettings();
+    console.log(`Batch processing set to: ${batchProcessingEnabled}`);
+  });
+} else {
+  console.warn("Batch processing toggle not found");
 }
