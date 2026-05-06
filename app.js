@@ -8076,8 +8076,8 @@ async function fetchHistoricalWarnings(timestamp) {
 
     console.log(`🌩️ Fetching warnings ACTIVE at ${dateStr} ${timeStr}...`);
 
-    const torUrl = `http://localhost:5100/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=TOR`;
-    const svrUrl = `http://localhost:5100/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=SVR`;
+    const torUrl = `https://radar-api-production-076b.up.railway.app/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=TOR`;
+    const svrUrl = `https://radar-api-production-076b.up.railway.app/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=SVR`;
 
     console.log(`   Fetching TOR: ${torUrl}`);
     console.log(`   Fetching SVR: ${svrUrl}`);
@@ -8257,7 +8257,7 @@ function clearHistoricalAlerts() {
  */
 async function fetchArchiveTimestamps(siteId, product, date) {
   try {
-    const apiUrl = `http://localhost:5100/api/archive/timestamps/${siteId}?product=${product}&date=${date}`;
+    const apiUrl = `https://radar-api-production-076b.up.railway.app/api/archive/timestamps/${siteId}?product=${product}&date=${date}`;
     console.log(`Fetching archive timestamps via backend: ${apiUrl}`);
 
     const response = await fetch(apiUrl);
@@ -8391,7 +8391,7 @@ async function fetchQuickTimelineBatch(
     const fallbackConcurrency = Math.max(1, Math.min(3, maxWorkers));
     await runConcurrentTaskPool(keys, fallbackConcurrency, async (key) => {
       const response = await fetch(
-        `http://localhost:5100/api/radar-webgl/${siteId}?product=${product}&source=${encodeURIComponent(source)}&format=binary&transport=${encodeURIComponent(transport)}&key=${encodeURIComponent(key)}`,
+        `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${product}&source=${encodeURIComponent(source)}&format=binary&transport=${encodeURIComponent(transport)}&key=${encodeURIComponent(key)}`,
         { cache: "force-cache" },
       );
       if (!response.ok) return;
@@ -8406,7 +8406,7 @@ async function fetchQuickTimelineBatch(
 
   try {
     const response = await fetch(
-      `http://localhost:5100/api/radar-webgl-batch/${siteId}`,
+      `https://radar-api-production-076b.up.railway.app/api/radar-webgl-batch/${siteId}`,
       {
         method: "POST",
         headers: {
@@ -8463,7 +8463,7 @@ async function fetchQuickTimelineBatch(
     const fallbackConcurrency = Math.max(1, Math.min(3, maxWorkers));
     await runConcurrentTaskPool(keys, fallbackConcurrency, async (key) => {
       const response = await fetch(
-        `http://localhost:5100/api/radar-webgl/${siteId}?product=${product}&source=${encodeURIComponent(source)}&format=binary&transport=${encodeURIComponent(transport)}&key=${encodeURIComponent(key)}`,
+        `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${product}&source=${encodeURIComponent(source)}&format=binary&transport=${encodeURIComponent(transport)}&key=${encodeURIComponent(key)}`,
         { cache: "force-cache" },
       );
       if (!response.ok) return;
@@ -8693,7 +8693,7 @@ async function loadArchiveRadarData(siteId, product, key, timestamp) {
   try {
     console.log(`Loading archive radar: ${key}`);
 
-    const apiUrl = `http://localhost:5100/api/radar-webgl/${siteId}?product=${product}&key=${key}&format=binary&transport=radial`;
+    const apiUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${product}&key=${key}&format=binary&transport=radial`;
     const response = await fetch(apiUrl);
 
     if (!response.ok) {
@@ -8890,7 +8890,7 @@ window.onload = async () => {
         `[LATENCY] Product changed to ${nextProduct} - starting background pre-fetch`,
       );
       const radarSource = selectedRadarDataSource || "level3";
-      const prefetchUrl = `http://localhost:5100/api/radar-webgl/${selectedRadarSite.id}?product=${nextProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
+      const prefetchUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${selectedRadarSite.id}?product=${nextProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
       fetch(prefetchUrl, { priority: "high" }).catch(() => {});
 
       selectedRadarProduct = nextProduct;
@@ -9533,7 +9533,7 @@ window.onload = async () => {
         framesToLoad,
         MAX_PARALLEL_DOWNLOADS,
         async (ts) => {
-          const apiUrl = `http://localhost:5100/api/radar-webgl/${selectedRadarSite.id}?product=${selectedRadarProduct}&key=${ts.key}&format=binary&transport=radial`;
+          const apiUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${selectedRadarSite.id}?product=${selectedRadarProduct}&key=${ts.key}&format=binary&transport=radial`;
           const response = await fetch(apiUrl, { cache: "force-cache" });
           if (!response.ok) {
             throw new Error(`Archive frame fetch failed (${response.status})`);
@@ -11426,7 +11426,7 @@ function addRadarSitesToMap(map, sites) {
       const radarProduct = selectedRadarProduct || "N0B";
       const radarSource = selectedRadarDataSource || "level3";
 
-      const prefetchUrl = `http://localhost:5100/api/radar-webgl/${siteId}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
+      const prefetchUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
       fetch(prefetchUrl, { priority: "high" }).catch(() => {});
 
       document.getElementById("radarSiteSelect").value = siteId;
@@ -11445,7 +11445,7 @@ function addRadarSitesToMap(map, sites) {
       const radarProduct = selectedRadarProduct || "N0B";
       const radarSource = selectedRadarDataSource || "level3";
 
-      const prefetchUrl = `http://localhost:5100/api/radar-webgl/${siteId}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
+      const prefetchUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
       fetch(prefetchUrl, { priority: "high" }).catch(() => {});
 
       document.getElementById("radarSiteSelect").value = siteId;
@@ -12738,7 +12738,7 @@ async function fetchHRRRPTypeLookup(map) {
 
   const fetchLookupWithParams = async (queryParams) => {
     const response = await fetch(
-      `http://localhost:5100/api/hrrr-webgl?${queryParams.toString()}`,
+      `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${queryParams.toString()}`,
     );
     if (!response.ok) {
       throw new Error(
@@ -12812,7 +12812,7 @@ async function fetchAvailableHRRRRuns() {
   }
 
   const response = await fetch(
-    `http://localhost:5100/api/hrrr-runs?${params.toString()}`,
+    `https://radar-api-production-076b.up.railway.app/api/hrrr-runs?${params.toString()}`,
   );
   if (!response.ok) {
     throw new Error(`Failed to load HRRR runs (${response.status})`);
@@ -13001,7 +13001,7 @@ async function fetchHRRRFrameForHour(map, forecastHour) {
   }
 
   const response = await fetch(
-    `http://localhost:5100/api/hrrr-webgl?${params.toString()}`,
+    `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${params.toString()}`,
   );
   if (!response.ok) {
     throw new Error(
@@ -13143,7 +13143,7 @@ async function precacheModelRange(map) {
   }
 
   try {
-    const response = await fetch("http://localhost:5100/api/hrrr-precache", {
+    const response = await fetch("https://radar-api-production-076b.up.railway.app/api/hrrr-precache", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -13299,7 +13299,7 @@ async function fetchAndDisplayHRRRData(map, retryWithFallback = true) {
     }
 
     const response = await fetch(
-      `http://localhost:5100/api/hrrr-webgl?${params.toString()}`,
+      `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${params.toString()}`,
     );
     if (!response.ok) {
       let backendError = "";
@@ -13661,7 +13661,7 @@ function startArcSyncStream(map, site, product) {
   lastRenderedRadarToken = null;
 
   const radarProduct = product || selectedRadarProduct;
-  const streamUrl = `http://localhost:5100/api/radar/level2-stream?site=${encodeURIComponent(
+  const streamUrl = `https://radar-api-production-076b.up.railway.app/api/radar/level2-stream?site=${encodeURIComponent(
     site.id,
   )}&product=${encodeURIComponent(radarProduct)}`;
 
@@ -13810,7 +13810,7 @@ async function pollForNewRadarData(map, site, product, source) {
     const radarSource = source || selectedRadarDataSource;
 
     const keyResp = await fetch(
-      `http://localhost:5100/api/radar-latest-key/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}`,
+      `https://radar-api-production-076b.up.railway.app/api/radar-latest-key/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}`,
     );
     if (!keyResp.ok) throw new Error("Failed to check latest radar key");
     const keyData = await keyResp.json();
@@ -13933,7 +13933,7 @@ async function fetchAndDisplayRadarData(
       : "";
     const transportQuery = radarSource === "level3" ? "&transport=radial" : "";
     let response = await fetch(
-      `http://localhost:5100/api/radar-webgl/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary${transportQuery}${revQuery}`,
+      `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary${transportQuery}${revQuery}`,
     );
 
     let radarData;
@@ -15260,7 +15260,7 @@ async function fetchAvailableRadarFiles(siteId, product, date = new Date()) {
   const radarSource = selectedRadarDataSource || "level3";
 
   if (radarSource === "level2") {
-    const level2Url = `http://localhost:5100/api/radar-level2-files/${siteId}?limit=500`;
+    const level2Url = `https://radar-api-production-076b.up.railway.app/api/radar-level2-files/${siteId}?limit=500`;
     console.time("fetch-file-list");
     console.log(`📡 Fetching Level 2 radar file list from: ${level2Url}`);
 
@@ -15340,7 +15340,7 @@ async function downloadSingleFrame(site, file, index, total, product) {
     const radarSource = selectedRadarDataSource || "level3";
 
     const response = await fetch(
-      `http://localhost:5100/api/radar-webgl/${
+      `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${
         site.id
       }?product=${radarProduct}&source=${encodeURIComponent(
         radarSource,
