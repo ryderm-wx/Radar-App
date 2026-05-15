@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Saira:wght@700&family=Space+Grotesk:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -331,7 +331,8 @@
         color: var(--muted);
       }
 
-      .dock-section.desktop-collapsible.is-collapsed .dock-section-header::after {
+      .dock-section.desktop-collapsible.is-collapsed
+        .dock-section-header::after {
         content: "+";
       }
 
@@ -436,7 +437,9 @@
         min-width: 44px;
         flex-shrink: 0;
         cursor: pointer;
-        transition: background-color 0.15s ease, border-color 0.15s ease;
+        transition:
+          background-color 0.15s ease,
+          border-color 0.15s ease;
       }
 
       .tool-toggles .check-row i {
@@ -1063,7 +1066,11 @@
       }
 
       .radar-product-toggle button.is-active {
-        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        background: linear-gradient(
+          135deg,
+          var(--accent),
+          var(--accent-strong)
+        );
         color: #04111f;
         border-color: rgba(79, 184, 255, 0.65);
       }
@@ -1297,9 +1304,9 @@
         transform: translateX(-50%);
         align-content: center;
         width: min(360px, calc(100vw - 40px));
-        border-radius: 14px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(5, 8, 18, 0.88);
+        border-radius: 20px;
+        border: 4px solid #ffffff;
+        background: linear-gradient(180deg, #000000 0%, #303030 100%);
         padding: 10px 14px;
         color: var(--text);
         box-shadow:
@@ -1309,6 +1316,11 @@
         display: none;
         z-index: 1200;
         animation: none;
+        transition:
+          opacity 0.35s ease,
+          transform 0.35s ease;
+        font-family: "Saira", "Space Grotesk", sans-serif;
+        font-weight: 700;
       }
 
       .radar-info strong {
@@ -1317,6 +1329,16 @@
 
       #legendScale {
         width: 100%;
+        opacity: 1;
+        transform: translateY(0);
+        transition:
+          opacity 0.26s ease,
+          transform 0.26s ease;
+      }
+
+      #legendScale.legend-is-transitioning {
+        opacity: 0;
+        transform: translateY(-7px);
       }
 
       .legend-strip {
@@ -1339,8 +1361,8 @@
 
       .legend-strip__title {
         margin: 0;
-        font-size: 0.9rem;
-        font-weight: 600;
+        font-size: 1.28rem;
+        font-weight: 700;
         color: var(--text);
         line-height: 1.2;
         white-space: nowrap;
@@ -1351,7 +1373,8 @@
       .legend-strip__subtitle {
         margin: 4px 0 0;
         color: rgba(255, 255, 255, 0.7);
-        font-size: 0.74rem;
+        font-size: 0.98rem;
+        font-weight: 700;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -1366,10 +1389,64 @@
         border: 1px solid rgba(255, 255, 255, 0.15);
         background: rgba(99, 211, 255, 0.12);
         color: var(--text);
-        font-size: 0.72rem;
+        font-size: 0.86rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         flex: 0 0 auto;
+        font-weight: 700;
+      }
+
+      .auto-mode-toggle-row {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .auto-mode-toggle {
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 12px;
+        background: rgba(79, 184, 255, 0.14);
+        color: var(--text);
+        min-width: 170px;
+        font-size: 0.94rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        padding: 9px 14px;
+        cursor: pointer;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .auto-mode-toggle:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.38);
+        background: rgba(79, 184, 255, 0.2);
+      }
+
+      .auto-mode-toggle.is-on {
+        background: rgba(33, 186, 128, 0.2);
+        border-color: rgba(33, 186, 128, 0.44);
+      }
+
+      body.auto-mode-on .bottom-panel.bottom-left,
+      body.auto-mode-on .radar-quick-panel,
+      body.auto-mode-on .inspector-display,
+      body.auto-mode-on .draw-panel {
+        display: none !important;
+      }
+
+      body.auto-mode-on .bottom-panel.bottom-center {
+        width: auto;
+        min-width: 190px;
+        padding: 10px 12px;
+      }
+
+      body.auto-mode-on
+        .bottom-panel.bottom-center
+        > :not(.auto-mode-toggle-row) {
+        display: none !important;
       }
 
       .legend-strip__gradient {
@@ -2125,7 +2202,7 @@
         border-radius: 12px;
         padding: 10px 12px;
         border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(255, 255,
+        background: rgba(255, 255, 255, 0.06);
         cursor: pointer;
         transition:
           transform 0.12s ease,
@@ -2188,7 +2265,8 @@
 
       /* TVS Pulse Animation */
       @keyframes tvs-pulse {
-        0%, 100% {
+        0%,
+        100% {
           transform: scale(1);
           opacity: 1;
         }
@@ -2254,7 +2332,9 @@
       }
 
       html[data-mobile="true"] .bottom-panel.bottom-center {
-        bottom: calc(var(--mobile-sheet-height) + var(--mobile-sheet-gap)) !important;
+        bottom: calc(
+          var(--mobile-sheet-height) + var(--mobile-sheet-gap)
+        ) !important;
         transform: none !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
@@ -2276,7 +2356,9 @@
         gap: 6px;
       }
 
-      html[data-mobile="true"] .dock-section.mobile-collapsible .dock-section-header {
+      html[data-mobile="true"]
+        .dock-section.mobile-collapsible
+        .dock-section-header {
         margin: 0;
         display: flex;
         align-items: center;
@@ -2284,18 +2366,24 @@
         cursor: pointer;
       }
 
-      html[data-mobile="true"] .dock-section.mobile-collapsible .dock-section-header::after {
+      html[data-mobile="true"]
+        .dock-section.mobile-collapsible
+        .dock-section-header::after {
         content: "▾";
         font-size: 0.72rem;
         opacity: 0.85;
         transition: transform 0.2s ease;
       }
 
-      html[data-mobile="true"] .dock-section.mobile-collapsible.is-collapsed .dock-section-header::after {
+      html[data-mobile="true"]
+        .dock-section.mobile-collapsible.is-collapsed
+        .dock-section-header::after {
         transform: rotate(-90deg);
       }
 
-      html[data-mobile="true"] .dock-section.mobile-collapsible.is-collapsed .dock-section-body {
+      html[data-mobile="true"]
+        .dock-section.mobile-collapsible.is-collapsed
+        .dock-section-body {
         display: none !important;
       }
 
@@ -2307,7 +2395,7 @@
         bottom: calc(var(--mobile-sheet-height) + 10px) !important;
         width: min(260px, calc(100vw - 16px)) !important;
         padding: 8px 10px !important;
-        border-radius: 10px !important;
+        border-radius: 20px !important;
       }
 
       html[data-mobile="true"] .legend-strip {
@@ -3016,6 +3104,15 @@
       </div>
 
       <div class="bottom-panel bottom-center">
+        <div class="auto-mode-toggle-row">
+          <button
+            id="autoModeToggle"
+            class="auto-mode-toggle is-on"
+            type="button"
+          >
+            Auto Mode: ON
+          </button>
+        </div>
         <div class="dock-header">
           <div>
             <p class="dock-label">Analysis Deck</p>
@@ -3091,10 +3188,6 @@
         </div>
 
         <div class="tool-toggles">
-          <label class="check-row" title="TVS Detection">
-            <i class="fas fa-tornado"></i>
-            <input type="checkbox" id="tvsDetectionToggle" />
-          </label>
           <label class="check-row" title="Flash Warnings">
             <i class="fas fa-triangle-exclamation"></i>
             <input type="checkbox" id="enableAlertFlashing" checked />

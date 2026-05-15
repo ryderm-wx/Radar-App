@@ -1,0 +1,18 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-84.75406008800061, 44.304940427274225]
+      },
+      "properties": {
+        "name": "Houghton Lake weather camera",
+        "state": "Michigan",
+        "video_url": "https://www.youtube.com/embed/Ss2qPBniGfM",
+        "always_visible": true
+      }
+    }
+  ]
+}

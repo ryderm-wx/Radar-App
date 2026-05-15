@@ -2,3 +2,7 @@
 node_modules/
 temp/*
 __pycache__/
+dist/
+dist.zip
+bin/radar-api.exe
+Radar-Api.lnk

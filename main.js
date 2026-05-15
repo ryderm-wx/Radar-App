@@ -1,56 +1,130 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
-const { spawn } = require('child_process');
+const { app, BrowserWindow, dialog } = require("electron");
+const path = require("path");
+const { spawn } = require("child_process");
+const http = require("http");
 
-let flaskProcess = null;
+let apiProcess = null;
+let mainWindow = null;
 
+function isDev() {
+  return !app.isPackaged;
+}
 
-function startFlask() {
-  // Adjust python path and script as needed
-  const pythonExe = 'python'; // or 'python3' if required
-  const scriptPath = path.join(__dirname, 'app.py');
-  flaskProcess = spawn(pythonExe, [scriptPath], {
-    cwd: __dirname,
-    shell: true,
+function getApiExePath() {
+  if (isDev()) {
+    return path.join(__dirname, "bin", "radar-api.exe");
+  }
+  return path.join(process.resourcesPath, "bin", "radar-api.exe");
+}
+
+function waitForUrl(url, timeoutMs = 30000, intervalMs = 300) {
+  return new Promise((resolve, reject) => {
+    const start = Date.now();
+
+    const tick = () => {
+      const req = http.get(url, (res) => {
+        res.resume();
+        if (res.statusCode && res.statusCode < 500) {
+          resolve();
+          return;
+        }
+        retry();
+      });
+
+      req.on("error", retry);
+
+      function retry() {
+        if (Date.now() - start > timeoutMs) {
+          reject(new Error(`Timeout waiting for ${url}`));
+          return;
+        }
+        setTimeout(tick, intervalMs);
+      }
+    };
+
+    tick();
+  });
+}
+
+function startFrontendServerInProcess() {
+  // server.js already calls app.listen on port 3000
+  require(path.join(__dirname, "server.js"));
+}
+
+function startApiExe() {
+  const exePath = getApiExePath();
+
+  apiProcess = spawn(exePath, [], {
+    cwd: path.dirname(exePath),
+    windowsHide: true,
     detached: false,
   });
 
-  flaskProcess.stdout.on('data', (data) => {
-    console.log(`[Flask] ${data}`);
+  apiProcess.stdout.on("data", (data) => {
+    console.log(`[API] ${data}`);
   });
-  flaskProcess.stderr.on('data', (data) => {
-    console.error(`[Flask ERROR] ${data}`);
+
+  apiProcess.stderr.on("data", (data) => {
+    console.error(`[API ERROR] ${data}`);
   });
-  flaskProcess.on('close', (code) => {
-    console.log(`Flask process exited with code ${code}`);
+
+  apiProcess.on("close", (code) => {
+    console.log(`API process exited with code ${code}`);
   });
 }
 
 function createWindow() {
-  const win = new BrowserWindow({
-    width: 1200,
-    height: 900,
+  mainWindow = new BrowserWindow({
+    width: 1400,
+    height: 950,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
     },
   });
-  // Point to Express server (frontend)
-  win.loadURL('http://localhost:3000');
+
+  mainWindow.loadURL("http://127.0.0.1:3000");
 }
 
-app.whenReady().then(() => {
-  startFlask();
-  createWindow();
+function stopChildProcesses() {
+  if (apiProcess && !apiProcess.killed) {
+    try {
+      apiProcess.kill();
+    } catch (e) {
+      console.warn("Failed to kill API process:", e.message);
+    }
+  }
+  apiProcess = null;
+}
 
-  app.on('activate', function () {
+app.whenReady().then(async () => {
+  try {
+    startFrontendServerInProcess();
+    startApiExe();
+
+    await Promise.all([
+      waitForUrl("http://127.0.0.1:3000", 30000),
+      waitForUrl("http://127.0.0.1:5100", 45000),
+    ]);
+
+    createWindow();
+  } catch (err) {
+    dialog.showErrorBox("Startup Failed", String(err.message || err));
+    stopChildProcesses();
+    app.quit();
+  }
+
+  app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 });
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    if (flaskProcess) flaskProcess.kill();
+app.on("before-quit", () => {
+  stopChildProcesses();
+});
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
     app.quit();
   }
 });

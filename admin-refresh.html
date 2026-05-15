@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Broadcast Refresh Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-1: #081018;
+        --bg-2: #142739;
+        --panel: rgba(14, 24, 35, 0.82);
+        --panel-border: rgba(255, 255, 255, 0.16);
+        --text: #f3f8ff;
+        --muted: #b8c9db;
+        --accent: #3fd1ff;
+        --accent-2: #1596d7;
+        --danger: #ff5d68;
+        --success: #5df0a8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Space Grotesk", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(
+            circle at 15% 20%,
+            rgba(63, 209, 255, 0.18),
+            transparent 42%
+          ),
+          radial-gradient(
+            circle at 88% 0%,
+            rgba(44, 146, 255, 0.2),
+            transparent 35%
+          ),
+          linear-gradient(145deg, var(--bg-1), var(--bg-2));
+        display: grid;
+        place-items: center;
+        padding: 22px;
+      }
+
+      .panel {
+        width: min(760px, 100%);
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: 18px;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+      }
+
+      .header {
+        padding: 20px 22px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0)
+        );
+      }
+
+      .kicker {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 0 0 6px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(24px, 3vw, 34px);
+        line-height: 1.15;
+      }
+
+      .body {
+        padding: 20px 22px 24px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+      }
+
+      .stat {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 12px;
+        padding: 10px;
+        background: rgba(8, 14, 22, 0.54);
+      }
+
+      .stat-label {
+        color: var(--muted);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .stat-value {
+        margin-top: 4px;
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      label {
+        display: block;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(2, 7, 12, 0.6);
+        color: var(--text);
+        border-radius: 11px;
+        padding: 11px 12px;
+        font: inherit;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 76px;
+      }
+
+      .row {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr;
+      }
+
+      .action {
+        margin-top: 4px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      button {
+        border: 0;
+        cursor: pointer;
+        border-radius: 12px;
+        font: inherit;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        padding: 12px 16px;
+      }
+
+      .refresh-btn {
+        background: linear-gradient(135deg, var(--danger), #da253d);
+        color: #fff;
+      }
+
+      .refresh-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .status {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 12px;
+        padding: 10px 12px;
+        background: rgba(8, 14, 22, 0.54);
+      }
+
+      .ok {
+        color: var(--success);
+      }
+
+      .warn {
+        color: #ffd58f;
+      }
+
+      .error {
+        color: #ff9aa5;
+      }
+
+      .event-log {
+        margin-top: 4px;
+        max-height: 180px;
+        overflow: auto;
+        font-size: 13px;
+        line-height: 1.5;
+        color: var(--muted);
+      }
+
+      .event-log div {
+        padding: 3px 0;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+      }
+
+      @media (max-width: 640px) {
+        .header,
+        .body {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="panel">
+      <section class="header">
+        <p class="kicker">MSC Live Stream Admin</p>
+        <h1>Broadcast Browser Refresh</h1>
+      </section>
+
+      <section class="body">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-label">Connected Clients</div>
+            <div class="stat-value" id="connectedClients">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Last Broadcast</div>
+            <div class="stat-value" id="lastBroadcast">Never</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Auth</div>
+            <div class="stat-value" id="authMode">Open</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="tokenInput">Admin Token (optional)</label>
+            <input
+              id="tokenInput"
+              type="password"
+              autocomplete="off"
+              placeholder="Only needed if ADMIN_REFRESH_TOKEN is set"
+            />
+          </div>
+          <div>
+            <label for="reasonInput">Refresh Reason (optional)</label>
+            <textarea
+              id="reasonInput"
+              maxlength="180"
+              placeholder="Example: Deploying the latest radar fixes"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="action">
+          <button class="refresh-btn" id="refreshBtn" type="button">
+            Refresh All Connected Browsers
+          </button>
+        </div>
+
+        <div class="status" id="statusBox">Ready.</div>
+
+        <div>
+          <label>Live Event Log</label>
+          <div class="event-log" id="eventLog"></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const tokenStorageKey = "msc-admin-refresh-token";
+      const connectedClientsEl = document.getElementById("connectedClients");
+      const lastBroadcastEl = document.getElementById("lastBroadcast");
+      const authModeEl = document.getElementById("authMode");
+      const tokenInput = document.getElementById("tokenInput");
+      const reasonInput = document.getElementById("reasonInput");
+      const refreshBtn = document.getElementById("refreshBtn");
+      const statusBox = document.getElementById("statusBox");
+      const eventLog = document.getElementById("eventLog");
+
+      tokenInput.value = localStorage.getItem(tokenStorageKey) || "";
+      tokenInput.addEventListener("input", () => {
+        localStorage.setItem(tokenStorageKey, tokenInput.value.trim());
+      });
+
+      function setStatus(message, kind) {
+        statusBox.textContent = message;
+        statusBox.className = "status";
+        if (kind) statusBox.classList.add(kind);
+      }
+
+      function formatTime(iso) {
+        if (!iso) return "Never";
+        const d = new Date(iso);
+        if (Number.isNaN(d.getTime())) return "Unknown";
+        return d.toLocaleString();
+      }
+
+      function logEvent(message) {
+        const line = document.createElement("div");
+        line.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+        eventLog.prepend(line);
+        while (eventLog.children.length > 40) {
+          eventLog.removeChild(eventLog.lastChild);
+        }
+      }
+
+      async function refreshStatus() {
+        try {
+          const response = await fetch("/api/admin/refresh/status", {
+            cache: "no-store",
+          });
+          const payload = await response.json();
+          connectedClientsEl.textContent = String(
+            Number(payload.clientsConnected || 0),
+          );
+          lastBroadcastEl.textContent = formatTime(
+            payload.lastRefresh && payload.lastRefresh.triggeredAt,
+          );
+          authModeEl.textContent = payload.tokenRequired ? "Token" : "Open";
+        } catch (error) {
+          setStatus(`Status check failed: ${error.message}`, "warn");
+        }
+      }
+
+      async function triggerRefresh() {
+        const token = tokenInput.value.trim();
+        const reason = reasonInput.value.trim();
+
+        refreshBtn.disabled = true;
+        setStatus("Sending refresh command...", "warn");
+
+        try {
+          const response = await fetch("/api/admin/refresh-all", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              ...(token ? { "x-admin-refresh-token": token } : {}),
+            },
+            body: JSON.stringify({
+              reason,
+              source: "admin-refresh-page",
+            }),
+          });
+
+          const payload = await response.json();
+          if (!response.ok) {
+            throw new Error(
+              payload.details || payload.error || `HTTP ${response.status}`,
+            );
+          }
+
+          const notified = Number(payload.notified || 0);
+          setStatus(`Refresh broadcast sent to ${notified} client(s).`, "ok");
+          logEvent(`Broadcast sent. Notified ${notified} clients.`);
+          await refreshStatus();
+        } catch (error) {
+          setStatus(`Broadcast failed: ${error.message}`, "error");
+          logEvent(`Broadcast failed: ${error.message}`);
+        } finally {
+          refreshBtn.disabled = false;
+        }
+      }
+
+      function connectEventStream() {
+        const source = new EventSource("/api/admin/refresh/events");
+
+        source.addEventListener("connected", (event) => {
+          try {
+            const payload = JSON.parse(event.data || "{}");
+            connectedClientsEl.textContent = String(
+              Number(payload.clientsConnected || 0),
+            );
+            authModeEl.textContent = payload.tokenRequired ? "Token" : "Open";
+          } catch (_) {
+            // no-op
+          }
+          setStatus("Control channel connected.", "ok");
+          logEvent("SSE connected.");
+        });
+
+        source.addEventListener("refresh", (event) => {
+          try {
+            const payload = JSON.parse(event.data || "{}");
+            lastBroadcastEl.textContent = formatTime(payload.triggeredAt);
+            connectedClientsEl.textContent = String(
+              Number(payload.clientsConnected || 0),
+            );
+            const reason = String(payload.reason || "").trim();
+            const suffix = reason ? ` (${reason})` : "";
+            logEvent(`Refresh event version ${payload.version}${suffix}`);
+          } catch (_) {
+            logEvent("Refresh event received.");
+          }
+        });
+
+        source.onerror = () => {
+          setStatus("Control channel disconnected. Reconnecting...", "warn");
+          logEvent("SSE disconnected; reconnecting soon.");
+          source.close();
+          setTimeout(connectEventStream, 5000);
+        };
+      }
+
+      refreshBtn.addEventListener("click", triggerRefresh);
+
+      refreshStatus();
+      setInterval(refreshStatus, 7000);
+      connectEventStream();
+    </script>
+  </body>
+</html>

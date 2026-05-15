@@ -1,5 +1,6 @@
 const MAPTILER_API_KEY = "SskdAs3Zk3tm9lBUtRKN";
 const NEXRAD_BUCKET_URL = "https://unidata-nexrad-level3.s3.amazonaws.com";
+const RADAR_API_BASE = "http://localhost:5100";
 const RADAR_SITES_URL =
   "https://www.ncei.noaa.gov/access/homr/file/nexrad-stations.csv";
 
@@ -98,6 +99,7 @@ let coordinatePromptCard = null;
 
 let countiesData = null;
 let countiesByGeoid = new Map();
+let michiganCountyFeatures = [];
 
 const UI_DESIGN_WIDTH = 3840;
 const UI_DESIGN_HEIGHT = 2160;
@@ -403,12 +405,41 @@ let longPressStartPoint = null;
 const ALERT_OUTLINE_CONFIG = {
   innerWidth: 5,
   outerWidth: 8,
+  innerMinWidth: 1.2,
+  outerMinWidth: 2.0,
+  innerMaxWidth: 6.5,
+  outerMaxWidth: 10.0,
+  widthZoomMin: 4,
+  widthZoomMax: 12,
   innerColor: (alertColor) => alertColor,
   outerColor: "#000000ff",
   innerOpacity: 1.0,
   outerOpacity: 1.0,
   fillOpacity: 0.15,
 };
+
+function getAlertOutlineWidthExpression(type, { boost = 0 } = {}) {
+  const isOuter = type === "outer";
+  const numericBoost = Math.max(0, Number(boost) || 0);
+  const minWidth =
+    (isOuter
+      ? ALERT_OUTLINE_CONFIG.outerMinWidth
+      : ALERT_OUTLINE_CONFIG.innerMinWidth) + numericBoost;
+  const maxWidth =
+    (isOuter
+      ? ALERT_OUTLINE_CONFIG.outerMaxWidth
+      : ALERT_OUTLINE_CONFIG.innerMaxWidth) + numericBoost;
+
+  return [
+    "interpolate",
+    ["linear"],
+    ["zoom"],
+    ALERT_OUTLINE_CONFIG.widthZoomMin,
+    minWidth,
+    ALERT_OUTLINE_CONFIG.widthZoomMax,
+    maxWidth,
+  ];
+}
 
 const icons = {
   "TO.W": "🌪️",
@@ -921,59 +952,85 @@ function isReflectivityProductCode(productCode) {
   );
 }
 
-const VELOCITY_COLOR_EXPRESSION = [
+const DEFAULT_CC_COLOR_EXPRESSION = [
   "interpolate",
   ["linear"],
   ["get", "dbz"],
-  -70,
-  "rgba(0, 100, 0, 0.9)",
-  -50,
-  "rgba(0, 150, 0, 0.9)",
-  -40,
-  "rgba(50, 200, 50, 0.9)",
-  -30,
-  "rgba(100, 220, 100, 0.9)",
-  -20,
-  "rgba(150, 240, 150, 0.9)",
-  -10,
-  "rgba(200, 255, 200, 0.9)",
-  -5,
-  "rgba(230, 255, 230, 0.9)",
-  -2,
-  "rgba(245, 255, 245, 0.9)",
   0,
-  "rgba(200, 200, 200, 0.5)",
-  2,
-  "rgba(255, 245, 245, 0.9)",
-  5,
-  "rgba(255, 230, 230, 0.9)",
+  "rgba(255, 255, 255, 1)",
+  15,
+  "rgba(153, 153, 153, 1)",
+  25,
+  "rgba(0, 0, 0, 1)",
+  35,
+  "rgba(38, 38, 38, 1)",
+  45,
+  "rgba(41, 61, 61, 1)",
+  55,
+  "rgba(0, 0, 102, 1)",
+  65,
+  "rgba(51, 102, 204, 1)",
+  75,
+  "rgba(0, 153, 0, 1)",
+  85,
+  "rgba(204, 153, 0, 1)",
+  95,
+  "rgba(128, 0, 0, 1)",
+  103,
+  "rgba(77, 0, 77, 1)",
+  104,
+  "rgba(240, 200, 240, 1)",
+  105,
+  "rgba(250, 250, 250, 0.5)",
+  200,
+  "rgba(50, 200, 200, 0.8)",
+];
+
+const DEFAULT_BV_COLOR_EXPRESSION = [
+  "interpolate",
+  ["linear"],
+  ["get", "dbz"],
+  -200,
+  "rgba(255, 220, 220, 1)",
+  -140,
+  "rgba(255, 20, 180, 1)",
+  -120,
+  "rgba(250, 4, 130, 1)",
+  -100,
+  "rgba(105, 2, 142, 1)",
+  -90,
+  "rgba(25, 1, 142, 1)",
+  -70,
+  "rgba(55, 226, 229, 1)",
+  -50,
+  "rgba(180, 240, 243, 1)",
+  -40,
+  "rgba(10, 248, 35, 1)",
+  -10,
+  "rgba(72, 112, 71, 1)",
+  0,
+  "rgba(130, 106, 120, 1)",
   10,
-  "rgba(255, 200, 200, 0.9)",
-  20,
-  "rgba(255, 150, 150, 0.9)",
-  30,
-  "rgba(255, 100, 100, 0.9)",
+  "rgba(105, 0, 0, 1)",
   40,
-  "rgba(255, 50, 50, 0.9)",
-  50,
-  "rgba(220, 0, 0, 0.9)",
+  "rgba(249, 58, 84, 1)",
+  55,
+  "rgba(255, 157, 206, 1)",
   60,
-  "rgba(180, 0, 0, 0.9)",
-  70,
-  "rgba(120, 0, 0, 0.9)",
+  "rgba(255, 230, 169, 1)",
+  80,
+  "rgba(254, 137, 80, 1)",
+  120,
+  "rgba(97, 6, 2, 1)",
+  140,
+  "rgba(60, 0, 0, 1)",
+  200,
+  "rgba(45, 0, 0, 1)",
   999,
   "rgba(123, 0, 200, 0.8)",
 ];
 
-/**
-  "rgba(97, 6, 2, 1.0)",
-  140,
-  "rgba(60, 0, 0, 1.0)",
-  200,
-  "rgba(45, 0, 0, 1.0)",
-  999, // Handling Range Folding (RF) values
-  "rgba(123, 0, 200, 0.8)",
-];
+const VELOCITY_COLOR_EXPRESSION = DEFAULT_BV_COLOR_EXPRESSION;
 
 /**
  * Parse a .pal (palette) file content
@@ -1015,8 +1072,17 @@ function parsePalFile(palText) {
           rfColor = { r, g, b };
         }
       }
-    } else if (lowerLine.startsWith("color:")) {
-      const parts = line.substring(6).trim().split(/\s+/);
+    } else if (
+      lowerLine.startsWith("color:") ||
+      lowerLine.startsWith("solidcolor:") ||
+      lowerLine.startsWith("solidcolor4:")
+    ) {
+      const colonIndex = line.indexOf(":");
+      if (colonIndex < 0) continue;
+      const parts = line
+        .substring(colonIndex + 1)
+        .trim()
+        .split(/\s+/);
       if (parts.length >= 4) {
         const value = parseFloat(parts[0]);
         const r = parseInt(parts[1]);
@@ -1024,7 +1090,21 @@ function parsePalFile(palText) {
         const b = parseInt(parts[3]);
 
         if (!isNaN(value) && !isNaN(r) && !isNaN(g) && !isNaN(b)) {
-          colors.push({ value, r, g, b });
+          let a = 0.9;
+          if (lowerLine.startsWith("solidcolor4:") && parts.length >= 5) {
+            const alphaRaw = parseFloat(parts[4]);
+            if (!isNaN(alphaRaw)) {
+              if (alphaRaw <= 1) {
+                a = alphaRaw;
+              } else if (alphaRaw <= 100) {
+                a = alphaRaw / 100;
+              } else {
+                a = alphaRaw / 255;
+              }
+            }
+          }
+
+          colors.push({ value, r, g, b, a: Math.max(0, Math.min(1, a)) });
         }
       }
     }
@@ -1033,7 +1113,13 @@ function parsePalFile(palText) {
   colors.sort((a, b) => a.value - b.value);
 
   if (rfColor) {
-    colors.push({ value: 999, r: rfColor.r, g: rfColor.g, b: rfColor.b });
+    colors.push({
+      value: 999,
+      r: rfColor.r,
+      g: rfColor.g,
+      b: rfColor.b,
+      a: 0.8,
+    });
   }
 
   console.log("Parsed palette:", {
@@ -1061,8 +1147,9 @@ function palToColorExpression(palette) {
   const scale = palette.scale || 1.0;
 
   for (const color of palette.colors) {
+    const alpha = Number.isFinite(color.a) ? color.a : 0.9;
     expression.push(color.value / scale);
-    expression.push(`rgba(${color.r}, ${color.g}, ${color.b}, 0.9)`);
+    expression.push(`rgba(${color.r}, ${color.g}, ${color.b}, ${alpha})`);
   }
 
   return expression;
@@ -1236,28 +1323,8 @@ function getRadarProductInfo(product) {
     },
     C: {
       name: `Correlation Coefficient${tiltLabel}`,
-      colorExpression: [
-        "interpolate",
-        ["linear"],
-        ["get", "dbz"],
-        0,
-        "#000000",
-        0.01,
-        "#4B0082",
-        0.3,
-        "#0000FF",
-        0.5,
-        "#00FF00",
-        0.7,
-        "#FFFF00",
-        0.85,
-        "#FF7F00",
-        0.95,
-        "#FF0000",
-        1.0,
-        "#FFFFFF",
-      ],
-      unit: "CC",
+      colorExpression: DEFAULT_CC_COLOR_EXPRESSION,
+      unit: "%",
       isVelocity: false,
     },
     X: {
@@ -1372,6 +1439,889 @@ let selectedRadarSite = null;
 let selectedRadarProduct = "N0B";
 let selectedRadarDataSource = "level3";
 let dataMode = "radar";
+const AUTO_IDLE_FRAME_COUNT = 7;
+const AUTO_IDLE_FRAME_INTERVAL_MS = 300;
+const AUTO_IDLE_END_PAUSE_MS = 3000;
+const AUTO_IDLE_REFRESH_MS = 45_000;
+const AUTO_IDLE_FETCH_CONCURRENCY = 2;
+const AUTO_IDLE_TO_CITY_CYCLE_MIN_MS = 40_000;
+const AUTO_IDLE_TO_CITY_CYCLE_MAX_MS = 60_000;
+const AUTO_IDLE_TO_STATEWIDE_FORECAST_MS = 10_000;
+const AUTO_IDLE_LOG_PREFIX = "[AUTO_IDLE]";
+const AUTO_IDLE_BOUNDS_PADDING_FACTOR = 0.12;
+const AUTO_IDLE_MICHIGAN_REFERENCE = [-85.5, 44.5];
+const AUTO_IDLE_MICHIGAN_BOUNDS = [
+  [-90.9, 41.55],
+  [-82.1, 48.55],
+];
+const AUTO_CITY_CYCLE_LOG_PREFIX = "[AUTO_CITY_CYCLE]";
+const AUTO_ALERT_CYCLE_LOG_PREFIX = "[AUTO_ALERT_CYCLE]";
+const AUTO_STATEWIDE_FORECAST_LOG_PREFIX = "[AUTO_STATEWIDE_FORECAST]";
+const CITY_CYCLE_CITY_DISPLAY_MS = 20_000;
+const CITY_CYCLE_PANEL_OPEN_DELAY_MS = 500;
+const CITY_CYCLE_MAP_PAN_MS = 1700;
+const CITY_CYCLE_PANEL_ANIMATION_MS = 360;
+const AUTO_ALERT_CYCLE_FOCUS_MS = 10_000;
+const AUTO_ALERT_CYCLE_FRAME_MS = 200;
+const AUTO_ALERT_CYCLE_END_PAUSE_MS = 2_000;
+const AUTO_ALERT_IDLE_SHORT_MIN_MS = 5_000;
+const AUTO_ALERT_IDLE_SHORT_MAX_MS = 10_000;
+const AUTO_ALERT_CYCLE_FRAME_COUNT = 10;
+const AUTO_ALERT_REFLECTIVITY_PRODUCT = "N0B";
+const AUTO_SITUATION_REVIEW_MIN_DISPLAY_MS = 22_000;
+const AUTO_SITUATION_REVIEW_POST_SPEECH_HOLD_MS = 6_000;
+const AUTO_SITUATION_REVIEW_LOG_PREFIX = "[AUTO_SITUATION_REVIEW]";
+const CITY_WEATHER_ICON_ROOT = "Weather Icons IV";
+const CITY_WEATHER_ICON_FALLBACK = "Clouds II.png";
+const MICHIGAN_SAME_PREFIX = "26";
+
+const AUTO_ALERT_PRIORITY_ORDER = {
+  "Tornado Emergency": 1,
+  "PDS Tornado Warning": 2,
+  "Observed Tornado Warning": 3,
+  "Emergency Mgmt Confirmed Tornado Warning": 4,
+  "Spotter Confirmed Tornado Warning": 5,
+  "Law Enforcement Confirmed Tornado Warning": 6,
+  "Public Confirmed Tornado Warning": 7,
+  "Radar Confirmed Tornado Warning": 8,
+  "Tornado Warning": 9,
+  "Destructive Severe Thunderstorm Warning": 10,
+  "Considerable Severe Thunderstorm Warning": 11,
+  "Severe Thunderstorm Warning": 12,
+  "Flash Flood Emergency": 13,
+  "Considerable Flash Flood Warning": 14,
+  "Flash Flood Warning": 15,
+  "PDS Tornado Watch": 16,
+  "PDS Severe Thunderstorm Watch": 17,
+  "Tornado Watch": 18,
+  "Severe Thunderstorm Watch": 19,
+  "Fire Warning": 20,
+  "Extreme Fire Danger": 21,
+  "Red Flag Warning": 22,
+  "Fire Weather Watch": 23,
+  "Blizzard Warning": 24,
+  "Ice Storm Warning": 25,
+  "Snow Squall Warning": 26,
+  "Winter Storm Warning": 27,
+  "Winter Weather Advisory": 28,
+  "Winter Storm Watch": 29,
+  "Lake Effect Snow Warning": 30,
+  "Flood Warning": 31,
+  "Flood Advisory": 32,
+  "Flood Watch": 33,
+  "Special Weather Statement": 34,
+  "Wind Chill Warning": 35,
+  "Extreme Cold Warning": 36,
+  "Cold Weather Advisory": 37,
+  "Extreme Cold Watch": 38,
+  "High Wind Warning": 39,
+  "Wind Advisory": 40,
+  "High Wind Watch": 41,
+  "Extreme Heat Warning": 42,
+  "Heat Advisory": 43,
+  "Extreme Heat Watch": 44,
+  "Freeze Warning": 45,
+  "Freeze Advisory": 46,
+  "Freeze Watch": 47,
+  "Frost Advisory": 48,
+  "Dense Fog Advisory": 49,
+  "Blowing Dust Warning": 50,
+  "Blowing Dust Advisory": 51,
+  "Dust Advisory": 52,
+};
+
+const AUTO_CITY_CYCLE_CITIES = [
+  {
+    id: "detroit",
+    label: "Detroit",
+    stationId: "KDTW",
+    lat: 42.3314,
+    lon: -83.0458,
+  },
+  {
+    id: "lansing",
+    label: "Lansing",
+    stationId: "KLAN",
+    lat: 42.7325,
+    lon: -84.5555,
+  },
+  {
+    id: "grand-rapids",
+    label: "Grand Rapids",
+    stationId: "KGRR",
+    lat: 42.9634,
+    lon: -85.6681,
+  },
+  {
+    id: "kalamazoo",
+    label: "Kalamazoo",
+    stationId: "KAZO",
+    lat: 42.2917,
+    lon: -85.5872,
+  },
+  {
+    id: "gaylord",
+    label: "Gaylord",
+    stationId: "KGLR",
+    lat: 45.0275,
+    lon: -84.6748,
+  },
+  {
+    id: "marquette",
+    label: "Marquette",
+    stationId: "KSAW",
+    lat: 46.5436,
+    lon: -87.3954,
+  },
+];
+
+let autoModeEnabled = true;
+let autoModeSubmode = "idle";
+let autoIdlePlaybackRaf = null;
+let autoIdleLastStepAt = 0;
+let autoIdleRefreshTimerId = null;
+let autoIdleRefreshInFlight = false;
+let autoIdlePauseUntil = 0;
+let autoIdlePendingWrap = false;
+let autoIdleToCityTransitionTimerId = null;
+let autoIdleEntranceCount = 0;
+let autoCityCycleRunToken = 0;
+let autoAlertCycleRunToken = 0;
+let autoStatewideForcastRunToken = 0;
+let autoCityCycleCycleId = 0;
+let autoCityCyclePendingIncomingAlertId = null;
+let autoAlertCyclePendingIncomingAlertId = null;
+let autoAlertCycleCurrentAlertId = null;
+let autoStatewideForecastResumeState = null;
+let autoStatewideForecastPendingIncomingAlertId = null;
+let autoIdleNextPhase = null;
+let statewideForecastMrmsPlaybackRaf = null;
+let statewideForecastMrmsLastStepAt = 0;
+let statewideForecastMrmsPauseUntil = 0;
+let statewideForecastMrmsPendingWrap = false;
+let statewideForecastMrmsRunToken = 0;
+let autoCityCyclePanelRoot = null;
+let autoCityCycleStyleInjected = false;
+let autoSituationReviewRunToken = 0;
+let autoSituationReviewPendingIncomingAlertId = null;
+let autoSituationReviewCardRoot = null;
+let autoSituationReviewStyleInjected = false;
+let autoSituationReviewPrefetchTask = null;
+let autoSituationReviewPrefetchResult = null;
+let autoSituationReviewPrefetchKey = "";
+let autoModeScheduleRoot = null;
+let autoModeScheduleTickTimerId = null;
+let autoModeTransitionDeadlineMs = 0;
+let autoModePendingTransitionTarget = null;
+let autoRegionalLoadingCardRoot = null;
+let autoStatewideForecastPrefetchTask = null;
+let autoStatewideForecastPrefetchResult = null;
+let autoStatewideForecastPrefetchStartedAtMs = 0;
+const autoIdleFrameCache = new Map();
+const autoCityCycleWeatherCache = new Map();
+let autoIdleCacheBoundsKey = null;
+let autoAlertLoopTimingBackup = null;
+
+function logAutoIdle(...args) {
+  console.log(AUTO_IDLE_LOG_PREFIX, ...args);
+}
+
+function logAutoCityCycle(...args) {
+  console.log(AUTO_CITY_CYCLE_LOG_PREFIX, ...args);
+}
+
+function logAutoAlertCycle(...args) {
+  console.log(AUTO_ALERT_CYCLE_LOG_PREFIX, ...args);
+}
+
+function formatMmSsRemaining(ms) {
+  const totalSeconds = Math.max(0, Math.ceil((Number(ms) || 0) / 1000));
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")} remaining`;
+}
+
+function logAutoStatewideForcast(...args) {
+  console.log(AUTO_STATEWIDE_FORECAST_LOG_PREFIX, ...args);
+}
+
+async function fetchStatewideRegionalForecastsFromApi() {
+  const response = await fetch("/api/statewide-forecast-regions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({}),
+  });
+
+  if (!response.ok) {
+    throw new Error(`API returned ${response.status}`);
+  }
+
+  const data = await response.json().catch(() => ({}));
+  return Array.isArray(data?.regionalForecasts) ? data.regionalForecasts : [];
+}
+
+function clearStatewideRegionalForecastPrefetch() {
+  autoStatewideForecastPrefetchTask = null;
+  autoStatewideForecastPrefetchResult = null;
+  autoStatewideForecastPrefetchStartedAtMs = 0;
+}
+
+function warmStatewideRegionalForecasts({ reason = "unknown" } = {}) {
+  if (Array.isArray(autoStatewideForecastPrefetchResult)) {
+    return Promise.resolve(autoStatewideForecastPrefetchResult);
+  }
+
+  if (autoStatewideForecastPrefetchTask) {
+    return autoStatewideForecastPrefetchTask;
+  }
+
+  autoStatewideForecastPrefetchStartedAtMs = Date.now();
+  logAutoStatewideForcast(
+    `Prefetching regional forecasts during idle (${reason})...`,
+  );
+
+  autoStatewideForecastPrefetchTask = (async () => {
+    try {
+      const forecasts = await fetchStatewideRegionalForecastsFromApi();
+      autoStatewideForecastPrefetchResult = forecasts;
+      logAutoStatewideForcast(
+        `Regional forecast prefetch ready count=${forecasts.length} in ${Date.now() - autoStatewideForecastPrefetchStartedAtMs}ms`,
+      );
+      return forecasts;
+    } catch (error) {
+      logAutoStatewideForcast("Regional forecast prefetch failed:", error);
+      throw error;
+    } finally {
+      autoStatewideForecastPrefetchTask = null;
+    }
+  })();
+
+  return autoStatewideForecastPrefetchTask;
+}
+
+function logAutoSituationReview(...args) {
+  console.log(AUTO_SITUATION_REVIEW_LOG_PREFIX, ...args);
+}
+
+function getSituationReviewPrefetchKey(alertPayload) {
+  if (!Array.isArray(alertPayload)) {
+    return "";
+  }
+  return JSON.stringify(
+    alertPayload.map((entry) => ({
+      eventName: String(entry?.eventName || "").trim(),
+      count: Math.max(0, Number(entry?.count) || 0),
+    })),
+  );
+}
+
+function clearSituationReviewPrefetch() {
+  autoSituationReviewPrefetchTask = null;
+  autoSituationReviewPrefetchResult = null;
+  autoSituationReviewPrefetchKey = "";
+}
+
+function warmMichiganSituationReviewData({ reason = "unknown" } = {}) {
+  const alerts = buildMichiganSituationReviewAlertsPayload();
+  const key = getSituationReviewPrefetchKey(alerts);
+
+  if (
+    autoSituationReviewPrefetchResult &&
+    autoSituationReviewPrefetchKey === key
+  ) {
+    return Promise.resolve(autoSituationReviewPrefetchResult);
+  }
+
+  if (
+    autoSituationReviewPrefetchTask &&
+    autoSituationReviewPrefetchKey === key
+  ) {
+    return autoSituationReviewPrefetchTask;
+  }
+
+  autoSituationReviewPrefetchKey = key;
+  logAutoSituationReview(
+    `Prefetching situation summary during idle (${reason})...`,
+  );
+
+  autoSituationReviewPrefetchTask = (async () => {
+    try {
+      const reviewData = await fetchMichiganSituationReviewData(alerts);
+      autoSituationReviewPrefetchResult = reviewData;
+      return reviewData;
+    } catch (error) {
+      logAutoSituationReview("Situation summary prefetch failed:", error);
+      throw error;
+    } finally {
+      autoSituationReviewPrefetchTask = null;
+    }
+  })();
+
+  return autoSituationReviewPrefetchTask;
+}
+
+function setAutoModeSubmode(nextSubmode) {
+  autoModeSubmode = String(nextSubmode || "idle");
+  updateAutoModeScheduleIndicator();
+}
+
+function splitSpeechIntoSentences(text) {
+  return String(text || "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(/(?<=[.!?])\s+/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+}
+
+function normalizeAutoAlertPriorityName(name) {
+  const normalized = String(name || "").trim();
+  if (!normalized) return "";
+
+  if (normalized === "Tornado Warning (Observed)") {
+    return "Observed Tornado Warning";
+  }
+  if (normalized === "Excessive Heat Warning") {
+    return "Extreme Heat Warning";
+  }
+  if (normalized === "Excessive Wind Chill Warning") {
+    return "Wind Chill Warning";
+  }
+  if (normalized === "Dust Storm Warning") {
+    return "Blowing Dust Warning";
+  }
+
+  return normalized;
+}
+
+function getAutoAlertPriority(alert) {
+  const resolvedName = normalizeAutoAlertPriorityName(getAlertName(alert));
+  return AUTO_ALERT_PRIORITY_ORDER[resolvedName] ?? Number.MAX_SAFE_INTEGER;
+}
+
+function getAlertSameCodes(alert) {
+  const sameRaw = alert?.geocode?.SAME;
+  if (Array.isArray(sameRaw)) {
+    return sameRaw.map((code) => String(code || "").trim()).filter(Boolean);
+  }
+  const value = String(sameRaw || "").trim();
+  return value ? [value] : [];
+}
+
+function getAlertUgcCodes(alert) {
+  const ugcRaw = Array.isArray(alert?.ugc)
+    ? alert.ugc
+    : Array.isArray(alert?.geocode?.UGC)
+      ? alert.geocode.UGC
+      : [];
+  return ugcRaw
+    .map((code) =>
+      String(code || "")
+        .trim()
+        .toUpperCase(),
+    )
+    .filter(Boolean);
+}
+
+function normalizeMesoscaleDiscussionName(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+  if (/^mesoscale discussion/i.test(text)) {
+    return "Mesoscale Discussion";
+  }
+  return text;
+}
+
+function isMesoscaleDiscussionAlert(alert) {
+  const eventName = normalizeMesoscaleDiscussionName(getAlertEventName(alert));
+  return eventName === "Mesoscale Discussion";
+}
+
+function doesAlertIntersectMichiganCounties(alert) {
+  if (!alert || !turf || !Array.isArray(michiganCountyFeatures)) return false;
+  if (michiganCountyFeatures.length === 0) return false;
+
+  const geometry = ensureAlertGeometry(alert);
+  if (!geometry) return false;
+
+  const alertFeature = { type: "Feature", geometry };
+
+  for (const countyFeature of michiganCountyFeatures) {
+    if (!countyFeature?.geometry) continue;
+    try {
+      if (
+        typeof turf.booleanIntersects === "function" &&
+        turf.booleanIntersects(alertFeature, countyFeature)
+      ) {
+        return true;
+      }
+
+      if (typeof turf.intersect === "function") {
+        const overlap = turf.intersect(alertFeature, countyFeature);
+        if (overlap) return true;
+      }
+    } catch (error) {
+      console.warn("Failed MCD Michigan intersection check:", error);
+    }
+  }
+
+  return false;
+}
+
+function isMichiganAlertForAutoCycle(alert) {
+  if (!alert) return false;
+
+  if (isMesoscaleDiscussionAlert(alert)) {
+    return doesAlertIntersectMichiganCounties(alert);
+  }
+
+  const hasMichiganSame = getAlertSameCodes(alert).some((code) =>
+    code.startsWith(MICHIGAN_SAME_PREFIX),
+  );
+  if (hasMichiganSame) {
+    return true;
+  }
+
+  return getAlertUgcCodes(alert).some((ugc) => /^MI[A-Z]/.test(ugc));
+}
+
+function isSupportedAutoModeAlert(alert) {
+  const eventName = String(getAlertEventName(alert) || "").trim();
+  if (!eventName) return false;
+  return Object.prototype.hasOwnProperty.call(
+    AUTO_MODE_ALERT_NAME_COLORS,
+    eventName,
+  );
+}
+
+function getMichiganAlertsForAutoCycle() {
+  if (!(activeAlerts instanceof Map) || activeAlerts.size === 0) {
+    return [];
+  }
+
+  return Array.from(activeAlerts.values()).filter(
+    (alert) =>
+      isMichiganAlertForAutoCycle(alert) && isSupportedAutoModeAlert(alert),
+  );
+}
+
+function compareAutoCycleAlertsByPriority(a, b) {
+  const priorityDelta = getAutoAlertPriority(a) - getAutoAlertPriority(b);
+  if (priorityDelta !== 0) {
+    return priorityDelta;
+  }
+
+  const aExpires = Date.parse(a?.expires || "") || Number.POSITIVE_INFINITY;
+  const bExpires = Date.parse(b?.expires || "") || Number.POSITIVE_INFINITY;
+  if (aExpires !== bExpires) {
+    return aExpires - bExpires;
+  }
+
+  return String(a?.id || "").localeCompare(String(b?.id || ""));
+}
+
+function getSortedMichiganAlertsForAutoCycle() {
+  const alerts = getMichiganAlertsForAutoCycle();
+  alerts.sort(compareAutoCycleAlertsByPriority);
+  return alerts;
+}
+
+function getUniqueMichiganAlertsForWidget() {
+  const seen = new Set();
+  const unique = [];
+
+  for (const alert of getSortedMichiganAlertsForAutoCycle()) {
+    const key = String(getAlertEventName(alert) || "")
+      .trim()
+      .toLowerCase();
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    unique.push(alert);
+  }
+
+  return unique;
+}
+
+function getMichiganAlertCycleQueueStartingWith(incomingAlert) {
+  const sortedAlerts = getSortedMichiganAlertsForAutoCycle();
+  if (!incomingAlert?.id) {
+    return sortedAlerts;
+  }
+
+  const incomingId = String(incomingAlert.id);
+  const incomingFromActiveAlerts = activeAlerts.get(incomingId);
+  const incoming = incomingFromActiveAlerts || incomingAlert;
+  const queue = [];
+
+  if (incoming && isMichiganAlertForAutoCycle(incoming)) {
+    queue.push(incoming);
+  }
+
+  for (const alert of sortedAlerts) {
+    if (!alert?.id || String(alert.id) === incomingId) continue;
+    queue.push(alert);
+  }
+
+  return queue;
+}
+
+function choosePreferredPendingIncomingAlertId(currentAlertId, nextAlertId) {
+  if (!nextAlertId) return currentAlertId;
+  if (!currentAlertId) return nextAlertId;
+
+  const currentAlert = activeAlerts.get(String(currentAlertId));
+  const nextAlert = activeAlerts.get(String(nextAlertId));
+  if (!currentAlert) return nextAlertId;
+  if (!nextAlert) return currentAlertId;
+
+  return compareAutoCycleAlertsByPriority(nextAlert, currentAlert) < 0
+    ? nextAlertId
+    : currentAlertId;
+}
+
+function isHigherPriorityAlertId(nextAlertId, currentAlertId) {
+  if (!nextAlertId) return false;
+  if (!currentAlertId) return true;
+
+  const currentAlert = activeAlerts.get(String(currentAlertId));
+  const nextAlert = activeAlerts.get(String(nextAlertId));
+  if (!nextAlert) return false;
+  if (!currentAlert) return true;
+
+  return compareAutoCycleAlertsByPriority(nextAlert, currentAlert) < 0;
+}
+
+async function handleIncomingMichiganAlertForAutoMode(alert) {
+  if (!autoModeEnabled || !alert || !isMichiganAlertForAutoCycle(alert)) {
+    return false;
+  }
+
+  if (autoModeSubmode === "idle") {
+    const alertsOverride = getMichiganAlertCycleQueueStartingWith(alert);
+    if (!alertsOverride.length) {
+      return false;
+    }
+
+    logAutoAlertCycle(
+      `Incoming Michigan alert while idle. Starting alert cycle now (alert=${alert.id || "unknown"}, count=${alertsOverride.length}).`,
+    );
+    void alertCycleMode.start({ alertsOverride });
+    return true;
+  }
+
+  if (autoModeSubmode === "city-cycle") {
+    autoCityCyclePendingIncomingAlertId = choosePreferredPendingIncomingAlertId(
+      autoCityCyclePendingIncomingAlertId,
+      alert.id ? String(alert.id) : null,
+    );
+    logAutoCityCycle(
+      `Incoming Michigan alert queued during city cycle. Will switch to alert cycle after current city (alert=${autoCityCyclePendingIncomingAlertId || "unknown"}).`,
+    );
+    return true;
+  }
+
+  if (autoModeSubmode === "situation-review") {
+    autoSituationReviewPendingIncomingAlertId =
+      choosePreferredPendingIncomingAlertId(
+        autoSituationReviewPendingIncomingAlertId,
+        alert.id ? String(alert.id) : null,
+      );
+
+    logAutoSituationReview(
+      `Incoming Michigan alert queued during situation review (alert=${autoSituationReviewPendingIncomingAlertId || "unknown"}).`,
+    );
+    return true;
+  }
+
+  if (autoModeSubmode === "alert-cycle") {
+    const incomingId = alert?.id ? String(alert.id) : null;
+    autoAlertCyclePendingIncomingAlertId =
+      choosePreferredPendingIncomingAlertId(
+        autoAlertCyclePendingIncomingAlertId,
+        incomingId,
+      );
+
+    if (
+      isHigherPriorityAlertId(
+        autoAlertCyclePendingIncomingAlertId,
+        autoAlertCycleCurrentAlertId,
+      )
+    ) {
+      // Preempt current narration so the higher-priority alert can run next.
+      stopAlertSpeech();
+      logAutoAlertCycle(
+        `Higher-priority incoming alert queued for immediate preemption (alert=${autoAlertCyclePendingIncomingAlertId || "unknown"}, current=${autoAlertCycleCurrentAlertId || "none"}).`,
+      );
+      return true;
+    }
+
+    logAutoAlertCycle(
+      `Incoming Michigan alert received during alert cycle (alert=${alert.id || "unknown"}). Current cycle continues.`,
+    );
+    return true;
+  }
+
+  if (autoModeSubmode === "statewide-forecast") {
+    const incomingId = alert?.id ? String(alert.id) : null;
+    autoStatewideForecastPendingIncomingAlertId =
+      choosePreferredPendingIncomingAlertId(
+        autoStatewideForecastPendingIncomingAlertId,
+        incomingId,
+      );
+
+    logAutoStatewideForcast(
+      `Incoming Michigan alert queued during statewide forecast (alert=${autoStatewideForecastPendingIncomingAlertId || "unknown"}).`,
+    );
+    return true;
+  }
+
+  return false;
+}
+
+function getAutoModeAlertPolicy() {
+  const alerts = getSortedMichiganAlertsForAutoCycle();
+  if (!alerts.length) {
+    return {
+      nextMode: "city",
+      minDelayMs: AUTO_IDLE_TO_CITY_CYCLE_MIN_MS,
+      maxDelayMs: AUTO_IDLE_TO_CITY_CYCLE_MAX_MS,
+      reason: "No active Michigan alerts",
+    };
+  }
+
+  const highestPriority = getAutoAlertPriority(alerts[0]);
+  const alertCount = alerts.length;
+
+  return {
+    nextMode: "city",
+    minDelayMs: AUTO_ALERT_IDLE_SHORT_MIN_MS,
+    maxDelayMs: AUTO_ALERT_IDLE_SHORT_MAX_MS,
+    reason: `Active Michigan alerts detected (priority=${highestPriority}, count=${alertCount}) - situation review and current conditions will run before alert cycle`,
+  };
+}
+
+function setAutoIdleNextPhase(nextPhase) {
+  const normalizedPhase = String(nextPhase || "").trim();
+  autoIdleNextPhase =
+    normalizedPhase === "statewide-forecast" ||
+    normalizedPhase === "city" ||
+    normalizedPhase === "alert"
+      ? normalizedPhase
+      : null;
+
+  if (autoIdleNextPhase !== "statewide-forecast") {
+    clearStatewideRegionalForecastPrefetch();
+  }
+}
+
+function getAlertCycleNearestRadarSite(alert) {
+  const isTdwrSite = (site) => {
+    const id = String(site?.id || "")
+      .trim()
+      .toUpperCase();
+    const name = String(site?.name || "")
+      .trim()
+      .toUpperCase();
+    if (!id && !name) return false;
+
+    // TDWR sites are commonly encoded as T*** IDs and/or labeled explicitly.
+    return /^T[A-Z0-9]{3}$/.test(id) || /\bTDWR\b/.test(name);
+  };
+
+  const isExcludedSite = (site) => {
+    const id = String(site?.id || "")
+      .trim()
+      .toUpperCase();
+    // Exclude TDWR sites and DBZ (detroit metropolitan area radar)
+    return isTdwrSite(site) || id === "DBZ";
+  };
+
+  const closestRadars = getClosestRadars(alert, 8);
+  if (Array.isArray(closestRadars) && closestRadars.length) {
+    const validRadar = closestRadars.find((site) => !isExcludedSite(site));
+    if (validRadar) {
+      return validRadar;
+    }
+  }
+
+  if (alert?.areaCenter) {
+    const nearest = findClosestRadarSites(
+      { lng: alert.areaCenter.lon, lat: alert.areaCenter.lat },
+      12,
+    );
+    if (Array.isArray(nearest) && nearest.length) {
+      const validEntry = nearest.find((entry) => !isExcludedSite(entry?.site));
+      if (validEntry?.site) {
+        return validEntry.site;
+      }
+    }
+  }
+
+  const idleFallback = getMichiganIdleSite();
+  return isExcludedSite(idleFallback) ? null : idleFallback;
+}
+
+function applyAutoAlertRadarSelection(site) {
+  selectedRadarProduct = AUTO_ALERT_REFLECTIVITY_PRODUCT;
+  selectedRadarDataSource = "level3";
+  currentRenderProductCode = selectedRadarProduct;
+  quickTimelineActive = false;
+
+  const dataModeSelect = document.getElementById("dataModeSelect");
+  if (dataModeSelect) {
+    dataModeSelect.value = "radar";
+  }
+
+  const sourceSelect = document.getElementById("radarDataSourceSelect");
+  if (sourceSelect) {
+    sourceSelect.value = "level3";
+  }
+
+  const productSelect = document.getElementById("radarProductSelect");
+  if (productSelect) {
+    productSelect.value = AUTO_ALERT_REFLECTIVITY_PRODUCT;
+  }
+
+  setQuickTimelineProductButtons(selectedRadarProduct);
+  createColorScaleLegend(selectedRadarProduct);
+
+  if (!site) {
+    return;
+  }
+
+  selectedRadarSite = site;
+  radarSiteLocation = {
+    longitude: site.longitude,
+    latitude: site.latitude,
+  };
+
+  const siteSelect = document.getElementById("radarSiteSelect");
+  if (siteSelect) {
+    siteSelect.value = site.id;
+  }
+
+  if (typeof mapInstance?.__setSelectedRadarSiteMarker === "function") {
+    mapInstance.__setSelectedRadarSiteMarker(site.id);
+  }
+}
+
+function applyAutoAlertLoopTiming() {
+  const loopSpeedInput = document.getElementById("loopSpeed");
+  if (!autoAlertLoopTimingBackup) {
+    autoAlertLoopTimingBackup = {
+      loopSpeedMs: parseInt(loopSpeedInput?.value, 10) || 220,
+      endPauseMs: Number(endPauseDuration) || 0,
+    };
+  }
+
+  if (loopSpeedInput) {
+    loopSpeedInput.value = String(AUTO_ALERT_CYCLE_FRAME_MS);
+  }
+
+  const loopSpeedValue = document.getElementById("loopSpeedValue");
+  if (loopSpeedValue) {
+    loopSpeedValue.textContent = `${AUTO_ALERT_CYCLE_FRAME_MS}ms`;
+  }
+
+  endPauseDuration = AUTO_ALERT_CYCLE_END_PAUSE_MS;
+  const endPauseInput = document.getElementById("endPauseDuration");
+  if (endPauseInput) {
+    endPauseInput.value = String(AUTO_ALERT_CYCLE_END_PAUSE_MS);
+  }
+  const endPauseValue = document.getElementById("endPauseDurationValue");
+  if (endPauseValue) {
+    endPauseValue.textContent = `${AUTO_ALERT_CYCLE_END_PAUSE_MS}ms`;
+  }
+}
+
+function restoreAutoAlertLoopTiming() {
+  if (!autoAlertLoopTimingBackup) {
+    return;
+  }
+
+  const loopSpeedInput = document.getElementById("loopSpeed");
+  if (loopSpeedInput) {
+    loopSpeedInput.value = String(autoAlertLoopTimingBackup.loopSpeedMs);
+  }
+  const loopSpeedValue = document.getElementById("loopSpeedValue");
+  if (loopSpeedValue) {
+    loopSpeedValue.textContent = `${autoAlertLoopTimingBackup.loopSpeedMs}ms`;
+  }
+
+  endPauseDuration = autoAlertLoopTimingBackup.endPauseMs;
+  const endPauseInput = document.getElementById("endPauseDuration");
+  if (endPauseInput) {
+    endPauseInput.value = String(autoAlertLoopTimingBackup.endPauseMs);
+  }
+  const endPauseValue = document.getElementById("endPauseDurationValue");
+  if (endPauseValue) {
+    endPauseValue.textContent = `${autoAlertLoopTimingBackup.endPauseMs}ms`;
+  }
+
+  autoAlertLoopTimingBackup = null;
+}
+
+async function startAlertReflectivityLoop(site) {
+  if (!site || !mapInstance) {
+    return;
+  }
+
+  applyAutoAlertRadarSelection(site);
+  if (dataMode !== "radar") {
+    await switchDataMode("radar");
+  }
+
+  await fetchAndDisplayRadarData(
+    mapInstance,
+    selectedRadarSite,
+    selectedRadarProduct,
+    selectedRadarDataSource,
+  );
+
+  applyAutoAlertLoopTiming();
+  stopLoop();
+  if (radarPollingTimer) {
+    clearInterval(radarPollingTimer);
+    radarPollingTimer = null;
+  }
+  stopArcSyncStream();
+
+  await loadRadarFrames(
+    selectedRadarSite,
+    AUTO_ALERT_CYCLE_FRAME_COUNT,
+    null,
+    selectedRadarProduct,
+    {
+      showFirstFrame: true,
+      showLatestFrame: false,
+      preserveCurrentFrame: false,
+      autoStart: false,
+      silent: true,
+    },
+  );
+
+  if (radarFrames.length > 1) {
+    displayOldestLoopFrame();
+    startLoop();
+  }
+}
+
+function getAutoIdleFetchBounds(map) {
+  return getMrmsDefaultRenderBounds();
+}
+
+function getAutoIdleBoundsKey(bounds) {
+  if (!bounds) {
+    return "global";
+  }
+
+  return [
+    bounds.minLon.toFixed(2),
+    bounds.minLat.toFixed(2),
+    bounds.maxLon.toFixed(2),
+    bounds.maxLat.toFixed(2),
+  ].join(",");
+}
 let selectedModel = "hrrr";
 let selectedHRRRVariable = "tmp2m";
 let selectedHRRRForecastHour = 0;
@@ -1389,6 +2339,37 @@ const MODEL_LABELS = {
   "rrfs-a": "RRFS-a",
   nam3k: "NAM 3km Nest",
 };
+const MRMS_DEFAULT_RENDER_BOUNDS = Object.freeze({
+  minLon: -101.16,
+  minLat: 38.63,
+  maxLon: -71.84,
+  maxLat: 51.04,
+});
+
+function getMrmsDefaultRenderBounds() {
+  return {
+    minLon: MRMS_DEFAULT_RENDER_BOUNDS.minLon,
+    minLat: MRMS_DEFAULT_RENDER_BOUNDS.minLat,
+    maxLon: MRMS_DEFAULT_RENDER_BOUNDS.maxLon,
+    maxLat: MRMS_DEFAULT_RENDER_BOUNDS.maxLat,
+  };
+}
+
+function isMrmsProduct(product) {
+  return (
+    String(product || "")
+      .trim()
+      .toLowerCase() === "mrms"
+  );
+}
+
+function appendBoundsParams(params, bounds) {
+  if (!params || !bounds) return;
+  params.set("minLon", String(bounds.minLon));
+  params.set("minLat", String(bounds.minLat));
+  params.set("maxLon", String(bounds.maxLon));
+  params.set("maxLat", String(bounds.maxLat));
+}
 let hrrrRunsCacheKey = null;
 let hrrrRunsCachePayload = null;
 let hrrrRunsCacheTime = 0;
@@ -1439,7 +2420,7 @@ let flashCycleTime = 600;
 let isFlashOn = true;
 const FLASH_INTERVAL = 500; // milliseconds
 const HIGH_DBZ_FLASH_PERIOD_MS = 1400; // slower pulse period for high dBZ flash
-const HIGH_DBZ_FLASH_THRESHOLD = 50; // dBZ threshold for flash effect
+const HIGH_DBZ_FLASH_THRESHOLD = 100; // dBZ threshold for flash effect
 let currentRadarData = null; // Store current radar data for flash processing
 const NEW_ALERT_FLASH_INTERVAL_MS = 500;
 const NEW_ALERT_FLASH_DURATION_MS = 2000;
@@ -1530,14 +2511,11 @@ function focusAlertPolygonOnMap(alert, options = {}) {
   const geometry = alert.areaGeometry || alert.polygon;
   if (!geometry?.coordinates?.length) return false;
 
-  let polygon = null;
+  let normalizedGeometry = null;
   if (geometry === alert.areaGeometry) {
-    polygon = {
-      type: "Polygon",
-      coordinates: geometry.coordinates,
-    };
+    normalizedGeometry = geometry;
   } else {
-    polygon = {
+    normalizedGeometry = {
       type: "Polygon",
       coordinates: geometry.coordinates.map((ring) =>
         ring.map(([lat, lng]) => [lng, lat]),
@@ -1545,9 +2523,28 @@ function focusAlertPolygonOnMap(alert, options = {}) {
     };
   }
 
-  if (!polygon?.coordinates?.length) return false;
+  if (!normalizedGeometry?.coordinates?.length) return false;
 
-  const bbox = turf.bbox(polygon);
+  let bbox = null;
+  try {
+    bbox = turf.bbox({
+      type: "Feature",
+      geometry: normalizedGeometry,
+      properties: {},
+    });
+  } catch (error) {
+    console.warn("Unable to compute alert bounds:", error);
+    return false;
+  }
+
+  if (
+    !Array.isArray(bbox) ||
+    bbox.length !== 4 ||
+    bbox.some((n) => !Number.isFinite(n))
+  ) {
+    return false;
+  }
+
   mapInstance.fitBounds(
     [
       [bbox[0], bbox[1]],
@@ -1577,7 +2574,16 @@ function stopFocusedAlertPulse() {
   const id = `alert-${focusedAlertPulseAlertId}`;
   const innerOutlineId = `${id}-outline-inner`;
   const outerOutlineId = `${id}-outline-outer`;
+  const focusedAlert = activeAlerts.get(String(focusedAlertPulseAlertId));
+  const normalAlertColor = ALERT_OUTLINE_CONFIG.innerColor(
+    getAlertColor(focusedAlert),
+  );
   if (mapInstance.getLayer(innerOutlineId)) {
+    mapInstance.setPaintProperty(
+      innerOutlineId,
+      "line-color",
+      normalAlertColor,
+    );
     mapInstance.setPaintProperty(
       innerOutlineId,
       "line-opacity",
@@ -1586,10 +2592,16 @@ function stopFocusedAlertPulse() {
     mapInstance.setPaintProperty(
       innerOutlineId,
       "line-width",
-      ALERT_OUTLINE_CONFIG.innerWidth,
+      getAlertOutlineWidthExpression("inner"),
     );
+    mapInstance.setPaintProperty(innerOutlineId, "line-dasharray", [1, 0]);
   }
   if (mapInstance.getLayer(outerOutlineId)) {
+    mapInstance.setPaintProperty(
+      outerOutlineId,
+      "line-color",
+      ALERT_OUTLINE_CONFIG.outerColor,
+    );
     mapInstance.setPaintProperty(
       outerOutlineId,
       "line-opacity",
@@ -1598,24 +2610,97 @@ function stopFocusedAlertPulse() {
     mapInstance.setPaintProperty(
       outerOutlineId,
       "line-width",
-      ALERT_OUTLINE_CONFIG.outerWidth,
+      getAlertOutlineWidthExpression("outer"),
     );
+    mapInstance.setPaintProperty(outerOutlineId, "line-dasharray", [1, 0]);
   }
   focusedAlertPulseAlertId = null;
 }
 
+function parseAlertHexColorToRgb(input) {
+  const raw = String(input || "").trim();
+  const hex = raw.startsWith("#") ? raw.slice(1) : raw;
+
+  if (/^[0-9a-fA-F]{3}$/.test(hex)) {
+    return {
+      r: Number.parseInt(hex[0] + hex[0], 16),
+      g: Number.parseInt(hex[1] + hex[1], 16),
+      b: Number.parseInt(hex[2] + hex[2], 16),
+    };
+  }
+  if (/^[0-9a-fA-F]{6}$/.test(hex) || /^[0-9a-fA-F]{8}$/.test(hex)) {
+    return {
+      r: Number.parseInt(hex.slice(0, 2), 16),
+      g: Number.parseInt(hex.slice(2, 4), 16),
+      b: Number.parseInt(hex.slice(4, 6), 16),
+    };
+  }
+
+  const rgbMatch = raw.match(/rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/i);
+  if (rgbMatch) {
+    return {
+      r: Math.max(0, Math.min(255, Number(rgbMatch[1]))),
+      g: Math.max(0, Math.min(255, Number(rgbMatch[2]))),
+      b: Math.max(0, Math.min(255, Number(rgbMatch[3]))),
+    };
+  }
+
+  return null;
+}
+
+function blendAlertLineColorToWhite(baseColor, whiteMix) {
+  const rgb = parseAlertHexColorToRgb(baseColor);
+  const mix = Math.max(0, Math.min(1, Number(whiteMix) || 0));
+  if (!rgb) {
+    const whiteChannel = Math.round(255 * mix);
+    return `rgb(${whiteChannel}, ${whiteChannel}, ${whiteChannel})`;
+  }
+
+  const r = Math.round(rgb.r + (255 - rgb.r) * mix);
+  const g = Math.round(rgb.g + (255 - rgb.g) * mix);
+  const b = Math.round(rgb.b + (255 - rgb.b) * mix);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 function startFocusedAlertPulse(alert) {
-  if (!alert || !alert.mapLayerId || alert.isCountyBased || !mapInstance) {
+  if (!alert || !alert.mapLayerId || !mapInstance) {
     return;
   }
 
   stopAlertFlashing();
   stopFocusedAlertPulse();
 
+  bringAlertLayersToFront(alert, mapInstance);
+
   focusedAlertPulseAlertId = alert.id;
   const innerOutlineId = `${alert.mapLayerId}-outline-inner`;
   const outerOutlineId = `${alert.mapLayerId}-outline-outer`;
   const startTs = performance.now();
+  const baseColor = ALERT_OUTLINE_CONFIG.innerColor(getAlertColor(alert));
+  const safeSetPaintProperty = (layerId, property, value) => {
+    if (!mapInstance || !mapInstance.getLayer(layerId)) {
+      return false;
+    }
+    try {
+      mapInstance.setPaintProperty(layerId, property, value);
+      return true;
+    } catch (error) {
+      console.warn(
+        "Focused alert pulse update failed; stopping pulse animation.",
+        {
+          layerId,
+          property,
+          error,
+        },
+      );
+      focusedAlertPulseAlertId = null;
+      if (focusedAlertPulseRaf) {
+        cancelAnimationFrame(focusedAlertPulseRaf);
+        focusedAlertPulseRaf = null;
+      }
+      return false;
+    }
+  };
 
   const animate = (now) => {
     if (!mapInstance || focusedAlertPulseAlertId !== alert.id) {
@@ -1630,19 +2715,74 @@ function startFocusedAlertPulse(alert) {
     }
 
     const t = (now - startTs) / 1000;
-    const wave = (Math.sin(t * Math.PI * 1.35) + 1) / 2;
+    const wave = (Math.sin(t * Math.PI * 1.15) + 1) / 2;
+    const lineColor = blendAlertLineColorToWhite(baseColor, wave * 0.72);
     const innerOpacity = 0.2 + wave * 0.7;
     const outerOpacity = 0.45 + wave * 0.5;
-    const outerWidth = ALERT_OUTLINE_CONFIG.outerWidth + wave * 1.25;
-
-    mapInstance.setPaintProperty(innerOutlineId, "line-opacity", innerOpacity);
-    mapInstance.setPaintProperty(outerOutlineId, "line-opacity", outerOpacity);
-    mapInstance.setPaintProperty(outerOutlineId, "line-width", outerWidth);
+    const appliedInnerColor = safeSetPaintProperty(
+      innerOutlineId,
+      "line-color",
+      lineColor,
+    );
+    const appliedOuterColor = safeSetPaintProperty(
+      outerOutlineId,
+      "line-color",
+      lineColor,
+    );
+    const appliedInnerOpacity = safeSetPaintProperty(
+      innerOutlineId,
+      "line-opacity",
+      innerOpacity,
+    );
+    const appliedOuterOpacity = safeSetPaintProperty(
+      outerOutlineId,
+      "line-opacity",
+      outerOpacity,
+    );
+    if (
+      !appliedInnerColor ||
+      !appliedOuterColor ||
+      !appliedInnerOpacity ||
+      !appliedOuterOpacity
+    ) {
+      return;
+    }
 
     focusedAlertPulseRaf = requestAnimationFrame(animate);
   };
 
   focusedAlertPulseRaf = requestAnimationFrame(animate);
+}
+
+function bringAlertLayersToFront(alert, targetMap = mapInstance) {
+  if (
+    !alert ||
+    !alert.mapLayerId ||
+    !targetMap ||
+    typeof targetMap.getLayer !== "function" ||
+    typeof targetMap.moveLayer !== "function"
+  ) {
+    return;
+  }
+
+  const anchorLayerId = getAlertLayerAnchorId(targetMap);
+  const baseId = String(alert.mapLayerId || `alert-${alert.id}`);
+  const fillId = `${baseId}-fill`;
+  const outerId = `${baseId}-outline-outer`;
+  const innerId = `${baseId}-outline-inner`;
+
+  const move = (layerId) => {
+    if (!targetMap.getLayer(layerId)) return;
+    if (anchorLayerId) {
+      targetMap.moveLayer(layerId, anchorLayerId);
+    } else {
+      targetMap.moveLayer(layerId);
+    }
+  };
+
+  move(fillId);
+  move(outerId);
+  move(innerId);
 }
 
 // TVS Detection
@@ -1669,10 +2809,54 @@ let usCitiesData = [];
 let usCitiesLoadPromise = null;
 let usCitiesLoaded = false;
 
+const YT_CHAT_DEFAULT_OWNER_NAME = "RyderM_WX";
+const YT_CHAT_DEFAULT_POLL_MS = 6000;
+const YT_LIVE_DEFAULT_CHANNEL_HANDLE = "@MiStormChasers";
+const YT_LIVE_DEFAULT_CHANNEL_NAME = "Michigan Storm Chasers";
+const YT_LIVE_NORMAL_MIN_POLL_MS = 9 * 60 * 1000;
+const YT_LIVE_NORMAL_MAX_POLL_MS = 11 * 60 * 1000;
+const YT_LIVE_SEVERE_MIN_POLL_MS = 9 * 60 * 1000;
+const YT_LIVE_SEVERE_MAX_POLL_MS = 11 * 60 * 1000;
+const YT_LIVE_SEVERE_BURST_DURATION_MS = 45 * 60 * 1000;
+const YT_LIVE_SEVERE_QUIET_RESET_MS = 30 * 60 * 1000;
+const YT_LIVE_ANNOUNCE_EVERY_STAGE_COUNT = 2;
+const YT_LIVE_ANNOUNCE_MIN_GAP_MS = 6 * 60 * 1000;
+let ytChatWatchEnabled = false;
+let ytChatVideoId = "";
+let ytChatOwnerName = YT_CHAT_DEFAULT_OWNER_NAME;
+let ytChatNextPageToken = "";
+let ytChatPollTimerId = null;
+let ytChatPollInFlight = false;
+let ytChatProcessedMessageIds = new Set();
+let ytChatCityLookup = null;
+let ytChatRequestQueue = [];
+let ytChatQueueInFlight = false;
+let ytLiveStatusMonitorEnabled = false;
+let ytLiveStatusPollTimerId = null;
+let ytLiveStatusPollInFlight = false;
+let ytLiveStatusState = { isLive: false };
+let ytLiveStatusCardRoot = null;
+let ytLiveStatusStyleInjected = false;
+let remoteRefreshEventSource = null;
+let remoteRefreshReconnectTimer = null;
+let remoteRefreshListenerStarted = false;
+let remoteRefreshBannerRoot = null;
+let remoteRefreshLastVersion = 0;
+const REMOTE_REFRESH_RECONNECT_DELAY_MS = 5000;
+const REMOTE_REFRESH_RELOAD_DELAY_MS = 1300;
+let ytLiveEmbedVideoId = "";
+let ytLiveLastSevereDetectedAtMs = 0;
+let ytLiveSevereBurstUntilMs = 0;
+let ytLiveStageEntryCounter = 0;
+let ytLiveLastAnnouncedAtMs = 0;
+let ytLiveLastAnnouncedVideoId = "";
+const ytLiveMentionCache = new Map();
+
 // Traffic Cameras Feature
 let camerasEnabled = false;
 let camerasData = null;
 let cameraPopup = null;
+let alertCycleCameraOverlay = null;
 
 let activeAlerts = new Map();
 let alertDetailsElement = null;
@@ -1895,10 +3079,14 @@ async function loadCountiesData() {
     }
     countiesData = await response.json();
     countiesByGeoid = new Map();
+    michiganCountyFeatures = [];
     if (countiesData && countiesData.features) {
       countiesData.features.forEach((feature) => {
         const geoid = feature?.properties?.GEOID;
         if (geoid) countiesByGeoid.set(geoid, feature);
+        if (feature?.properties?.STATEFP === "26") {
+          michiganCountyFeatures.push(feature);
+        }
       });
     }
     console.log(`✅ Loaded ${countiesData.features.length} counties`);
@@ -2005,6 +3193,100 @@ async function loadUSCitiesData() {
   })();
 
   return usCitiesLoadPromise;
+}
+
+function normalizeCityLookupKey(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function titleCaseCityLabel(name) {
+  return String(name || "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+    .join(" ");
+}
+
+async function ensureYouTubeChatCityLookup() {
+  if (ytChatCityLookup) return ytChatCityLookup;
+
+  await loadUSCitiesData();
+
+  const byName = new Map();
+  for (const city of Array.isArray(usCitiesData) ? usCitiesData : []) {
+    const key = normalizeCityLookupKey(city?.name || "");
+    if (!key) continue;
+    const existing = byName.get(key);
+    if (!existing || (city.population || 0) > (existing.population || 0)) {
+      byName.set(key, city);
+    }
+  }
+
+  for (const city of AUTO_CITY_CYCLE_CITIES) {
+    const key = normalizeCityLookupKey(city?.label || city?.id || "");
+    if (!key) continue;
+    byName.set(key, {
+      name: city.label,
+      state: "MI",
+      lat: city.lat,
+      lon: city.lon,
+      population: Number.MAX_SAFE_INTEGER,
+      stationId: city.stationId,
+      source: "auto-city-list",
+    });
+  }
+
+  ytChatCityLookup = { byName };
+  return ytChatCityLookup;
+}
+
+function extractRequestedLocationHint(message, explicitHint = "") {
+  const hint = String(explicitHint || "").trim();
+  if (hint) return hint;
+
+  const text = String(message || "").trim();
+  const patterns = [
+    /\b(?:forecast|weather|conditions?)\s+(?:for|in|at|near|around)\s+([a-z0-9 .,'-]{2,60})/i,
+    /\b(?:what(?:'s| is)\s+the\s+forecast\s+for|what(?:'s| is)\s+weather\s+in)\s+([a-z0-9 .,'-]{2,60})/i,
+  ];
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (!match) continue;
+    const value = String(match[1] || "")
+      .replace(/[?!.,;:]+$/g, "")
+      .trim();
+    if (value) return value;
+  }
+  return "";
+}
+
+async function resolveCityFromChatRequest(message, explicitHint = "") {
+  const lookup = await ensureYouTubeChatCityLookup();
+  const hint = extractRequestedLocationHint(message, explicitHint);
+  if (!hint) return null;
+
+  const normalized = normalizeCityLookupKey(hint);
+  if (!normalized) return null;
+
+  const direct = lookup.byName.get(normalized);
+  if (direct) return direct;
+
+  const compact = normalized.replace(/\s+mi(chigan)?$/, "").trim();
+  if (compact && lookup.byName.has(compact)) {
+    return lookup.byName.get(compact);
+  }
+
+  for (const [key, city] of lookup.byName.entries()) {
+    if (key.includes(normalized) || normalized.includes(key)) {
+      return city;
+    }
+  }
+
+  return null;
 }
 
 function normalizeBearingDegrees(value) {
@@ -2122,7 +3404,7 @@ function initAlertFeed() {
 
   eventSource.addEventListener("NEW", (event) => {
     const alert = JSON.parse(event.data).feature;
-    addAlertToMap(alert);
+    addAlertToMap(alert, { triggerAutoModeOnNewAlert: true });
   });
 
   eventSource.addEventListener("UPDATE", (event) => {
@@ -2137,7 +3419,7 @@ function initAlertFeed() {
 
   eventSource.addEventListener("SPECIAL_WEATHER_STATEMENT", (event) => {
     const alert = JSON.parse(event.data).feature;
-    addAlertToMap(alert);
+    addAlertToMap(alert, { triggerAutoModeOnNewAlert: true });
   });
 
   eventSource.onerror = (error) => {
@@ -2148,6 +3430,115 @@ function initAlertFeed() {
       updateArcSyncToggleState();
     }, 5000);
   };
+}
+
+function ensureRemoteRefreshBanner() {
+  if (
+    remoteRefreshBannerRoot &&
+    document.body.contains(remoteRefreshBannerRoot)
+  ) {
+    return remoteRefreshBannerRoot;
+  }
+
+  const root = document.createElement("div");
+  root.id = "remoteRefreshBanner";
+  root.style.position = "fixed";
+  root.style.top = "24px";
+  root.style.left = "50%";
+  root.style.transform = "translateX(-50%)";
+  root.style.zIndex = "3500";
+  root.style.maxWidth = "min(680px, calc(100vw - 28px))";
+  root.style.background =
+    "linear-gradient(135deg, rgba(255, 86, 86, 0.95), rgba(180, 20, 20, 0.92))";
+  root.style.border = "1px solid rgba(255, 255, 255, 0.5)";
+  root.style.borderRadius = "14px";
+  root.style.boxShadow = "0 14px 40px rgba(0, 0, 0, 0.45)";
+  root.style.color = "#fff";
+  root.style.fontFamily = '"Space Grotesk", "IBM Plex Sans", sans-serif';
+  root.style.padding = "13px 16px";
+  root.style.display = "none";
+  root.style.pointerEvents = "none";
+  root.style.textAlign = "center";
+  root.style.letterSpacing = "0.01em";
+
+  document.body.appendChild(root);
+  remoteRefreshBannerRoot = root;
+  return root;
+}
+
+function showRemoteRefreshBanner(payload) {
+  const root = ensureRemoteRefreshBanner();
+  const reason = String(payload?.reason || "").trim();
+  const source = String(payload?.source || "server").trim();
+  const subtitle = reason ? `Reason: ${reason}` : `Requested by: ${source}`;
+
+  root.innerHTML = `<div style="font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;">Control Center Requested Refresh</div><div style="font-size: 17px; font-weight: 600; margin-top: 3px;">Reloading stream now...</div><div style="font-size: 13px; opacity: 0.96; margin-top: 5px;">${escapeHtml(subtitle)}</div>`;
+  root.style.display = "block";
+}
+
+function scheduleRemoteRefreshReload(payload) {
+  const versionNumber = Number(payload?.version || 0);
+  if (Number.isFinite(versionNumber) && versionNumber > 0) {
+    if (versionNumber <= remoteRefreshLastVersion) return;
+    remoteRefreshLastVersion = versionNumber;
+  }
+
+  showRemoteRefreshBanner(payload || {});
+  setTimeout(() => {
+    window.location.reload();
+  }, REMOTE_REFRESH_RELOAD_DELAY_MS);
+}
+
+function connectRemoteRefreshChannel() {
+  if (remoteRefreshEventSource) {
+    try {
+      remoteRefreshEventSource.close();
+    } catch (_) {
+      // no-op
+    }
+    remoteRefreshEventSource = null;
+  }
+
+  if (!window.EventSource) {
+    console.warn(
+      "[REMOTE REFRESH] EventSource is not supported in this browser.",
+    );
+    return;
+  }
+
+  const source = new EventSource("/api/admin/refresh/events");
+  remoteRefreshEventSource = source;
+
+  source.addEventListener("refresh", (event) => {
+    try {
+      const payload = JSON.parse(event.data || "{}");
+      scheduleRemoteRefreshReload(payload);
+    } catch (error) {
+      console.warn("[REMOTE REFRESH] Invalid SSE payload:", error);
+      scheduleRemoteRefreshReload({ source: "server" });
+    }
+  });
+
+  source.onerror = (error) => {
+    console.warn("[REMOTE REFRESH] SSE disconnected; reconnecting...", error);
+    try {
+      source.close();
+    } catch (_) {
+      // no-op
+    }
+    if (remoteRefreshReconnectTimer) {
+      clearTimeout(remoteRefreshReconnectTimer);
+    }
+    remoteRefreshReconnectTimer = setTimeout(() => {
+      connectRemoteRefreshChannel();
+    }, REMOTE_REFRESH_RECONNECT_DELAY_MS);
+  };
+}
+
+function startRemoteRefreshListener() {
+  if (remoteRefreshListenerStarted) return;
+  remoteRefreshListenerStarted = true;
+  connectRemoteRefreshChannel();
 }
 
 function showAlertsDropdown(position) {
@@ -2429,8 +3820,27 @@ function showAlertStyleMenu(anchorButton) {
   document.body.appendChild(menu);
 
   const anchorRect = anchorButton.getBoundingClientRect();
-  menu.style.top = `${Math.round(anchorRect.bottom + 8)}px`;
-  menu.style.right = `${Math.max(10, Math.round(window.innerWidth - anchorRect.right))}px`;
+  const margin = 10;
+  menu.style.visibility = "hidden";
+  menu.style.left = "0px";
+  menu.style.top = "0px";
+
+  const menuRect = menu.getBoundingClientRect();
+  let top = anchorRect.bottom + 8;
+  if (top + menuRect.height > window.innerHeight - margin) {
+    top = Math.max(margin, anchorRect.top - menuRect.height - 8);
+  }
+
+  let left = anchorRect.right - menuRect.width;
+  left = Math.max(
+    margin,
+    Math.min(left, window.innerWidth - menuRect.width - margin),
+  );
+
+  menu.style.top = `${Math.round(top)}px`;
+  menu.style.left = `${Math.round(left)}px`;
+  menu.style.right = "auto";
+  menu.style.visibility = "visible";
 
   menu.addEventListener("change", (event) => {
     const target = event.target;
@@ -2507,19 +3917,19 @@ function createAlertsToggleButton() {
   const toolbar = document.createElement("div");
   toolbar.className = "alerts-toolbar";
 
-  const button = document.createElement("button");
-  button.className = "alerts-toggle-btn";
-  button.type = "button";
-  button.innerHTML = `<span class="alert-main-icon">!</span>
-    <span>Alerts</span>
-    <span class="alert-count">${activeAlerts.size}</span>`;
+  const widget = document.createElement("section");
+  widget.className = "mi-alerts-widget";
 
-  button.addEventListener("click", (e) => {
-    e.stopPropagation();
-    showAlertsDropdown({ x: e.clientX, y: e.clientY + 30 });
-  });
+  const header = document.createElement("div");
+  header.className = "mi-alerts-widget__title";
+  header.textContent = "Michigan Active Alerts";
+  widget.appendChild(header);
 
-  toolbar.appendChild(button);
+  const list = document.createElement("div");
+  list.className = "mi-alerts-widget__list";
+  widget.appendChild(list);
+
+  toolbar.appendChild(widget);
   document.body.appendChild(toolbar);
 
   // Add or update style button in the tool-grid of the bottom-center panel
@@ -2547,7 +3957,34 @@ function createAlertsToggleButton() {
     }
   }
 
-  return button;
+  let paletteUploadBtn = document.querySelector(".palette-upload-btn");
+  if (!paletteUploadBtn) {
+    paletteUploadBtn = document.createElement("button");
+    paletteUploadBtn.className = "inspector-toggle btn-icon palette-upload-btn";
+    paletteUploadBtn.type = "button";
+    paletteUploadBtn.title = "Upload palette for current product";
+    paletteUploadBtn.innerHTML =
+      '<span class="inspector-toggle-icon" aria-hidden="true"><i data-lucide="upload"></i></span>';
+
+    paletteUploadBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const input = document.getElementById("palFileInput");
+      if (input) {
+        input.click();
+      }
+    });
+
+    const toolGrid = document.querySelector(".bottom-center .tool-grid");
+    if (toolGrid) {
+      toolGrid.appendChild(paletteUploadBtn);
+      if (window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
+      }
+    }
+  }
+
+  updateAlertsButton();
+  return widget;
 }
 
 function scheduleAlertsButtonUpdate() {
@@ -2559,89 +3996,172 @@ function scheduleAlertsButtonUpdate() {
 }
 
 function updateAlertsButton() {
-  const button = document.querySelector(".alerts-toggle-btn");
-  if (!button) {
+  const uniqueMichiganAlerts = getUniqueMichiganAlertsForWidget();
+
+  // If no active Michigan alerts, remove the widget entirely
+  if (!uniqueMichiganAlerts.length) {
+    const existingToolbar = document.querySelector(".alerts-toolbar");
+    if (existingToolbar) {
+      existingToolbar.remove();
+    }
+    return;
+  }
+
+  // Create widget if it doesn't exist
+  const widget = document.querySelector(".mi-alerts-widget");
+  const list = widget?.querySelector(".mi-alerts-widget__list");
+  if (!widget || !list) {
     createAlertsToggleButton();
     return;
   }
 
-  const countElement = button.querySelector(".alert-count");
-  if (countElement) {
-    countElement.textContent = activeAlerts.size;
+  // Update title with count
+  const countText = document.querySelector(".mi-alerts-widget__title");
+  if (countText) {
+    countText.textContent = `Michigan Active Alerts (${uniqueMichiganAlerts.length})`;
   }
+
+  // Populate alert items
+  list.innerHTML = uniqueMichiganAlerts
+    .map((alert) => {
+      const eventName = escapeHtml(getAlertEventName(alert));
+      const color = getAlertColor(alert);
+      return `
+        <div class="mi-alerts-widget__item" title="${eventName}">
+          <span class="mi-alerts-widget__swatch" style="--swatch-color: ${color};"></span>
+          <span class="mi-alerts-widget__name">${eventName}</span>
+        </div>
+      `;
+    })
+    .join("");
 }
 
 const style = document.createElement("style");
 style.textContent = `
   .alerts-toolbar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    position: fixed;
+    top: 12px;
+    right: 12px;
     display: flex;
+    z-index: 1402;
+  }
+
+  .mi-alerts-widget {
+    border-radius: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.86);
+    background: linear-gradient(180deg, #000000 0%, #303030 100%);
+    box-shadow: 0 20px 58px rgba(2, 8, 20, 0.62), 0 0 0 1px rgba(255,255,255,0.06) inset;
+    backdrop-filter: blur(14px) saturate(140%);
+    color: #f6f9ff;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
-    z-index: 1000;
+    text-align: left;
+    font-family: "Saira", "Space Grotesk", sans-serif;
   }
 
-  .alerts-toggle-btn,
-  .alert-style-btn {
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: rgba(15, 23, 42, 0.9);
-    color: #ffffff;
-    padding: 8px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-  }
-
-  .alerts-toggle-btn:hover,
-  .alert-style-btn:hover {
-    background: rgba(30, 41, 59, 0.95);
-  }
-
-  .alert-main-icon {
+  .mi-alerts-widget__title {
+    font-size: 1.28rem;
     font-weight: 700;
-    color: #60a5fa;
+    letter-spacing: 0.03em;
   }
 
-  .alert-count {
-    margin-left: 2px;
-    background-color: #dc2626;
-    color: #fff;
-    border-radius: 999px;
-    min-width: 20px;
-    height: 20px;
+  .mi-alerts-widget__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-height: min(52vh, 440px);
+    overflow: auto;
+    padding-right: 2px;
+  }
+
+  .mi-alerts-widget__item {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    font-size: 0.8em;
-    padding: 0 6px;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    border: none;
+    background: transparent;
+    box-sizing: border-box;
+  }
+
+  .mi-alerts-widget__swatch {
+    width: 44px;
+    height: 28px;
+    border-radius: 10px;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    background: var(--swatch-color, #3b82f6);
+    box-shadow: none;
+    flex-shrink: 0;
+  }
+
+  .mi-alerts-widget__name {
+    font-size: 1.65rem;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .mi-alerts-widget__empty {
+    border-radius: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.62);
+    padding: 12px;
+    font-weight: 600;
+    opacity: 0.88;
+  }
+
+  @media (max-width: 760px) {
+    .alerts-toolbar {
+      top: 8px;
+      right: 6px;
+    }
+
+    .mi-alerts-widget {
+      width: min(400px, calc(100vw - 12px));
+      padding: 10px;
+    }
+
+    .mi-alerts-widget__item {
+      min-height: 44px;
+      padding: 3px 0;
+    }
+
+    .mi-alerts-widget__title {
+      font-size: 1.1rem;
+    }
+
+    .mi-alerts-widget__name {
+      font-size: 1.02rem;
+    }
   }
 
   .alerts-dropdown-panel {
     position: absolute;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(165deg, rgba(9, 16, 26, 0.98), rgba(5, 10, 18, 0.98));
+    border-radius: 16px;
+    border: 1px solid rgba(120, 142, 176, 0.25);
+    box-shadow: 0 24px 60px rgba(2, 8, 20, 0.55), 0 0 0 1px rgba(255,255,255,0.04) inset;
     z-index: 1001;
-    width: 320px;
-    max-height: 430px;
+    width: min(390px, calc(100vw - 20px));
+    max-height: min(68vh, 560px);
     overflow: auto;
-    padding: 10px;
+    padding: 12px;
+    color: #e7edf7;
+    backdrop-filter: blur(16px) saturate(140%);
   }
 
   .alerts-dropdown-header {
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    color: #f8fbff;
   }
 
   .alerts-dropdown-header-actions {
@@ -2651,22 +4171,23 @@ style.textContent = `
   }
 
   .alerts-dropdown-header-actions button {
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    background: #f8fafc;
-    color: #0f172a;
+    border: 1px solid rgba(120, 142, 176, 0.45);
+    border-radius: 999px;
+    background: rgba(20, 35, 58, 0.8);
+    color: #dbe7fa;
     font-size: 12px;
-    padding: 4px 8px;
+    padding: 5px 10px;
     cursor: pointer;
   }
 
   .dropdown-alert-item {
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 5px;
+    padding: 11px;
+    margin: 7px 0;
+    border-radius: 10px;
     cursor: pointer;
-    background-color: #f8f8f8;
-    transition: background-color 0.15s ease;
+    background: linear-gradient(150deg, rgba(22, 34, 53, 0.88), rgba(14, 26, 43, 0.9));
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    transition: background-color 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
   }
 
   .dropdown-alert-item-row {
@@ -2676,6 +4197,7 @@ style.textContent = `
 
   .dropdown-alert-item-icon {
     margin-right: 10px;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.18));
   }
 
   .dropdown-alert-item-title {
@@ -2687,17 +4209,18 @@ style.textContent = `
 
   .dropdown-alert-item-subtitle {
     font-size: 0.8em;
-    color: #4b5563;
+    color: #9fb2cf;
   }
 
   .alert-muted-pill {
-    background: #e5e7eb;
-    color: #374151;
+    background: rgba(250, 204, 21, 0.18);
+    color: #fef08a;
     border-radius: 999px;
     font-size: 10px;
     padding: 2px 8px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    border: 1px solid rgba(250, 204, 21, 0.35);
   }
 
   .alert-style-menu {
@@ -2857,7 +4380,9 @@ style.textContent = `
   }
 
   .dropdown-alert-item:hover {
-    background-color: #f0f0f0 !important;
+    background: linear-gradient(150deg, rgba(31, 49, 75, 0.95), rgba(20, 37, 60, 0.95)) !important;
+    border-color: rgba(125, 211, 252, 0.6);
+    transform: translateX(2px);
   }
 `;
 document.head.appendChild(style);
@@ -2939,6 +4464,8 @@ function applyRealAlertPresetRules(alert) {
     eventName = "Flash Flood Warning";
   }
 
+  eventName = normalizeMesoscaleDiscussionName(eventName);
+
   // Normalize string/array fields after preset mapping
   if (parameters.source) {
     parameters.source = normalizeAlertValue(parameters.source);
@@ -2960,7 +4487,9 @@ function applyRealAlertPresetRules(alert) {
   return parameters;
 }
 
-function addAlertToMap(alert) {
+function addAlertToMap(alert, options = {}) {
+  const triggerAutoModeOnNewAlert = options?.triggerAutoModeOnNewAlert === true;
+
   alert = applyRealAlertPresetRules(alert);
 
   if (!alert.motionVector && alert.rawText) {
@@ -2969,7 +4498,10 @@ function addAlertToMap(alert) {
 
   // Detect special weather statements from SSE or product
   try {
-    if (alert.eventName && /severe weather statement/i.test(alert.eventName)) {
+    if (
+      getAlertEventName(alert) &&
+      /severe weather statement/i.test(getAlertEventName(alert))
+    ) {
       alert.isSpecialWeatherStatement = true;
     }
     if (!alert.isSpecialWeatherStatement && alert.rawText) {
@@ -2998,6 +4530,10 @@ function addAlertToMap(alert) {
 
   applyAlertStyleToMap(alert);
   scheduleAlertsButtonUpdate();
+
+  if (triggerAutoModeOnNewAlert) {
+    void handleIncomingMichiganAlertForAutoMode(alert);
+  }
 }
 
 // Try to synthesize threat information when the alert doesn't include
@@ -3034,7 +4570,7 @@ function synthesizeThreats(alert) {
       // If this is a Severe Thunderstorm warning, look for 'tornado possible'
       if (
         (alert.eventCode && alert.eventCode.startsWith("SV")) ||
-        /Severe Thunderstorm Warning/i.test(alert.eventName || "")
+        /Severe Thunderstorm Warning/i.test(getAlertEventName(alert) || "")
       ) {
         if (
           /TORNADO\s*POSSIBLE/i.test(rt) ||
@@ -3135,6 +4671,9 @@ function detachAlertMapEventHandlers(map, alert) {
     map.off("click", innerLayerId, handlers.onLineClick);
     map.off("click", outerLayerId, handlers.onLineClick);
   }
+  if (handlers.onFillClick) {
+    map.off("click", `${id}-fill`, handlers.onFillClick);
+  }
   if (handlers.onMouseEnter) {
     map.off("mouseenter", innerLayerId, handlers.onMouseEnter);
     map.off("mouseenter", outerLayerId, handlers.onMouseEnter);
@@ -3154,8 +4693,6 @@ function startAlertFlashing() {
 
   const alert = selectedAlert;
   if (!mapInstance || !alert.mapLayerId) return;
-
-  if (alert.isCountyBased) return;
 
   const innerOutlineId = `${alert.mapLayerId}-outline-inner`;
   const outerOutlineId = `${alert.mapLayerId}-outline-outer`;
@@ -3185,10 +4722,10 @@ function startAlertFlashing() {
     } else if (flashMode === "hard") {
       const innerOpacity = flashState ? 0.0 : ALERT_OUTLINE_CONFIG.innerOpacity;
       const outerOpacity = flashState ? 1.0 : 0.6;
-      const innerWidth = ALERT_OUTLINE_CONFIG.innerWidth;
+      const innerWidth = getAlertOutlineWidthExpression("inner");
       const outerWidth = flashState
-        ? ALERT_OUTLINE_CONFIG.outerWidth + 2
-        : ALERT_OUTLINE_CONFIG.outerWidth;
+        ? getAlertOutlineWidthExpression("outer", { boost: 2 })
+        : getAlertOutlineWidthExpression("outer");
 
       mapInstance.setPaintProperty(
         innerOutlineId,
@@ -3212,12 +4749,7 @@ function stopAlertFlashing(alertToReset = selectedAlert) {
     alertFlashInterval = null;
   }
 
-  if (
-    alertToReset &&
-    alertToReset.mapLayerId &&
-    mapInstance &&
-    !alertToReset.isCountyBased
-  ) {
+  if (alertToReset && alertToReset.mapLayerId && mapInstance) {
     const innerOutlineId = `${alertToReset.mapLayerId}-outline-inner`;
     const outerOutlineId = `${alertToReset.mapLayerId}-outline-outer`;
 
@@ -3230,7 +4762,7 @@ function stopAlertFlashing(alertToReset = selectedAlert) {
       mapInstance.setPaintProperty(
         innerOutlineId,
         "line-width",
-        ALERT_OUTLINE_CONFIG.innerWidth,
+        getAlertOutlineWidthExpression("inner"),
       );
     }
 
@@ -3243,7 +4775,7 @@ function stopAlertFlashing(alertToReset = selectedAlert) {
       mapInstance.setPaintProperty(
         outerOutlineId,
         "line-width",
-        ALERT_OUTLINE_CONFIG.outerWidth,
+        getAlertOutlineWidthExpression("outer"),
       );
     }
   }
@@ -3262,7 +4794,6 @@ function flashNewAlertOutline(alert) {
     !alert ||
     !alert.mapLayerId ||
     !mapInstance ||
-    alert.isCountyBased ||
     !mapInstance.getLayer(`${alert.mapLayerId}-outline-inner`)
   ) {
     return;
@@ -3296,15 +4827,15 @@ function flashNewAlertOutline(alert) {
       innerLayerId,
       "line-width",
       dark
-        ? ALERT_OUTLINE_CONFIG.innerWidth + 1
-        : ALERT_OUTLINE_CONFIG.innerWidth,
+        ? getAlertOutlineWidthExpression("inner", { boost: 1 })
+        : getAlertOutlineWidthExpression("inner"),
     );
     mapInstance.setPaintProperty(
       outerLayerId,
       "line-width",
       dark
-        ? ALERT_OUTLINE_CONFIG.outerWidth + 1
-        : ALERT_OUTLINE_CONFIG.outerWidth,
+        ? getAlertOutlineWidthExpression("outer", { boost: 1 })
+        : getAlertOutlineWidthExpression("outer"),
     );
   };
 
@@ -3774,7 +5305,7 @@ function addAlertPolygon(map, alert) {
         source: id,
         paint: {
           "line-color": ALERT_OUTLINE_CONFIG.outerColor,
-          "line-width": ALERT_OUTLINE_CONFIG.outerWidth,
+          "line-width": getAlertOutlineWidthExpression("outer"),
           "line-opacity": ALERT_OUTLINE_CONFIG.outerOpacity,
         },
         layout: {
@@ -3791,7 +5322,7 @@ function addAlertPolygon(map, alert) {
       source: id,
       paint: {
         "line-color": ALERT_OUTLINE_CONFIG.outerColor,
-        "line-width": ALERT_OUTLINE_CONFIG.outerWidth,
+        "line-width": getAlertOutlineWidthExpression("outer"),
         "line-opacity": ALERT_OUTLINE_CONFIG.outerOpacity,
       },
       layout: {
@@ -3809,7 +5340,7 @@ function addAlertPolygon(map, alert) {
         source: id,
         paint: {
           "line-color": ALERT_OUTLINE_CONFIG.innerColor(color),
-          "line-width": ALERT_OUTLINE_CONFIG.innerWidth,
+          "line-width": getAlertOutlineWidthExpression("inner"),
           "line-opacity": ALERT_OUTLINE_CONFIG.innerOpacity,
         },
         layout: {
@@ -3826,7 +5357,7 @@ function addAlertPolygon(map, alert) {
       source: id,
       paint: {
         "line-color": ALERT_OUTLINE_CONFIG.innerColor(color),
-        "line-width": ALERT_OUTLINE_CONFIG.innerWidth,
+        "line-width": getAlertOutlineWidthExpression("inner"),
         "line-opacity": ALERT_OUTLINE_CONFIG.innerOpacity,
       },
       layout: {
@@ -4008,7 +5539,7 @@ function handleAlertLineClick(e, alert) {
       ? hexToRgb(accentColor)
       : "255, 255, 255";
   const resolvedAlertName = getAlertName(alert) || "Weather Alert";
-  const baseAlertName = alert.eventName || alert.event || "Weather Alert";
+  const baseAlertName = getAlertEventName(alert) || "Weather Alert";
   const alertSubtype =
     resolvedAlertName !== baseAlertName ? resolvedAlertName : null;
 
@@ -5529,6 +7060,13 @@ function formatEtaCountdown(hours) {
   return `${m}m`;
 }
 
+function removeStormMotionMarkers() {
+  stormTrackMarkers.forEach((marker) => marker.remove());
+  stormTrackMarkers = [];
+  stormTrackFirstMarker = null;
+  stormTrackSecondMarker = null;
+}
+
 function displayCityETAs(cities, maxHours, options = {}) {
   const existing = document.getElementById("city-eta-dialog");
   if (existing) existing.remove();
@@ -5598,7 +7136,7 @@ function displayCityETAs(cities, maxHours, options = {}) {
 
   html += `
       </div>
-      <button onclick="document.getElementById('city-eta-dialog').remove()" 
+      <button id="closeStormImpactForecast" 
         style="margin-top: 12px; width: 100%; padding: 8px; background: rgba(255,70,70,0.8); 
         border: none; border-radius: 6px; color: white; cursor: pointer; font-weight: bold;">
         Close
@@ -5608,6 +7146,14 @@ function displayCityETAs(cities, maxHours, options = {}) {
 
   dialog.innerHTML = html;
   document.body.appendChild(dialog);
+
+  const closeBtn = dialog.querySelector("#closeStormImpactForecast");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      removeStormMotionMarkers();
+      dialog.remove();
+    });
+  }
 }
 
 function markCitiesOnMap(cities) {
@@ -5779,6 +7325,17 @@ async function loadCameras() {
 function initCameraLayer() {
   if (!mapInstance || !camerasData) return;
 
+  const toggleableCameraFilter = [
+    "all",
+    ["!=", ["get", "camera_category"], "weather"],
+    ["!=", ["get", "always_visible"], true],
+  ];
+  const alwaysVisibleCameraFilter = [
+    "any",
+    ["==", ["get", "camera_category"], "weather"],
+    ["==", ["get", "always_visible"], true],
+  ];
+
   // Add camera source if it doesn't exist
   if (!mapInstance.getSource("cameras")) {
     mapInstance.addSource("cameras", {
@@ -5791,6 +7348,7 @@ function initCameraLayer() {
       id: "camera-markers",
       type: "circle",
       source: "cameras",
+      filter: toggleableCameraFilter,
       paint: {
         "circle-radius": 6,
         "circle-color": [
@@ -5814,6 +7372,7 @@ function initCameraLayer() {
       id: "camera-icons",
       type: "symbol",
       source: "cameras",
+      filter: toggleableCameraFilter,
       layout: {
         "icon-image": "camera-15",
         "icon-size": 1.2,
@@ -5821,12 +7380,53 @@ function initCameraLayer() {
       },
     });
 
+    // Add always-on weather camera marker layer
+    mapInstance.addLayer({
+      id: "camera-markers-always-on",
+      type: "circle",
+      source: "cameras",
+      filter: alwaysVisibleCameraFilter,
+      paint: {
+        "circle-radius": 7,
+        "circle-color": [
+          "case",
+          ["all", ["has", "video_url"], ["!=", ["get", "video_url"], ""]],
+          "#22c55e",
+          ["all", ["has", "image_url"], ["!=", ["get", "image_url"], ""]],
+          "#38bdf8",
+          "#f59e0b",
+        ],
+        "circle-stroke-width": 2,
+        "circle-stroke-color": "#ffffff",
+        "circle-opacity": 0.95,
+      },
+    });
+
+    mapInstance.addLayer({
+      id: "camera-icons-always-on",
+      type: "symbol",
+      source: "cameras",
+      filter: alwaysVisibleCameraFilter,
+      layout: {
+        "icon-image": "camera-15",
+        "icon-size": 1.25,
+        "icon-allow-overlap": true,
+      },
+    });
+
     // Add click handler for cameras
     mapInstance.on("click", "camera-markers", handleCameraClick);
+    mapInstance.on("click", "camera-markers-always-on", handleCameraClick);
     mapInstance.on("mouseenter", "camera-markers", () => {
       mapInstance.getCanvas().style.cursor = "pointer";
     });
+    mapInstance.on("mouseenter", "camera-markers-always-on", () => {
+      mapInstance.getCanvas().style.cursor = "pointer";
+    });
     mapInstance.on("mouseleave", "camera-markers", () => {
+      mapInstance.getCanvas().style.cursor = "";
+    });
+    mapInstance.on("mouseleave", "camera-markers-always-on", () => {
       mapInstance.getCanvas().style.cursor = "";
     });
 
@@ -5841,6 +7441,21 @@ function initCameraLayer() {
       "visibility",
       camerasEnabled ? "visible" : "none",
     );
+    mapInstance.setLayoutProperty(
+      "camera-markers-always-on",
+      "visibility",
+      "visible",
+    );
+    mapInstance.setLayoutProperty(
+      "camera-icons-always-on",
+      "visibility",
+      "visible",
+    );
+  } else {
+    const cameraSource = mapInstance.getSource("cameras");
+    if (cameraSource && typeof cameraSource.setData === "function") {
+      cameraSource.setData(camerasData);
+    }
   }
 }
 
@@ -5874,6 +7489,39 @@ function isHlsUrl(url) {
 function isDashUrl(url) {
   if (!url || typeof url !== "string") return false;
   return /\.mpd(?:$|[?#])/i.test(url);
+}
+
+function isEmbedCameraUrl(url) {
+  if (!url || typeof url !== "string") return false;
+  return /(youtube\.com\/embed\/|camstreamer\.com\/embed\/)/i.test(url);
+}
+
+function buildAutoplayEmbedUrl(rawUrl) {
+  const urlText = String(rawUrl || "").trim();
+  if (!urlText) return "";
+
+  try {
+    const parsed = new URL(urlText);
+    parsed.searchParams.set("autoplay", "1");
+    parsed.searchParams.set("mute", "1");
+    parsed.searchParams.set("playsinline", "1");
+
+    if (/youtube\.com\/embed\//i.test(parsed.href)) {
+      parsed.searchParams.set("controls", "0");
+      parsed.searchParams.set("modestbranding", "1");
+      parsed.searchParams.set("rel", "0");
+      parsed.searchParams.set("iv_load_policy", "3");
+      parsed.searchParams.set("disablekb", "1");
+      parsed.searchParams.set("fs", "0");
+    } else if (/camstreamer\.com\/embed\//i.test(parsed.href)) {
+      parsed.searchParams.set("controls", "0");
+    }
+
+    return parsed.toString();
+  } catch {
+    const separator = urlText.includes("?") ? "&" : "?";
+    return `${urlText}${separator}autoplay=1&mute=1&playsinline=1`;
+  }
 }
 
 // Helper function to detect if a URL is a video based on file extension or protocol
@@ -5977,6 +7625,22 @@ function buildCameraMediaContent(url, type) {
     return '<div style="padding: 30px; text-align: center; color: rgba(255,255,255,0.5); font-size: 13px; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px dashed rgba(255,255,255,0.2);">📷<br/>No media available</div>';
   }
 
+  if (isEmbedCameraUrl(url)) {
+    const safeEmbedUrl = escapeHtml(buildAutoplayEmbedUrl(url));
+    return `
+      <div style="position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <iframe
+          src="${safeEmbedUrl}"
+          title="Weather camera stream"
+          style="position: absolute; bottom: 0; right: 0; width: 100%; height: 100%; border: 0;"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+          allowfullscreen
+        ></iframe>
+      </div>
+    `;
+  }
+
   const wantsVideo = type === "video" || isVideoUrl(url);
   const rtspFallback = wantsVideo && isRtspUrl(url);
   const mediaUrl = rtspFallback ? getCameraSnapshotUrl(url) : url;
@@ -5993,7 +7657,7 @@ function buildCameraMediaContent(url, type) {
         <video 
           id="${videoId}"
           data-camera-source="${encodedSource}"
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;"
+          style="position: absolute; bottom: 0; right: 0; width: 100%; height: 100%; object-fit: contain;"
           autoplay
           loop
           muted
@@ -6170,6 +7834,191 @@ function handleCameraClick(e) {
     destroyCameraPlayers(popupContent);
     cameraPopup = null;
   });
+}
+
+function openCameraFeaturePopup(feature, options = {}) {
+  if (
+    !feature ||
+    !feature.geometry ||
+    !Array.isArray(feature.geometry.coordinates)
+  ) {
+    return false;
+  }
+
+  const coordinates = feature.geometry.coordinates;
+  const lng = Number(coordinates[0]);
+  const lat = Number(coordinates[1]);
+  if (!Number.isFinite(lng) || !Number.isFinite(lat)) {
+    return false;
+  }
+
+  if (mapInstance && options.panTo !== false) {
+    try {
+      mapInstance.easeTo({
+        center: [lng, lat],
+        duration: Number(options.panDurationMs) || 900,
+        essential: true,
+      });
+    } catch (error) {
+      console.warn("Unable to pan map to camera:", error);
+    }
+  }
+
+  handleCameraClick({
+    features: [feature],
+    lngLat: { lng, lat },
+  });
+  return true;
+}
+
+function ensureAlertCycleCameraOverlay() {
+  if (
+    alertCycleCameraOverlay &&
+    document.body.contains(alertCycleCameraOverlay)
+  ) {
+    return alertCycleCameraOverlay;
+  }
+
+  const overlay = document.createElement("div");
+  overlay.id = "alert-cycle-camera-overlay";
+  overlay.style.cssText = `
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: min(35vw, 440px);
+    aspect-ratio: 16 / 9;
+    z-index: 10550;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    display: none;
+  `;
+
+  document.body.appendChild(overlay);
+  alertCycleCameraOverlay = overlay;
+  return overlay;
+}
+
+function buildAlertCycleCameraOverlayMedia(feature) {
+  const videoUrl = String(feature?.properties?.video_url || "").trim();
+  const imageUrl = String(feature?.properties?.image_url || "").trim();
+  const mediaUrl = videoUrl || imageUrl;
+
+  if (!mediaUrl) {
+    return "";
+  }
+
+  if (isEmbedCameraUrl(mediaUrl)) {
+    const src = escapeHtml(buildAutoplayEmbedUrl(mediaUrl));
+    return `
+      <iframe
+        src="${src}"
+        title="Alert cycle weather camera"
+        style="width: 100%; height: 100%; border: 0;"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+        allowfullscreen
+      ></iframe>
+    `;
+  }
+
+  if (videoUrl && !isRtspUrl(videoUrl)) {
+    const src = escapeHtml(videoUrl);
+    return `
+      <video
+        src="${src}"
+        autoplay
+        muted
+        playsinline
+        loop
+        style="width: 100%; height: 100%; object-fit: cover;"
+      ></video>
+    `;
+  }
+
+  const imageSrc = escapeHtml(
+    isRtspUrl(mediaUrl) ? getCameraSnapshotUrl(mediaUrl) : mediaUrl,
+  );
+  return `<img src="${imageSrc}" alt="Alert cycle weather camera" style="width: 100%; height: 100%; object-fit: cover;" />`;
+}
+
+function showAlertCycleCameraOverlay(feature) {
+  const overlay = ensureAlertCycleCameraOverlay();
+  const mediaMarkup = buildAlertCycleCameraOverlayMedia(feature);
+  if (!mediaMarkup) {
+    overlay.style.display = "none";
+    overlay.innerHTML = "";
+    return false;
+  }
+
+  overlay.innerHTML = mediaMarkup;
+  overlay.style.display = "block";
+  return true;
+}
+
+function hideAlertCycleCameraOverlay() {
+  if (!alertCycleCameraOverlay) return;
+  alertCycleCameraOverlay.style.display = "none";
+  alertCycleCameraOverlay.innerHTML = "";
+}
+
+async function getAlertCycleCamerasInPolygon(alert) {
+  if (!turf) return [];
+
+  const geometry = ensureAlertGeometry(alert);
+  if (!geometry) return [];
+
+  if (!camerasData || !Array.isArray(camerasData.features)) {
+    await loadCameras();
+  }
+
+  const featureList = Array.isArray(camerasData?.features)
+    ? camerasData.features
+    : [];
+  if (!featureList.length) return [];
+
+  const polygonFeature = {
+    type: "Feature",
+    geometry,
+  };
+
+  const camerasInPolygon = [];
+  for (const feature of featureList) {
+    const category = String(feature?.properties?.camera_category || "")
+      .trim()
+      .toLowerCase();
+    if (category !== "weather") continue;
+
+    const coords = feature?.geometry?.coordinates;
+    if (!Array.isArray(coords) || coords.length < 2) continue;
+
+    const lng = Number(coords[0]);
+    const lat = Number(coords[1]);
+    if (!Number.isFinite(lng) || !Number.isFinite(lat)) continue;
+
+    try {
+      if (turf.booleanPointInPolygon(turf.point([lng, lat]), polygonFeature)) {
+        camerasInPolygon.push(feature);
+      }
+    } catch (error) {
+      console.warn("Failed polygon camera intersection check:", error);
+    }
+  }
+
+  return camerasInPolygon;
+}
+
+function pickPriorityAlertCamera(cameras) {
+  const list = Array.isArray(cameras) ? cameras : [];
+  if (!list.length) return null;
+
+  const houghton = list.find((feature) => {
+    const name = String(feature?.properties?.name || "").toLowerCase();
+    return name.includes("houghton") && name.includes("lake");
+  });
+  return houghton || list[0] || null;
 }
 
 // Helper function to switch between image and video in camera popup
@@ -6543,6 +8392,58 @@ function getAlertsAtPoint(lngLat) {
   return alertsInArea;
 }
 
+function getCityAlertContext(city) {
+  if (!city || !Number.isFinite(city.lat) || !Number.isFinite(city.lon)) {
+    return {
+      alerts: [],
+      badgeLabel: "",
+      badgeTitle: "",
+      promptText: "",
+    };
+  }
+
+  const alerts = getAlertsAtPoint({ lng: city.lon, lat: city.lat }).sort(
+    compareAutoCycleAlertsByPriority,
+  );
+  if (!alerts.length) {
+    return {
+      alerts: [],
+      badgeLabel: "",
+      badgeTitle: "",
+      promptText: "",
+    };
+  }
+
+  const seenNames = new Set();
+  const alertNames = [];
+  for (const alert of alerts) {
+    const name = String(getAlertEventName(alert) || "")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (!name) continue;
+    const key = name.toLowerCase();
+    if (seenNames.has(key)) continue;
+    seenNames.add(key);
+    alertNames.push(name);
+  }
+
+  const badgeLabel =
+    alertNames.length === 1
+      ? alertNames[0]
+      : `${alertNames[0]} +${alertNames.length - 1}`;
+  const promptText =
+    alertNames.length === 1
+      ? `Active alert at this location: ${alertNames[0]}.`
+      : `Active alerts at this location: ${joinSpeechListNoOxford(alertNames)}.`;
+
+  return {
+    alerts,
+    badgeLabel,
+    badgeTitle: promptText,
+    promptText,
+  };
+}
+
 function findClosestRadarSites(lngLat, count = 2) {
   if (!lngLat || radarSitesCache.length === 0 || !turf) return [];
 
@@ -6770,9 +8671,7 @@ function showAlertDropdown(point, alerts, clickedLngLat = null) {
           <p style="margin:0; font-size:0.75rem; letter-spacing:0.2em; color:#6f768b;">${
             alert.eventCode || "ALERT"
           }</p>
-          <strong style="display:block; margin:6px 0; font-size:1rem;">${
-            alert.eventName
-          }</strong>
+          <strong style="display:block; margin:6px 0; font-size:1rem;">${getAlertEventName(alert)}</strong>
           <span style="font-size:0.85rem; color:#a1a7bb;">${countyPrimary}${countySuffix}</span>
         </div>
         <span style="font-size:1.2rem; color:#5f6578;">→</span>
@@ -6845,11 +8744,12 @@ function showAlertDropdown(point, alerts, clickedLngLat = null) {
 
 function showDetailedAlert(alert) {
   try {
-    focusAlertPolygonOnMap(alert, { padding: 44, duration: 900, maxZoom: 11 });
+    focusAlertPolygonOnMap(alert, { padding: 120, duration: 900, maxZoom: 11 });
 
     const previousSelection = selectedAlert;
     selectedAlert = alert;
     stopAlertFlashing(previousSelection);
+    bringAlertLayersToFront(alert, mapInstance);
     startFocusedAlertPulse(alert);
 
     const existing = document.getElementById("alert-detail");
@@ -6859,10 +8759,29 @@ function showDetailedAlert(alert) {
     const expireStr = formatExpiry12h(alert.expires);
     const expiringSoon = isExpiringSoon(alert.expires);
     const threatsHtml = buildThreatsList(alert);
-    const countiesHtml =
+    const displayEventName = normalizeAlertDisplayCase(
+      getAlertEventName(alert) || "Weather Alert",
+    );
+    const countyList =
       alert.counties && alert.counties.length
-        ? alert.counties.join(" &bull; ")
-        : "Not specified";
+        ? alert.counties
+            .map(formatCountyDisplayName)
+            .filter(Boolean)
+            .sort((a, b) =>
+              a.localeCompare(b, undefined, {
+                sensitivity: "base",
+              }),
+            )
+        : [];
+    const countiesHtml = countyList.length
+      ? (() => {
+          const rows = [];
+          for (let i = 0; i < countyList.length; i += 5) {
+            rows.push(countyList.slice(i, i + 5).join(" &bull; "));
+          }
+          return rows.join("<br>");
+        })()
+      : "Not specified";
 
     // Inject styles once
     if (!document.getElementById("alert-cinematic-style")) {
@@ -6870,123 +8789,164 @@ function showDetailedAlert(alert) {
       style.id = "alert-cinematic-style";
       style.textContent = `
         @keyframes acPanelIn {
-          from { opacity: 0; transform: translateY(12px) scale(0.98); }
-          to   { opacity: 1; transform: translateY(0)   scale(1);    }
+          from { opacity: 0; transform: translateY(14px) scale(0.975); filter: blur(3px); }
+          to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
         }
         .alert-cinematic {
           position: fixed;
           top: 20px;
           left: 20px;
-          width: min(340px, calc(100vw - 40px));
-          background: rgba(10, 12, 18, 0.93);
-          backdrop-filter: blur(18px) saturate(130%);
-          border-radius: 16px;
-          border-left: 4px solid var(--ac-color);
-          box-shadow: 0 16px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.07);
-          color: #e8eaf0;
-          font-family: system-ui, -apple-system, sans-serif;
-          animation: acPanelIn 0.28s ease-out;
-          z-index: 1300;
+          width: auto;
+          max-width: calc(100vw - 40px);
+          padding: 0;
+          background:
+            radial-gradient(circle at 8% 0%, color-mix(in srgb, var(--ac-color) 28%, transparent), transparent 42%),
+            linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 45%, #252525 100%);
+          backdrop-filter: blur(32px) saturate(160%);
+          -webkit-backdrop-filter: blur(32px) saturate(160%);
+          border-radius: 28px;
+          border: 5px solid color-mix(in srgb, var(--ac-color) 48%, rgba(245, 245, 245, 0.82));
+          box-shadow: 
+            0 8px 32px rgba(0,0,0,0.75),
+            0 32px 96px rgba(0,0,0,0.85),
+            inset 0 1px 1px rgba(255,255,255,0.12),
+            0 0 1px rgba(255,255,255,0.08);
+          color: #f7f8fb;
+          font-family: "Saira", "Space Grotesk", sans-serif;
+          animation: acPanelIn 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+          z-index: 1315;
           overflow: hidden;
+          min-width: 320px;
         }
         .ac-header {
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
-          padding: 14px 14px 10px 16px;
-          background: linear-gradient(90deg, color-mix(in srgb, var(--ac-color) 14%, transparent), transparent 70%);
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          padding: 20px 22px 18px 24px;
+          background: linear-gradient(90deg, color-mix(in srgb, var(--ac-color) 28%, transparent), transparent 70%);
+          border-bottom: 2px solid color-mix(in srgb, var(--ac-color) 32%, rgba(255,255,255,0.18));
+          gap: 12px;
         }
         .ac-title {
           display: flex;
           flex-direction: column;
-          gap: 2px;
+          gap: 6px;
+          flex: 1;
+          min-width: 0;
         }
         .ac-name {
-          font-size: 1.25rem;
-          font-weight: 700;
-          line-height: 1.15;
-          letter-spacing: -0.01em;
+          font-size: clamp(2.6rem, 5.2vw, 3.8rem);
+          font-weight: 800;
+          line-height: 1;
+          letter-spacing: -0.02em;
           color: #fff;
+          text-wrap: balance;
+          text-shadow: 
+            0 4px 12px rgba(0,0,0,0.6),
+            0 2px 6px rgba(0,0,0,0.5);
         }
         .ac-expires {
-          font-size: 0.78rem;
-          font-weight: 500;
-          letter-spacing: 0.04em;
-          color: rgba(255,255,255,0.55);
-          margin-top: 1px;
+          font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+          font-weight: 600;
+          letter-spacing: 0.02em;
+          color: rgba(255,255,255,0.85);
+          margin-top: 4px;
         }
-        .ac-expires.soon { color: #f87171; }
+        .ac-expires.soon { color: #ff8a80; font-weight: 700; }
         .ac-close {
           flex-shrink: 0;
-          width: 26px;
-          height: 26px;
-          border-radius: 7px;
+          width: 28px;
+          height: 28px;
+          border-radius: 8px;
           border: 1px solid rgba(255,255,255,0.15);
-          background: rgba(255,255,255,0.05);
-          color: rgba(255,255,255,0.7);
+          background: rgba(255,255,255,0.04);
+          color: rgba(255,255,255,0.6);
           font-size: 1rem;
           line-height: 1;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: background 0.15s, color 0.15s;
-          margin-left: 10px;
-          margin-top: 1px;
+          transition: all 0.15s;
+          opacity: 0.5;
         }
-        .ac-close:hover { background: rgba(255,255,255,0.12); color: #fff; }
+        .ac-close:hover { 
+          background: rgba(255,255,255,0.12); 
+          color: rgba(255,255,255,0.9);
+          opacity: 1;
+        }
         .ac-body {
-          padding: 10px 16px 14px;
+          padding: 18px 24px 22px;
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 14px;
         }
         .ac-section-label {
-          font-size: 0.6rem;
-          letter-spacing: 0.18em;
+          font-size: 0.92rem;
+          letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.38);
-          margin-bottom: 4px;
+          color: color-mix(in srgb, var(--ac-color) 85%, rgba(255,255,255,0.55));
+          margin-bottom: 6px;
+          font-weight: 700;
         }
         .ac-threats {
           display: flex;
           flex-direction: column;
-          gap: 4px;
+          gap: 6px;
         }
         .ac-threat-row {
           display: flex;
           align-items: baseline;
-          gap: 6px;
-          font-size: 0.97rem;
-          line-height: 1.4;
+          gap: 10px;
+          font-size: clamp(1.28rem, 2.4vw, 1.75rem);
+          line-height: 1.3;
         }
         .ac-threat-icon {
-          font-size: 0.85rem;
+          font-size: 1.1rem;
           flex-shrink: 0;
-          opacity: 0.85;
+          opacity: 0.9;
+          color: color-mix(in srgb, var(--ac-color) 95%, white);
         }
         .ac-threat-label {
-          font-weight: 600;
+          font-weight: 700;
           color: #fff;
           white-space: nowrap;
         }
         .ac-threat-val {
-          color: rgba(255,255,255,0.75);
-          font-size: 0.92rem;
+          color: rgba(255,255,255,0.9);
+          font-size: clamp(1.18rem, 2.2vw, 1.65rem);
+          font-weight: 600;
         }
         .ac-counties {
-          font-size: 0.88rem;
-          color: rgba(255,255,255,0.6);
-          line-height: 1.5;
+          font-size: clamp(1.28rem, 2.4vw, 1.75rem);
+          color: rgba(255,255,255,0.92);
+          line-height: 1.4;
+          text-wrap: pretty;
+          font-weight: 500;
         }
         .ac-divider {
-          height: 1px;
-          background: rgba(255,255,255,0.06);
-          margin: 0;
+          height: 2px;
+          background: linear-gradient(90deg, color-mix(in srgb, var(--ac-color) 36%, transparent), color-mix(in srgb, var(--ac-color) 12%, transparent));
+          margin: 2px 0;
         }
-        @media (max-width: 420px) {
-          .alert-cinematic { top: 10px; left: 10px; width: calc(100vw - 20px); }
+        @media (max-width: 520px) {
+          .alert-cinematic {
+            top: 12px;
+            left: 12px;
+            max-width: calc(100vw - 24px);
+            border-radius: 22px;
+            border-width: 4px;
+          }
+          .ac-header { 
+            padding: 16px 18px 14px 20px;
+            gap: 8px;
+          }
+          .ac-body { padding: 14px 18px 18px; }
+          .ac-close {
+            width: 26px;
+            height: 26px;
+            font-size: 0.95rem;
+          }
         }
       `;
       document.head.appendChild(style);
@@ -7000,7 +8960,7 @@ function showDetailedAlert(alert) {
     panel.innerHTML = `
       <div class="ac-header">
         <div class="ac-title">
-          <div class="ac-name">${alert.eventName || "Weather Alert"}</div>
+          <div class="ac-name">${displayEventName}</div>
           <div class="ac-expires${expiringSoon ? " soon" : ""}">Until ${expireStr}</div>
         </div>
         <button class="ac-close" aria-label="Close">&#x2715;</button>
@@ -7033,6 +8993,128 @@ function showDetailedAlert(alert) {
   }
 }
 
+function normalizeAlertDisplayCase(input) {
+  const value = String(input || "").trim();
+  if (!value) return "";
+
+  const keepUpper = new Set([
+    "NWS",
+    "NOAA",
+    "SVR",
+    "TOR",
+    "SPS",
+    "AM",
+    "PM",
+    "TVS",
+    "PDS",
+    "USA",
+  ]);
+  return value.replace(/[A-Za-z][A-Za-z'\-/]*/g, (word) => {
+    const upper = word.toUpperCase();
+    if (keepUpper.has(upper)) return upper;
+    const normalized = word.toLowerCase();
+    return normalized.charAt(0).toUpperCase() + normalized.slice(1);
+  });
+}
+
+const ALERT_STATE_NAME_SUFFIX_PATTERN =
+  /,\s*(Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New\s+Hampshire|New\s+Jersey|New\s+Mexico|New\s+York|North\s+Carolina|North\s+Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode\s+Island|South\s+Carolina|South\s+Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West\s+Virginia|Wisconsin|Wyoming|District\s+of\s+Columbia)\b/gi;
+const ALERT_STATE_ABBR_SUFFIX_PATTERN = /(?:,|\s)-?\s*([A-Za-z]{2})\b/g;
+const US_STATE_ABBREVIATIONS = new Set([
+  "AL",
+  "AK",
+  "AZ",
+  "AR",
+  "CA",
+  "CO",
+  "CT",
+  "DE",
+  "FL",
+  "GA",
+  "HI",
+  "ID",
+  "IL",
+  "IN",
+  "IA",
+  "KS",
+  "KY",
+  "LA",
+  "ME",
+  "MD",
+  "MA",
+  "MI",
+  "MN",
+  "MS",
+  "MO",
+  "MT",
+  "NE",
+  "NV",
+  "NH",
+  "NJ",
+  "NM",
+  "NY",
+  "NC",
+  "ND",
+  "OH",
+  "OK",
+  "OR",
+  "PA",
+  "RI",
+  "SC",
+  "SD",
+  "TN",
+  "TX",
+  "UT",
+  "VT",
+  "VA",
+  "WA",
+  "WV",
+  "WI",
+  "WY",
+  "DC",
+]);
+
+function formatCountyDisplayName(input) {
+  const base = normalizeAlertDisplayCase(input)
+    .replace(ALERT_STATE_NAME_SUFFIX_PATTERN, "")
+    .replace(ALERT_STATE_ABBR_SUFFIX_PATTERN, (match, abbr) =>
+      US_STATE_ABBREVIATIONS.has(String(abbr || "").toUpperCase()) ? "" : match,
+    )
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+,/g, ",")
+    .replace(/,+$/g, "")
+    .trim();
+  return base;
+}
+
+function normalizeThreatDisplayText(input) {
+  const raw = String(input || "")
+    .replace(/[_]+/g, " ")
+    .trim();
+  if (!raw) return "";
+
+  const normalized = normalizeAlertDisplayCase(raw)
+    .replace(/\s*\/+\s*/g, "/")
+    .replace(/\s*[-]\s*/g, " - ")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+
+  const map = {
+    Radar: "Radar",
+    Observed: "Observed",
+    Confirmed: "Confirmed",
+    Considerable: "Considerable",
+    Destructive: "Destructive",
+    Catastrophic: "Catastrophic",
+    Source: "Source",
+    Tornado: "Tornado",
+    Wind: "Wind",
+    Hail: "Hail",
+  };
+
+  return normalized.replace(/\b[A-Za-z]+\b/g, (word) => map[word] || word);
+}
+
 function formatExpiry12h(expiresDate) {
   if (!expiresDate) return "N/A";
   const d = new Date(expiresDate);
@@ -7042,6 +9124,17 @@ function formatExpiry12h(expiresDate) {
     minute: "2-digit",
     hour12: true,
   });
+}
+
+function hideDetailedAlert() {
+  const detail = document.getElementById("alert-detail");
+  if (detail) {
+    detail.remove();
+    stopFocusedAlertPulse();
+    if (enableAlertFlashing && selectedAlert) {
+      startAlertFlashing();
+    }
+  }
 }
 
 function buildThreatsList(alert) {
@@ -7058,10 +9151,11 @@ function buildThreatsList(alert) {
   const hasWind = threats.maxWindGust || threats.windThreat;
   if (hasWind) {
     const parts = [threats.maxWindGust, threats.windThreat]
+      .map(normalizeThreatDisplayText)
       .filter(Boolean)
-      .join(", ");
+      .join(" | ");
     rows.push(
-      `<div class="ac-threat-row"><span class="ac-threat-icon">💨</span><span class="ac-threat-label">Max Wind:</span><span class="ac-threat-val">${parts}</span></div>`,
+      `<div class="ac-threat-row"><span class="ac-threat-icon"><i class="fa-solid fa-wind"></i></span><span class="ac-threat-label">Max Wind:</span><span class="ac-threat-val">${parts}</span></div>`,
     );
   }
 
@@ -7069,10 +9163,11 @@ function buildThreatsList(alert) {
   const hasHail = threats.maxHailSize || threats.hailThreat;
   if (hasHail) {
     const parts = [threats.maxHailSize, threats.hailThreat]
+      .map(normalizeThreatDisplayText)
       .filter(Boolean)
-      .join(", ");
+      .join(" | ");
     rows.push(
-      `<div class="ac-threat-row"><span class="ac-threat-icon">🧊</span><span class="ac-threat-label">Max Hail:</span><span class="ac-threat-val">${parts}</span></div>`,
+      `<div class="ac-threat-row"><span class="ac-threat-icon"><i class="fa-solid fa-snowflake"></i></span><span class="ac-threat-label">Max Hail:</span><span class="ac-threat-val">${parts}</span></div>`,
     );
   }
 
@@ -7080,10 +9175,11 @@ function buildThreatsList(alert) {
   const hasTornado = threats.tornadoDetection || threats.tornadoDamageThreat;
   if (hasTornado) {
     const parts = [threats.tornadoDetection, threats.tornadoDamageThreat]
+      .map(normalizeThreatDisplayText)
       .filter(Boolean)
-      .join(", ");
+      .join(" | ");
     rows.push(
-      `<div class="ac-threat-row"><span class="ac-threat-icon">🌪️</span><span class="ac-threat-label">Tornado:</span><span class="ac-threat-val">${parts}</span></div>`,
+      `<div class="ac-threat-row"><span class="ac-threat-icon"><i class="fa-solid fa-tornado"></i></span><span class="ac-threat-label">Tornado:</span><span class="ac-threat-val">${parts}</span></div>`,
     );
   }
 
@@ -7149,6 +9245,11 @@ function getAlertName(alert) {
 
   if (!eventName) {
     return "Weather Alert";
+  }
+
+  eventName = normalizeMesoscaleDiscussionName(eventName);
+  if (eventName === "Mesoscale Discussion") {
+    return eventName;
   }
 
   const threatObj = normalizedAlert.threats || {};
@@ -7233,7 +9334,7 @@ function getAlertName(alert) {
     // Only check for OBSERVED if no DAMAGE THREAT was found
     else if (/TORNADO\.{3}OBSERVED/i.test(alertText)) {
       console.log("👁️ [getAlertName] Observed Tornado Warning detected");
-      return "Tornado Warning (Observed)";
+      return "Observed Tornado Warning";
     }
   }
 
@@ -7260,6 +9361,1268 @@ function getAlertName(alert) {
 
   return eventName;
 }
+
+function toSpeechSentence(value) {
+  return String(value || "")
+    .replace(/\s+/g, " ")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .trim();
+}
+
+function splitWordsForSpeech(value) {
+  return toSpeechSentence(value)
+    .split(/\s+/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function joinSpeechList(items) {
+  const parts = (Array.isArray(items) ? items : [])
+    .map((item) => toSpeechSentence(item))
+    .filter(Boolean);
+
+  if (!parts.length) return "";
+  if (parts.length === 1) return parts[0];
+  if (parts.length === 2) return `${parts[0]} and ${parts[1]}`;
+
+  return `${parts.slice(0, -1).join(", ")}, and ${parts[parts.length - 1]}`;
+}
+
+function joinSpeechListNoOxford(items) {
+  const parts = (Array.isArray(items) ? items : [])
+    .map((item) => toSpeechSentence(item))
+    .filter(Boolean);
+
+  if (!parts.length) return "";
+  if (parts.length === 1) return parts[0];
+  if (parts.length === 2) return `${parts[0]} and ${parts[1]}`;
+
+  return `${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}`;
+}
+
+function cleanSpeechNarrationText(text) {
+  let value = toSpeechSentence(text);
+  if (!value) return "";
+
+  value = value
+    // Convert NWS-style ellipses into natural pauses.
+    .replace(/\.{2,}/g, ", ")
+    .replace(/,\s*,+/g, ", ")
+    .replace(/,\s*([.!?])/g, "$1")
+    .replace(/\s*([!?])\./g, "$1")
+    .replace(/([a-z0-9])\.([a-z0-9])/gi, "$1. $2")
+    .replace(/\s+([!?.,;:])/g, "$1")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+
+  return value;
+}
+
+function normalizeCountyForSpeech(countyName) {
+  const value = toSpeechSentence(countyName);
+  if (!value) return "";
+  return value.replace(/\b([A-Z]{2})\b$/, (state) => {
+    const code = state.toUpperCase();
+    const spoken = {
+      AL: "Alabama",
+      AK: "Alaska",
+      AZ: "Arizona",
+      AR: "Arkansas",
+      CA: "California",
+      CO: "Colorado",
+      CT: "Connecticut",
+      DE: "Delaware",
+      FL: "Florida",
+      GA: "Georgia",
+      HI: "Hawaii",
+      IA: "Iowa",
+      ID: "Idaho",
+      IL: "Illinois",
+      IN: "Indiana",
+      KS: "Kansas",
+      KY: "Kentucky",
+      LA: "Louisiana",
+      MA: "Massachusetts",
+      MD: "Maryland",
+      ME: "Maine",
+      MI: "Michigan",
+      MN: "Minnesota",
+      MO: "Missouri",
+      MS: "Mississippi",
+      MT: "Montana",
+      NC: "North Carolina",
+      ND: "North Dakota",
+      NE: "Nebraska",
+      NH: "New Hampshire",
+      NJ: "New Jersey",
+      NM: "New Mexico",
+      NV: "Nevada",
+      NY: "New York",
+      OH: "Ohio",
+      OK: "Oklahoma",
+      OR: "Oregon",
+      PA: "Pennsylvania",
+      RI: "Rhode Island",
+      SC: "South Carolina",
+      SD: "South Dakota",
+      TN: "Tennessee",
+      TX: "Texas",
+      UT: "Utah",
+      VA: "Virginia",
+      VT: "Vermont",
+      WA: "Washington",
+      WI: "Wisconsin",
+      WV: "West Virginia",
+      WY: "Wyoming",
+      GU: "Guam",
+      PR: "Puerto Rico",
+      VI: "U.S. Virgin Islands",
+      MP: "Northern Mariana Islands",
+      AS: "American Samoa",
+      FM: "Federated States of Micronesia",
+    };
+    return spoken[code] || code;
+  });
+}
+
+function getAreaPhraseForSpeech(alert, maxCount = 3) {
+  const counties = Array.isArray(alert?.counties) ? alert.counties : [];
+  const cleaned = counties
+    .map(normalizeCountyForSpeech)
+    .map((name) => name.replace(/,\s*[^,]+$/, "").trim())
+    .map((name) =>
+      name
+        .replace(/\s+county$/i, "")
+        .replace(/\s+parish$/i, "")
+        .replace(/\s+census area$/i, "")
+        .replace(/\s+borough$/i, "")
+        .replace(/\s+municipality$/i, "")
+        .trim(),
+    )
+    .filter(Boolean)
+    .slice(0, Math.max(1, Number(maxCount) || 3));
+
+  const deduped = [...new Set(cleaned)];
+
+  if (!deduped.length) {
+    return "your area";
+  }
+
+  if (deduped.length === 1) {
+    return `${deduped[0]} County`;
+  }
+
+  const countyList = joinSpeechListNoOxford(deduped);
+  const countyWord = "Counties";
+
+  if (counties.length > deduped.length) {
+    return `${countyList} ${countyWord} and nearby areas`;
+  }
+
+  return `${countyList} ${countyWord}`;
+}
+
+function formatAlertTimeForSpeech(dateValue) {
+  if (!dateValue) return "";
+  const d = new Date(dateValue);
+  if (Number.isNaN(d.getTime())) return "";
+  return d.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+}
+
+function parseStormMotionFromRawText(rawText) {
+  const text = String(rawText || "");
+  if (!text) return "";
+
+  const atLine = text.match(
+    /At\s+[^,]+,\s+(?:a\s+)?(?:severe\s+)?thunderstorm\s+was\s+located\s+(.+?),\s+moving\s+([a-z\-\s]+)\s+at\s+([0-9]+)\s*(mph|knots?)/i,
+  );
+  if (!atLine) return "";
+
+  const location = toSpeechSentence(atLine[1]);
+  const direction = toSpeechSentence(atLine[2]).toLowerCase();
+  const speed = toSpeechSentence(atLine[3]);
+  const unit = /knot/i.test(atLine[4]) ? "knots" : "miles per hour";
+
+  return `A storm is near ${location}, moving ${direction} at about ${speed} ${unit}.`;
+}
+
+function reformatHailSize(sizeStr) {
+  if (!sizeStr) return null;
+  const lower = String(sizeStr).toLowerCase();
+
+  // Handle common descriptions first (e.g., "nickel size", "quarter size")
+  const commonSizes = [
+    "pea",
+    "marble",
+    "penny",
+    "nickel",
+    "quarter",
+    "half-dollar",
+    "golf ball",
+    "tennis ball",
+    "baseball",
+    "softball",
+  ];
+  for (const size of commonSizes) {
+    if (lower.includes(size)) {
+      return `hail the size of a ${size}`;
+    }
+  }
+
+  // Handle numeric sizes (e.g., "0.88 IN")
+  const numMatch = lower.match(/(\d+(?:\.\d+)?)\s*in(?:ch(?:es)?)?/i);
+  if (numMatch) {
+    const inches = parseFloat(numMatch[1]);
+    const sizeNames = {
+      0.25: "small pea",
+      0.5: "pea",
+      0.75: "marble",
+      1: "penny",
+      1.25: "nickel",
+      1.5: "quarter",
+      1.75: "half-dollar",
+      2: "golf ball",
+      2.5: "tennis ball",
+      3: "baseball",
+      4: "softball",
+    };
+
+    // Find closest match
+    let closest = null;
+    let minDiff = Infinity;
+    for (const [val, name] of Object.entries(sizeNames)) {
+      const diff = Math.abs(inches - parseFloat(val));
+      if (diff < minDiff) {
+        minDiff = diff;
+        closest = name;
+      }
+    }
+
+    if (closest) return `hail the size of a ${closest}`;
+    if (inches < 0.5) return `hail smaller than a pea`;
+    return `hail around ${inches} inches`;
+  }
+
+  // Fallback
+  return null;
+}
+
+function reformatWindGust(gustStr) {
+  if (!gustStr) return null;
+  const lower = String(gustStr).toLowerCase();
+  const numMatch = lower.match(/(\d+)\s*m(?:ph|iles?(?:\s+per\s+hour)?)?/i);
+  if (numMatch) {
+    const mph = parseInt(numMatch[1]);
+    let intensity = "moderate";
+    if (mph >= 60) intensity = "damaging";
+    else if (mph >= 50) intensity = "strong";
+    else if (mph >= 40) intensity = "gusty";
+
+    return `${intensity} wind gusts around ${mph} miles per hour`;
+  }
+  return null;
+}
+
+function getHazardPhraseForSpeech(alert) {
+  const threat = alert?.threats || {};
+  const hailStr = threat.maxHailSize
+    ? reformatHailSize(threat.maxHailSize)
+    : null;
+  const windStr = threat.maxWindGust
+    ? reformatWindGust(threat.maxWindGust)
+    : null;
+  const directHazards = toSpeechSentence(alert?.hazards || "");
+
+  if (
+    directHazards &&
+    (directHazards.toLowerCase().includes("tornado") ||
+      directHazards.toLowerCase().includes("wind") ||
+      directHazards.toLowerCase().includes("hail"))
+  ) {
+    // Reformulate direct hazards naturally
+    let reformulated = directHazards
+      .toLowerCase()
+      .replace(/wind gusts? (?:up )?to /gi, "wind gusts around ")
+      .replace(/and (.+) size hail/gi, (match, size) => {
+        const reformatted = reformatHailSize(size + " hail");
+        return reformatted ? " and " + reformatted : match;
+      });
+    return `Expected hazards include ${reformulated.charAt(0).toUpperCase()}${reformulated.slice(1)}${reformulated.endsWith(".") ? "" : "."}`;
+  }
+
+  const parts = [];
+  if (windStr) {
+    parts.push(windStr);
+  }
+  if (hailStr) {
+    parts.push(hailStr);
+  }
+
+  if (!parts.length) {
+    return "";
+  }
+
+  return `Watch for ${joinSpeechList(parts)}.`;
+}
+
+function getImpactPhraseForSpeech(alert) {
+  const impactText = cleanSpeechNarrationText(alert?.impact || "");
+  if (impactText) {
+    return impactText.endsWith(".") ? impactText : `${impactText}.`;
+  }
+
+  const eventCode = String(alert?.eventCode || "").toUpperCase();
+  if (eventCode === "SV.W") {
+    return "Damage to trees, vehicles, windows, and roofs is possible.";
+  }
+  if (eventCode === "TO.W") {
+    return "A tornado may cause significant damage if it reaches populated areas.";
+  }
+  if (eventCode === "FF.W" || eventCode === "FL.W") {
+    return "Flooded roads and low-lying areas may become dangerous quickly.";
+  }
+
+  return "";
+}
+
+function getSafetyPhraseForSpeech(alert) {
+  const actionText = cleanSpeechNarrationText(
+    alert?.precautionaryActions || "",
+  );
+  if (actionText) {
+    const firstSentence = actionText.split(/(?<=[.!?])\s+/)[0].trim();
+    const calmSentence = firstSentence.replace(/[!?]+$/, "");
+    return calmSentence.endsWith(".") ? calmSentence : `${calmSentence}.`;
+  }
+
+  const eventCode = String(alert?.eventCode || "").toUpperCase();
+  if (eventCode === "SV.W" || eventCode === "TO.W") {
+    return "Move to an interior room on the lowest floor and stay away from windows.";
+  }
+  if (eventCode === "FF.W" || eventCode === "FL.W" || eventCode === "FA.Y") {
+    return "Never drive across flooded roads, and move to higher ground if water begins to rise.";
+  }
+  if (eventCode === "FW.W") {
+    return "Avoid outdoor burning and any activity that could create sparks.";
+  }
+
+  return "Stay alert and follow instructions from local officials.";
+}
+
+function buildAlertSpeechNarration(alert, options = {}) {
+  if (!alert || typeof alert !== "object") {
+    return "";
+  }
+
+  const resolvedName = toSpeechSentence(getAlertName(alert) || "Weather Alert");
+  const eventCode = String(alert.eventCode || "").toUpperCase();
+  const area = getAreaPhraseForSpeech(alert, options.maxAreas || 3);
+  const expiresAt = formatAlertTimeForSpeech(alert.expires);
+  const expiresPhrase = expiresAt
+    ? `until ${expiresAt}`
+    : "for the next little while";
+  const action = String(alert.action || "").toUpperCase();
+
+  const lines = [];
+
+  if (eventCode === "SV.W") {
+    lines.push(`Attention. ${resolvedName} for ${area}, ${expiresPhrase}.`);
+    if (action === "CON" || action === "EXT") {
+      lines.push("This warning is still active.");
+    }
+
+    const motion = parseStormMotionFromRawText(alert.rawText);
+    if (motion) lines.push(motion);
+    const hazards = getHazardPhraseForSpeech(alert);
+    if (hazards) lines.push(hazards);
+
+    const damageThreat = toSpeechSentence(
+      alert?.threats?.thunderstormDamageThreat || "",
+    ).toLowerCase();
+    if (damageThreat) {
+      lines.push(`Damage threat is ${damageThreat}.`);
+    }
+
+    const impact = getImpactPhraseForSpeech(alert);
+    if (impact) lines.push(impact);
+    lines.push(getSafetyPhraseForSpeech(alert));
+
+    return cleanSpeechNarrationText(
+      lines.map(toSpeechSentence).filter(Boolean).join(" "),
+    );
+  }
+
+  if (eventCode === "SPS") {
+    const rawHeadline = String(alert.rawText || "").match(/\.\.\.(.+?)\.\.\./s);
+    const headline = toSpeechSentence(rawHeadline?.[1] || "");
+
+    if (
+      /fire weather/i.test(headline) ||
+      /fire weather/i.test(alert.rawText || "")
+    ) {
+      lines.push(`Special Weather Statement for ${area}.`);
+      lines.push(
+        "Near critical fire weather conditions are expected, with dry air and gusty winds.",
+      );
+      const impact = getImpactPhraseForSpeech(alert);
+      if (impact) lines.push(impact);
+      lines.push(getSafetyPhraseForSpeech({ ...alert, eventCode: "FW.W" }));
+      return cleanSpeechNarrationText(
+        lines.map(toSpeechSentence).filter(Boolean).join(" "),
+      );
+    }
+
+    // Reformulate SPS narration to be more natural
+    lines.push(`Alert: ${area}.`);
+
+    // Extract main scenario from headline
+    if (headline) {
+      // Shorten and reform headline
+      let reformedHeadline = headline
+        .toLowerCase()
+        .replace(/through \d{1,2}:\d{2}\s*(?:am|pm).*$/i, "")
+        .trim();
+      if (reformedHeadline) {
+        lines.push(
+          `${reformedHeadline.charAt(0).toUpperCase()}${reformedHeadline.slice(1)}.`,
+        );
+      }
+    }
+
+    // Extract SPS hazards directly from rawText (format: "HAZARD...Wind gusts up to 50 mph...")
+    const hazardMatch = String(alert.rawText || "").match(
+      /HAZARD\.\.\.(.*?)(?:\n|$)/,
+    );
+    if (hazardMatch) {
+      const hazardText = toSpeechSentence(hazardMatch[1].trim());
+      if (hazardText) {
+        // Reformulate hazards naturally
+        const reformulated = hazardText
+          .replace(/Wind gusts? (?:up )?to /gi, "wind gusts around ")
+          .replace(/and (.+?) size hail/gi, (match, size) => {
+            const reformed = reformatHailSize(size + " hail");
+            return reformed ? " and " + reformed : match;
+          });
+        lines.push(reformulated);
+      }
+    }
+
+    // Fallback to generic impact if no specific hazards found
+    if (!hazardMatch) {
+      const impact = getImpactPhraseForSpeech(alert);
+      if (impact) lines.push(impact);
+    }
+
+    return cleanSpeechNarrationText(
+      lines.map(toSpeechSentence).filter(Boolean).join(" "),
+    );
+  }
+
+  lines.push(`Attention. ${resolvedName} for ${area}, ${expiresPhrase}.`);
+  const hazards = getHazardPhraseForSpeech(alert);
+  if (hazards) lines.push(hazards);
+  const impact = getImpactPhraseForSpeech(alert);
+  if (impact) lines.push(impact);
+  lines.push(getSafetyPhraseForSpeech(alert));
+
+  return cleanSpeechNarrationText(
+    lines.map(toSpeechSentence).filter(Boolean).join(" "),
+  );
+}
+
+const alertSpeechState = {
+  voices: [],
+  voicesReady: false,
+  loadPromise: null,
+  preferredVoiceName:
+    "Microsoft Eric Online (Natural) - English (United States)",
+  hasUserGestureUnlock: false,
+  unlockWarningShown: false,
+  unlockListenersInstalled: false,
+};
+
+const alertSpeechPlaybackState = {
+  activeAudio: null,
+  activeAudioObjectUrl: "",
+};
+const ALERT_AI_SUMMARY_TIMEOUT_MS = 10000;
+const alertAiSummaryCache = new Map();
+const WEATHER_AI_SUMMARY_TIMEOUT_MS = 12000;
+const weatherAiSummaryCache = new Map();
+
+function getAlertAiSummaryCacheKey(alert) {
+  if (!alert || typeof alert !== "object") return "";
+  const id = String(alert.id || "unknown");
+  const sent = String(alert.sent || "");
+  const expires = String(alert.expires || "");
+  const eventCode = String(alert.eventCode || "");
+  const raw = String(alert.rawText || "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return [id, sent, expires, eventCode, raw].join("|");
+}
+
+async function fetchAiAlertSummary(alert, options = {}) {
+  if (!alert || typeof alert !== "object") return "";
+  const rawText = String(alert.rawText || "").trim();
+  if (!rawText) return "";
+
+  const cacheKey = getAlertAiSummaryCacheKey(alert);
+  if (cacheKey && alertAiSummaryCache.has(cacheKey)) {
+    return alertAiSummaryCache.get(cacheKey);
+  }
+
+  const payload = {
+    rawText,
+    eventName: String(getAlertEventName(alert) || "Weather Alert"),
+  };
+  console.log("[AI PROMPT][alert-summary][client]", payload);
+
+  const controller =
+    typeof AbortController === "function" ? new AbortController() : null;
+  const timeoutId = controller
+    ? setTimeout(() => controller.abort(), ALERT_AI_SUMMARY_TIMEOUT_MS)
+    : null;
+
+  try {
+    const response = await fetch("/api/alert-summary", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: controller ? controller.signal : undefined,
+    });
+
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(
+        result?.details || result?.error || `HTTP ${response.status}`,
+      );
+    }
+
+    const summary = cleanSpeechNarrationText(result?.summary || "");
+    if (!summary) return "";
+
+    if (cacheKey) {
+      alertAiSummaryCache.set(cacheKey, summary);
+    }
+
+    return summary;
+  } catch (err) {
+    console.warn(
+      `[AI ALERT SUMMARY] Falling back to local narration for ${payload.eventName}: ${err?.message || err}`,
+    );
+    return "";
+  } finally {
+    if (timeoutId) clearTimeout(timeoutId);
+  }
+}
+
+async function buildAlertSpeechNarrationForPlayback(alert, options = {}) {
+  const preferAi = options?.preferAi !== false;
+  if (preferAi) {
+    const aiSummary = await fetchAiAlertSummary(alert, options);
+    if (aiSummary) {
+      return { text: aiSummary, source: "ai" };
+    }
+  }
+
+  const fallback = buildAlertSpeechNarration(alert, options);
+  return { text: fallback, source: "local" };
+}
+
+function getWeatherAiSummaryCacheKey(
+  city,
+  current,
+  forecast,
+  alertContext = "",
+) {
+  const cityKey = String(city?.id || city?.label || "unknown")
+    .trim()
+    .toLowerCase();
+  const currentKey = [
+    String(current?.description || "")
+      .trim()
+      .toLowerCase(),
+    Number.isFinite(current?.tempF) ? Math.round(current.tempF) : "na",
+    String(current?.windDirCardinal || "")
+      .trim()
+      .toUpperCase(),
+    Number.isFinite(current?.windSpeedMph)
+      ? Math.round(current.windSpeedMph)
+      : "na",
+  ].join("|");
+
+  const alertKey = String(alertContext || "")
+    .trim()
+    .toLowerCase();
+
+  const forecastKey = (Array.isArray(forecast) ? forecast : [])
+    .slice(0, 5)
+    .map((period, idx) => {
+      const day = String(period?.dayName || `day-${idx + 1}`)
+        .trim()
+        .toLowerCase();
+      const short = String(period?.shortForecast || "")
+        .replace(/\s+/g, " ")
+        .trim()
+        .toLowerCase();
+      const hi = Number.isFinite(period?.highTempF)
+        ? Math.round(period.highTempF)
+        : "na";
+      const lo = Number.isFinite(period?.lowTempF)
+        ? Math.round(period.lowTempF)
+        : "na";
+      return `${day}:${short}:${hi}:${lo}`;
+    })
+    .join("||");
+
+  return [cityKey, currentKey, forecastKey, alertKey].join("::");
+}
+
+async function fetchAiWeatherSummary(
+  city,
+  current,
+  forecast,
+  alertContext = "",
+) {
+  const payload = {
+    cityLabel: String(city?.label || city?.id || "Unknown City"),
+    alertContext: String(alertContext || "").trim(),
+    current: {
+      description: String(current?.description || "Unavailable"),
+      tempF: Number.isFinite(current?.tempF) ? Number(current.tempF) : null,
+      windDirCardinal: String(current?.windDirCardinal || "N/A"),
+      windSpeedMph: Number.isFinite(current?.windSpeedMph)
+        ? Number(current.windSpeedMph)
+        : null,
+    },
+    forecast: (Array.isArray(forecast) ? forecast : [])
+      .slice(0, 3)
+      .map((p) => ({
+        dayName: String(p?.dayName || "Day"),
+        shortForecast: String(p?.shortForecast || "Forecast unavailable"),
+        highTempF: Number.isFinite(p?.highTempF) ? Number(p.highTempF) : null,
+        lowTempF: Number.isFinite(p?.lowTempF) ? Number(p.lowTempF) : null,
+      })),
+  };
+
+  const cacheKey = getWeatherAiSummaryCacheKey(
+    city,
+    current,
+    payload.forecast,
+    payload.alertContext,
+  );
+  if (cacheKey && weatherAiSummaryCache.has(cacheKey)) {
+    return weatherAiSummaryCache.get(cacheKey);
+  }
+
+  console.log("[AI PROMPT][weather-summary][client]", payload);
+
+  const controller =
+    typeof AbortController === "function" ? new AbortController() : null;
+  const timeoutId = controller
+    ? setTimeout(() => controller.abort(), WEATHER_AI_SUMMARY_TIMEOUT_MS)
+    : null;
+
+  try {
+    const response = await fetch("/api/weather-summary", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: controller ? controller.signal : undefined,
+    });
+
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(
+        result?.details || result?.error || `HTTP ${response.status}`,
+      );
+    }
+
+    const summary = cleanSpeechNarrationText(result?.summary || "");
+    if (!summary) return "";
+
+    if (cacheKey) {
+      weatherAiSummaryCache.set(cacheKey, summary);
+    }
+    return summary;
+  } catch (err) {
+    console.warn(
+      `[AI WEATHER SUMMARY] Falling back to local narration for ${payload.cityLabel}: ${err?.message || err}`,
+    );
+    return "";
+  } finally {
+    if (timeoutId) clearTimeout(timeoutId);
+  }
+}
+
+function getSpeechEngine() {
+  if (typeof window === "undefined") return null;
+  if (!("speechSynthesis" in window)) return null;
+  return window.speechSynthesis;
+}
+
+function unlockAlertSpeechFromGesture(reason = "gesture") {
+  if (alertSpeechState.hasUserGestureUnlock) {
+    return true;
+  }
+
+  const synth = getSpeechEngine();
+  if (!synth) {
+    return false;
+  }
+
+  alertSpeechState.hasUserGestureUnlock = true;
+  try {
+    synth.resume();
+  } catch (err) {
+    console.warn("[TTS] Unable to resume speech engine during unlock:", err);
+  }
+
+  void loadAlertSpeechVoices({ timeoutMs: 1500 });
+  console.log(`[TTS] Speech engine unlocked via ${reason}.`);
+  return true;
+}
+
+function installAlertSpeechUnlockListeners() {
+  if (
+    typeof window === "undefined" ||
+    alertSpeechState.unlockListenersInstalled
+  ) {
+    return;
+  }
+
+  alertSpeechState.unlockListenersInstalled = true;
+
+  const unlockFromPointer = () => {
+    unlockAlertSpeechFromGesture("pointerdown");
+  };
+  const unlockFromKey = () => {
+    unlockAlertSpeechFromGesture("keydown");
+  };
+
+  window.addEventListener("pointerdown", unlockFromPointer, {
+    once: true,
+    capture: true,
+  });
+  window.addEventListener("keydown", unlockFromKey, {
+    once: true,
+    capture: true,
+  });
+}
+
+function chooseBestSpeechVoice(voices, preferredVoiceName = "") {
+  const list = Array.isArray(voices) ? voices : [];
+  if (!list.length) return null;
+
+  const preferred = String(preferredVoiceName || "")
+    .trim()
+    .toLowerCase();
+  if (preferred) {
+    const exact = list.find(
+      (voice) => String(voice?.name || "").toLowerCase() === preferred,
+    );
+    if (exact) return exact;
+
+    const partial = list.find((voice) =>
+      String(voice?.name || "")
+        .toLowerCase()
+        .includes(preferred),
+    );
+    if (partial) return partial;
+  }
+
+  const englishUS = list.find((voice) => /^en[-_]us$/i.test(voice?.lang || ""));
+  if (englishUS) return englishUS;
+
+  const englishAny = list.find((voice) => /^en/i.test(voice?.lang || ""));
+  if (englishAny) return englishAny;
+
+  return list[0] || null;
+}
+
+function loadAlertSpeechVoices({ timeoutMs = 2000 } = {}) {
+  const synth = getSpeechEngine();
+  if (!synth) {
+    return Promise.resolve([]);
+  }
+
+  if (alertSpeechState.voicesReady && alertSpeechState.voices.length) {
+    return Promise.resolve(alertSpeechState.voices);
+  }
+
+  if (alertSpeechState.loadPromise) {
+    return alertSpeechState.loadPromise;
+  }
+
+  alertSpeechState.loadPromise = new Promise((resolve) => {
+    let done = false;
+
+    const finalize = () => {
+      if (done) return;
+      done = true;
+
+      const voices = synth.getVoices();
+      alertSpeechState.voices = Array.isArray(voices) ? voices : [];
+      alertSpeechState.voicesReady = alertSpeechState.voices.length > 0;
+      alertSpeechState.loadPromise = null;
+      resolve(alertSpeechState.voices);
+    };
+
+    const initial = synth.getVoices();
+    if (Array.isArray(initial) && initial.length) {
+      alertSpeechState.voices = initial;
+      alertSpeechState.voicesReady = true;
+      alertSpeechState.loadPromise = null;
+      resolve(initial);
+      return;
+    }
+
+    synth.onvoiceschanged = () => {
+      finalize();
+    };
+
+    setTimeout(finalize, Math.max(300, Number(timeoutMs) || 2000));
+  });
+
+  return alertSpeechState.loadPromise;
+}
+
+function stopAlertSpeech() {
+  if (alertSpeechPlaybackState.activeAudio) {
+    try {
+      alertSpeechPlaybackState.activeAudio.pause();
+      alertSpeechPlaybackState.activeAudio.src = "";
+    } catch (err) {
+      console.warn("[TTS] Unable to stop active audio playback:", err);
+    }
+    alertSpeechPlaybackState.activeAudio = null;
+  }
+
+  if (alertSpeechPlaybackState.activeAudioObjectUrl) {
+    try {
+      URL.revokeObjectURL(alertSpeechPlaybackState.activeAudioObjectUrl);
+    } catch (err) {
+      console.warn("[TTS] Unable to release active audio URL:", err);
+    }
+    alertSpeechPlaybackState.activeAudioObjectUrl = "";
+  }
+
+  const synth = getSpeechEngine();
+  if (!synth) return;
+  try {
+    synth.cancel();
+  } catch (err) {
+    console.warn("[TTS] Unable to cancel speech:", err);
+  }
+}
+
+async function speakAlertNarrationWithPolly(script, options = {}) {
+  const endpoint = String(options.pollyEndpoint || "/api/tts");
+  const voiceId = String(options.pollyVoiceId || "").trim();
+  const engine = String(options.pollyEngine || "").trim();
+
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      text: script,
+      ...(voiceId ? { voiceId } : {}),
+      ...(engine ? { engine } : {}),
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text().catch(() => "");
+    throw new Error(`HTTP ${response.status} ${errorText}`.trim());
+  }
+
+  const audioBlob = await response.blob();
+  if (!audioBlob || !audioBlob.size) {
+    throw new Error("Empty audio response.");
+  }
+
+  const audioUrl = URL.createObjectURL(audioBlob);
+  const audio = new Audio(audioUrl);
+  audio.preload = "auto";
+
+  alertSpeechPlaybackState.activeAudio = audio;
+  alertSpeechPlaybackState.activeAudioObjectUrl = audioUrl;
+
+  const selectedVoice =
+    response.headers.get("X-TTS-Voice") || voiceId || "Amazon Polly";
+  const selectedEngine = response.headers.get("X-TTS-Engine") || "neural";
+  console.log(
+    "[TTS] Voice:",
+    `${selectedVoice} (${selectedEngine}) [Amazon Polly]`,
+  );
+  console.log("[TTS] Speaking:", script);
+
+  return new Promise((resolve) => {
+    let settled = false;
+    const requestedMaxWaitMs = Number(options.maxWaitMs);
+    const hasTimeout =
+      Number.isFinite(requestedMaxWaitMs) && requestedMaxWaitMs > 0;
+    const maxWaitMs = hasTimeout ? Math.max(3000, requestedMaxWaitMs) : 0;
+    const timeoutId = hasTimeout
+      ? setTimeout(() => {
+          if (settled) return;
+          settled = true;
+          stopAlertSpeech();
+          console.warn(`[TTS] Polly playback timed out after ${maxWaitMs}ms.`);
+          resolve({
+            ok: false,
+            reason: "timeout",
+            text: script,
+            provider: "polly",
+          });
+        }, maxWaitMs)
+      : null;
+
+    audio.onended = () => {
+      if (settled) return;
+      settled = true;
+      if (timeoutId) clearTimeout(timeoutId);
+      stopAlertSpeech();
+      resolve({ ok: true, reason: "ended", text: script, provider: "polly" });
+    };
+
+    audio.onerror = () => {
+      if (settled) return;
+      settled = true;
+      if (timeoutId) clearTimeout(timeoutId);
+      stopAlertSpeech();
+      resolve({
+        ok: false,
+        reason: "audio-error",
+        text: script,
+        provider: "polly",
+      });
+    };
+
+    audio.play().catch((err) => {
+      if (settled) return;
+      settled = true;
+      if (timeoutId) clearTimeout(timeoutId);
+      stopAlertSpeech();
+      resolve({
+        ok: false,
+        reason: `play-rejected:${String(err?.message || "unknown")}`,
+        text: script,
+        provider: "polly",
+      });
+    });
+  });
+}
+
+async function speakAlertNarrationWithWebSpeech(script, options = {}) {
+  const synth = getSpeechEngine();
+  if (!synth || typeof SpeechSynthesisUtterance === "undefined") {
+    console.warn("[TTS] Web Speech API is not available in this runtime.");
+    return {
+      ok: false,
+      reason: "unsupported",
+      provider: "web-speech",
+      text: script,
+    };
+  }
+
+  const shouldRequireUnlock = options.requireGestureUnlock !== false;
+  if (
+    shouldRequireUnlock &&
+    !alertSpeechState.hasUserGestureUnlock &&
+    !alertSpeechState.unlockWarningShown
+  ) {
+    alertSpeechState.unlockWarningShown = true;
+    console.warn(
+      "[TTS] Speech is likely blocked until a user gesture. Click anywhere in the app once to unlock.",
+    );
+  }
+
+  const voices = await loadAlertSpeechVoices({ timeoutMs: options.timeoutMs });
+  const utterance = new SpeechSynthesisUtterance(script);
+
+  const selectedVoice = chooseBestSpeechVoice(
+    voices,
+    options.voiceName || alertSpeechState.preferredVoiceName,
+  );
+  if (selectedVoice) {
+    utterance.voice = selectedVoice;
+    utterance.lang = selectedVoice.lang || "en-US";
+  } else {
+    utterance.lang = "en-US";
+  }
+
+  utterance.rate = Math.max(0.7, Math.min(1.25, Number(options.rate) || 1.07));
+  utterance.pitch = Math.max(0.7, Math.min(1.4, Number(options.pitch) || 1));
+  utterance.volume = Math.max(0.05, Math.min(1, Number(options.volume) || 1));
+
+  const selectedVoiceLabel = selectedVoice
+    ? `${selectedVoice.name || "Unknown"} (${selectedVoice.lang || "unknown"})`
+    : `Default (${utterance.lang || "unknown"})`;
+  console.log("[TTS] Voice:", selectedVoiceLabel);
+  console.log("[TTS] Speaking:", script);
+
+  return new Promise((resolve) => {
+    let settled = false;
+    const requestedMaxWaitMs = Number(options.maxWaitMs);
+    const hasTimeout =
+      Number.isFinite(requestedMaxWaitMs) && requestedMaxWaitMs > 0;
+    const maxWaitMs = hasTimeout ? Math.max(3000, requestedMaxWaitMs) : 0;
+    const timeoutId = hasTimeout
+      ? setTimeout(() => {
+          if (settled) return;
+          settled = true;
+          console.warn(`[TTS] Speech timed out after ${maxWaitMs}ms.`);
+          resolve({
+            ok: false,
+            reason: "timeout",
+            provider: "web-speech",
+            text: script,
+          });
+        }, maxWaitMs)
+      : null;
+
+    utterance.onend = () => {
+      if (settled) return;
+      settled = true;
+      if (timeoutId) clearTimeout(timeoutId);
+      // If speech ended successfully, this runtime clearly permits playback.
+      alertSpeechState.hasUserGestureUnlock = true;
+      resolve({
+        ok: true,
+        reason: "ended",
+        provider: "web-speech",
+        text: script,
+      });
+    };
+    utterance.onerror = (event) => {
+      if (settled) return;
+      settled = true;
+      if (timeoutId) clearTimeout(timeoutId);
+      const errorCode = String(event?.error || "unknown");
+      console.warn(`[TTS] Speech playback error: ${errorCode}`);
+      resolve({
+        ok: false,
+        reason: errorCode,
+        provider: "web-speech",
+        text: script,
+      });
+    };
+
+    try {
+      synth.speak(utterance);
+    } catch (err) {
+      if (settled) return;
+      settled = true;
+      if (timeoutId) clearTimeout(timeoutId);
+      console.warn("[TTS] Failed to start speech:", err);
+      resolve({
+        ok: false,
+        reason: "exception",
+        provider: "web-speech",
+        text: script,
+      });
+    }
+  });
+}
+
+async function speakAlertNarrationFromText(text, options = {}) {
+  const script = cleanSpeechNarrationText(text);
+
+  if (!script) {
+    return { ok: false, reason: "empty-text" };
+  }
+
+  if (options.cancelCurrent !== false) {
+    stopAlertSpeech();
+  }
+
+  // Use high-quality Web Speech Microsoft voices
+  return speakAlertNarrationWithWebSpeech(script, options);
+}
+
+async function speakAlertNarration(alert, options = {}) {
+  const narration = await buildAlertSpeechNarrationForPlayback(alert, options);
+  const script = narration.text;
+  if (!script) {
+    return { ok: false, reason: "empty-script", text: "" };
+  }
+
+  const result = await speakAlertNarrationFromText(script, options);
+  return { ...result, text: script, source: narration.source };
+}
+
+function getAlertSpeechVoiceList() {
+  return (alertSpeechState.voices || []).map((voice) => ({
+    name: String(voice?.name || ""),
+    lang: String(voice?.lang || ""),
+    localService: Boolean(voice?.localService),
+    default: Boolean(voice?.default),
+  }));
+}
+
+function getCurrentAlertSpeechVoice(options = {}) {
+  const selected = chooseBestSpeechVoice(
+    alertSpeechState.voices,
+    options.voiceName || alertSpeechState.preferredVoiceName,
+  );
+  if (!selected) return null;
+
+  return {
+    name: String(selected.name || ""),
+    lang: String(selected.lang || ""),
+    localService: Boolean(selected.localService),
+    default: Boolean(selected.default),
+  };
+}
+
+function setAlertSpeechPreferredVoice(voiceName = "") {
+  const requested = String(voiceName || "").trim();
+  alertSpeechState.preferredVoiceName = requested;
+  const selected = getCurrentAlertSpeechVoice({ voiceName: requested });
+  if (selected) {
+    console.log(
+      `[TTS] Preferred voice set: ${selected.name} (${selected.lang})`,
+    );
+    return { ok: true, selected, requested };
+  }
+
+  if (requested) {
+    console.warn(
+      `[TTS] Preferred voice '${requested}' not found. Using automatic fallback.`,
+    );
+  }
+  return { ok: false, selected: null, requested };
+}
+
+async function useMicrosoftEricVoice() {
+  const voices = await loadAlertSpeechVoices({ timeoutMs: 2000 });
+  const ericVoice = (Array.isArray(voices) ? voices : []).find((voice) =>
+    /microsoft\s+eric/i.test(String(voice?.name || "")),
+  );
+
+  if (!ericVoice) {
+    console.warn("[TTS] Microsoft Eric voice is not available on this system.");
+    return { ok: false, reason: "not-found" };
+  }
+
+  return setAlertSpeechPreferredVoice(
+    String(ericVoice.name || "Microsoft Eric"),
+  );
+}
+
+async function getAllAvailableVoices() {
+  const voices = await loadAlertSpeechVoices({ timeoutMs: 2500 });
+  const list = Array.isArray(voices) ? voices : [];
+  console.log("=== ALL AVAILABLE VOICES ===");
+  list.forEach((voice, idx) => {
+    console.log(
+      `${idx + 1}. ${voice.name} (${voice.lang}) - Local: ${voice.localService}`,
+    );
+  });
+  console.log("=== END ===");
+  return list;
+}
+
+async function useBestLocalMaleVoice() {
+  const voices = await loadAlertSpeechVoices({ timeoutMs: 2500 });
+  const list = Array.isArray(voices) ? voices : [];
+  if (!list.length) {
+    console.warn("[TTS] No voices were returned by the speech engine.");
+    return { ok: false, reason: "no-voices" };
+  }
+
+  const malePattern =
+    /\b(eric|guy|ryan|andrew|brian|matthew|christopher|jason|justin|adam|davis|roger|george|michael)\b/i;
+
+  const localEnglishMale = list.find((voice) => {
+    const name = String(voice?.name || "");
+    const lang = String(voice?.lang || "");
+    return (
+      Boolean(voice?.localService) &&
+      /^en/i.test(lang) &&
+      malePattern.test(name)
+    );
+  });
+
+  const anyEnglishMale = list.find((voice) => {
+    const name = String(voice?.name || "");
+    const lang = String(voice?.lang || "");
+    return /^en/i.test(lang) && malePattern.test(name);
+  });
+
+  const fallbackEnglish = list.find((voice) =>
+    /^en/i.test(String(voice?.lang || "")),
+  );
+  const chosen =
+    localEnglishMale || anyEnglishMale || fallbackEnglish || list[0] || null;
+  if (!chosen) {
+    return { ok: false, reason: "not-found" };
+  }
+
+  const result = setAlertSpeechPreferredVoice(String(chosen.name || ""));
+  if (result?.ok) {
+    const localTag = chosen.localService ? "local" : "remote";
+    console.log(
+      `[TTS] Using ${localTag} male-leaning voice candidate: ${chosen.name} (${chosen.lang || "unknown"}).`,
+    );
+  }
+  return result;
+}
+
+window.buildAlertSpeechNarration = buildAlertSpeechNarration;
+window.loadAlertSpeechVoices = loadAlertSpeechVoices;
+window.stopAlertSpeech = stopAlertSpeech;
+window.getAlertSpeechVoiceList = getAlertSpeechVoiceList;
+window.getCurrentAlertSpeechVoice = getCurrentAlertSpeechVoice;
+window.setAlertSpeechPreferredVoice = setAlertSpeechPreferredVoice;
+window.useMicrosoftEricVoice = useMicrosoftEricVoice;
+window.useBestLocalMaleVoice = useBestLocalMaleVoice;
+window.getAllAvailableVoices = getAllAvailableVoices;
+window.hideDetailedAlert = hideDetailedAlert;
+window.speakAlertNarration = speakAlertNarration;
+window.speakAlertNarrationFromText = speakAlertNarrationFromText;
+window.unlockAlertSpeech = unlockAlertSpeechFromGesture;
+window.installAlertSpeechUnlockListeners = installAlertSpeechUnlockListeners;
+window.previewAlertSpeechScript = async function previewAlertSpeechScript(
+  alert,
+  options = {},
+) {
+  const script = buildAlertSpeechNarration(alert, options);
+  console.log("[Alert Speech Script]", script);
+
+  if (options.speak === false) {
+    return script;
+  }
+
+  const speakResult = await speakAlertNarrationFromText(script, options);
+  return {
+    script,
+    speakResult,
+  };
+};
+
+window.forceSituationReview = async function forceSituationReview() {
+  console.log("[AUTO_SITUATION_REVIEW] Forcing situation review from console.");
+
+  if (!autoModeEnabled) {
+    await setAutoMode(true, { force: true });
+  }
+
+  await situationReviewMode.start();
+  return true;
+};
+
+window.startSituationReview = window.forceSituationReview;
+
+installAlertSpeechUnlockListeners();
 
 const DEFAULT_ALERT_NAME_COLORS = {
   "Tornado Warning": "#FF0000",
@@ -7335,6 +10698,62 @@ const DEFAULT_ALERT_NAME_COLORS = {
   "Hazardous Weather Outlook": "#808080",
   "Hydrologic Outlook": "#B0C4DE",
   "Beach Hazards Statement": "#F4A460",
+};
+
+const AUTO_MODE_ALERT_NAME_COLORS = {
+  "Tornado Warning": "#FF0000",
+  "Observed Tornado Warning": "#FF00FF",
+  "Cold Weather Advisory": "#8BBCBC",
+  "Wind Chill Warning": "#00A8A8",
+  "Extreme Cold Warning": "#0000FF",
+  "Extreme Cold Watch": "#5F9EA0",
+  "Lake Effect Snow Warning": "#008B8B",
+  "Radar Confirmed Tornado Warning": "#FF00FF",
+  "Spotter Confirmed Tornado Warning": "#FF00FF",
+  "Emergency Mgmt Confirmed Tornado Warning": "#FF00FF",
+  "Law Enforcement Confirmed Tornado Warning": "#FF00FF",
+  "Public Confirmed Tornado Warning": "#FF00FF",
+  "PDS Tornado Warning": "#FF00FF",
+  "Tornado Emergency": "#FF0080",
+  "Severe Thunderstorm Warning": "#FF8000",
+  "Considerable Severe Thunderstorm Warning": "#FF8000",
+  "Destructive Severe Thunderstorm Warning": "#FF8000",
+  "Flash Flood Warning": "#228B22",
+  "Considerable Flash Flood Warning": "#228B22",
+  "Flood Warning": "#00c900ff",
+  "Flood Advisory": "#66ca66ff",
+  "Flood Watch": "#1d5736ff",
+  "Flash Flood Emergency": "#8B0000",
+  "Tornado Watch": "#8B0000",
+  "PDS Tornado Watch": "#5A0000",
+  "Severe Thunderstorm Watch": "#DB7093",
+  "PDS Severe Thunderstorm Watch": "#ca467b",
+  "Winter Weather Advisory": "#7B68EE",
+  "Winter Storm Warning": "#FF69B4",
+  "Winter Storm Watch": "#6699CC",
+  "Ice Storm Warning": "#8B008B",
+  "Frost Advisory": "#6495ED",
+  "Freeze Watch": "#00d4d4ff",
+  "Freeze Warning": "#483D8B",
+  "Blizzard Warning": "#FF4500",
+  "Mesoscale Discussion": "#0066ff",
+  "Special Weather Statement": "#FFE4B5",
+  "High Wind Warning": "#DAA520",
+  "High Wind Watch": "#B8860B",
+  "Wind Advisory": "#D2B48C",
+  "Snow Squall Warning": "#C71585",
+  "Freezing Fog Advisory": "#008080",
+  "Dense Fog Advisory": "#708090",
+  "Dust Advisory": "#BDB76B",
+  "Blowing Dust Advisory": "#BDB76B",
+  "Blowing Dust Warning": "#FFE4C4",
+  "Fire Warning": "#A0522D",
+  "Red Flag Warning": "#FF1493",
+  "Fire Weather Watch": "#FFDEAD",
+  "Extreme Fire Danger": "#E9967A",
+  "Extreme Heat Warning": "#C71585",
+  "Extreme Heat Watch": "#800000",
+  "Heat Advisory": "#FF4500",
 };
 
 function ensureAlertStyleConfig() {
@@ -7413,6 +10832,15 @@ function isAlertEnabled(alertOrName) {
 
 function getAlertColor(alert) {
   const eventName = getAlertEventName(alert);
+  if (normalizeMesoscaleDiscussionName(eventName) === "Mesoscale Discussion") {
+    return "#0066ff";
+  }
+  if (autoModeEnabled) {
+    const autoColor = AUTO_MODE_ALERT_NAME_COLORS[eventName];
+    if (autoColor) {
+      return autoColor;
+    }
+  }
   return getAlertStyle(eventName).color || "rgba(255, 255, 255, 0.9)";
 }
 
@@ -7475,9 +10903,17 @@ function addAlertCounties(alert) {
     return;
   }
 
-  const matchingCounties = sameCodes
-    .map((code) => countiesByGeoid.get(code))
-    .filter(Boolean);
+  const matchingCountyMap = new Map();
+  sameCodes.forEach((code) => {
+    const key = String(code || "").trim();
+    if (!key) return;
+    const county = countiesByGeoid.get(key);
+    if (county) {
+      matchingCountyMap.set(key, county);
+    }
+  });
+
+  const matchingCounties = Array.from(matchingCountyMap.values());
 
   if (matchingCounties.length === 0) {
     console.warn(`No matching counties found for alert ${alert.id}`);
@@ -7488,23 +10924,92 @@ function addAlertCounties(alert) {
   const color = getAlertColor(alert);
 
   if (mapInstance.getLayer(`${id}-fill`)) mapInstance.removeLayer(`${id}-fill`);
+  if (mapInstance.getLayer(`${id}-outline-inner`))
+    mapInstance.removeLayer(`${id}-outline-inner`);
+  if (mapInstance.getLayer(`${id}-outline-outer`))
+    mapInstance.removeLayer(`${id}-outline-outer`);
   if (mapInstance.getSource(id)) mapInstance.removeSource(id);
 
-  const alertFeature = {
+  const countyFeatures = matchingCounties.map((county) => ({
+    type: "Feature",
+    geometry: county.geometry,
+    properties: {
+      id,
+      eventCode: alert.eventCode,
+    },
+  }));
+
+  const countyFeatureCollection = {
     type: "FeatureCollection",
-    features: matchingCounties.map((county) => ({
-      type: "Feature",
-      geometry: county.geometry,
-      properties: {
-        id: id,
-        eventCode: alert.eventCode,
-      },
-    })),
+    features: countyFeatures,
   };
+
+  let mergedFeature = null;
+  try {
+    if (typeof turf.dissolve === "function") {
+      const dissolved = turf.dissolve(countyFeatureCollection);
+      if (dissolved?.features?.length) {
+        if (dissolved.features.length === 1) {
+          mergedFeature = dissolved.features[0];
+        } else if (typeof turf.combine === "function") {
+          mergedFeature = turf.combine(dissolved).features?.[0] || null;
+        }
+      }
+    }
+  } catch (error) {
+    console.warn(`Dissolve failed for county alert ${alert.id}:`, error);
+  }
+
+  if (!mergedFeature && typeof turf.union === "function") {
+    try {
+      let accumulator = countyFeatures[0] || null;
+      for (let i = 1; i < countyFeatures.length && accumulator; i += 1) {
+        const next = countyFeatures[i];
+        const unioned = turf.union(accumulator, next);
+        if (!unioned) {
+          break;
+        }
+        accumulator = unioned;
+      }
+      if (accumulator) {
+        mergedFeature = accumulator;
+      }
+    } catch (error) {
+      console.warn(`Union failed for county alert ${alert.id}:`, error);
+    }
+  }
+
+  if (!mergedFeature && typeof turf.combine === "function") {
+    try {
+      mergedFeature =
+        turf.combine(countyFeatureCollection).features?.[0] || null;
+    } catch (error) {
+      console.warn(`Combine failed for county alert ${alert.id}:`, error);
+    }
+  }
+
+  const mergedGeometry = mergedFeature?.geometry;
+  if (
+    !mergedGeometry ||
+    !["Polygon", "MultiPolygon"].includes(mergedGeometry.type) ||
+    !Array.isArray(mergedGeometry.coordinates) ||
+    !mergedGeometry.coordinates.length
+  ) {
+    console.warn(
+      `Unable to build merged county geometry for alert ${alert.id}`,
+    );
+    return;
+  }
+
+  alert.areaGeometry = mergedGeometry;
 
   // Cache a center for closest-radar calculations without heavy polygon unions
   try {
-    const center = turf.centroid(alertFeature);
+    const center = turf.centroid({
+      type: "Feature",
+      geometry: mergedGeometry,
+      properties: {},
+    });
     const [lon, lat] = center?.geometry?.coordinates || [];
     if (Number.isFinite(lon) && Number.isFinite(lat)) {
       alert.areaCenter = { lon, lat };
@@ -7515,21 +11020,18 @@ function addAlertCounties(alert) {
 
   mapInstance.addSource(id, {
     type: "geojson",
-    data: alertFeature,
+    data: {
+      type: "Feature",
+      geometry: mergedGeometry,
+      properties: {
+        id,
+        eventCode: alert.eventCode,
+      },
+    },
   });
 
   const radarExists = mapInstance.getLayer(radarLayerId);
-  const firstLabelLayer = mapInstance
-    .getStyle()
-    .layers.find(
-      (l) =>
-        l.type === "symbol" ||
-        (l.type === "line" &&
-          (l.id.includes("Road") ||
-            l.id.includes("Transit") ||
-            l.id.includes("Path") ||
-            l.id.includes("Railway"))),
-    )?.id;
+  const firstLabelLayer = getAlertLayerAnchorId(mapInstance);
 
   if (radarExists) {
     mapInstance.addLayer(
@@ -7569,10 +11071,107 @@ function addAlertCounties(alert) {
     });
   }
 
+  if (firstLabelLayer) {
+    mapInstance.addLayer(
+      {
+        id: `${id}-outline-outer`,
+        type: "line",
+        source: id,
+        paint: {
+          "line-color": ALERT_OUTLINE_CONFIG.outerColor,
+          "line-width": getAlertOutlineWidthExpression("outer"),
+          "line-opacity": ALERT_OUTLINE_CONFIG.outerOpacity,
+        },
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+        },
+      },
+      firstLabelLayer,
+    );
+  } else {
+    mapInstance.addLayer({
+      id: `${id}-outline-outer`,
+      type: "line",
+      source: id,
+      paint: {
+        "line-color": ALERT_OUTLINE_CONFIG.outerColor,
+        "line-width": getAlertOutlineWidthExpression("outer"),
+        "line-opacity": ALERT_OUTLINE_CONFIG.outerOpacity,
+      },
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+    });
+  }
+
+  if (firstLabelLayer) {
+    mapInstance.addLayer(
+      {
+        id: `${id}-outline-inner`,
+        type: "line",
+        source: id,
+        paint: {
+          "line-color": ALERT_OUTLINE_CONFIG.innerColor(color),
+          "line-width": getAlertOutlineWidthExpression("inner"),
+          "line-opacity": ALERT_OUTLINE_CONFIG.innerOpacity,
+        },
+        layout: {
+          "line-join": "round",
+          "line-cap": "round",
+        },
+      },
+      firstLabelLayer,
+    );
+  } else {
+    mapInstance.addLayer({
+      id: `${id}-outline-inner`,
+      type: "line",
+      source: id,
+      paint: {
+        "line-color": ALERT_OUTLINE_CONFIG.innerColor(color),
+        "line-width": getAlertOutlineWidthExpression("inner"),
+        "line-opacity": ALERT_OUTLINE_CONFIG.innerOpacity,
+      },
+      layout: {
+        "line-join": "round",
+        "line-cap": "round",
+      },
+    });
+  }
+
   alert.mapLayerId = id;
   alert.isCountyBased = true;
 
-  mapInstance.on("click", `${id}-fill`, (e) => handleAlertClick(e, alert));
+  ensureAlertOutlinesAboveRadar([alert.id], mapInstance);
+  detachAlertMapEventHandlers(mapInstance, alert);
+
+  const onLineClick = (e) => handleAlertLineClick(e, alert);
+  const onFillClick = (e) => handleAlertClick(e, alert);
+  const onMouseEnter = () => {
+    mapInstance.getCanvas().style.cursor = "pointer";
+  };
+  const onMouseLeave = () => {
+    mapInstance.getCanvas().style.cursor = "";
+  };
+
+  alert._mapHandlers = {
+    onLineClick,
+    onFillClick,
+    onMouseEnter,
+    onMouseLeave,
+  };
+
+  mapInstance.on("click", `${id}-outline-inner`, onLineClick);
+  mapInstance.on("click", `${id}-outline-outer`, onLineClick);
+  mapInstance.on("click", `${id}-fill`, onFillClick);
+  mapInstance.on("mouseenter", `${id}-outline-inner`, onMouseEnter);
+  mapInstance.on("mouseenter", `${id}-outline-outer`, onMouseEnter);
+  mapInstance.on("mouseleave", `${id}-outline-inner`, onMouseLeave);
+  mapInstance.on("mouseleave", `${id}-outline-outer`, onMouseLeave);
+
+  flashNewAlertOutline(alert);
 
   console.log(
     `✅ Added county-based alert ${alert.id} with ${matchingCounties.length} counties`,
@@ -7603,7 +11202,7 @@ function showAlertDetails(alert) {
       <div class="alert-panel__badge">${icon}</div>
       <div class="alert-panel__title">
         <p class="eyebrow">${alert.eventCode || "ALERT"}</p>
-        <h3>${alert.eventName || "Unknown Alert"}</h3>
+        <h3>${getAlertEventName(alert) || "Unknown Alert"}</h3>
         <small>${alert.office || "National Weather Service"}</small>
       </div>
       <button class="alert-panel__close" aria-label="Close">×</button>
@@ -8076,8 +11675,8 @@ async function fetchHistoricalWarnings(timestamp) {
 
     console.log(`🌩️ Fetching warnings ACTIVE at ${dateStr} ${timeStr}...`);
 
-    const torUrl = `https://radar-api-production-076b.up.railway.app/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=TOR`;
-    const svrUrl = `https://radar-api-production-076b.up.railway.app/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=SVR`;
+    const torUrl = `${RADAR_API_BASE}/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=TOR`;
+    const svrUrl = `${RADAR_API_BASE}/api/archive/warnings?date=${dateStr}&time=${timeStr}&pil=SVR`;
 
     console.log(`   Fetching TOR: ${torUrl}`);
     console.log(`   Fetching SVR: ${svrUrl}`);
@@ -8257,7 +11856,7 @@ function clearHistoricalAlerts() {
  */
 async function fetchArchiveTimestamps(siteId, product, date) {
   try {
-    const apiUrl = `https://radar-api-production-076b.up.railway.app/api/archive/timestamps/${siteId}?product=${product}&date=${date}`;
+    const apiUrl = `${RADAR_API_BASE}/api/archive/timestamps/${siteId}?product=${product}&date=${date}`;
     console.log(`Fetching archive timestamps via backend: ${apiUrl}`);
 
     const response = await fetch(apiUrl);
@@ -8385,13 +11984,26 @@ async function fetchQuickTimelineBatch(
   const decodedByKey = new Map();
   const transport = source === "level3" ? "radial" : "triangles";
 
-  // If batch processing is disabled, skip directly to fallback single-fetch loop
-  if (batchProcessingEnabled === false) {
-    console.log("[BATCH] Processing disabled by user, using fallback loop");
+  // MRMS must use fixed bounds, so keep it on the bounded single-fetch path.
+  if (batchProcessingEnabled === false || isMrmsProduct(product)) {
+    console.log("[BATCH] Using fallback loop", {
+      batchProcessingEnabled,
+      mrms: isMrmsProduct(product),
+    });
     const fallbackConcurrency = Math.max(1, Math.min(3, maxWorkers));
     await runConcurrentTaskPool(keys, fallbackConcurrency, async (key) => {
+      const params = new URLSearchParams({
+        product,
+        source,
+        format: "binary",
+        transport,
+        key,
+      });
+      if (isMrmsProduct(product)) {
+        appendBoundsParams(params, getMrmsDefaultRenderBounds());
+      }
       const response = await fetch(
-        `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${product}&source=${encodeURIComponent(source)}&format=binary&transport=${encodeURIComponent(transport)}&key=${encodeURIComponent(key)}`,
+        `${RADAR_API_BASE}/api/radar-webgl/${siteId}?${params.toString()}`,
         { cache: "force-cache" },
       );
       if (!response.ok) return;
@@ -8406,7 +12018,7 @@ async function fetchQuickTimelineBatch(
 
   try {
     const response = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/radar-webgl-batch/${siteId}`,
+      `${RADAR_API_BASE}/api/radar-webgl-batch/${siteId}`,
       {
         method: "POST",
         headers: {
@@ -8462,8 +12074,18 @@ async function fetchQuickTimelineBatch(
 
     const fallbackConcurrency = Math.max(1, Math.min(3, maxWorkers));
     await runConcurrentTaskPool(keys, fallbackConcurrency, async (key) => {
+      const params = new URLSearchParams({
+        product,
+        source,
+        format: "binary",
+        transport,
+        key,
+      });
+      if (isMrmsProduct(product)) {
+        appendBoundsParams(params, getMrmsDefaultRenderBounds());
+      }
       const response = await fetch(
-        `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${product}&source=${encodeURIComponent(source)}&format=binary&transport=${encodeURIComponent(transport)}&key=${encodeURIComponent(key)}`,
+        `${RADAR_API_BASE}/api/radar-webgl/${siteId}?${params.toString()}`,
         { cache: "force-cache" },
       );
       if (!response.ok) return;
@@ -8674,11 +12296,19 @@ function scheduleQuickTimelineRender(index) {
     quickTimelinePendingIndex = -1;
     quickTimelineScrubRaf = null;
     if (!Number.isFinite(target) || target < 0) return;
-    renderQuickTimelineFrame(target, { activateTimeline: true }).catch(
-      (error) => {
+    const atLatest =
+      quickTimelineFrames.length > 0 &&
+      target >= quickTimelineFrames.length - 1;
+
+    renderQuickTimelineFrame(target, { activateTimeline: !atLatest })
+      .then(() => {
+        if (atLatest) {
+          resumeLiveRadarUpdates();
+        }
+      })
+      .catch((error) => {
         console.warn("Quick timeline render failed:", error);
-      },
-    );
+      });
   });
 }
 
@@ -8693,7 +12323,16 @@ async function loadArchiveRadarData(siteId, product, key, timestamp) {
   try {
     console.log(`Loading archive radar: ${key}`);
 
-    const apiUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${product}&key=${key}&format=binary&transport=radial`;
+    const archiveParams = new URLSearchParams({
+      product,
+      key,
+      format: "binary",
+      transport: "radial",
+    });
+    if (isMrmsProduct(product)) {
+      appendBoundsParams(archiveParams, getMrmsDefaultRenderBounds());
+    }
+    const apiUrl = `${RADAR_API_BASE}/api/radar-webgl/${siteId}?${archiveParams.toString()}`;
     const response = await fetch(apiUrl);
 
     if (!response.ok) {
@@ -8747,9 +12386,4488 @@ async function loadArchiveRadarData(siteId, product, key, timestamp) {
   }
 }
 
+async function fetchRadarSitesWithRetry(maxRetries = 3, delayMs = 3000) {
+  let sites = [];
+
+  for (let attempt = 0; attempt <= maxRetries; attempt += 1) {
+    sites = await fetchRadarSites();
+    if (Array.isArray(sites) && sites.length > 0) {
+      return sites;
+    }
+
+    if (attempt < maxRetries) {
+      console.warn(
+        `No radar sites detected; retrying in ${delayMs}ms (attempt ${attempt + 1}/${maxRetries})`,
+      );
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    }
+  }
+
+  return Array.isArray(sites) ? sites : [];
+}
+
+function updateAutoModeToggleButton() {
+  const button = document.getElementById("autoModeToggle");
+  if (!button) return;
+  button.textContent = autoModeEnabled ? "Auto Mode: ON" : "Auto Mode: OFF";
+  button.classList.toggle("is-on", autoModeEnabled);
+  button.setAttribute("aria-pressed", autoModeEnabled ? "true" : "false");
+}
+
+function applyAutoModeUiVisibility() {
+  document.body.classList.toggle("auto-mode-on", autoModeEnabled);
+
+  const legend = document.getElementById("radarLegend");
+  if (legend && autoModeEnabled) {
+    legend.style.display = "block";
+  }
+
+  if (!autoModeEnabled) {
+    return;
+  }
+
+  const radarMenuPanel = document.getElementById("radarMenuPanel");
+  const radarMenuToggle = document.getElementById("radarMenuToggle");
+  if (radarMenuPanel) {
+    radarMenuPanel.classList.add("is-hidden");
+  }
+  if (radarMenuToggle) {
+    radarMenuToggle.setAttribute("aria-expanded", "false");
+  }
+}
+
+function stopAutoIdlePlayback() {
+  if (autoIdlePlaybackRaf) {
+    cancelAnimationFrame(autoIdlePlaybackRaf);
+    autoIdlePlaybackRaf = null;
+  }
+
+  if (autoIdleRefreshTimerId) {
+    clearInterval(autoIdleRefreshTimerId);
+    autoIdleRefreshTimerId = null;
+  }
+
+  autoIdlePauseUntil = 0;
+  autoIdlePendingWrap = false;
+  autoIdleCacheBoundsKey = null;
+
+  if (autoIdleToCityTransitionTimerId) {
+    clearTimeout(autoIdleToCityTransitionTimerId);
+    autoIdleToCityTransitionTimerId = null;
+  }
+}
+
+function stopStatewideForecastMrmsPlayback() {
+  stopAutoIdlePlayback();
+}
+
+function startStatewideForecastMrmsPlayback(token) {
+  if (!autoModeEnabled || autoModeSubmode !== "statewide-forecast") {
+    return;
+  }
+  if (token !== autoStatewideForcastRunToken) {
+    return;
+  }
+  startAutoIdlePlayback();
+}
+
+function setRadarSitesVisibility(visible) {
+  if (!mapInstance) {
+    return;
+  }
+
+  const nextVisibility = visible ? "visible" : "none";
+  const radarSiteLayerIds = [
+    "radar-sites-layer",
+    "radar-sites-selected-icon-layer",
+  ];
+
+  for (const layerId of radarSiteLayerIds) {
+    if (!mapInstance.getLayer(layerId)) {
+      continue;
+    }
+    mapInstance.setLayoutProperty(layerId, "visibility", nextVisibility);
+  }
+}
+
+function ensureRadarLegendVisible(productCode = selectedRadarProduct) {
+  createColorScaleLegend(productCode || selectedRadarProduct);
+  const legend = document.getElementById("radarLegend");
+  if (legend) {
+    legend.style.display = "block";
+  }
+}
+
+function waitMs(durationMs) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, Math.max(0, Number(durationMs) || 0));
+  });
+}
+
+function toLocalDateKey(date) {
+  if (!(date instanceof Date) || Number.isNaN(date.getTime())) {
+    return "";
+  }
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+}
+
+function fahrenheitFromCelsius(valueC) {
+  if (!Number.isFinite(valueC)) return null;
+  return valueC * (9 / 5) + 32;
+}
+
+function mphFromSpeed(value, unitCode = "") {
+  if (!Number.isFinite(value)) return null;
+  const unit = String(unitCode || "").toLowerCase();
+  if (unit.includes("km_h-1")) {
+    return value * 0.621371;
+  }
+  if (unit.includes("m_s-1")) {
+    return value * 2.23694;
+  }
+  if (unit.includes("kt")) {
+    return value * 1.15078;
+  }
+  if (unit.includes("mi_h-1") || unit.includes("mph")) {
+    return value;
+  }
+  return value;
+}
+
+function formatTempF(valueF) {
+  return Number.isFinite(valueF) ? `${Math.round(valueF)}°` : "N/A";
+}
+
+function formatWindSpeedMph(valueMph) {
+  return Number.isFinite(valueMph) ? `${Math.round(valueMph)} mph` : "N/A";
+}
+
+function wrapTextWordsPerLine(text, wordsPerLine = 3) {
+  const words = String(text || "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  if (!words.length) {
+    return "";
+  }
+
+  const lines = [];
+  for (let i = 0; i < words.length; i += wordsPerLine) {
+    lines.push(words.slice(i, i + wordsPerLine).join(" "));
+  }
+  return lines.join("<br>");
+}
+
+function bearingToCardinal(bearingDeg) {
+  const normalized = normalizeBearingDegrees(bearingDeg);
+  if (!Number.isFinite(normalized)) {
+    return "N/A";
+  }
+  const labels = [
+    "N",
+    "NNE",
+    "NE",
+    "ENE",
+    "E",
+    "ESE",
+    "SE",
+    "SSE",
+    "S",
+    "SSW",
+    "SW",
+    "WSW",
+    "W",
+    "WNW",
+    "NW",
+    "NNW",
+  ];
+  const index = Math.round(normalized / 22.5) % labels.length;
+  return labels[index];
+}
+
+function getCityWeatherIconPath(fileName) {
+  const sanitizedName = String(fileName || "").trim();
+  if (!sanitizedName) {
+    return `${CITY_WEATHER_ICON_ROOT}/${CITY_WEATHER_ICON_FALLBACK.split("/")
+      .map((segment) => encodeURIComponent(segment))
+      .join("/")}`;
+  }
+  return `${CITY_WEATHER_ICON_ROOT}/${sanitizedName
+    .split("/")
+    .map((segment) => encodeURIComponent(segment))
+    .join("/")}`;
+}
+
+function isLikelyDaytime(dateInput = new Date()) {
+  const value = dateInput instanceof Date ? dateInput : new Date(dateInput);
+  if (Number.isNaN(value.getTime())) {
+    return true;
+  }
+  const hour = value.getHours();
+  return hour >= 6 && hour < 19;
+}
+
+function mapForecastTextToIconFile(shortForecast, isDaytime = true) {
+  const text = String(shortForecast || "")
+    .trim()
+    .toLowerCase();
+
+  const isWindy = /wind|breezy|gust/.test(text);
+  const isThunder = /thunder|t-storm|storm/.test(text);
+  const isSnow = /snow|flurr/.test(text);
+  const isRain = /rain|shower|drizzle/.test(text);
+  const isMix = /mix|sleet|freezing|ice\b|wintry/.test(text);
+
+  if (/dense fog|thick fog/.test(text)) return "Fog III.png";
+  if (/fog|mist|haze|smoke/.test(text)) return "Fog II.png";
+
+  if (isThunder && isSnow && isWindy) return "Thunderstorm + Snow + Wind.png";
+  if (isThunder && isSnow) return "Thunderstorm + Snow.png";
+  if (isThunder && isMix && isWindy) return "Thunderstorm + Wind + Mix.png";
+  if (isThunder && isMix) return "Thunderstorm Mix.png";
+  if (isThunder && isWindy) return "Thunderstorm + Wind.png";
+  if (isThunder && isDaytime && /sun|mostly sunny|partly sunny/.test(text)) {
+    return "Thunderstorm + Sun.png";
+  }
+  if (isThunder) return "Thunderstorm.png";
+
+  if (/heavy rain|downpour/.test(text)) return "Heavy Rain.png";
+  if (/heavy snow|blizzard/.test(text)) return "Heavy Snow.png";
+
+  if (isMix && isWindy) return "Mix + Wind.png";
+  if (isMix) return "Mix.png";
+
+  if (isSnow && /shower/.test(text)) return "Snow Shower.png";
+  if (isSnow && isWindy) return "Snow + Wind.png";
+  if (isSnow) return "Snow.png";
+
+  if (isRain && isWindy) return "Rain + Wind.png";
+  if (isRain && /showers?/.test(text)) return "Shower.png";
+  if (isRain) return "Rain.png";
+
+  if (/partly cloudy/.test(text)) return "Partly Cloudy.png";
+  if (/partly sunny|mostly sunny/.test(text)) return "Partly Sunny.png";
+  if (/mostly cloudy|cloudy|overcast/.test(text)) return "Cloudy III.png";
+  if (/clear|sunny/.test(text)) return "Sun.png";
+
+  return "Clouds II.png";
+}
+
+function mapCurrentConditionsToIconFile(description, observationTimestamp) {
+  const text = String(description || "")
+    .trim()
+    .toLowerCase();
+  const isDaytime = isLikelyDaytime(observationTimestamp);
+
+  if (!isDaytime) {
+    if (/clear|sunny/.test(text)) return "moon/Night.png";
+    if (/partly cloudy|mostly clear|few clouds/.test(text)) {
+      return "moon/Night + Moon.png";
+    }
+    if (/fog|mist|haze|smoke/.test(text)) return "Fog I.png";
+  }
+
+  if (isDaytime && /thunder|t-storm|storm/.test(text) && /sun/.test(text)) {
+    return "+ Sun/Thunderstorm + Sun.png";
+  }
+  if (isDaytime && /rain|shower/.test(text) && /sun|mostly sunny/.test(text)) {
+    return "+ Sun/Rain.png";
+  }
+
+  return mapForecastTextToIconFile(text, isDaytime);
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+async function fetchJsonWithTimeout(url, timeoutMs = 9000) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Accept: "application/geo+json, application/ld+json, application/json",
+      },
+      signal: controller.signal,
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    return await response.json();
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+function toSentenceCase(text) {
+  const normalized = String(text || "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!normalized) return "";
+  const lowered = normalized.toLowerCase();
+  return lowered.charAt(0).toUpperCase() + lowered.slice(1);
+}
+
+function normalizeNarrationPhrase(text) {
+  return String(text || "")
+    .replace(/\s*\/\s*/g, " and ")
+    .replace(/\bthen\b/gi, ", then")
+    .replace(/\s+,/g, ",")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function expandWindDirection(cardinal) {
+  const key = String(cardinal || "")
+    .trim()
+    .toUpperCase();
+  const map = {
+    N: "north",
+    NNE: "north-northeast",
+    NE: "northeast",
+    ENE: "east-northeast",
+    E: "east",
+    ESE: "east-southeast",
+    SE: "southeast",
+    SSE: "south-southeast",
+    S: "south",
+    SSW: "south-southwest",
+    SW: "southwest",
+    WSW: "west-southwest",
+    W: "west",
+    WNW: "west-northwest",
+    NW: "northwest",
+    NNW: "north-northwest",
+  };
+  return map[key] || "";
+}
+
+const weatherService = {
+  selectForecastPeriods(periods) {
+    const list = Array.isArray(periods) ? periods : [];
+    const now = new Date();
+    const todayKey = toLocalDateKey(now);
+
+    const daytimePeriods = list.filter((period) => {
+      if (!period || !period.isDaytime) return false;
+      const start = new Date(period.startTime);
+      if (Number.isNaN(start.getTime()) || start <= now) return false;
+      const key = toLocalDateKey(start);
+      return key > todayKey;
+    });
+
+    return daytimePeriods.slice(0, 3).map((period) => {
+      const periodIndex = list.indexOf(period);
+      let lowTemp = null;
+      if (periodIndex >= 0) {
+        for (let i = periodIndex + 1; i < list.length; i += 1) {
+          const candidate = list[i];
+          if (!candidate) continue;
+          if (!candidate.isDaytime) {
+            lowTemp = Number.isFinite(candidate.temperature)
+              ? candidate.temperature
+              : null;
+            break;
+          }
+          if (candidate.isDaytime) {
+            break;
+          }
+        }
+      }
+
+      const iconFile = mapForecastTextToIconFile(
+        period.shortForecast,
+        Boolean(period.isDaytime),
+      );
+
+      return {
+        dayName: String(period.name || "Day").trim() || "Day",
+        shortForecast: String(period.shortForecast || "Unavailable"),
+        highTempF: Number.isFinite(period.temperature)
+          ? period.temperature
+          : null,
+        lowTempF: lowTemp,
+        iconPath: getCityWeatherIconPath(iconFile),
+      };
+    });
+  },
+
+  async fetchCurrentConditions(stationId) {
+    if (!stationId) {
+      throw new Error("Missing station id for current conditions lookup");
+    }
+
+    const payload = await fetchJsonWithTimeout(
+      `https://api.weather.gov/stations/${encodeURIComponent(stationId)}/observations/latest`,
+    );
+    const props = payload?.properties || {};
+
+    const tempF = fahrenheitFromCelsius(Number(props?.temperature?.value));
+    const windDirDeg = Number(props?.windDirection?.value);
+    const windSpeedMph = mphFromSpeed(
+      Number(props?.windSpeed?.value),
+      String(props?.windSpeed?.unitCode || ""),
+    );
+
+    const windChillF = fahrenheitFromCelsius(Number(props?.windChill?.value));
+    const heatIndexF = fahrenheitFromCelsius(Number(props?.heatIndex?.value));
+
+    const feelsLikeLabel = "N/A";
+
+    const customIconPath = getCityWeatherIconPath(
+      mapCurrentConditionsToIconFile(props?.textDescription, props?.timestamp),
+    );
+
+    return {
+      stationName: String(props?.stationName || stationId),
+      description: String(props?.textDescription || "Unavailable"),
+      tempF,
+      windDirDeg: Number.isFinite(windDirDeg) ? windDirDeg : null,
+      windDirCardinal: bearingToCardinal(windDirDeg),
+      windSpeedMph,
+      feelsLikeLabel,
+      iconPath: customIconPath,
+      fallbackIcon: customIconPath,
+    };
+  },
+
+  async resolveStationIdForLocation(lat, lon) {
+    const points = await fetchJsonWithTimeout(
+      `https://api.weather.gov/points/${Number(lat).toFixed(4)},${Number(lon).toFixed(4)}`,
+    );
+    const stationsUrl = String(points?.properties?.observationStations || "");
+    if (!stationsUrl) return "";
+
+    const stationsPayload = await fetchJsonWithTimeout(stationsUrl);
+    const features = Array.isArray(stationsPayload?.features)
+      ? stationsPayload.features
+      : [];
+    for (const feature of features) {
+      const stationId = String(
+        feature?.properties?.stationIdentifier || "",
+      ).trim();
+      if (stationId) return stationId;
+    }
+    return "";
+  },
+
+  async fetchForecast(lat, lon) {
+    const points = await fetchJsonWithTimeout(
+      `https://api.weather.gov/points/${Number(lat).toFixed(4)},${Number(lon).toFixed(4)}`,
+    );
+    const forecastUrl = points?.properties?.forecast;
+    if (!forecastUrl) {
+      throw new Error("Missing forecast URL from points response");
+    }
+
+    const forecastPayload = await fetchJsonWithTimeout(forecastUrl);
+    const periods = forecastPayload?.properties?.periods;
+    return this.selectForecastPeriods(periods);
+  },
+
+  summarizeCurrentAndForecast(city, current, forecast) {
+    const cityName = String(city?.label || city?.id || "this city");
+    const description = toSentenceCase(
+      normalizeNarrationPhrase(
+        current?.description || "current conditions unavailable",
+      ),
+    );
+    const tempF = Number.isFinite(current?.tempF)
+      ? Math.round(current.tempF)
+      : null;
+    const windSpeed = Number.isFinite(current?.windSpeedMph)
+      ? Math.max(0, Math.round(current.windSpeedMph))
+      : null;
+    const windDirExpanded = expandWindDirection(current?.windDirCardinal);
+
+    // Build current conditions with varied phrasing
+    const parts = [];
+
+    // Opener - vary based on condition
+    const currentOpener = this._buildCurrentOpener(cityName, description);
+    parts.push(currentOpener);
+
+    // Temperature and feels-like intelligently combined
+    const tempAndFeels = this._buildTemperaturePhrase(
+      tempF,
+      current?.feelsLikeLabel,
+    );
+    if (tempAndFeels) parts.push(tempAndFeels);
+
+    // Wind with natural phrasing
+    const windPhrase = this._buildWindPhrase(windSpeed, windDirExpanded);
+    if (windPhrase) parts.push(windPhrase);
+
+    // Forecast with sophisticated phrasing
+    const forecastList = Array.isArray(forecast) ? forecast.slice(0, 3) : [];
+    const forecastSection = this._buildForecastSection(forecastList);
+    if (forecastSection) parts.push(forecastSection);
+
+    return parts.filter(Boolean).join(" ");
+  },
+
+  _buildCurrentOpener(cityName, description) {
+    // Vary the opening phrase but keep it natural and concise
+    const openers = [
+      `${cityName} is ${description.toLowerCase()}.`,
+      `In ${cityName}, ${description.toLowerCase()}.`,
+      `${cityName}: ${description}.`,
+    ];
+    return openers[Math.floor(Math.random() * openers.length)];
+  },
+
+  _buildTemperaturePhrase(tempF, feelsLikeLabel) {
+    if (tempF === null) return "";
+
+    const feelsLikeRaw = String(feelsLikeLabel || "")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (!feelsLikeRaw || feelsLikeRaw.toUpperCase() === "N/A") {
+      return `${tempF} degrees.`;
+    }
+
+    const feelsMatch = feelsLikeRaw.match(/(-?\d+)\s*F\s*\(([^)]+)\)/i);
+    if (!feelsMatch) {
+      return `${tempF} degrees.`;
+    }
+
+    const feelsTemp = Number(feelsMatch[1]);
+    const feelsType = String(feelsMatch[2])
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase();
+    const delta = Math.abs(feelsTemp - tempF);
+
+    // Only mention feels-like if delta is significant (>5 AND <15) for realism
+    // Wind chill rarely changes feels-like by more than 15 degrees in real conditions
+    if (delta <= 5 || delta > 15) {
+      return `${tempF} degrees.`;
+    }
+
+    // For cold temps with wind chill, mention it naturally
+    if (
+      feelsTemp < tempF &&
+      (feelsType.includes("wind") || feelsType.includes("chill"))
+    ) {
+      return `Currently ${tempF} degrees, but the wind makes it feel like ${feelsTemp}.`;
+    }
+
+    // For hot temps with heat index, mention it naturally
+    if (
+      feelsTemp > tempF &&
+      (feelsType.includes("heat") || feelsType.includes("humidity"))
+    ) {
+      return `Currently ${tempF} degrees, but with the humidity it feels more like ${feelsTemp}.`;
+    }
+
+    // Default if not cold wind or heat
+    if (feelsTemp < tempF) {
+      return `Currently ${tempF} degrees, feels like ${feelsTemp}.`;
+    } else {
+      return `Currently ${tempF} degrees, feels like ${feelsTemp}.`;
+    }
+  },
+
+  _buildWindPhrase(windSpeed, windDirExpanded) {
+    if (windSpeed === null) return "";
+
+    if (windSpeed <= 1) {
+      return "Winds are calm.";
+    }
+
+    const dirLower = windDirExpanded ? windDirExpanded.toLowerCase() : null;
+
+    if (windSpeed <= 5) {
+      if (dirLower) {
+        return `Light winds from the ${dirLower} at ${windSpeed} miles per hour.`;
+      }
+      return `Light winds at ${windSpeed} miles per hour.`;
+    }
+
+    if (windSpeed <= 15) {
+      if (dirLower) {
+        const capitalized =
+          dirLower.charAt(0).toUpperCase() + dirLower.slice(1);
+        return `${capitalized} winds around ${windSpeed} miles per hour.`;
+      }
+      return `Winds around ${windSpeed} miles per hour.`;
+    }
+
+    // Stronger winds
+    if (dirLower) {
+      return `Strong ${dirLower} winds around ${windSpeed} miles per hour.`;
+    }
+    return `Strong winds around ${windSpeed} miles per hour.`;
+  },
+
+  _buildForecastSection(forecastList) {
+    if (!forecastList || forecastList.length === 0) {
+      return "Extended forecast is currently unavailable.";
+    }
+
+    const grouped = this._groupForecastConditions(forecastList);
+    if (grouped.length === 0) return "";
+
+    const forecastLines = grouped.map((group) => {
+      return this._buildForecastLine(group);
+    });
+
+    // Better forecast intro
+    const intro =
+      grouped.length === 1 ? "Looking ahead, " : "For the next few days: ";
+    return `${intro}${forecastLines.join(" ")}`;
+  },
+
+  _groupForecastConditions(periods) {
+    return periods.slice(0, 3).map((period) => {
+      const dayName = String(period?.dayName || "Day")
+        .trim()
+        .replace(/\s+/g, " ");
+      const short = toSentenceCase(
+        normalizeNarrationPhrase(
+          period?.shortForecast || "forecast unavailable",
+        ),
+      );
+      const hi = Number.isFinite(period?.highTempF)
+        ? Math.round(period.highTempF)
+        : null;
+      const lo = Number.isFinite(period?.lowTempF)
+        ? Math.round(period.lowTempF)
+        : null;
+      return { day: dayName, condition: short, high: hi, low: lo };
+    });
+  },
+
+  _buildForecastLine(group) {
+    const { day, condition, high, low } = group;
+
+    // Consistent forecast phrasing: day first, then conditions with temps
+    let line = `${day}: ${condition}.`;
+
+    if (high === null && low === null) {
+      return line;
+    }
+
+    // Append temperature info with proper period
+    if (high !== null && low !== null) {
+      const tempInfo =
+        high - low > 20
+          ? `Highs near ${high}, lows around ${low}.`
+          : `High ${high}, low ${low}.`;
+      return line.replace(/\.$/, `. ${tempInfo}`);
+    }
+
+    if (high !== null) {
+      return line.replace(/\.$/, `. High ${high}.`);
+    }
+
+    if (low !== null) {
+      return line.replace(/\.$/, `. Low ${low}.`);
+    }
+
+    return line;
+  },
+
+  getCityWeather(city, cycleId, alertContext = "") {
+    const cacheKey = `${cycleId}:${city.id}:${String(alertContext || "")
+      .trim()
+      .toLowerCase()}`;
+    if (autoCityCycleWeatherCache.has(cacheKey)) {
+      return autoCityCycleWeatherCache.get(cacheKey);
+    }
+
+    const task = (async () => {
+      let resolvedStationId = String(city?.stationId || "").trim();
+      if (!resolvedStationId) {
+        try {
+          resolvedStationId = await this.resolveStationIdForLocation(
+            city.lat,
+            city.lon,
+          );
+        } catch (error) {
+          console.warn(
+            `[CITY WEATHER] Failed to resolve station for ${city.label || city.id || "city"}:`,
+            error,
+          );
+        }
+      }
+
+      const [currentResult, forecastResult] = await Promise.allSettled([
+        this.fetchCurrentConditions(resolvedStationId),
+        this.fetchForecast(city.lat, city.lon),
+      ]);
+
+      const current =
+        currentResult.status === "fulfilled"
+          ? currentResult.value
+          : {
+              stationName: resolvedStationId || city.stationId || "NWS Station",
+              description: "Current conditions unavailable",
+              tempF: null,
+              windDirDeg: null,
+              windDirCardinal: "N/A",
+              windSpeedMph: null,
+              feelsLikeLabel: "N/A",
+              iconPath: getCityWeatherIconPath(CITY_WEATHER_ICON_FALLBACK),
+              fallbackIcon: getCityWeatherIconPath(CITY_WEATHER_ICON_FALLBACK),
+            };
+
+      const forecast =
+        forecastResult.status === "fulfilled" ? forecastResult.value : [];
+
+      const paddedForecast = [...forecast];
+      while (paddedForecast.length < 3) {
+        paddedForecast.push({
+          dayName: `Day ${paddedForecast.length + 1}`,
+          shortForecast: "Forecast unavailable",
+          highTempF: null,
+          lowTempF: null,
+          iconPath: getCityWeatherIconPath(CITY_WEATHER_ICON_FALLBACK),
+        });
+      }
+
+      if (currentResult.status !== "fulfilled") {
+        logAutoCityCycle(
+          `Current conditions unavailable for ${city.label}: ${currentResult.reason}`,
+        );
+      }
+      if (forecastResult.status !== "fulfilled") {
+        logAutoCityCycle(
+          `Forecast unavailable for ${city.label}: ${forecastResult.reason}`,
+        );
+      }
+
+      const cityAlertContext = getCityAlertContext(city);
+
+      const localSummary = this.summarizeCurrentAndForecast(
+        city,
+        current,
+        paddedForecast.slice(0, 3),
+      );
+
+      const aiSummary = await fetchAiWeatherSummary(
+        city,
+        current,
+        paddedForecast.slice(0, 3),
+        alertContext || cityAlertContext.promptText,
+      );
+
+      return {
+        current,
+        forecast: paddedForecast.slice(0, 3),
+        alertContext: String(
+          alertContext || cityAlertContext.promptText || "",
+        ).trim(),
+        alertBadgeLabel: cityAlertContext.badgeLabel,
+        alertBadgeTitle: cityAlertContext.badgeTitle,
+        summary:
+          aiSummary || localSummary || String(current.description || "").trim(),
+      };
+    })();
+
+    autoCityCycleWeatherCache.set(cacheKey, task);
+    return task;
+  },
+};
+
+function ensureCityCycleStyles() {
+  if (autoCityCycleStyleInjected) {
+    return;
+  }
+
+  const style = document.createElement("style");
+  style.id = "auto-city-cycle-style";
+  style.textContent = `
+    @keyframes auto-city-widget-entrance {
+      0% {
+        opacity: 0;
+        transform: translate3d(20px, 6px, 0) scale(0.985);
+        filter: blur(4px);
+      }
+      72% {
+        opacity: 0.96;
+        transform: translate3d(0, 0, 0) scale(1.004);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes auto-city-widget-exit {
+      0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translate3d(30px, 8px, 0) scale(0.965);
+        filter: blur(8px);
+      }
+    }
+
+    .auto-city-cycle-window {
+      position: fixed;
+      top: 5px;
+      left: 5px;
+      right: auto;
+      width: fit-content;
+      max-width: calc(100vw - 10px);
+      pointer-events: none;
+      z-index: 1400;
+      opacity: 0;
+      transform: translate3d(-26px, 0, 0) scale(0.992);
+      filter: blur(6px);
+      display: none;
+    }
+
+    .auto-city-cycle-window.is-visible {
+      animation: auto-city-widget-entrance 460ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .auto-city-cycle-window.is-hiding {
+      animation: auto-city-widget-exit ${CITY_CYCLE_PANEL_ANIMATION_MS}ms cubic-bezier(0.35, 0, 0.66, 1) forwards;
+    }
+
+    .auto-city-cycle-shell {
+      position: relative;
+      width: fit-content;
+      max-width: calc(100vw - 10px);
+      border-radius: 20px;
+      border: 4px solid rgba(255, 255, 255, 0.96);
+      background:
+        radial-gradient(circle at top left, rgba(87, 133, 255, 0.12), transparent 34%),
+        linear-gradient(160deg, rgba(4, 8, 18, 0.98), rgba(12, 17, 30, 0.96) 52%, rgba(19, 24, 38, 0.98));
+      box-shadow:
+        0 20px 56px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+        0 0 20px rgba(31, 37, 147, 0.18);
+      overflow: hidden;
+      font-family: "Saira", "Space Grotesk", sans-serif;
+      color: #ffffff;
+      pointer-events: auto;
+    }
+
+    .auto-city-cycle-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.06), transparent 28%, transparent 68%, rgba(255, 255, 255, 0.03));
+      pointer-events: none;
+      opacity: 0.55;
+      mix-blend-mode: screen;
+    }
+
+    .auto-city-cycle-header {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(31, 37, 147, 0.96), rgba(38, 49, 148, 0.94) 55%, rgba(19, 23, 91, 0.98));
+      padding: 10px 14px 9px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      overflow: hidden;
+    }
+
+    .auto-city-cycle-header::after {
+      display: none;
+    }
+
+    .auto-city-cycle-header-title {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+      font-size: 1.2rem;
+      line-height: 1.02;
+    }
+
+    .auto-city-cycle-kicker {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.78;
+      font-weight: 700;
+    }
+
+    .auto-city-cycle-title-city {
+      font-size: 2.20rem;
+      opacity: 1;
+      font-weight: 700;
+    }
+
+    .auto-city-cycle-header-meta {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      opacity: 0.95;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .auto-city-cycle-content {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 8px;
+      padding: 8px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+      width: fit-content;
+      justify-content: start;
+      justify-items: start;
+    }
+
+    .auto-city-panel {
+      position: relative;
+      width: fit-content;
+      border: 2px solid rgba(255, 255, 255, 0.96);
+      border-radius: 10px;
+      background:
+        radial-gradient(circle at top, rgba(94, 124, 255, 0.12), transparent 35%),
+        linear-gradient(180deg, #000000 0%, #151515 24%, #242424 68%, #303030 100%);
+      min-height: 188px;
+      color: #ffffff;
+      opacity: 0;
+      transform: translate3d(0, 24px, 0) scale(0.985);
+      transition:
+        opacity ${CITY_CYCLE_PANEL_ANIMATION_MS}ms cubic-bezier(0.19, 0.82, 0.22, 1),
+        transform ${CITY_CYCLE_PANEL_ANIMATION_MS}ms cubic-bezier(0.19, 0.82, 0.22, 1),
+        box-shadow ${CITY_CYCLE_PANEL_ANIMATION_MS}ms ease;
+      box-shadow:
+        0 12px 24px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .auto-city-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), transparent 32%, transparent 68%, rgba(255, 255, 255, 0.05));
+      pointer-events: none;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-panel {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.34),
+        0 0 14px rgba(31, 37, 147, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .auto-city-current {
+      padding: 8px;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr;
+      gap: 6px;
+      width: fit-content;
+    }
+
+    .auto-city-current-topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 10px;
+      width: fit-content;
+    }
+
+    .auto-city-current-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .auto-city-current-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.8;
+    }
+
+    .auto-city-current-city {
+      font-size: 1.34rem;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .auto-city-current-temp {
+      font-size: 3.1rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      text-shadow: 0 0 18px rgba(120, 157, 255, 0.2);
+    }
+
+    .auto-city-current-summary {
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+    }
+
+    .auto-city-current-row {
+      position: relative;
+      z-index: 1;
+      font-size: 1.08rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      opacity: 0.95;
+      padding: 9px 10px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      width: fit-content;
+    }
+
+    .auto-city-current-icon-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.05) 55%, rgba(255, 255, 255, 0.02));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 10px 24px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
+    }
+
+    .auto-city-current-icon {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.32));
+    }
+
+    .auto-city-forecast-grid {
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
+      justify-content: start;
+      gap: 5px;
+      width: fit-content;
+      min-width: 0;
+      justify-items: start;
+    }
+
+    .auto-city-forecast {
+      padding: 5px;
+      display: grid;
+      grid-template-rows: auto auto auto auto 1fr;
+      gap: 5px;
+      width: fit-content;
+      max-width: 140px;
+      min-height: 0;
+      transition-delay: var(--stagger-delay, 0ms);
+      text-align: center;
+    }
+
+    .auto-city-forecast::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 4px;
+      background: linear-gradient(90deg, rgba(31, 37, 147, 0), rgba(111, 143, 255, 0.85), rgba(31, 37, 147, 0));
+      opacity: 0.75;
+    }
+
+    .auto-city-forecast-day {
+      font-size: 1.02rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.9;
+    }
+
+    .auto-city-forecast-icon {
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+      margin: 0 auto;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.32));
+    }
+
+    .auto-city-forecast-high {
+      font-size: 1.7rem;
+      text-align: center;
+      opacity: 0.98;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .auto-city-forecast-low {
+      font-size: 1.08rem;
+      text-align: center;
+      opacity: 0.74;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .auto-city-forecast-text {
+      font-size: 1rem;
+      line-height: 1.22;
+      opacity: 0.86;
+      display: block;
+      max-width: 9ch;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .auto-city-cycle-header-title,
+    .auto-city-cycle-header-meta,
+    .auto-city-current-label,
+    .auto-city-current-city,
+    .auto-city-current-summary,
+    .auto-city-current-row,
+    .auto-city-forecast-day,
+    .auto-city-forecast-icon,
+    .auto-city-forecast-high,
+    .auto-city-forecast-low,
+    .auto-city-forecast-text {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-cycle-header-title {
+      animation: cityItemIn 420ms cubic-bezier(0.2, 0.75, 0.2, 1) 40ms both;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-cycle-header-meta {
+      animation: cityItemIn 420ms cubic-bezier(0.2, 0.75, 0.2, 1) 90ms both;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-current-label {
+      animation: cityItemIn 380ms cubic-bezier(0.2, 0.75, 0.2, 1) 110ms both;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-current-city {
+      animation: cityItemIn 380ms cubic-bezier(0.2, 0.75, 0.2, 1) 150ms both;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-current-summary {
+      animation: cityItemIn 420ms cubic-bezier(0.2, 0.75, 0.2, 1) 190ms both;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-current-row {
+      animation: cityItemIn 420ms cubic-bezier(0.2, 0.75, 0.2, 1) 240ms both;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-forecast .auto-city-forecast-day {
+      animation: cityItemIn 360ms cubic-bezier(0.2, 0.75, 0.2, 1) calc(var(--stagger-delay, 0ms) + 140ms) both;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-forecast .auto-city-forecast-icon {
+      animation: cityItemIn 380ms cubic-bezier(0.2, 0.75, 0.2, 1) calc(var(--stagger-delay, 0ms) + 200ms) both;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-forecast .auto-city-forecast-high {
+      animation: cityItemIn 360ms cubic-bezier(0.2, 0.75, 0.2, 1) calc(var(--stagger-delay, 0ms) + 250ms) both;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-forecast .auto-city-forecast-low {
+      animation: cityItemIn 360ms cubic-bezier(0.2, 0.75, 0.2, 1) calc(var(--stagger-delay, 0ms) + 280ms) both;
+    }
+
+    .auto-city-cycle-window.is-visible .auto-city-forecast .auto-city-forecast-text {
+      animation: cityItemIn 400ms cubic-bezier(0.2, 0.75, 0.2, 1) calc(var(--stagger-delay, 0ms) + 320ms) both;
+    }
+
+    @keyframes cityItemIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .auto-city-wind-arrow {
+      display: inline-flex;
+      width: 18px;
+      justify-content: center;
+      font-size: 1rem;
+      transform-origin: 50% 50%;
+      margin-right: 4px;
+      color: #8db1ff;
+      text-shadow: 0 0 14px rgba(141, 177, 255, 0.45);
+    }
+
+    @media (max-width: 1100px) {
+      .auto-city-cycle-window {
+        left: 8px;
+        right: auto;
+        top: 66px;
+        width: fit-content;
+        max-width: calc(100vw - 16px);
+      }
+
+      .auto-city-cycle-content {
+        grid-template-columns: auto;
+      }
+
+      .auto-city-forecast-grid {
+        grid-template-columns: repeat(3, max-content);
+        overflow-x: auto;
+        padding-bottom: 6px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .auto-city-cycle-window {
+        top: auto;
+        left: 6px;
+        right: auto;
+        bottom: calc(var(--mobile-sheet-height, 90px) + 8px);
+        width: fit-content;
+        max-width: calc(100vw - 12px);
+      }
+
+      .auto-city-current-temp {
+        font-size: 2.2rem;
+      }
+
+      .auto-city-current-row,
+      .auto-city-forecast-text {
+        font-size: 0.95rem;
+      }
+
+      .auto-city-forecast-grid {
+        grid-template-columns: repeat(3, max-content);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+  autoCityCycleStyleInjected = true;
+}
+
+function ensureCityCyclePanelRoot() {
+  ensureCityCycleStyles();
+  if (
+    autoCityCyclePanelRoot &&
+    document.body.contains(autoCityCyclePanelRoot)
+  ) {
+    return autoCityCyclePanelRoot;
+  }
+
+  const panelRoot = document.createElement("section");
+  panelRoot.id = "autoCityCycleWindow";
+  panelRoot.className = "auto-city-cycle-window";
+  document.body.appendChild(panelRoot);
+  autoCityCyclePanelRoot = panelRoot;
+  return panelRoot;
+}
+
+async function hideCityCyclePanel({ clearContent = true } = {}) {
+  const panelRoot = autoCityCyclePanelRoot;
+  if (!panelRoot) {
+    return;
+  }
+
+  if (panelRoot.style.display !== "none") {
+    panelRoot.classList.remove("is-visible");
+    panelRoot.classList.add("is-hiding");
+    await waitMs(CITY_CYCLE_PANEL_ANIMATION_MS);
+  }
+
+  panelRoot.classList.remove("is-hiding");
+  panelRoot.style.display = "none";
+  if (clearContent) {
+    panelRoot.innerHTML = "";
+  }
+}
+
+function renderCityCyclePanel(city, weatherData, cityIndex) {
+  const panelRoot = ensureCityCyclePanelRoot();
+  const current = weatherData?.current || {};
+  const forecast = Array.isArray(weatherData?.forecast)
+    ? weatherData.forecast.slice(0, 3)
+    : [];
+
+  const windArrowDeg = Number.isFinite(current.windDirDeg)
+    ? (current.windDirDeg + 180) % 360
+    : 0;
+
+  const currentIconSrc = current.iconPath || current.fallbackIcon;
+  const safeCityLabel = escapeHtml(city.label || "City");
+  const safeCurrentDescription = escapeHtml(
+    current.description || "Current conditions unavailable",
+  );
+  const cityAlertContext = getCityAlertContext(city);
+  const alertBadgeLabel = String(
+    weatherData?.alertBadgeLabel || cityAlertContext.badgeLabel || "",
+  ).trim();
+  const alertBadgeTitle = String(
+    weatherData?.alertBadgeTitle || cityAlertContext.badgeTitle || "",
+  ).trim();
+  const safeAlertBadgeLabel = escapeHtml(alertBadgeLabel);
+  const safeAlertBadgeTitle = escapeHtml(alertBadgeTitle);
+  const headerMetaText =
+    Number.isFinite(cityIndex) && cityIndex >= 0
+      ? `City ${cityIndex + 1}/${AUTO_CITY_CYCLE_CITIES.length}`
+      : "Viewer Request";
+
+  const forecastHtml = forecast
+    .map((period, idx) => {
+      const highText = Number.isFinite(period.highTempF)
+        ? `${Math.round(period.highTempF)}°`
+        : "--";
+      const lowText = Number.isFinite(period.lowTempF)
+        ? `${Math.round(period.lowTempF)}°`
+        : "--";
+      const safeDayName = escapeHtml(period.dayName);
+      const safeShortForecast = wrapTextWordsPerLine(
+        escapeHtml(period.shortForecast),
+        3,
+      );
+      return `
+        <article class="auto-city-panel auto-city-forecast" style="--stagger-delay: ${150 + idx * 85}ms;">
+          <div class="auto-city-forecast-day">${safeDayName}</div>
+          <img class="auto-city-forecast-icon" src="${period.iconPath}" alt="${safeShortForecast}">
+          <div class="auto-city-forecast-high">${highText}</div>
+          <div class="auto-city-forecast-low">${lowText}</div>
+          <div class="auto-city-forecast-text">${safeShortForecast}</div>
+        </article>
+      `;
+    })
+    .join("");
+
+  panelRoot.innerHTML = `
+    <div class="auto-city-cycle-shell">
+      <div class="auto-city-cycle-header">
+        <div class="auto-city-cycle-header-title">
+          <span class="auto-city-cycle-kicker">Current Conditions + Forecast</span>
+          <span class="auto-city-cycle-title-city">${safeCityLabel}</span>
+        </div>
+        <div class="auto-city-cycle-header-meta">${headerMetaText}</div>
+      </div>
+      <div class="auto-city-cycle-content">
+        <article class="auto-city-panel auto-city-current" style="--stagger-delay: 60ms;">
+          <div class="auto-city-current-topline">
+            <div class="auto-city-current-heading">
+              <span class="auto-city-current-label">Current Conditions</span>
+              <span class="auto-city-current-city">${safeCityLabel}</span>
+            </div>
+            ${
+              safeAlertBadgeLabel
+                ? `<span class="auto-city-alert-badge" title="${safeAlertBadgeTitle}" style="display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; background:rgba(255, 196, 72, 0.16); border:1px solid rgba(255, 196, 72, 0.35); color:#ffe8b0; font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; white-space:nowrap;">⚠ ${safeAlertBadgeLabel}</span>`
+                : ""
+            }
+          </div>
+          <div class="auto-city-current-summary">
+            <div class="auto-city-current-icon-wrap">
+              <img class="auto-city-current-icon" src="${currentIconSrc}" alt="${safeCurrentDescription}" onerror="this.onerror=null;this.src='${current.fallbackIcon || getCityWeatherIconPath(CITY_WEATHER_ICON_FALLBACK)}';">
+            </div>
+            <div class="auto-city-current-temp">${formatTempF(current.tempF)}</div>
+          </div>
+          <div class="auto-city-current-row">
+            <span>Wind</span>
+            <span>
+              <span class="auto-city-wind-arrow" style="transform: rotate(${windArrowDeg}deg);">↑</span>
+              ${current.windDirCardinal || "N/A"} ${formatWindSpeedMph(current.windSpeedMph)}
+            </span>
+          </div>
+        </article>
+        <div class="auto-city-forecast-grid">
+          ${forecastHtml}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+async function panMapToCity(city) {
+  if (!mapInstance || !city) {
+    return;
+  }
+
+  await new Promise((resolve) => {
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      clearTimeout(safetyTimerId);
+      resolve();
+    };
+
+    const onMoveEnd = () => {
+      mapInstance.off("moveend", onMoveEnd);
+      finish();
+    };
+
+    const safetyTimerId = setTimeout(() => {
+      mapInstance.off("moveend", onMoveEnd);
+      finish();
+    }, CITY_CYCLE_MAP_PAN_MS + 700);
+
+    mapInstance.on("moveend", onMoveEnd);
+    mapInstance.easeTo({
+      center: [city.lon, city.lat],
+      duration: CITY_CYCLE_MAP_PAN_MS,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      essential: true,
+      zoom: Math.max(mapInstance.getZoom(), 7.7),
+    });
+  });
+}
+
+function ensureAutoSituationReviewStyles() {
+  if (autoSituationReviewStyleInjected) {
+    return;
+  }
+
+  const style = document.createElement("style");
+  style.id = "auto-situation-review-style";
+  style.textContent = `
+    @keyframes autoSituationCardIn {
+      0% {
+        opacity: 0;
+        transform: translate3d(-26px, 8px, 0) scale(0.978);
+        filter: blur(6px);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes autoSituationCardOut {
+      0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+        filter: blur(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translate3d(-20px, 4px, 0) scale(0.985);
+        filter: blur(5px);
+      }
+    }
+
+    .auto-situation-card {
+      position: fixed;
+      top: 62px;
+      left: 14px;
+      z-index: 1400;
+      width: min(760px, calc(100vw - 28px));
+      border-radius: 20px;
+      border: 4px solid rgba(255, 255, 255, 0.98);
+      background: linear-gradient(180deg, #000000 0%, #141414 42%, #303030 100%);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+      color: #ffffff;
+      font-family: "Saira", "Space Grotesk", sans-serif;
+      overflow: hidden;
+      display: none;
+      pointer-events: none;
+      opacity: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.58);
+    }
+
+    .auto-situation-card.is-visible {
+      animation: autoSituationCardIn 420ms cubic-bezier(0.2, 0.75, 0.2, 1) forwards;
+    }
+
+    .auto-situation-card.is-hiding {
+      animation: autoSituationCardOut 320ms cubic-bezier(0.4, 0, 0.6, 1) forwards;
+    }
+
+    .auto-situation-card__header {
+      padding: 12px 14px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      background: linear-gradient(120deg, rgba(102, 170, 255, 0.2), rgba(255, 255, 255, 0.03));
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .auto-situation-card__title {
+      font-size: 1.74rem;
+      letter-spacing: 0.02em;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .auto-situation-card__subtitle {
+      margin-top: 4px;
+      font-size: 0.88rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.83;
+      font-weight: 700;
+    }
+
+    .auto-situation-card__meta {
+      font-size: 0.94rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #95d8ff;
+      text-align: right;
+    }
+
+    .auto-situation-card__body {
+      padding: 14px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+      gap: 12px;
+    }
+
+    .auto-situation-card__summary {
+      font-size: 1.14rem;
+      line-height: 1.34;
+      font-weight: 800;
+      color: #f4fbff;
+      display: grid;
+      gap: 8px;
+    }
+
+    .auto-situation-card__body.is-summary-only {
+      grid-template-columns: 1fr;
+    }
+
+    .auto-situation-card__summary-points {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 7px;
+      list-style: disc;
+    }
+
+    .auto-situation-card__summary-points li {
+      font-size: 1.17rem;
+      line-height: 1.28;
+      font-weight: 700;
+    }
+
+    .auto-situation-card__alert-counts {
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+      padding: 10px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .auto-situation-card__alert-count-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .auto-situation-card__alert-count-item {
+      border-radius: 10px;
+      border: 4px solid var(--alert-accent, rgba(255, 255, 255, 0.8));
+      background:
+        linear-gradient(160deg, var(--alert-accent-bg, rgba(255, 255, 255, 0.2)) 0%, rgba(0, 0, 0, 0.48) 100%);
+      padding: 8px 8px 7px;
+      min-height: 70px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+      display: grid;
+      align-content: space-between;
+      gap: 6px;
+    }
+
+    .auto-situation-card__alert-count-value {
+      font-size: 1.36rem;
+      font-weight: 900;
+      line-height: 1;
+      color: #ffffff;
+    }
+
+    .auto-situation-card__alert-count-label {
+      font-size: 0.78rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .auto-situation-card__block-title {
+      font-size: 0.92rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      opacity: 0.88;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .auto-regional-loading-card {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 1400;
+      width: min(420px, calc(100vw - 28px));
+      border-radius: 20px;
+      border: 4px solid rgba(255, 255, 255, 0.98);
+      background: linear-gradient(180deg, #000000 0%, #171717 46%, #303030 100%);
+      box-shadow: 0 20px 46px rgba(0, 0, 0, 0.54);
+      color: #ffffff;
+      font-family: "Saira", "Space Grotesk", sans-serif;
+      text-align: center;
+      pointer-events: none;
+      display: none;
+      opacity: 0;
+      transform: translate3d(16px, 8px, 0) scale(0.985);
+      transition: opacity 250ms ease, transform 250ms ease;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.56);
+      padding: 18px 16px;
+    }
+
+    .auto-regional-loading-card.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    .auto-regional-loading-card__text {
+      font-size: clamp(1.52rem, 2.8vw, 2.15rem);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #d8f1ff;
+    }
+
+    .auto-mode-schedule {
+      position: fixed;
+      left: 14px;
+      bottom: 14px;
+      z-index: 1400;
+      width: min(460px, calc(100vw - 28px));
+      border-radius: 20px;
+      border: 4px solid rgba(255, 255, 255, 0.98);
+      background: linear-gradient(180deg, #000000 0%, #161616 48%, #303030 100%);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      font-family: "Saira", "Space Grotesk", sans-serif;
+      padding: 10px 12px;
+      pointer-events: none;
+      display: none;
+    }
+
+    .auto-mode-schedule__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .auto-mode-schedule__top-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .auto-mode-schedule__title {
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .auto-mode-schedule__current {
+      font-size: 0.95rem;
+      color: #9fdfff;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .auto-mode-schedule__remaining {
+      font-size: 0.95rem;
+      color: #9fdfff;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .auto-mode-schedule__top-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #8ed8ff;
+      box-shadow: 0 0 14px rgba(142, 216, 255, 0.66);
+    }
+
+    .auto-mode-schedule__row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: center;
+      font-size: 1.06rem;
+      font-weight: 700;
+      padding: 4px 6px;
+      border-radius: 10px;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .auto-mode-schedule__row.is-current {
+      color: #aee7ff;
+      background: rgba(93, 186, 255, 0.16);
+      text-shadow: 0 0 12px rgba(93, 186, 255, 0.32);
+    }
+
+    .auto-mode-schedule__row.is-complete {
+      color: rgba(197, 255, 219, 0.82);
+    }
+
+    .auto-mode-schedule__dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.34);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+    }
+
+    .auto-mode-schedule__row.is-current .auto-mode-schedule__dot {
+      background: #8ed8ff;
+      box-shadow: 0 0 14px rgba(142, 216, 255, 0.66);
+    }
+
+    .auto-mode-schedule__row.is-complete .auto-mode-schedule__dot {
+      background: #79d87b;
+    }
+
+    @media (max-width: 760px) {
+      .auto-situation-card {
+        top: auto;
+        left: 6px;
+        bottom: calc(var(--mobile-sheet-height, 90px) + 10px);
+        width: min(680px, calc(100vw - 12px));
+      }
+
+      .auto-situation-card__body {
+        grid-template-columns: 1fr;
+      }
+
+      .auto-situation-card__alert-count-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .auto-mode-schedule {
+        left: 6px;
+        bottom: calc(var(--mobile-sheet-height, 90px) + 6px);
+        width: min(520px, calc(100vw - 12px));
+      }
+
+      .auto-regional-loading-card {
+        right: 6px;
+        bottom: calc(var(--mobile-sheet-height, 90px) + 6px);
+        width: min(420px, calc(100vw - 12px));
+      }
+
+      .auto-mode-schedule__row {
+        font-size: 0.94rem;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+  autoSituationReviewStyleInjected = true;
+}
+
+function ensureAutoModeScheduleRoot() {
+  ensureAutoSituationReviewStyles();
+  if (autoModeScheduleRoot && document.body.contains(autoModeScheduleRoot)) {
+    return autoModeScheduleRoot;
+  }
+
+  const root = document.createElement("section");
+  root.id = "autoModeSchedule";
+  root.className = "auto-mode-schedule";
+  document.body.appendChild(root);
+  autoModeScheduleRoot = root;
+  return root;
+}
+
+function ensureRegionalSummariesLoadingCardRoot() {
+  ensureAutoSituationReviewStyles();
+  if (
+    autoRegionalLoadingCardRoot &&
+    document.body.contains(autoRegionalLoadingCardRoot)
+  ) {
+    return autoRegionalLoadingCardRoot;
+  }
+
+  const card = document.createElement("section");
+  card.id = "autoRegionalLoadingCard";
+  card.className = "auto-regional-loading-card";
+  card.innerHTML = `<div class="auto-regional-loading-card__text">Loading Summaries...</div>`;
+  document.body.appendChild(card);
+  autoRegionalLoadingCardRoot = card;
+  return card;
+}
+
+function hasActiveMichiganAlertsForSchedule() {
+  return getSortedMichiganAlertsForAutoCycle().length > 0;
+}
+
+function getAutoModeScheduleStages({ includeAlertStage = true } = {}) {
+  const stages = [
+    { key: "idle", label: "Idle Radar" },
+    { key: "situation-review", label: "Situation Review" },
+    { key: "city-cycle", label: "City Conditions/Forecasts" },
+  ];
+  if (includeAlertStage) {
+    stages.push({ key: "alert-cycle", label: "Active Alerts" });
+  }
+  stages.push({ key: "statewide-forecast", label: "Regional Forecasts" });
+  return stages;
+}
+
+function updateRegionalSummariesLoadingIndicator(options = {}) {
+  const now = Date.now();
+  const shouldShow =
+    autoModeEnabled &&
+    autoModeSubmode === "idle" &&
+    autoModePendingTransitionTarget === "statewide-forecast" &&
+    autoModeTransitionDeadlineMs > now &&
+    autoIdleToCityTransitionTimerId;
+
+  const card = ensureRegionalSummariesLoadingCardRoot();
+  if (!shouldShow) {
+    card.classList.remove("is-visible");
+    card.style.display = "none";
+    return;
+  }
+
+  card.style.display = "block";
+  if (!options.skipAnimation) {
+    requestAnimationFrame(() => {
+      card.classList.add("is-visible");
+    });
+    return;
+  }
+  card.classList.add("is-visible");
+}
+
+function ensureAutoModeScheduleTicker() {
+  if (autoModeScheduleTickTimerId) {
+    return;
+  }
+
+  autoModeScheduleTickTimerId = setInterval(() => {
+    if (!autoModeEnabled) {
+      return;
+    }
+    updateAutoModeScheduleIndicator();
+  }, 1000);
+}
+
+function updateAutoModeScheduleIndicator() {
+  ensureAutoModeScheduleTicker();
+  const root = ensureAutoModeScheduleRoot();
+  if (!autoModeEnabled) {
+    root.style.display = "none";
+    updateRegionalSummariesLoadingIndicator({ skipAnimation: true });
+    return;
+  }
+
+  const now = Date.now();
+  const hasActiveAlerts = hasActiveMichiganAlertsForSchedule();
+  const showingRegionalCountdown =
+    autoModeSubmode === "idle" &&
+    autoModePendingTransitionTarget === "statewide-forecast" &&
+    autoModeTransitionDeadlineMs > now &&
+    autoIdleToCityTransitionTimerId;
+
+  const stages = getAutoModeScheduleStages({
+    includeAlertStage: hasActiveAlerts,
+  });
+  const effectiveSubmode = showingRegionalCountdown
+    ? "statewide-forecast"
+    : autoModeSubmode;
+
+  root.style.display = "block";
+  const currentIndex = stages.findIndex(
+    (stage) => stage.key === effectiveSubmode,
+  );
+  const safeCurrentIndex = currentIndex >= 0 ? currentIndex : 0;
+  const currentLabel =
+    stages[safeCurrentIndex]?.label ||
+    (showingRegionalCountdown ? "Regional Forecasts" : "Idle Radar");
+  const hasTransitionCountdown =
+    autoModeSubmode === "idle" &&
+    autoModeTransitionDeadlineMs > now &&
+    autoIdleToCityTransitionTimerId;
+  const remainingMarkup = hasTransitionCountdown
+    ? `<div class="auto-mode-schedule__remaining">${formatMmSsRemaining(autoModeTransitionDeadlineMs - now)}</div>`
+    : "";
+
+  const rows = stages
+    .map((stage, idx) => {
+      const isCurrent = idx === safeCurrentIndex;
+      const isComplete = idx < safeCurrentIndex;
+      return `<div class="auto-mode-schedule__row ${isCurrent ? "is-current" : ""} ${isComplete ? "is-complete" : ""}">
+        <span>${escapeHtml(stage.label)}</span>
+        <span class="auto-mode-schedule__dot"></span>
+      </div>`;
+    })
+    .join("");
+
+  root.innerHTML = `
+    <div class="auto-mode-schedule__top">
+      <div class="auto-mode-schedule__title">Auto Schedule</div>
+      <div class="auto-mode-schedule__top-right">
+        ${remainingMarkup}
+        <div class="auto-mode-schedule__current">On Now: ${escapeHtml(currentLabel)}</div>
+        <span class="auto-mode-schedule__top-dot"></span>
+      </div>
+    </div>
+    ${rows}
+  `;
+
+  positionYouTubeLiveStatusCard();
+  updateRegionalSummariesLoadingIndicator();
+}
+
+function ensureSituationReviewCardRoot() {
+  ensureAutoSituationReviewStyles();
+  if (
+    autoSituationReviewCardRoot &&
+    document.body.contains(autoSituationReviewCardRoot)
+  ) {
+    return autoSituationReviewCardRoot;
+  }
+
+  const card = document.createElement("section");
+  card.id = "autoSituationReviewCard";
+  card.className = "auto-situation-card";
+  document.body.appendChild(card);
+  autoSituationReviewCardRoot = card;
+  return card;
+}
+
+async function hideSituationReviewCard({ clearContent = true } = {}) {
+  const card = autoSituationReviewCardRoot;
+  if (!card) {
+    return;
+  }
+
+  if (card.style.display !== "none") {
+    card.classList.remove("is-visible");
+    card.classList.add("is-hiding");
+    await waitMs(320);
+  }
+
+  card.classList.remove("is-hiding");
+  card.style.display = "none";
+  if (clearContent) {
+    card.innerHTML = "";
+  }
+}
+
+function renderSituationReviewCard(reviewData) {
+  const card = ensureSituationReviewCardRoot();
+  const summary = String(reviewData?.summary || "").trim();
+  const parsedSummaryPoints = parseSituationReviewSummaryPoints(summary);
+  const explicitSummaryPoints = Array.isArray(reviewData?.summaryPoints)
+    ? reviewData.summaryPoints
+        .map((point) => String(point || "").trim())
+        .filter(Boolean)
+        .slice(0, 3)
+    : parsedSummaryPoints;
+  const summaryPoints = [];
+  explicitSummaryPoints.forEach((point) => {
+    const cleaned = cleanSituationReviewPoint(point);
+    if (!cleaned || summaryPoints.includes(cleaned)) return;
+    summaryPoints.push(cleaned);
+  });
+
+  splitSpeechIntoSentences(summary)
+    .map((sentence) => cleanSituationReviewPoint(sentence))
+    .forEach((sentence) => {
+      if (
+        !sentence ||
+        summaryPoints.includes(sentence) ||
+        summaryPoints.length >= 3
+      ) {
+        return;
+      }
+      summaryPoints.push(sentence);
+    });
+
+  const fallbackPoints = [
+    "Regional summaries are loading for Michigan.",
+    "Near-term trends will be highlighted shortly.",
+    "Stay alert for rapid weather changes.",
+  ];
+  fallbackPoints.forEach((point) => {
+    if (summaryPoints.length >= 3) return;
+    if (summaryPoints.includes(point)) return;
+    summaryPoints.push(point);
+  });
+
+  const limitedSummaryPoints = summaryPoints.slice(0, 3);
+  const generatedAt = String(reviewData?.generatedAt || "").trim();
+  const alerts = Array.isArray(reviewData?.alerts) ? reviewData.alerts : [];
+  const summaryPointMarkup = limitedSummaryPoints
+    .map((point) => `<li>${escapeHtml(point)}</li>`)
+    .join("");
+
+  const alertCountCards = buildSituationReviewAlertCountCards(alerts)
+    .map((entry) => {
+      const countLabel = entry.count === 1 ? "alert" : "alerts";
+      return `<article class="auto-situation-card__alert-count-item" style="--alert-accent:${escapeHtml(entry.accentColor)}; --alert-accent-bg:${escapeHtml(entry.accentBackground)};">
+        <div class="auto-situation-card__alert-count-value">${entry.count} ${countLabel}</div>
+        <div class="auto-situation-card__alert-count-label">${escapeHtml(entry.label)}</div>
+      </article>`;
+    })
+    .join("");
+  const hasAlertCounts = Boolean(alertCountCards);
+
+  const alertCountMarkup = hasAlertCounts
+    ? `
+      <div class="auto-situation-card__alert-counts">
+        <div class="auto-situation-card__block-title">Alert Counts</div>
+        <div class="auto-situation-card__alert-count-grid">${alertCountCards}</div>
+      </div>
+    `
+    : "";
+
+  card.innerHTML = `
+    <div class="auto-situation-card__header">
+      <div>
+        <div class="auto-situation-card__title">Michigan Situation Review</div>
+        <div class="auto-situation-card__subtitle">Current + Near-Term Assessment</div>
+      </div>
+      <div class="auto-situation-card__meta">${generatedAt ? escapeHtml(generatedAt) : "Live"}</div>
+    </div>
+    <div class="auto-situation-card__body ${hasAlertCounts ? "" : "is-summary-only"}">
+      <div class="auto-situation-card__summary">
+        <div class="auto-situation-card__block-title">AI Quick Summary</div>
+        <ul class="auto-situation-card__summary-points">${summaryPointMarkup}</ul>
+      </div>
+      ${alertCountMarkup}
+    </div>
+  `;
+
+  card.style.display = "block";
+  card.classList.remove("is-hiding");
+  requestAnimationFrame(() => {
+    if (autoModeEnabled && autoModeSubmode === "situation-review") {
+      card.classList.add("is-visible");
+    }
+  });
+}
+
+function buildMichiganSituationReviewAlertsPayload() {
+  const counts = new Map();
+
+  getSortedMichiganAlertsForAutoCycle().forEach((alert) => {
+    const eventName = String(
+      getAlertEventName(alert) || "Weather Alert",
+    ).trim();
+    if (!eventName) return;
+    counts.set(eventName, (counts.get(eventName) || 0) + 1);
+  });
+
+  return Array.from(counts.entries())
+    .map(([eventName, count]) => ({ eventName, count }))
+    .sort((a, b) => {
+      if (b.count !== a.count) return b.count - a.count;
+      return String(a.eventName).localeCompare(String(b.eventName));
+    });
+}
+
+function buildLocalSituationReviewFallback(alertPayload) {
+  const alerts = Array.isArray(alertPayload) ? alertPayload : [];
+  if (!alerts.length) {
+    return "Quiet setup across Michigan right now with no active Michigan alerts. Near-term weather remains mostly routine, and no immediate severe signal is highlighted.";
+  }
+
+  const names = alerts
+    .slice(0, 4)
+    .map((alert) => {
+      const eventName = String(alert?.eventName || "Weather Alert").trim();
+      const count = Number(alert?.count) || 1;
+      return count > 1 ? `${eventName} (${count})` : eventName;
+    })
+    .filter(Boolean);
+  const alertSummary = names.length
+    ? joinSpeechListNoOxford(names)
+    : "active alerts";
+
+  return `Active Michigan hazards include ${alertSummary}. Monitor warning updates and rapidly changing conditions through the near term.`;
+}
+
+function parseSituationReviewSummaryPoints(summaryText) {
+  const text = String(summaryText || "").trim();
+  if (!text) {
+    return [];
+  }
+
+  const bulletLines = text
+    .split(/\r?\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => cleanSituationReviewPoint(line))
+    .filter(Boolean);
+
+  if (bulletLines.length >= 3) {
+    return bulletLines.slice(0, 3);
+  }
+
+  return text
+    .split(/(?<=[.!?])\s+/)
+    .map((sentence) => cleanSituationReviewPoint(sentence))
+    .filter(Boolean)
+    .slice(0, 3);
+}
+
+function cleanSituationReviewPoint(text) {
+  return String(text || "")
+    .replace(/^bullets?\s*:\s*/i, "")
+    .replace(/^[-*•\d.)\s]+/, "")
+    .trim();
+}
+
+function buildLocalSituationReviewSpokenSummary(alertPayload) {
+  const alerts = Array.isArray(alertPayload) ? alertPayload : [];
+  if (!alerts.length) {
+    return "No active Michigan alerts at this time, with generally routine near-term weather expected.";
+  }
+
+  const names = alerts
+    .slice(0, 3)
+    .map((alert) => {
+      const eventName = String(alert?.eventName || "Weather Alert").trim();
+      const count = Number(alert?.count) || 1;
+      return count > 1 ? `${eventName} (${count})` : eventName;
+    })
+    .filter(Boolean);
+  const spokenList = names.length
+    ? joinSpeechListNoOxford(names)
+    : "active alerts";
+  return `Michigan remains active with ${spokenList}, with the near-term focus on those highlighted hazards.`;
+}
+
+function toSituationAlertAccentColor(alertName) {
+  const base = getAlertColor({
+    eventName: String(alertName || "").trim(),
+  });
+  return /^#[0-9a-f]{3,8}$/i.test(base) ? base : "#7dd3fc";
+}
+
+function hexColorToRgba(hexColor, alpha) {
+  const hex = String(hexColor || "")
+    .trim()
+    .replace(/^#/, "");
+  const safeAlpha = clampNumber(Number(alpha) || 0, 0, 1);
+
+  if (hex.length === 3) {
+    const r = parseInt(hex[0] + hex[0], 16);
+    const g = parseInt(hex[1] + hex[1], 16);
+    const b = parseInt(hex[2] + hex[2], 16);
+    return `rgba(${r}, ${g}, ${b}, ${safeAlpha})`;
+  }
+
+  if (hex.length >= 6) {
+    const r = parseInt(hex.slice(0, 2), 16);
+    const g = parseInt(hex.slice(2, 4), 16);
+    const b = parseInt(hex.slice(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${safeAlpha})`;
+  }
+
+  return `rgba(125, 211, 252, ${safeAlpha})`;
+}
+
+function buildSituationReviewAlertCountCards(alerts) {
+  const counts = new Map();
+
+  (Array.isArray(alerts) ? alerts : []).forEach((alert) => {
+    const eventName = String(alert?.eventName || "Weather Alert").trim();
+    if (!eventName) {
+      return;
+    }
+    const increment = Math.max(1, Number(alert?.count) || 1);
+    counts.set(eventName, (counts.get(eventName) || 0) + increment);
+  });
+
+  return Array.from(counts.entries())
+    .map(([label, count]) => {
+      const accentColor = toSituationAlertAccentColor(label);
+      return {
+        label,
+        count,
+        accentColor,
+        accentBackground: hexColorToRgba(accentColor, 0.34),
+      };
+    })
+    .sort((a, b) => {
+      if (b.count !== a.count) {
+        return b.count - a.count;
+      }
+      return a.label.localeCompare(b.label);
+    })
+    .slice(0, 8);
+}
+
+async function fetchMichiganSituationReviewData(prefetchedAlerts = null) {
+  const alerts = Array.isArray(prefetchedAlerts)
+    ? prefetchedAlerts
+    : buildMichiganSituationReviewAlertsPayload();
+  try {
+    const response = await fetch("/api/mi-situation-review", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ alerts }),
+    });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(
+        payload?.details || payload?.error || `HTTP ${response.status}`,
+      );
+    }
+
+    return {
+      summary: cleanSpeechNarrationText(String(payload?.summary || "").trim()),
+      summaryPoints: Array.isArray(payload?.summaryPoints)
+        ? payload.summaryPoints
+            .map((point) =>
+              cleanSpeechNarrationText(String(point || "").trim()),
+            )
+            .filter(Boolean)
+            .slice(0, 5)
+        : [],
+      spokenSummary: cleanSpeechNarrationText(
+        String(payload?.spokenSummary || payload?.summary || "").trim(),
+      ),
+      generatedAt: String(payload?.generatedAt || "").trim(),
+      alerts,
+    };
+  } catch (error) {
+    console.warn(
+      "[AUTO_SITUATION_REVIEW] Falling back to local summary:",
+      error,
+    );
+    return {
+      summary: buildLocalSituationReviewFallback(alerts),
+      summaryPoints: parseSituationReviewSummaryPoints(
+        buildLocalSituationReviewFallback(alerts),
+      ),
+      spokenSummary: buildLocalSituationReviewSpokenSummary(alerts),
+      generatedAt: "Local fallback",
+      alerts,
+    };
+  }
+}
+
+const idleMode = {
+  clearScheduledTransition() {
+    if (autoIdleToCityTransitionTimerId) {
+      clearTimeout(autoIdleToCityTransitionTimerId);
+      autoIdleToCityTransitionTimerId = null;
+    }
+    autoModeTransitionDeadlineMs = 0;
+    autoModePendingTransitionTarget = null;
+    updateAutoModeScheduleIndicator();
+  },
+
+  scheduleCityCycleTransition() {
+    this.clearScheduledTransition();
+    if (!autoModeEnabled || autoModeSubmode !== "idle") {
+      return;
+    }
+
+    const policy = getAutoModeAlertPolicy();
+    const nextPhase = autoIdleNextPhase;
+    autoIdleNextPhase = null;
+    const minDelayMs = Math.max(0, Number(policy.minDelayMs) || 0);
+    const maxDelayMs = Math.max(minDelayMs, Number(policy.maxDelayMs) || 0);
+    let transitionDelayMs =
+      minDelayMs + Math.floor(Math.random() * (maxDelayMs - minDelayMs + 1));
+    if (nextPhase === "statewide-forecast") {
+      transitionDelayMs = AUTO_IDLE_TO_STATEWIDE_FORECAST_MS;
+      void warmStatewideRegionalForecasts({
+        reason: "idle-transition-countdown",
+      }).catch(() => {});
+    }
+    autoModePendingTransitionTarget =
+      nextPhase === "statewide-forecast"
+        ? "statewide-forecast"
+        : policy.nextMode === "alert"
+          ? "alert-cycle"
+          : "situation-review";
+    autoModeTransitionDeadlineMs = Date.now() + transitionDelayMs;
+    const scheduledLabel =
+      nextPhase === "statewide-forecast"
+        ? "Regional summary"
+        : policy.nextMode === "alert"
+          ? "Alert"
+          : "City";
+
+    logAutoIdle(
+      `${scheduledLabel} cycle transition scheduled in ${Math.round(transitionDelayMs / 1000)}s (${policy.reason})`,
+    );
+
+    updateAutoModeScheduleIndicator();
+
+    autoIdleToCityTransitionTimerId = setTimeout(() => {
+      autoIdleToCityTransitionTimerId = null;
+      autoModeTransitionDeadlineMs = 0;
+      autoModePendingTransitionTarget = null;
+      updateAutoModeScheduleIndicator();
+      if (!autoModeEnabled || autoModeSubmode !== "idle") {
+        return;
+      }
+      if (nextPhase === "statewide-forecast") {
+        const resumeState = autoStatewideForecastResumeState;
+        autoStatewideForecastResumeState = null;
+        void statewideForecaseMode.start(
+          resumeState ? { resumeState } : undefined,
+        );
+        return;
+      }
+      if (policy.nextMode === "alert") {
+        void alertCycleMode.start();
+        return;
+      }
+      void situationReviewMode.start();
+    }, transitionDelayMs);
+  },
+};
+
+const situationReviewMode = {
+  isTokenActive(token) {
+    return (
+      autoModeEnabled &&
+      autoModeSubmode === "situation-review" &&
+      token === autoSituationReviewRunToken
+    );
+  },
+
+  async waitWhileActive(durationMs, token) {
+    const target = Date.now() + Math.max(0, Number(durationMs) || 0);
+    while (Date.now() < target) {
+      if (!this.isTokenActive(token)) {
+        return false;
+      }
+      await waitMs(Math.min(220, target - Date.now()));
+    }
+    return this.isTokenActive(token);
+  },
+
+  async run(token) {
+    const reviewAlerts = buildMichiganSituationReviewAlertsPayload();
+    const reviewKey = getSituationReviewPrefetchKey(reviewAlerts);
+    let reviewData = null;
+
+    if (
+      autoSituationReviewPrefetchResult &&
+      autoSituationReviewPrefetchKey === reviewKey
+    ) {
+      reviewData = autoSituationReviewPrefetchResult;
+      logAutoSituationReview("Using prefetched situation summary.");
+    } else if (
+      autoSituationReviewPrefetchTask &&
+      autoSituationReviewPrefetchKey === reviewKey
+    ) {
+      logAutoSituationReview(
+        "Awaiting in-flight situation summary prefetch...",
+      );
+      try {
+        reviewData = await autoSituationReviewPrefetchTask;
+      } catch (error) {
+        logAutoSituationReview(
+          "In-flight situation prefetch unavailable. Refetching now:",
+          error,
+        );
+      }
+    }
+
+    if (!reviewData) {
+      reviewData = await fetchMichiganSituationReviewData(reviewAlerts);
+    }
+    clearSituationReviewPrefetch();
+
+    if (!this.isTokenActive(token)) {
+      return;
+    }
+
+    renderSituationReviewCard(reviewData);
+    const narration = cleanSpeechNarrationText(
+      String(reviewData?.spokenSummary || reviewData?.summary || ""),
+    );
+    const speechStartedAt = Date.now();
+
+    if (narration) {
+      await speakAlertNarrationFromText(narration, {
+        cancelCurrent: true,
+        maxWaitMs: 0,
+        rate: 1.02,
+      });
+      if (!this.isTokenActive(token)) {
+        return;
+      }
+    }
+
+    const elapsedMs = Date.now() - speechStartedAt;
+    const remainingMs = Math.max(
+      AUTO_SITUATION_REVIEW_POST_SPEECH_HOLD_MS,
+      AUTO_SITUATION_REVIEW_MIN_DISPLAY_MS - elapsedMs,
+    );
+    if (remainingMs > 0) {
+      await this.waitWhileActive(remainingMs, token);
+    }
+
+    if (!this.isTokenActive(token)) {
+      return;
+    }
+
+    if (
+      autoSituationReviewPendingIncomingAlertId &&
+      activeAlerts.has(autoSituationReviewPendingIncomingAlertId)
+    ) {
+      const pendingAlert = activeAlerts.get(
+        autoSituationReviewPendingIncomingAlertId,
+      );
+      autoSituationReviewPendingIncomingAlertId = null;
+      if (pendingAlert && isMichiganAlertForAutoCycle(pendingAlert)) {
+        const alertsOverride =
+          getMichiganAlertCycleQueueStartingWith(pendingAlert);
+        logAutoSituationReview(
+          `Situation review handoff to alert cycle (count=${alertsOverride.length}).`,
+        );
+        await hideSituationReviewCard({ clearContent: true });
+        await alertCycleMode.start({ alertsOverride });
+        return;
+      }
+    }
+
+    autoSituationReviewPendingIncomingAlertId = null;
+    logAutoSituationReview("Situation review complete. Starting city cycle.");
+    await hideSituationReviewCard({ clearContent: true });
+    if (autoModeEnabled) {
+      await cityCycleMode.start();
+    }
+  },
+
+  async start() {
+    if (!autoModeEnabled) {
+      return;
+    }
+
+    idleMode.clearScheduledTransition();
+    stopAutoIdlePlayback();
+    setAutoModeSubmode("situation-review");
+    setRadarSitesVisibility(false);
+    ensureRadarLegendVisible("MRMS");
+    await hideCityCyclePanel({ clearContent: true });
+
+    autoSituationReviewRunToken += 1;
+    const token = autoSituationReviewRunToken;
+    autoSituationReviewPendingIncomingAlertId = null;
+
+    logAutoSituationReview("Entering situation-review mode");
+    await maybeSpeakYouTubeLiveMentionForStage("situation-review");
+    try {
+      await this.run(token);
+    } finally {
+      if (this.isTokenActive(token)) {
+        await hideSituationReviewCard({ clearContent: true });
+      }
+    }
+  },
+
+  async stop() {
+    autoSituationReviewRunToken += 1;
+    autoSituationReviewPendingIncomingAlertId = null;
+    await hideSituationReviewCard({ clearContent: true });
+    logAutoSituationReview("Stopped situation-review mode");
+  },
+};
+
+const alertCycleMode = {
+  isTokenActive(token) {
+    return (
+      autoModeEnabled &&
+      autoModeSubmode === "alert-cycle" &&
+      token === autoAlertCycleRunToken
+    );
+  },
+
+  async waitWhileActive(durationMs, token) {
+    const target = Date.now() + Math.max(0, Number(durationMs) || 0);
+    while (Date.now() < target) {
+      if (!this.isTokenActive(token)) {
+        return false;
+      }
+      await waitMs(Math.min(220, target - Date.now()));
+    }
+    return this.isTokenActive(token);
+  },
+
+  async focusAlert(alert, token) {
+    if (!this.isTokenActive(token)) {
+      return;
+    }
+
+    if (
+      isHigherPriorityAlertId(
+        autoAlertCyclePendingIncomingAlertId,
+        alert?.id ? String(alert.id) : null,
+      )
+    ) {
+      logAutoAlertCycle(
+        `Skipping remaining narration for ${alert.id || "unknown"} to immediately handle higher-priority incoming alert ${autoAlertCyclePendingIncomingAlertId || "unknown"}.`,
+      );
+      return;
+    }
+
+    const resolvedName = normalizeAutoAlertPriorityName(getAlertName(alert));
+    const priority = getAutoAlertPriority(alert);
+    const nearestRadar = getAlertCycleNearestRadarSite(alert);
+
+    logAutoAlertCycle(
+      `Focusing alert ${alert.id || "unknown"} name=${resolvedName || "Unknown Alert"} priority=${priority} radar=${nearestRadar?.id || "none"}`,
+    );
+
+    if (nearestRadar) {
+      await startAlertReflectivityLoop(nearestRadar);
+      if (!this.isTokenActive(token)) {
+        return;
+      }
+    }
+
+    showDetailedAlert(alert);
+
+    let matchedCamera = null;
+    try {
+      const camerasInPolygon = await getAlertCycleCamerasInPolygon(alert);
+      matchedCamera = pickPriorityAlertCamera(camerasInPolygon);
+      if (matchedCamera) {
+        showAlertCycleCameraOverlay(matchedCamera);
+      } else {
+        hideAlertCycleCameraOverlay();
+      }
+    } catch (error) {
+      console.warn("[Alert Cycle] Camera lookup failed:", error);
+      hideAlertCycleCameraOverlay();
+    }
+
+    if (!this.isTokenActive(token)) {
+      return;
+    }
+
+    const cycleNarration = await buildAlertSpeechNarrationForPlayback(alert, {
+      preferAi: true,
+    });
+    const cycleSpeechScriptBase = cycleNarration.text;
+    const matchedCameraName = String(
+      matchedCamera?.properties?.name || "",
+    ).trim();
+    const cameraLeadIn = matchedCameraName
+      ? `This is the ${matchedCameraName}. `
+      : "";
+    const cycleSpeechScript =
+      `${cameraLeadIn}${cycleSpeechScriptBase || ""}`.trim();
+    console.log(
+      `[TTS][Alert Cycle Script][${cycleNarration.source || "unknown"}]`,
+      cycleSpeechScript,
+    );
+    if (cycleSpeechScript) {
+      await speakAlertNarrationFromText(cycleSpeechScript, {
+        cancelCurrent: true,
+        maxWaitMs: 0,
+      });
+      // Wait 500ms after TTS completes to ensure full playback
+      await new Promise((resolve) => setTimeout(resolve, 500));
+    } else {
+      await this.waitWhileActive(AUTO_ALERT_CYCLE_FOCUS_MS, token);
+    }
+
+    // Ensure loop keeps playing for next alert
+    if (this.isTokenActive(token) && radarFrames.length > 1 && !isLooping) {
+      startLoop();
+    }
+
+    stopFocusedAlertPulse();
+  },
+
+  async run(token, alertsOverride = null) {
+    const alerts = Array.isArray(alertsOverride)
+      ? alertsOverride.filter(Boolean)
+      : getSortedMichiganAlertsForAutoCycle();
+    if (!alerts.length) {
+      logAutoAlertCycle("No Michigan alerts available for auto cycle");
+      return;
+    }
+
+    logAutoAlertCycle(`Starting alert cycle count=${alerts.length}`);
+
+    const alertQueueIds = alerts
+      .map((alert) => (alert?.id ? String(alert.id) : ""))
+      .filter(Boolean);
+
+    for (
+      let queueIndex = 0;
+      queueIndex < alertQueueIds.length;
+      queueIndex += 1
+    ) {
+      if (!this.isTokenActive(token)) {
+        autoAlertCycleCurrentAlertId = null;
+        return;
+      }
+
+      const alertId = alertQueueIds[queueIndex];
+      if (!alertId || !activeAlerts.has(alertId)) {
+        if (autoAlertCycleCurrentAlertId === alertId) {
+          autoAlertCycleCurrentAlertId = null;
+        }
+        continue;
+      }
+
+      autoAlertCycleCurrentAlertId = alertId;
+      const alert = activeAlerts.get(alertId);
+      if (!alert) {
+        autoAlertCycleCurrentAlertId = null;
+        continue;
+      }
+
+      await this.focusAlert(alert, token);
+
+      if (!this.isTokenActive(token)) {
+        autoAlertCycleCurrentAlertId = null;
+        return;
+      }
+
+      const pendingAlertId = autoAlertCyclePendingIncomingAlertId;
+      if (pendingAlertId && activeAlerts.has(pendingAlertId)) {
+        autoAlertCyclePendingIncomingAlertId = null;
+
+        const pendingAlert = activeAlerts.get(pendingAlertId);
+        if (
+          pendingAlert &&
+          isMichiganAlertForAutoCycle(pendingAlert) &&
+          isHigherPriorityAlertId(pendingAlertId, alertId)
+        ) {
+          const existingIdx = alertQueueIds.indexOf(pendingAlertId);
+          if (existingIdx >= 0) {
+            alertQueueIds.splice(existingIdx, 1);
+            if (existingIdx <= queueIndex) {
+              queueIndex -= 1;
+            }
+          }
+
+          alertQueueIds.splice(queueIndex + 1, 0, pendingAlertId);
+          logAutoAlertCycle(
+            `Preempting next slot with higher-priority alert ${pendingAlertId}.`,
+          );
+        }
+      }
+
+      autoAlertCycleCurrentAlertId = null;
+    }
+  },
+
+  async start({ alertsOverride = null } = {}) {
+    if (!autoModeEnabled) {
+      return;
+    }
+
+    idleMode.clearScheduledTransition();
+    stopAutoIdlePlayback();
+    setAutoModeSubmode("alert-cycle");
+    setRadarSitesVisibility(false);
+    ensureRadarLegendVisible(AUTO_ALERT_REFLECTIVITY_PRODUCT);
+    await hideSituationReviewCard({ clearContent: true });
+    await hideCityCyclePanel({ clearContent: true });
+
+    autoAlertCycleRunToken += 1;
+    const token = autoAlertCycleRunToken;
+    autoAlertCyclePendingIncomingAlertId = null;
+    autoAlertCycleCurrentAlertId = null;
+    logAutoAlertCycle("Entering alert-cycle mode");
+    await maybeSpeakYouTubeLiveMentionForStage("alert-cycle");
+
+    try {
+      await this.run(token, alertsOverride);
+    } finally {
+      autoAlertCyclePendingIncomingAlertId = null;
+      autoAlertCycleCurrentAlertId = null;
+      stopFocusedAlertPulse();
+      hideAlertCycleCameraOverlay();
+      stopLoop();
+      restoreAutoAlertLoopTiming();
+      logAutoAlertCycle("Exiting alert-cycle mode");
+      if (this.isTokenActive(token) && autoModeEnabled) {
+        await enterAutoIdleMode({ nextPhase: "statewide-forecast" });
+      }
+    }
+  },
+
+  async stop() {
+    autoAlertCycleRunToken += 1;
+    autoAlertCyclePendingIncomingAlertId = null;
+    autoAlertCycleCurrentAlertId = null;
+    stopFocusedAlertPulse();
+    hideAlertCycleCameraOverlay();
+    stopLoop();
+    restoreAutoAlertLoopTiming();
+    logAutoAlertCycle("Stopped alert-cycle mode");
+  },
+};
+
+const statewideForecaseMode = {
+  isTokenActive(token) {
+    return (
+      autoModeEnabled &&
+      autoModeSubmode === "statewide-forecast" &&
+      token === autoStatewideForcastRunToken
+    );
+  },
+
+  async waitWhileActive(durationMs, token) {
+    const target = Date.now() + Math.max(0, Number(durationMs) || 0);
+    while (Date.now() < target) {
+      if (!this.isTokenActive(token)) {
+        return false;
+      }
+      await waitMs(Math.min(220, target - Date.now()));
+    }
+    return this.isTokenActive(token);
+  },
+
+  async start({ resumeState = null } = {}) {
+    if (!autoModeEnabled) {
+      return;
+    }
+
+    idleMode.clearScheduledTransition();
+    setAutoModeSubmode("statewide-forecast");
+    autoStatewideForcastRunToken += 1;
+    const token = autoStatewideForcastRunToken;
+    autoStatewideForecastResumeState = null;
+    autoStatewideForecastPendingIncomingAlertId = null;
+
+    hideDetailedAlert();
+    await hideSituationReviewCard({ clearContent: true });
+    hideAlertCycleCameraOverlay();
+    stopFocusedAlertPulse();
+
+    stopAutoIdlePlayback();
+    stopLoop();
+    radarFrames = [];
+    currentFrameIndex = 0;
+    if (dataMode !== "mrms") {
+      await switchDataMode("mrms");
+    }
+
+    await refreshAutoIdleFrames({ initial: !resumeState });
+    startStatewideForecastMrmsPlayback(token);
+    await maybeSpeakYouTubeLiveMentionForStage("statewide-forecast");
+
+    try {
+      let regionalForecasts = Array.isArray(resumeState?.regionalForecasts)
+        ? resumeState.regionalForecasts
+        : null;
+
+      if (!regionalForecasts) {
+        if (Array.isArray(autoStatewideForecastPrefetchResult)) {
+          regionalForecasts = autoStatewideForecastPrefetchResult;
+          logAutoStatewideForcast(
+            `Using prefetched regional forecasts count=${regionalForecasts.length}`,
+          );
+        } else if (autoStatewideForecastPrefetchTask) {
+          logAutoStatewideForcast(
+            "Awaiting in-flight regional forecast prefetch...",
+          );
+          try {
+            regionalForecasts = await autoStatewideForecastPrefetchTask;
+          } catch (error) {
+            logAutoStatewideForcast(
+              "In-flight prefetch unavailable. Refetching now:",
+              error,
+            );
+          }
+        }
+
+        if (!regionalForecasts) {
+          logAutoStatewideForcast("Fetching regional forecasts...");
+          regionalForecasts = await fetchStatewideRegionalForecastsFromApi();
+        }
+      }
+
+      clearStatewideRegionalForecastPrefetch();
+
+      if (!regionalForecasts.length) {
+        logAutoStatewideForcast("No regional forecasts available");
+      } else {
+        const startRegionIndex = Number.isFinite(
+          Number(resumeState?.regionIndex),
+        )
+          ? Math.max(0, Math.trunc(Number(resumeState.regionIndex)))
+          : 0;
+
+        for (
+          let regionIndex = startRegionIndex;
+          regionIndex < regionalForecasts.length;
+          regionIndex += 1
+        ) {
+          if (!this.isTokenActive(token)) {
+            return;
+          }
+
+          const regional = regionalForecasts[regionIndex];
+          const pendingAtRegionStart =
+            autoStatewideForecastPendingIncomingAlertId;
+          if (pendingAtRegionStart) {
+            autoStatewideForecastPendingIncomingAlertId = null;
+            const pendingAlert = activeAlerts.get(String(pendingAtRegionStart));
+            if (pendingAlert && isMichiganAlertForAutoCycle(pendingAlert)) {
+              autoStatewideForecastResumeState = {
+                regionalForecasts,
+                regionIndex,
+                sentenceIndex: Number.isFinite(
+                  Number(resumeState?.sentenceIndex),
+                )
+                  ? Math.max(0, Math.trunc(Number(resumeState.sentenceIndex)))
+                  : 0,
+              };
+
+              const alertsOverride =
+                getMichiganAlertCycleQueueStartingWith(pendingAlert);
+              logAutoStatewideForcast(
+                `Pausing statewide forecast for warning ${pendingAtRegionStart} (resume region=${regionIndex + 1}).`,
+              );
+              stopStatewideForecastMrmsPlayback();
+              await alertCycleMode.start({ alertsOverride });
+              return;
+            }
+          }
+
+          const regionName = String(regional.region || "").trim();
+          const forecast = String(regional.forecast || "").trim();
+          const center =
+            Array.isArray(regional.center) && regional.center.length === 2
+              ? regional.center
+              : null;
+          const zoom = Number.isFinite(Number(regional.zoom))
+            ? Number(regional.zoom)
+            : 6.9;
+          const bounds = Array.isArray(regional.bounds)
+            ? regional.bounds
+            : null;
+
+          logAutoStatewideForcast(`Processing region: ${regionName}`);
+
+          // Zoom to provided region center first (preferred), else fallback to bounds.
+          if (mapInstance && center) {
+            logAutoStatewideForcast(`Zooming to ${regionName}`);
+            mapInstance.flyTo({
+              center,
+              zoom,
+              duration: 1200,
+              essential: true,
+            });
+
+            // Wait for zoom animation to complete
+            await new Promise((resolve) => {
+              const handleMoveEnd = () => {
+                mapInstance.off("moveend", handleMoveEnd);
+                resolve();
+              };
+              mapInstance.on("moveend", handleMoveEnd);
+              setTimeout(() => {
+                mapInstance.off("moveend", handleMoveEnd);
+                resolve();
+              }, 1500);
+            });
+          } else if (mapInstance && bounds && bounds.length === 2) {
+            logAutoStatewideForcast(
+              `Zooming to ${regionName} (bounds fallback)`,
+            );
+            mapInstance.fitBounds(bounds, {
+              padding: 100,
+              duration: 1200,
+              maxZoom: 7.3,
+            });
+
+            await new Promise((resolve) => {
+              const handleMoveEnd = () => {
+                mapInstance.off("moveend", handleMoveEnd);
+                resolve();
+              };
+              mapInstance.on("moveend", handleMoveEnd);
+              setTimeout(() => {
+                mapInstance.off("moveend", handleMoveEnd);
+                resolve();
+              }, 1500);
+            });
+          }
+
+          if (mapInstance && this.isTokenActive(token)) {
+            const regionalBounds =
+              typeof mapInstance.getBounds === "function"
+                ? mapInstance.getBounds()
+                : null;
+            if (regionalBounds) {
+              await refreshAutoIdleFrames({
+                initial: false,
+                boundsOverride: regionalBounds,
+              });
+            }
+          }
+
+          if (forecast) {
+            logAutoStatewideForcast(`Speaking forecast for ${regionName}`);
+            await speakAlertNarrationFromText(forecast, {
+              cancelCurrent: true,
+              maxWaitMs: 0,
+              rate: 1.07,
+            });
+
+            if (autoStatewideForecastPendingIncomingAlertId) {
+              const pendingAlertId =
+                autoStatewideForecastPendingIncomingAlertId;
+              autoStatewideForecastPendingIncomingAlertId = null;
+              const pendingAlert = activeAlerts.get(String(pendingAlertId));
+              if (pendingAlert && isMichiganAlertForAutoCycle(pendingAlert)) {
+                autoStatewideForecastResumeState = {
+                  regionalForecasts,
+                  regionIndex: regionIndex + 1,
+                };
+
+                const alertsOverride =
+                  getMichiganAlertCycleQueueStartingWith(pendingAlert);
+                logAutoStatewideForcast(
+                  `Pausing statewide forecast after region for warning ${pendingAlertId} (resume region=${regionIndex + 2}).`,
+                );
+                stopStatewideForecastMrmsPlayback();
+                await alertCycleMode.start({ alertsOverride });
+                return;
+              }
+            }
+          }
+        }
+      }
+    } catch (err) {
+      logAutoStatewideForcast("Failed to fetch/speak regional forecasts:", err);
+    } finally {
+      stopStatewideForecastMrmsPlayback();
+      logAutoStatewideForcast("Regional forecast complete");
+      autoStatewideForecastPendingIncomingAlertId = null;
+      autoStatewideForecastResumeState = null;
+      if (this.isTokenActive(token) && autoModeEnabled) {
+        await enterAutoIdleMode();
+      }
+    }
+  },
+
+  async stop() {
+    autoStatewideForcastRunToken += 1;
+    logAutoStatewideForcast("Stopped statewide-forecast mode");
+  },
+};
+
+const cityCycleMode = {
+  isTokenActive(token) {
+    return (
+      autoModeEnabled &&
+      autoModeSubmode === "city-cycle" &&
+      token === autoCityCycleRunToken
+    );
+  },
+
+  async waitWhileActive(durationMs, token) {
+    const target = Date.now() + Math.max(0, Number(durationMs) || 0);
+    while (Date.now() < target) {
+      if (!this.isTokenActive(token)) {
+        return false;
+      }
+      await waitMs(Math.min(220, target - Date.now()));
+    }
+    return this.isTokenActive(token);
+  },
+
+  async showCity(city, cityIndex, cycleId, token) {
+    const cityAlertContext = getCityAlertContext(city);
+    const weatherTask = weatherService.getCityWeather(
+      city,
+      cycleId,
+      cityAlertContext.promptText,
+    );
+
+    await hideCityCyclePanel({ clearContent: true });
+    if (!this.isTokenActive(token)) return;
+
+    await panMapToCity(city);
+    if (!this.isTokenActive(token)) return;
+
+    const shouldContinue = await this.waitWhileActive(
+      CITY_CYCLE_PANEL_OPEN_DELAY_MS,
+      token,
+    );
+    if (!shouldContinue) return;
+
+    const weather = await weatherTask;
+    if (!this.isTokenActive(token)) return;
+
+    renderCityCyclePanel(city, weather, cityIndex);
+    const panelRoot = ensureCityCyclePanelRoot();
+    panelRoot.style.display = "block";
+    panelRoot.classList.remove("is-hiding");
+    requestAnimationFrame(() => {
+      if (this.isTokenActive(token)) {
+        panelRoot.classList.add("is-visible");
+      }
+    });
+
+    const narration = cleanSpeechNarrationText(weather?.summary || "");
+    const speechStartedAt = Date.now();
+    if (narration) {
+      await speakAlertNarrationFromText(narration, {
+        cancelCurrent: true,
+        maxWaitMs: 0,
+      });
+      if (!this.isTokenActive(token)) return;
+    }
+
+    const elapsedMs = Date.now() - speechStartedAt;
+    const remainingMs = Math.max(0, CITY_CYCLE_CITY_DISPLAY_MS - elapsedMs);
+    if (remainingMs > 0) {
+      await this.waitWhileActive(remainingMs, token);
+    }
+  },
+
+  async run(token) {
+    autoCityCycleCycleId += 1;
+    const cycleId = autoCityCycleCycleId;
+    autoCityCycleWeatherCache.clear();
+    logAutoCityCycle(`Starting city cycle #${cycleId}`);
+
+    for (let i = 0; i < AUTO_CITY_CYCLE_CITIES.length; i += 1) {
+      if (!this.isTokenActive(token)) {
+        return;
+      }
+
+      const city = AUTO_CITY_CYCLE_CITIES[i];
+      logAutoCityCycle(
+        `City ${i + 1}/${AUTO_CITY_CYCLE_CITIES.length}: ${city.label}`,
+      );
+      await this.showCity(city, i, cycleId, token);
+
+      if (
+        this.isTokenActive(token) &&
+        autoCityCyclePendingIncomingAlertId &&
+        activeAlerts.has(autoCityCyclePendingIncomingAlertId)
+      ) {
+        const pendingAlert = activeAlerts.get(
+          autoCityCyclePendingIncomingAlertId,
+        );
+        if (pendingAlert && isMichiganAlertForAutoCycle(pendingAlert)) {
+          const alertsOverride =
+            getMichiganAlertCycleQueueStartingWith(pendingAlert);
+          autoCityCyclePendingIncomingAlertId = null;
+          logAutoCityCycle(
+            `Incoming alert handoff after current city. Starting alert cycle now (count=${alertsOverride.length}).`,
+          );
+          await hideCityCyclePanel({ clearContent: true });
+          if (autoModeEnabled) {
+            await alertCycleMode.start({ alertsOverride });
+          }
+          return;
+        }
+        autoCityCyclePendingIncomingAlertId = null;
+      }
+    }
+
+    if (!this.isTokenActive(token)) {
+      return;
+    }
+
+    const alertsAfterCityCycle = getSortedMichiganAlertsForAutoCycle();
+    if (alertsAfterCityCycle.length > 0) {
+      logAutoCityCycle(
+        `City cycle complete. Handing off to alert cycle (count=${alertsAfterCityCycle.length}).`,
+      );
+      await hideCityCyclePanel({ clearContent: true });
+      if (autoModeEnabled) {
+        await alertCycleMode.start({ alertsOverride: alertsAfterCityCycle });
+      }
+      return;
+    }
+
+    logAutoCityCycle(
+      "City cycle complete with no active alerts. Queueing regional forecast after idle preload.",
+    );
+    await hideCityCyclePanel({ clearContent: true });
+    if (autoModeEnabled) {
+      await enterAutoIdleMode({ nextPhase: "statewide-forecast" });
+    }
+  },
+
+  async start() {
+    if (!autoModeEnabled) {
+      return;
+    }
+
+    stopAutoIdlePlayback();
+    setAutoModeSubmode("city-cycle");
+    setRadarSitesVisibility(false);
+    ensureRadarLegendVisible("MRMS");
+    await hideSituationReviewCard({ clearContent: true });
+
+    autoCityCycleRunToken += 1;
+    const token = autoCityCycleRunToken;
+    autoCityCyclePendingIncomingAlertId = null;
+
+    ensureCityCyclePanelRoot();
+    logAutoCityCycle("Entering city-cycle mode");
+    await maybeSpeakYouTubeLiveMentionForStage("city-cycle");
+    await this.run(token);
+  },
+
+  async stop() {
+    autoCityCycleRunToken += 1;
+    await hideCityCyclePanel({ clearContent: true });
+    logAutoCityCycle("Exited city-cycle mode");
+  },
+};
+
+function trimProcessedYouTubeChatIds(limit = 2500) {
+  if (!(ytChatProcessedMessageIds instanceof Set)) {
+    ytChatProcessedMessageIds = new Set();
+    return;
+  }
+  if (ytChatProcessedMessageIds.size <= limit) return;
+  const ids = Array.from(ytChatProcessedMessageIds);
+  ytChatProcessedMessageIds = new Set(ids.slice(ids.length - limit));
+}
+
+function stopYouTubeForecastChatRequests() {
+  ytChatWatchEnabled = false;
+  ytChatPollInFlight = false;
+  ytChatQueueInFlight = false;
+  ytChatNextPageToken = "";
+  ytChatRequestQueue = [];
+  if (ytChatPollTimerId) {
+    clearTimeout(ytChatPollTimerId);
+    ytChatPollTimerId = null;
+  }
+  console.log("[YT CHAT] Forecast request watcher stopped.");
+}
+
+function scheduleYouTubeForecastChatPoll(delayMs = YT_CHAT_DEFAULT_POLL_MS) {
+  if (!ytChatWatchEnabled) return;
+  if (ytChatPollTimerId) {
+    clearTimeout(ytChatPollTimerId);
+  }
+  ytChatPollTimerId = setTimeout(
+    () => {
+      void pollYouTubeForecastChatRequests();
+    },
+    Math.max(1200, Number(delayMs) || YT_CHAT_DEFAULT_POLL_MS),
+  );
+}
+
+async function showCityCyclePanelForViewerRequest(city, requestMeta = {}) {
+  const cycleId = `chat-${Date.now()}`;
+  const cityAlertContext = getCityAlertContext(city);
+  const weather = await weatherService.getCityWeather(
+    city,
+    cycleId,
+    cityAlertContext.promptText,
+  );
+
+  await hideCityCyclePanel({ clearContent: true });
+  await panMapToCity(city);
+  await waitMs(CITY_CYCLE_PANEL_OPEN_DELAY_MS);
+
+  renderCityCyclePanel(city, weather, -1);
+  const panelRoot = ensureCityCyclePanelRoot();
+  panelRoot.style.display = "block";
+  panelRoot.classList.remove("is-hiding");
+  requestAnimationFrame(() => {
+    panelRoot.classList.add("is-visible");
+  });
+
+  const narration = cleanSpeechNarrationText(weather?.summary || "");
+  if (narration) {
+    await speakAlertNarrationFromText(narration, {
+      cancelCurrent: true,
+      maxWaitMs: 0,
+    });
+  }
+
+  const holdMs = Math.max(14000, CITY_CYCLE_CITY_DISPLAY_MS);
+  await waitMs(holdMs);
+  await hideCityCyclePanel({ clearContent: true });
+
+  console.log(
+    `[YT CHAT] Completed request for ${city.label} from ${requestMeta.authorDisplayName || "viewer"}`,
+  );
+}
+
+async function processYouTubeChatRequestQueue() {
+  if (ytChatQueueInFlight) return;
+  ytChatQueueInFlight = true;
+  try {
+    while (ytChatWatchEnabled && ytChatRequestQueue.length > 0) {
+      const request = ytChatRequestQueue.shift();
+      if (!request) continue;
+
+      const cityMatch = await resolveCityFromChatRequest(
+        request.message,
+        request.locationHint,
+      );
+      if (!cityMatch) {
+        console.warn(
+          `[YT CHAT] Could not resolve city from request: ${request.message}`,
+        );
+        continue;
+      }
+
+      const city = {
+        id: `yt-${normalizeCityLookupKey(cityMatch.name)}-${String(cityMatch.state || "").toLowerCase()}`,
+        label: cityMatch.state
+          ? `${titleCaseCityLabel(cityMatch.name)}, ${String(cityMatch.state).toUpperCase()}`
+          : titleCaseCityLabel(cityMatch.name),
+        stationId: String(cityMatch.stationId || "").trim(),
+        lat: Number(cityMatch.lat),
+        lon: Number(cityMatch.lon),
+      };
+
+      if (!Number.isFinite(city.lat) || !Number.isFinite(city.lon)) {
+        console.warn(
+          "[YT CHAT] Resolved city has invalid coordinates",
+          cityMatch,
+        );
+        continue;
+      }
+
+      await showCityCyclePanelForViewerRequest(city, request);
+    }
+  } finally {
+    ytChatQueueInFlight = false;
+  }
+}
+
+async function pollYouTubeForecastChatRequests() {
+  if (!ytChatWatchEnabled || ytChatPollInFlight || !ytChatVideoId) return;
+
+  ytChatPollInFlight = true;
+  try {
+    const params = new URLSearchParams({
+      videoId: ytChatVideoId,
+      ownerName: ytChatOwnerName,
+    });
+    if (ytChatNextPageToken) {
+      params.set("pageToken", ytChatNextPageToken);
+    }
+
+    const response = await fetch(
+      `/api/youtube/live-chat-requests?${params.toString()}`,
+      {
+        cache: "no-store",
+      },
+    );
+
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(
+        payload?.details || payload?.error || `HTTP ${response.status}`,
+      );
+    }
+
+    ytChatNextPageToken = String(payload?.nextPageToken || "");
+
+    const requests = Array.isArray(payload?.requests) ? payload.requests : [];
+    for (const request of requests) {
+      const id = String(request?.id || "").trim();
+      if (!id || ytChatProcessedMessageIds.has(id)) continue;
+      ytChatProcessedMessageIds.add(id);
+      trimProcessedYouTubeChatIds();
+      ytChatRequestQueue.push(request);
+      console.log(
+        `[YT CHAT] queued ${request?.isSuperChat ? "super" : "owner"} request from ${request?.authorDisplayName || "viewer"}: ${request?.message || ""}`,
+      );
+    }
+
+    void processYouTubeChatRequestQueue();
+
+    const intervalMs = Number(payload?.pollingIntervalMillis);
+    scheduleYouTubeForecastChatPoll(
+      Number.isFinite(intervalMs) ? intervalMs : YT_CHAT_DEFAULT_POLL_MS,
+    );
+  } catch (error) {
+    console.error("[YT CHAT] Poll failed:", error);
+    scheduleYouTubeForecastChatPoll(7000);
+  } finally {
+    ytChatPollInFlight = false;
+  }
+}
+
+async function startYouTubeForecastChatRequests(options = {}) {
+  const videoId = String(options.videoId || ytChatVideoId || "").trim();
+  if (!videoId) {
+    throw new Error("Missing videoId. Pass { videoId: '<youtube video id>' }.");
+  }
+
+  ytChatVideoId = videoId;
+  ytChatOwnerName = String(
+    options.ownerName || ytChatOwnerName || YT_CHAT_DEFAULT_OWNER_NAME,
+  ).trim();
+  ytChatWatchEnabled = true;
+  ytChatNextPageToken = "";
+  ytChatRequestQueue = [];
+  ytChatProcessedMessageIds = new Set();
+
+  await ensureYouTubeChatCityLookup();
+  console.log(
+    `[YT CHAT] Forecast request watcher started for video=${ytChatVideoId}, owner=${ytChatOwnerName}`,
+  );
+  await pollYouTubeForecastChatRequests();
+}
+
+window.startYouTubeForecastChatRequests = (options = {}) =>
+  startYouTubeForecastChatRequests(options);
+window.stopYouTubeForecastChatRequests = stopYouTubeForecastChatRequests;
+
+function getRandomIntInclusive(minValue, maxValue) {
+  const min = Math.max(0, Math.floor(Number(minValue) || 0));
+  const max = Math.max(min, Math.floor(Number(maxValue) || 0));
+  return min + Math.floor(Math.random() * (max - min + 1));
+}
+
+function isSevereWarningForYouTubePolling(alert) {
+  const eventName = String(getAlertEventName(alert) || "").trim();
+  if (!eventName) return false;
+  return (
+    eventName.includes("Tornado Warning") ||
+    eventName.includes("Severe Thunderstorm Warning")
+  );
+}
+
+function hasActiveSevereWarningsForYouTubePolling() {
+  return getSortedMichiganAlertsForAutoCycle().some((alert) =>
+    isSevereWarningForYouTubePolling(alert),
+  );
+}
+
+function updateYouTubeLiveSeverePollingWindow() {
+  const now = Date.now();
+  if (!hasActiveSevereWarningsForYouTubePolling()) {
+    return;
+  }
+
+  const quietLongEnough =
+    !ytLiveLastSevereDetectedAtMs ||
+    now - ytLiveLastSevereDetectedAtMs >= YT_LIVE_SEVERE_QUIET_RESET_MS;
+  if (quietLongEnough) {
+    ytLiveSevereBurstUntilMs = Math.max(
+      ytLiveSevereBurstUntilMs,
+      now + YT_LIVE_SEVERE_BURST_DURATION_MS,
+    );
+  }
+  ytLiveLastSevereDetectedAtMs = now;
+}
+
+function getNextYouTubeLivePollDelayMs() {
+  return getRandomIntInclusive(
+    YT_LIVE_NORMAL_MIN_POLL_MS,
+    YT_LIVE_NORMAL_MAX_POLL_MS,
+  );
+}
+
+function sanitizeYouTubeLiveUrl(url, { allowImageHost = false } = {}) {
+  const raw = String(url || "").trim();
+  if (!raw) return "";
+  try {
+    const parsed = new URL(raw);
+    const protocol = String(parsed.protocol || "").toLowerCase();
+    if (protocol !== "https:" && protocol !== "http:") {
+      return "";
+    }
+    const host = String(parsed.hostname || "").toLowerCase();
+    const allowed = allowImageHost
+      ? ["youtube.com", "youtu.be", "ytimg.com", "googleusercontent.com"]
+      : ["youtube.com", "youtu.be"];
+    if (
+      !allowed.some((token) => host === token || host.endsWith(`.${token}`))
+    ) {
+      return "";
+    }
+    return parsed.toString();
+  } catch (_err) {
+    return "";
+  }
+}
+
+function ensureYouTubeLiveStatusStyles() {
+  if (ytLiveStatusStyleInjected) {
+    return;
+  }
+
+  const style = document.createElement("style");
+  style.id = "yt-live-status-style";
+  style.textContent = `
+    .yt-live-status-card {
+      position: fixed;
+      left: 14px;
+      bottom: 14px;
+      z-index: 1420;
+      width: min(460px, calc(100vw - 28px));
+      border-radius: 20px;
+      border: 4px solid rgba(255, 255, 255, 0.98);
+      background: linear-gradient(180deg, #000000 0%, #161616 48%, #303030 100%);
+      color: #ffffff;
+      font-family: "Saira", "Space Grotesk", sans-serif;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      display: none;
+      pointer-events: none;
+      padding: 10px 12px;
+    }
+
+    .yt-live-status-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      padding: 0;
+      background: transparent;
+      border-bottom: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 800;
+      font-size: 1rem;
+      color: #ff8e8e;
+    }
+
+    .yt-live-status-card__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #ff3b3b;
+      box-shadow: 0 0 14px rgba(255, 59, 59, 0.86);
+      animation: ytLivePulse 1.3s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    .yt-live-status-card__line {
+      margin-top: 4px;
+      font-size: 0.86rem;
+      color: #ffdcdc;
+      font-weight: 700;
+      line-height: 1.2;
+      opacity: 0.95;
+    }
+
+    @keyframes ytLivePulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.18);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .yt-live-status-card {
+        right: 6px;
+        left: 6px;
+        bottom: calc(var(--mobile-sheet-height, 90px) + 6px);
+        width: min(520px, calc(100vw - 12px));
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+  ytLiveStatusStyleInjected = true;
+}
+
+function ensureYouTubeLiveStatusCardRoot() {
+  ensureYouTubeLiveStatusStyles();
+  if (ytLiveStatusCardRoot && document.body.contains(ytLiveStatusCardRoot)) {
+    return ytLiveStatusCardRoot;
+  }
+
+  const root = document.createElement("section");
+  root.id = "ytLiveStatusCard";
+  root.className = "yt-live-status-card";
+  document.body.appendChild(root);
+  ytLiveStatusCardRoot = root;
+  return root;
+}
+
+function positionYouTubeLiveStatusCard() {
+  const root = ytLiveStatusCardRoot;
+  if (!root) return;
+
+  const isMobile = window.matchMedia("(max-width: 760px)").matches;
+  const baseLeft = isMobile ? 6 : 14;
+  const baseBottom = isMobile
+    ? `calc(var(--mobile-sheet-height, 90px) + 6px)`
+    : "14px";
+
+  const schedule =
+    autoModeScheduleRoot && document.body.contains(autoModeScheduleRoot)
+      ? autoModeScheduleRoot
+      : null;
+
+  root.style.left = `${baseLeft}px`;
+  root.style.bottom = baseBottom;
+  root.style.width = isMobile
+    ? "min(520px, calc(100vw - 12px))"
+    : "min(460px, calc(100vw - 28px))";
+
+  if (!schedule || schedule.style.display === "none") {
+    return;
+  }
+
+  const rect = schedule.getBoundingClientRect();
+  const gapPx = 8;
+  const bottomAboveSchedulePx = Math.max(
+    0,
+    Math.round(window.innerHeight - rect.top + gapPx),
+  );
+  root.style.left = `${Math.max(baseLeft, Math.round(rect.left))}px`;
+  root.style.bottom = `${bottomAboveSchedulePx}px`;
+  root.style.width = `${Math.max(220, Math.round(rect.width))}px`;
+}
+
+function renderYouTubeLiveStatusCard(status) {
+  const root = ensureYouTubeLiveStatusCardRoot();
+  const isLive = Boolean(status?.isLive);
+  if (!isLive) {
+    root.style.display = "none";
+    root.innerHTML = "";
+    ytLiveEmbedVideoId = "";
+    return;
+  }
+
+  const channelName = escapeHtml(
+    String(status?.channelName || YT_LIVE_DEFAULT_CHANNEL_NAME).trim(),
+  );
+  const titleSnippet = escapeHtml(
+    String(status?.title || "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 90),
+  );
+
+  root.innerHTML = `
+    <div class="yt-live-status-card__header">
+      <span class="yt-live-status-card__dot"></span>
+      <span>${channelName} is LIVE!</span>
+    </div>
+    ${titleSnippet ? `<div class="yt-live-status-card__line">${titleSnippet}</div>` : ""}
+  `;
+
+  root.style.display = "block";
+  ytLiveEmbedVideoId = String(status?.videoId || "").trim();
+  positionYouTubeLiveStatusCard();
+}
+
+function scheduleYouTubeLiveStatusPoll(
+  delayMs = getNextYouTubeLivePollDelayMs(),
+) {
+  if (!ytLiveStatusMonitorEnabled) return;
+  if (ytLiveStatusPollTimerId) {
+    clearTimeout(ytLiveStatusPollTimerId);
+  }
+
+  ytLiveStatusPollTimerId = setTimeout(
+    () => {
+      void pollYouTubeLiveStatus();
+    },
+    Math.max(20_000, Number(delayMs) || YT_LIVE_NORMAL_MIN_POLL_MS),
+  );
+}
+
+async function pollYouTubeLiveStatus() {
+  if (!ytLiveStatusMonitorEnabled || ytLiveStatusPollInFlight) {
+    return;
+  }
+
+  ytLiveStatusPollInFlight = true;
+  try {
+    const params = new URLSearchParams({
+      handle: YT_LIVE_DEFAULT_CHANNEL_HANDLE,
+      channelName: YT_LIVE_DEFAULT_CHANNEL_NAME,
+    });
+    const response = await fetch(
+      `/api/youtube/live-status?${params.toString()}`,
+      {
+        cache: "no-store",
+      },
+    );
+
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(
+        payload?.details || payload?.error || `HTTP ${response.status}`,
+      );
+    }
+
+    ytLiveStatusState =
+      payload && typeof payload === "object" ? payload : { isLive: false };
+    renderYouTubeLiveStatusCard(ytLiveStatusState);
+    scheduleYouTubeLiveStatusPoll(getNextYouTubeLivePollDelayMs());
+  } catch (error) {
+    console.warn("[YT LIVE] status poll failed:", error);
+    scheduleYouTubeLiveStatusPoll(YT_LIVE_NORMAL_MIN_POLL_MS);
+  } finally {
+    ytLiveStatusPollInFlight = false;
+  }
+}
+
+function stopYouTubeLiveStatusMonitor() {
+  ytLiveStatusMonitorEnabled = false;
+  ytLiveStatusPollInFlight = false;
+  if (ytLiveStatusPollTimerId) {
+    clearTimeout(ytLiveStatusPollTimerId);
+    ytLiveStatusPollTimerId = null;
+  }
+}
+
+function startYouTubeLiveStatusMonitor() {
+  ytLiveStatusMonitorEnabled = true;
+  void pollYouTubeLiveStatus();
+}
+
+function buildFallbackYouTubeLiveMention(status) {
+  const channelName = String(
+    status?.channelName || YT_LIVE_DEFAULT_CHANNEL_NAME,
+  ).trim();
+  const title = String(status?.title || "live weather coverage").trim();
+  return cleanSpeechNarrationText(`${channelName} is live now with ${title}.`);
+}
+
+function getYouTubeLiveMentionCacheKey(status) {
+  return [
+    String(status?.videoId || "").trim(),
+    String(status?.title || "")
+      .trim()
+      .toLowerCase(),
+    String(status?.description || "")
+      .trim()
+      .toLowerCase()
+      .slice(0, 500),
+  ].join("|");
+}
+
+async function fetchYouTubeLiveAiMention(status) {
+  const cacheKey = getYouTubeLiveMentionCacheKey(status);
+  if (ytLiveMentionCache.has(cacheKey)) {
+    return ytLiveMentionCache.get(cacheKey);
+  }
+
+  const fallback = buildFallbackYouTubeLiveMention(status);
+  try {
+    const response = await fetch("/api/youtube/live-mention", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        videoId: String(status?.videoId || "").trim(),
+        channelName: String(
+          status?.channelName || YT_LIVE_DEFAULT_CHANNEL_NAME,
+        ).trim(),
+        title: String(status?.title || "").trim(),
+        description: String(status?.description || "").trim(),
+      }),
+    });
+
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(
+        payload?.details || payload?.error || `HTTP ${response.status}`,
+      );
+    }
+
+    const mention = cleanSpeechNarrationText(
+      String(payload?.mention || "").trim() || fallback,
+    );
+    ytLiveMentionCache.set(cacheKey, mention);
+    return mention;
+  } catch (error) {
+    console.warn("[YT LIVE] mention generation fallback:", error);
+    ytLiveMentionCache.set(cacheKey, fallback);
+    return fallback;
+  }
+}
+
+async function maybeSpeakYouTubeLiveMentionForStage(stageKey) {
+  if (!autoModeEnabled) return;
+  if (String(stageKey || "") === "idle") return;
+
+  ytLiveStageEntryCounter += 1;
+  if (ytLiveStageEntryCounter % YT_LIVE_ANNOUNCE_EVERY_STAGE_COUNT !== 0) {
+    return;
+  }
+
+  const status = ytLiveStatusState || {};
+  const videoId = String(status?.videoId || "").trim();
+  if (!status?.isLive || !videoId) {
+    return;
+  }
+
+  const now = Date.now();
+  if (
+    ytLiveLastAnnouncedVideoId === videoId &&
+    now - ytLiveLastAnnouncedAtMs < YT_LIVE_ANNOUNCE_MIN_GAP_MS
+  ) {
+    return;
+  }
+
+  const mention = await fetchYouTubeLiveAiMention(status);
+  if (!mention) return;
+
+  await speakAlertNarrationFromText(mention, {
+    cancelCurrent: false,
+    maxWaitMs: 0,
+    rate: 1.02,
+  });
+
+  ytLiveLastAnnouncedVideoId = videoId;
+  ytLiveLastAnnouncedAtMs = now;
+}
+
+window.startYouTubeLiveStatusMonitor = startYouTubeLiveStatusMonitor;
+window.stopYouTubeLiveStatusMonitor = stopYouTubeLiveStatusMonitor;
+
+function getMichiganIdleSite(sites = radarSitesCache) {
+  if (!Array.isArray(sites) || !sites.length) {
+    return null;
+  }
+
+  const preferredOrder = ["DTX", "GRR", "APX", "MQT", "IWX"];
+  for (const siteId of preferredOrder) {
+    const match = sites.find((site) => String(site?.id || "") === siteId);
+    if (match) return match;
+  }
+
+  const byName = sites.find((site) =>
+    /\bMI\b|MICHIGAN/i.test(site?.name || ""),
+  );
+  if (byName) {
+    return byName;
+  }
+
+  let closest = null;
+  let closestDistance = Number.POSITIVE_INFINITY;
+  for (const site of sites) {
+    const lon = Number(site?.longitude);
+    const lat = Number(site?.latitude);
+    if (!Number.isFinite(lon) || !Number.isFinite(lat)) continue;
+    const dx = lon - AUTO_IDLE_MICHIGAN_REFERENCE[0];
+    const dy = lat - AUTO_IDLE_MICHIGAN_REFERENCE[1];
+    const d2 = dx * dx + dy * dy;
+    if (d2 < closestDistance) {
+      closestDistance = d2;
+      closest = site;
+    }
+  }
+
+  return closest;
+}
+
+function applyAutoIdleRadarSelection(site) {
+  selectedRadarProduct = "MRMS";
+  selectedRadarDataSource = "level3";
+  currentRenderProductCode = selectedRadarProduct;
+  quickTimelineActive = false;
+
+  const dataModeSelect = document.getElementById("dataModeSelect");
+  if (dataModeSelect) {
+    dataModeSelect.value = "radar";
+  }
+
+  const sourceSelect = document.getElementById("radarDataSourceSelect");
+  if (sourceSelect) {
+    sourceSelect.value = "level3";
+  }
+
+  const productSelect = document.getElementById("radarProductSelect");
+  if (productSelect) {
+    productSelect.value = "MRMS";
+  }
+
+  setQuickTimelineProductButtons(selectedRadarProduct);
+  createColorScaleLegend(selectedRadarProduct);
+
+  if (!site) {
+    return;
+  }
+
+  selectedRadarSite = site;
+  radarSiteLocation = {
+    longitude: site.longitude,
+    latitude: site.latitude,
+  };
+
+  const siteSelect = document.getElementById("radarSiteSelect");
+  if (siteSelect) {
+    siteSelect.value = site.id;
+  }
+
+  if (typeof mapInstance?.__setSelectedRadarSiteMarker === "function") {
+    mapInstance.__setSelectedRadarSiteMarker(site.id);
+  }
+}
+
+function getAutoIdleMichiganPadding() {
+  const width = window.innerWidth || 1280;
+  const height = window.innerHeight || 720;
+  const side = Math.round(Math.max(36, Math.min(width * 0.08, 130)));
+  const top = Math.round(Math.max(50, Math.min(height * 0.14, 170)));
+  const bottom = Math.round(Math.max(56, Math.min(height * 0.16, 180)));
+  return {
+    top,
+    right: side,
+    bottom,
+    left: side,
+  };
+}
+
+function mapParsedFramesToLoopFrames(parsedFrames) {
+  return parsedFrames.map((frame) => {
+    return buildRenderableFrameFromRaw(frame.data, frame.timestamp, frame.key);
+  });
+}
+
+async function fetchLatestMrmsIdleFiles(frameCount = AUTO_IDLE_FRAME_COUNT) {
+  logAutoIdle(`Requesting MRMS file list (limit=${frameCount})`);
+  const response = await fetch(
+    `${RADAR_API_BASE}/api/mrms-files?limit=${encodeURIComponent(frameCount)}`,
+  );
+  if (!response.ok) {
+    throw new Error(`Failed to fetch MRMS file list (${response.status})`);
+  }
+
+  const payload = await response.json();
+  const files = Array.isArray(payload?.files) ? payload.files : [];
+  if (!files.length) {
+    throw new Error("No recent MRMS files available");
+  }
+
+  logAutoIdle(`Received MRMS file list count=${files.length}`);
+
+  return files.slice(-frameCount);
+}
+
+async function fetchMrmsIdleFrame(siteId, fileEntry, bounds = null) {
+  const key = String(fileEntry?.key || "").trim();
+  if (!key) {
+    logAutoIdle("Skipping MRMS frame with empty key");
+    return null;
+  }
+
+  try {
+    logAutoIdle(
+      `Fetching frame key=${key} bounds=${bounds ? getAutoIdleBoundsKey(bounds) : "global"}`,
+    );
+    const params = new URLSearchParams({
+      product: "MRMS",
+      source: "level3",
+      format: "binary",
+      key,
+    });
+    const effectiveBounds = bounds || getMrmsDefaultRenderBounds();
+    appendBoundsParams(params, effectiveBounds);
+
+    const frameResponse = await fetch(
+      `${RADAR_API_BASE}/api/radar-webgl/${siteId}?${params.toString()}`,
+      { cache: "force-cache" },
+    );
+
+    if (!frameResponse.ok) {
+      logAutoIdle(
+        `Frame request failed key=${key} status=${frameResponse.status}`,
+      );
+      return null;
+    }
+
+    const { arrayBuffer } = await readRadarBinaryArrayBuffer(frameResponse);
+    const parsedFrameData = parseBinaryRadarData(arrayBuffer);
+
+    return {
+      key,
+      timestamp: fileEntry?.timestamp
+        ? new Date(fileEntry.timestamp)
+        : new Date(),
+      frame: buildRenderableFrameFromRaw(
+        parsedFrameData,
+        fileEntry?.timestamp ? new Date(fileEntry.timestamp) : new Date(),
+        key,
+      ),
+    };
+  } catch (error) {
+    console.warn(`Idle MRMS frame fetch failed for ${key}:`, error);
+    return null;
+  }
+}
+
+async function refreshAutoIdleFrames({
+  initial = false,
+  boundsOverride = null,
+} = {}) {
+  if (!selectedRadarSite || !mapInstance || autoIdleRefreshInFlight) {
+    if (autoModeEnabled && autoModeSubmode === "idle") {
+      logAutoIdle(
+        "Skipping refresh",
+        JSON.stringify({
+          hasSite: Boolean(selectedRadarSite),
+          hasMap: Boolean(mapInstance),
+          inFlight: Boolean(autoIdleRefreshInFlight),
+        }),
+      );
+    }
+    return;
+  }
+
+  autoIdleRefreshInFlight = true;
+  try {
+    // Use provided bounds override, or get current map bounds
+    let fetchBounds = getAutoIdleFetchBounds(mapInstance);
+    if (boundsOverride) {
+      fetchBounds = {
+        minLon: boundsOverride.getWest(),
+        maxLon: boundsOverride.getEast(),
+        minLat: boundsOverride.getSouth(),
+        maxLat: boundsOverride.getNorth(),
+      };
+    }
+    const boundsKey = getAutoIdleBoundsKey(fetchBounds);
+    if (autoIdleCacheBoundsKey !== boundsKey) {
+      logAutoIdle(
+        `Viewport changed, clearing idle frame cache old=${autoIdleCacheBoundsKey || "none"} new=${boundsKey}`,
+      );
+      autoIdleFrameCache.clear();
+      autoIdleCacheBoundsKey = boundsKey;
+    }
+
+    const existingFrameCount = radarFrames.length;
+    const existingIndex = Number.isFinite(Number(currentFrameIndex))
+      ? Number(currentFrameIndex)
+      : 0;
+
+    const latestFiles = await fetchLatestMrmsIdleFiles(AUTO_IDLE_FRAME_COUNT);
+    const latestFileMap = new Map();
+    const latestKeys = [];
+
+    for (const file of latestFiles) {
+      const key = String(file?.key || "").trim();
+      if (!key || latestFileMap.has(key)) {
+        continue;
+      }
+      latestKeys.push(key);
+      latestFileMap.set(key, file);
+    }
+
+    if (!latestKeys.length) {
+      throw new Error("MRMS idle frame list returned no keys");
+    }
+
+    logAutoIdle(
+      `Refresh start initial=${initial} latestKeys=${latestKeys.length} cacheSize=${autoIdleFrameCache.size} bounds=${boundsKey}`,
+    );
+
+    const latestKeySet = new Set(latestKeys);
+    for (const cachedKey of Array.from(autoIdleFrameCache.keys())) {
+      if (!latestKeySet.has(cachedKey)) {
+        autoIdleFrameCache.delete(cachedKey);
+      }
+    }
+
+    const missingEntries = latestKeys
+      .filter((key) => !autoIdleFrameCache.has(key))
+      .map((key) => latestFileMap.get(key))
+      .filter(Boolean);
+
+    logAutoIdle(
+      `Cache status reused=${latestKeys.length - missingEntries.length} missing=${missingEntries.length}`,
+    );
+
+    const rebuildIdleFramesFromCache = (renderNow = false) => {
+      radarFrames = latestKeys
+        .map((key) => {
+          const frame = autoIdleFrameCache.get(key);
+          if (!frame) {
+            return null;
+          }
+
+          const fileEntry = latestFileMap.get(key);
+          const timestamp = fileEntry?.timestamp
+            ? new Date(fileEntry.timestamp)
+            : frame.timestamp;
+
+          frame.timestamp = timestamp;
+          return frame;
+        })
+        .filter(Boolean);
+
+      const totalFramesEl = document.getElementById("totalFrames");
+      if (totalFramesEl) {
+        totalFramesEl.textContent = String(radarFrames.length);
+      }
+
+      const loopControlsContainer = document.getElementById(
+        "loopControlsContainer",
+      );
+      if (loopControlsContainer) {
+        loopControlsContainer.style.display =
+          radarFrames.length > 0 ? "flex" : "none";
+      }
+
+      if (!renderNow || !radarFrames.length) {
+        return;
+      }
+
+      if (initial) {
+        currentFrameIndex = 0;
+      } else if (existingFrameCount > 0) {
+        const normalizedRatio =
+          existingFrameCount > 1 ? existingIndex / (existingFrameCount - 1) : 0;
+        currentFrameIndex = Math.max(
+          0,
+          Math.min(
+            radarFrames.length - 1,
+            Math.round(normalizedRatio * Math.max(0, radarFrames.length - 1)),
+          ),
+        );
+      } else {
+        currentFrameIndex = Math.max(0, radarFrames.length - 1);
+      }
+
+      displayFrameFast(currentFrameIndex);
+      ensureRadarLegendVisible("MRMS");
+    };
+
+    // Immediately render whatever is already cached to reduce perceived wait time.
+    rebuildIdleFramesFromCache(true);
+
+    if (missingEntries.length > 0) {
+      await runConcurrentTaskPool(
+        missingEntries,
+        Math.min(
+          AUTO_IDLE_FETCH_CONCURRENCY,
+          Math.max(1, missingEntries.length),
+        ),
+        async (fileEntry) => {
+          const result = await fetchMrmsIdleFrame(
+            selectedRadarSite.id,
+            fileEntry,
+            fetchBounds,
+          );
+          if (result && result.key && result.frame) {
+            autoIdleFrameCache.set(result.key, result.frame);
+            rebuildIdleFramesFromCache(true);
+            logAutoIdle(
+              `Streamed frame key=${result.key} nowAvailable=${radarFrames.length}/${latestKeys.length}`,
+            );
+          }
+          return result;
+        },
+      );
+    }
+
+    rebuildIdleFramesFromCache(true);
+
+    if (!radarFrames.length) {
+      throw new Error("MRMS idle frame refresh produced no usable frames");
+    }
+
+    logAutoIdle(
+      `Refresh complete frames=${radarFrames.length} firstKey=${radarFrames[0]?.key || "none"}`,
+    );
+
+    ensureRadarLegendVisible("MRMS");
+  } catch (error) {
+    console.warn("Auto idle frame refresh failed:", error);
+  } finally {
+    autoIdleRefreshInFlight = false;
+  }
+}
+
+function startAutoIdlePlayback() {
+  stopAutoIdlePlayback();
+
+  if (!radarFrames.length) {
+    logAutoIdle("Playback start skipped: no frames");
+    return;
+  }
+
+  logAutoIdle(`Starting playback with frames=${radarFrames.length}`);
+
+  currentFrameIndex = 0;
+  displayFrameFast(0);
+  autoIdleLastStepAt = 0;
+  autoIdlePauseUntil = 0;
+  autoIdlePendingWrap = false;
+
+  const animate = (now) => {
+    if (
+      !autoModeEnabled ||
+      (autoModeSubmode !== "idle" && autoModeSubmode !== "statewide-forecast")
+    ) {
+      return;
+    }
+
+    if (!radarFrames.length) {
+      autoIdlePlaybackRaf = requestAnimationFrame(animate);
+      return;
+    }
+
+    if (autoIdleLastStepAt <= 0) {
+      autoIdleLastStepAt = now;
+    }
+
+    if (autoIdlePendingWrap) {
+      if (now >= autoIdlePauseUntil) {
+        currentFrameIndex = 0;
+        displayFrameFast(0);
+        autoIdlePendingWrap = false;
+        autoIdleLastStepAt = now;
+      }
+      autoIdlePlaybackRaf = requestAnimationFrame(animate);
+      return;
+    }
+
+    if (autoIdlePauseUntil > now) {
+      autoIdlePlaybackRaf = requestAnimationFrame(animate);
+      return;
+    }
+
+    if (now - autoIdleLastStepAt >= AUTO_IDLE_FRAME_INTERVAL_MS) {
+      const lastIndex = radarFrames.length - 1;
+      currentFrameIndex =
+        (Number.isFinite(Number(currentFrameIndex))
+          ? Number(currentFrameIndex)
+          : 0) + 1;
+
+      if (currentFrameIndex > lastIndex) {
+        currentFrameIndex = lastIndex;
+      }
+
+      displayFrameFast(currentFrameIndex);
+      autoIdleLastStepAt = now;
+
+      if (currentFrameIndex >= lastIndex) {
+        autoIdlePauseUntil = now + AUTO_IDLE_END_PAUSE_MS;
+        autoIdlePendingWrap = true;
+      }
+    }
+
+    autoIdlePlaybackRaf = requestAnimationFrame(animate);
+  };
+
+  autoIdlePlaybackRaf = requestAnimationFrame(animate);
+  autoIdleRefreshTimerId = setInterval(() => {
+    if (
+      autoModeEnabled &&
+      (autoModeSubmode === "idle" ||
+        autoModeSubmode === "statewide-forecast") &&
+      !autoIdleRefreshInFlight
+    ) {
+      void refreshAutoIdleFrames({ initial: false });
+    }
+  }, AUTO_IDLE_REFRESH_MS);
+}
+
+function getEasternTimeAndDateString() {
+  const now = new Date();
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+  const easternTime = formatter.format(now);
+
+  const dateFormatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+  const dateStr = dateFormatter.format(now);
+
+  return { easternTime, dateStr };
+}
+
+async function enterAutoIdleMode({ nextPhase = null } = {}) {
+  logAutoIdle("Entering idle mode");
+  setAutoIdleNextPhase(nextPhase);
+  void warmMichiganSituationReviewData({ reason: "idle-entry" }).catch(
+    () => {},
+  );
+  if (nextPhase === "statewide-forecast") {
+    void warmStatewideRegionalForecasts({ reason: "idle-entry" }).catch(
+      () => {},
+    );
+  }
+  setAutoModeSubmode("idle");
+  hideDetailedAlert();
+  await hideSituationReviewCard({ clearContent: true });
+  ensureRadarLegendVisible("MRMS");
+  setRadarSitesVisibility(false);
+  stopLoop();
+  stopArcSyncStream();
+  stopSweepAnimation(mapInstance);
+  quickTimelineActive = false;
+
+  if (radarPollingTimer) {
+    clearInterval(radarPollingTimer);
+    radarPollingTimer = null;
+  }
+
+  await switchDataMode("radar");
+
+  const idleSite = getMichiganIdleSite();
+  applyAutoIdleRadarSelection(idleSite);
+  applyDataModeUI();
+
+  logAutoIdle(
+    `Idle site selected=${selectedRadarSite?.id || "none"} product=${selectedRadarProduct} source=${selectedRadarDataSource}`,
+  );
+
+  if (mapInstance) {
+    mapInstance.fitBounds(AUTO_IDLE_MICHIGAN_BOUNDS, {
+      padding: getAutoIdleMichiganPadding(),
+      duration: 1200,
+      maxZoom: 7.2,
+    });
+
+    // Wait for zoom animation to complete before loading MRMS
+    await new Promise((resolve) => {
+      const handleMoveEnd = () => {
+        mapInstance.off("moveend", handleMoveEnd);
+        resolve();
+      };
+      mapInstance.on("moveend", handleMoveEnd);
+      // Fallback timeout in case moveend doesn't fire
+      setTimeout(() => {
+        mapInstance.off("moveend", handleMoveEnd);
+        resolve();
+      }, 1500);
+    });
+  }
+
+  if (!selectedRadarSite) {
+    logAutoIdle("Idle mode aborted: no selected radar site");
+    return;
+  }
+
+  // Now load MRMS after zoom is complete
+  await refreshAutoIdleFrames({ initial: true });
+
+  // Speak intro message on every OTHER idle mode, starting with the first
+  autoIdleEntranceCount++;
+  if (autoIdleEntranceCount % 2 === 1) {
+    const { easternTime, dateStr } = getEasternTimeAndDateString();
+    const idleIntroMessage = `You are viewing the Michigan Storm Chasers live weather stream, providing continuous 24/7 weather coverage and updates for the region. The current time is ${easternTime} Eastern Time on ${dateStr}.`;
+    try {
+      await speakAlertNarrationFromText(idleIntroMessage, {
+        cancelCurrent: true,
+        maxWaitMs: 0,
+      });
+    } catch (err) {
+      logAutoIdle("Idle intro TTS failed:", err);
+    }
+  }
+
+  startAutoIdlePlayback();
+  idleMode.scheduleCityCycleTransition();
+}
+
+async function setAutoMode(enabled, { force = false } = {}) {
+  const nextMode = Boolean(enabled);
+  if (!force && nextMode === autoModeEnabled) {
+    updateAutoModeToggleButton();
+    applyAutoModeUiVisibility();
+    updateAutoModeScheduleIndicator();
+    return;
+  }
+
+  autoModeEnabled = nextMode;
+  updateAutoModeToggleButton();
+  applyAutoModeUiVisibility();
+  updateAutoModeScheduleIndicator();
+  startYouTubeLiveStatusMonitor();
+
+  if (autoModeEnabled) {
+    await situationReviewMode.stop();
+    await alertCycleMode.stop();
+    await cityCycleMode.stop();
+    await enterAutoIdleMode();
+    return;
+  }
+
+  idleMode.clearScheduledTransition();
+  clearSituationReviewPrefetch();
+  clearStatewideRegionalForecastPrefetch();
+  await situationReviewMode.stop();
+  await alertCycleMode.stop();
+  await cityCycleMode.stop();
+  stopAutoIdlePlayback();
+  setAutoModeSubmode("idle");
+  setRadarSitesVisibility(true);
+
+  if (
+    selectedRadarSite &&
+    mapInstance &&
+    dataMode === "radar" &&
+    !isArchiveMode
+  ) {
+    await fetchAndDisplayRadarData(
+      mapInstance,
+      selectedRadarSite,
+      selectedRadarProduct,
+      selectedRadarDataSource,
+    );
+    await refreshQuickTimeline(selectedRadarSite, selectedRadarProduct);
+    startSweepAnimation(mapInstance, selectedRadarSite);
+    startRadarPolling(
+      mapInstance,
+      selectedRadarSite,
+      selectedRadarProduct,
+      selectedRadarDataSource,
+    );
+  }
+}
+
+function getSortedAlertsForForcedAutoCycle({ includeAll = true } = {}) {
+  if (!(activeAlerts instanceof Map) || activeAlerts.size === 0) {
+    return [];
+  }
+
+  const alerts = includeAll
+    ? Array.from(activeAlerts.values())
+    : getSortedMichiganAlertsForAutoCycle();
+
+  return alerts.filter(Boolean).sort(compareAutoCycleAlertsByPriority);
+}
+
+async function forceAutoAlertCycleFromConsole(options = {}) {
+  const settings =
+    options && typeof options === "object" ? options : { includeAll: true };
+  const includeAll = settings.includeAll !== false;
+  const enableAutoMode = settings.enableAutoMode !== false;
+
+  const alertsOverride = getSortedAlertsForForcedAutoCycle({ includeAll });
+  if (!alertsOverride.length) {
+    console.warn(
+      "[AUTO ALERT CYCLE] No active alerts available for forced cycling.",
+    );
+    return false;
+  }
+
+  if (!autoModeEnabled) {
+    if (!enableAutoMode) {
+      console.warn(
+        "[AUTO ALERT CYCLE] Auto mode is off. Pass { enableAutoMode: true } or enable Auto Mode first.",
+      );
+      return false;
+    }
+    await setAutoMode(true, { force: true });
+  }
+
+  await alertCycleMode.start({ alertsOverride });
+  return true;
+}
+
+async function startMichiganAlertCycleFromConsole(options = {}) {
+  const settings = options && typeof options === "object" ? options : {};
+  const enableAutoMode = settings.enableAutoMode !== false;
+
+  const alertsOverride = getSortedMichiganAlertsForAutoCycle();
+  if (!alertsOverride.length) {
+    console.warn(
+      "[AUTO ALERT CYCLE] No active Michigan alerts available to cycle.",
+    );
+    return false;
+  }
+
+  if (!autoModeEnabled) {
+    if (!enableAutoMode) {
+      console.warn(
+        "[AUTO ALERT CYCLE] Auto mode is off. Pass { enableAutoMode: true } or enable Auto Mode first.",
+      );
+      return false;
+    }
+    await setAutoMode(true, { force: true });
+  }
+
+  await alertCycleMode.start({ alertsOverride });
+  return true;
+}
+
+async function forceStatewideForecaseFromConsole(options = {}) {
+  const settings = options && typeof options === "object" ? options : {};
+  const enableAutoMode = settings.enableAutoMode !== false;
+
+  if (!autoModeEnabled) {
+    if (!enableAutoMode) {
+      console.warn(
+        "[AUTO STATEWIDE FORECAST] Auto mode is off. Pass { enableAutoMode: true } or enable Auto Mode first.",
+      );
+      return false;
+    }
+    await setAutoMode(true, { force: true });
+  }
+
+  console.log("[AUTO STATEWIDE FORECAST] Starting regional forecast cycle...");
+  await statewideForecaseMode.start();
+  return true;
+}
+
+window.forceAutoAlertCycle = forceAutoAlertCycleFromConsole;
+window.startMichiganAlertCycle = startMichiganAlertCycleFromConsole;
+window.forceStatewideForcast = forceStatewideForecaseFromConsole;
+window.forceCurrentConditions = async function forceCurrentConditions() {
+  console.log("[AUTO CITY CYCLE] Forcing current conditions from console.");
+
+  if (!autoModeEnabled) {
+    await setAutoMode(true, { force: true });
+  }
+
+  await cityCycleMode.start();
+  return true;
+};
+window.startCurrentConditions = window.forceCurrentConditions;
+
 window.onload = async () => {
   loadPalettesFromStorage();
   ensureAlertStyleConfig();
+  installAlertSpeechUnlockListeners();
+  void loadAlertSpeechVoices({ timeoutMs: 1500 });
 
   initializeTheme();
   const themeToggle = document.getElementById("themeToggle");
@@ -8760,6 +16878,17 @@ window.onload = async () => {
       applyTheme(currentTheme === "dark" ? "light" : "dark");
     });
   }
+
+  const autoModeToggle = document.getElementById("autoModeToggle");
+  if (autoModeToggle) {
+    autoModeToggle.addEventListener("click", () => {
+      void setAutoMode(!autoModeEnabled);
+    });
+  }
+  updateAutoModeToggleButton();
+  applyAutoModeUiVisibility();
+  updateAutoModeScheduleIndicator();
+  startRemoteRefreshListener();
 
   const dockMinimizeBtn = document.getElementById("dockMinimizeBtn");
   if (dockMinimizeBtn) {
@@ -8847,6 +16976,15 @@ window.onload = async () => {
     enforceMercatorProjection();
     initializeWeatherAlerts();
     initDrawTool(mapInstance);
+    // Always initialize camera layers so always-visible weather cams render
+    // even when the traffic camera toggle is off.
+    void loadCameras()
+      .then(() => {
+        initCameraLayer();
+      })
+      .catch((error) => {
+        console.warn("Failed to initialize camera layer on map load:", error);
+      });
   });
   mapInstance.on("styledata", enforceMercatorProjection);
   mapInstance.on("contextmenu", handleMapPointerDown);
@@ -8856,7 +16994,7 @@ window.onload = async () => {
   mapInstance.on("mousemove", handleMapPointerMove);
   mapInstance.on("touchmove", handleMapPointerMove);
 
-  const radarSites = await fetchRadarSites();
+  const radarSites = await fetchRadarSitesWithRetry(3, 3000);
   radarSitesCache = radarSites;
   populateRadarSitesDropdown(radarSites);
 
@@ -8890,7 +17028,7 @@ window.onload = async () => {
         `[LATENCY] Product changed to ${nextProduct} - starting background pre-fetch`,
       );
       const radarSource = selectedRadarDataSource || "level3";
-      const prefetchUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${selectedRadarSite.id}?product=${nextProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
+      const prefetchUrl = `${RADAR_API_BASE}/api/radar-webgl/${selectedRadarSite.id}?product=${nextProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
       fetch(prefetchUrl, { priority: "high" }).catch(() => {});
 
       selectedRadarProduct = nextProduct;
@@ -9533,7 +17671,16 @@ window.onload = async () => {
         framesToLoad,
         MAX_PARALLEL_DOWNLOADS,
         async (ts) => {
-          const apiUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${selectedRadarSite.id}?product=${selectedRadarProduct}&key=${ts.key}&format=binary&transport=radial`;
+          const archiveLoopParams = new URLSearchParams({
+            product: selectedRadarProduct,
+            key: ts.key,
+            format: "binary",
+            transport: "radial",
+          });
+          if (isMrmsProduct(selectedRadarProduct)) {
+            appendBoundsParams(archiveLoopParams, getMrmsDefaultRenderBounds());
+          }
+          const apiUrl = `${RADAR_API_BASE}/api/radar-webgl/${selectedRadarSite.id}?${archiveLoopParams.toString()}`;
           const response = await fetch(apiUrl, { cache: "force-cache" });
           if (!response.ok) {
             throw new Error(`Archive frame fetch failed (${response.status})`);
@@ -9573,33 +17720,9 @@ window.onload = async () => {
 
       const downloadedFrames = archiveFetchResults.filter(Boolean);
 
-      radarFrames = downloadedFrames.map((frame) => {
-        const rawVertices = new Float32Array(frame.data.vertices);
-        const rawValues = new Float32Array(frame.data.values);
-        const smoothedValues = computeBilinearCornerValues(
-          rawVertices,
-          rawValues,
-        );
-        const mercatorCoords = new Float32Array(rawVertices.length);
-
-        for (let i = 0; i < rawVertices.length; i += 2) {
-          const lng = rawVertices[i];
-          const lat = rawVertices[i + 1];
-          const [mx, my] = toMercatorXY(lng, lat);
-          mercatorCoords[i] = mx;
-          mercatorCoords[i + 1] = my;
-        }
-
-        return {
-          mercatorPositions: mercatorCoords,
-          rawVertices,
-          rawValues,
-          smoothedValues,
-          timestamp: frame.timestamp,
-          key: frame.key,
-          vertexCount: rawVertices.length / 2,
-        };
-      });
+      radarFrames = downloadedFrames.map((frame) =>
+        buildRenderableFrameFromRaw(frame.data, frame.timestamp, frame.key),
+      );
 
       progressDiv.style.display = "none";
       console.log(
@@ -9637,21 +17760,9 @@ window.onload = async () => {
     toggleInspector();
   });
 
-  // TVS Detection Toggle
-  document
-    .getElementById("tvsDetectionToggle")
-    .addEventListener("change", (e) => {
-      tvsDetectionEnabled = e.target.checked;
-      if (!tvsDetectionEnabled) {
-        // Remove all TVS markers
-        detectedTVSMarkers.forEach((marker) => marker.remove());
-        detectedTVSMarkers = [];
-      } else if (currentRadarData) {
-        // Re-run detection on current data
-        const tvsLocations = detectTVS(currentRadarData);
-        displayTVSMarkers(tvsLocations);
-      }
-    });
+  tvsDetectionEnabled = false;
+  detectedTVSMarkers.forEach((marker) => marker.remove());
+  detectedTVSMarkers = [];
 
   // Storm Track Toggle
   document.getElementById("stormTrackToggle").addEventListener("click", () => {
@@ -9916,6 +18027,8 @@ window.onload = async () => {
       document.getElementById("archiveModal").classList.remove("active");
     }
   });
+
+  await setAutoMode(true, { force: true });
 };
 
 async function fetchRadarSites() {
@@ -11033,12 +19146,6 @@ async function fetchRadarSites() {
         longitude: -96.918056,
       },
       {
-        id: "TDTW",
-        name: "Detroit, MI (TDWR)",
-        latitude: 42.111111,
-        longitude: -83.515,
-      },
-      {
         id: "TEWR",
         name: "Newark, NJ (TDWR)",
         latitude: 40.593056,
@@ -11402,6 +19509,17 @@ function addRadarSitesToMap(map, sites) {
       if (selectedRadarSite?.id) {
         setSelectedMarkerStateBySiteId(selectedRadarSite.id);
       }
+
+      const shouldShowRadarSites = !(
+        autoModeEnabled && autoModeSubmode === "idle"
+      );
+      const nextVisibility = shouldShowRadarSites ? "visible" : "none";
+      if (map.getLayer(layerCircleId)) {
+        map.setLayoutProperty(layerCircleId, "visibility", nextVisibility);
+      }
+      if (map.getLayer(layerIconId)) {
+        map.setLayoutProperty(layerIconId, "visibility", nextVisibility);
+      }
     });
   };
 
@@ -11426,7 +19544,7 @@ function addRadarSitesToMap(map, sites) {
       const radarProduct = selectedRadarProduct || "N0B";
       const radarSource = selectedRadarDataSource || "level3";
 
-      const prefetchUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
+      const prefetchUrl = `${RADAR_API_BASE}/api/radar-webgl/${siteId}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
       fetch(prefetchUrl, { priority: "high" }).catch(() => {});
 
       document.getElementById("radarSiteSelect").value = siteId;
@@ -11445,7 +19563,7 @@ function addRadarSitesToMap(map, sites) {
       const radarProduct = selectedRadarProduct || "N0B";
       const radarSource = selectedRadarDataSource || "level3";
 
-      const prefetchUrl = `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${siteId}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
+      const prefetchUrl = `${RADAR_API_BASE}/api/radar-webgl/${siteId}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary`;
       fetch(prefetchUrl, { priority: "high" }).catch(() => {});
 
       document.getElementById("radarSiteSelect").value = siteId;
@@ -11503,7 +19621,20 @@ function generateColorRampArray(colorExpression, textureSize = 256) {
     }
 
     const [r = 0, g = 0, b = 0, a = 1] = matches.map(Number);
-    const rgba = [Math.round(r), Math.round(g), Math.round(b), 255];
+    let alpha = Number(a);
+    if (!Number.isFinite(alpha)) alpha = 1;
+    if (alpha > 1 && alpha <= 100) {
+      alpha = alpha / 100;
+    } else if (alpha > 100) {
+      alpha = alpha / 255;
+    }
+    alpha = Math.max(0, Math.min(1, alpha));
+    const rgba = [
+      Math.round(r),
+      Math.round(g),
+      Math.round(b),
+      Math.round(alpha * 255),
+    ];
 
     stops.push({ value, color: rgba });
   }
@@ -11653,6 +19784,11 @@ const RadarWebGLLayer = {
           uniform float u_flash_opacity;
 
           void main() {
+              // Make NaN/Infinity samples transparent before palette lookup.
+              if (!(v_dbz > -1.0e20 && v_dbz < 1.0e20)) {
+                discard;
+              }
+
               float normalized_dbz = (v_dbz - u_dbz_range[0]) / (u_dbz_range[1] - u_dbz_range[0]);
               normalized_dbz = clamp(normalized_dbz, 0.0, 1.0);
 
@@ -11741,6 +19877,9 @@ const RadarWebGLLayer = {
           uniform sampler2D u_color_ramp;
           uniform vec2 u_dbz_range;
           void main() {
+            if (!(v_dbz > -1.0e20 && v_dbz < 1.0e20)) {
+              discard;
+            }
             float normalized_dbz = (v_dbz - u_dbz_range[0]) / (u_dbz_range[1] - u_dbz_range[0]);
             normalized_dbz = clamp(normalized_dbz, 0.0, 1.0);
             gl_FragColor = texture2D(u_color_ramp, vec2(normalized_dbz, 0.5));
@@ -12738,7 +20877,7 @@ async function fetchHRRRPTypeLookup(map) {
 
   const fetchLookupWithParams = async (queryParams) => {
     const response = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${queryParams.toString()}`,
+      `${RADAR_API_BASE}/api/hrrr-webgl?${queryParams.toString()}`,
     );
     if (!response.ok) {
       throw new Error(
@@ -12812,7 +20951,7 @@ async function fetchAvailableHRRRRuns() {
   }
 
   const response = await fetch(
-    `https://radar-api-production-076b.up.railway.app/api/hrrr-runs?${params.toString()}`,
+    `${RADAR_API_BASE}/api/hrrr-runs?${params.toString()}`,
   );
   if (!response.ok) {
     throw new Error(`Failed to load HRRR runs (${response.status})`);
@@ -12914,33 +21053,11 @@ function buildRenderableFrameFromRaw(
 ) {
   const rawVertices = new Float32Array(rawData.vertices);
   const rawValues = new Float32Array(rawData.values);
-  const smoothedValues = computeBilinearCornerValues(rawVertices, rawValues);
-  const mercatorCoords = new Float32Array(rawVertices.length);
-
-  const DEG_TO_RAD = Math.PI / 180;
-  const RAD_TO_DEG = 180 / Math.PI;
-  const PI_4 = Math.PI / 4;
-  const MIN_LAT = -85.0511 * DEG_TO_RAD;
-  const MAX_LAT = 85.0511 * DEG_TO_RAD;
-
-  for (let index = 0; index < rawVertices.length; index += 2) {
-    const longitude = rawVertices[index];
-    const latitude = rawVertices[index + 1];
-
-    mercatorCoords[index] = (longitude + 180) / 360;
-    const latitudeRadians = Math.max(
-      MIN_LAT,
-      Math.min(MAX_LAT, latitude * DEG_TO_RAD),
-    );
-    mercatorCoords[index + 1] =
-      (180 - RAD_TO_DEG * Math.log(Math.tan(PI_4 + latitudeRadians / 2))) / 360;
-  }
 
   return {
-    mercatorPositions: mercatorCoords,
     rawVertices,
     rawValues,
-    smoothedValues,
+    smoothedValues: null,
     timestamp: timestampValue,
     key: keyValue,
     vertexCount: rawVertices.length / 2,
@@ -13001,7 +21118,7 @@ async function fetchHRRRFrameForHour(map, forecastHour) {
   }
 
   const response = await fetch(
-    `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${params.toString()}`,
+    `${RADAR_API_BASE}/api/hrrr-webgl?${params.toString()}`,
   );
   if (!response.ok) {
     throw new Error(
@@ -13143,7 +21260,7 @@ async function precacheModelRange(map) {
   }
 
   try {
-    const response = await fetch("https://radar-api-production-076b.up.railway.app/api/hrrr-precache", {
+    const response = await fetch(`${RADAR_API_BASE}/api/hrrr-precache`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -13223,8 +21340,11 @@ async function fetchAndDisplayHRRRData(map, retryWithFallback = true) {
     const requestedVariable = getRequestedHRRRVariable();
     const effectiveForecastHour =
       dataMode === "mrms" ? 0 : selectedHRRRForecastHour;
-    const bounds = getCurrentMapBoundsObject(map);
     const effectiveModel = dataMode === "mrms" ? "mrms" : selectedModel;
+    const bounds =
+      effectiveModel === "mrms"
+        ? getMrmsDefaultRenderBounds()
+        : getCurrentMapBoundsObject(map);
 
     // Generate cache key for this request
     const cacheKey = generateModelFrameCacheKey(
@@ -13291,15 +21411,10 @@ async function fetchAndDisplayHRRRData(map, retryWithFallback = true) {
       params.set("run_hour", String(selectedHRRRRunHour));
     }
 
-    if (bounds) {
-      params.set("minLon", String(bounds.minLon));
-      params.set("minLat", String(bounds.minLat));
-      params.set("maxLon", String(bounds.maxLon));
-      params.set("maxLat", String(bounds.maxLat));
-    }
+    appendBoundsParams(params, bounds);
 
     const response = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/hrrr-webgl?${params.toString()}`,
+      `${RADAR_API_BASE}/api/hrrr-webgl?${params.toString()}`,
     );
     if (!response.ok) {
       let backendError = "";
@@ -13661,7 +21776,7 @@ function startArcSyncStream(map, site, product) {
   lastRenderedRadarToken = null;
 
   const radarProduct = product || selectedRadarProduct;
-  const streamUrl = `https://radar-api-production-076b.up.railway.app/api/radar/level2-stream?site=${encodeURIComponent(
+  const streamUrl = `${RADAR_API_BASE}/api/radar/level2-stream?site=${encodeURIComponent(
     site.id,
   )}&product=${encodeURIComponent(radarProduct)}`;
 
@@ -13810,7 +21925,7 @@ async function pollForNewRadarData(map, site, product, source) {
     const radarSource = source || selectedRadarDataSource;
 
     const keyResp = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/radar-latest-key/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}`,
+      `${RADAR_API_BASE}/api/radar-latest-key/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}`,
     );
     if (!keyResp.ok) throw new Error("Failed to check latest radar key");
     const keyData = await keyResp.json();
@@ -13879,7 +21994,7 @@ function startRadarPolling(map, site, product, source) {
   if (radarPollingTimer) clearInterval(radarPollingTimer);
   stopArcSyncStream();
 
-  if (dataMode !== "radar") {
+  if (dataMode !== "radar" || autoModeEnabled) {
     return;
   }
 
@@ -13905,6 +22020,25 @@ function startRadarPolling(map, site, product, source) {
   }, pollInterval);
 }
 
+function resumeLiveRadarUpdates() {
+  if (
+    dataMode !== "radar" ||
+    isArchiveMode ||
+    !selectedRadarSite ||
+    !mapInstance
+  ) {
+    return;
+  }
+
+  quickTimelineActive = false;
+  startRadarPolling(
+    mapInstance,
+    selectedRadarSite,
+    selectedRadarProduct,
+    selectedRadarDataSource,
+  );
+}
+
 async function fetchAndDisplayRadarData(
   map,
   site,
@@ -13928,12 +22062,22 @@ async function fetchAndDisplayRadarData(
     currentRenderProductCode = radarProduct;
 
     console.time("FETCH-request");
-    const revQuery = refreshToken
-      ? `&rev=${encodeURIComponent(refreshToken)}`
-      : "";
-    const transportQuery = radarSource === "level3" ? "&transport=radial" : "";
+    const requestParams = new URLSearchParams({
+      product: radarProduct,
+      source: radarSource,
+      format: "binary",
+    });
+    if (radarSource === "level3") {
+      requestParams.set("transport", "radial");
+    }
+    if (refreshToken) {
+      requestParams.set("rev", refreshToken);
+    }
+    if (isMrmsProduct(radarProduct)) {
+      appendBoundsParams(requestParams, getMrmsDefaultRenderBounds());
+    }
     let response = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${site.id}?product=${radarProduct}&source=${encodeURIComponent(radarSource)}&format=binary${transportQuery}${revQuery}`,
+      `${RADAR_API_BASE}/api/radar-webgl/${site.id}?${requestParams.toString()}`,
     );
 
     let radarData;
@@ -14517,12 +22661,6 @@ function updateRadarLayer(map, data) {
     // Store radar data for flash processing
     currentRadarData = data;
 
-    // TVS Detection
-    if (tvsDetectionEnabled && data.vertices && data.values) {
-      const tvsLocations = detectTVS(data);
-      displayTVSMarkers(tvsLocations);
-    }
-
     // Update high dBZ flash layer with actual high dBZ geometry
     // Only show flash for Base Reflectivity product (N0B/N0G) which has dBZ data
     if (selectedRadarSite && map.getSource("radar-high-dbz-source")) {
@@ -14843,33 +22981,52 @@ function createColorScaleLegend(productCode = selectedRadarProduct) {
     </div>
   `;
 
-  legendDiv.innerHTML = html;
+  const hadLegend = legendDiv.children.length > 0;
+  if (hadLegend) {
+    legendDiv.classList.add("legend-is-transitioning");
+  }
 
-  // Add hover value display functionality
-  const gradientBar = legendDiv.querySelector(".legend-gradient__bar");
-  const hoverValue = legendDiv.querySelector(".legend-gradient__hover-value");
+  const renderLegend = () => {
+    legendDiv.innerHTML = html;
 
-  if (gradientBar && hoverValue && gradientStops.length > 0) {
-    const minValue = Math.min(...values);
-    const maxValue = Math.max(...values);
-    const range = maxValue - minValue === 0 ? 1 : maxValue - minValue;
-    const unit = productInfo.unit || "";
+    // Add hover value display functionality
+    const gradientBar = legendDiv.querySelector(".legend-gradient__bar");
+    const hoverValue = legendDiv.querySelector(".legend-gradient__hover-value");
 
-    gradientBar.addEventListener("mousemove", (e) => {
-      const rect = gradientBar.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const pct = Math.max(0, Math.min(1, x / rect.width));
-      const value = minValue + pct * range;
+    if (gradientBar && hoverValue && gradientStops.length > 0) {
+      const minValue = Math.min(...values);
+      const maxValue = Math.max(...values);
+      const range = maxValue - minValue === 0 ? 1 : maxValue - minValue;
+      const unit = productInfo.unit || "";
 
-      hoverValue.textContent = `${value.toFixed(1)} ${unit}`;
-      hoverValue.style.display = "block";
-      hoverValue.style.left = `${x}px`;
-      hoverValue.style.top = `-28px`;
-    });
+      gradientBar.addEventListener("mousemove", (e) => {
+        const rect = gradientBar.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const pct = Math.max(0, Math.min(1, x / rect.width));
+        const value = minValue + pct * range;
 
-    gradientBar.addEventListener("mouseleave", () => {
-      hoverValue.style.display = "none";
-    });
+        hoverValue.textContent = `${value.toFixed(1)} ${unit}`;
+        hoverValue.style.display = "block";
+        hoverValue.style.left = `${x}px`;
+        hoverValue.style.top = `-28px`;
+      });
+
+      gradientBar.addEventListener("mouseleave", () => {
+        hoverValue.style.display = "none";
+      });
+    }
+
+    if (hadLegend) {
+      requestAnimationFrame(() => {
+        legendDiv.classList.remove("legend-is-transitioning");
+      });
+    }
+  };
+
+  if (hadLegend) {
+    requestAnimationFrame(renderLegend);
+  } else {
+    renderLegend();
   }
 }
 
@@ -15260,7 +23417,7 @@ async function fetchAvailableRadarFiles(siteId, product, date = new Date()) {
   const radarSource = selectedRadarDataSource || "level3";
 
   if (radarSource === "level2") {
-    const level2Url = `https://radar-api-production-076b.up.railway.app/api/radar-level2-files/${siteId}?limit=500`;
+    const level2Url = `${RADAR_API_BASE}/api/radar-level2-files/${siteId}?limit=500`;
     console.time("fetch-file-list");
     console.log(`📡 Fetching Level 2 radar file list from: ${level2Url}`);
 
@@ -15338,13 +23495,18 @@ async function downloadSingleFrame(site, file, index, total, product) {
   try {
     const radarProduct = product || selectedRadarProduct;
     const radarSource = selectedRadarDataSource || "level3";
+    const params = new URLSearchParams({
+      product: radarProduct,
+      source: radarSource,
+      format: "binary",
+      key: file.key,
+    });
+    if (isMrmsProduct(radarProduct)) {
+      appendBoundsParams(params, getMrmsDefaultRenderBounds());
+    }
 
     const response = await fetch(
-      `https://radar-api-production-076b.up.railway.app/api/radar-webgl/${
-        site.id
-      }?product=${radarProduct}&source=${encodeURIComponent(
-        radarSource,
-      )}&format=binary&key=${encodeURIComponent(file.key)}`,
+      `${RADAR_API_BASE}/api/radar-webgl/${site.id}?${params.toString()}`,
       {
         cache: "force-cache",
       },
@@ -15487,33 +23649,9 @@ async function loadRadarFrames(
     }
 
     console.time("pre-process-frames");
-    const nextRadarFrames = downloadedFrames.map((frame) => {
-      const rawVertices = new Float32Array(frame.data.vertices);
-      const rawValues = new Float32Array(frame.data.values);
-      const smoothedValues = computeBilinearCornerValues(
-        rawVertices,
-        rawValues,
-      );
-      const mercatorCoords = new Float32Array(rawVertices.length);
-
-      for (let i = 0; i < rawVertices.length; i += 2) {
-        const lng = rawVertices[i];
-        const lat = rawVertices[i + 1];
-        const [mx, my] = toMercatorXY(lng, lat);
-        mercatorCoords[i] = mx;
-        mercatorCoords[i + 1] = my;
-      }
-
-      return {
-        mercatorPositions: mercatorCoords,
-        rawVertices,
-        rawValues,
-        smoothedValues,
-        timestamp: frame.timestamp,
-        key: frame.key,
-        vertexCount: rawVertices.length / 2,
-      };
-    });
+    const nextRadarFrames = downloadedFrames.map((frame) =>
+      buildRenderableFrameFromRaw(frame.data, frame.timestamp, frame.key),
+    );
 
     // Atomically swap frame buffers so the animation loop never sees an empty array.
     radarFrames = nextRadarFrames;
@@ -15582,21 +23720,59 @@ function displayFrameFast(frameIndex) {
     : -1;
 
   if (normalizedFrameIndex < 0 || normalizedFrameIndex >= radarFrames.length) {
+    if (autoModeEnabled && autoModeSubmode === "idle") {
+      logAutoIdle(
+        `Display skipped: frameIndex=${normalizedFrameIndex} frameCount=${radarFrames.length}`,
+      );
+    }
     return;
   }
 
   currentFrameIndex = normalizedFrameIndex;
   const frame = radarFrames[normalizedFrameIndex];
   if (!frame || !frame.rawValues || !frame.rawVertices) {
+    if (autoModeEnabled && autoModeSubmode === "idle") {
+      logAutoIdle(
+        `Display skipped: invalid frame at index=${normalizedFrameIndex}`,
+      );
+    }
     return;
   }
   const smoothingActive =
     (customRadarLayerInstance && customRadarLayerInstance.enableSmoothing) ||
     enableSmoothing;
+  if (
+    smoothingActive &&
+    (!frame.smoothedValues ||
+      frame.smoothedValues.length !== frame.rawValues.length)
+  ) {
+    frame.smoothedValues = computeBilinearCornerValues(
+      frame.rawVertices,
+      frame.rawValues,
+    );
+  }
   const frameValues =
     smoothingActive && frame.smoothedValues
       ? frame.smoothedValues
       : frame.rawValues;
+
+  if (
+    autoModeEnabled &&
+    autoModeSubmode === "idle" &&
+    normalizedFrameIndex === 0
+  ) {
+    logAutoIdle(
+      `Display frame index=${normalizedFrameIndex} vertices=${frame.vertexCount} smoothing=${smoothingActive}`,
+    );
+  }
+
+  if (!customRadarLayerInstance && mapInstance) {
+    logAutoIdle("Radar layer missing; creating via updateRadarLayer fallback");
+    updateRadarLayer(mapInstance, {
+      vertices: frame.rawVertices,
+      values: frameValues,
+    });
+  }
 
   if (customRadarLayerInstance && customRadarLayerInstance.gl) {
     const gl = customRadarLayerInstance.gl;
@@ -15633,6 +23809,8 @@ function displayFrameFast(frameIndex) {
     if (mapInstance) {
       mapInstance.triggerRepaint();
     }
+  } else if (autoModeEnabled && autoModeSubmode === "idle") {
+    logAutoIdle("Display warning: custom radar layer still not ready");
   }
 
   updateAllProbesThrottled();
@@ -15813,6 +23991,7 @@ function stopLoop() {
 
   // Pause behavior requirement: jump to the latest frame when playback stops.
   displayLatestLoopFrame();
+  resumeLiveRadarUpdates();
 }
 
 function setPlayPauseButtonState(isPlaying) {
