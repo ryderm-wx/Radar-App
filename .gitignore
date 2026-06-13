@@ -6,3 +6,5 @@ dist/
 dist.zip
 bin/radar-api.exe
 Radar-Api.lnk
+radar-api/.venv/
+radar-api/temp/

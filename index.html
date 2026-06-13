@@ -2984,6 +2984,27 @@
                     <input type="checkbox" id="enable3DTilt" />
                     <i class="fas fa-cube"></i>
                   </label>
+                  <label
+                    class="check-row"
+                    title="TVS detection from the local radar API"
+                  >
+                    <input type="checkbox" id="tvsDetectionToggle" />
+                    <i class="fas fa-tornado"></i>
+                  </label>
+                  <label
+                    class="check-row"
+                    title="3D surface fronts (WPC analysis) — shown in 3D tilt mode"
+                  >
+                    <input type="checkbox" id="show3DFronts" />
+                    <i class="fas fa-wind"></i>
+                  </label>
+                </div>
+                <div
+                  id="tvsDetectionStatus"
+                  class="help-text"
+                  aria-live="polite"
+                >
+                  TVS off
                 </div>
 
                 <div id="tilt3DControls" style="display: none">
@@ -3459,5 +3480,16 @@
       });
     </script>
     <script src="app.js"></script>
+    <!-- 3D scene layer (three.js): exposes window.Radar3D for placing 3D
+         elements (glTF models, radar tower, custom meshes) on the map -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./js/vendor/three/three.module.min.js",
+          "three/addons/": "./js/vendor/three/addons/"
+        }
+      }
+    </script>
+    <script type="module" src="js/three-layer.js"></script>
   </body>
 </html>

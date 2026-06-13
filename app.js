@@ -9,6 +9,8 @@ let tiltExaggeration = 10;
 let enableShadows = true;
 let shadowOpacity = 0.3;
 let radarSiteLocation = null;
+window.__enable3DTilt = enable3DTilt;
+window.__radarSiteLocation = radarSiteLocation;
 
 let enableAlertFlashing = true;
 let flashMode = "hard";
@@ -2066,6 +2068,7 @@ function startFocusedAlertPulse(alert) {
 // TVS Detection
 let tvsDetectionEnabled = false;
 let detectedTVSMarkers = [];
+let latestTVSDetections = [];
 const TVS_THRESHOLD_VELOCITY = 30; // kt/s threshold for rotation
 
 // Storm Track Feature
@@ -3537,6 +3540,19 @@ function synthesizeThreats(alert) {
       alert.source;
     if (windAlt) out.wind = windAlt;
 
+    if (!out.lightning) {
+      const lightningMatch =
+        /(?:FREQUENT|CONTINUOUS|DANGEROUS|CLOUD TO GROUND|CLOUD-TO-GROUND)[^\n.]{0,80}LIGHTNING/i.exec(
+          `${rt}\n${hazards}`,
+        ) ||
+        /LIGHTNING[^\n.]{0,80}(?:FREQUENT|CONTINUOUS|DANGEROUS|CLOUD TO GROUND|CLOUD-TO-GROUND)/i.exec(
+          `${rt}\n${hazards}`,
+        );
+      if (lightningMatch) {
+        out.lightning = lightningMatch[0].replace(/\s+/g, " ").trim();
+      }
+    }
+
     if (alert.hazards && !out.hazards) out.hazards = alert.hazards;
     if (alert.source && !out.source) out.source = alert.source;
 
@@ -4595,6 +4611,15 @@ function handleAlertLineClick(e, alert) {
     threatCount++;
   }
 
+  if (threats.lightning) {
+    threatsHTML += `
+      <div style="margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+        <span style="opacity: 0.85;">⚡ Lightning</span>
+        <span style="font-weight: 600; color: #fbbf24;">${threats.lightning}</span>
+      </div>`;
+    threatCount++;
+  }
+
   // Display wind information
   if (threats.maxWindGust) {
     threatsHTML += `
@@ -5067,29 +5092,105 @@ function detectTVS(data) {
   return tvsLocations;
 }
 
+function clusterTVS(tvsLocations, mergeDeg = 0.08, maxCount = 10) {
+  // Merge nearby detections (keep the strongest of each cluster) and cap
+  // the count so a noisy velocity field doesn't flood the map.
+  let candidates = tvsLocations || [];
+  // Near-radar velocity gradients are almost always ground clutter, not
+  // rotation — ignore anything within ~12 km of the dish.
+  if (radarSiteLocation) {
+    candidates = candidates.filter((t) => {
+      const dLat = (t.lat - radarSiteLocation.latitude) * 110.6;
+      const dLon =
+        (t.lon - radarSiteLocation.longitude) *
+        111.3 *
+        Math.cos((radarSiteLocation.latitude * Math.PI) / 180);
+      return dLat * dLat + dLon * dLon > 12 * 12;
+    });
+  }
+  const sorted = [...candidates].sort((a, b) => b.strength - a.strength);
+  const kept = [];
+  for (const tvs of sorted) {
+    const near = kept.some(
+      (k) =>
+        Math.abs(k.lon - tvs.lon) < mergeDeg && Math.abs(k.lat - tvs.lat) < mergeDeg,
+    );
+    if (!near) kept.push(tvs);
+    if (kept.length >= maxCount) break;
+  }
+  return kept;
+}
+
+function isValidTVSLocation(tvs) {
+  return (
+    tvs &&
+    typeof tvs.lon === "number" &&
+    typeof tvs.lat === "number" &&
+    Number.isFinite(tvs.lon) &&
+    Number.isFinite(tvs.lat)
+  );
+}
+
+function getTVSMarkerColor(tvs) {
+  const strength = String(tvs?.strength || "").toLowerCase();
+  if (strength === "extreme") return "#facc15";
+  if (strength === "strong") return "#ef4444";
+  return "#22c55e";
+}
+
+function getTVSMarkerTitle(tvs) {
+  const cls = tvs.class || "TVS";
+  const dv = Number(tvs.deltaV);
+  const range = Number(tvs.rangeKm);
+  const parts = [cls];
+  if (Number.isFinite(dv)) parts.push(`${dv.toFixed(1)} m/s`);
+  if (Number.isFinite(range)) parts.push(`${range.toFixed(0)} km`);
+  return parts.join(" - ");
+}
+
+function focusTVSDetections() {
+  const detections = latestTVSDetections.filter(isValidTVSLocation);
+  if (!mapInstance || detections.length === 0) return;
+
+  if (detections.length === 1) {
+    mapInstance.flyTo({
+      center: [detections[0].lon, detections[0].lat],
+      zoom: Math.max(mapInstance.getZoom(), 11),
+      duration: 700,
+      essential: true,
+    });
+    return;
+  }
+
+  const bounds = new maplibregl.LngLatBounds();
+  detections.forEach((tvs) => bounds.extend([tvs.lon, tvs.lat]));
+  mapInstance.fitBounds(bounds, {
+    padding: 90,
+    maxZoom: 11,
+    duration: 700,
+  });
+}
+
 function displayTVSMarkers(tvsLocations) {
   // Remove old markers
   detectedTVSMarkers.forEach((marker) => marker.remove());
   detectedTVSMarkers = [];
+  latestTVSDetections = Array.isArray(tvsLocations)
+    ? tvsLocations.filter(isValidTVSLocation)
+    : [];
+
+  // Publish for the 3D layer (spinning vortices in 3D tilt mode)
+  window.__tvsLocations = tvsDetectionEnabled ? latestTVSDetections : [];
+  if (window.Radar3D && typeof window.Radar3D.updateTVS === "function") {
+    window.Radar3D.updateTVS(window.__enable3DTilt ? window.__tvsLocations : []);
+  }
 
   if (!tvsDetectionEnabled || !mapInstance) return;
 
-  console.log(`Displaying ${tvsLocations.length} TVS markers`);
+  console.log(`Displaying ${latestTVSDetections.length} TVS markers`);
 
-  tvsLocations.forEach((tvs, index) => {
+  latestTVSDetections.forEach((tvs, index) => {
     // Validate coordinates before creating marker
-    if (!tvs || typeof tvs.lon !== "number" || typeof tvs.lat !== "number") {
-      console.error(`Invalid TVS data at index ${index}:`, tvs);
-      return;
-    }
-
-    if (isNaN(tvs.lon) || isNaN(tvs.lat)) {
-      console.error(
-        `NaN coordinates for TVS at index ${index}: lon=${tvs.lon}, lat=${tvs.lat}`,
-      );
-      return;
-    }
-
     console.log(
       `Creating TVS marker ${index + 1}: [${tvs.lon.toFixed(4)}, ${tvs.lat.toFixed(4)}]`,
     );
@@ -5098,16 +5199,27 @@ function displayTVSMarkers(tvsLocations) {
     const el = document.createElement("div");
     el.className = "tvs-marker";
     el.innerHTML = '<i class="fas fa-tornado"></i>';
+    el.title = getTVSMarkerTitle(tvs);
+    const markerColor = getTVSMarkerColor(tvs);
     el.style.cssText = `
       animation: tvs-pulse 1.5s ease-in-out infinite;
       position: relative;
       pointer-events: auto;
+      border-color: ${markerColor};
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.72), 0 0 22px ${markerColor};
     `;
 
     el.addEventListener("click", (e) => {
       e.stopPropagation();
+      const cls = tvs.class || "TVS";
+      const dv = Number(tvs.deltaV);
+      const dvText = Number.isFinite(dv)
+        ? `Gate-to-gate ΔV: ${dv.toFixed(1)} m/s (${(dv * 1.944).toFixed(0)} kt)`
+        : `Strength: ${tvs.strength}`;
       alert(
-        `TVS Detected\\nStrength: ${tvs.strength.toFixed(1)} kt/s\\nLocation: ${tvs.lat.toFixed(4)}°N, ${tvs.lon.toFixed(4)}°W`,
+        `${cls} Detected (${tvs.strength || "?"})\n${dvText}\n` +
+          `Depth: ${tvs.tiltCount || "?"} tilts from ${tvs.baseElevDeg ?? "?"}°\n` +
+          `Location: ${tvs.lat.toFixed(4)}°N, ${Math.abs(tvs.lon).toFixed(4)}°W`,
       );
     });
 
@@ -7575,6 +7687,18 @@ function buildThreatsList(alert) {
     );
   }
 
+  if (threats.thunderstormDamageThreat) {
+    rows.push(
+      `<div class="ac-threat-row"><span class="ac-threat-icon">⚡</span><span class="ac-threat-label">Storm:</span><span class="ac-threat-val">${threats.thunderstormDamageThreat}</span></div>`,
+    );
+  }
+
+  if (threats.lightning) {
+    rows.push(
+      `<div class="ac-threat-row"><span class="ac-threat-icon">⚡</span><span class="ac-threat-label">Lightning:</span><span class="ac-threat-val">${threats.lightning}</span></div>`,
+    );
+  }
+
   return rows.join("");
 }
 
@@ -8172,6 +8296,8 @@ function buildCompactThreatsList(alert) {
 
   const rows = [
     { key: "tornadoDetection", icon: "🌪️", label: "Tornado" },
+    { key: "thunderstormDamageThreat", icon: "⚡", label: "Storm" },
+    { key: "lightning", icon: "⚡", label: "Lightning" },
     { key: "hailThreat", icon: "🧊", label: "Hail" },
     { key: "windThreat", icon: "💨", label: "Wind" },
     { key: "floodThreat", icon: "🌊", label: "Flood" },
@@ -9062,13 +9188,11 @@ async function ensureQuickTimelineFrames(
         );
         const decoded = decodedByKey.get(frame.key);
         if (!decoded) return;
-        const normalizedPayload = normalizeRadarPayloadForRendering(
-          selectedRadarSite,
-          selectedRadarProduct,
-          decoded,
-        );
+        // Cache the COMPACT payload (radial grid) and expand at render time.
+        // Normalizing here used to cache references to the shared radial
+        // valuesScratch buffer, so every frame showed the last-decoded scan.
         quickTimelineFrameCache.set(cacheKey, {
-          data: normalizedPayload,
+          data: decoded,
           timestamp: frame.timestamp,
           key: frame.key,
         });
@@ -9119,7 +9243,14 @@ async function renderQuickTimelineFrame(index, options = {}) {
   quickTimelineActive = Boolean(activateTimeline);
   quickTimelineIndex = normalized;
   archiveTimestamp = frame.timestamp;
-  updateRadarLayer(mapInstance, cached.data);
+  // Expand/filter the compact payload at render time (radial frames share a
+  // scratch buffer, so expansion must happen per display, not per cache).
+  const renderable = normalizeRadarPayloadForRendering(
+    selectedRadarSite,
+    selectedRadarProduct,
+    cached.data,
+  );
+  updateRadarLayer(mapInstance, renderable);
   updateAllProbes();
   updateQuickTimelineFrameLabel();
 
@@ -9392,7 +9523,12 @@ window.onload = async () => {
     refreshExpiredTiles: false,
     fadeDuration: 0,
     pixelRatio: Math.min(window.devicePixelRatio || 1, 1.5),
+    maxPitch: 85,
   });
+
+  // Expose the map for the 3D layer (js/three-layer.js) and other modules
+  window.radarMapInstance = mapInstance;
+  window.dispatchEvent(new CustomEvent("radar-map-ready"));
 
   const enforceMercatorProjection = () => {
     try {
@@ -9777,6 +9913,7 @@ window.onload = async () => {
           longitude: selectedRadarSite.longitude,
           latitude: selectedRadarSite.latitude,
         };
+        window.__radarSiteLocation = radarSiteLocation;
 
         mapInstance.flyTo({
           center: [selectedRadarSite.longitude, selectedRadarSite.latitude],
@@ -9808,6 +9945,7 @@ window.onload = async () => {
         applyDataModeUI();
 
         radarSiteLocation = null;
+        window.__radarSiteLocation = null;
 
         removeRadarLayer(mapInstance);
         if (typeof mapInstance.__setSelectedRadarSiteMarker === "function") {
@@ -11923,18 +12061,53 @@ function addRadarSitesToMap(map, sites) {
           id: layerCircleId,
           type: "circle",
           source: "radar-sites",
+          paint: loaded
+            ? {
+                // Icons carry the visuals; keep an oversized invisible
+                // circle underneath as a generous click target.
+                "circle-radius": 12,
+                "circle-color": "#B42222",
+                "circle-opacity": 0,
+                "circle-stroke-width": 0,
+              }
+            : {
+                "circle-radius": 4,
+                "circle-color": "#B42222",
+                "circle-stroke-width": 2,
+                "circle-stroke-color": "#FFFFFF",
+                "circle-opacity": [
+                  "case",
+                  ["boolean", ["feature-state", "selected"], false],
+                  0,
+                  1,
+                ],
+              },
+        });
+      }
+
+      // Radar icons on EVERY site so you can see and click between them
+      const layerAllIconsId = "radar-sites-all-icons-layer";
+      if (loaded && !map.getLayer(layerAllIconsId)) {
+        map.addLayer({
+          id: layerAllIconsId,
+          type: "symbol",
+          source: "radar-sites",
+          layout: {
+            "icon-image": iconId,
+            "icon-size": ["interpolate", ["linear"], ["zoom"], 3, 0.55, 7, 0.85],
+            "icon-allow-overlap": true,
+            "icon-ignore-placement": true,
+            "icon-anchor": "center",
+          },
           paint: {
-            "circle-radius": 4,
-            "circle-color": "#B42222",
-            "circle-stroke-width": 2,
-            "circle-stroke-color": "#FFFFFF",
-            "circle-opacity": [
+            "icon-opacity": [
               "case",
               ["boolean", ["feature-state", "selected"], false],
-              0,
-              1,
+              0, // the selected site is drawn by the bigger layer below
+              0.92,
             ],
           },
+          minzoom: 1,
         });
       }
 
@@ -11945,7 +12118,7 @@ function addRadarSitesToMap(map, sites) {
           source: "radar-sites",
           layout: {
             "icon-image": iconId,
-            "icon-size": 0.72,
+            "icon-size": 1.1,
             "icon-allow-overlap": true,
             "icon-ignore-placement": true,
             "icon-anchor": "center",
@@ -12020,10 +12193,24 @@ function addRadarSitesToMap(map, sites) {
       document.getElementById("radarSiteSelect").dispatchEvent(event);
     });
 
+    // The per-site icon layer switches sites the same way the circles do
+    map.on("click", "radar-sites-all-icons-layer", (e) => {
+      const feature = e.features && e.features[0] ? e.features[0] : null;
+      if (!feature) return;
+      setSelectedMarkerStateByFeature(feature);
+      document.getElementById("radarSiteSelect").value = feature.properties.id;
+      document
+        .getElementById("radarSiteSelect")
+        .dispatchEvent(new Event("change"));
+    });
+
     map.on("mouseenter", layerCircleId, () => {
       map.getCanvas().style.cursor = "pointer";
     });
     map.on("mouseenter", layerIconId, () => {
+      map.getCanvas().style.cursor = "pointer";
+    });
+    map.on("mouseenter", "radar-sites-all-icons-layer", () => {
       map.getCanvas().style.cursor = "pointer";
     });
 
@@ -12033,17 +12220,40 @@ function addRadarSitesToMap(map, sites) {
     map.on("mouseleave", layerIconId, () => {
       map.getCanvas().style.cursor = "";
     });
+    map.on("mouseleave", "radar-sites-all-icons-layer", () => {
+      map.getCanvas().style.cursor = "";
+    });
   };
 
+  let radarSitesInited = false;
   const initRadarSites = () => {
-    ensureRadarSiteSourceAndLayer();
-    attachRadarSiteHandlersOnce();
+    if (radarSitesInited) return true;
+    try {
+      ensureRadarSiteSourceAndLayer();
+      attachRadarSiteHandlersOnce();
+      radarSitesInited = true;
+      console.log("Radar site icons added to map");
+      return true;
+    } catch (e) {
+      return false;
+    }
   };
 
-  if (map.isStyleLoaded && map.isStyleLoaded()) {
-    initRadarSites();
-  } else {
-    map.once("load", initRadarSites);
+  // Don't gate this on isStyleLoaded()/load/idle: with the app's many live
+  // sources (alerts, cameras) the map can report "not loaded" indefinitely,
+  // so those events may never fire after startup. addSource/addLayer work
+  // as soon as the style JSON is parsed — just try now and retry briefly.
+  if (!initRadarSites()) {
+    let attempts = 0;
+    const retryTimer = setInterval(() => {
+      attempts += 1;
+      if (initRadarSites() || attempts > 120) {
+        clearInterval(retryTimer);
+        if (!radarSitesInited) {
+          console.warn("Radar site icons failed to initialize after retries");
+        }
+      }
+    }, 500);
   }
 }
 
@@ -12182,6 +12392,8 @@ const RadarWebGLLayer = {
           uniform float u_enable3D; // 0.0 or 1.0
           uniform float u_beamAngle; // Beam elevation angle in radians
           uniform float u_heightExaggeration; // Height multiplier
+          uniform float u_shadowPass; // 1.0 = flattened ground-shadow pass
+          varying float v_height; // normalized beam height for lighting
 
         vec2 lngLatToMercator(vec2 lngLat) {
           float x = (lngLat.x + 180.0) / 360.0;
@@ -12201,20 +12413,29 @@ const RadarWebGLLayer = {
           }
               
               // Calculate 3D elevation if enabled
+              float liftNorm = 0.0;
               if (u_enable3D > 0.5) {
                   // Calculate beam height: height = distance * tan(angle)
                   // Add Earth curvature correction: curve = distance^2 / (2 * Earth_radius)
                   float beamHeight = dist * tan(u_beamAngle);
                   float earthCurve = (dist * dist) / (2.0 * 6371000.0); // Earth radius in meters
                   float actualHeight = beamHeight + earthCurve;
-                  
+
                   // Apply exaggeration and convert to mercator Z
                   elevation = actualHeight * u_heightExaggeration / 100000.0; // Scale for visibility
+                  liftNorm = clamp(elevation * 4000.0, 0.0, 1.0);
               }
-              
+
+              // Shadow pass: same geometry flattened onto the ground so the
+              // elevated beam casts a visible footprint below itself
+              if (u_shadowPass > 0.5) {
+                  elevation = 0.0;
+              }
+
               gl_Position = u_matrix * vec4(pos, elevation, 1.0);
               v_dbz = a_dbz;
                 v_distance = dist;
+              v_height = liftNorm;
           }`;
 
     const fragmentSource = `
@@ -12226,10 +12447,12 @@ const RadarWebGLLayer = {
           uniform float u_enableShadows;
           uniform float u_shadowOpacity;
           uniform float u_enable3D;
+          uniform float u_shadowPass;
           uniform float u_chunkFlash;
           uniform float u_flash_enabled;
           uniform float u_flash_threshold;
           uniform float u_flash_opacity;
+          varying float v_height;
 
           void main() {
               // Make NaN/Infinity samples transparent before palette lookup.
@@ -12237,11 +12460,24 @@ const RadarWebGLLayer = {
                 discard;
               }
 
+              // Ground-shadow pass: the elevated beam's dark footprint
+              if (u_shadowPass > 0.5) {
+                  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.22);
+                  return;
+              }
+
               float normalized_dbz = (v_dbz - u_dbz_range[0]) / (u_dbz_range[1] - u_dbz_range[0]);
               normalized_dbz = clamp(normalized_dbz, 0.0, 1.0);
 
               vec4 color = texture2D(u_color_ramp, vec2(normalized_dbz, 0.5));
-              
+
+              // 3D lighting: brighten with beam height (sun-lit tops) and
+              // keep a cooler, darker base near the ground
+              if (u_enable3D > 0.5) {
+                  float lit = 0.78 + 0.45 * v_height;
+                  color.rgb *= lit;
+              }
+
               // Apply distance-based shadow in 3D mode
               if (u_enable3D > 0.5 && u_enableShadows > 0.5) {
                   // Darken based on distance for depth perception
@@ -12376,6 +12612,7 @@ const RadarWebGLLayer = {
     this.u_dbz_range_loc = gl.getUniformLocation(this.program, "u_dbz_range");
 
     this.u_enable3D_loc = gl.getUniformLocation(this.program, "u_enable3D");
+    this.u_shadowPass_loc = gl.getUniformLocation(this.program, "u_shadowPass");
     this.u_beamAngle_loc = gl.getUniformLocation(this.program, "u_beamAngle");
     this.u_heightExaggeration_loc = gl.getUniformLocation(
       this.program,
@@ -12705,6 +12942,18 @@ const RadarWebGLLayer = {
       gl.enable(gl.BLEND);
       gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
       gl.blendEquation(gl.FUNC_ADD);
+    }
+
+    // In 3D mode the beam draws twice: a flattened dark footprint on the
+    // ground first, then the elevated lit pass above it.
+    if (enable3DTilt && this.u_shadowPass_loc && !this.useFallbackProgram) {
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+      gl.uniform1f(this.u_shadowPass_loc, 1.0);
+      gl.drawArrays(gl.TRIANGLES, 0, this.vertexCount);
+    }
+    if (this.u_shadowPass_loc) {
+      gl.uniform1f(this.u_shadowPass_loc, 0.0);
     }
 
     gl.drawArrays(gl.TRIANGLES, 0, this.vertexCount);
@@ -15128,6 +15377,9 @@ function updateRadarLayer(map, data) {
 
     // Store radar data for flash processing
     currentRadarData = data;
+
+    // TVS detection is handled server-side by the TDA endpoint (see
+    // pollTVSDetections); no per-frame work needed here.
 
     // Update high dBZ flash layer with actual high dBZ geometry
     // Only show flash for base reflectivity products.
@@ -17720,16 +17972,163 @@ function updateAllProbesThrottled(force = false) {
 
 document.getElementById("enable3DTilt").addEventListener("change", (e) => {
   enable3DTilt = e.target.checked;
+  window.__enable3DTilt = enable3DTilt;
 
   const controlsDiv = document.getElementById("tilt3DControls");
   controlsDiv.style.display = enable3DTilt ? "block" : "none";
 
   if (mapInstance) {
+    // Swing the camera into/out of the 3D perspective. Rotation stays
+    // available in both modes (right-click drag / two-finger rotate).
+    mapInstance.easeTo({
+      pitch: enable3DTilt ? 62 : 0,
+      bearing: enable3DTilt ? mapInstance.getBearing() : 0,
+      duration: 900,
+    });
     mapInstance.triggerRepaint();
+  }
+  if (enable3DTilt && !window.Radar3D) {
+    setTVSDetectionStatus(
+      "3D layer not loaded; open http://localhost:3000 instead of file://",
+      "warn",
+    );
+  }
+  if (window.Radar3D && typeof window.Radar3D.updateTVS === "function") {
+    window.Radar3D.updateTVS(enable3DTilt ? window.__tvsLocations || [] : []);
   }
 
   console.log(`3D Tilt Mode: ${enable3DTilt ? "ENABLED" : "DISABLED"}`);
   saveUserSettings();
+});
+
+// --- TVS detection (server-side NSSL TDA over Level 2 volumes) ---
+let tvsPollTimer = null;
+let tvsLastVolumeKey = null;
+
+function setTVSDetectionStatus(message, tone = "muted", focusable = false) {
+  const statusEl = document.getElementById("tvsDetectionStatus");
+  if (!statusEl) return;
+
+  const colors = {
+    muted: "rgba(255,255,255,0.62)",
+    active: "#93c5fd",
+    good: "#86efac",
+    warn: "#facc15",
+    error: "#fca5a5",
+  };
+  statusEl.textContent = message;
+  statusEl.style.color = colors[tone] || colors.muted;
+  statusEl.style.cursor = focusable ? "pointer" : "";
+  statusEl.title = focusable ? "Click to center TVS detections on the map" : "";
+  statusEl.onclick = focusable ? focusTVSDetections : null;
+}
+
+function getTVSDetectionCount(payload) {
+  const payloadCount = Number(payload?.count);
+  if (Number.isFinite(payloadCount)) return payloadCount;
+  return Array.isArray(payload?.detections) ? payload.detections.length : 0;
+}
+
+function formatTVSVolumeTime(payload) {
+  if (!payload?.timestamp) return "";
+  const date = new Date(payload.timestamp);
+  if (isNaN(date)) return "";
+  return date.toISOString().slice(11, 16) + "Z";
+}
+
+function updateTVSDetectionStatusFromPayload(payload) {
+  const count = getTVSDetectionCount(payload);
+  const volumeTime = formatTVSVolumeTime(payload);
+  const suffix = volumeTime ? ` (${volumeTime})` : "";
+
+  if (count > 0) {
+    setTVSDetectionStatus(
+      `${count} TVS detection${count === 1 ? "" : "s"}${suffix} - click to center`,
+      "good",
+      true,
+    );
+  } else {
+    setTVSDetectionStatus(`No TVS detections on latest volume${suffix}`, "muted");
+  }
+}
+
+async function fetchJSONWithTimeout(url, timeoutMs = 25000) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    let payload = null;
+    try {
+      payload = await response.json();
+    } catch (error) {
+      payload = null;
+    }
+    return { response, payload };
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
+async function pollTVSDetections() {
+  if (!tvsDetectionEnabled) return;
+  if (!selectedRadarSite) {
+    displayTVSMarkers([]);
+    setTVSDetectionStatus("Select a radar site for TVS", "warn");
+    return;
+  }
+
+  try {
+    const apiSiteId = getRadarApiSiteId(selectedRadarSite.id || selectedRadarSite);
+    setTVSDetectionStatus(`Checking TVS for ${apiSiteId}...`, "active");
+
+    const { response, payload } = await fetchJSONWithTimeout(
+      `http://localhost:5100/api/tvs/${apiSiteId}`,
+    );
+
+    if (!response.ok) {
+      displayTVSMarkers([]);
+      const message = payload?.error || `TVS request failed (${response.status})`;
+      setTVSDetectionStatus(message, response.status === 404 ? "warn" : "error");
+      return;
+    }
+
+    const data = payload || {};
+    if (data.volumeKey === tvsLastVolumeKey) return; // same volume, no change
+    tvsLastVolumeKey = data.volumeKey;
+    console.log(
+      `TDA: ${data.count} detection(s) on volume ${data.volumeKey}`,
+      data.detections,
+    );
+    displayTVSMarkers(data.detections || []);
+    updateTVSDetectionStatusFromPayload(data);
+  } catch (e) {
+    console.warn("TVS poll failed:", e);
+    displayTVSMarkers([]);
+    setTVSDetectionStatus(
+      e?.name === "AbortError"
+        ? "TVS request timed out"
+        : "TVS unavailable: radar API not reachable",
+      "error",
+    );
+  }
+}
+
+document.getElementById("tvsDetectionToggle")?.addEventListener("change", (e) => {
+  tvsDetectionEnabled = e.target.checked;
+  if (tvsPollTimer) {
+    clearInterval(tvsPollTimer);
+    tvsPollTimer = null;
+  }
+  if (tvsDetectionEnabled) {
+    tvsLastVolumeKey = null;
+    setTVSDetectionStatus("Checking TVS...", "active");
+    pollTVSDetections();
+    tvsPollTimer = setInterval(pollTVSDetections, 45000);
+  } else {
+    displayTVSMarkers([]);
+    setTVSDetectionStatus("TVS off", "muted");
+  }
+  console.log(`TVS Detection (TDA): ${tvsDetectionEnabled ? "ENABLED" : "DISABLED"}`);
 });
 
 // Load persisted user settings and apply to controls

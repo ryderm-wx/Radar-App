@@ -17,6 +17,24 @@ function getApiExePath() {
   return path.join(process.resourcesPath, "bin", "radar-api.exe");
 }
 
+function getApiCommand() {
+  // Windows builds ship a compiled radar-api.exe; everywhere else run the
+  // Python API from radar-api/ with its venv interpreter.
+  const fs = require("fs");
+  const exePath = getApiExePath();
+  if (process.platform === "win32" && fs.existsSync(exePath)) {
+    return { command: exePath, args: [], cwd: path.dirname(exePath) };
+  }
+
+  const apiDir = path.join(__dirname, "radar-api");
+  const venvPython = path.join(
+    apiDir,
+    process.platform === "win32" ? ".venv/Scripts/python.exe" : ".venv/bin/python",
+  );
+  const python = fs.existsSync(venvPython) ? venvPython : "python3";
+  return { command: python, args: [path.join(apiDir, "app.py")], cwd: apiDir };
+}
+
 function waitForUrl(url, timeoutMs = 30000, intervalMs = 300) {
   return new Promise((resolve, reject) => {
     const start = Date.now();
@@ -52,10 +70,10 @@ function startFrontendServerInProcess() {
 }
 
 function startApiExe() {
-  const exePath = getApiExePath();
+  const { command, args, cwd } = getApiCommand();
 
-  apiProcess = spawn(exePath, [], {
-    cwd: path.dirname(exePath),
+  apiProcess = spawn(command, args, {
+    cwd,
     windowsHide: true,
     detached: false,
   });
