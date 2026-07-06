@@ -297,25 +297,60 @@ def _safe_cache_path(key):
     return TEMP_DIR / key.replace("/", "__")
 
 
+# Per-key download locks: the frontend fires several requests for the same
+# radar key at once (radar-webgl, radar-latest-key, batch, tvs). Without a
+# lock they all stream-download to the same temp file and race to rename it,
+# producing "[Errno 2] No such file or directory: ...part -> ..." and corrupt
+# data. The lock serializes downloads of a given key so only the first fetches
+# and the rest reuse the finished file.
+_download_locks = {}
+_download_locks_guard = threading.Lock()
+
+
+def _download_lock(key):
+    with _download_locks_guard:
+        lock = _download_locks.get(key)
+        if lock is None:
+            lock = threading.Lock()
+            # Bound the dict so a long broadcast session can't grow it forever.
+            if len(_download_locks) > 4000:
+                _download_locks.clear()
+            _download_locks[key] = lock
+        return lock
+
+
 def download_file(bucket, key, use_cache=True):
     path = _safe_cache_path(key)
     if use_cache and path.exists() and path.stat().st_size > 0:
         return path
-    url = f"{bucket}/{key}"
-    tmp = path.with_suffix(path.suffix + ".part")
-    resp = _http_get(url, stream=True)
-    try:
-        resp.raise_for_status()
-        with open(tmp, "wb") as f:
-            for chunk in resp.iter_content(256 * 1024):
-                if chunk:
-                    f.write(chunk)
-    except Exception:
-        tmp.unlink(missing_ok=True)
-        raise
-    finally:
-        resp.close()
-    tmp.replace(path)
+
+    with _download_lock(key):
+        # Re-check inside the lock: another thread may have just finished.
+        if use_cache and path.exists() and path.stat().st_size > 0:
+            return path
+
+        url = f"{bucket}/{key}"
+        # Unique temp name (pid + thread) so even unexpected concurrency or a
+        # second process can never collide on the same .part file.
+        tmp = path.with_suffix(
+            path.suffix + f".part.{os.getpid()}.{threading.get_ident()}"
+        )
+        resp = _http_get(url, stream=True)
+        try:
+            resp.raise_for_status()
+            with open(tmp, "wb") as f:
+                for chunk in resp.iter_content(256 * 1024):
+                    if chunk:
+                        f.write(chunk)
+            os.replace(tmp, path)  # atomic on the same filesystem
+        except Exception:
+            try:
+                tmp.unlink(missing_ok=True)
+            except OSError:
+                pass
+            raise
+        finally:
+            resp.close()
     return path
 
 
@@ -493,12 +528,19 @@ def extract_l2(l2file, product="N0B", min_sweep=0, max_rays=None):
     return azimuths, ranges, values, meta
 
 
+MS_TO_MPH = 2.2369362921  # the NEXRAD parsers yield velocity in m/s
+
+
 def _apply_value_filter(values, product):
-    """NaN-out values the renderer should discard (matches legacy behavior)."""
+    """NaN-out values the renderer should discard, and convert velocity from
+    the parser's native m/s to mph — the frontend velocity color ramp and the
+    legend are both in mph, so unconverted m/s only reached the middle of the
+    ramp and every velocity rendered as a similar washed-out color."""
     moment_is_velocity = _moment_for_product(product) == "VEL"
     out = values.astype(np.float32, copy=True)
     if moment_is_velocity:
         out[out == -999] = np.nan
+        out *= MS_TO_MPH
     else:
         out[out <= 0] = np.nan
     return out
@@ -508,10 +550,26 @@ def _apply_value_filter(values, product):
 # ---------------------------------------------------------------------------
 
 def build_radial_payload(mesh_id, azimuths, ranges, values):
-    """RADR binary payload (see parseRadialBinaryPayload in app.js)."""
+    """RADR binary payload (see parseRadialBinaryPayload in app.js).
+
+    Rays are SORTED by azimuth before sending. A NEXRAD volume starts at
+    whatever azimuth the antenna happened to be at, so successive volumes
+    have the same ray count but different starting angles. The client caches
+    its render mesh keyed on ray count and reuses it across frames — if the
+    rays aren't in a canonical order, each frame's values land on the wrong
+    angular cells and the display appears ROTATED (and scrubbing looks like
+    the radar is spinning). Sorting ascending gives every frame the identical
+    azimuth[i]≈i*Δ layout, so the cached mesh is valid for all of them.
+    """
     az = np.ascontiguousarray(azimuths, dtype=np.float32)
     rng = np.ascontiguousarray(ranges, dtype=np.float32)
-    vals = np.ascontiguousarray(values, dtype=np.float32).reshape(len(az) * len(rng))
+    vals2d = np.ascontiguousarray(values, dtype=np.float32).reshape(len(az), len(rng))
+
+    order = np.argsort(az, kind="stable")
+    az = np.ascontiguousarray(az[order])
+    vals2d = np.ascontiguousarray(vals2d[order])
+
+    vals = vals2d.reshape(len(az) * len(rng))
     mesh_bytes = mesh_id.encode("utf-8")
 
     header = struct.pack(
@@ -587,9 +645,14 @@ def _pack_triangles(verts, vals):
 # Processing pipeline (with payload caching)
 # ---------------------------------------------------------------------------
 
+# Bump when the payload-building logic changes (units, geometry, filtering)
+# so stale cached .bin files on disk are ignored instead of served forever.
+PAYLOAD_CACHE_VERSION = "v3-azsort"
+
+
 def process_payload(site_id, product, source, transport, key):
     """Produce the binary payload for one radar scan. Heavily cached."""
-    cache_id = f"{source}|{transport}|{product}|{key}"
+    cache_id = f"{PAYLOAD_CACHE_VERSION}|{source}|{transport}|{product}|{key}"
     cached = payload_cache.get(cache_id)
     if cached is not None:
         return cached

@@ -31,6 +31,7 @@ const _qTmp = new THREE.Quaternion();
 const _qTmp2 = new THREE.Quaternion();
 const _zAxis = new THREE.Vector3(0, 0, 1);
 const _xAxis = new THREE.Vector3(1, 0, 0);
+const _projMatrix = new THREE.Matrix4(); // reused each frame to avoid GC churn
 
 function mercatorScale(lat, meters) {
   // meters -> mercator units at this latitude
@@ -94,10 +95,17 @@ const customLayer = {
         obj.quaternion.copy(_qTmp);
       }
     }
-    state.camera.projectionMatrix = new THREE.Matrix4().fromArray(matrix);
+    state.camera.projectionMatrix = _projMatrix.fromArray(matrix);
     state.renderer.resetState();
     state.renderer.render(state.scene, state.camera);
-    state.map.triggerRepaint();
+    // Only drive a continuous repaint loop when something is actually
+    // animating (spinning TVS gauges). Static objects (fronts, tower, H/L
+    // billboards) repaint on demand — MapLibre already repaints on camera
+    // moves, which is when billboards need to re-orient. Forcing 60fps
+    // repaints with only static objects pegged the GPU for nothing.
+    if (state.spinners.size > 0) {
+      state.map.triggerRepaint();
+    }
   },
 };
 
@@ -666,31 +674,25 @@ function tryAttach() {
         !!document.getElementById("enable3DTilt")?.checked;
       const loc = window.__radarSiteLocation || null;
 
-      if (!tiltOn) {
+      // --- Radar tower + TVS vortices: 3D-tilt only (meaningless flat) ---
+      if (tiltOn) {
+        if (loc) {
+          const key = `${loc.longitude.toFixed(4)},${loc.latitude.toFixed(4)}`;
+          if (key !== lastSiteKey) {
+            Radar3D.addRadarTower({ lng: loc.longitude, lat: loc.latitude });
+            lastSiteKey = key;
+          }
+        }
+        Radar3D.updateTVS(window.__tvsLocations || []);
+      } else {
         if (Radar3D.has("radar-tower")) Radar3D.remove("radar-tower");
         Radar3D.updateTVS([]);
-        if (frontsShown) {
-          Radar3D.hideFronts();
-          frontsShown = false;
-        }
         lastSiteKey = null;
-        return;
       }
 
-      // radar tower
-      if (loc) {
-        const key = `${loc.longitude.toFixed(4)},${loc.latitude.toFixed(4)}`;
-        if (key !== lastSiteKey) {
-          Radar3D.addRadarTower({ lng: loc.longitude, lat: loc.latitude });
-          lastSiteKey = key;
-        }
-      }
-
-      // spinning vortices on TVS detections (published by displayTVSMarkers)
-      Radar3D.updateTVS(window.__tvsLocations || []);
-
-      // 3D surface fronts (checkbox-controlled, refreshed every 10 min;
-      // failed fetches back off 30s instead of hammering a down API)
+      // --- 3D surface fronts: shown whenever the checkbox is on, in flat
+      // OR tilted view. Refreshed every 10 min; failed fetches back off 30s
+      // instead of hammering a down API. ---
       const wantFronts = !!document.getElementById("show3DFronts")?.checked;
       if (wantFronts) {
         const sinceAttempt = Date.now() - frontsFetchedAt;

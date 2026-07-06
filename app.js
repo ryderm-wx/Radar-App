@@ -1334,48 +1334,46 @@ const DEFAULT_CC_COLOR_EXPRESSION = [
   "rgba(50, 200, 200, 0.8)",
 ];
 
+// Standard NWS-style base velocity scale, in mph (matches the legend + the
+// API's m/s->mph conversion). Monotonic: INBOUND (negative, toward radar) is
+// green and brightens toward strong inbound; OUTBOUND (positive) is red and
+// brightens toward strong outbound; neutral gray at zero. Range-folded = purple.
 const DEFAULT_BV_COLOR_EXPRESSION = [
   "interpolate",
   ["linear"],
   ["get", "dbz"],
-  -200,
-  "rgba(255, 220, 220, 1)",
   -140,
-  "rgba(255, 20, 180, 1)",
-  -120,
-  "rgba(250, 4, 130, 1)",
-  -100,
-  "rgba(105, 2, 142, 1)",
-  -90,
-  "rgba(25, 1, 142, 1)",
-  -70,
-  "rgba(55, 226, 229, 1)",
-  -50,
-  "rgba(180, 240, 243, 1)",
-  -40,
-  "rgba(10, 248, 35, 1)",
-  -10,
-  "rgba(72, 112, 71, 1)",
+  "rgba(150, 255, 200, 1)", // extreme inbound (near range-fold) — pale green
+  -110,
+  "rgba(0, 255, 144, 1)",
+  -80,
+  "rgba(0, 224, 0, 1)",
+  -55,
+  "rgba(0, 178, 0, 1)",
+  -35,
+  "rgba(0, 132, 0, 1)",
+  -18,
+  "rgba(0, 96, 0, 1)",
+  -6,
+  "rgba(12, 56, 22, 1)", // light inbound — very dark green
   0,
-  "rgba(130, 106, 120, 1)",
-  10,
-  "rgba(105, 0, 0, 1)",
-  40,
-  "rgba(249, 58, 84, 1)",
+  "rgba(80, 80, 80, 1)", // zero — neutral gray
+  6,
+  "rgba(64, 18, 18, 1)", // light outbound — very dark red
+  18,
+  "rgba(120, 0, 0, 1)",
+  35,
+  "rgba(170, 0, 0, 1)",
   55,
-  "rgba(255, 157, 206, 1)",
-  60,
-  "rgba(255, 230, 169, 1)",
+  "rgba(220, 0, 0, 1)",
   80,
-  "rgba(254, 137, 80, 1)",
-  120,
-  "rgba(97, 6, 2, 1)",
+  "rgba(255, 70, 70, 1)",
+  110,
+  "rgba(255, 150, 150, 1)",
   140,
-  "rgba(60, 0, 0, 1)",
-  200,
-  "rgba(45, 0, 0, 1)",
+  "rgba(255, 212, 212, 1)", // extreme outbound — pale red
   999,
-  "rgba(123, 0, 200, 0.8)",
+  "rgba(170, 100, 230, 0.85)", // range-folded
 ];
 
 const VELOCITY_COLOR_EXPRESSION = DEFAULT_BV_COLOR_EXPRESSION;
@@ -9213,6 +9211,10 @@ async function renderQuickTimelineFrame(index, options = {}) {
   const { preloadNeighbors = true, activateTimeline = true } = options;
   if (!selectedRadarSite || !quickTimelineFrames.length) return;
 
+  // This render is now the authoritative request; any older in-flight paint
+  // that resolves after us must not overwrite it.
+  const displaySeq = claimRadarDisplay();
+
   const normalized = Math.max(
     0,
     Math.min(index, quickTimelineFrames.length - 1),
@@ -9239,6 +9241,10 @@ async function renderQuickTimelineFrame(index, options = {}) {
 
   const cached = quickTimelineFrameCache.get(cacheKey);
   if (!cached || !cached.data) return;
+
+  // A newer render was requested while we awaited the fetch — drop this one
+  // so we never paint a stale frame over a fresher one.
+  if (!isRadarDisplayCurrent(displaySeq)) return;
 
   quickTimelineActive = Boolean(activateTimeline);
   quickTimelineIndex = normalized;
@@ -9271,11 +9277,31 @@ async function renderQuickTimelineFrame(index, options = {}) {
   }
 }
 
-async function refreshQuickTimeline(site, product = selectedRadarProduct) {
+async function refreshQuickTimeline(
+  site,
+  product = selectedRadarProduct,
+  options = {},
+) {
   if (!site || dataMode !== "radar") return;
 
-  // Passive refresh should not suppress live scan rendering.
-  quickTimelineActive = false;
+  // follow=true: park on the newest scan (live mode).
+  // follow=false: the user is scrubbing/playback — keep them on their frame
+  // even as new scans append to the window.
+  const { follow = true } = options;
+
+  // Remember the scan the user is parked on so we can keep them there when
+  // the window shifts.
+  const prevFrameKey =
+    !follow &&
+    quickTimelineIndex >= 0 &&
+    quickTimelineFrames[quickTimelineIndex]
+      ? quickTimelineFrames[quickTimelineIndex].key
+      : null;
+
+  if (follow) {
+    // Passive refresh should not suppress live scan rendering.
+    quickTimelineActive = false;
+  }
 
   const version = ++quickTimelineLoadVersion;
   const files = await fetchAvailableRadarFiles(site.id, product);
@@ -9283,38 +9309,45 @@ async function refreshQuickTimeline(site, product = selectedRadarProduct) {
 
   quickTimelineFrames = files.slice(-QUICK_TIMELINE_WINDOW_SIZE);
   const scrubber = document.getElementById("radarTimelineScrubber");
-  if (scrubber) {
-    const max = Math.max(0, quickTimelineFrames.length - 1);
-    scrubber.max = String(max);
-    scrubber.value = String(max);
-    scrubber.disabled = quickTimelineFrames.length <= 1;
-  }
+  const max = Math.max(0, quickTimelineFrames.length - 1);
 
-  if (quickTimelineFrames.length) {
-    // Keep the currently displayed radar scan on screen.
-    // We only update timeline state immediately, then preload all frames in the background.
-    quickTimelineIndex = quickTimelineFrames.length - 1;
-    updateQuickTimelineFrameLabel();
-
-    const backgroundVersion = version;
-    const source = selectedRadarDataSource || "level3";
-    const allIndices = quickTimelineFrames.map((_, idx) => idx);
-
-    void ensureQuickTimelineFrames(site.id, product, source, allIndices, {
-      background: true,
-    })
-      .then(() => {
-        if (backgroundVersion !== quickTimelineLoadVersion) {
-          return;
-        }
-      })
-      .catch((error) => {
-        console.warn("Quick timeline full-window preload failed:", error);
-      });
-  } else {
+  if (!quickTimelineFrames.length) {
     quickTimelineIndex = -1;
     updateQuickTimelineFrameLabel();
+    return;
   }
+
+  if (follow) {
+    quickTimelineIndex = max;
+  } else {
+    // Re-locate the user's frame by key; if it scrolled off the window,
+    // clamp to the oldest available rather than jumping to live.
+    const idx = prevFrameKey
+      ? quickTimelineFrames.findIndex((f) => f.key === prevFrameKey)
+      : -1;
+    quickTimelineIndex = idx >= 0 ? idx : Math.min(quickTimelineIndex, max);
+  }
+
+  if (scrubber) {
+    scrubber.max = String(max);
+    scrubber.value = String(quickTimelineIndex);
+    scrubber.disabled = quickTimelineFrames.length <= 1;
+  }
+  updateQuickTimelineFrameLabel();
+
+  // Preload the whole window in the background regardless of mode.
+  const backgroundVersion = version;
+  const source = selectedRadarDataSource || "level3";
+  const allIndices = quickTimelineFrames.map((_, idx) => idx);
+  void ensureQuickTimelineFrames(site.id, product, source, allIndices, {
+    background: true,
+  })
+    .then(() => {
+      if (backgroundVersion !== quickTimelineLoadVersion) return;
+    })
+    .catch((error) => {
+      console.warn("Quick timeline full-window preload failed:", error);
+    });
 }
 
 function scheduleQuickTimelineRender(index) {
@@ -14644,10 +14677,19 @@ async function pollForNewRadarData(map, site, product, source) {
     return;
   }
 
+  const radarProduct = product || selectedRadarProduct;
+  const radarSource = source || selectedRadarDataSource;
+
+  // A stale poll started for a previous product/source must not run — it
+  // would fetch the wrong data and flip the color ramp (e.g. set the
+  // reflectivity ramp while velocity is on screen → velocity drawn with the
+  // wrong colors). Bail if the user has since switched.
+  if (radarProduct !== selectedRadarProduct || radarSource !== selectedRadarDataSource) {
+    return;
+  }
+
   console.log("Polling for new radar data...");
   try {
-    const radarProduct = product || selectedRadarProduct;
-    const radarSource = source || selectedRadarDataSource;
     const apiSiteId = getRadarApiSiteId(site);
 
     const keyResp = await fetch(
@@ -14683,24 +14725,37 @@ async function pollForNewRadarData(map, site, product, source) {
       latestArcSyncState = null;
     }
 
+    // The user may have switched product/source during the key fetch above;
+    // don't render the old product over the new one.
+    if (radarProduct !== selectedRadarProduct || radarSource !== selectedRadarDataSource) {
+      return;
+    }
+
     if (updateToken && updateToken !== lastRadarKey) {
       lastRadarKey = updateToken;
+      // Follow live only when the user isn't parked on an older frame.
       const shouldFollowLatestTimeline =
         !quickTimelineActive ||
         quickTimelineIndex >= quickTimelineFrames.length - 1;
 
-      await fetchAndDisplayRadarData(
-        map,
-        site,
-        radarProduct,
-        radarSource,
-        updateToken,
-        latestArcSyncState,
-      );
-      startSweepAnimation(mapInstance, selectedRadarSite);
+      // Only paint the newest scan when following live; while the user is
+      // scrubbing or in playback, leave their frame on screen.
+      if (shouldFollowLatestTimeline) {
+        await fetchAndDisplayRadarData(
+          map,
+          site,
+          radarProduct,
+          radarSource,
+          updateToken,
+          latestArcSyncState,
+        );
+        startSweepAnimation(mapInstance, selectedRadarSite);
+      }
 
       if (dataMode === "radar" && !isArchiveMode) {
-        await refreshQuickTimeline(site, radarProduct);
+        await refreshQuickTimeline(site, radarProduct, {
+          follow: shouldFollowLatestTimeline,
+        });
 
         if (quickTimelineFrames.length > 0 && shouldFollowLatestTimeline) {
           await renderQuickTimelineFrame(quickTimelineFrames.length - 1, {
@@ -14773,6 +14828,9 @@ async function fetchAndDisplayRadarData(
   refreshToken = null,
   arcSyncState = null,
 ) {
+  // Authoritative paint request; a stale fetch resolving after a newer one
+  // must not overwrite the fresher scan (prevents the map jumping backwards).
+  const displaySeq = claimRadarDisplay();
   try {
     console.time("FETCH-TOTAL");
 
@@ -14859,6 +14917,12 @@ async function fetchAndDisplayRadarData(
     console.timeEnd("FETCH-TOTAL");
     const vertexPairs = Math.floor((radarData.vertices.length || 0) / 2);
     console.log(`Received ${vertexPairs} vertices for WebGL rendering.`);
+
+    // Drop this paint if a newer render request superseded it mid-fetch.
+    if (!isRadarDisplayCurrent(displaySeq)) {
+      console.timeEnd("FETCH-TOTAL");
+      return;
+    }
 
     console.time("UPDATE-radar-layer");
     if (customRadarLayerInstance && customRadarLayerInstance.updateColorRamp) {
@@ -15047,7 +15111,6 @@ function buildRadialMesh(
     meshId,
     vertices: new Float32Array(vertices),
     valueIndices: new Uint32Array(valueIndices),
-    valuesScratch: new Float32Array(valueIndices.length),
   };
   radialMeshCache.set(meshId, mesh);
   return mesh;
@@ -15069,14 +15132,13 @@ function convertRadialPayloadToRenderable(site, radarProduct, payload) {
     console.log(`Built client mesh ${meshId} for ${radarProduct}`);
   }
 
-  if (
-    !mesh.valuesScratch ||
-    mesh.valuesScratch.length !== mesh.valueIndices.length
-  ) {
-    mesh.valuesScratch = new Float32Array(mesh.valueIndices.length);
-  }
-
-  const expanded = mesh.valuesScratch;
+  // Geometry (vertices/valueIndices) is cached and reused — that's the
+  // expensive part. The per-gate VALUES differ every frame, so they MUST be
+  // a fresh array: the radar layer keeps a reference to this array, and a
+  // shared scratch buffer would be overwritten by the next frame's expansion,
+  // making an on-screen scan flicker to a different frame's data on any
+  // re-render (smoothing, camera move, next scan).
+  const expanded = new Float32Array(mesh.valueIndices.length);
   for (let i = 0; i < mesh.valueIndices.length; i += 1) {
     expanded[i] = values[mesh.valueIndices[i]];
   }
@@ -16065,6 +16127,19 @@ let quickTimelinePendingIndex = -1;
 let quickTimelineActive = false;
 let quickTimelineLoadVersion = 0;
 let quickProductSwitchVersion = 0;
+
+// Render-ordering guard: several async paths (live poll, timeline scrub,
+// product switch) fetch+decode then paint the radar layer. Without this,
+// whichever fetch resolves LAST wins — which can be an older scan, so the
+// map "jumps back" to a past frame. Each paint path claims a sequence number
+// at request time and only paints if it's still the most recent request.
+let radarDisplaySeq = 0;
+function claimRadarDisplay() {
+  return ++radarDisplaySeq;
+}
+function isRadarDisplayCurrent(seq) {
+  return seq === radarDisplaySeq;
+}
 const quickTimelineFrameCache = new Map();
 const quickTimelineInflight = new Map();
 
